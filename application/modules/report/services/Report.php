@@ -146,7 +146,7 @@ class Report_Service_Report
 		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql);
 
 		header('Content-type: text/csv');
-		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . date('YmdHis') . '.csv"');
+		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.csv"');
 		
 		$file = $this->writeCsv($fields, $rowset, $types);
 		
