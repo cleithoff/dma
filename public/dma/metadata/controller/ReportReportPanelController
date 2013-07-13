@@ -1,0 +1,418 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ReportReportPanelController"
+    },
+    "designerId": "c638342d-9c12-4bcb-8962-f54575b78b43",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportEditButtonClick",
+                "implHandler": [
+                    "panel = this.getReportReportPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('ReportReportFormPanel');\r",
+                    "toolbar = panel.getComponent('ReportReportToolbar');\r",
+                    "formPanel.enable();\r",
+                    "\r",
+                    "toolbar.getComponent('ReportReportEditButton').disable();\r",
+                    "toolbar.getComponent('ReportReportNewButton').disable();\r",
+                    "toolbar.getComponent('ReportReportCancelButton').enable();\r",
+                    "toolbar.getComponent('ReportReportSaveButton').enable();\r",
+                    "toolbar.getComponent('ReportReportDeleteButton').disable();\r",
+                    "\r",
+                    "toolbar.getComponent('ReportReportPreviewButton').disable();\r",
+                    "toolbar.getComponent('ReportReportPrintButton').disable();\r",
+                    "toolbar.getComponent('ReportReportExportButton').disable();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportEditButton"
+            },
+            "designerId": "50b9fe1c-0d02-40e1-82d8-355e7319ca6f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportNewButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('ReportReportJsonStore');\r",
+                    "panel = this.getReportReportPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('ReportReportFormPanel');\r",
+                    "toolbar = panel.getComponent('ReportReportToolbar');\r",
+                    "if (store !== undefined) {\r",
+                    "    formPanel.enable();\r",
+                    "    record = new store.model();\r",
+                    "    formPanel.loadRecord(record);\r",
+                    "    toolbar.getComponent('ReportReportEditButton').disable();\r",
+                    "    toolbar.getComponent('ReportReportNewButton').disable();\r",
+                    "    toolbar.getComponent('ReportReportCancelButton').enable();\r",
+                    "    toolbar.getComponent('ReportReportSaveButton').enable();\r",
+                    "    toolbar.getComponent('ReportReportDeleteButton').disable();\r",
+                    "    \r",
+                    "    toolbar.getComponent('ReportReportPreviewButton').disable();\r",
+                    "    toolbar.getComponent('ReportReportPrintButton').disable();\r",
+                    "    toolbar.getComponent('ReportReportExportButton').disable();\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportNewButton"
+            },
+            "designerId": "78e8bdcc-5905-4042-8eaf-51341ffd8c72"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportSaveButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('ReportReportJsonStore');\r",
+                    "panel = this.getReportReportPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('ReportReportFormPanel');\r",
+                    "toolbar = panel.getComponent('ReportReportToolbar');\r",
+                    "\r",
+                    "record = formPanel.getForm().getRecord();\r",
+                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                    "    values = formPanel.getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "} else {\r",
+                    "    formPanel.getForm().updateRecord();\r",
+                    "}\r",
+                    "formPanel.disable();\r",
+                    "toolbar.getComponent('ReportReportEditButton').enable();\r",
+                    "toolbar.getComponent('ReportReportNewButton').enable();\r",
+                    "toolbar.getComponent('ReportReportCancelButton').disable();\r",
+                    "toolbar.getComponent('ReportReportSaveButton').disable();\r",
+                    "toolbar.getComponent('ReportReportDeleteButton').enable();\r",
+                    "\r",
+                    "toolbar.getComponent('ReportReportPreviewButton').enable();\r",
+                    "toolbar.getComponent('ReportReportPrintButton').enable();\r",
+                    "toolbar.getComponent('ReportReportExportButton').enable();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportSaveButton"
+            },
+            "designerId": "dbfb483a-9572-4e5c-b4f5-4e05ae414a31"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportCancelButtonClick",
+                "implHandler": [
+                    "panel = this.getReportReportPanel();\r",
+                    "grid = this.getReportPanel().getComponent('ReportReportGridPanel');\r",
+                    "\r",
+                    "formPanel = panel.getComponent('ReportReportFormPanel');\r",
+                    "toolbar = panel.getComponent('ReportReportToolbar');\r",
+                    "record = formPanel.getForm().getRecord();\t\t\t\t\t\t\t\t\r",
+                    "if (record !== undefined) {\r",
+                    "    formPanel.getForm().reset();\r",
+                    "    formPanel.disable();\r",
+                    "    toolbar.getComponent('ReportReportEditButton').enable();\r",
+                    "    toolbar.getComponent('ReportReportNewButton').enable();\r",
+                    "    toolbar.getComponent('ReportReportCancelButton').disable();\r",
+                    "    toolbar.getComponent('ReportReportSaveButton').disable();\r",
+                    "    \r",
+                    "    toolbar.getComponent('ReportReportPreviewButton').enable();\r",
+                    "    toolbar.getComponent('ReportReportPrintButton').enable();\r",
+                    "    toolbar.getComponent('ReportReportExportButton').enable();    \r",
+                    "}\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "    grid.getView().select(0);\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportCancelButton"
+            },
+            "designerId": "939e1676-b10b-4b20-8829-0ab934be4f96"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportDeleteButtonClick",
+                "implHandler": [
+                    "var store = Ext.getStore('ReportReportJsonStore');\r",
+                    "var panel = this.getReportReportPanel(); \r",
+                    "var grid = this.getReportPanel().getComponent('ReportReportGridPanel');\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "Ext.Msg.confirm('Attention!', 'Datensatz löschen?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "\r",
+                    "        formPanel = panel.getComponent('ReportReportFormPanel');\r",
+                    "        record = formPanel.getForm().getRecord();\r",
+                    "        if (store !== undefined && record !== undefined) {\r",
+                    "            store.remove(record);\r",
+                    "            formPanel.getForm().reset();\r",
+                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "                grid.getView().select(0);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportDeleteButton"
+            },
+            "designerId": "d706fc9c-fab4-49c8-b5b1-01c0904c2dc8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportPreviewButtonClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "\r",
+                    "filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
+                    "\r",
+                    "params = filterFormPanel.getValues();\r",
+                    "\r",
+                    "params._sql = this.getReportReportPanel().getComponent('ReportReportFormPanel').getForm().findField('sql').getValue();\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: '/report/report/meta',\r",
+                    "    params: params,\r",
+                    "    success: function(response, opts) {\r",
+                    "        var obj = Ext.decode(response.responseText);\r",
+                    "        console.log(obj);\r",
+                    "        that.getReportReportPanel().remove(that.getReportReportPanel().getComponent('ReportPreviewGridPanel'));\r",
+                    "        columns = [];\r",
+                    "        fields = [];\r",
+                    "        for (var idx in obj.data) {\r",
+                    "            field = obj.data[idx];\r",
+                    "            switch(field.native_type) {\r",
+                    "                case 'LONG':\r",
+                    "                columns.push({\r",
+                    "                    dataIndex: field.name,\r",
+                    "                    align: 'right',\r",
+                    "                    text: field.name,\r",
+                    "                    xtype: 'numbercolumn',\r",
+                    "                    format: '0'\r",
+                    "                });\r",
+                    "                fields.push({\r",
+                    "                    name: field.name,\r",
+                    "                    type: 'int',\r",
+                    "                });\r",
+                    "                break;\r",
+                    "                case 'VAR_STRING':\r",
+                    "                columns.push({\r",
+                    "                    dataIndex: field.name,\r",
+                    "                    align: 'left',\r",
+                    "                    text: field.name,\r",
+                    "                    xtype: 'gridcolumn'\r",
+                    "                });\r",
+                    "                fields.push({\r",
+                    "                    name: field.name,\r",
+                    "                    type: 'string',\r",
+                    "                });\r",
+                    "                break;\r",
+                    "                case 'BLOB':\r",
+                    "                columns.push({\r",
+                    "                    dataIndex: field.name,\r",
+                    "                    align: 'left',\r",
+                    "                    text: field.name,\r",
+                    "                    xtype: 'gridcolumn'\r",
+                    "                });\r",
+                    "                fields.push({\r",
+                    "                    name: field.name,\r",
+                    "                    type: 'string',\r",
+                    "                });                    \r",
+                    "                break;\r",
+                    "                default:\r",
+                    "                columns.push({\r",
+                    "                    dataIndex: field.name,\r",
+                    "                    align: 'left',\r",
+                    "                    text: field.name,\r",
+                    "                    xtype: 'gridcolumn'\r",
+                    "                });\r",
+                    "                fields.push({\r",
+                    "                    name: field.name,\r",
+                    "                    type: 'string',\r",
+                    "                });                    \r",
+                    "                break;\r",
+                    "            }\r",
+                    "        }\r",
+                    "        Ext.define('Meta', {\r",
+                    "            extend: 'Ext.data.Model',\r",
+                    "            fields: fields\r",
+                    "        });\r",
+                    "\r",
+                    "        var metaStore = Ext.create('Ext.data.Store', {\r",
+                    "            model: 'Meta',\r",
+                    "            proxy: {\r",
+                    "                type: 'rest',\r",
+                    "                url: '/report/report/index',\r",
+                    "                extraParams: params,\r",
+                    "                reader: {\r",
+                    "                    type: 'json',\r",
+                    "                    root: 'data'\r",
+                    "                }\r",
+                    "            },\r",
+                    "            autoLoad: true\r",
+                    "        });\r",
+                    "        panel = Ext.create('Ext.grid.Panel', {\r",
+                    "            split: true,\r",
+                    "            region: 'center',\r",
+                    "            itemId: 'ReportPreviewGridPanel',\r",
+                    "            //title: 'Number Column Demo',\r",
+                    "            store: metaStore,\r",
+                    "            columns: columns\r",
+                    "\r",
+                    "            /*[\r",
+                    "            { text: 'Symbol',         dataIndex: 'symbol', flex: 1 },\r",
+                    "            { text: 'Current Price',  dataIndex: 'price',  renderer: Ext.util.Format.usMoney },\r",
+                    "            { text: 'Change',         dataIndex: 'change', xtype: 'numbercolumn', format:'0.00' },\r",
+                    "            { text: 'Volume',         dataIndex: 'volume', xtype: 'numbercolumn', format:'0,000' }\r",
+                    "            ]*/\r",
+                    "        });\r",
+                    "        that.getReportReportPanel().add(panel);\r",
+                    "    },\r",
+                    "    failure: function(response, opts) {\r",
+                    "        console.log('server-side failure with status code ' + response.status);\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportPreviewButton"
+            },
+            "designerId": "e6736e1f-cd2d-41de-9c80-e9ce2731f68e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportPrintButtonClick",
+                "implHandler": [
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportPrintButton"
+            },
+            "designerId": "a629894c-2732-4f45-aaf6-adc5f9636b5c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportExportButtonClick",
+                "implHandler": [
+                    "var _dc = new Date().getTime();\r",
+                    "\r",
+                    "filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
+                    "\r",
+                    "params = filterFormPanel.getValues();\r",
+                    "\r",
+                    "strParams = '';\r",
+                    "\r",
+                    "for (var idx in params) {\r",
+                    "\tstrParams = strParams + '&' + idx + '=' + params[idx];\r",
+                    "}\r",
+                    "\r",
+                    "record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "document.location = \"/report/report/export?_dc=\" + _dc + \"&report_report_id=\" + record.data.id + strParams;"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportExportButton"
+            },
+            "designerId": "90f2a8c4-1cd0-4021-86d6-9dbe25b0df45"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ReportPanel",
+                "selector": "#ReportPanel",
+                "xtype": "reportpanel"
+            },
+            "designerId": "9c64f9d2-46c8-4677-a3c1-313c427f8057"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ReportReportPanel",
+                "selector": "#ReportReportPanel",
+                "xtype": "reportreportpanel"
+            },
+            "designerId": "993bb329-dac5-4e24-a4f7-3fe0c045c0bb"
+        }
+    ]
+}

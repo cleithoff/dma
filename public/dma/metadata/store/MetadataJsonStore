@@ -1,0 +1,39 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "MetadataModel",
+        "storeId": "MetadataJsonStore",
+        "designer|userClassName": "MetadataJsonStore"
+    },
+    "designerId": "7f36311c-f928-4f3a-9ea4-9317905b8999",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/report/report/index"
+            },
+            "designerId": "66526e7e-536a-47d0-ab8f-b4bf07d4e142",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "19b21095-a4af-41f9-9f16-41d3408fefd7"
+                }
+            ]
+        }
+    ]
+}

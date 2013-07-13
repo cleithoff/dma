@@ -1,0 +1,19 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "itemId": "UserPanel",
+        "width": 400,
+        "designer|userClassName": "UserPanel",
+        "designer|userAlias": "userpanel",
+        "closable": true,
+        "closeAction": "hide",
+        "title": "Benutzer"
+    },
+    "designerId": "a0744bfe-d3fe-4d42-b3cb-3549c0119089"
+}

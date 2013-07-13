@@ -1,0 +1,177 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OrderImportPanelController"
+    },
+    "designerId": "3a10744c-2c5c-4d9a-a08e-27002b177ce0",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderImportResetButtonClick",
+                "implHandler": [
+                    "fp = this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel');\r",
+                    "\r",
+                    "fp.getForm().reset();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderImportResetButton"
+            },
+            "designerId": "82bf82e3-3b1c-489e-8127-9bf3b524777e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderImportUploadButtonClick",
+                "implHandler": [
+                    "var fp = this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel');\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "//if(fp.getForm().isValid()){\r",
+                    "fp.getForm().submit({\r",
+                    "    url: '/import/fileupload/order',\r",
+                    "    waitMsg: 'Datei wird hochgeladen...',\r",
+                    "    success: function(x, o){\r",
+                    "        Ext.Msg.show({\r",
+                    "            title: 'Datei-Upload',\r",
+                    "            msg: o.result.msg,\r",
+                    "            minWidth: 200,\r",
+                    "            modal: true,\r",
+                    "            icon: Ext.Msg.INFO,\r",
+                    "            buttons: Ext.Msg.OK\r",
+                    "        });\r",
+                    "        if (o.result.success === true) {\r",
+                    "            Ext.Ajax.request({\r",
+                    "                url: '/import/import/order',\r",
+                    "                timeout: 60 * 10 * 1000, // 10 min\r",
+                    "                params: {\r",
+                    "                    filename: o.result.filename,\r",
+                    "                    product_item_id: fp.getComponent('OrderImportItemComboBox').getValue(),\r",
+                    "                },\r",
+                    "                success: function(response, opts) {\r",
+                    "                    //var obj = Ext.decode(response.responseText);\r",
+                    "                    //console.dir(obj);\r",
+                    "                    store = Ext.getStore('ImportOrderTreeStore');\r",
+                    "                    store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
+                    "                    store.reload();\r",
+                    "                },\r",
+                    "                failure: function(response, opts) {\r",
+                    "                    //console.log('server-side failure with status code ' + response.status);\r",
+                    "                }\r",
+                    "            });\r",
+                    "        } else {\r",
+                    "        \talert('Upload fehlgeschlagen. Bitte die Datei schließen, falls diese noch geöffnet ist.');\r",
+                    "        }\r",
+                    "    },\r",
+                    "    failure: function(x,o) {\r",
+                    "        alert('Upload fehlgeschlagen. Bitte die Datei schließen, falls diese noch geöffnet ist.');\r",
+                    "    }\r",
+                    "});\r",
+                    "//}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderImportUploadButton"
+            },
+            "designerId": "2f655f67-68cc-4540-a20e-f6c43eaf7d6f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderImportPanel",
+                "selector": "#OrderImportPanel",
+                "xtype": "orderimportpanel"
+            },
+            "designerId": "e9c8c3a4-c272-4175-99d9-a5f6da81bfa7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderImportImportButtonClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: '/import/order/import',\r",
+                    "    method: 'GET',\r",
+                    "    params: {\r",
+                    "        import_import_id: this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('ImportImportComboBox').getValue(),\r",
+                    "        product_product_id: this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportProductComboBox').getValue(),\r",
+                    "        product_item_id: this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue(),\r",
+                    "        haspos: this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportHasposCheckbox').getValue(),\r",
+                    "        weightpos: this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportWeightposNumberfield').getValue(),\r",
+                    "    },\r",
+                    "    success: function(response, opts) {\r",
+                    "        //var obj = Ext.decode(response.responseText);\r",
+                    "        //console.dir(obj);\r",
+                    "        //Ext.getStore('ImportOrderTreeStore').removeAll();\r",
+                    "        //Ext.getStore('ImportOrderTreeStore').sync();\r",
+                    "        store = Ext.getStore('ImportOrderTreeStore');\r",
+                    "        store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
+                    "        store.reload();\r",
+                    "    },\r",
+                    "    failure: function(response, opts) {\r",
+                    "        //console.log('server-side failure with status code ' + response.status);\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderImportImportButton"
+            },
+            "designerId": "bdc1c064-a80e-4841-ab36-212a689b64fe"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderImportRefreshButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('ImportOrderTreeStore');\r",
+                    "store.getProxy().setExtraParam('product_item_id', this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
+                    "store.reload();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderImportRefreshButton"
+            },
+            "designerId": "221864e4-a587-44e6-8253-38fd3176de1d"
+        }
+    ]
+}

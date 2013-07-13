@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "model": "ReportReportModel",
+        "storeId": "ReportReportJsonStore",
+        "designer|userClassName": "ReportReportJsonStore"
+    },
+    "designerId": "888450b5-9cee-44c3-ad35-89666a14b954",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/report/report/index"
+            },
+            "designerId": "dd449f2d-3ce9-4054-bfe4-d966af18333e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "41958e8f-8cb9-44f1-8fe9-09324fb10df5"
+                }
+            ]
+        }
+    ]
+}

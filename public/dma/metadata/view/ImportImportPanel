@@ -1,0 +1,156 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 725,
+        "itemId": "ImportImportPanel",
+        "width": 769,
+        "designer|userClassName": "ImportImportPanel",
+        "designer|userAlias": "importimportpanel",
+        "layout": "border",
+        "title": "Import"
+    },
+    "designerId": "44b8a41b-f3a8-4caf-b2af-2d094a3c0cb7",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "FormToolbar"
+            },
+            "designerId": "c0229f7f-1afd-4b18-beaf-ff3a92d667e7",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "FormEditButton",
+                        "text": "Bearbeiten"
+                    },
+                    "designerId": "02b8fb1c-a0dd-48a7-9b2a-3b52fae54135"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "FormNewButton",
+                        "text": "Neu"
+                    },
+                    "designerId": "5737f999-3748-46bb-b8d8-238743108d6e"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "FormSaveButton",
+                        "text": "Speichern"
+                    },
+                    "designerId": "8310847a-91f5-4895-ad49-2e4ab866d22f"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "FormCancelButton",
+                        "text": "Abbrechen"
+                    },
+                    "designerId": "e28615fc-1939-4810-b0e6-553dba6b4d65"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "FormDeleteButton",
+                        "text": "Löschen"
+                    },
+                    "designerId": "dcef9fb6-3f22-4b16-bf13-e7f5d8d4ebb4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "disabled": true,
+                "height": 124,
+                "itemId": "FormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "4c50553f-ef15-4e26-b5e4-0198ceae8267",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Bezeichnung",
+                        "name": "title"
+                    },
+                    "designerId": "d525a586-91dd-430f-a082-a6d5508e2090"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Konflikt-Query",
+                        "name": "conflictquery"
+                    },
+                    "designerId": "dd1940f5-eb02-4883-8648-ed6eae32add2"
+                }
+            ]
+        }
+    ]
+}

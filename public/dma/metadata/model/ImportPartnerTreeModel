@@ -1,0 +1,146 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ImportPartnerTreeModel"
+    },
+    "designerId": "584c3f19-87af-4beb-ad06-1b9b46cdd0a1",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "idx"
+            },
+            "designerId": "223ca971-de28-4729-be4d-e79b5dbba5c8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "origin"
+            },
+            "designerId": "369cfa17-5a82-4ddf-9d7c-c26639183da7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "partner_nr"
+            },
+            "designerId": "d165a94e-838a-4132-9fa3-357ed7490b8c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "post_anrede"
+            },
+            "designerId": "47bf2c0f-d79b-4477-909f-27de263f1c13"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "post_name1"
+            },
+            "designerId": "3983d34d-f9f1-4ab7-bd00-425228b7db19"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "post_name2"
+            },
+            "designerId": "9906cb17-e977-4ab3-9159-8765ba5caaa9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "post_strasse"
+            },
+            "designerId": "f77c7620-2e5e-4090-abd2-df142cb7468a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "post_plz"
+            },
+            "designerId": "544615f8-0eb5-4e2a-ba41-ffdac30afac6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "post_ort"
+            },
+            "designerId": "173d1359-db64-4124-9b75-8bbc6c6ca154"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "druck_hg_tel"
+            },
+            "designerId": "e116ce82-c8fe-4c3c-a03f-3ad427fbd14b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "text"
+            },
+            "designerId": "45433836-6879-491f-a376-ec13b5bd97be"
+        }
+    ]
+}

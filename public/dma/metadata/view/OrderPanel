@@ -1,0 +1,126 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 531,
+        "itemId": "OrderPanel",
+        "width": 767,
+        "designer|userClassName": "OrderPanel",
+        "designer|userAlias": "orderpanel",
+        "layout": "border",
+        "closable": true,
+        "closeAction": "hide",
+        "title": "Bestellungen"
+    },
+    "designerId": "f7ad03d6-bc4b-403b-9019-7619555680dc",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "layout|split": true,
+                "itemId": "OrderOrderGridPanel",
+                "width": 320,
+                "title": null,
+                "store": "OrderOrderJsonStore"
+            },
+            "designerId": "198ac065-1a5a-44ad-ad5c-427325804703",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 60,
+                        "align": "right",
+                        "dataIndex": "id",
+                        "text": "ID",
+                        "format": "0"
+                    },
+                    "designerId": "2ab5e50c-26df-4ba0-be59-eb03b3e825b9"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "partner_partner.title",
+                        "text": "Partner",
+                        "flex": 1
+                    },
+                    "designerId": "a2f4ae13-02f2-4ef7-b361-0fbbed347ea1",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.partner_partner.title;"
+                                ]
+                            },
+                            "designerId": "27c2cb7b-401f-45b8-8925-bf45d8eab563"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "OrderOrderJsonStore"
+                    },
+                    "designerId": "e4c1b7be-2dea-4654-83ff-d1a7f22c9515"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "layout|split": true,
+                "itemId": "OrderOrderTabPanel"
+            },
+            "designerId": "648ed746-6f76-4394-92c0-d2aca6cce81c"
+        }
+    ]
+}

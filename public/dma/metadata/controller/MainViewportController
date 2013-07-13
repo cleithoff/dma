@@ -1,0 +1,59 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainViewportController"
+    },
+    "designerId": "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "MainViewport",
+                "selector": "#MainViewport",
+                "xtype": "mainviewport"
+            },
+            "designerId": "118209d7-499f-4f94-9e33-af865b870bac"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "MainPanel",
+                "selector": "#MainPanel",
+                "xtype": "mainpanel"
+            },
+            "designerId": "b2c9e281-54ec-4cf1-a02d-15f9e8783436"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLaunch",
+                "implHandler": [
+                    "this.getMainViewport().add(this.getMainPanel());"
+                ]
+            },
+            "designerId": "f58f5d1a-5af4-4869-920e-7c3d853b43d1"
+        }
+    ]
+}

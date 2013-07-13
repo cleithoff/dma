@@ -1,0 +1,158 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OrderItemPanelController"
+    },
+    "designerId": "ea51f8fb-6ba3-4bb9-b81b-d3b5dfb76b7b",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemGridPanelSelect",
+                "implHandler": [
+                    "Ext.getStore('PackagePackageJsonStore').clearFilter(true);\r",
+                    "Ext.getStore('PackagePackageJsonStore').filter([{property:'order_item_id',value:record.data.id}]);\r",
+                    "Ext.getStore('PackagePackageJsonStore').load();\r",
+                    "\r",
+                    "\r",
+                    "this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.clearFilter(true);\r",
+                    "this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.filter([{property:'order_item_id',value:record.data.id}]);\r",
+                    "this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.load();\r",
+                    "//Ext.getStore('OrderItemHasProductPersonalizeJsonStore').load();\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "//Ext.getStore('OrderItemProductItemJsonStore').un('load');\r",
+                    "if (!Ext.getStore('OrderItemProductItemJsonStore').hasListener('load')) {\r",
+                    "    Ext.getStore('OrderItemProductItemJsonStore').on('load', function(store, records, options){\r",
+                    "        combobox = that.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeFormPanel').getComponent('OrderItemProductPersonalizeComboBox');\r",
+                    "        combobox.store.clearFilter();\r",
+                    "        combobox.store.filter([{property:'product_layout_id',value:records[0].data.product_layout_id}]);\r",
+                    "        combobox.store.load();\r",
+                    "    });\r",
+                    "}\r",
+                    "Ext.getStore('OrderItemProductItemJsonStore').clearFilter(true);\r",
+                    "Ext.getStore('OrderItemProductItemJsonStore').filter([{property:'id',value:record.data.product_item_id}]);\r",
+                    "Ext.getStore('OrderItemProductItemJsonStore').load();\r",
+                    "\r",
+                    "\r",
+                    "panel = this.getOrderItemDetailPanel();\r",
+                    "formPanel = panel.getComponent('OrderItemDetailFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemDetailToolbar');\r",
+                    "formPanel.getForm().loadRecord(record);\r",
+                    "toolbar.getComponent('OrderItemDetailEditButton').enable();\r",
+                    "toolbar.getComponent('OrderItemDetailCancelButton').disable();\r",
+                    "toolbar.getComponent('OrderItemDetailSaveButton').disable();\r",
+                    "toolbar.getComponent('OrderItemDetailDeleteButton').enable();\r",
+                    "\r",
+                    "\r",
+                    "panel = this.getOrderItemProductPersonalizePanel();\r",
+                    "//formPanel = panel.getComponent('OrderItemProductPersonalizeFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemProductPersonalizeToolbar');\r",
+                    "//formPanel.getForm().loadRecord(record);\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeNewButton').enable();\r",
+                    "\r",
+                    "this.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style=\"width:100%;height:100%\" src=\"/deploy/' + record.data.authkey + '.pdf\" alt=\"pdf\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#OrderItemGridPanel"
+            },
+            "designerId": "9b400348-4ec6-4d30-a65b-95a097f39fe0"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderPanel",
+                "selector": "#OrderPanel",
+                "xtype": "orderpanel"
+            },
+            "designerId": "b7aedbf2-9218-479f-b545-482deda1b539"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemDetailPanel",
+                "selector": "#OrderItemDetailPanel",
+                "xtype": "orderitemdetailpanel"
+            },
+            "designerId": "0419797b-e819-4feb-b7ad-94ae8b51311d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemGridPanelRender",
+                "implHandler": [
+                    "component.store.on('load', function(store, records, options){\r",
+                    "    if (records.length > 0) {\r",
+                    "        component.getSelectionModel().select(0); \r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#OrderItemGridPanel"
+            },
+            "designerId": "bd07ac08-221b-4e9e-9b1f-7a6f85adf81d"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemProductPersonalizePanel",
+                "selector": "#OrderItemProductPersonalizePanel",
+                "xtype": "orderitemproductpersonalizepanel"
+            },
+            "designerId": "0b1a9819-3dfb-4b51-a5c2-c6e5e879e696"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemPanel",
+                "selector": "#OrderItemPanel",
+                "xtype": "orderitempanel"
+            },
+            "designerId": "8446e7af-6a9b-424c-9a09-54fe210486f2"
+        }
+    ]
+}

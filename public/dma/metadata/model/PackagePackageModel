@@ -1,0 +1,212 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PackagePackageModel"
+    },
+    "designerId": "a3a2a5e0-a274-4a27-9681-5767edc40f54",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "0e0e1667-b9ec-4c91-a138-1671816f15aa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "frame_type_id"
+            },
+            "designerId": "4857da52-cba2-4926-915d-dc835840c831"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "package_type_id"
+            },
+            "designerId": "db07b04b-2a12-4967-b327-c391782bc1c5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "order_item_id"
+            },
+            "designerId": "7ff723bd-5064-43d8-aef3-76efb563e28d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "readytosend"
+            },
+            "designerId": "cd467644-afc2-4893-8d4a-f57f3f9043a0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "outgoing"
+            },
+            "designerId": "b4a82def-5f74-4fdc-8477-441ac485b092"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sendingnumber"
+            },
+            "designerId": "23ef1871-91ac-4ab4-b9ee-2cff3825661d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "amount"
+            },
+            "designerId": "d907dbc3-098d-4cd4-8249-0fb41185e49a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "frame_type"
+            },
+            "designerId": "d89c81fb-dced-46c3-8eeb-c2be4c1b9d64"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "package_type"
+            },
+            "designerId": "0a0f43a3-c9ea-43ed-aa83-3f0360365701"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "order_item"
+            },
+            "designerId": "e7e3218c-3698-4b5e-8142-1e12115a792d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "frame_type_title"
+            },
+            "designerId": "829a89c7-74e4-4405-9f03-9380844de7cf",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return rec.data.frame_type.title;"
+                        ]
+                    },
+                    "designerId": "3a13c58e-49ae-4940-b9f8-363ea1ac0be7"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "package_type_title"
+            },
+            "designerId": "9561ce53-c2ed-426c-a911-0a50f6ae72fe",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return rec.data.package_type.title;"
+                        ]
+                    },
+                    "designerId": "aa4ead15-f286-4f21-9d0c-db294dc26aa9"
+                }
+            ]
+        }
+    ]
+}

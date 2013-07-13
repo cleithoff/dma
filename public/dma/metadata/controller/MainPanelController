@@ -1,0 +1,539 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainPanelController"
+    },
+    "designerId": "5d3f39a7-52f1-42ae-b4ea-18ce3a74aed0",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCloseMenuItemClick",
+                "implHandler": [
+                    "window.close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#CloseMenuItem"
+            },
+            "designerId": "ff07103a-b630-4841-8169-ff73e9b2115b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerMenuItemClick",
+                "implHandler": [
+                    "panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getPartnerPanel().ref);\r",
+                    "\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getMainPanel().getComponent('AppTabPanel').add(this.getPartnerPanel());\r",
+                    "}\r",
+                    "\r",
+                    "this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getPartnerPanel());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#PartnerMenuItem"
+            },
+            "designerId": "3baf840b-c770-4bbf-ba10-c33f242d7133"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderMenuItemClick",
+                "implHandler": [
+                    "panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getOrderPanel().ref);\r",
+                    "\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getMainPanel().getComponent('AppTabPanel').add(this.getOrderPanel());\r",
+                    "}\r",
+                    "\r",
+                    "this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getOrderPanel());\r",
+                    "\r",
+                    "\r",
+                    "// Order Item\r",
+                    "panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderItemPanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderItemPanel());\r",
+                    "}\r",
+                    "\r",
+                    "// Order Item Detail\r",
+                    "panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemDetailPanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemDetailPanel());\r",
+                    "}\r",
+                    "\r",
+                    "// Order Item Package Package\r",
+                    "panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemPackagePackagePanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemPackagePackagePanel());\r",
+                    "    var orderItemPackagePackageGridPanel = this.getOrderItemPackagePackagePanel().getComponent('OrderItemPackagePackageGridPanel');\r",
+                    "    var orderItemPackagePackageFormPanel = this.getOrderItemPackagePackagePanel().getComponent('OrderItemPackagePackageFormPanel');\r",
+                    "    var orderItemPackagePackageToolbar = this.getOrderItemPackagePackagePanel().getComponent('OrderItemPackagePackageToolbar');\r",
+                    "\r",
+                    "    orderItemPackagePackageGridPanel.store.on('load', function(store, records, options){\r",
+                    "        if (orderItemPackagePackageGridPanel.getView().getNodes().length > 0) {\r",
+                    "            orderItemPackagePackageGridPanel.getSelectionModel().select(0); \r",
+                    "            orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageEditButton').enable();\r",
+                    "            orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageSaveButton').disable();\r",
+                    "            orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageCancelButton').disable();\r",
+                    "            orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageDeleteButton').enable();\r",
+                    "        } else {\r",
+                    "            orderItemPackagePackageFormPanel.getForm().reset();\r",
+                    "            orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageEditButton').disable();\r",
+                    "            orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageSaveButton').disable();\r",
+                    "            orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageCancelButton').disable();\r",
+                    "            orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageDeleteButton').disable();\r",
+                    "        }\r",
+                    "    });\r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "// Order Item Product Personalize\r",
+                    "panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemProductPersonalizePanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemProductPersonalizePanel());\r",
+                    "    var orderItemProductPersonalizeGridPanel = this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel');\r",
+                    "    var orderItemProductPersonalizeFormPanel = this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeFormPanel');\r",
+                    "    var orderItemProductPersonalizeToolbar = this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeToolbar');\r",
+                    "\r",
+                    "    orderItemProductPersonalizeGridPanel.store.on('load', function(store, records, options){\r",
+                    "        //orderItemProductPersonalizeGridPanel.getSelectionModel().select(0);\r",
+                    "        if (orderItemProductPersonalizeGridPanel.getView().getNodes().length > 0) {\r",
+                    "            orderItemProductPersonalizeGridPanel.getSelectionModel().select(0); \r",
+                    "            orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeEditButton').enable();\r",
+                    "            orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeSaveButton').disable();\r",
+                    "            orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeCancelButton').disable();\r",
+                    "            orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeDeleteButton').enable();\r",
+                    "        } else {\r",
+                    "            orderItemProductPersonalizeFormPanel.getForm().reset();\r",
+                    "            orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeEditButton').disable();\r",
+                    "            orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeSaveButton').disable();\r",
+                    "            orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeCancelButton').disable();\r",
+                    "            orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeDeleteButton').disable();\r",
+                    "        }        \r",
+                    "    });    \r",
+                    "\r",
+                    "}\r",
+                    "\r",
+                    "this.getOrderItemPanel().getComponent('OrderItemTabPanel').setActiveTab(this.getOrderItemDetailPanel());\r",
+                    "\r",
+                    "// Order Import\r",
+                    "panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderImportPanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderImportPanel());\r",
+                    "}\r",
+                    "\r",
+                    "this.getOrderPanel().getComponent('OrderOrderTabPanel').setActiveTab(this.getOrderItemPanel());\r",
+                    "\r",
+                    "\r",
+                    "// preselect order\r",
+                    "var orderOrderGridPanel = this.getOrderPanel().getComponent('OrderOrderGridPanel');\r",
+                    "orderOrderGridPanel.store.on('load', function(store, records, options){\r",
+                    "    orderOrderGridPanel.getSelectionModel().select(0);\r",
+                    "});\r",
+                    "Ext.getStore('OrderOrderJsonStore').load();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#OrderMenuItem"
+            },
+            "designerId": "f86c72b2-6f9f-4f25-beea-7fd50896194a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportMenuItemClick",
+                "implHandler": [
+                    "panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getReportPanel().ref);\r",
+                    "\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getMainPanel().getComponent('AppTabPanel').add(this.getReportPanel());\r",
+                    "}\r",
+                    "\r",
+                    "// Report Report\r",
+                    "panel = this.getReportPanel().getComponent('ReportReportTabPanel').getComponent(this.getReportReportPanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getReportPanel().getComponent('ReportReportTabPanel').add(this.getReportReportPanel());\r",
+                    "}\r",
+                    "\r",
+                    "this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getReportPanel());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#ReportMenuItem"
+            },
+            "designerId": "ad06c527-cc9e-4838-9ee1-34a466366bc9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onProductMenuItemClick",
+                "implHandler": [
+                    "panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getProductPanel().ref);\r",
+                    "\r",
+                    "if (panel === undefined) {\r",
+                    "\tthis.getMainPanel().getComponent('AppTabPanel').add(this.getProductPanel());\r",
+                    "}\r",
+                    "\r",
+                    "this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getProductPanel());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#ProductMenuItem"
+            },
+            "designerId": "0aa3cd33-5fb3-4cf8-b54a-b6a41021c614"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUserMenuItemClick",
+                "implHandler": [
+                    "panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getUserPanel().ref);\r",
+                    "\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getMainPanel().getComponent('AppTabPanel').add(this.getUserPanel());\r",
+                    "}\r",
+                    "\r",
+                    "this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getUserPanel());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#UserMenuItem"
+            },
+            "designerId": "512d2844-0f5f-43d1-a64b-03e721b46826"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "MainPanel",
+                "selector": "#MainPanel",
+                "xtype": "mainpanel"
+            },
+            "designerId": "995fd0af-71ae-43fb-a08f-2baf2cc96851"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "PartnerPanel",
+                "selector": "#PartnerPanel",
+                "xtype": "partnerpanel"
+            },
+            "designerId": "db276030-75db-4a07-88e0-14c99b72f0ab"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderPanel",
+                "selector": "#OrderPanel",
+                "xtype": "orderpanel"
+            },
+            "designerId": "08e4ca23-7d51-4c4d-8119-032f66e6a70d"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ReportPanel",
+                "selector": "#ReportPanel",
+                "xtype": "reportpanel"
+            },
+            "designerId": "21d01009-c15f-418c-b0d6-7eeb8fc33302"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ProductPanel",
+                "selector": "#ProductPanel",
+                "xtype": "productpanel"
+            },
+            "designerId": "4f7efa95-69a1-43c9-ac51-d9b894c54ea8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "UserPanel",
+                "selector": "#UserPanel",
+                "xtype": "userpanel"
+            },
+            "designerId": "c98485c8-781d-452d-bd77-fcc6f1f5bd1b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImportMenuItemClick",
+                "implHandler": [
+                    "panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getImportPanel().ref);\r",
+                    "\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getMainPanel().getComponent('AppTabPanel').add(this.getImportPanel());\r",
+                    "}\r",
+                    "\r",
+                    "this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getImportPanel());\r",
+                    "\r",
+                    "\r",
+                    "panel = this.getImportPanel().getComponent('ImportImportTabPanel').getComponent(this.getImportImportPanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    panel = this.getImportImportPanel();\r",
+                    "    this.getImportPanel().getComponent('ImportImportTabPanel').add(panel);\r",
+                    "}\r",
+                    "\r",
+                    "panel = this.getImportPanel().getComponent('ImportImportTabPanel').getComponent(this.getImportExecutePanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    panel = this.getImportExecutePanel();\r",
+                    "    this.getImportPanel().getComponent('ImportImportTabPanel').add(panel);\r",
+                    "}\r",
+                    "\r",
+                    "this.getImportPanel().getComponent('ImportImportTabPanel').setActiveTab(this.getImportImportPanel());\r",
+                    "\r",
+                    "\r",
+                    "panel = this.getImportImportPanel().getComponent('ImportActionPanel');\r",
+                    "\r",
+                    "if (panel === undefined) {\r",
+                    "\r",
+                    "    this.getImportImportPanel().add(this.getImportActionPanel());\r",
+                    "    this.getImportActionPanel().setRegion('center');\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "#ImportMenuItem"
+            },
+            "designerId": "21986dd5-a8c7-4ce3-a300-88defca3418b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportPanel",
+                "selector": "#ImportPanel",
+                "xtype": "importpanel"
+            },
+            "designerId": "dfc0a507-8599-439a-9609-c851791022d2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportImportPanel",
+                "selector": "#ImportImportPanel",
+                "xtype": "importimportpanel"
+            },
+            "designerId": "716cb908-0b0f-4a49-a3f0-7487f82f17e3"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportActionPanel",
+                "selector": "#ImportActionPanel",
+                "xtype": "importactionpanel"
+            },
+            "designerId": "f44854e6-928f-4968-bcd5-55108dcba8c8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderImportPanel",
+                "selector": "#OrderImportPanel",
+                "xtype": "orderimportpanel"
+            },
+            "designerId": "441a8abf-2c30-484e-aa9a-4e40622b224e"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemPanel",
+                "selector": "#OrderItemPanel",
+                "xtype": "orderitempanel"
+            },
+            "designerId": "1c05d556-6a78-48c2-8bdb-d3b4aeb77e78"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemDetailPanel",
+                "selector": "#OrderItemDetailPanel",
+                "xtype": "orderitemdetailpanel"
+            },
+            "designerId": "8eaec459-0bc2-4def-8dce-d308c767f635"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemPackagePackagePanel",
+                "selector": "#OrderItemPackagePackagePanel",
+                "xtype": "orderitempackagepackagepanel"
+            },
+            "designerId": "6e18c732-69c8-4cbf-939a-9c01e61c1f7a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemProductPersonalizePanel",
+                "selector": "#OrderItemProductPersonalizePanel",
+                "xtype": "orderitemproductpersonalizepanel"
+            },
+            "designerId": "a40141b9-6996-4eae-ac1d-bba1a1077fe2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ReportReportPanel",
+                "selector": "#ReportReportPanel",
+                "xtype": "reportreportpanel"
+            },
+            "designerId": "d2709de7-4b56-423b-bda8-7e7960e4d6eb"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportExecutePanel",
+                "selector": "#ImportExecutePanel",
+                "xtype": "importexecutepanel"
+            },
+            "designerId": "7bd91dd5-3d08-4517-bef9-2118ad3c83b7"
+        }
+    ]
+}

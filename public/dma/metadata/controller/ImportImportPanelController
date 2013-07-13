@@ -1,0 +1,245 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ImportImportPanelController"
+    },
+    "designerId": "da6991b7-092d-4de7-99cd-f509a4354a4c",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportImportPanel",
+                "selector": "#ImportImportPanel",
+                "xtype": "importimportpanel"
+            },
+            "designerId": "04281afd-ad32-45c5-a198-7c81307ae858"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormEditButtonClick",
+                "implHandler": [
+                    "panel = this.getImportImportPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('FormPanel');\r",
+                    "toolbar = panel.getComponent('FormToolbar');\r",
+                    "formPanel.enable();\r",
+                    "\r",
+                    "toolbar.getComponent('FormEditButton').disable();\r",
+                    "toolbar.getComponent('FormNewButton').disable();\r",
+                    "toolbar.getComponent('FormCancelButton').enable();\r",
+                    "toolbar.getComponent('FormSaveButton').enable();\r",
+                    "toolbar.getComponent('FormDeleteButton').disable();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#FormEditButton"
+            },
+            "designerId": "f5147914-f389-410b-acf4-53ee16e261f7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormNewButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('ImportImportJsonStore');\r",
+                    "panel = this.getImportImportPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('FormPanel');\r",
+                    "toolbar = panel.getComponent('FormToolbar');\r",
+                    "if (store !== undefined) {\r",
+                    "    //formPanel = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"FormPanel')[0];\r",
+                    "    formPanel.enable();\r",
+                    "    record = new store.model();\r",
+                    "    formPanel.loadRecord(record);\r",
+                    "    toolbar.getComponent('FormEditButton').disable();\r",
+                    "    toolbar.getComponent('FormNewButton').disable();\r",
+                    "    toolbar.getComponent('FormCancelButton').enable();\r",
+                    "    toolbar.getComponent('FormSaveButton').enable();\r",
+                    "    toolbar.getComponent('FormDeleteButton').disable();\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#FormNewButton"
+            },
+            "designerId": "daf58b65-7ed5-4a58-a703-3af2dbe78349"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormSaveButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('ImportImportJsonStore');\r",
+                    "panel = this.getImportImportPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('FormPanel');\r",
+                    "toolbar = panel.getComponent('FormToolbar');\r",
+                    "\r",
+                    "//grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "record = formPanel.getForm().getRecord();\r",
+                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                    "    values = formPanel.getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "    /*grid = button.ownerCt.ownerCt.ownerCt.getComponent('\" . $name . 'GridPanel' . \"');*/\r",
+                    "    //if (grid !== undefined) {\r",
+                    "    /*grid.getView().select(0);*/ /* BUG!!! */\r",
+                    "    //}\r",
+                    "} else {\r",
+                    "    formPanel.getForm().updateRecord();\r",
+                    "}\r",
+                    "formPanel.disable();\r",
+                    "toolbar.getComponent('FormEditButton').enable();\r",
+                    "toolbar.getComponent('FormNewButton').enable();\r",
+                    "toolbar.getComponent('FormCancelButton').disable();\r",
+                    "toolbar.getComponent('FormSaveButton').disable();\r",
+                    "toolbar.getComponent('FormDeleteButton').enable();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#FormSaveButton"
+            },
+            "designerId": "e0382690-8736-40f0-b210-2dcc460ae5f2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormCancelButtonClick",
+                "implHandler": [
+                    "panel = this.getImportImportPanel();\r",
+                    "grid = this.getImportPanel().getComponent('ImportImportGridPanel');\r",
+                    "\r",
+                    "formPanel = panel.getComponent('FormPanel');\r",
+                    "toolbar = panel.getComponent('FormToolbar');\r",
+                    "record = formPanel.getForm().getRecord();\t\t\t\t\t\t\t\t\r",
+                    "if (record !== undefined) {\r",
+                    "    formPanel.getForm().reset();\r",
+                    "    formPanel.disable();\r",
+                    "    toolbar.getComponent('FormEditButton').enable();\r",
+                    "    toolbar.getComponent('FormNewButton').enable();\r",
+                    "    toolbar.getComponent('FormCancelButton').disable();\r",
+                    "    toolbar.getComponent('FormSaveButton').disable();\r",
+                    "}\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "    grid.getView().select(0);\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#FormCancelButton"
+            },
+            "designerId": "d042160d-77ce-4d92-b047-e6e8c9a8835c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormDeleteButtonClick",
+                "implHandler": [
+                    "var store = Ext.getStore('ImportImportJsonStore');\r",
+                    "var panel = this.getImportImportPanel(); \r",
+                    "var grid = this.getImportPanel().getComponent('GridPanel');\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "Ext.Msg.confirm('Attention!', 'Datensatz löschen?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "        //grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "        formPanel = panel.getComponent('FormPanel');\r",
+                    "        record = formPanel.getForm().getRecord();\r",
+                    "        if (store !== undefined && record !== undefined) {\r",
+                    "            store.remove(record);\r",
+                    "            formPanel.getForm().reset();\r",
+                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "                grid.getView().select(0);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#FormDeleteButton"
+            },
+            "designerId": "40afcd73-dede-46e6-bc3c-3c7718b11b98"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportPanel",
+                "selector": "#ImportPanel",
+                "xtype": "importpanel"
+            },
+            "designerId": "ed8c473c-e785-47a6-9728-2a60abd48fcf"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportActionPanel",
+                "selector": "#ImportActionPanel",
+                "xtype": "importactionpanel"
+            },
+            "designerId": "d86f2ce6-ccbf-476a-95ee-cf3aca355b15"
+        }
+    ]
+}

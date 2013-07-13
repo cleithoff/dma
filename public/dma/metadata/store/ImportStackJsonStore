@@ -1,0 +1,42 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "ImportStackModel",
+        "storeId": "ImportStackJsonStore",
+        "designer|userClassName": "ImportStackJsonStore"
+    },
+    "designerId": "328a77aa-1b1f-45cc-aed1-0da238e3c71d",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/import/stack/index"
+            },
+            "designerId": "f3ec7b65-cb4b-4fdf-a200-27bc93997909",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "6a9783da-0e6f-4122-a181-c7806019dfc0"
+                }
+            ]
+        }
+    ]
+}

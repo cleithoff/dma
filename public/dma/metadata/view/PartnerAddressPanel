@@ -1,0 +1,183 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "itemId": "PartnerAddressPanel",
+        "width": 400,
+        "designer|userClassName": "PartnerAddressPanel",
+        "designer|userAlias": "partneraddresspanel",
+        "autoDestroy": false,
+        "layout": "border",
+        "closeAction": "hide",
+        "title": "Adressen"
+    },
+    "designerId": "7568b646-5b61-467b-b766-118fc1791552",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "PartnerAddressToolbar"
+            },
+            "designerId": "501fc36b-80fd-4d30-90c4-bf76bcc3fe58",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "PartnerAddressPLZButton",
+                        "text": "PLZ Bereinigung"
+                    },
+                    "designerId": "50072b5a-9a5b-4fbf-8887-679031367ec6"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "MyButton"
+                    },
+                    "designerId": "5a6ae397-a9ef-4a2d-9534-4184ffe87721"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "MyButton"
+                    },
+                    "designerId": "ebd899cf-860f-48ee-a6eb-cc37a687486f"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "MyButton"
+                    },
+                    "designerId": "99b8f865-7313-4228-a33d-64b09274ea23"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "itemId": "PartnerAddressTabPanel",
+                "activeTab": 0
+            },
+            "designerId": "3805e0d2-337d-4899-bf79-8c982af86f4d",
+            "cn": [
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 150,
+                        "itemId": "PartnerPartnerFormPanel",
+                        "bodyPadding": 10,
+                        "title": "Partner"
+                    },
+                    "designerId": "d1cca9d9-ebcd-4f19-8ae7-8c3627da50ff",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "d12cb722-d4fd-429d-a0f0-7c0454dc5723"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "PartnerAddressInvoiceFormPanel",
+                        "width": 150,
+                        "bodyPadding": 10,
+                        "title": "Rechnungsaddresse"
+                    },
+                    "designerId": "9b93dfe8-015b-472e-80ed-94ed0d370042",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "3363ce7b-b4e2-4a4b-94fd-56a0efd2efe6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "PartnerAddressDeliveryFormPanel",
+                        "bodyPadding": 10,
+                        "title": "Lieferaddresse"
+                    },
+                    "designerId": "415941f9-10a5-4ad6-8979-861273559617",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "a35b1b9a-11b0-438b-81ed-31ab0204003f"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

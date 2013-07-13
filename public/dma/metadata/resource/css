@@ -1,0 +1,14 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css",
+        "url": "dma/css/dma.css",
+        "id": "dma-css"
+    },
+    "designerId": "19aac798-033b-4d49-91d0-9839bb23dfe7"
+}

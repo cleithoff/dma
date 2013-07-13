@@ -1,0 +1,286 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 557,
+        "itemId": "ReportReportPanel",
+        "width": 753,
+        "designer|userClassName": "ReportReportPanel",
+        "designer|userAlias": "reportreportpanel",
+        "layout": "border",
+        "title": "Report"
+    },
+    "designerId": "0a15cfa6-3887-47b6-9f8e-cae60305fce4",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "ReportReportToolbar"
+            },
+            "designerId": "45cd9610-a274-48fa-84d9-76cc0472df7c",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportReportEditButton",
+                        "text": "Bearbeiten"
+                    },
+                    "designerId": "2a5cec32-5c6c-4c2f-ba85-54a95997af52"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "ReportReportNewButton",
+                        "text": "Neu"
+                    },
+                    "designerId": "5548e353-60a5-4f52-9c62-f77357e91fdb"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportReportSaveButton",
+                        "text": "Speichern"
+                    },
+                    "designerId": "54c8db4f-aee0-4e2e-b59d-bdbf531cc618"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportReportCancelButton",
+                        "text": "Abbrechen"
+                    },
+                    "designerId": "ec1966dc-9f84-4aa3-b53b-90898ca68eb7"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportReportDeleteButton",
+                        "text": "Löschen"
+                    },
+                    "designerId": "b9c6d3c1-7f48-406c-8b30-57551d6b239f"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportReportPreviewButton",
+                        "text": "Vorschau"
+                    },
+                    "designerId": "ee3f21a3-fcea-4a73-9ab9-647ae6d4651c"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportReportPrintButton",
+                        "text": "Drucken"
+                    },
+                    "designerId": "9dde29fe-6e92-43e2-8295-401b908ea1cf"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportReportExportButton",
+                        "text": "Export"
+                    },
+                    "designerId": "0266a3b8-6259-484b-82ee-243c1f161530"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "layout|split": true,
+                "disabled": true,
+                "height": 209,
+                "itemId": "ReportReportFormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "8130524e-9d30-4c0a-bb0e-38accd9b5ad2",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Title",
+                        "name": "title"
+                    },
+                    "designerId": "9f403777-6f7f-4ccb-b019-63c78ecf00f9"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Beschreibung",
+                        "name": "description"
+                    },
+                    "designerId": "1cbce714-dc15-45cd-97ec-5c03765c0874"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Query",
+                        "name": "sql"
+                    },
+                    "designerId": "1a7a0f02-314e-4263-86ae-456104e79650"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Dateiprefix",
+                        "name": "fileprefix"
+                    },
+                    "designerId": "72c338ef-672f-4a5d-9bf2-6e2d907f2f55"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "layout|split": true,
+                "height": 150,
+                "itemId": "ReportFilterFormPanel",
+                "bodyPadding": 10,
+                "title": "Filter"
+            },
+            "designerId": "0347b07d-792b-406d-844a-28b56ce7db26"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "layout|split": true,
+                "itemId": "ReportPreviewGridPanel",
+                "title": null
+            },
+            "designerId": "78eb32e9-66f1-46ba-841e-99ef2251f52e",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "bool",
+                        "text": "Boolean"
+                    },
+                    "designerId": "b7a32b7c-7c08-4d89-b545-8c9c6eb30cbd"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "a25fec68-48b9-41a8-b366-f59e1e9727c5"
+                }
+            ]
+        }
+    ]
+}

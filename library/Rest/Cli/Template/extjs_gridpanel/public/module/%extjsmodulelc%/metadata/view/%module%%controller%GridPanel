@@ -1,0 +1,55 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "%module%%controller%GridPanel",
+        "height": 250,
+        "width": 400,
+        "title": "%controller% Grid Panel",
+        "store": "%module%%controller%JsonStore"
+    },
+    "id": "ExtBox1-ext-gen%extjsgenid%",
+    "cn": [
+    	%extjscolumnsmetadata%,
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "%module%%controller%GridView"
+            }
+        },
+        {
+            "type": "rowselectionmodel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": "Ext.selection.RowModel",
+            "userConfig": {
+                "designer|userClassName": "%module%%controller%RowSelectionModel"
+            }
+        },
+        {
+            "type": "pagingtoolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "%module%%controller%PagingToolbar",
+                "width": 360,
+                "displayInfo": true
+            }
+        }
+    ]
+}

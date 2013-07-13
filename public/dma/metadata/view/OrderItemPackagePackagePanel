@@ -1,0 +1,345 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 492,
+        "itemId": "OrderItemPackagePackagePanel",
+        "width": 400,
+        "designer|userClassName": "OrderItemPackagePackagePanel",
+        "designer|userAlias": "orderitempackagepackagepanel",
+        "title": "Pakete"
+    },
+    "designerId": "377dbe86-e24e-4164-a17f-92871eeab996",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "OrderItemPackagePackageToolbar"
+            },
+            "designerId": "529ba040-7ae5-498e-bc9a-bce105906f55",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemPackagePackageEditButton",
+                        "text": "Bearbeiten"
+                    },
+                    "designerId": "50f543d8-268b-4073-8bf9-673505e19c47"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemPackagePackageSaveButton",
+                        "text": "Speichern"
+                    },
+                    "designerId": "89edf956-524f-4e0f-bd96-73cf17bf820b"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemPackagePackageCancelButton",
+                        "text": "Abbrechen"
+                    },
+                    "designerId": "667849b9-56bb-432e-bd9a-c3211809840d"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemPackagePackageDeleteButton",
+                        "text": "Löschen"
+                    },
+                    "designerId": "406956a0-2c64-4519-a1a4-e322ff2c39c0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "itemId": "OrderItemPackagePackageFormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "ccdc5eda-cc9d-4643-b8de-a577b5c81324",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Mantel",
+                        "name": "frame_type_title",
+                        "value": [
+                            "Display Field"
+                        ]
+                    },
+                    "designerId": "d11b295f-654c-4b50-b090-ecedd5f36274"
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Packet",
+                        "name": "package_type_title",
+                        "value": [
+                            "Display Field"
+                        ]
+                    },
+                    "designerId": "a2909749-9b31-419d-8ed4-783c25985db0"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Label",
+                        "name": "readytosend",
+                        "boxLabel": "fertig zum Versand",
+                        "inputValue": "1",
+                        "uncheckedValue": "0"
+                    },
+                    "designerId": "a236a4d3-5f8e-470b-a503-2cf1ee82da30"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Ausgangsdatum",
+                        "name": "outgoing"
+                    },
+                    "designerId": "db93cb3e-16e0-4b2f-a6b9-ab8fb7acf559"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Sendungsnummer",
+                        "name": "sendingnumber"
+                    },
+                    "designerId": "ab21f7c2-8c7a-4dbc-83b6-b8d2001428e2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "OrderItemPackagePackageGridPanel",
+                "title": null,
+                "store": "PackagePackageJsonStore"
+            },
+            "designerId": "57cf6b2d-e0e9-4bee-9a41-9a407b47a8c1",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "frame_type.title",
+                        "text": "Mantel"
+                    },
+                    "designerId": "9d4071c1-da10-4f0f-a362-00682523b793",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.frame_type.title;"
+                                ]
+                            },
+                            "designerId": "cf9dac37-7243-4c06-8112-95ac6afb6fcf"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "package_type.title",
+                        "text": "Packet"
+                    },
+                    "designerId": "6a000727-b447-4c11-afc3-db660d4f1bcc",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.package_type.title;"
+                                ]
+                            },
+                            "designerId": "d7f77688-b12f-418a-b21c-f9f01830568b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "amount",
+                        "text": "Menge"
+                    },
+                    "designerId": "7a0d05aa-1792-43ad-8119-2a2617c29cd0"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "outgoing",
+                        "text": "Ausgang"
+                    },
+                    "designerId": "637491ed-60a5-432f-9bdc-392e211f2b39"
+                },
+                {
+                    "type": "Ext.grid.column.CheckColumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "readytosend",
+                        "text": "versandfertig"
+                    },
+                    "designerId": "d78dadd8-509e-4e6c-9ac1-78947a6c3192"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "sendingnumber",
+                        "text": "Sendungsnummer"
+                    },
+                    "designerId": "5dbc1459-112c-43ae-8d64-099b8bc3d720"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "b5926961-aa32-4bf6-aba4-07929f35ab96"
+                }
+            ]
+        }
+    ]
+}

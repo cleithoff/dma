@@ -1,0 +1,469 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 550,
+        "itemId": "PartnerImportPanel",
+        "width": 782,
+        "designer|userClassName": "PartnerImportPanel",
+        "designer|userAlias": "partnerimportpanel",
+        "autoDestroy": false,
+        "layout": "border",
+        "title": "Import"
+    },
+    "designerId": "8d0c96f7-e35b-49b1-815f-17c28a50a44d",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "height": 71,
+                "itemId": "PartnerImportUploadFormPanel",
+                "bodyPadding": 10,
+                "title": null,
+                "titleCollapse": false
+            },
+            "designerId": "8c312e68-e332-4145-b90b-9f4a162a77e1",
+            "cn": [
+                {
+                    "type": "Ext.form.field.File",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "PartnerImportFileUpload",
+                        "fieldLabel": "CSV Datei",
+                        "name": null,
+                        "buttonText": "Auswählen..."
+                    },
+                    "designerId": "f600ca00-a757-4c60-af33-4c7aad12bb35"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "PartnerImportResetButton",
+                        "text": "Zurücksetzen"
+                    },
+                    "designerId": "3d79a8e3-eabe-4f75-9ad9-baf34f682ec5"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "PartnerImportUploadButton",
+                        "text": "Upload"
+                    },
+                    "designerId": "26f93db9-afce-4df2-8e36-743a878f11e5"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tree.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "itemId": "PartnerImportGridPanel",
+                "collapsible": false,
+                "title": null,
+                "normalViewConfig": null,
+                "enableColumnHide": false,
+                "enableColumnMove": false,
+                "rowLines": true,
+                "store": "ImportPartnerTreeStore",
+                "rootVisible": false,
+                "useArrows": true
+            },
+            "designerId": "9a877b45-7235-486a-820f-659a2f3a244f",
+            "isBuiltIn": true,
+            "iconCls": "icon-treegridpanel",
+            "autoName": "TreeGrid",
+            "cn": [
+                {
+                    "type": "Ext.tree.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "stripeRows": true,
+                        "rootVisible": false
+                    },
+                    "designerId": "5167ca49-ce26-43cf-8fd3-095aec221516",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "getRowClass",
+                                "designer|params": [
+                                    "record"
+                                ],
+                                "implHandler": [
+                                    "if (record.data.leaf !== true) {\r",
+                                    "    for (var idx in record.childNodes) {\r",
+                                    "        if (\r",
+                                    "        record.childNodes[idx].data.post_anrede != record.data.post_anrede\r",
+                                    "        || record.childNodes[idx].data.post_name1 != record.data.post_name1\r",
+                                    "        || record.childNodes[idx].data.post_name2 != record.data.post_name2\r",
+                                    "        || record.childNodes[idx].data.post_strasse != record.data.post_strasse\r",
+                                    "        || record.childNodes[idx].data.post_plz != record.data.post_plz\r",
+                                    "        || record.childNodes[idx].data.post_ort != record.data.post_ort\r",
+                                    "        || record.childNodes[idx].data.druck_hg_tel != record.data.druck_hg_tel\r",
+                                    "        ) {\r",
+                                    "            return 'conflict';\r",
+                                    "        }\r",
+                                    "    }\r",
+                                    "} \r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "a9a12272-849d-482a-8b1d-e00791119b3b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tree.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "text",
+                        "text": "Daten",
+                        "flex": 1
+                    },
+                    "designerId": "f1180115-4a5e-4998-a977-32438ccf8455"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_anrede",
+                        "text": "Anrede"
+                    },
+                    "designerId": "159de807-ab32-4f6d-a6bd-b2f44953fced",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "ff312f1b-feff-4fa8-bad8-fca22b1a9ad6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_name1",
+                        "text": "Name1"
+                    },
+                    "designerId": "16798ce0-fce9-4c27-970b-226ebfb1c5d1",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "02f08b82-5285-4398-90dd-03434a0c81cb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_name2",
+                        "text": "Name2"
+                    },
+                    "designerId": "d1a64c2d-f22f-49a4-be00-49cc23cad382",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "cefae211-0a7c-45ac-b937-b9778954361e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_strasse",
+                        "text": "Strasse"
+                    },
+                    "designerId": "fbba8da1-94ee-4940-8a2d-b882d8c20949",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "3d6120a9-3d01-42d2-a29e-51acb16fb9ae"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_plz",
+                        "text": "Ort"
+                    },
+                    "designerId": "8557b0f8-01f6-4b40-a864-0bc8a040f522",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "5b31adff-922b-44cb-bcfd-7e47936b11cf"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_ort",
+                        "text": "PLZ"
+                    },
+                    "designerId": "57ba77f5-4c3e-429d-a209-14644a17ad44",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "df411af3-fa5a-4c97-8634-21c2acba79f8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_hg_tel",
+                        "text": "Telefon"
+                    },
+                    "designerId": "7bbb79e2-3607-4647-bc1d-395ee3cbd713",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "42bf7f75-6e7d-4b1c-a228-d619d4c21bd0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.CellModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CellModel",
+                    "designerId": "a55c08b5-6d82-4b09-9b4e-b6f86a0dccca"
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "designerId": "3619312c-42ac-4057-85ed-8400b2c63c71",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCellEditingBeforeEdit",
+                                "implHandler": [
+                                    "var _event = e;\r",
+                                    "\r",
+                                    "if (e.record.data.leaf === true) {\r",
+                                    "\r",
+                                    "    e.record.parentNode.set(e.field, e.record.data[e.field]);\r",
+                                    "\r",
+                                    "    var params = new Object();\r",
+                                    "    params.id = e.record.parentNode.data.idx;\r",
+                                    "    params.partner_nr = e.record.parentNode.data.partner_nr;\r",
+                                    "    params[e.field] = e.record.data[e.field];\r",
+                                    "\r",
+                                    "    Ext.Ajax.request({\r",
+                                    "        url: '/import/partnercompare',\r",
+                                    "        method: 'PUT',\r",
+                                    "        jsonData: JSON.stringify(params),\r",
+                                    "        success: function(response, opts) {\r",
+                                    "            _event.record.parentNode.commit();\r",
+                                    "        },\r",
+                                    "        failure: function(response, opts) {\r",
+                                    "            //console.log('server-side failure with status code ' + response.status);\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "\r",
+                                    "    return false;\r",
+                                    "}"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "designerId": "79a5d62b-fe6f-4c2d-8040-fb7a71c06c35"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCellEditingEdit",
+                                "implHandler": [
+                                    "var _event = e;\r",
+                                    "\r",
+                                    "if (e.record.data.leaf === false) {\r",
+                                    "    var params = new Object();\r",
+                                    "    params.id = e.record.data.idx;\r",
+                                    "    params.partner_nr = e.record.data.partner_nr;\r",
+                                    "    params[e.field] = e.record.data[e.field];\r",
+                                    "\r",
+                                    "    Ext.Ajax.request({\r",
+                                    "        url: '/import/partnercompare',\r",
+                                    "        method: 'PUT',\r",
+                                    "        jsonData: JSON.stringify(params),\r",
+                                    "        success: function(response, opts) {\r",
+                                    "            _event.record.commit();\r",
+                                    "        },\r",
+                                    "        failure: function(response, opts) {\r",
+                                    "            //console.log('server-side failure with status code ' + response.status);\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "\r",
+                                    "    return false;\r",
+                                    "}"
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "designerId": "3d76c234-de50-4eca-a8c2-6a826643a7a7"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "south",
+                "height": 45,
+                "itemId": "PartnerImportImportFormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "5b1a4c12-5ed8-4ae5-8596-ea1cdad329a3",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "PartnerImportImportButton",
+                        "text": "Import"
+                    },
+                    "designerId": "b741c34e-87d9-43fb-87c1-a1e69d6aae86"
+                }
+            ]
+        }
+    ]
+}

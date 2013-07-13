@@ -1,0 +1,48 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "ImportOrderTreeModel",
+        "storeId": "ImportOrderTreeStore",
+        "designer|userClassName": "ImportOrderTreeStore"
+    },
+    "designerId": "4f3cc5b1-ef3b-4eb7-b3bd-64517917cfdb",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/import/order/tree"
+            },
+            "designerId": "8460cbac-9d0c-4e1c-b4c7-d1cc83e5db37",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "7f54e5ac-cbfa-4c39-9e8f-b8f01b2b7e64"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "42d735b4-2ca3-43d7-8ac8-2d1b6e1213bd"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,226 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "itemId": "OrderItemProductPersonalizePanel",
+        "width": 400,
+        "designer|userClassName": "OrderItemProductPersonalizePanel",
+        "designer|userAlias": "orderitemproductpersonalizepanel",
+        "title": "Personalisierung"
+    },
+    "designerId": "ce59226c-e8a1-41c2-b726-4c76d72795dc",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "OrderItemProductPersonalizeToolbar"
+            },
+            "designerId": "8fdfdfe2-4e22-4ab0-8148-874277ec2d1d",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemProductPersonalizeEditButton",
+                        "text": "Bearbeiten"
+                    },
+                    "designerId": "797435d1-a4ad-47a8-aac5-08beac271e8a"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemProductPersonalizeNewButton",
+                        "text": "Neu"
+                    },
+                    "designerId": "92a97b7c-688f-45fc-9086-973c238ceb29"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemProductPersonalizeSaveButton",
+                        "text": "Speichern"
+                    },
+                    "designerId": "a127d196-8c61-4afd-9ed0-fc5a86dda351"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemProductPersonalizeCancelButton",
+                        "text": "Abbrechen"
+                    },
+                    "designerId": "0b7dcc3a-2081-4757-86c0-0a4b5bec46de"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemProductPersonalizeDeleteButton",
+                        "text": "Löschen"
+                    },
+                    "designerId": "598463e0-d810-4335-8c98-c92404e28838"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "itemId": "OrderItemProductPersonalizeFormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "e30e112b-f13d-4b7e-afa5-afdc3a22eac3",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "OrderItemProductPersonalizeComboBox",
+                        "fieldLabel": "Schlüssel",
+                        "name": "product_personalize_id",
+                        "displayField": "key",
+                        "store": "ProductLayoutHasProductPersonalizeJsonStore",
+                        "triggerAction": "query",
+                        "valueField": "product_personalize_id"
+                    },
+                    "designerId": "0b7820d6-09b4-42d0-be48-4cc57a81168a"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Wert",
+                        "name": "value"
+                    },
+                    "designerId": "f63445bf-f57e-4c9e-ac9b-e90422b55411"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Label",
+                        "name": "product_layout_id"
+                    },
+                    "designerId": "88e70c81-62a6-4b51-9a68-0b1841dbd6dd"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "OrderItemProductPersonalizeGridPanel",
+                "title": null,
+                "store": "OrderItemHasProductPersonalizeJsonStore"
+            },
+            "designerId": "34ab846d-630c-493e-aa6e-7c1e3d3d34be",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 200,
+                        "dataIndex": "key",
+                        "text": "Schlüssel"
+                    },
+                    "designerId": "117b7301-858c-4096-a103-43d353c93b67"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "value",
+                        "text": "Wert",
+                        "flex": 1
+                    },
+                    "designerId": "5b785d57-f243-4f2c-9e0c-d9388ab0f158"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "7d381b9d-ba39-4c25-886c-18112fe9be4f"
+                }
+            ]
+        }
+    ]
+}

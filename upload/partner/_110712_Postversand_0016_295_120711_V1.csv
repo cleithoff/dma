@@ -1,0 +1,580 @@
+geliefert;Partner-Nr.;Anzahl;Post-Anrede;Post-Name1;Post-Name2;Post-Straße;Post-PLZ;Post-Ort;Floh;Teile;Aufkl. 1;Gew. Paket 1;FLOH_Druck;Aufkl. 2;Aufkl. 3;Gew. Paket 2;Gew. Paket 3;Gesamtgewicht;Verketten
+2251;04110600;3000;Blumenhaus;Blumenhaus Fehrenbach GmbH,;Monika u. Eberhard Röger;Zähringerplatz 15;78464;Konstanz;0016;1;Pak 1/3;26,7;0016-Pak 1/3;Pak 2/3;Pak 3/3;26,7;14,3;67,7;0016-Pak 1/3
+2251;04110600;3000;Blumenhaus;Blumenhaus Fehrenbach GmbH,;Monika u. Eberhard Röger;Zähringerplatz 15;78464;Konstanz;0016;1;Pak 2/3;26,7;0016-Pak 2/3;;;;;;0016-Pak 2/3
+2251;04110600;3000;Blumenhaus;Blumenhaus Fehrenbach GmbH,;Monika u. Eberhard Röger;Zähringerplatz 15;78464;Konstanz;0016;1;Pak 3/3;14,3;0016-Pak 3/3;;;;;;0016-Pak 3/3
+744;01327700;3000;Blumenhaus;Alois Brandl GmbH;;Ungererstr. 141;80805;München;0017;1;Pak 1/3;26,7;0017-Pak 1/3;Pak 2/3;Pak 3/3;26,7;14,3;67,7;0017-Pak 1/3
+744;01327700;3000;Blumenhaus;Alois Brandl GmbH;;Ungererstr. 141;80805;München;0017;1;Pak 2/3;26,7;0017-Pak 2/3;;;;;;0017-Pak 2/3
+744;01327700;3000;Blumenhaus;Alois Brandl GmbH;;Ungererstr. 141;80805;München;0017;1;Pak 3/3;14,3;0017-Pak 3/3;;;;;;0017-Pak 3/3
+2415;04444400;2900;Blumenhaus;Stephan Hanisch Blumeneinzelhandel GmbH;;Willy-Brandt-Platz 5-7;04109;Leipzig;0018;1;Pak 1/3;26,7;0018-Pak 1/3;Pak 2/3;Pak 3/3;26,7;12,2;65,6;0018-Pak 1/3
+2415;04444400;2900;Blumenhaus;Stephan Hanisch Blumeneinzelhandel GmbH;;Willy-Brandt-Platz 5-7;04109;Leipzig;0018;1;Pak 2/3;26,7;0018-Pak 2/3;;;;;;0018-Pak 2/3
+2415;04444400;2900;Blumenhaus;Stephan Hanisch Blumeneinzelhandel GmbH;;Willy-Brandt-Platz 5-7;04109;Leipzig;0018;1;Pak 3/3;12,2;0018-Pak 3/3;;;;;;0018-Pak 3/3
+5210;22308800;2900;Blumenhaus;Rosche,;Carola, Blumen & Pflanzen;Hildburghauser Str. 73;12279;Berlin;0019;1;Pak 1/3;26,7;0019-Pak 1/3;Pak 2/3;Pak 3/3;26,7;12,2;65,6;0019-Pak 1/3
+5210;22308800;2900;Blumenhaus;Rosche,;Carola, Blumen & Pflanzen;Hildburghauser Str. 73;12279;Berlin;0019;1;Pak 2/3;26,7;0019-Pak 2/3;;;;;;0019-Pak 2/3
+5210;22308800;2900;Blumenhaus;Rosche,;Carola, Blumen & Pflanzen;Hildburghauser Str. 73;12279;Berlin;0019;1;Pak 3/3;12,2;0019-Pak 3/3;;;;;;0019-Pak 3/3
+2610;04829100;2900;Blumenhaus;Lüdtke,;Holger, Lieblingsblumen;Alter Markt 1;39104;Magdeburg;0020;1;Pak 1/3;26,7;0020-Pak 1/3;Pak 2/3;Pak 3/3;26,7;12,2;65,6;0020-Pak 1/3
+2610;04829100;2900;Blumenhaus;Lüdtke,;Holger, Lieblingsblumen;Alter Markt 1;39104;Magdeburg;0020;1;Pak 2/3;26,7;0020-Pak 2/3;;;;;;0020-Pak 2/3
+2610;04829100;2900;Blumenhaus;Lüdtke,;Holger, Lieblingsblumen;Alter Markt 1;39104;Magdeburg;0020;1;Pak 3/3;12,2;0020-Pak 3/3;;;;;;0020-Pak 3/3
+922;01638500;2800;Blumenhaus;1896 Blumen - See - Dufour;Inh. Jochen Dufour e.Kfm.;Louisenstr. 89;61348;Bad Homburg;0021;1;Pak 1/3;26,7;0021-Pak 1/3;Pak 2/3;Pak 3/3;26,7;10;63,4;0021-Pak 1/3
+922;01638500;2800;Blumenhaus;1896 Blumen - See - Dufour;Inh. Jochen Dufour e.Kfm.;Louisenstr. 89;61348;Bad Homburg;0021;1;Pak 2/3;26,7;0021-Pak 2/3;;;;;;0021-Pak 2/3
+922;01638500;2800;Blumenhaus;1896 Blumen - See - Dufour;Inh. Jochen Dufour e.Kfm.;Louisenstr. 89;61348;Bad Homburg;0021;1;Pak 3/3;10;0021-Pak 3/3;;;;;;0021-Pak 3/3
+636;01156000;2800;Blumenhaus;Blumen-Pleuger GmbH;;Tennenbacher Str. 51;79106;Freiburg;0022;1;Pak 1/3;26,7;0022-Pak 1/3;Pak 2/3;Pak 3/3;26,7;10;63,4;0022-Pak 1/3
+636;01156000;2800;Blumenhaus;Blumen-Pleuger GmbH;;Tennenbacher Str. 51;79106;Freiburg;0022;1;Pak 2/3;26,7;0022-Pak 2/3;;;;;;0022-Pak 2/3
+636;01156000;2800;Blumenhaus;Blumen-Pleuger GmbH;;Tennenbacher Str. 51;79106;Freiburg;0022;1;Pak 3/3;10;0022-Pak 3/3;;;;;;0022-Pak 3/3
+1080;01894200;2800;Blumenhaus;Daecke,;Thyra, Blumen Ilona Bauer;Waldfriedhofstr. 107;81377;München;0023;1;Pak 1/3;26,7;0023-Pak 1/3;Pak 2/3;Pak 3/3;26,7;10;63,4;0023-Pak 1/3
+1080;01894200;2800;Blumenhaus;Daecke,;Thyra, Blumen Ilona Bauer;Waldfriedhofstr. 107;81377;München;0023;1;Pak 2/3;26,7;0023-Pak 2/3;;;;;;0023-Pak 2/3
+1080;01894200;2800;Blumenhaus;Daecke,;Thyra, Blumen Ilona Bauer;Waldfriedhofstr. 107;81377;München;0023;1;Pak 3/3;10;0023-Pak 3/3;;;;;;0023-Pak 3/3
+229;00434700;2700;Blumenhaus;Blumen-Koch Berlin;Inh. Christian Koch e.K.;Westfälische Str. 38;10711;Berlin;0024;1;Pak 1/3;26,7;0024-Pak 1/3;Pak 2/3;Pak 3/3;26,7;7,4;60,8;0024-Pak 1/3
+229;00434700;2700;Blumenhaus;Blumen-Koch Berlin;Inh. Christian Koch e.K.;Westfälische Str. 38;10711;Berlin;0024;1;Pak 2/3;26,7;0024-Pak 2/3;;;;;;0024-Pak 2/3
+229;00434700;2700;Blumenhaus;Blumen-Koch Berlin;Inh. Christian Koch e.K.;Westfälische Str. 38;10711;Berlin;0024;1;Pak 3/3;7,4;0024-Pak 3/3;;;;;;0024-Pak 3/3
+3108;06061100;2700;Blumenhaus;Blumen Jahn GmbH;;Weißer Str. 3;50996;Köln;0025;1;Pak 1/3;26,7;0025-Pak 1/3;Pak 2/3;Pak 3/3;26,7;7,4;60,8;0025-Pak 1/3
+3108;06061100;2700;Blumenhaus;Blumen Jahn GmbH;;Weißer Str. 3;50996;Köln;0025;1;Pak 2/3;26,7;0025-Pak 2/3;;;;;;0025-Pak 2/3
+3108;06061100;2700;Blumenhaus;Blumen Jahn GmbH;;Weißer Str. 3;50996;Köln;0025;1;Pak 3/3;7,4;0025-Pak 3/3;;;;;;0025-Pak 3/3
+2438;04486700;2600;Blumenhaus;Finke,;Eva-Maria;Am Margaretenhof 8;19057;Schwerin;0026;1;Pak 1/3;26,7;0026-Pak 1/3;Pak 2/3;Pak 3/3;26,7;5,3;58,7;0026-Pak 1/3
+2438;04486700;2600;Blumenhaus;Finke,;Eva-Maria;Am Margaretenhof 8;19057;Schwerin;0026;1;Pak 2/3;26,7;0026-Pak 2/3;;;;;;0026-Pak 2/3
+2438;04486700;2600;Blumenhaus;Finke,;Eva-Maria;Am Margaretenhof 8;19057;Schwerin;0026;1;Pak 3/3;5,3;0026-Pak 3/3;;;;;;0026-Pak 3/3
+1013;01786900;2600;Blumenhaus;AAA aus dem Siepen e.K.;;Oststr. 128;47057;Duisburg;0027;1;Pak 1/3;26,7;0027-Pak 1/3;Pak 2/3;Pak 3/3;26,7;5,3;58,7;0027-Pak 1/3
+1013;01786900;2600;Blumenhaus;AAA aus dem Siepen e.K.;;Oststr. 128;47057;Duisburg;0027;1;Pak 2/3;26,7;0027-Pak 2/3;;;;;;0027-Pak 2/3
+1013;01786900;2600;Blumenhaus;AAA aus dem Siepen e.K.;;Oststr. 128;47057;Duisburg;0027;1;Pak 3/3;5,3;0027-Pak 3/3;;;;;;0027-Pak 3/3
+1702;03008800;2600;Blumenhaus;Blumen-Fischer e.K.,;Inh. Jörg und Ted Rochau;Königstr. 28;70173;Stuttgart;0028;1;Pak 1/3;26,7;0028-Pak 1/3;Pak 2/3;Pak 3/3;26,7;5,3;58,7;0028-Pak 1/3
+1702;03008800;2600;Blumenhaus;Blumen-Fischer e.K.,;Inh. Jörg und Ted Rochau;Königstr. 28;70173;Stuttgart;0028;1;Pak 2/3;26,7;0028-Pak 2/3;;;;;;0028-Pak 2/3
+1702;03008800;2600;Blumenhaus;Blumen-Fischer e.K.,;Inh. Jörg und Ted Rochau;Königstr. 28;70173;Stuttgart;0028;1;Pak 3/3;5,3;0028-Pak 3/3;;;;;;0028-Pak 3/3
+254;00481800;2500;Blumenhaus;"FlorisTick ""Am Antonplatz""";;Berliner Allee 18;13088;Berlin;0029;1;Pak 1/3;26,7;0029-Pak 1/3;Pak 2/3;Pak 3/3;26,7;3,1;56,5;0029-Pak 1/3
+254;00481800;2500;Blumenhaus;"FlorisTick ""Am Antonplatz""";;Berliner Allee 18;13088;Berlin;0029;1;Pak 2/3;26,7;0029-Pak 2/3;;;;;;0029-Pak 2/3
+254;00481800;2500;Blumenhaus;"FlorisTick ""Am Antonplatz""";;Berliner Allee 18;13088;Berlin;0029;1;Pak 3/3;3,1;0029-Pak 3/3;;;;;;0029-Pak 3/3
+1426;02477300;2500;Blumenhaus;Anthurium Blumenhaus;Neumann GmbH & Co. KG;Alexanderstr. 358-360;26127;Oldenburg;0030;1;Pak 1/3;26,7;0030-Pak 1/3;Pak 2/3;Pak 3/3;26,7;3,1;56,5;0030-Pak 1/3
+1426;02477300;2500;Blumenhaus;Anthurium Blumenhaus;Neumann GmbH & Co. KG;Alexanderstr. 358-360;26127;Oldenburg;0030;1;Pak 2/3;26,7;0030-Pak 2/3;;;;;;0030-Pak 2/3
+1426;02477300;2500;Blumenhaus;Anthurium Blumenhaus;Neumann GmbH & Co. KG;Alexanderstr. 358-360;26127;Oldenburg;0030;1;Pak 3/3;3,1;0030-Pak 3/3;;;;;;0030-Pak 3/3
+1200;02094800;2500;Blumenhaus;Strotmann;Maria, Blumen für nette Leute;Heeper Str. 167;33607;Bielefeld;0031;1;Pak 1/3;26,7;0031-Pak 1/3;Pak 2/3;Pak 3/3;26,7;3,1;56,5;0031-Pak 1/3
+1200;02094800;2500;Blumenhaus;Strotmann;Maria, Blumen für nette Leute;Heeper Str. 167;33607;Bielefeld;0031;1;Pak 2/3;26,7;0031-Pak 2/3;;;;;;0031-Pak 2/3
+1200;02094800;2500;Blumenhaus;Strotmann;Maria, Blumen für nette Leute;Heeper Str. 167;33607;Bielefeld;0031;1;Pak 3/3;3,1;0031-Pak 3/3;;;;;;0031-Pak 3/3
+2370;04350101;2500;Blumenhaus;Jenner,;Reiner;Willy-Brandt-Platz 5;69115;Heidelberg;0032;1;Pak 1/3;26,7;0032-Pak 1/3;Pak 2/3;Pak 3/3;26,7;3,1;56,5;0032-Pak 1/3
+2370;04350101;2500;Blumenhaus;Jenner,;Reiner;Willy-Brandt-Platz 5;69115;Heidelberg;0032;1;Pak 2/3;26,7;0032-Pak 2/3;;;;;;0032-Pak 2/3
+2370;04350101;2500;Blumenhaus;Jenner,;Reiner;Willy-Brandt-Platz 5;69115;Heidelberg;0032;1;Pak 3/3;3,1;0032-Pak 3/3;;;;;;0032-Pak 3/3
+2582;04776900;2500;Blumenhaus;Blumenhaus Wittelsbach,;Annemarie Junghanns GMBH;Lenbachplatz 7;80333;München;0033;1;Pak 1/3;26,7;0033-Pak 1/3;Pak 2/3;Pak 3/3;26,7;3,1;56,5;0033-Pak 1/3
+2582;04776900;2500;Blumenhaus;Blumenhaus Wittelsbach,;Annemarie Junghanns GMBH;Lenbachplatz 7;80333;München;0033;1;Pak 2/3;26,7;0033-Pak 2/3;;;;;;0033-Pak 2/3
+2582;04776900;2500;Blumenhaus;Blumenhaus Wittelsbach,;Annemarie Junghanns GMBH;Lenbachplatz 7;80333;München;0033;1;Pak 3/3;3,1;0033-Pak 3/3;;;;;;0033-Pak 3/3
+231;00438800;2400;Blumenhaus;Anthurium Services GmbH;;Hermsdorfer Damm 139;13467;Berlin;0034;1;Pak 1/3;26,7;0034-Pak 1/3;Pak 2/3;Pak 3/3;26,7;1;54,4;0034-Pak 1/3
+231;00438800;2400;Blumenhaus;Anthurium Services GmbH;;Hermsdorfer Damm 139;13467;Berlin;0034;1;Pak 2/3;26,7;0034-Pak 2/3;;;;;;0034-Pak 2/3
+231;00438800;2400;Blumenhaus;Anthurium Services GmbH;;Hermsdorfer Damm 139;13467;Berlin;0034;1;Pak 3/3;1;0034-Pak 3/3;;;;;;0034-Pak 3/3
+1091;01911900;2400;Blumenhaus;Ernst W.H. Roeber;vorm. Herm. Dohr;Hindenburgstr. 9-11;28717;Bremen;0035;1;Pak 1/3;26,7;0035-Pak 1/3;Pak 2/3;Pak 3/3;26,7;1;54,4;0035-Pak 1/3
+1091;01911900;2400;Blumenhaus;Ernst W.H. Roeber;vorm. Herm. Dohr;Hindenburgstr. 9-11;28717;Bremen;0035;1;Pak 2/3;26,7;0035-Pak 2/3;;;;;;0035-Pak 2/3
+1091;01911900;2400;Blumenhaus;Ernst W.H. Roeber;vorm. Herm. Dohr;Hindenburgstr. 9-11;28717;Bremen;0035;1;Pak 3/3;1;0035-Pak 3/3;;;;;;0035-Pak 3/3
+2764;05157500;2400;Blumenhaus;Barnert,;Ingrid, Blumen Barnert;Keferloher Str. 103;80807;München;0036;1;Pak 1/3;26,7;0036-Pak 1/3;Pak 2/3;Pak 3/3;26,7;1;54,4;0036-Pak 1/3
+2764;05157500;2400;Blumenhaus;Barnert,;Ingrid, Blumen Barnert;Keferloher Str. 103;80807;München;0036;1;Pak 2/3;26,7;0036-Pak 2/3;;;;;;0036-Pak 2/3
+2764;05157500;2400;Blumenhaus;Barnert,;Ingrid, Blumen Barnert;Keferloher Str. 103;80807;München;0036;1;Pak 3/3;1;0036-Pak 3/3;;;;;;0036-Pak 3/3
+622;01139700;2300;Blumenhaus;Wolf,;Anke, Primula Florale Kunst;Frankfurter Allee 247;10365;Berlin;0037;1;Pak 1/2;26,7;0037-Pak 1/2;Pak 2/2;;25,3;;52;0037-Pak 1/2
+622;01139700;2300;Blumenhaus;Wolf,;Anke, Primula Florale Kunst;Frankfurter Allee 247;10365;Berlin;0037;1;Pak 2/2;25,3;0037-Pak 2/2;;;;;;0037-Pak 2/2
+3779;08078200;2300;Blumenhaus;Treptower Blumen-Handels GmbH;;Buntzelstr. 2-10;12526;Berlin;0038;1;Pak 1/2;26,7;0038-Pak 1/2;Pak 2/2;;25,3;;52;0038-Pak 1/2
+3779;08078200;2300;Blumenhaus;Treptower Blumen-Handels GmbH;;Buntzelstr. 2-10;12526;Berlin;0038;1;Pak 2/2;25,3;0038-Pak 2/2;;;;;;0038-Pak 2/2
+3163;06226900;2300;Blumenhaus;Absolut Floristik;Inhaber Britta Meyer e.K.;Fuhlsbüttler Str. 172;22305;Hamburg;0039;1;Pak 1/2;26,7;0039-Pak 1/2;Pak 2/2;;25,3;;52;0039-Pak 1/2
+3163;06226900;2300;Blumenhaus;Absolut Floristik;Inhaber Britta Meyer e.K.;Fuhlsbüttler Str. 172;22305;Hamburg;0039;1;Pak 2/2;25,3;0039-Pak 2/2;;;;;;0039-Pak 2/2
+2719;05052800;2300;Blumenhaus;Kersting,;Ute, BlumenCompany;Lindemannstr. 51;44137;Dortmund;0040;1;Pak 1/2;26,7;0040-Pak 1/2;Pak 2/2;;25,3;;52;0040-Pak 1/2
+2719;05052800;2300;Blumenhaus;Kersting,;Ute, BlumenCompany;Lindemannstr. 51;44137;Dortmund;0040;1;Pak 2/2;25,3;0040-Pak 2/2;;;;;;0040-Pak 2/2
+848;01499000;2300;Blumenhaus;Blumen Schmohr GmbH & Co. KG;;Willy-Brandt-Platz 9;59065;Hamm;0041;1;Pak 1/2;26,7;0041-Pak 1/2;Pak 2/2;;25,3;;52;0041-Pak 1/2
+848;01499000;2300;Blumenhaus;Blumen Schmohr GmbH & Co. KG;;Willy-Brandt-Platz 9;59065;Hamm;0041;1;Pak 2/2;25,3;0041-Pak 2/2;;;;;;0041-Pak 2/2
+5188;21938600;2300;Blumenhaus;Bauer,;Sonja, Blumen Simon;Friedhofstr. 1;87527;Sonthofen;0042;1;Pak 1/2;26,7;0042-Pak 1/2;Pak 2/2;;25,3;;52;0042-Pak 1/2
+5188;21938600;2300;Blumenhaus;Bauer,;Sonja, Blumen Simon;Friedhofstr. 1;87527;Sonthofen;0042;1;Pak 2/2;25,3;0042-Pak 2/2;;;;;;0042-Pak 2/2
+417;00768600;2200;Blumenhaus;Blumen Eicks OHG;;Sand 19;21073;Hamburg;0043;1;Pak 1/2;26,7;0043-Pak 1/2;Pak 2/2;;23,2;;49,9;0043-Pak 1/2
+417;00768600;2200;Blumenhaus;Blumen Eicks OHG;;Sand 19;21073;Hamburg;0043;1;Pak 2/2;23,2;0043-Pak 2/2;;;;;;0043-Pak 2/2
+4726;11792400;2200;Blumenhaus;Lennartz,;Heinz-Jürgen;Warendorfer Str. 125;48145;Münster;0044;1;Pak 1/2;26,7;0044-Pak 1/2;Pak 2/2;;23,2;;49,9;0044-Pak 1/2
+4726;11792400;2200;Blumenhaus;Lennartz,;Heinz-Jürgen;Warendorfer Str. 125;48145;Münster;0044;1;Pak 2/2;23,2;0044-Pak 2/2;;;;;;0044-Pak 2/2
+2980;05701600;2200;Blumenhaus;Blumen Klaus Pitschak GmbH;;Trankgasse 11;50667;Köln;0045;1;Pak 1/2;26,7;0045-Pak 1/2;Pak 2/2;;23,2;;49,9;0045-Pak 1/2
+2980;05701600;2200;Blumenhaus;Blumen Klaus Pitschak GmbH;;Trankgasse 11;50667;Köln;0045;1;Pak 2/2;23,2;0045-Pak 2/2;;;;;;0045-Pak 2/2
+4591;11334100;2200;Blumenhaus;Blumenstudio Wenk OHG,;Inh. Harald und Christian Wenk;Hintere Bleiche 32;55116;Mainz;0046;1;Pak 1/2;26,7;0046-Pak 1/2;Pak 2/2;;23,2;;49,9;0046-Pak 1/2
+4591;11334100;2200;Blumenhaus;Blumenstudio Wenk OHG,;Inh. Harald und Christian Wenk;Hintere Bleiche 32;55116;Mainz;0046;1;Pak 2/2;23,2;0046-Pak 2/2;;;;;;0046-Pak 2/2
+1469;02541000;2200;Blumenhaus;Blumen Bauriedl GmbH;;Helene-Mayer-Ring 19;80809;München;0047;1;Pak 1/2;26,7;0047-Pak 1/2;Pak 2/2;;23,2;;49,9;0047-Pak 1/2
+1469;02541000;2200;Blumenhaus;Blumen Bauriedl GmbH;;Helene-Mayer-Ring 19;80809;München;0047;1;Pak 2/2;23,2;0047-Pak 2/2;;;;;;0047-Pak 2/2
+4547;11214700;2200;Blumenhaus;Flaschka,;Annabella;Brückenstr. 8;86153;Augsburg;0048;1;Pak 1/2;26,7;0048-Pak 1/2;Pak 2/2;;23,2;;49,9;0048-Pak 1/2
+4547;11214700;2200;Blumenhaus;Flaschka,;Annabella;Brückenstr. 8;86153;Augsburg;0048;1;Pak 2/2;23,2;0048-Pak 2/2;;;;;;0048-Pak 2/2
+1401;02435000;2200;Blumenhaus;Blumen Kuhn Floraldesign GmbH;im Zentrum;Vordere Sterngasse 13;90402;Nürnberg;0049;1;Pak 1/2;26,7;0049-Pak 1/2;Pak 2/2;;23,2;;49,9;0049-Pak 1/2
+1401;02435000;2200;Blumenhaus;Blumen Kuhn Floraldesign GmbH;im Zentrum;Vordere Sterngasse 13;90402;Nürnberg;0049;1;Pak 2/2;23,2;0049-Pak 2/2;;;;;;0049-Pak 2/2
+872;01550100;2100;Blumenhaus;Atelier Florist Menck,;Inh. Klaus Menck;Hölertwiete 8;21073;Hamburg;0050;1;Pak 1/2;26,7;0050-Pak 1/2;Pak 2/2;;20,9;;47,6;0050-Pak 1/2
+872;01550100;2100;Blumenhaus;Atelier Florist Menck,;Inh. Klaus Menck;Hölertwiete 8;21073;Hamburg;0050;1;Pak 2/2;20,9;0050-Pak 2/2;;;;;;0050-Pak 2/2
+4892;12360801;2100;Blumenhaus;Gärtnerei Martens Blumen und;Pflanzenhandelsgesellschaft mbH;Möllner Str. 22 b;21514;Büchen;0051;1;Pak 1/2;26,7;0051-Pak 1/2;Pak 2/2;;20,9;;47,6;0051-Pak 1/2
+4892;12360801;2100;Blumenhaus;Gärtnerei Martens Blumen und;Pflanzenhandelsgesellschaft mbH;Möllner Str. 22 b;21514;Büchen;0051;1;Pak 2/2;20,9;0051-Pak 2/2;;;;;;0051-Pak 2/2
+2015;03647900;2100;Blumenhaus;Blumen Mardt,;Inh. Heinz-Hermann Mardt;Kunaustr. 11 c;22393;Hamburg;0052;1;Pak 1/2;26,7;0052-Pak 1/2;Pak 2/2;;20,9;;47,6;0052-Pak 1/2
+2015;03647900;2100;Blumenhaus;Blumen Mardt,;Inh. Heinz-Hermann Mardt;Kunaustr. 11 c;22393;Hamburg;0052;1;Pak 2/2;20,9;0052-Pak 2/2;;;;;;0052-Pak 2/2
+4271;09230800;2100;Blumenhaus;Lüdemann Pflanzen und Floristik GmbH;;Ulzburger Str. 443;22846;Norderstedt;0053;1;Pak 1/2;26,7;0053-Pak 1/2;Pak 2/2;;20,9;;47,6;0053-Pak 1/2
+4271;09230800;2100;Blumenhaus;Lüdemann Pflanzen und Floristik GmbH;;Ulzburger Str. 443;22846;Norderstedt;0053;1;Pak 2/2;20,9;0053-Pak 2/2;;;;;;0053-Pak 2/2
+1330;02326700;2100;Blumenhaus;Blumen ENK Thomas Dietz;;Heinrich-Heine-Allee 51;40213;Düsseldorf;0054;1;Pak 1/2;26,7;0054-Pak 1/2;Pak 2/2;;20,9;;47,6;0054-Pak 1/2
+1330;02326700;2100;Blumenhaus;Blumen ENK Thomas Dietz;;Heinrich-Heine-Allee 51;40213;Düsseldorf;0054;1;Pak 2/2;20,9;0054-Pak 2/2;;;;;;0054-Pak 2/2
+2692;04997000;2100;Blumenhaus;Dreyer,;Elisabeth, Blumenhaus Dreyer;Boeselager Str. 20;48163;Münster;0055;1;Pak 1/2;26,7;0055-Pak 1/2;Pak 2/2;;20,9;;47,6;0055-Pak 1/2
+2692;04997000;2100;Blumenhaus;Dreyer,;Elisabeth, Blumenhaus Dreyer;Boeselager Str. 20;48163;Münster;0055;1;Pak 2/2;20,9;0055-Pak 2/2;;;;;;0055-Pak 2/2
+2656;04935100;2100;Blumenhaus;Graf,;Neil + Nadine und Frank Müller, Blumen-Graf;Ziegelsteinstr. 156;90411;Nürnberg;0056;1;Pak 1/2;26,7;0056-Pak 1/2;Pak 2/2;;20,9;;47,6;0056-Pak 1/2
+2656;04935100;2100;Blumenhaus;Graf,;Neil + Nadine und Frank Müller, Blumen-Graf;Ziegelsteinstr. 156;90411;Nürnberg;0056;1;Pak 2/2;20,9;0056-Pak 2/2;;;;;;0056-Pak 2/2
+3797;08118800;2000;Blumenhaus;Blumen-Trache,;Floristmeisterbetrieb e.K.;Leipziger Str. 162;01127;Dresden;0057;1;Pak 1/2;26,7;0057-Pak 1/2;Pak 2/2;;18,7;;45,4;0057-Pak 1/2
+3797;08118800;2000;Blumenhaus;Blumen-Trache,;Floristmeisterbetrieb e.K.;Leipziger Str. 162;01127;Dresden;0057;1;Pak 2/2;18,7;0057-Pak 2/2;;;;;;0057-Pak 2/2
+2814;05264700;2000;Blumenhaus;1 A Blumen-Mende,;Inh. Thomas Mende e.K.;Markelstr. 23;12163;Berlin;0058;1;Pak 1/2;26,7;0058-Pak 1/2;Pak 2/2;;18,7;;45,4;0058-Pak 1/2
+2814;05264700;2000;Blumenhaus;1 A Blumen-Mende,;Inh. Thomas Mende e.K.;Markelstr. 23;12163;Berlin;0058;1;Pak 2/2;18,7;0058-Pak 2/2;;;;;;0058-Pak 2/2
+617;01132000;2000;Blumenhaus;Becker-Weigand,;Emmy, Floristik & Dekoration;Georg-Hermann-Allee 13;14469;Potsdam;0059;1;Pak 1/2;26,7;0059-Pak 1/2;Pak 2/2;;18,7;;45,4;0059-Pak 1/2
+617;01132000;2000;Blumenhaus;Becker-Weigand,;Emmy, Floristik & Dekoration;Georg-Hermann-Allee 13;14469;Potsdam;0059;1;Pak 2/2;18,7;0059-Pak 2/2;;;;;;0059-Pak 2/2
+2003;03613700;2000;Blumenhaus;Endert,;Kati, Rosen und Dornen;Neue Strandstr. 17;17454;Zinnowitz;0060;1;Pak 1/2;26,7;0060-Pak 1/2;Pak 2/2;;18,7;;45,4;0060-Pak 1/2
+2003;03613700;2000;Blumenhaus;Endert,;Kati, Rosen und Dornen;Neue Strandstr. 17;17454;Zinnowitz;0060;1;Pak 1/2;26,7;0060-Pak 1/2;;;;;;0060-Pak 1/2
+590;01072900;2000;Blumenhaus;Oeding,;Uwe;Kaltenweide 15-17;25335;Elmshorn;0061;1;Pak 2/2;18,7;0061-Pak 2/2;Pak 2/2;;18,7;;45,4;0061-Pak 2/2
+590;01072900;2000;Blumenhaus;Oeding,;Uwe;Kaltenweide 15-17;25335;Elmshorn;0061;1;Pak 1/2;26,7;0061-Pak 1/2;;;;;;0061-Pak 1/2
+297;00570400;2000;Blumenhaus;aus Lust an Blumen e.K.;;Prinzeß-Luise-Str. 40-42;45479;Mülheim;0062;1;Pak 2/2;18,7;0062-Pak 2/2;Pak 2/2;;18,7;;45,4;0062-Pak 2/2
+297;00570400;2000;Blumenhaus;aus Lust an Blumen e.K.;;Prinzeß-Luise-Str. 40-42;45479;Mülheim;0062;1;Pak 1/2;26,7;0062-Pak 1/2;;;;;;0062-Pak 1/2
+770;01380600;2000;Blumenhaus;Heusgen & Rousselange -;Haus der Blumen OHG;Friedrichstr. 64;53111;Bonn;0063;1;Pak 1/2;26,7;0063-Pak 1/2;Pak 2/2;;18,7;;45,4;0063-Pak 1/2
+770;01380600;2000;Blumenhaus;Heusgen & Rousselange -;Haus der Blumen OHG;Friedrichstr. 64;53111;Bonn;0063;1;Pak 2/2;18,7;0063-Pak 2/2;;;;;;0063-Pak 2/2
+2552;04709300;2000;Blumenhaus;Düren,;Anne, Blumen und mehr ...;Rochusstr. 125;53123;Bonn;0064;1;Pak 1/2;26,7;0064-Pak 1/2;Pak 2/2;;18,7;;45,4;0064-Pak 1/2
+2552;04709300;2000;Blumenhaus;Düren,;Anne, Blumen und mehr ...;Rochusstr. 125;53123;Bonn;0064;1;Pak 2/2;18,7;0064-Pak 2/2;;;;;;0064-Pak 2/2
+647;01175400;2000;Blumenhaus;Wolf,;Andre, Blumen- und Gartencenter Wolf;Heidemannstr. 8;80939;München;0065;1;Pak 1/2;26,7;0065-Pak 1/2;Pak 2/2;;18,7;;45,4;0065-Pak 1/2
+647;01175400;2000;Blumenhaus;Wolf,;Andre, Blumen- und Gartencenter Wolf;Heidemannstr. 8;80939;München;0065;1;Pak 1/2;26,7;0065-Pak 1/2;;;;;;0065-Pak 1/2
+4434;10008500;2000;Blumenhaus;Blumen Müller,;Inh. Rudolf Müller e.K.;Fritz-Baer-Str. 16;81476;München;0066;1;Pak 2/2;18,7;0066-Pak 2/2;Pak 2/2;;18,7;;45,4;0066-Pak 2/2
+4434;10008500;2000;Blumenhaus;Blumen Müller,;Inh. Rudolf Müller e.K.;Fritz-Baer-Str. 16;81476;München;0066;1;Pak 1/2;26,7;0066-Pak 1/2;;;;;;0066-Pak 1/2
+996;01756100;2000;Blumenhaus;Dodel,;Franz, Blumen Dodel;Ehinger Str. 14;88471;Laupheim;0067;1;Pak 2/2;18,7;0067-Pak 2/2;Pak 2/2;;18,7;;45,4;0067-Pak 2/2
+996;01756100;2000;Blumenhaus;Dodel,;Franz, Blumen Dodel;Ehinger Str. 14;88471;Laupheim;0067;1;Pak 1/2;26,7;0067-Pak 1/2;;;;;;0067-Pak 1/2
+1755;03129700;2000;Blumenhaus;Blumen Karl Rühle,;Inh. Marco Köhler e.K.;Sterngasse 13;89073;Ulm;0068;1;Pak 1/2;26,7;0068-Pak 1/2;Pak 2/2;;18,7;;45,4;0068-Pak 1/2
+1755;03129700;2000;Blumenhaus;Blumen Karl Rühle,;Inh. Marco Köhler e.K.;Sterngasse 13;89073;Ulm;0068;1;Pak 2/2;18,7;0068-Pak 2/2;;;;;;0068-Pak 2/2
+51;00087400;1900;Blumenhaus;Kaselitz,;Kerstin, Cityflorist Thomas Kaselitz;Löbdergraben 8a;07743;Jena;0069;1;Pak 1/2;26,7;0069-Pak 1/2;Pak 2/2;;16,7;;43,4;0069-Pak 1/2
+51;00087400;1900;Blumenhaus;Kaselitz,;Kerstin, Cityflorist Thomas Kaselitz;Löbdergraben 8a;07743;Jena;0069;1;Pak 2/2;16,7;0069-Pak 2/2;;;;;;0069-Pak 2/2
+149;00258900;1900;Blumenhaus;Flöter,;Karsten, flower factory;Levetzowstr. 20;10555;Berlin;0070;1;Pak 1/2;26,7;0070-Pak 1/2;Pak 2/2;;16,7;;43,4;0070-Pak 1/2
+149;00258900;1900;Blumenhaus;Flöter,;Karsten, flower factory;Levetzowstr. 20;10555;Berlin;0070;1;Pak 2/2;16,7;0070-Pak 2/2;;;;;;0070-Pak 2/2
+4027;08718900;1900;Blumenhaus;Sundflor GmbH;;Hans-Fallada-Str. 1 J;18435;Stralsund;0071;1;Pak 1/2;26,7;0071-Pak 1/2;Pak 2/2;;16,7;;43,4;0071-Pak 1/2
+4027;08718900;1900;Blumenhaus;Sundflor GmbH;;Hans-Fallada-Str. 1 J;18435;Stralsund;0071;1;Pak 2/2;16,7;0071-Pak 2/2;;;;;;0071-Pak 2/2
+4521;11121900;1900;Blumenhaus;00 1 A Alster-Floristik;Joachim Naegele e.K.;Bellealliancestr. 72;20259;Hamburg;0072;1;Pak 1/2;26,7;0072-Pak 1/2;Pak 2/2;;16,7;;43,4;0072-Pak 1/2
+4521;11121900;1900;Blumenhaus;00 1 A Alster-Floristik;Joachim Naegele e.K.;Bellealliancestr. 72;20259;Hamburg;0072;1;Pak 2/2;16,7;0072-Pak 2/2;;;;;;0072-Pak 2/2
+993;01753800;1900;Blumenhaus;Pitschak;Marika, Floraldesign;Lichtstr. 43f;50825;Köln;0073;1;Pak 1/2;26,7;0073-Pak 1/2;Pak 2/2;;16,7;;43,4;0073-Pak 1/2
+993;01753800;1900;Blumenhaus;Pitschak;Marika, Floraldesign;Lichtstr. 43f;50825;Köln;0073;1;Pak 2/2;16,7;0073-Pak 2/2;;;;;;0073-Pak 2/2
+769;01379200;1900;Blumenhaus;Blumen Bruno Mankopf;An der Stadthalle u.Am Markt;Wasserloses Tal 19-23;58093;Hagen;0074;1;Pak 1/2;26,7;0074-Pak 1/2;Pak 2/2;;16,7;;43,4;0074-Pak 1/2
+769;01379200;1900;Blumenhaus;Blumen Bruno Mankopf;An der Stadthalle u.Am Markt;Wasserloses Tal 19-23;58093;Hagen;0074;1;Pak 2/2;16,7;0074-Pak 2/2;;;;;;0074-Pak 2/2
+977;01721800;1900;Blumenhaus;Blumen Beetz;Filz und Hartmann-Gress KG;Bahnhofplatz 8;76137;Karlsruhe;0075;1;Pak 1/2;26,7;0075-Pak 1/2;Pak 2/2;;16,7;;43,4;0075-Pak 1/2
+977;01721800;1900;Blumenhaus;Blumen Beetz;Filz und Hartmann-Gress KG;Bahnhofplatz 8;76137;Karlsruhe;0075;1;Pak 2/2;16,7;0075-Pak 2/2;;;;;;0075-Pak 2/2
+751;01338000;1900;Blumenhaus;Kargl,;Andreas, Blumen Kargl;Bergsonstr. 41;81245;München;0076;1;Pak 1/2;26,7;0076-Pak 1/2;Pak 2/2;;16,7;;43,4;0076-Pak 1/2
+751;01338000;1900;Blumenhaus;Kargl,;Andreas, Blumen Kargl;Bergsonstr. 41;81245;München;0076;1;Pak 2/2;16,7;0076-Pak 2/2;;;;;;0076-Pak 2/2
+1042;01832300;1900;Blumenhaus;Kaufmann,;Raphaela, Blumenhaus Viola;Würmtalstr. 102;81375;München;0077;1;Pak 1/2;26,7;0077-Pak 1/2;Pak 2/2;;16,7;;43,4;0077-Pak 1/2
+1042;01832300;1900;Blumenhaus;Kaufmann,;Raphaela, Blumenhaus Viola;Würmtalstr. 102;81375;München;0077;1;Pak 2/2;16,7;0077-Pak 2/2;;;;;;0077-Pak 2/2
+685;01238800;1900;Blumenhaus;Wassermann,;Heide, Wassermann Floristik;Martinsbühler Str. 8;91054;Erlangen;0078;1;Pak 1/2;26,7;0078-Pak 1/2;Pak 2/2;;16,7;;43,4;0078-Pak 1/2
+685;01238800;1900;Blumenhaus;Wassermann,;Heide, Wassermann Floristik;Martinsbühler Str. 8;91054;Erlangen;0078;1;Pak 2/2;16,7;0078-Pak 2/2;;;;;;0078-Pak 2/2
+2494;04599400;1900;Blumenhaus;Wurster,;Stephanie, Blumen Zaak;Obere Marktstr. 10;97688;Bad Kissingen;0079;1;Pak 1/2;26,7;0079-Pak 1/2;Pak 2/2;;16,7;;43,4;0079-Pak 1/2
+2494;04599400;1900;Blumenhaus;Wurster,;Stephanie, Blumen Zaak;Obere Marktstr. 10;97688;Bad Kissingen;0079;1;Pak 2/2;16,7;0079-Pak 2/2;;;;;;0079-Pak 2/2
+3798;08120300;1900;Blumenhaus;Floristik Jacob GmbH;;Friedensstr. 1;99423;Weimar;0080;1;Pak 1/2;26,7;0080-Pak 1/2;Pak 2/2;;16,7;;43,4;0080-Pak 1/2
+3798;08120300;1900;Blumenhaus;Floristik Jacob GmbH;;Friedensstr. 1;99423;Weimar;0080;1;Pak 2/2;16,7;0080-Pak 2/2;;;;;;0080-Pak 2/2
+3815;08160400;1800;Blumenhaus;Blumen Mende GmbH;;Hüblerstr. 4;01309;Dresden;0081;1;Pak 1/2;26,7;0081-Pak 1/2;Pak 2/2;;14,3;;41;0081-Pak 1/2
+3815;08160400;1800;Blumenhaus;Blumen Mende GmbH;;Hüblerstr. 4;01309;Dresden;0081;1;Pak 2/2;14,3;0081-Pak 2/2;;;;;;0081-Pak 2/2
+189;00352400;1800;Blumenhaus;Schellig,;Sieglinde, Kornblume;Luisenstr. 48;10117;Berlin;0082;1;Pak 1/2;26,7;0082-Pak 1/2;Pak 2/2;;14,3;;41;0082-Pak 1/2
+189;00352400;1800;Blumenhaus;Schellig,;Sieglinde, Kornblume;Luisenstr. 48;10117;Berlin;0082;1;Pak 2/2;14,3;0082-Pak 2/2;;;;;;0082-Pak 2/2
+3809;08146400;1800;Blumenhaus;Bade,;Ingrid, Blumen- und Geschenkehaus;Am Markt 6;18209;Bad Doberan;0083;1;Pak 1/2;26,7;0083-Pak 1/2;Pak 2/2;;14,3;;41;0083-Pak 1/2
+3809;08146400;1800;Blumenhaus;Bade,;Ingrid, Blumen- und Geschenkehaus;Am Markt 6;18209;Bad Doberan;0083;1;Pak 2/2;14,3;0083-Pak 2/2;;;;;;0083-Pak 2/2
+62;00104800;1800;Blumenhaus;Blumen Insel Stefan Wilke;;Paulstr. 1;25980;Sylt-Westerland;0084;1;Pak 1/2;26,7;0084-Pak 1/2;Pak 2/2;;14,3;;41;0084-Pak 1/2
+62;00104800;1800;Blumenhaus;Blumen Insel Stefan Wilke;;Paulstr. 1;25980;Sylt-Westerland;0084;1;Pak 2/2;14,3;0084-Pak 2/2;;;;;;0084-Pak 2/2
+2873;05423900;1800;Blumenhaus;blumen Ekkehard Lange,;Inh. B. Pappert;Schwachhauser Heerstr. 71-73;28211;Bremen;0085;1;Pak 1/2;26,7;0085-Pak 1/2;Pak 2/2;;14,3;;41;0085-Pak 1/2
+2873;05423900;1800;Blumenhaus;blumen Ekkehard Lange,;Inh. B. Pappert;Schwachhauser Heerstr. 71-73;28211;Bremen;0085;1;Pak 2/2;14,3;0085-Pak 2/2;;;;;;0085-Pak 2/2
+3898;08336500;1800;Blumenhaus;Rhode,;Margret, Blumen-Rhode;Am Bahnhofsvorplatz 1;39576;Stendal;0086;1;Pak 1/2;26,7;0086-Pak 1/2;Pak 2/2;;14,3;;41;0086-Pak 1/2
+3898;08336500;1800;Blumenhaus;Rhode,;Margret, Blumen-Rhode;Am Bahnhofsvorplatz 1;39576;Stendal;0086;1;Pak 2/2;14,3;0086-Pak 2/2;;;;;;0086-Pak 2/2
+774;01385100;1800;Blumenhaus;Stoffel,;Martin, Blumen Uhl;Mengenicher Str. 26;50767;Köln;0087;1;Pak 1/2;26,7;0087-Pak 1/2;Pak 2/2;;14,3;;41;0087-Pak 1/2
+774;01385100;1800;Blumenhaus;Stoffel,;Martin, Blumen Uhl;Mengenicher Str. 26;50767;Köln;0087;1;Pak 2/2;14,3;0087-Pak 2/2;;;;;;0087-Pak 2/2
+3122;06092000;1800;Blumenhaus;Odenthal,;Hans-Jürgen, Blumen Odenthal;Am Friedhof 2;53842;Troisdorf;0088;1;Pak 1/2;26,7;0088-Pak 1/2;Pak 2/2;;14,3;;41;0088-Pak 1/2
+3122;06092000;1800;Blumenhaus;Odenthal,;Hans-Jürgen, Blumen Odenthal;Am Friedhof 2;53842;Troisdorf;0088;1;Pak 2/2;14,3;0088-Pak 2/2;;;;;;0088-Pak 2/2
+1494;02595800;1800;Blumenhaus;Blumen Speth GmbH;;Prüfeninger Str. 70;93049;Regensburg;0089;1;Pak 1/2;26,7;0089-Pak 1/2;Pak 2/2;;14,3;;41;0089-Pak 1/2
+1494;02595800;1800;Blumenhaus;Blumen Speth GmbH;;Prüfeninger Str. 70;93049;Regensburg;0089;1;Pak 2/2;14,3;0089-Pak 2/2;;;;;;0089-Pak 2/2
+1050;01844800;1700;Blumenhaus;florizz GmbH & Co. KG;;Helmholtzstr. 2;01069;Dresden;0090;1;Pak 1/2;26,7;0090-Pak 1/2;Pak 2/2;;12,2;;38,9;0090-Pak 1/2
+1050;01844800;1700;Blumenhaus;florizz GmbH & Co. KG;;Helmholtzstr. 2;01069;Dresden;0090;1;Pak 2/2;12,2;0090-Pak 2/2;;;;;;0090-Pak 2/2
+2258;04127600;1700;Blumenhaus;Koehler Florist im Sophienhof GmbH;;Sophienblatt 20;24103;Kiel;0091;1;Pak 1/2;26,7;0091-Pak 1/2;Pak 2/2;;12,2;;38,9;0091-Pak 1/2
+2258;04127600;1700;Blumenhaus;Koehler Florist im Sophienhof GmbH;;Sophienblatt 20;24103;Kiel;0091;1;Pak 2/2;12,2;0091-Pak 2/2;;;;;;0091-Pak 2/2
+4806;12083800;1700;Blumenhaus;Borsum,;Annette, ab Floristwerkstätte;Parkstr. 14;33332;Gütersloh;0092;1;Pak 1/2;26,7;0092-Pak 1/2;Pak 2/2;;12,2;;38,9;0092-Pak 1/2
+4806;12083800;1700;Blumenhaus;Borsum,;Annette, ab Floristwerkstätte;Parkstr. 14;33332;Gütersloh;0092;1;Pak 2/2;12,2;0092-Pak 2/2;;;;;;0092-Pak 2/2
+726;01300400;1700;Blumenhaus;Blumen-Roth,;Inh. Herbert Roth;Jüdenstr. 8-9;37073;Göttingen;0093;1;Pak 1/2;26,7;0093-Pak 1/2;Pak 2/2;;12,2;;38,9;0093-Pak 1/2
+726;01300400;1700;Blumenhaus;Blumen-Roth,;Inh. Herbert Roth;Jüdenstr. 8-9;37073;Göttingen;0093;1;Pak 2/2;12,2;0093-Pak 2/2;;;;;;0093-Pak 2/2
+311;00599300;1700;Blumenhaus;H. Gundlach Blumen Groß- &;Einzelhandel Michael Gundlach e.K.;Wabestr. 11A;38106;Braunschweig;0094;1;Pak 1/2;26,7;0094-Pak 1/2;Pak 2/2;;12,2;;38,9;0094-Pak 1/2
+311;00599300;1700;Blumenhaus;H. Gundlach Blumen Groß- &;Einzelhandel Michael Gundlach e.K.;Wabestr. 11A;38106;Braunschweig;0094;1;Pak 2/2;12,2;0094-Pak 2/2;;;;;;0094-Pak 2/2
+5260;22958000;1700;Blumenhaus;Floristik und Service Studio F.U.S.S.;Blumenhaus GmbH & Co.KG;Oststr. 61;40210;Düsseldorf;0095;1;Pak 1/2;26,7;0095-Pak 1/2;Pak 2/2;;12,2;;38,9;0095-Pak 1/2
+5260;22958000;1700;Blumenhaus;Floristik und Service Studio F.U.S.S.;Blumenhaus GmbH & Co.KG;Oststr. 61;40210;Düsseldorf;0095;1;Pak 2/2;12,2;0095-Pak 2/2;;;;;;0095-Pak 2/2
+419;00771900;1700;Blumenhaus;Blumen Quellenberg;Inh. F. W. Quellenberg e.K. Nachf. Khan-Quellenberg;Schattweg 40;59174;Kamen;0096;1;Pak 1/2;26,7;0096-Pak 1/2;Pak 2/2;;12,2;;38,9;0096-Pak 1/2
+419;00771900;1700;Blumenhaus;Blumen Quellenberg;Inh. F. W. Quellenberg e.K. Nachf. Khan-Quellenberg;Schattweg 40;59174;Kamen;0096;1;Pak 2/2;12,2;0096-Pak 2/2;;;;;;0096-Pak 2/2
+4947;12524800;1700;Blumenhaus;AAA-Floristik Blumen-Jaeger;Inh. Karin Jaeger;Friedhofsweg 9;61267;Neu-Anspach;0097;1;Pak 1/2;26,7;0097-Pak 1/2;Pak 2/2;;12,2;;38,9;0097-Pak 1/2
+4947;12524800;1700;Blumenhaus;AAA-Floristik Blumen-Jaeger;Inh. Karin Jaeger;Friedhofsweg 9;61267;Neu-Anspach;0097;1;Pak 2/2;12,2;0097-Pak 2/2;;;;;;0097-Pak 2/2
+1421;02468200;1700;Blumenhaus;Blumen-Schweiger,;Inh. Inge Killius-Schweiger;Hauptstr. 59;77652;Offenburg;0098;1;Pak 1/2;26,7;0098-Pak 1/2;Pak 2/2;;12,2;;38,9;0098-Pak 1/2
+1421;02468200;1700;Blumenhaus;Blumen-Schweiger,;Inh. Inge Killius-Schweiger;Hauptstr. 59;77652;Offenburg;0098;1;Pak 2/2;12,2;0098-Pak 2/2;;;;;;0098-Pak 2/2
+3742;07883400;1700;Blumenhaus;Strohmayer,;Marianne, Blumen Strohmayer;Friedhofstr. 10;79379;Müllheim;0099;1;Pak 1/2;26,7;0099-Pak 1/2;Pak 2/2;;12,2;;38,9;0099-Pak 1/2
+3742;07883400;1700;Blumenhaus;Strohmayer,;Marianne, Blumen Strohmayer;Friedhofstr. 10;79379;Müllheim;0099;1;Pak 2/2;12,2;0099-Pak 2/2;;;;;;0099-Pak 2/2
+3578;07407900;1700;Blumenhaus;AH Blumen und mehr;Angelika Heindl;Wotanstr. 103;80639;München;0100;1;Pak 1/2;26,7;0100-Pak 1/2;Pak 2/2;;12,2;;38,9;0100-Pak 1/2
+3578;07407900;1700;Blumenhaus;AH Blumen und mehr;Angelika Heindl;Wotanstr. 103;80639;München;0100;1;Pak 2/2;12,2;0100-Pak 2/2;;;;;;0100-Pak 2/2
+1636;02863400;1700;Blumenhaus;Blumen Neubauer GmbH;;Tegernseer Landstr. 80;81539;München;0101;1;Pak 1/2;26,7;0101-Pak 1/2;Pak 2/2;;12,2;;38,9;0101-Pak 1/2
+1636;02863400;1700;Blumenhaus;Blumen Neubauer GmbH;;Tegernseer Landstr. 80;81539;München;0101;1;Pak 2/2;12,2;0101-Pak 2/2;;;;;;0101-Pak 2/2
+1306;02282700;1700;Blumenhaus;Schmid,;Christa, Blumenbinderei Hörmann;Tegernseer Landstr. 10;81541;München;0102;1;Pak 1/2;26,7;0102-Pak 1/2;Pak 2/2;;12,2;;38,9;0102-Pak 1/2
+1306;02282700;1700;Blumenhaus;Schmid,;Christa, Blumenbinderei Hörmann;Tegernseer Landstr. 10;81541;München;0102;1;Pak 2/2;12,2;0102-Pak 2/2;;;;;;0102-Pak 2/2
+4931;12456100;1700;Blumenhaus;Dosch,;Karl;Ostpreußenstr. 39;81927;München;0103;1;Pak 1/2;26,7;0103-Pak 1/2;Pak 2/2;;12,2;;38,9;0103-Pak 1/2
+4931;12456100;1700;Blumenhaus;Dosch,;Karl;Ostpreußenstr. 39;81927;München;0103;1;Pak 2/2;12,2;0103-Pak 2/2;;;;;;0103-Pak 2/2
+140;00247500;1700;Blumenhaus;Holzer,;Florian, Blumengärtnerei Florian Holzer;Wolfratshauser Str. 33;82538;Geretsried;0104;1;Pak 1/2;26,7;0104-Pak 1/2;Pak 2/2;;12,2;;38,9;0104-Pak 1/2
+140;00247500;1700;Blumenhaus;Holzer,;Florian, Blumengärtnerei Florian Holzer;Wolfratshauser Str. 33;82538;Geretsried;0104;1;Pak 2/2;12,2;0104-Pak 2/2;;;;;;0104-Pak 2/2
+4382;09429900;1600;Blumenhaus;Klotz,;Monika, Florist Atelier Klotz;Berliner Str. 93;13507;Berlin;0105;1;Pak 1/2;26,7;0105-Pak 1/2;Pak 2/2;;10,1;;36,8;0105-Pak 1/2
+4382;09429900;1600;Blumenhaus;Klotz,;Monika, Florist Atelier Klotz;Berliner Str. 93;13507;Berlin;0105;1;Pak 2/2;10;0105-Pak 2/2;;;;;;0105-Pak 2/2
+1201;02097100;1600;Blumenhaus;Aschenbach Floristik;Inh. Gabriele Dahlke e.Kfm.;Reichsstr. 82;14052;Berlin;0106;1;Pak 1/2;26,7;0106-Pak 1/2;Pak 2/2;;10,1;;36,8;0106-Pak 1/2
+1201;02097100;1600;Blumenhaus;Aschenbach Floristik;Inh. Gabriele Dahlke e.Kfm.;Reichsstr. 82;14052;Berlin;0106;1;Pak 2/2;10;0106-Pak 2/2;;;;;;0106-Pak 2/2
+4323;09334400;1600;Blumenhaus;Stasch,;Marliese, Blumen Schellack;Neuendorferstr. 7;14480;Potsdam;0107;1;Pak 1/2;26,7;0107-Pak 1/2;Pak 2/2;;10,1;;36,8;0107-Pak 1/2
+4323;09334400;1600;Blumenhaus;Stasch,;Marliese, Blumen Schellack;Neuendorferstr. 7;14480;Potsdam;0107;1;Pak 2/2;10;0107-Pak 2/2;;;;;;0107-Pak 2/2
+1869;03341800;1600;Blumenhaus;Henkel,;Andreas, Henkel-Floristik;Falkenhagener Str. 101a;14612;Falkensee;0108;1;Pak 1/2;26,7;0108-Pak 1/2;Pak 2/2;;10,1;;36,8;0108-Pak 1/2
+1869;03341800;1600;Blumenhaus;Henkel,;Andreas, Henkel-Floristik;Falkenhagener Str. 101a;14612;Falkensee;0108;1;Pak 2/2;10;0108-Pak 2/2;;;;;;0108-Pak 2/2
+2480;04572100;1600;Blumenhaus;SVEMA Concept GmbH & Co KG;vorm. Blumen Jürs;Mittelweg 173;20148;Hamburg;0109;1;Pak 1/2;26,7;0109-Pak 1/2;Pak 2/2;;10,1;;36,8;0109-Pak 1/2
+2480;04572100;1600;Blumenhaus;SVEMA Concept GmbH & Co KG;vorm. Blumen Jürs;Mittelweg 173;20148;Hamburg;0109;1;Pak 2/2;10;0109-Pak 2/2;;;;;;0109-Pak 2/2
+4852;12245300;1600;Blumenhaus;Ahlfeld,;Ines und Holger Burmester GbR;August-Bebel-Str. 206;21029;Hamburg;0110;1;Pak 1/2;26,7;0110-Pak 1/2;Pak 2/2;;10,1;;36,8;0110-Pak 1/2
+4852;12245300;1600;Blumenhaus;Ahlfeld,;Ines und Holger Burmester GbR;August-Bebel-Str. 206;21029;Hamburg;0110;1;Pak 2/2;10;0110-Pak 2/2;;;;;;0110-Pak 2/2
+2194;03999100;1600;Blumenhaus;Blumen Schmidt GmbH;;Blankeneser Bahnhofstr. 34;22587;Hamburg;0111;1;Pak 1/2;26,7;0111-Pak 1/2;Pak 2/2;;10,1;;36,8;0111-Pak 1/2
+2194;03999100;1600;Blumenhaus;Blumen Schmidt GmbH;;Blankeneser Bahnhofstr. 34;22587;Hamburg;0111;1;Pak 2/2;10;0111-Pak 2/2;;;;;;0111-Pak 2/2
+308;00589100;1600;Blumenhaus;Blumen-Unger;;Wendenstr. 1;38100;Braunschweig;0112;1;Pak 1/2;26,7;0112-Pak 1/2;Pak 2/2;;10,1;;36,8;0112-Pak 1/2
+308;00589100;1600;Blumenhaus;Blumen-Unger;;Wendenstr. 1;38100;Braunschweig;0112;1;Pak 2/2;10;0112-Pak 2/2;;;;;;0112-Pak 2/2
+529;00964700;1600;Blumenhaus;Blumen Sporrer,;Inh. Käthe Zieris;Schadowplatz 9;40212;Düsseldorf;0113;1;Pak 1/2;26,7;0113-Pak 1/2;Pak 2/2;;10,1;;36,8;0113-Pak 1/2
+529;00964700;1600;Blumenhaus;Blumen Sporrer,;Inh. Käthe Zieris;Schadowplatz 9;40212;Düsseldorf;0113;1;Pak 2/2;10;0113-Pak 2/2;;;;;;0113-Pak 2/2
+1355;02364600;1600;Blumenhaus;Blumen Bunse;Inh. Simone Bunse-Heidelberg e.K.;Erftstr. 5;41460;Neuss;0114;1;Pak 1/2;26,7;0114-Pak 1/2;Pak 2/2;;10,1;;36,8;0114-Pak 1/2
+1355;02364600;1600;Blumenhaus;Blumen Bunse;Inh. Simone Bunse-Heidelberg e.K.;Erftstr. 5;41460;Neuss;0114;1;Pak 2/2;10;0114-Pak 2/2;;;;;;0114-Pak 2/2
+586;01070700;1600;Blumenhaus;Blumenhaus Franz & Scharf;Inh. Karin Brummelman;Bredeneyer Str. 125;45133;Essen;0115;1;Pak 1/2;26,7;0115-Pak 1/2;Pak 2/2;;10,1;;36,8;0115-Pak 1/2
+586;01070700;1600;Blumenhaus;Blumenhaus Franz & Scharf;Inh. Karin Brummelman;Bredeneyer Str. 125;45133;Essen;0115;1;Pak 2/2;10;0115-Pak 2/2;;;;;;0115-Pak 2/2
+2567;04740500;1600;Blumenhaus;Lieven,;Manfred, CASA FLORA;Severinusstr. 56;50354;Hürth;0116;1;Pak 1/2;26,7;0116-Pak 1/2;Pak 2/2;;10,1;;36,8;0116-Pak 1/2
+2567;04740500;1600;Blumenhaus;Lieven,;Manfred, CASA FLORA;Severinusstr. 56;50354;Hürth;0116;1;Pak 2/2;10;0116-Pak 2/2;;;;;;0116-Pak 2/2
+291;00558200;1600;Blumenhaus;Engels,;Carola;Breite Str. 110;53111;Bonn;0117;1;Pak 1/2;26,7;0117-Pak 1/2;Pak 2/2;;10,1;;36,8;0117-Pak 1/2
+291;00558200;1600;Blumenhaus;Engels,;Carola;Breite Str. 110;53111;Bonn;0117;1;Pak 2/2;10;0117-Pak 2/2;;;;;;0117-Pak 2/2
+2159;03937200;1600;Blumenhaus;Funk,;Helene, Blumen & Ambiente;Lindenstr. 65;53757;Sankt Augustin;0118;1;Pak 1/2;26,7;0118-Pak 1/2;Pak 2/2;;10,1;;36,8;0118-Pak 1/2
+2159;03937200;1600;Blumenhaus;Funk,;Helene, Blumen & Ambiente;Lindenstr. 65;53757;Sankt Augustin;0118;1;Pak 2/2;10;0118-Pak 2/2;;;;;;0118-Pak 2/2
+1737;03088001;1600;Blumenhaus;J. Lambert & Söhne;;Franz-Georg-Str. 50;54292;Trier;0119;1;Pak 1/2;26,7;0119-Pak 1/2;Pak 2/2;;10,1;;36,8;0119-Pak 1/2
+1737;03088001;1600;Blumenhaus;J. Lambert & Söhne;;Franz-Georg-Str. 50;54292;Trier;0119;1;Pak 2/2;10;0119-Pak 2/2;;;;;;0119-Pak 2/2
+313;00605600;1600;Blumenhaus;Blumen Leanthe Jung & Jung oHG;;Clemensstr. 8;56068;Koblenz;0120;1;Pak 1/2;26,7;0120-Pak 1/2;Pak 2/2;;10,1;;36,8;0120-Pak 1/2
+313;00605600;1600;Blumenhaus;Blumen Leanthe Jung & Jung oHG;;Clemensstr. 8;56068;Koblenz;0120;1;Pak 2/2;10;0120-Pak 2/2;;;;;;0120-Pak 2/2
+1818;03258600;1600;Blumenhaus;Holzschuh,;Dieter;Marktstr. 7;63450;Hanau;0121;1;Pak 1/2;26,7;0121-Pak 1/2;Pak 2/2;;10,1;;36,8;0121-Pak 1/2
+1818;03258600;1600;Blumenhaus;Holzschuh,;Dieter;Marktstr. 7;63450;Hanau;0121;1;Pak 2/2;10;0121-Pak 2/2;;;;;;0121-Pak 2/2
+755;01342700;1600;Blumenhaus;Mai,;Franz, Blumen + Gärtnerei Mai;Darmstädter Str. 58;64646;Heppenheim;0122;1;Pak 1/2;26,7;0122-Pak 1/2;Pak 2/2;;10,1;;36,8;0122-Pak 1/2
+755;01342700;1600;Blumenhaus;Mai,;Franz, Blumen + Gärtnerei Mai;Darmstädter Str. 58;64646;Heppenheim;0122;1;Pak 2/2;10;0122-Pak 2/2;;;;;;0122-Pak 2/2
+593;01080000;1600;Blumenhaus;Langner,;Angelika, Gnädinger Floristik;Sundgauallee 118;79110;Freiburg;0123;1;Pak 1/2;26,7;0123-Pak 1/2;Pak 2/2;;10,1;;36,8;0123-Pak 1/2
+593;01080000;1600;Blumenhaus;Langner,;Angelika, Gnädinger Floristik;Sundgauallee 118;79110;Freiburg;0123;1;Pak 2/2;10;0123-Pak 2/2;;;;;;0123-Pak 2/2
+1486;02584400;1600;Blumenhaus;Kamm,;Friedrich Peter;Agnes-Bernauer-Str. 71a;80687;München;0124;1;Pak 1/2;26,7;0124-Pak 1/2;Pak 2/2;;10,1;;36,8;0124-Pak 1/2
+1486;02584400;1600;Blumenhaus;Kamm,;Friedrich Peter;Agnes-Bernauer-Str. 71a;80687;München;0124;1;Pak 2/2;10;0124-Pak 2/2;;;;;;0124-Pak 2/2
+1834;03286200;1600;Blumenhaus;Renners,;Anke, ARoserie;Leonhardsplatz 8;82256;Fürstenfeldbruck;0125;1;Pak 1/2;26,7;0125-Pak 1/2;Pak 2/2;;10,1;;36,8;0125-Pak 1/2
+1834;03286200;1600;Blumenhaus;Renners,;Anke, ARoserie;Leonhardsplatz 8;82256;Fürstenfeldbruck;0125;1;Pak 2/2;10;0125-Pak 2/2;;;;;;0125-Pak 2/2
+3495;07202000;1600;Blumenhaus;Gärtnerei Hartmann oHG;;Stadtberger Str. 84 b;86157;Augsburg;0126;1;Pak 1/2;26,7;0126-Pak 1/2;Pak 2/2;;10,1;;36,8;0126-Pak 1/2
+3495;07202000;1600;Blumenhaus;Gärtnerei Hartmann oHG;;Stadtberger Str. 84 b;86157;Augsburg;0126;1;Pak 2/2;10;0126-Pak 2/2;;;;;;0126-Pak 2/2
+27;00042100;1600;Blumenhaus;Dietel,;Brigitte, Blumen-Dietel;Alexander Str. 8;95444;Bayreuth;0127;1;Pak 1/2;26,7;0127-Pak 1/2;Pak 2/2;;10,1;;36,8;0127-Pak 1/2
+27;00042100;1600;Blumenhaus;Dietel,;Brigitte, Blumen-Dietel;Alexander Str. 8;95444;Bayreuth;0127;1;Pak 2/2;10;0127-Pak 2/2;;;;;;0127-Pak 2/2
+2678;04976300;1500;Blumenhaus;Riedel,;Juliane, Blütenzauber;Leipziger Str. 30 b;04451;Borsdorf;0128;1;Pak 1/2;26,7;0128-Pak 1/2;Pak 2/2;;7,6;;34,3;0128-Pak 1/2
+2678;04976300;1500;Blumenhaus;Riedel,;Juliane, Blütenzauber;Leipziger Str. 30 b;04451;Borsdorf;0128;1;Pak 2/2;7,6;0128-Pak 2/2;;;;;;0128-Pak 2/2
+5135;20883700;1500;Blumenhaus;Kahl,;Kerstin, Blumenmeer;Querfurter Str. 4;06217;Merseburg;0129;1;Pak 1/2;26,7;0129-Pak 1/2;Pak 2/2;;7,6;;34,3;0129-Pak 1/2
+5135;20883700;1500;Blumenhaus;Kahl,;Kerstin, Blumenmeer;Querfurter Str. 4;06217;Merseburg;0129;1;Pak 2/2;7,6;0129-Pak 2/2;;;;;;0129-Pak 2/2
+4756;11891500;1500;Blumenhaus;Broecker;Andrea, Blumen Design am Adenauerplatz;Wilmersdorfer Str. 95;10629;Berlin;0130;1;Pak 1/2;26,7;0130-Pak 1/2;Pak 2/2;;7,6;;34,3;0130-Pak 1/2
+4756;11891500;1500;Blumenhaus;Broecker;Andrea, Blumen Design am Adenauerplatz;Wilmersdorfer Str. 95;10629;Berlin;0130;1;Pak 2/2;7,6;0130-Pak 2/2;;;;;;0130-Pak 2/2
+603;01105500;1500;Blumenhaus;Blumeneinzelhandel, Floristik;Die Grüne Ecke, Inh. Corina Krause e.K.;Tempelhofer Damm 226;12099;Berlin;0131;1;Pak 1/2;26,7;0131-Pak 1/2;Pak 2/2;;7,6;;34,3;0131-Pak 1/2
+603;01105500;1500;Blumenhaus;Blumeneinzelhandel, Floristik;Die Grüne Ecke, Inh. Corina Krause e.K.;Tempelhofer Damm 226;12099;Berlin;0131;1;Pak 2/2;7,6;0131-Pak 2/2;;;;;;0131-Pak 2/2
+4471;10057800;1500;Blumenhaus;Friedrich,;Stefanie;Alt Rudow 31;12357;Berlin;0132;1;Pak 1/2;26,7;0132-Pak 1/2;Pak 2/2;;7,6;;34,3;0132-Pak 1/2
+4471;10057800;1500;Blumenhaus;Friedrich,;Stefanie;Alt Rudow 31;12357;Berlin;0132;1;Pak 2/2;7,6;0132-Pak 2/2;;;;;;0132-Pak 2/2
+2818;05269200;1500;Blumenhaus;Drabsch,;Wenke, Ihr Florist am Platz;Pastor-Niemöller-Platz 4-6;13156;Berlin;0133;1;Pak 1/2;26,7;0133-Pak 1/2;Pak 2/2;;7,6;;34,3;0133-Pak 1/2
+2818;05269200;1500;Blumenhaus;Drabsch,;Wenke, Ihr Florist am Platz;Pastor-Niemöller-Platz 4-6;13156;Berlin;0133;1;Pak 2/2;7,6;0133-Pak 2/2;;;;;;0133-Pak 2/2
+237;00449300;1500;Blumenhaus;Blumenthal,;Helge;Scharnweberstr. 49;13405;Berlin;0134;1;Pak 1/2;26,7;0134-Pak 1/2;Pak 2/2;;7,6;;34,3;0134-Pak 1/2
+237;00449300;1500;Blumenhaus;Blumenthal,;Helge;Scharnweberstr. 49;13405;Berlin;0134;1;Pak 2/2;7,6;0134-Pak 2/2;;;;;;0134-Pak 2/2
+3791;08108500;1500;Blumenhaus;BluGeSa Floristik und Gartenbau GmbH;;Neustädtischer Markt 4;14776;Brandenburg;0135;1;Pak 1/2;26,7;0135-Pak 1/2;Pak 2/2;;7,6;;34,3;0135-Pak 1/2
+3791;08108500;1500;Blumenhaus;BluGeSa Floristik und Gartenbau GmbH;;Neustädtischer Markt 4;14776;Brandenburg;0135;1;Pak 2/2;7,6;0135-Pak 2/2;;;;;;0135-Pak 2/2
+5360;26334100;1500;Blumenhaus;Blumen Boutique Ute Lahtz e. K.;;Beselerstr. 44;22607;Hamburg;0136;1;Pak 1/2;26,7;0136-Pak 1/2;Pak 2/2;;7,6;;34,3;0136-Pak 1/2
+5360;26334100;1500;Blumenhaus;Blumen Boutique Ute Lahtz e. K.;;Beselerstr. 44;22607;Hamburg;0136;1;Pak 2/2;7,6;0136-Pak 2/2;;;;;;0136-Pak 2/2
+3029;05856700;1500;Blumenhaus;Dluzak;Rosemarie, Blumen Franck;Bahnhofstr. 26;23714;Bad Malente;0137;1;Pak 1/2;26,7;0137-Pak 1/2;Pak 2/2;;7,6;;34,3;0137-Pak 1/2
+3029;05856700;1500;Blumenhaus;Dluzak;Rosemarie, Blumen Franck;Bahnhofstr. 26;23714;Bad Malente;0137;1;Pak 2/2;7,6;0137-Pak 2/2;;;;;;0137-Pak 2/2
+322;00620600;1500;Blumenhaus;Blumen-Lauprecht;;Vor dem Steintor 124;28203;Bremen;0138;1;Pak 1/2;26,7;0138-Pak 1/2;Pak 2/2;;7,6;;34,3;0138-Pak 1/2
+322;00620600;1500;Blumenhaus;Blumen-Lauprecht;;Vor dem Steintor 124;28203;Bremen;0138;1;Pak 2/2;7,6;0138-Pak 2/2;;;;;;0138-Pak 2/2
+3018;05830500;1500;Blumenhaus;1 A Ambiente Blumen-Schaper;Inh. Sabine Böhm e.K.;Reherweg 15a;31787;Hameln;0139;1;Pak 1/2;26,7;0139-Pak 1/2;Pak 2/2;;7,6;;34,3;0139-Pak 1/2
+3018;05830500;1500;Blumenhaus;1 A Ambiente Blumen-Schaper;Inh. Sabine Böhm e.K.;Reherweg 15a;31787;Hameln;0139;1;Pak 2/2;7,6;0139-Pak 2/2;;;;;;0139-Pak 2/2
+3115;06077900;1500;Blumenhaus;Jocksch-Mayer,;Maria Theresia;Warburger Str. 98;33098;Paderborn;0140;1;Pak 1/2;26,7;0140-Pak 1/2;Pak 2/2;;7,6;;34,3;0140-Pak 1/2
+3115;06077900;1500;Blumenhaus;Jocksch-Mayer,;Maria Theresia;Warburger Str. 98;33098;Paderborn;0140;1;Pak 2/2;7,6;0140-Pak 2/2;;;;;;0140-Pak 2/2
+2173;03965900;1500;Blumenhaus;Blumenhof;Gerhard Borgstedt;Babenhauser Str. 222;33619;Bielefeld;0141;1;Pak 1/2;26,7;0141-Pak 1/2;Pak 2/2;;7,6;;34,3;0141-Pak 1/2
+2173;03965900;1500;Blumenhaus;Blumenhof;Gerhard Borgstedt;Babenhauser Str. 222;33619;Bielefeld;0141;1;Pak 2/2;7,6;0141-Pak 2/2;;;;;;0141-Pak 2/2
+964;01701200;1500;Blumenhaus;Goellner;Heinrich;Landgraf-Karl-Str. 3;34131;Kassel;0142;1;Pak 1/2;26,7;0142-Pak 1/2;Pak 2/2;;7,6;;34,3;0142-Pak 1/2
+964;01701200;1500;Blumenhaus;Goellner;Heinrich;Landgraf-Karl-Str. 3;34131;Kassel;0142;1;Pak 2/2;7,6;0142-Pak 2/2;;;;;;0142-Pak 2/2
+2779;05186200;1500;Blumenhaus;Rinn,;Sybille;Johannesstr. 22;35390;Gießen;0143;1;Pak 1/2;26,7;0143-Pak 1/2;Pak 2/2;;7,6;;34,3;0143-Pak 1/2
+2779;05186200;1500;Blumenhaus;Rinn,;Sybille;Johannesstr. 22;35390;Gießen;0143;1;Pak 2/2;7,6;0143-Pak 2/2;;;;;;0143-Pak 2/2
+4650;11513300;1500;Blumenhaus;Müller,;Ruth, Grüner Garten;Nordhoffstr. 3 a;38518;Gifhorn;0144;1;Pak 1/2;26,7;0144-Pak 1/2;Pak 2/2;;7,6;;34,3;0144-Pak 1/2
+4650;11513300;1500;Blumenhaus;Müller,;Ruth, Grüner Garten;Nordhoffstr. 3 a;38518;Gifhorn;0144;1;Pak 2/2;7,6;0144-Pak 2/2;;;;;;0144-Pak 2/2
+3105;06056300;1500;Blumenhaus;All Flowers Günther Vishers e.K.;Günther Vishers;Schiess-Str. 15-17;40549;Düsseldorf;0145;1;Pak 1/2;26,7;0145-Pak 1/2;Pak 2/2;;7,6;;34,3;0145-Pak 1/2
+3105;06056300;1500;Blumenhaus;All Flowers Günther Vishers e.K.;Günther Vishers;Schiess-Str. 15-17;40549;Düsseldorf;0145;1;Pak 2/2;7,6;0145-Pak 2/2;;;;;;0145-Pak 2/2
+815;01447400;1500;Blumenhaus;A LA CASA DEL FIORE;FLORISTMEISTER HOFFMANN e.K.;Heyestr. 142;40625;Düsseldorf;0146;1;Pak 1/2;26,7;0146-Pak 1/2;Pak 2/2;;7,6;;34,3;0146-Pak 1/2
+815;01447400;1500;Blumenhaus;A LA CASA DEL FIORE;FLORISTMEISTER HOFFMANN e.K.;Heyestr. 142;40625;Düsseldorf;0146;1;Pak 2/2;7,6;0146-Pak 2/2;;;;;;0146-Pak 2/2
+371;00696600;1500;Blumenhaus;Art Floristik Norma Schürgers;;Düsseldorfer Str. 20;40667;Meerbusch;0147;1;Pak 1/2;26,7;0147-Pak 1/2;Pak 2/2;;7,6;;34,3;0147-Pak 1/2
+371;00696600;1500;Blumenhaus;Art Floristik Norma Schürgers;;Düsseldorfer Str. 20;40667;Meerbusch;0147;1;Pak 2/2;7,6;0147-Pak 2/2;;;;;;0147-Pak 2/2
+3047;05903200;1500;Blumenhaus;Molzberger,;Sybille;Lange Hecke 71;41564;Kaarst;0148;1;Pak 1/2;26,7;0148-Pak 1/2;Pak 2/2;;7,6;;34,3;0148-Pak 1/2
+3047;05903200;1500;Blumenhaus;Molzberger,;Sybille;Lange Hecke 71;41564;Kaarst;0148;1;Pak 2/2;7,6;0148-Pak 2/2;;;;;;0148-Pak 2/2
+903;01604300;1500;Blumenhaus;Maylahn,;Lothar, Premiumgärtnerei;Jauerstr. 1;44625;Herne;0149;1;Pak 1/2;26,7;0149-Pak 1/2;Pak 2/2;;7,6;;34,3;0149-Pak 1/2
+903;01604300;1500;Blumenhaus;Maylahn,;Lothar, Premiumgärtnerei;Jauerstr. 1;44625;Herne;0149;1;Pak 2/2;7,6;0149-Pak 2/2;;;;;;0149-Pak 2/2
+3182;06283200;1500;Blumenhaus;Boecking,;Heinz-Jürgen, Meisterflorist;Friedenstr. 72;52351;Düren;0150;1;Pak 1/2;26,7;0150-Pak 1/2;Pak 2/2;;7,6;;34,3;0150-Pak 1/2
+3182;06283200;1500;Blumenhaus;Boecking,;Heinz-Jürgen, Meisterflorist;Friedenstr. 72;52351;Düren;0150;1;Pak 2/2;7,6;0150-Pak 2/2;;;;;;0150-Pak 2/2
+932;01653600;1500;Blumenhaus;Niepel-Weber,;Inge, Blumen Weber;Hauptstr. 58a;53604;Bad Honnef;0151;1;Pak 1/2;26,7;0151-Pak 1/2;Pak 2/2;;7,6;;34,3;0151-Pak 1/2
+932;01653600;1500;Blumenhaus;Niepel-Weber,;Inge, Blumen Weber;Hauptstr. 58a;53604;Bad Honnef;0151;1;Pak 2/2;7,6;0151-Pak 2/2;;;;;;0151-Pak 2/2
+104;00186900;1500;Blumenhaus;Ellinghaus;Dorothea;Hauptstr. 78;58452;Witten;0152;1;Pak 1/2;26,7;0152-Pak 1/2;Pak 2/2;;7,6;;34,3;0152-Pak 1/2
+104;00186900;1500;Blumenhaus;Ellinghaus;Dorothea;Hauptstr. 78;58452;Witten;0152;1;Pak 2/2;7,6;0152-Pak 2/2;;;;;;0152-Pak 2/2
+112;00197300;1500;Blumenhaus;Hallatsch,;Sonja, Blumenkorb;Hauptstr. 223;58675;Hemer;0153;1;Pak 1/2;26,7;0153-Pak 1/2;Pak 2/2;;7,6;;34,3;0153-Pak 1/2
+112;00197300;1500;Blumenhaus;Hallatsch,;Sonja, Blumenkorb;Hauptstr. 223;58675;Hemer;0153;1;Pak 2/2;7,6;0153-Pak 2/2;;;;;;0153-Pak 2/2
+4348;09377800;1500;Blumenhaus;Hombeuel,;Christel, Blumenparadies City;Unteres Grabengässchen 4;64625;Bensheim;0154;1;Pak 1/2;26,7;0154-Pak 1/2;Pak 2/2;;7,6;;34,3;0154-Pak 1/2
+4348;09377800;1500;Blumenhaus;Hombeuel,;Christel, Blumenparadies City;Unteres Grabengässchen 4;64625;Bensheim;0154;1;Pak 2/2;7,6;0154-Pak 2/2;;;;;;0154-Pak 2/2
+3695;07753400;1500;Blumenhaus;Blumen-Hecktor;Inh. Stefan Hecktor e.K.;Legienstr. 3;65929;Frankfurt;0155;1;Pak 1/2;26,7;0155-Pak 1/2;Pak 2/2;;7,6;;34,3;0155-Pak 1/2
+3695;07753400;1500;Blumenhaus;Blumen-Hecktor;Inh. Stefan Hecktor e.K.;Legienstr. 3;65929;Frankfurt;0155;1;Pak 2/2;7,6;0155-Pak 2/2;;;;;;0155-Pak 2/2
+4740;11838200;1500;Blumenhaus;Blumen Schiffler;Corina Pahl;Am Kieselhumes 44;66123;Saarbrücken;0156;1;Pak 1/2;26,7;0156-Pak 1/2;Pak 2/2;;7,6;;34,3;0156-Pak 1/2
+4740;11838200;1500;Blumenhaus;Blumen Schiffler;Corina Pahl;Am Kieselhumes 44;66123;Saarbrücken;0156;1;Pak 2/2;7,6;0156-Pak 2/2;;;;;;0156-Pak 2/2
+2459;04523900;1500;Blumenhaus;Blumen Otto GmbH;;Cheliusstr. 15;68167;Mannheim;0157;1;Pak 1/2;26,7;0157-Pak 1/2;Pak 2/2;;7,6;;34,3;0157-Pak 1/2
+2459;04523900;1500;Blumenhaus;Blumen Otto GmbH;;Cheliusstr. 15;68167;Mannheim;0157;1;Pak 2/2;7,6;0157-Pak 2/2;;;;;;0157-Pak 2/2
+464;00846900;1500;Blumenhaus;Blumen Stierle-Wagner GmbH;;Herdweg 38-40;71032;Böblingen;0158;1;Pak 1/2;26,7;0158-Pak 1/2;Pak 2/2;;7,6;;34,3;0158-Pak 1/2
+464;00846900;1500;Blumenhaus;Blumen Stierle-Wagner GmbH;;Herdweg 38-40;71032;Böblingen;0158;1;Pak 2/2;7,6;0158-Pak 2/2;;;;;;0158-Pak 2/2
+4467;10050501;1500;Blumenhaus;Petersen,;Heike, blattwerk;Tübinger Str. 35;71083;Herrenberg;0159;1;Pak 1/2;26,7;0159-Pak 1/2;Pak 2/2;;7,6;;34,3;0159-Pak 1/2
+4467;10050501;1500;Blumenhaus;Petersen,;Heike, blattwerk;Tübinger Str. 35;71083;Herrenberg;0159;1;Pak 2/2;7,6;0159-Pak 2/2;;;;;;0159-Pak 2/2
+3125;06103800;1500;Blumenhaus;Reibold,;Michael, Grün & Blüh'n;Nauklerstr. 55;72074;Tübingen;0160;1;Pak 1/2;26,7;0160-Pak 1/2;Pak 2/2;;7,6;;34,3;0160-Pak 1/2
+3125;06103800;1500;Blumenhaus;Reibold,;Michael, Grün & Blüh'n;Nauklerstr. 55;72074;Tübingen;0160;1;Pak 2/2;7,6;0160-Pak 2/2;;;;;;0160-Pak 2/2
+2598;04810900;1500;Blumenhaus;Blumen Emil Beetz;;Durlacher Str. 24;76275;Ettlingen;0161;1;Pak 1/2;26,7;0161-Pak 1/2;Pak 2/2;;7,6;;34,3;0161-Pak 1/2
+2598;04810900;1500;Blumenhaus;Blumen Emil Beetz;;Durlacher Str. 24;76275;Ettlingen;0161;1;Pak 2/2;7,6;0161-Pak 2/2;;;;;;0161-Pak 2/2
+3385;06865000;1500;Blumenhaus;AMBIENTE UND FLORISTIK BATSCH,;INH. EUGEN BATSCH;Sonnenbergstr. 3;79117;Freiburg;0162;1;Pak 1/2;26,7;0162-Pak 1/2;Pak 2/2;;7,6;;34,3;0162-Pak 1/2
+3385;06865000;1500;Blumenhaus;AMBIENTE UND FLORISTIK BATSCH,;INH. EUGEN BATSCH;Sonnenbergstr. 3;79117;Freiburg;0162;1;Pak 2/2;7,6;0162-Pak 2/2;;;;;;0162-Pak 2/2
+1414;02452302;1500;Blumenhaus;Schwarz,;Emil, Blumen Schwarz;Fauststr. 55;85051;Ingolstadt;0163;1;Pak 1/2;26,7;0163-Pak 1/2;Pak 2/2;;7,6;;34,3;0163-Pak 1/2
+1414;02452302;1500;Blumenhaus;Schwarz,;Emil, Blumen Schwarz;Fauststr. 55;85051;Ingolstadt;0163;1;Pak 2/2;7,6;0163-Pak 2/2;;;;;;0163-Pak 2/2
+1679;02956600;1500;Blumenhaus;Beck,;Christa, Lust auf Blumen;Nimrodstr. 1;85521;Ottobrunn;0164;1;Pak 1/2;26,7;0164-Pak 1/2;Pak 2/2;;7,6;;34,3;0164-Pak 1/2
+1679;02956600;1500;Blumenhaus;Beck,;Christa, Lust auf Blumen;Nimrodstr. 1;85521;Ottobrunn;0164;1;Pak 2/2;7,6;0164-Pak 2/2;;;;;;0164-Pak 2/2
+696;01253900;1500;Blumenhaus;Scherdi-Gärtnereibetrieb-GmbH;;Lechfeldstr. 51;86899;Landsberg;0165;1;Pak 1/2;26,7;0165-Pak 1/2;Pak 2/2;;7,6;;34,3;0165-Pak 1/2
+696;01253900;1500;Blumenhaus;Scherdi-Gärtnereibetrieb-GmbH;;Lechfeldstr. 51;86899;Landsberg;0165;1;Pak 2/2;7,6;0165-Pak 2/2;;;;;;0165-Pak 2/2
+4799;12068500;1500;Blumenhaus;Krauss,;Herta;Zeppelinstr. 33;91052;Erlangen;0166;1;Pak 1/2;26,7;0166-Pak 1/2;Pak 2/2;;7,6;;34,3;0166-Pak 1/2
+4799;12068500;1500;Blumenhaus;Krauss,;Herta;Zeppelinstr. 33;91052;Erlangen;0166;1;Pak 2/2;7,6;0166-Pak 2/2;;;;;;0166-Pak 2/2
+1558;02711600;1500;Blumenhaus;Blumen Trede GmbH;;Furtmayrstr. 5;93053;Regensburg;0167;1;Pak 1/2;26,7;0167-Pak 1/2;Pak 2/2;;7,6;;34,3;0167-Pak 1/2
+1558;02711600;1500;Blumenhaus;Blumen Trede GmbH;;Furtmayrstr. 5;93053;Regensburg;0167;1;Pak 2/2;7,6;0167-Pak 2/2;;;;;;0167-Pak 2/2
+1472;02552400;1500;Blumenhaus;Blumen-Schwinghammer,;Inh. Hermann Feistl e.K.;Theresienstr. 21;94032;Passau;0168;1;Pak 1/2;26,7;0168-Pak 1/2;Pak 2/2;;7,6;;34,3;0168-Pak 1/2
+1472;02552400;1500;Blumenhaus;Blumen-Schwinghammer,;Inh. Hermann Feistl e.K.;Theresienstr. 21;94032;Passau;0168;1;Pak 2/2;7,6;0168-Pak 2/2;;;;;;0168-Pak 2/2
+3832;08210200;1400;Blumenhaus;Köhler,;Katrin, Blumen-Thomas;Meißner Str. 94;01445;Radebeul;0169;1;Pak 1/2;26,7;0169-Pak 1/2;Pak 2/2;;5,3;;32;0169-Pak 1/2
+3832;08210200;1400;Blumenhaus;Köhler,;Katrin, Blumen-Thomas;Meißner Str. 94;01445;Radebeul;0169;1;Pak 2/2;5,3;0169-Pak 2/2;;;;;;0169-Pak 2/2
+338;00642600;1400;Blumenhaus;Beyer,;Sigrid, Blumen Beyer;Neustädter Str. 5;03046;Cottbus;0170;1;Pak 1/2;26,7;0170-Pak 1/2;Pak 2/2;;5,3;;32;0170-Pak 1/2
+338;00642600;1400;Blumenhaus;Beyer,;Sigrid, Blumen Beyer;Neustädter Str. 5;03046;Cottbus;0170;1;Pak 2/2;5,3;0170-Pak 2/2;;;;;;0170-Pak 2/2
+3908;08364200;1400;Blumenhaus;Blumen-Richter,;vorm. Felix Richter;Karl-Liebknecht-Str. 8-14;04107;Leipzig;0171;1;Pak 1/2;26,7;0171-Pak 1/2;Pak 2/2;;5,3;;32;0171-Pak 1/2
+3908;08364200;1400;Blumenhaus;Blumen-Richter,;vorm. Felix Richter;Karl-Liebknecht-Str. 8-14;04107;Leipzig;0171;1;Pak 2/2;5,3;0171-Pak 2/2;;;;;;0171-Pak 2/2
+4130;08931100;1400;Blumenhaus;Zeising,;Christine, Blumen Zeising;Reilstr. 29;06114;Halle;0172;1;Pak 1/2;26,7;0172-Pak 1/2;Pak 2/2;;5,3;;32;0172-Pak 1/2
+4130;08931100;1400;Blumenhaus;Zeising,;Christine, Blumen Zeising;Reilstr. 29;06114;Halle;0172;1;Pak 2/2;5,3;0172-Pak 2/2;;;;;;0172-Pak 2/2
+4158;09007300;1400;Blumenhaus;Brenke GbR,;Torsten und Viola;Hauptstr. 32;13127;Berlin;0173;1;Pak 1/2;26,7;0173-Pak 1/2;Pak 2/2;;5,3;;32;0173-Pak 1/2
+4158;09007300;1400;Blumenhaus;Brenke GbR,;Torsten und Viola;Hauptstr. 32;13127;Berlin;0173;1;Pak 2/2;5,3;0173-Pak 2/2;;;;;;0173-Pak 2/2
+3134;06143900;1400;Blumenhaus;Unger,;Karsten und Henry;Friedenstr. 19;17424;Ostseebad Heringsdorf;0174;1;Pak 1/2;26,7;0174-Pak 1/2;Pak 2/2;;5,3;;32;0174-Pak 1/2
+3134;06143900;1400;Blumenhaus;Unger,;Karsten und Henry;Friedenstr. 19;17424;Ostseebad Heringsdorf;0174;1;Pak 2/2;5,3;0174-Pak 2/2;;;;;;0174-Pak 2/2
+826;01464700;1400;Blumenhaus;Blumenhaus Martha Radau,;Inh.Holle Jaziri e.K.;Eppendorfer Landstr. 4;20249;Hamburg;0175;1;Pak 1/2;26,7;0175-Pak 1/2;Pak 2/2;;5,3;;32;0175-Pak 1/2
+826;01464700;1400;Blumenhaus;Blumenhaus Martha Radau,;Inh.Holle Jaziri e.K.;Eppendorfer Landstr. 4;20249;Hamburg;0175;1;Pak 2/2;5,3;0175-Pak 2/2;;;;;;0175-Pak 2/2
+2241;04083600;1400;Blumenhaus;Blumenstudio Kolberger OHG;;Brunswiker Str. 53;24103;Kiel;0177;1;Pak 1/2;26,7;0177-Pak 1/2;Pak 2/2;;5,3;;32;0177-Pak 1/2
+2241;04083600;1400;Blumenhaus;Blumenstudio Kolberger OHG;;Brunswiker Str. 53;24103;Kiel;0177;1;Pak 2/2;5,3;0177-Pak 2/2;;;;;;0177-Pak 2/2
+410;00760400;1400;Blumenhaus;Staeck,;Gerhard, Blumenhaus;Blumlage 70;29221;Celle;0178;1;Pak 1/2;26,7;0178-Pak 1/2;Pak 2/2;;5,3;;32;0178-Pak 1/2
+410;00760400;1400;Blumenhaus;Staeck,;Gerhard, Blumenhaus;Blumlage 70;29221;Celle;0178;1;Pak 2/2;5,3;0178-Pak 2/2;;;;;;0178-Pak 2/2
+2255;04120900;1400;Blumenhaus;Blumen Lange;Harald Lange, e.K.;Hannoversche Str. 3;31134;Hildesheim;0179;1;Pak 1/2;26,7;0179-Pak 1/2;Pak 2/2;;5,3;;32;0179-Pak 1/2
+2255;04120900;1400;Blumenhaus;Blumen Lange;Harald Lange, e.K.;Hannoversche Str. 3;31134;Hildesheim;0179;1;Pak 2/2;5,3;0179-Pak 2/2;;;;;;0179-Pak 2/2
+3002;05773700;1400;Blumenhaus;Heibrok,;Guido, Blumen Heibrok;Am Asbrock 16;33611;Bielefeld;0180;1;Pak 1/2;26,7;0180-Pak 1/2;Pak 2/2;;5,3;;32;0180-Pak 1/2
+3002;05773700;1400;Blumenhaus;Heibrok,;Guido, Blumen Heibrok;Am Asbrock 16;33611;Bielefeld;0180;1;Pak 2/2;5,3;0180-Pak 2/2;;;;;;0180-Pak 2/2
+4875;12303800;1400;Blumenhaus;Blumen-Schmid GMBH;;Fuldatalstr. 26;34125;Kassel;0181;1;Pak 1/2;26,7;0181-Pak 1/2;Pak 2/2;;5,3;;32;0181-Pak 1/2
+4875;12303800;1400;Blumenhaus;Blumen-Schmid GMBH;;Fuldatalstr. 26;34125;Kassel;0181;1;Pak 2/2;5,3;0181-Pak 2/2;;;;;;0181-Pak 2/2
+482;00882500;1400;Blumenhaus;Die Blumenwerkstatt;Stefanie Schneider e.K.;Berghofer Str. 142;44269;Dortmund;0182;1;Pak 1/2;26,7;0182-Pak 1/2;Pak 2/2;;5,3;;32;0182-Pak 1/2
+482;00882500;1400;Blumenhaus;Die Blumenwerkstatt;Stefanie Schneider e.K.;Berghofer Str. 142;44269;Dortmund;0182;1;Pak 2/2;5,3;0182-Pak 2/2;;;;;;0182-Pak 2/2
+5269;23023500;1400;Blumenhaus;Blumen Burger Inh. Marianne Tensmann e.Kfr.;;Halterner Str. 72;45657;Recklinghausen;0183;1;Pak 1/2;26,7;0183-Pak 1/2;Pak 2/2;;5,3;;32;0183-Pak 1/2
+5269;23023500;1400;Blumenhaus;Blumen Burger Inh. Marianne Tensmann e.Kfr.;;Halterner Str. 72;45657;Recklinghausen;0183;1;Pak 2/2;5,3;0183-Pak 2/2;;;;;;0183-Pak 2/2
+4912;12416700;1400;Blumenhaus;Schneider,;Hélène, Blumenhaus Schneider;Kölner Str. 147;51645;Gummersbach;0184;1;Pak 1/2;26,7;0184-Pak 1/2;Pak 2/2;;5,3;;32;0184-Pak 1/2
+4912;12416700;1400;Blumenhaus;Schneider,;Hélène, Blumenhaus Schneider;Kölner Str. 147;51645;Gummersbach;0184;1;Pak 2/2;5,3;0184-Pak 2/2;;;;;;0184-Pak 2/2
+3352;06785300;1400;Blumenhaus;Ließem,;Gabriele;Am Fronhof 14;53177;Bonn;0185;1;Pak 1/2;26,7;0185-Pak 1/2;Pak 2/2;;5,3;;32;0185-Pak 1/2
+3352;06785300;1400;Blumenhaus;Ließem,;Gabriele;Am Fronhof 14;53177;Bonn;0185;1;Pak 2/2;5,3;0185-Pak 2/2;;;;;;0185-Pak 2/2
+667;01203500;1400;Blumenhaus;Blumen- und Pflanzencenter;Haldy GmbH & Co. KG;Philipp-Reis-Str. 24;63571;Gelnhausen;0186;1;Pak 1/2;26,7;0186-Pak 1/2;Pak 2/2;;5,3;;32;0186-Pak 1/2
+667;01203500;1400;Blumenhaus;Blumen- und Pflanzencenter;Haldy GmbH & Co. KG;Philipp-Reis-Str. 24;63571;Gelnhausen;0186;1;Pak 2/2;5,3;0186-Pak 2/2;;;;;;0186-Pak 2/2
+446;00817500;1400;Blumenhaus;Blumenhaus Chrysanthem,;Hoffmann und Hornstein GmbH;Am Alten Friedhof 8;64287;Darmstadt;0187;1;Pak 1/2;26,7;0187-Pak 1/2;Pak 2/2;;5,3;;32;0187-Pak 1/2
+446;00817500;1400;Blumenhaus;Blumenhaus Chrysanthem,;Hoffmann und Hornstein GmbH;Am Alten Friedhof 8;64287;Darmstadt;0187;1;Pak 2/2;5,3;0187-Pak 2/2;;;;;;0187-Pak 2/2
+1644;02872500;1400;Blumenhaus;Weigand,;Bernd;Kelkheimer Str. 3;65812;Bad Soden;0188;1;Pak 1/2;26,7;0188-Pak 1/2;Pak 2/2;;5,3;;32;0188-Pak 1/2
+1644;02872500;1400;Blumenhaus;Weigand,;Bernd;Kelkheimer Str. 3;65812;Bad Soden;0188;1;Pak 2/2;5,3;0188-Pak 2/2;;;;;;0188-Pak 2/2
+2371;04350103;1400;Blumenhaus;Jenner,;Reiner;Willy-Brandt-Platz/Im Hauptbahnhof;68161;Mannheim;0189;1;Pak 1/2;26,7;0189-Pak 1/2;Pak 2/2;;5,3;;32;0189-Pak 1/2
+2371;04350103;1400;Blumenhaus;Jenner,;Reiner;Willy-Brandt-Platz/Im Hauptbahnhof;68161;Mannheim;0189;1;Pak 2/2;5,3;0189-Pak 2/2;;;;;;0189-Pak 2/2
+205;00378400;1400;Blumenhaus;Hooge,;Margarete, Blumen Klauss;Austr. 23;71069;Sindelfingen;0190;1;Pak 1/2;26,7;0190-Pak 1/2;Pak 2/2;;5,3;;32;0190-Pak 1/2
+205;00378400;1400;Blumenhaus;Hooge,;Margarete, Blumen Klauss;Austr. 23;71069;Sindelfingen;0190;1;Pak 2/2;5,3;0190-Pak 2/2;;;;;;0190-Pak 2/2
+1538;02676500;1400;Blumenhaus;Horst Baum Nachf. Blumenhaus;Inh. A. Bark e.K.;Rommelsbacher Str. 28;72760;Reutlingen;0191;1;Pak 1/2;26,7;0191-Pak 1/2;Pak 2/2;;5,3;;32;0191-Pak 1/2
+1538;02676500;1400;Blumenhaus;Horst Baum Nachf. Blumenhaus;Inh. A. Bark e.K.;Rommelsbacher Str. 28;72760;Reutlingen;0191;1;Pak 2/2;5,3;0191-Pak 2/2;;;;;;0191-Pak 2/2
+697;01254000;1400;Blumenhaus;Kees,;Andreas, Hong's Blumen-Pavillon;Münchner Freiheit 7;80802;München;0192;1;Pak 1/2;26,7;0192-Pak 1/2;Pak 2/2;;5,3;;32;0192-Pak 1/2
+697;01254000;1400;Blumenhaus;Kees,;Andreas, Hong's Blumen-Pavillon;Münchner Freiheit 7;80802;München;0192;1;Pak 2/2;5,3;0192-Pak 2/2;;;;;;0192-Pak 2/2
+1256;02195100;1400;Blumenhaus;Duyndam,;Adrian, Blumen Monique;Bahnhofstr. 19;82467;Garmisch-Partenkirchen;0193;1;Pak 1/2;26,7;0193-Pak 1/2;Pak 2/2;;5,3;;32;0193-Pak 1/2
+1256;02195100;1400;Blumenhaus;Duyndam,;Adrian, Blumen Monique;Bahnhofstr. 19;82467;Garmisch-Partenkirchen;0193;1;Pak 2/2;5,3;0193-Pak 2/2;;;;;;0193-Pak 2/2
+3503;07223700;1400;Blumenhaus;Schüssler;Dieter;Moltkestr. 8;84453;Mühldorf;0194;1;Pak 1/2;26,7;0194-Pak 1/2;Pak 2/2;;5,3;;32;0194-Pak 1/2
+3503;07223700;1400;Blumenhaus;Schüssler;Dieter;Moltkestr. 8;84453;Mühldorf;0194;1;Pak 2/2;5,3;0194-Pak 2/2;;;;;;0194-Pak 2/2
+3988;08605100;1400;Blumenhaus;Gärtnerei Hönbach GmbH;;Neustadter Str. 110;96515;Sonneberg;0195;1;Pak 1/2;26,7;0195-Pak 1/2;Pak 2/2;;5,3;;32;0195-Pak 1/2
+3988;08605100;1400;Blumenhaus;Gärtnerei Hönbach GmbH;;Neustadter Str. 110;96515;Sonneberg;0195;1;Pak 2/2;5,3;0195-Pak 2/2;;;;;;0195-Pak 2/2
+1253;02192800;1400;Blumenhaus;Blumen Carl,;Inh. Erika Carl;Würzburger Str. 8;97828;Marktheidenfeld;0196;1;Pak 1/2;26,7;0196-Pak 1/2;Pak 2/2;;5,3;;32;0196-Pak 1/2
+1253;02192800;1400;Blumenhaus;Blumen Carl,;Inh. Erika Carl;Würzburger Str. 8;97828;Marktheidenfeld;0196;1;Pak 2/2;5,3;0196-Pak 2/2;;;;;;0196-Pak 2/2
+3785;08095500;1400;Blumenhaus;Heymann,;Udo;Berliner Str. 9;98617;Meiningen;0197;1;Pak 1/2;26,7;0197-Pak 1/2;Pak 2/2;;5,3;;32;0197-Pak 1/2
+3785;08095500;1400;Blumenhaus;Heymann,;Udo;Berliner Str. 9;98617;Meiningen;0197;1;Pak 2/2;5,3;0197-Pak 2/2;;;;;;0197-Pak 2/2
+3968;08528800;1300;Blumenhaus;Krake,;Bärbel, Blumen-Eck;Hauptstr. 85;01587;Riesa;0198;1;Pak 1/2;26,7;0198-Pak 1/2;Pak 2/2;;3,1;;29,8;0198-Pak 1/2
+3968;08528800;1300;Blumenhaus;Krake,;Bärbel, Blumen-Eck;Hauptstr. 85;01587;Riesa;0198;1;Pak 2/2;3,5;0198-Pak 2/2;;;;;;0198-Pak 2/2
+3957;08484900;1300;Blumenhaus;Blumen Wöllner;FLORISTERIA GmbH;Coppistr. 57;04157;Leipzig;0199;1;Pak 1/2;26,7;0199-Pak 1/2;Pak 2/2;;3,1;;29,8;0199-Pak 1/2
+3957;08484900;1300;Blumenhaus;Blumen Wöllner;FLORISTERIA GmbH;Coppistr. 57;04157;Leipzig;0199;1;Pak 2/2;3,5;0199-Pak 2/2;;;;;;0199-Pak 2/2
+955;01682300;1300;Blumenhaus;Beyer,;Dietmar, Gärtnerei Beyer;Franzosenallee 12 a;04289;Leipzig;0200;1;Pak 1/2;26,7;0200-Pak 1/2;Pak 2/2;;3,1;;29,8;0200-Pak 1/2
+955;01682300;1300;Blumenhaus;Beyer,;Dietmar, Gärtnerei Beyer;Franzosenallee 12 a;04289;Leipzig;0200;1;Pak 2/2;3,5;0200-Pak 2/2;;;;;;0200-Pak 2/2
+660;01191600;1300;Blumenhaus;Theuerkorn,;Julia, Achillea dein Blumenladen;Leipziger Chaussee 147;06112;Halle;0201;1;Pak 1/2;26,7;0201-Pak 1/2;Pak 2/2;;3,1;;29,8;0201-Pak 1/2
+660;01191600;1300;Blumenhaus;Theuerkorn,;Julia, Achillea dein Blumenladen;Leipziger Chaussee 147;06112;Halle;0201;1;Pak 2/2;3,5;0201-Pak 2/2;;;;;;0201-Pak 2/2
+5221;22440000;1300;Blumenhaus;Ilgner,;Ingrid;Dr.-Wilhelm-Külz-Str. 16;06249;Mücheln;0202;1;Pak 1/2;26,7;0202-Pak 1/2;Pak 2/2;;3,1;;29,8;0202-Pak 1/2
+5221;22440000;1300;Blumenhaus;Ilgner,;Ingrid;Dr.-Wilhelm-Külz-Str. 16;06249;Mücheln;0202;1;Pak 2/2;3,5;0202-Pak 2/2;;;;;;0202-Pak 2/2
+4017;08682000;1300;Blumenhaus;Fandrich,;Sandra, Blumen Pitzschler;Steinsgraben 30;06712;Zeitz;0203;1;Pak 1/2;26,7;0203-Pak 1/2;Pak 2/2;;3,1;;29,8;0203-Pak 1/2
+4017;08682000;1300;Blumenhaus;Fandrich,;Sandra, Blumen Pitzschler;Steinsgraben 30;06712;Zeitz;0203;1;Pak 2/2;3,5;0203-Pak 2/2;;;;;;0203-Pak 2/2
+3825;08193500;1300;Blumenhaus;Richter,;Andreas, Gartenfachmarkt Richter;Weststr. 98;09116;Chemnitz;0204;1;Pak 1/2;26,7;0204-Pak 1/2;Pak 2/2;;3,1;;29,8;0204-Pak 1/2
+3825;08193500;1300;Blumenhaus;Richter,;Andreas, Gartenfachmarkt Richter;Weststr. 98;09116;Chemnitz;0204;1;Pak 2/2;3,5;0204-Pak 2/2;;;;;;0204-Pak 2/2
+627;01150400;1300;Blumenhaus;Ring,;Gerd, Im Ring-Center;Frankfurter Allee 111;10247;Berlin;0205;1;Pak 1/2;26,7;0205-Pak 1/2;Pak 2/2;;3,1;;29,8;0205-Pak 1/2
+627;01150400;1300;Blumenhaus;Ring,;Gerd, Im Ring-Center;Frankfurter Allee 111;10247;Berlin;0205;1;Pak 2/2;3,5;0205-Pak 2/2;;;;;;0205-Pak 2/2
+1977;03569500;1300;Blumenhaus;Heide,;Nicole, Blumenfachgeschäft;Kottbusser Damm 12;10967;Berlin;0206;1;Pak 1/2;26,7;0206-Pak 1/2;Pak 2/2;;3,1;;29,8;0206-Pak 1/2
+1977;03569500;1300;Blumenhaus;Heide,;Nicole, Blumenfachgeschäft;Kottbusser Damm 12;10967;Berlin;0206;1;Pak 2/2;3,5;0206-Pak 2/2;;;;;;0206-Pak 2/2
+3;00005600;1300;Blumenhaus;Blumen-Griesbeck;Inh. Robert Griesbeck;Buckower Damm 211;12349;Berlin;0207;1;Pak 1/2;26,7;0207-Pak 1/2;Pak 2/2;;3,1;;29,8;0207-Pak 1/2
+3;00005600;1300;Blumenhaus;Blumen-Griesbeck;Inh. Robert Griesbeck;Buckower Damm 211;12349;Berlin;0207;1;Pak 2/2;3,5;0207-Pak 2/2;;;;;;0207-Pak 2/2
+5302;24179600;1300;Blumenhaus;Sprechert,;Gabriele, Sonnenblumenwerkstatt;Mädewalder Weg 49;12621;Berlin;0208;1;Pak 1/2;26,7;0208-Pak 1/2;Pak 2/2;;3,1;;29,8;0208-Pak 1/2
+5302;24179600;1300;Blumenhaus;Sprechert,;Gabriele, Sonnenblumenwerkstatt;Mädewalder Weg 49;12621;Berlin;0208;1;Pak 2/2;3,5;0208-Pak 2/2;;;;;;0208-Pak 2/2
+4303;09297200;1300;Blumenhaus;Borcherdt,;Rainer, Der Rosenkavalier;Ernststr 74;13509;Berlin;0209;1;Pak 1/2;26,7;0209-Pak 1/2;Pak 2/2;;3,1;;29,8;0209-Pak 1/2
+4303;09297200;1300;Blumenhaus;Borcherdt,;Rainer, Der Rosenkavalier;Ernststr 74;13509;Berlin;0209;1;Pak 2/2;3,5;0209-Pak 2/2;;;;;;0209-Pak 2/2
+4626;11433200;1300;Blumenhaus;Petras,;Wolfgang;Brunsbütteler Damm 271;13591;Berlin;0210;1;Pak 1/2;26,7;0210-Pak 1/2;Pak 2/2;;3,1;;29,8;0210-Pak 1/2
+4626;11433200;1300;Blumenhaus;Petras,;Wolfgang;Brunsbütteler Damm 271;13591;Berlin;0210;1;Pak 2/2;3,5;0210-Pak 2/2;;;;;;0210-Pak 2/2
+542;00989500;1300;Blumenhaus;Florian-Blumen am Breitenbachpl.;Inh. Michael Schröter;Schorlemerallee 3;14195;Berlin;0211;1;Pak 1/2;26,7;0211-Pak 1/2;Pak 2/2;;3,1;;29,8;0211-Pak 1/2
+542;00989500;1300;Blumenhaus;Florian-Blumen am Breitenbachpl.;Inh. Michael Schröter;Schorlemerallee 3;14195;Berlin;0211;1;Pak 2/2;3,5;0211-Pak 2/2;;;;;;0211-Pak 2/2
+4247;09184400;1300;Blumenhaus;Bartsch-Seidel,;Jutta, Florales;Schulstr. 16;15366;Neuenhagen;0212;1;Pak 1/2;26,7;0212-Pak 1/2;Pak 2/2;;3,1;;29,8;0212-Pak 1/2
+4247;09184400;1300;Blumenhaus;Bartsch-Seidel,;Jutta, Florales;Schulstr. 16;15366;Neuenhagen;0212;1;Pak 2/2;3,5;0212-Pak 2/2;;;;;;0212-Pak 2/2
+4307;09304600;1300;Blumenhaus;Guhl,;Andreas und Petra Fiedler;Rostocker Heide 1;18055;Rostock;0213;1;Pak 1/2;26,7;0213-Pak 1/2;Pak 2/2;;3,1;;29,8;0213-Pak 1/2
+4307;09304600;1300;Blumenhaus;Guhl,;Andreas und Petra Fiedler;Rostocker Heide 1;18055;Rostock;0213;1;Pak 2/2;3,5;0213-Pak 2/2;;;;;;0213-Pak 2/2
+76;00131600;1300;Blumenhaus;Griem;Ralph und Maik, Blumenhof Griem;Seidelstr. 6;18273;Güstrow;0214;1;Pak 1/2;26,7;0214-Pak 1/2;Pak 2/2;;3,1;;29,8;0214-Pak 1/2
+76;00131600;1300;Blumenhaus;Griem;Ralph und Maik, Blumenhof Griem;Seidelstr. 6;18273;Güstrow;0214;1;Pak 2/2;3,5;0214-Pak 2/2;;;;;;0214-Pak 2/2
+3093;06025400;1300;Blumenhaus;Weese,;Hans-Jürgen, Blumen Weese;Ilmer Weg 30;21423;Winsen;0215;1;Pak 1/2;26,7;0215-Pak 1/2;Pak 2/2;;3,1;;29,8;0215-Pak 1/2
+3093;06025400;1300;Blumenhaus;Weese,;Hans-Jürgen, Blumen Weese;Ilmer Weg 30;21423;Winsen;0215;1;Pak 2/2;3,5;0215-Pak 2/2;;;;;;0215-Pak 2/2
+88;00157500;1300;Blumenhaus;Atelier Blumen Arno Schmidt,;Nachf. Hans Petersen;Waitzstr. 14;22607;Hamburg;0216;1;Pak 1/2;26,7;0216-Pak 1/2;Pak 2/2;;3,1;;29,8;0216-Pak 1/2
+88;00157500;1300;Blumenhaus;Atelier Blumen Arno Schmidt,;Nachf. Hans Petersen;Waitzstr. 14;22607;Hamburg;0216;1;Pak 2/2;3,5;0216-Pak 2/2;;;;;;0216-Pak 2/2
+2125;03884100;1300;Blumenhaus;Gnirke,;Anke-Marita;Krähenstr. 34;23552;Lübeck;0217;1;Pak 1/2;26,7;0217-Pak 1/2;Pak 2/2;;3,1;;29,8;0217-Pak 1/2
+2125;03884100;1300;Blumenhaus;Gnirke,;Anke-Marita;Krähenstr. 34;23552;Lübeck;0217;1;Pak 2/2;3,5;0217-Pak 2/2;;;;;;0217-Pak 2/2
+47;00084900;1300;Blumenhaus;Göllner,;Heinrich;Talrainweg 9;34225;Baunatal;0218;1;Pak 1/2;26,7;0218-Pak 1/2;Pak 2/2;;3,1;;29,8;0218-Pak 1/2
+47;00084900;1300;Blumenhaus;Göllner,;Heinrich;Talrainweg 9;34225;Baunatal;0218;1;Pak 2/2;3,5;0218-Pak 2/2;;;;;;0218-Pak 2/2
+487;00890100;1300;Blumenhaus;Röckrath,;Klaus;Tersteegenstr. 4;40474;Düsseldorf;0219;1;Pak 1/2;26,7;0219-Pak 1/2;Pak 2/2;;3,1;;29,8;0219-Pak 1/2
+487;00890100;1300;Blumenhaus;Röckrath,;Klaus;Tersteegenstr. 4;40474;Düsseldorf;0219;1;Pak 2/2;3,5;0219-Pak 2/2;;;;;;0219-Pak 2/2
+3720;07829400;1300;Blumenhaus;Alleeblumen Theresia Fechter;;Friedrich-Engels-Allee 296;42285;Wuppertal;0220;1;Pak 1/2;26,7;0220-Pak 1/2;Pak 2/2;;3,1;;29,8;0220-Pak 1/2
+3720;07829400;1300;Blumenhaus;Alleeblumen Theresia Fechter;;Friedrich-Engels-Allee 296;42285;Wuppertal;0220;1;Pak 2/2;3,5;0220-Pak 2/2;;;;;;0220-Pak 2/2
+4683;11621300;1300;Blumenhaus;Graue;Christoph, Blumeneck;Oststr. 180;47057;Duisburg;0221;1;Pak 1/2;26,7;0221-Pak 1/2;Pak 2/2;;3,1;;29,8;0221-Pak 1/2
+4683;11621300;1300;Blumenhaus;Graue;Christoph, Blumeneck;Oststr. 180;47057;Duisburg;0221;1;Pak 2/2;3,5;0221-Pak 2/2;;;;;;0221-Pak 2/2
+605;01108800;1300;Blumenhaus;Müller,;Henriette;Breite Str. 6;50226;Frechen;0222;1;Pak 1/2;26,7;0222-Pak 1/2;Pak 2/2;;3,1;;29,8;0222-Pak 1/2
+605;01108800;1300;Blumenhaus;Müller,;Henriette;Breite Str. 6;50226;Frechen;0222;1;Pak 2/2;3,5;0222-Pak 2/2;;;;;;0222-Pak 2/2
+1081;01895300;1300;Blumenhaus;Fahrig,;Heiner;Deutzer Freiheit 76;50679;Köln;0223;1;Pak 1/2;26,7;0223-Pak 1/2;Pak 2/2;;3,1;;29,8;0223-Pak 1/2
+1081;01895300;1300;Blumenhaus;Fahrig,;Heiner;Deutzer Freiheit 76;50679;Köln;0223;1;Pak 2/2;3,5;0223-Pak 2/2;;;;;;0223-Pak 2/2
+1971;03557000;1300;Blumenhaus;Baum,;Jens und Tobias, Blumen Baum;Berrenrather Str. 204;50937;Köln;0224;1;Pak 1/2;26,7;0224-Pak 1/2;Pak 2/2;;3,1;;29,8;0224-Pak 1/2
+1971;03557000;1300;Blumenhaus;Baum,;Jens und Tobias, Blumen Baum;Berrenrather Str. 204;50937;Köln;0224;1;Pak 2/2;3,5;0224-Pak 2/2;;;;;;0224-Pak 2/2
+2858;05373000;1300;Blumenhaus;Friedhofsgärtnerei-Blumen;Nicolaye GmbH, Floristikwerkstatt;Vaalser Str. 334;52074;Aachen;0225;1;Pak 1/2;26,7;0225-Pak 1/2;Pak 2/2;;3,1;;29,8;0225-Pak 1/2
+2858;05373000;1300;Blumenhaus;Friedhofsgärtnerei-Blumen;Nicolaye GmbH, Floristikwerkstatt;Vaalser Str. 334;52074;Aachen;0225;1;Pak 2/2;3,5;0225-Pak 2/2;;;;;;0225-Pak 2/2
+1243;02175500;1300;Blumenhaus;Heinzen,;Michael, Blumenhaus Heinzen;Sehler Anlagen 3;56812;Cochem;0226;1;Pak 1/2;26,7;0226-Pak 1/2;Pak 2/2;;3,1;;29,8;0226-Pak 1/2
+1243;02175500;1300;Blumenhaus;Heinzen,;Michael, Blumenhaus Heinzen;Sehler Anlagen 3;56812;Cochem;0226;1;Pak 2/2;3,5;0226-Pak 2/2;;;;;;0226-Pak 2/2
+624;01142300;1300;Blumenhaus;Blumen-Ursprung,;Christoph Ursprung e.K.;Oederweg 77;60318;Frankfurt;0227;1;Pak 1/2;26,7;0227-Pak 1/2;Pak 2/2;;3,1;;29,8;0227-Pak 1/2
+624;01142300;1300;Blumenhaus;Blumen-Ursprung,;Christoph Ursprung e.K.;Oederweg 77;60318;Frankfurt;0227;1;Pak 2/2;3,5;0227-Pak 2/2;;;;;;0227-Pak 2/2
+789;01405100;1300;Blumenhaus;Schwarz,;Monika, Blüte mit Stil;Homburger Str. 96 b;61118;Bad Vilbel;0228;1;Pak 1/2;26,7;0228-Pak 1/2;Pak 2/2;;3,1;;29,8;0228-Pak 1/2
+789;01405100;1300;Blumenhaus;Schwarz,;Monika, Blüte mit Stil;Homburger Str. 96 b;61118;Bad Vilbel;0228;1;Pak 2/2;3,5;0228-Pak 2/2;;;;;;0228-Pak 2/2
+1061;01868800;1300;Blumenhaus;Böhning,;Frank, Blumen Böhning;Hauptstr. 1;61462;Königstein;0229;1;Pak 1/2;26,7;0229-Pak 1/2;Pak 2/2;;3,1;;29,8;0229-Pak 1/2
+1061;01868800;1300;Blumenhaus;Böhning,;Frank, Blumen Böhning;Hauptstr. 1;61462;Königstein;0229;1;Pak 2/2;3,5;0229-Pak 2/2;;;;;;0229-Pak 2/2
+463;00845600;1300;Blumenhaus;Hoffmann,;Heike;Hauptstr. 52;65719;Hofheim;0230;1;Pak 1/2;26,7;0230-Pak 1/2;Pak 2/2;;3,1;;29,8;0230-Pak 1/2
+463;00845600;1300;Blumenhaus;Hoffmann,;Heike;Hauptstr. 52;65719;Hofheim;0230;1;Pak 2/2;3,5;0230-Pak 2/2;;;;;;0230-Pak 2/2
+3594;07445800;1300;Blumenhaus;Rieß-Leidel,;Manuela;Einöder Str. 11-13;66424;Homburg;0231;1;Pak 1/2;26,7;0231-Pak 1/2;Pak 2/2;;3,1;;29,8;0231-Pak 1/2
+3594;07445800;1300;Blumenhaus;Rieß-Leidel,;Manuela;Einöder Str. 11-13;66424;Homburg;0231;1;Pak 2/2;3,5;0231-Pak 2/2;;;;;;0231-Pak 2/2
+1127;01973700;1300;Blumenhaus;Dilger,;Gerhard L., Blumenhaus Dilger;Gebersheimer Str. 111;71229;Leonberg;0232;1;Pak 1/2;26,7;0232-Pak 1/2;Pak 2/2;;3,1;;29,8;0232-Pak 1/2
+1127;01973700;1300;Blumenhaus;Dilger,;Gerhard L., Blumenhaus Dilger;Gebersheimer Str. 111;71229;Leonberg;0232;1;Pak 2/2;3,5;0232-Pak 2/2;;;;;;0232-Pak 2/2
+4936;12482700;1300;Blumenhaus;ALRAUNE Gartenbau u. Blumen,;Hans-Jürgen Reutter;Dresdner Platz 2;72760;Reutlingen;0233;1;Pak 1/2;26,7;0233-Pak 1/2;Pak 2/2;;3,1;;29,8;0233-Pak 1/2
+4936;12482700;1300;Blumenhaus;ALRAUNE Gartenbau u. Blumen,;Hans-Jürgen Reutter;Dresdner Platz 2;72760;Reutlingen;0233;1;Pak 2/2;3,5;0233-Pak 2/2;;;;;;0233-Pak 2/2
+884;01577300;1300;Blumenhaus;Blumenhaus Kramer,;Inh. Klaus Götz;Allee 23;74072;Heilbronn;0234;1;Pak 1/2;26,7;0234-Pak 1/2;Pak 2/2;;3,1;;29,8;0234-Pak 1/2
+884;01577300;1300;Blumenhaus;Blumenhaus Kramer,;Inh. Klaus Götz;Allee 23;74072;Heilbronn;0234;1;Pak 2/2;3,5;0234-Pak 2/2;;;;;;0234-Pak 2/2
+2170;03958900;1300;Blumenhaus;Mayer,;Heinz;Bahnhofsplatz 1;74321;Bietigheim-Bissingen;0235;1;Pak 1/2;26,7;0235-Pak 1/2;Pak 2/2;;3,1;;29,8;0235-Pak 1/2
+2170;03958900;1300;Blumenhaus;Mayer,;Heinz;Bahnhofsplatz 1;74321;Bietigheim-Bissingen;0235;1;Pak 2/2;3,5;0235-Pak 2/2;;;;;;0235-Pak 2/2
+1479;02563800;1300;Blumenhaus;Gaisberg,;Dorothea von, Blumen am Sedanplatz;Dillsteinerstr. 10;75173;Pforzheim;0236;1;Pak 1/2;26,7;0236-Pak 1/2;Pak 2/2;;3,1;;29,8;0236-Pak 1/2
+1479;02563800;1300;Blumenhaus;Gaisberg,;Dorothea von, Blumen am Sedanplatz;Dillsteinerstr. 10;75173;Pforzheim;0236;1;Pak 2/2;3,5;0236-Pak 2/2;;;;;;0236-Pak 2/2
+1622;02830200;1300;Blumenhaus;Blumenhaus + Gärtnerei M. Müller e.Kfm.;Inh. Uwe Müller;Erzbergerstr. 21;78054;Villingen-Schwenningen;0237;1;Pak 1/2;26,7;0237-Pak 1/2;Pak 2/2;;3,1;;29,8;0237-Pak 1/2
+1622;02830200;1300;Blumenhaus;Blumenhaus + Gärtnerei M. Müller e.Kfm.;Inh. Uwe Müller;Erzbergerstr. 21;78054;Villingen-Schwenningen;0237;1;Pak 2/2;3,5;0237-Pak 2/2;;;;;;0237-Pak 2/2
+1186;02073100;1300;Blumenhaus;Blumen- und Gartencenter Schmitt OHG;;Brombacher Str. 50;79539;Lörrach;0238;1;Pak 1/2;26,7;0238-Pak 1/2;Pak 2/2;;3,1;;29,8;0238-Pak 1/2
+1186;02073100;1300;Blumenhaus;Blumen- und Gartencenter Schmitt OHG;;Brombacher Str. 50;79539;Lörrach;0238;1;Pak 2/2;3,5;0238-Pak 2/2;;;;;;0238-Pak 2/2
+3550;07343400;1300;Blumenhaus;Angistalis,;Konstantinos, Florian's Blumenpavillon;Kufsteiner Platz 5;81679;München;0239;1;Pak 1/2;26,7;0239-Pak 1/2;Pak 2/2;;3,1;;29,8;0239-Pak 1/2
+3550;07343400;1300;Blumenhaus;Angistalis,;Konstantinos, Florian's Blumenpavillon;Kufsteiner Platz 5;81679;München;0239;1;Pak 2/2;3,5;0239-Pak 2/2;;;;;;0239-Pak 2/2
+2289;04195300;1300;Blumenhaus;Pelz,;Wolfgang;Bogenstr. 2;82166;Gräfelfing;0240;1;Pak 1/2;26,7;0240-Pak 1/2;Pak 2/2;;3,1;;29,8;0240-Pak 1/2
+2289;04195300;1300;Blumenhaus;Pelz,;Wolfgang;Bogenstr. 2;82166;Gräfelfing;0240;1;Pak 2/2;3,5;0240-Pak 2/2;;;;;;0240-Pak 2/2
+1712;03038600;1300;Blumenhaus;Blumen Marile Mereis e.K.;;Adrian-Stoop-Str. 8;83707;Bad Wiessee;0241;1;Pak 1/2;26,7;0241-Pak 1/2;Pak 2/2;;3,1;;29,8;0241-Pak 1/2
+1712;03038600;1300;Blumenhaus;Blumen Marile Mereis e.K.;;Adrian-Stoop-Str. 8;83707;Bad Wiessee;0241;1;Pak 2/2;3,5;0241-Pak 2/2;;;;;;0241-Pak 2/2
+1232;02152700;1300;Blumenhaus;Blumen Schlegel - Floristik e.K.;Inh. Andrea Schlegel-Keller;Talweg 7;86154;Augsburg;0242;1;Pak 1/2;26,7;0242-Pak 1/2;Pak 2/2;;3,1;;29,8;0242-Pak 1/2
+1232;02152700;1300;Blumenhaus;Blumen Schlegel - Floristik e.K.;Inh. Andrea Schlegel-Keller;Talweg 7;86154;Augsburg;0242;1;Pak 2/2;3,5;0242-Pak 2/2;;;;;;0242-Pak 2/2
+1023;01802500;1300;Blumenhaus;Blumen Florian Hiedl e.K.;;Gottesackerweg 1;87439;Kempten;0243;1;Pak 1/2;26,7;0243-Pak 1/2;Pak 2/2;;3,1;;29,8;0243-Pak 1/2
+1023;01802500;1300;Blumenhaus;Blumen Florian Hiedl e.K.;;Gottesackerweg 1;87439;Kempten;0243;1;Pak 2/2;3,5;0243-Pak 2/2;;;;;;0243-Pak 2/2
+1575;02748100;1300;Blumenhaus;Ott,;Monika, Blumen Arkade;Alter Postplatz 1;88400;Biberach;0244;1;Pak 1/2;26,7;0244-Pak 1/2;Pak 2/2;;3,1;;29,8;0244-Pak 1/2
+1575;02748100;1300;Blumenhaus;Ott,;Monika, Blumen Arkade;Alter Postplatz 1;88400;Biberach;0244;1;Pak 2/2;3,5;0244-Pak 2/2;;;;;;0244-Pak 2/2
+1402;02435001;1300;Blumenhaus;Blumen Kuhn Floraldesign GmbH;beim Klinikum;Kirchenweg 36;90419;Nürnberg;0245;1;Pak 1/2;26,7;0245-Pak 1/2;Pak 2/2;;3,1;;29,8;0245-Pak 1/2
+1402;02435001;1300;Blumenhaus;Blumen Kuhn Floraldesign GmbH;beim Klinikum;Kirchenweg 36;90419;Nürnberg;0245;1;Pak 2/2;3,5;0245-Pak 2/2;;;;;;0245-Pak 2/2
+1271;02220900;1300;Blumenhaus;Ehrenfried,;Diana, vorm. Donauer;Poststr. 1/1;97980;Bad Mergentheim;0246;1;Pak 1/2;26,7;0246-Pak 1/2;Pak 2/2;;3,1;;29,8;0246-Pak 1/2
+1271;02220900;1300;Blumenhaus;Ehrenfried,;Diana, vorm. Donauer;Poststr. 1/1;97980;Bad Mergentheim;0246;1;Pak 2/2;3,5;0246-Pak 2/2;;;;;;0246-Pak 2/2
+4014;08671600;1300;Blumenhaus;A & A Blumen Heyn;Inh. Walter Heyn;Neumarkt 10;99867;Gotha;0247;1;Pak 1/2;26,7;0247-Pak 1/2;Pak 2/2;;3,1;;29,8;0247-Pak 1/2
+4014;08671600;1300;Blumenhaus;A & A Blumen Heyn;Inh. Walter Heyn;Neumarkt 10;99867;Gotha;0247;1;Pak 2/2;3,5;0247-Pak 2/2;;;;;;0247-Pak 2/2
+5300;24075500;1200;Blumenhaus;Nietzold,;Andy und Peggy Faust GbR, Gärtnerei Nietzold;Dresdner Str. 170;01705;Freital;0248;1;Pak 1/2;26,7;0248-Pak 1/2;Pak 2/2;;1;;27,7;0248-Pak 1/2
+5300;24075500;1200;Blumenhaus;Nietzold,;Andy und Peggy Faust GbR, Gärtnerei Nietzold;Dresdner Str. 170;01705;Freital;0248;1;Pak 2/2;1;0248-Pak 2/2;;;;;;0248-Pak 2/2
+845;01496700;1200;Blumenhaus;Eckert,;Manuela, Manuela's Blumenparadies;Reichenstr. 31;02625;Bautzen;0249;1;Pak 1/2;26,7;0249-Pak 1/2;Pak 2/2;;1;;27,7;0249-Pak 1/2
+845;01496700;1200;Blumenhaus;Eckert,;Manuela, Manuela's Blumenparadies;Reichenstr. 31;02625;Bautzen;0249;1;Pak 2/2;1;0249-Pak 2/2;;;;;;0249-Pak 2/2
+4078;08834200;1200;Blumenhaus;Klingler,;Uwe, Blumen-Boutique Bobbau;Ackerstr. 38;06766;Wolfen;0250;1;Pak 1/2;26,7;0250-Pak 1/2;Pak 2/2;;1;;27,7;0250-Pak 1/2
+4078;08834200;1200;Blumenhaus;Klingler,;Uwe, Blumen-Boutique Bobbau;Ackerstr. 38;06766;Wolfen;0250;1;Pak 2/2;1;0250-Pak 2/2;;;;;;0250-Pak 2/2
+3974;08545000;1200;Blumenhaus;Saale-Flora Zierpflanzenhandel;Erich Kellner;Markt 11;07318;Saalfeld;0251;1;Pak 1/2;26,7;0251-Pak 1/2;Pak 2/2;;1;;27,7;0251-Pak 1/2
+3974;08545000;1200;Blumenhaus;Saale-Flora Zierpflanzenhandel;Erich Kellner;Markt 11;07318;Saalfeld;0251;1;Pak 2/2;1;0251-Pak 2/2;;;;;;0251-Pak 2/2
+1079;01893100;1200;Blumenhaus;Sip,;Victoria, Floristik;Leipziger Str. 58;10117;Berlin;0252;1;Pak 1/2;26,7;0252-Pak 1/2;Pak 2/2;;1;;27,7;0252-Pak 1/2
+1079;01893100;1200;Blumenhaus;Sip,;Victoria, Floristik;Leipziger Str. 58;10117;Berlin;0252;1;Pak 2/2;1;0252-Pak 2/2;;;;;;0252-Pak 2/2
+155;00277000;1200;Blumenhaus;Blumentruhe;Inh. Antje Grüneberg;Leonorenstr. 30;12247;Berlin;0253;1;Pak 1/2;26,7;0253-Pak 1/2;Pak 2/2;;1;;27,7;0253-Pak 1/2
+155;00277000;1200;Blumenhaus;Blumentruhe;Inh. Antje Grüneberg;Leonorenstr. 30;12247;Berlin;0253;1;Pak 2/2;1;0253-Pak 2/2;;;;;;0253-Pak 2/2
+5276;23108500;1200;Blumenhaus;Belser,;Nikolaus, Blumenstudio und Team;Helene-Weigel-Platz 13-14;12681;Berlin;0254;1;Pak 1/2;26,7;0254-Pak 1/2;Pak 2/2;;1;;27,7;0254-Pak 1/2
+5276;23108500;1200;Blumenhaus;Belser,;Nikolaus, Blumenstudio und Team;Helene-Weigel-Platz 13-14;12681;Berlin;0254;1;Pak 2/2;1;0254-Pak 2/2;;;;;;0254-Pak 2/2
+3060;05944400;1200;Blumenhaus;Blumen Korus;Inh. Christel Korus;Seegefelder Str. 62;13583;Berlin;0255;1;Pak 1/2;26,7;0255-Pak 1/2;Pak 2/2;;1;;27,7;0255-Pak 1/2
+3060;05944400;1200;Blumenhaus;Blumen Korus;Inh. Christel Korus;Seegefelder Str. 62;13583;Berlin;0255;1;Pak 2/2;1;0255-Pak 2/2;;;;;;0255-Pak 2/2
+1339;02336900;1200;Blumenhaus;Liebe,;Nicole, Das Blumenhaus;Hauptstr. 47;16547;Birkenwerder;0256;1;Pak 1/2;26,7;0256-Pak 1/2;Pak 2/2;;1;;27,7;0256-Pak 1/2
+1339;02336900;1200;Blumenhaus;Liebe,;Nicole, Das Blumenhaus;Hauptstr. 47;16547;Birkenwerder;0256;1;Pak 2/2;1;0256-Pak 2/2;;;;;;0256-Pak 2/2
+5313;24678800;1200;Blumenhaus;Schultz,;Astrid, Flora- Shop;Scholtenstr. 26;16816;Neuruppin;0257;1;Pak 1/2;26,7;0257-Pak 1/2;Pak 2/2;;1;;27,7;0257-Pak 1/2
+5313;24678800;1200;Blumenhaus;Schultz,;Astrid, Flora- Shop;Scholtenstr. 26;16816;Neuruppin;0257;1;Pak 2/2;1;0257-Pak 2/2;;;;;;0257-Pak 2/2
+5097;20174900;1200;Blumenhaus;Burmester,;Jutta;Osterstr. 95;20259;Hamburg;0258;1;Pak 1/2;26,7;0258-Pak 1/2;Pak 2/2;;1;;27,7;0258-Pak 1/2
+5097;20174900;1200;Blumenhaus;Burmester,;Jutta;Osterstr. 95;20259;Hamburg;0258;1;Pak 2/2;1;0258-Pak 2/2;;;;;;0258-Pak 2/2
+1088;01906100;1200;Blumenhaus;Schoknecht,;Freddy, Hansefloristik;Thielbek 15;20355;Hamburg;0259;1;Pak 1/2;26,7;0259-Pak 1/2;Pak 2/2;;1;;27,7;0259-Pak 1/2
+1088;01906100;1200;Blumenhaus;Schoknecht,;Freddy, Hansefloristik;Thielbek 15;20355;Hamburg;0259;1;Pak 2/2;1;0259-Pak 2/2;;;;;;0259-Pak 2/2
+610;01120600;1200;Blumenhaus;Meyer;Marina;Adolfstr. 18;21244;Buchholz;0260;1;Pak 1/2;26,7;0260-Pak 1/2;Pak 2/2;;1;;27,7;0260-Pak 1/2
+610;01120600;1200;Blumenhaus;Meyer;Marina;Adolfstr. 18;21244;Buchholz;0260;1;Pak 2/2;1;0260-Pak 2/2;;;;;;0260-Pak 2/2
+87;00156300;1200;Blumenhaus;Hester-Faber,;Birgitt;Waitzstr. 19;22607;Hamburg;0261;1;Pak 1/2;26,7;0261-Pak 1/2;Pak 2/2;;1;;27,7;0261-Pak 1/2
+87;00156300;1200;Blumenhaus;Hester-Faber,;Birgitt;Waitzstr. 19;22607;Hamburg;0261;1;Pak 2/2;1;0261-Pak 2/2;;;;;;0261-Pak 2/2
+1703;03010300;1200;Blumenhaus;Schroeder,;Corinna, Floral-art-Ottensen;Ottenser Hauptstr. 40;22765;Hamburg;0262;1;Pak 1/2;26,7;0262-Pak 1/2;Pak 2/2;;1;;27,7;0262-Pak 1/2
+1703;03010300;1200;Blumenhaus;Schroeder,;Corinna, Floral-art-Ottensen;Ottenser Hauptstr. 40;22765;Hamburg;0262;1;Pak 2/2;1;0262-Pak 2/2;;;;;;0262-Pak 2/2
+510;00929400;1200;Blumenhaus;Gärtnerei Köhler Handelsgesellschaft mbH;;Moislinger Allee 155 a;23558;Lübeck;0263;1;Pak 1/2;26,7;0263-Pak 1/2;Pak 2/2;;1;;27,7;0263-Pak 1/2
+510;00929400;1200;Blumenhaus;Gärtnerei Köhler Handelsgesellschaft mbH;;Moislinger Allee 155 a;23558;Lübeck;0263;1;Pak 2/2;1;0263-Pak 2/2;;;;;;0263-Pak 2/2
+4179;09048500;1200;Blumenhaus;Beuttel,;Martina, Tina's Blumen;Schulweg 1;24340;Eckernförde;0264;1;Pak 1/2;26,7;0264-Pak 1/2;Pak 2/2;;1;;27,7;0264-Pak 1/2
+4179;09048500;1200;Blumenhaus;Beuttel,;Martina, Tina's Blumen;Schulweg 1;24340;Eckernförde;0264;1;Pak 2/2;1;0264-Pak 2/2;;;;;;0264-Pak 2/2
+707;01268700;1200;Blumenhaus;Blumen Otto Wrigge,;Inh. Marion Gullert e.K.;Rendsburger Str. 13;24534;Neumünster;0265;1;Pak 1/2;26,7;0265-Pak 1/2;Pak 2/2;;1;;27,7;0265-Pak 1/2
+707;01268700;1200;Blumenhaus;Blumen Otto Wrigge,;Inh. Marion Gullert e.K.;Rendsburger Str. 13;24534;Neumünster;0265;1;Pak 2/2;1;0265-Pak 2/2;;;;;;0265-Pak 2/2
+3709;07797900;1200;Blumenhaus;Blumen Prahm,;Inh. Hannelore Pertzel;Am Friedenshügel 22;24941;Flensburg;0266;1;Pak 1/2;26,7;0266-Pak 1/2;Pak 2/2;;1;;27,7;0266-Pak 1/2
+3709;07797900;1200;Blumenhaus;Blumen Prahm,;Inh. Hannelore Pertzel;Am Friedenshügel 22;24941;Flensburg;0266;1;Pak 2/2;1;0266-Pak 2/2;;;;;;0266-Pak 2/2
+531;00967500;1200;Blumenhaus;Mügge,;Katrin, Blumen Nachtigall;Südersteinstr. 8;27472;Cuxhaven;0267;1;Pak 1/2;26,7;0267-Pak 1/2;Pak 2/2;;1;;27,7;0267-Pak 1/2
+531;00967500;1200;Blumenhaus;Mügge,;Katrin, Blumen Nachtigall;Südersteinstr. 8;27472;Cuxhaven;0267;1;Pak 2/2;1;0267-Pak 2/2;;;;;;0267-Pak 2/2
+4395;09451900;1200;Blumenhaus;Sauerbier,;Karl-Hermann, Blumen Sauerbier;Brückenstr. 18;29549;Bad Bevensen;0268;1;Pak 1/2;26,7;0268-Pak 1/2;Pak 2/2;;1;;27,7;0268-Pak 1/2
+4395;09451900;1200;Blumenhaus;Sauerbier,;Karl-Hermann, Blumen Sauerbier;Brückenstr. 18;29549;Bad Bevensen;0268;1;Pak 2/2;1;0268-Pak 2/2;;;;;;0268-Pak 2/2
+4255;09201100;1200;Blumenhaus;Becker,;Udo;Uetzer Str. 95;31303;Burgdorf;0269;1;Pak 1/2;26,7;0269-Pak 1/2;Pak 2/2;;1;;27,7;0269-Pak 1/2
+4255;09201100;1200;Blumenhaus;Becker,;Udo;Uetzer Str. 95;31303;Burgdorf;0269;1;Pak 2/2;1;0269-Pak 2/2;;;;;;0269-Pak 2/2
+3522;07258000;1200;Blumenhaus;Schlüter,;Ralf, Erlebnisgärtnerei;Hermann-Löns-Str. 88;32547;Bad Oeynhausen;0270;1;Pak 1/2;26,7;0270-Pak 1/2;Pak 2/2;;1;;27,7;0270-Pak 1/2
+3522;07258000;1200;Blumenhaus;Schlüter,;Ralf, Erlebnisgärtnerei;Hermann-Löns-Str. 88;32547;Bad Oeynhausen;0270;1;Pak 2/2;1;0270-Pak 2/2;;;;;;0270-Pak 2/2
+649;01178700;1200;Blumenhaus;1A FLORALES ANGELI @ LINK;BLUMEN + PRÄSENTE - weltweit - e.K.;Am Bahnhof 3;36037;Fulda;0271;1;Pak 1/2;26,7;0271-Pak 1/2;Pak 2/2;;1;;27,7;0271-Pak 1/2
+649;01178700;1200;Blumenhaus;1A FLORALES ANGELI @ LINK;BLUMEN + PRÄSENTE - weltweit - e.K.;Am Bahnhof 3;36037;Fulda;0271;1;Pak 2/2;1;0271-Pak 2/2;;;;;;0271-Pak 2/2
+998;01759400;1200;Blumenhaus;Blumen Klarhöfer Frank Klarhöfer;;Lessingstr. 68-70;38440;Wolfsburg;0272;1;Pak 1/2;26,7;0272-Pak 1/2;Pak 2/2;;1;;27,7;0272-Pak 1/2
+998;01759400;1200;Blumenhaus;Blumen Klarhöfer Frank Klarhöfer;;Lessingstr. 68-70;38440;Wolfsburg;0272;1;Pak 2/2;1;0272-Pak 2/2;;;;;;0272-Pak 2/2
+3096;06035600;1200;Blumenhaus;Baltin Floristik;Inh. Christina Hempel;Mörser Str. 29;38442;Wolfsburg;0273;1;Pak 1/2;26,7;0273-Pak 1/2;Pak 2/2;;1;;27,7;0273-Pak 1/2
+3096;06035600;1200;Blumenhaus;Baltin Floristik;Inh. Christina Hempel;Mörser Str. 29;38442;Wolfsburg;0273;1;Pak 2/2;1;0273-Pak 2/2;;;;;;0273-Pak 2/2
+3867;08281200;1200;Blumenhaus;Blumenbinderei Scilla Witte;Schachtner KG;Friedrich-Ebert-Str. 13b;38820;Halberstadt;0274;1;Pak 1/2;26,7;0274-Pak 1/2;Pak 2/2;;1;;27,7;0274-Pak 1/2
+3867;08281200;1200;Blumenhaus;Blumenbinderei Scilla Witte;Schachtner KG;Friedrich-Ebert-Str. 13b;38820;Halberstadt;0274;1;Pak 2/2;1;0274-Pak 2/2;;;;;;0274-Pak 2/2
+380;00709800;1200;Blumenhaus;Linka,;Christian, Blumenhaus Linka;Jütrichauer Str. 15;39261;Zerbst;0275;1;Pak 1/2;26,7;0275-Pak 1/2;Pak 2/2;;1;;27,7;0275-Pak 1/2
+380;00709800;1200;Blumenhaus;Linka,;Christian, Blumenhaus Linka;Jütrichauer Str. 15;39261;Zerbst;0275;1;Pak 2/2;1;0275-Pak 2/2;;;;;;0275-Pak 2/2
+2924;05570000;1200;Blumenhaus;Markowitz,;Bernd;Stephanstr. 2;42119;Wuppertal;0276;1;Pak 1/2;26,7;0276-Pak 1/2;Pak 2/2;;1;;27,7;0276-Pak 1/2
+2924;05570000;1200;Blumenhaus;Markowitz,;Bernd;Stephanstr. 2;42119;Wuppertal;0276;1;Pak 2/2;1;0276-Pak 2/2;;;;;;0276-Pak 2/2
+2970;05673500;1200;Blumenhaus;Niehüser;Frank, Blumen Niehüser;Neumühler Str. 37;46149;Oberhausen;0277;1;Pak 1/2;26,7;0277-Pak 1/2;Pak 2/2;;1;;27,7;0277-Pak 1/2
+2970;05673500;1200;Blumenhaus;Niehüser;Frank, Blumen Niehüser;Neumühler Str. 37;46149;Oberhausen;0277;1;Pak 2/2;1;0277-Pak 2/2;;;;;;0277-Pak 2/2
+5226;22463800;1200;Blumenhaus;Müller,;Iris, Lily deluxe;Krefelder Str. 68;50670;Köln;0278;1;Pak 1/2;26,7;0278-Pak 1/2;Pak 2/2;;1;;27,7;0278-Pak 1/2
+5226;22463800;1200;Blumenhaus;Müller,;Iris, Lily deluxe;Krefelder Str. 68;50670;Köln;0278;1;Pak 2/2;1;0278-Pak 2/2;;;;;;0278-Pak 2/2
+1054;01850700;1200;Blumenhaus;Mirgel-Löffler,;Christiane, Blumen Wind;Bonner Str. 461;50968;Köln;0279;1;Pak 1/2;26,7;0279-Pak 1/2;Pak 2/2;;1;;27,7;0279-Pak 1/2
+1054;01850700;1200;Blumenhaus;Mirgel-Löffler,;Christiane, Blumen Wind;Bonner Str. 461;50968;Köln;0279;1;Pak 2/2;1;0279-Pak 2/2;;;;;;0279-Pak 2/2
+1704;03012500;1200;Blumenhaus;Blumencenter Chudziak GmbH;;Westpromenade 50;52525;Heinsberg;0280;1;Pak 1/2;26,7;0280-Pak 1/2;Pak 2/2;;1;;27,7;0280-Pak 1/2
+1704;03012500;1200;Blumenhaus;Blumencenter Chudziak GmbH;;Westpromenade 50;52525;Heinsberg;0280;1;Pak 2/2;1;0280-Pak 2/2;;;;;;0280-Pak 2/2
+583;01063800;1200;Blumenhaus;Hallatsch,;Sonja, Stilecht-VolmeGalerie;Friedrich-Ebert-Platz 3;58095;Hagen;0281;1;Pak 1/2;26,7;0281-Pak 1/2;Pak 2/2;;1;;27,7;0281-Pak 1/2
+583;01063800;1200;Blumenhaus;Hallatsch,;Sonja, Stilecht-VolmeGalerie;Friedrich-Ebert-Platz 3;58095;Hagen;0281;1;Pak 2/2;1;0281-Pak 2/2;;;;;;0281-Pak 2/2
+1979;03571900;1200;Blumenhaus;Blumen-Kunst,;Kurt Kunst ohg;Frankfurter Str. 52;63263;Neu-Isenburg;0282;1;Pak 1/2;26,7;0282-Pak 1/2;Pak 2/2;;1;;27,7;0282-Pak 1/2
+1979;03571900;1200;Blumenhaus;Blumen-Kunst,;Kurt Kunst ohg;Frankfurter Str. 52;63263;Neu-Isenburg;0282;1;Pak 2/2;1;0282-Pak 2/2;;;;;;0282-Pak 2/2
+4695;11660500;1200;Blumenhaus;Blumen Werner;Inh. Holger Werner;Stolberger Str. 2;65205;Wiesbaden;0283;1;Pak 1/2;26,7;0283-Pak 1/2;Pak 2/2;;1;;27,7;0283-Pak 1/2
+4695;11660500;1200;Blumenhaus;Blumen Werner;Inh. Holger Werner;Stolberger Str. 2;65205;Wiesbaden;0283;1;Pak 2/2;1;0283-Pak 2/2;;;;;;0283-Pak 2/2
+4751;11867300;1200;Blumenhaus;Schubbach,;Horst;Quellenweg 4;65510;Idstein;0284;1;Pak 1/2;26,7;0284-Pak 1/2;Pak 2/2;;1;;27,7;0284-Pak 1/2
+4751;11867300;1200;Blumenhaus;Schubbach,;Horst;Quellenweg 4;65510;Idstein;0284;1;Pak 2/2;1;0284-Pak 2/2;;;;;;0284-Pak 2/2
+1175;02059200;1200;Blumenhaus;Birtel;Jenny, Floristik by Jenny;Untere Bliesstr. 73;66539;Neunkirchen;0285;1;Pak 1/2;26,7;0285-Pak 1/2;Pak 2/2;;1;;27,7;0285-Pak 1/2
+1175;02059200;1200;Blumenhaus;Birtel;Jenny, Floristik by Jenny;Untere Bliesstr. 73;66539;Neunkirchen;0285;1;Pak 2/2;1;0285-Pak 2/2;;;;;;0285-Pak 2/2
+3185;06292400;1200;Blumenhaus;Blumen-Heß e.K.;Inh. Ulrike Heß-Nähr;Echterdinger Str. 37;70771;Leinfelden-Echterdingen;0286;1;Pak 1/2;26,7;0286-Pak 1/2;Pak 2/2;;1;;27,7;0286-Pak 1/2
+3185;06292400;1200;Blumenhaus;Blumen-Heß e.K.;Inh. Ulrike Heß-Nähr;Echterdinger Str. 37;70771;Leinfelden-Echterdingen;0286;1;Pak 2/2;1;0286-Pak 2/2;;;;;;0286-Pak 2/2
+1056;01859600;1200;Blumenhaus;Gerber GbR,;Ulrike und David;Marktstr. 5;73230;Kirchheim;0287;1;Pak 1/2;26,7;0287-Pak 1/2;Pak 2/2;;1;;27,7;0287-Pak 1/2
+1056;01859600;1200;Blumenhaus;Gerber GbR,;Ulrike und David;Marktstr. 5;73230;Kirchheim;0287;1;Pak 2/2;1;0287-Pak 2/2;;;;;;0287-Pak 2/2
+3172;06254500;1200;Blumenhaus;Blumen-Dürr GmbH;;Bernhardstr. 8;76131;Karlsruhe;0288;1;Pak 1/2;26,7;0288-Pak 1/2;Pak 2/2;;1;;27,7;0288-Pak 1/2
+3172;06254500;1200;Blumenhaus;Blumen-Dürr GmbH;;Bernhardstr. 8;76131;Karlsruhe;0288;1;Pak 2/2;1;0288-Pak 2/2;;;;;;0288-Pak 2/2
+3502;07221500;1200;Blumenhaus;Renschler,;Wolfgang;Bahnhofsanlage 6;76437;Rastatt;0289;1;Pak 1/2;26,7;0289-Pak 1/2;Pak 2/2;;1;;27,7;0289-Pak 1/2
+3502;07221500;1200;Blumenhaus;Renschler,;Wolfgang;Bahnhofsanlage 6;76437;Rastatt;0289;1;Pak 2/2;1;0289-Pak 2/2;;;;;;0289-Pak 2/2
+350;00667200;1200;Blumenhaus;Blumen-Bindekunst Udo Sieg;Inh. Peter Sieg;Luisenstr. 1;76646;Bruchsal;0290;1;Pak 1/2;26,7;0290-Pak 1/2;Pak 2/2;;1;;27,7;0290-Pak 1/2
+350;00667200;1200;Blumenhaus;Blumen-Bindekunst Udo Sieg;Inh. Peter Sieg;Luisenstr. 1;76646;Bruchsal;0290;1;Pak 2/2;1;0290-Pak 2/2;;;;;;0290-Pak 2/2
+1190;02081200;1200;Blumenhaus;Kiesel,;Roland, Blumen Kiesel Botanico;Tullastr. 5a;77955;Ettenheim;0291;1;Pak 1/2;26,7;0291-Pak 1/2;Pak 2/2;;1;;27,7;0291-Pak 1/2
+1190;02081200;1200;Blumenhaus;Kiesel,;Roland, Blumen Kiesel Botanico;Tullastr. 5a;77955;Ettenheim;0291;1;Pak 2/2;1;0291-Pak 2/2;;;;;;0291-Pak 2/2
+2458;04522800;1200;Blumenhaus;Bayerl,;Andrea, Florales Schmuckkasterl;Verdistr. 73;81247;München;0292;1;Pak 1/2;26,7;0292-Pak 1/2;Pak 2/2;;1;;27,7;0292-Pak 1/2
+2458;04522800;1200;Blumenhaus;Bayerl,;Andrea, Florales Schmuckkasterl;Verdistr. 73;81247;München;0292;1;Pak 2/2;1;0292-Pak 2/2;;;;;;0292-Pak 2/2
+3016;05828100;1200;Blumenhaus;Wiplinger,;Christine, Blumen Hiltner;Wilhelm-Keim-Str. 1;82031;Grünwald;0293;1;Pak 1/2;26,7;0293-Pak 1/2;Pak 2/2;;1;;27,7;0293-Pak 1/2
+3016;05828100;1200;Blumenhaus;Wiplinger,;Christine, Blumen Hiltner;Wilhelm-Keim-Str. 1;82031;Grünwald;0293;1;Pak 2/2;1;0293-Pak 2/2;;;;;;0293-Pak 2/2
+444;00813400;1200;Blumenhaus;Blumenhaus Nagengast;Inh. Karin Schäfer;Plattnerstr. 1;97070;Würzburg;0294;1;Pak 1/2;26,7;0294-Pak 1/2;Pak 2/2;;1;;27,7;0294-Pak 1/2
+444;00813400;1200;Blumenhaus;Blumenhaus Nagengast;Inh. Karin Schäfer;Plattnerstr. 1;97070;Würzburg;0294;1;Pak 2/2;1;0294-Pak 2/2;;;;;;0294-Pak 2/2
+2986;05724500;1200;Blumenhaus;Lützkendorf,;Tobias, Euroflor;Friedrich-König-Str. 21;98527;Suhl;0295;1;Pak 1/2;26,7;0295-Pak 1/2;Pak 2/2;;1;;27,7;0295-Pak 1/2
+2986;05724500;1200;Blumenhaus;Lützkendorf,;Tobias, Euroflor;Friedrich-König-Str. 21;98527;Suhl;0295;1;Pak 2/2;1;0295-Pak 2/2;;;;;;0295-Pak 2/2

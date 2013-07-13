@@ -1,0 +1,48 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "ImportPartnerTreeModel",
+        "storeId": "ImportPartnerTreeStore",
+        "designer|userClassName": "ImportPartnerTreeStore"
+    },
+    "designerId": "bfac933a-6f4c-48ef-8751-4947966e13df",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/import/partner/tree"
+            },
+            "designerId": "afcd63c5-0b55-4c36-9288-4e5347303e0d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "e13b996b-8f13-43a8-a78c-30b8aa7a99fd"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "41ba41a1-ee26-49a1-bd41-5571b58fcd85"
+                }
+            ]
+        }
+    ]
+}

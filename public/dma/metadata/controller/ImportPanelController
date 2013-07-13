@@ -1,0 +1,128 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ImportPanelController"
+    },
+    "designerId": "b5b2eb8e-b939-4037-850e-6f4648546c50",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportPanel",
+                "selector": "#ImportPanel",
+                "xtype": "importpanel"
+            },
+            "designerId": "63270edd-bfc7-4b25-b1ef-bb7f2d2a1274"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportImportPanel",
+                "selector": "#ImportImportPanel",
+                "xtype": "importimportpanel"
+            },
+            "designerId": "8c3ca396-2ec9-4043-a29c-d090d972273c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportActionPanel",
+                "selector": "#ImportActionPanel",
+                "xtype": "importactionpanel"
+            },
+            "designerId": "ebe76980-2bec-4b72-bfdd-26b070ec20ca"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "/*console.log('init')\r",
+                    "panel = this.getImportPanel().getComponent('ImportImportTabPanel').getComponent(this.getImportImportPanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    panel = this.getImportImportPanel();\r",
+                    "    console.log(panel);\r",
+                    "    this.getImportPanel().getComponent('ImportImportTabPanel').add(panel);\r",
+                    "}\r",
+                    "\r",
+                    "this.getImportPanel().getComponent('ImportImportTabPanel').setActiveTab(this.getImportImportPanel());*/"
+                ]
+            },
+            "designerId": "4c7c8551-58c4-4105-bbc8-9964d7543b71"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImportImportGridPanelSelect",
+                "implHandler": [
+                    "// ImportImport\r",
+                    "panel = this.getImportImportPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('FormPanel');\r",
+                    "toolbar = panel.getComponent('FormToolbar');\r",
+                    "formPanel.getForm().loadRecord(record);\r",
+                    "toolbar.getComponent('FormEditButton').enable();\r",
+                    "toolbar.getComponent('FormNewButton').enable();\r",
+                    "toolbar.getComponent('FormCancelButton').disable();\r",
+                    "toolbar.getComponent('FormSaveButton').disable();\r",
+                    "toolbar.getComponent('FormDeleteButton').enable();\r",
+                    "\r",
+                    "\r",
+                    "// ImportAction\r",
+                    "panel = this.getImportActionPanel();\r",
+                    "toolbar = panel.getComponent('ImportActionToolbar');\r",
+                    "\r",
+                    "toolbar.getComponent('ImportActionEditButton').disable();\r",
+                    "toolbar.getComponent('ImportActionNewButton').enable();\r",
+                    "toolbar.getComponent('ImportActionCancelButton').disable();\r",
+                    "toolbar.getComponent('ImportActionSaveButton').disable();\r",
+                    "toolbar.getComponent('ImportActionDeleteButton').disable();\r",
+                    "\r",
+                    "Ext.getStore('ImportActionJsonStore').clearFilter(true);\r",
+                    "Ext.getStore('ImportActionJsonStore').filter([{property:'import_import_id',value:record.data.id}]);"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#ImportImportGridPanel"
+            },
+            "designerId": "2e0ee14e-fa4a-4671-bbb1-41a080967603"
+        }
+    ]
+}

@@ -1,0 +1,137 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PartnerImportPanelController"
+    },
+    "designerId": "5aed326c-bb37-42dc-89d7-df1e0629b563",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerImportResetButtonClick",
+                "implHandler": [
+                    "fp = this.getPartnerImportPanel().getComponent('PartnerImportUploadFormPanel');\r",
+                    "\r",
+                    "fp.getForm().reset();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerImportResetButton"
+            },
+            "designerId": "1c798969-8f53-4c65-b371-165e2dbb4c6e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerImportUploadButtonClick",
+                "implHandler": [
+                    "var fp = this.getPartnerImportPanel().getComponent('PartnerImportUploadFormPanel');\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "if(fp.getForm().isValid()){\r",
+                    "    fp.getForm().submit({\r",
+                    "        url: '/import/fileupload/partner',\r",
+                    "        waitMsg: 'Datei wird hochgeladen...',\r",
+                    "        success: function(fp, o){\r",
+                    "            Ext.Msg.show({\r",
+                    "                title: 'Datei-Upload',\r",
+                    "                msg: o.result.msg,\r",
+                    "                minWidth: 200,\r",
+                    "                modal: true,\r",
+                    "                icon: Ext.Msg.INFO,\r",
+                    "                buttons: Ext.Msg.OK\r",
+                    "            });\r",
+                    "            if (o.result.success === true) {\r",
+                    "                Ext.Ajax.request({\r",
+                    "                    url: '/import/import/partner',\r",
+                    "                    params: {\r",
+                    "                        filename: o.result.filename\r",
+                    "                    },\r",
+                    "                    success: function(response, opts) {\r",
+                    "                        //var obj = Ext.decode(response.responseText);\r",
+                    "                        //console.dir(obj);\r",
+                    "                        Ext.getStore('ImportPartnerTreeStore').reload();\r",
+                    "                    },\r",
+                    "                    failure: function(response, opts) {\r",
+                    "                        //console.log('server-side failure with status code ' + response.status);\r",
+                    "                    }\r",
+                    "                });\r",
+                    "            }\r",
+                    "        }\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerImportUploadButton"
+            },
+            "designerId": "f41ce2d1-45ff-4d1c-9250-5012556f41a6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerImportImportButtonClick",
+                "implHandler": [
+                    "Ext.Ajax.request({\r",
+                    "    url: '/import/partner/import',\r",
+                    "    /*params: {\r",
+                    "    },*/\r",
+                    "    success: function(response, opts) {\r",
+                    "        //var obj = Ext.decode(response.responseText);\r",
+                    "        //console.dir(obj);\r",
+                    "        //Ext.getStore('ImportPartnerTreeStore').removeAll();\r",
+                    "        //Ext.getStore('ImportPartnerTreeStore').sync();\r",
+                    "        Ext.getStore('ImportPartnerTreeStore').reload();\r",
+                    "    },\r",
+                    "    failure: function(response, opts) {\r",
+                    "        //console.log('server-side failure with status code ' + response.status);\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerImportImportButton"
+            },
+            "designerId": "f414b21f-bd1f-454c-a098-b9573d1696ec"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "PartnerImportPanel",
+                "selector": "#PartnerImportPanel",
+                "xtype": "partnerimportpanel"
+            },
+            "designerId": "22148394-d87e-44d7-95e9-e3fb8d4f53f1"
+        }
+    ]
+}

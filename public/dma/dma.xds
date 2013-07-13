@@ -1,0 +1,734 @@
+{
+    "name": "dma",
+    "settings": {},
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "3447828b-4f98-4aea-b758-9b8484185428": {
+            "paths": [
+                "metadata/view/MainViewport",
+                "app/view/override/MainViewport.js",
+                "app/view/MainViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MainViewport"
+        },
+        "5678f623-0c0b-4369-a7f1-c8b30a10696b": {
+            "paths": [
+                "metadata/view/PartnerPanel",
+                "app/view/override/PartnerPanel.js",
+                "app/view/PartnerPanel.js"
+            ],
+            "className": "PartnerPanel"
+        },
+        "5d3f39a7-52f1-42ae-b4ea-18ce3a74aed0": {
+            "paths": [
+                "metadata/controller/MainPanelController",
+                "app/controller/override/MainPanelController.js",
+                "app/controller/MainPanelController.js"
+            ],
+            "className": "MainPanelController"
+        },
+        "e718d5f0-9733-44c1-a396-ebed6e019623": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "bbff63a5-d698-449a-bf19-156d728846dc": {
+            "paths": [
+                "metadata/view/MainPanel",
+                "app/view/override/MainPanel.js",
+                "app/view/MainPanel.js"
+            ],
+            "className": "MainPanel"
+        },
+        "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a": {
+            "paths": [
+                "metadata/controller/MainViewportController",
+                "app/controller/override/MainViewportController.js",
+                "app/controller/MainViewportController.js"
+            ],
+            "className": "MainViewportController"
+        },
+        "f7ad03d6-bc4b-403b-9019-7619555680dc": {
+            "paths": [
+                "metadata/view/OrderPanel",
+                "app/view/override/OrderPanel.js",
+                "app/view/OrderPanel.js"
+            ],
+            "className": "OrderPanel"
+        },
+        "ea75cb9a-ed2e-481d-a4b8-aec6a3ec225b": {
+            "paths": [
+                "metadata/view/ReportPanel",
+                "app/view/override/ReportPanel.js",
+                "app/view/ReportPanel.js"
+            ],
+            "className": "ReportPanel"
+        },
+        "0275f399-38f7-40b3-92e4-b5d79610624d": {
+            "paths": [
+                "metadata/view/ProductPanel",
+                "app/view/override/ProductPanel.js",
+                "app/view/ProductPanel.js"
+            ],
+            "className": "ProductPanel"
+        },
+        "a0744bfe-d3fe-4d42-b3cb-3549c0119089": {
+            "paths": [
+                "metadata/view/UserPanel",
+                "app/view/override/UserPanel.js",
+                "app/view/UserPanel.js"
+            ],
+            "className": "UserPanel"
+        },
+        "7568b646-5b61-467b-b766-118fc1791552": {
+            "paths": [
+                "metadata/view/PartnerAddressPanel",
+                "app/view/override/PartnerAddressPanel.js",
+                "app/view/PartnerAddressPanel.js"
+            ],
+            "className": "PartnerAddressPanel"
+        },
+        "dd4c7da7-b67a-45c3-8903-5bdd85129c27": {
+            "paths": [
+                "metadata/view/PartnerAbsencePanel",
+                "app/view/override/PartnerAbsencePanel.js",
+                "app/view/PartnerAbsencePanel.js"
+            ],
+            "className": "PartnerAbsencePanel"
+        },
+        "8d0c96f7-e35b-49b1-815f-17c28a50a44d": {
+            "paths": [
+                "metadata/view/PartnerImportPanel",
+                "app/view/override/PartnerImportPanel.js",
+                "app/view/PartnerImportPanel.js"
+            ],
+            "className": "PartnerImportPanel"
+        },
+        "7abc94cb-6b13-45ef-a12e-507478f97623": {
+            "paths": [
+                "metadata/store/PartnerPartnerJsonStore",
+                "app/store/override/PartnerPartnerJsonStore.js",
+                "app/store/PartnerPartnerJsonStore.js"
+            ],
+            "className": "PartnerPartnerJsonStore"
+        },
+        "86c11719-cac3-4a45-b8ee-9ca742ecbbc3": {
+            "paths": [
+                "metadata/model/PartnerPartnerModel",
+                "app/model/override/PartnerPartnerModel.js",
+                "app/model/PartnerPartnerModel.js"
+            ],
+            "className": "PartnerPartnerModel"
+        },
+        "2a07670c-d7dd-4552-9dc1-2fc820f03a08": {
+            "paths": [
+                "metadata/controller/PartnerPanelController",
+                "app/controller/override/PartnerPanelController.js",
+                "app/controller/PartnerPanelController.js"
+            ],
+            "className": "PartnerPanelController"
+        },
+        "c975f2f2-6141-45c7-b7cb-964f6bd48a66": {
+            "paths": [
+                "metadata/controller/ReportPanelController",
+                "app/controller/override/ReportPanelController.js",
+                "app/controller/ReportPanelController.js"
+            ],
+            "className": "ReportPanelController"
+        },
+        "fb1be29a-249a-49fb-98fe-d781638db8d8": {
+            "paths": [
+                "metadata/controller/ProductPanelController",
+                "app/controller/override/ProductPanelController.js",
+                "app/controller/ProductPanelController.js"
+            ],
+            "className": "ProductPanelController"
+        },
+        "d01d64ae-274b-4ac9-99d1-06a3eff7d4e6": {
+            "paths": [
+                "metadata/controller/UserPanelController",
+                "app/controller/override/UserPanelController.js",
+                "app/controller/UserPanelController.js"
+            ],
+            "className": "UserPanelController"
+        },
+        "71f90c79-a2c3-4a8a-8248-839a312225c6": {
+            "paths": [
+                "metadata/controller/PartnerAddressPanelController",
+                "app/controller/override/PartnerAddressPanelController.js",
+                "app/controller/PartnerAddressPanelController.js"
+            ],
+            "className": "PartnerAddressPanelController"
+        },
+        "219d603f-9d56-4f8b-b4bb-cfc7548604c7": {
+            "paths": [
+                "metadata/controller/PartnerAbsencePanelController",
+                "app/controller/override/PartnerAbsencePanelController.js",
+                "app/controller/PartnerAbsencePanelController.js"
+            ],
+            "className": "PartnerAbsencePanelController"
+        },
+        "5aed326c-bb37-42dc-89d7-df1e0629b563": {
+            "paths": [
+                "metadata/controller/PartnerImportPanelController",
+                "app/controller/override/PartnerImportPanelController.js",
+                "app/controller/PartnerImportPanelController.js"
+            ],
+            "className": "PartnerImportPanelController"
+        },
+        "bfac933a-6f4c-48ef-8751-4947966e13df": {
+            "paths": [
+                "metadata/store/ImportPartnerTreeStore",
+                "app/store/override/ImportPartnerTreeStore.js",
+                "app/store/ImportPartnerTreeStore.js"
+            ],
+            "className": "ImportPartnerTreeStore"
+        },
+        "584c3f19-87af-4beb-ad06-1b9b46cdd0a1": {
+            "paths": [
+                "metadata/model/ImportPartnerTreeModel",
+                "app/model/override/ImportPartnerTreeModel.js",
+                "app/model/ImportPartnerTreeModel.js"
+            ],
+            "className": "ImportPartnerTreeModel"
+        },
+        "19aac798-033b-4d49-91d0-9839bb23dfe7": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "93538e35-4e8f-49c2-ba41-b2d0201f9a6f": {
+            "paths": [
+                "metadata/view/OrderImportPanel",
+                "app/view/override/OrderImportPanel.js",
+                "app/view/OrderImportPanel.js"
+            ],
+            "className": "OrderImportPanel"
+        },
+        "3a10744c-2c5c-4d9a-a08e-27002b177ce0": {
+            "paths": [
+                "metadata/controller/OrderImportPanelController",
+                "app/controller/override/OrderImportPanelController.js",
+                "app/controller/OrderImportPanelController.js"
+            ],
+            "className": "OrderImportPanelController"
+        },
+        "ae0b904b-e5ea-4a81-b258-aa99007ebfd8": {
+            "paths": [
+                "metadata/model/ImportOrderTreeModel",
+                "app/model/override/ImportOrderTreeModel.js",
+                "app/model/ImportOrderTreeModel.js"
+            ],
+            "className": "ImportOrderTreeModel"
+        },
+        "4f3cc5b1-ef3b-4eb7-b3bd-64517917cfdb": {
+            "paths": [
+                "metadata/store/ImportOrderTreeStore",
+                "app/store/override/ImportOrderTreeStore.js",
+                "app/store/ImportOrderTreeStore.js"
+            ],
+            "className": "ImportOrderTreeStore"
+        },
+        "0a142e9a-d7f7-4dc1-afe6-fcee941d63a3": {
+            "paths": [
+                "metadata/controller/OrderPanelController",
+                "app/controller/override/OrderPanelController.js",
+                "app/controller/OrderPanelController.js"
+            ],
+            "className": "OrderPanelController"
+        },
+        "dfe583cc-a996-40eb-bb4f-652f9970e900": {
+            "paths": [
+                "metadata/store/ProductProductOrderImportJsonStore",
+                "app/store/override/ProductProductOrderImportJsonStore.js",
+                "app/store/ProductProductOrderImportJsonStore.js"
+            ],
+            "className": "ProductProductOrderImportJsonStore"
+        },
+        "1313144e-b18a-4f30-9f99-994ca776518d": {
+            "paths": [
+                "metadata/store/ProductItemOrderImportJsonStore",
+                "app/store/override/ProductItemOrderImportJsonStore.js",
+                "app/store/ProductItemOrderImportJsonStore.js"
+            ],
+            "className": "ProductItemOrderImportJsonStore"
+        },
+        "4500b8de-2b3c-41b6-a76f-20e44e197fec": {
+            "paths": [
+                "metadata/model/ProductProductModel",
+                "app/model/override/ProductProductModel.js",
+                "app/model/ProductProductModel.js"
+            ],
+            "className": "ProductProductModel"
+        },
+        "0635b594-1b0c-45e0-9a88-43c7c829fe23": {
+            "paths": [
+                "metadata/model/ProductItemModel",
+                "app/model/override/ProductItemModel.js",
+                "app/model/ProductItemModel.js"
+            ],
+            "className": "ProductItemModel"
+        },
+        "2fa636aa-2b79-498b-815c-b7c6d0bf5cd4": {
+            "paths": [
+                "metadata/view/ImportPanel",
+                "app/view/override/ImportPanel.js",
+                "app/view/ImportPanel.js"
+            ],
+            "className": "ImportPanel"
+        },
+        "44b8a41b-f3a8-4caf-b2af-2d094a3c0cb7": {
+            "paths": [
+                "metadata/view/ImportImportPanel",
+                "app/view/override/ImportImportPanel.js",
+                "app/view/ImportImportPanel.js"
+            ],
+            "className": "ImportImportPanel"
+        },
+        "19af9c5f-17e3-4955-ae0d-c4775a8aa251": {
+            "paths": [
+                "metadata/store/ImportImportJsonStore",
+                "app/store/override/ImportImportJsonStore.js",
+                "app/store/ImportImportJsonStore.js"
+            ],
+            "className": "ImportImportJsonStore"
+        },
+        "72d8273f-5c19-4f25-8e77-d6eb19bb4812": {
+            "paths": [
+                "metadata/model/ImportImportModel",
+                "app/model/override/ImportImportModel.js",
+                "app/model/ImportImportModel.js"
+            ],
+            "className": "ImportImportModel"
+        },
+        "b5b2eb8e-b939-4037-850e-6f4648546c50": {
+            "paths": [
+                "metadata/controller/ImportPanelController",
+                "app/controller/override/ImportPanelController.js",
+                "app/controller/ImportPanelController.js"
+            ],
+            "className": "ImportPanelController"
+        },
+        "da6991b7-092d-4de7-99cd-f509a4354a4c": {
+            "paths": [
+                "metadata/controller/ImportImportPanelController",
+                "app/controller/override/ImportImportPanelController.js",
+                "app/controller/ImportImportPanelController.js"
+            ],
+            "className": "ImportImportPanelController"
+        },
+        "311f6e01-255b-4244-a8ca-5618f6926b96": {
+            "paths": [
+                "metadata/store/ImportActionJsonStore",
+                "app/store/override/ImportActionJsonStore.js",
+                "app/store/ImportActionJsonStore.js"
+            ],
+            "className": "ImportActionJsonStore"
+        },
+        "d482d389-0ed4-4627-bccf-aab1bc3c114a": {
+            "paths": [
+                "metadata/model/ImportActionModel",
+                "app/model/override/ImportActionModel.js",
+                "app/model/ImportActionModel.js"
+            ],
+            "className": "ImportActionModel"
+        },
+        "b38bc7f1-3f5a-4ed0-a129-8e57daa3c743": {
+            "paths": [
+                "metadata/view/ImportActionPanel",
+                "app/view/override/ImportActionPanel.js",
+                "app/view/ImportActionPanel.js"
+            ],
+            "className": "ImportActionPanel"
+        },
+        "a57a2efc-5944-4a8c-ae83-e97ba5eec2d2": {
+            "paths": [
+                "metadata/controller/ImportActionController",
+                "app/controller/override/ImportActionController.js",
+                "app/controller/ImportActionController.js"
+            ],
+            "className": "ImportActionController"
+        },
+        "25f14b91-54f4-4e81-aa7e-f14ee12376c9": {
+            "paths": [
+                "metadata/store/OrderOrderJsonStore",
+                "app/store/override/OrderOrderJsonStore.js",
+                "app/store/OrderOrderJsonStore.js"
+            ],
+            "className": "OrderOrderJsonStore"
+        },
+        "0008bb11-5d12-4a07-8239-6d73f75dd2e4": {
+            "paths": [
+                "metadata/model/OrderOrderModel",
+                "app/model/override/OrderOrderModel.js",
+                "app/model/OrderOrderModel.js"
+            ],
+            "className": "OrderOrderModel"
+        },
+        "8b4e283f-8dde-4d84-88ed-ff944ec10e0d": {
+            "paths": [
+                "metadata/model/OrderItemModel",
+                "app/model/override/OrderItemModel.js",
+                "app/model/OrderItemModel.js"
+            ],
+            "className": "OrderItemModel"
+        },
+        "0f7f6bbb-7176-49d8-8a02-1014fa65ab5a": {
+            "paths": [
+                "metadata/store/OrderItemJsonStore",
+                "app/store/override/OrderItemJsonStore.js",
+                "app/store/OrderItemJsonStore.js"
+            ],
+            "className": "OrderItemJsonStore"
+        },
+        "9ed30b9a-af66-4460-87c3-2387381d8c3d": {
+            "paths": [
+                "metadata/view/OrderItemPanel",
+                "app/view/override/OrderItemPanel.js",
+                "app/view/OrderItemPanel.js"
+            ],
+            "className": "OrderItemPanel"
+        },
+        "93e2b9d5-dfd2-4242-a2ca-da5e99a5c45f": {
+            "paths": [
+                "metadata/view/OrderItemDetailPanel",
+                "app/view/override/OrderItemDetailPanel.js",
+                "app/view/OrderItemDetailPanel.js"
+            ],
+            "className": "OrderItemDetailPanel"
+        },
+        "377dbe86-e24e-4164-a17f-92871eeab996": {
+            "paths": [
+                "metadata/view/OrderItemPackagePackagePanel",
+                "app/view/override/OrderItemPackagePackagePanel.js",
+                "app/view/OrderItemPackagePackagePanel.js"
+            ],
+            "className": "OrderItemPackagePackagePanel"
+        },
+        "ce59226c-e8a1-41c2-b726-4c76d72795dc": {
+            "paths": [
+                "metadata/view/OrderItemProductPersonalizePanel",
+                "app/view/override/OrderItemProductPersonalizePanel.js",
+                "app/view/OrderItemProductPersonalizePanel.js"
+            ],
+            "className": "OrderItemProductPersonalizePanel"
+        },
+        "603ab758-385f-491b-b9e3-77133f5f0779": {
+            "paths": [
+                "metadata/store/PackagePackageJsonStore",
+                "app/store/override/PackagePackageJsonStore.js",
+                "app/store/PackagePackageJsonStore.js"
+            ],
+            "className": "PackagePackageJsonStore"
+        },
+        "a3a2a5e0-a274-4a27-9681-5767edc40f54": {
+            "paths": [
+                "metadata/model/PackagePackageModel",
+                "app/model/override/PackagePackageModel.js",
+                "app/model/PackagePackageModel.js"
+            ],
+            "className": "PackagePackageModel"
+        },
+        "3a2cedef-7916-4531-9185-fea2015a4e49": {
+            "paths": [
+                "metadata/store/OrderItemstateJsonStore",
+                "app/store/override/OrderItemstateJsonStore.js",
+                "app/store/OrderItemstateJsonStore.js"
+            ],
+            "className": "OrderItemstateJsonStore"
+        },
+        "771d28be-800a-4986-ae98-0db6e8241b3f": {
+            "paths": [
+                "metadata/model/OrderItemstateModel",
+                "app/model/override/OrderItemstateModel.js",
+                "app/model/OrderItemstateModel.js"
+            ],
+            "className": "OrderItemstateModel"
+        },
+        "ea51f8fb-6ba3-4bb9-b81b-d3b5dfb76b7b": {
+            "paths": [
+                "metadata/controller/OrderItemPanelController",
+                "app/controller/override/OrderItemPanelController.js",
+                "app/controller/OrderItemPanelController.js"
+            ],
+            "className": "OrderItemPanelController"
+        },
+        "1ded70dd-2c31-4bb1-978f-4ac685830c99": {
+            "paths": [
+                "metadata/controller/OrderItemDetailPanelController",
+                "app/controller/override/OrderItemDetailPanelController.js",
+                "app/controller/OrderItemDetailPanelController.js"
+            ],
+            "className": "OrderItemDetailPanelController"
+        },
+        "b9a0b6d2-8959-4036-8c22-a9a5fa0df6cb": {
+            "paths": [
+                "metadata/controller/OrderItemPackagePackageController",
+                "app/controller/override/OrderItemPackagePackageController.js",
+                "app/controller/OrderItemPackagePackageController.js"
+            ],
+            "className": "OrderItemPackagePackageController"
+        },
+        "e2dabfde-fd91-4792-861f-4df5e3f31002": {
+            "paths": [
+                "metadata/controller/OrderItemProductPersonalizePanelController",
+                "app/controller/override/OrderItemProductPersonalizePanelController.js",
+                "app/controller/OrderItemProductPersonalizePanelController.js"
+            ],
+            "className": "OrderItemProductPersonalizePanelController"
+        },
+        "9d2ed927-9041-4b5f-9fac-f46f967764c0": {
+            "paths": [
+                "metadata/store/OrderItemHasProductPersonalizeJsonStore",
+                "app/store/override/OrderItemHasProductPersonalizeJsonStore.js",
+                "app/store/OrderItemHasProductPersonalizeJsonStore.js"
+            ],
+            "className": "OrderItemHasProductPersonalizeJsonStore"
+        },
+        "6121fc3e-0f85-4d5e-8029-e4f47064b19b": {
+            "paths": [
+                "metadata/model/OrderItemHasProductPersonalizeModel",
+                "app/model/override/OrderItemHasProductPersonalizeModel.js",
+                "app/model/OrderItemHasProductPersonalizeModel.js"
+            ],
+            "className": "OrderItemHasProductPersonalizeModel"
+        },
+        "3760a912-050d-416b-af64-d6368f35710a": {
+            "paths": [
+                "metadata/store/OrderItemProductItemJsonStore",
+                "app/store/override/OrderItemProductItemJsonStore.js",
+                "app/store/OrderItemProductItemJsonStore.js"
+            ],
+            "className": "OrderItemProductItemJsonStore"
+        },
+        "1d69ac3f-313b-4952-8a29-7d9233f0f5c8": {
+            "paths": [
+                "metadata/store/ProductLayoutJsonStore",
+                "app/store/override/ProductLayoutJsonStore.js",
+                "app/store/ProductLayoutJsonStore.js"
+            ],
+            "className": "ProductLayoutJsonStore"
+        },
+        "426dd969-7a7d-4d53-93c8-e4ac1db31f04": {
+            "paths": [
+                "metadata/store/ProductLayoutHasProductPersonalizeJsonStore",
+                "app/store/override/ProductLayoutHasProductPersonalizeJsonStore.js",
+                "app/store/ProductLayoutHasProductPersonalizeJsonStore.js"
+            ],
+            "className": "ProductLayoutHasProductPersonalizeJsonStore"
+        },
+        "33b18761-5e67-47df-95fb-d2cfdcc1cddd": {
+            "paths": [
+                "metadata/model/ProductLayoutModel",
+                "app/model/override/ProductLayoutModel.js",
+                "app/model/ProductLayoutModel.js"
+            ],
+            "className": "ProductLayoutModel"
+        },
+        "43f8bf52-63c5-4397-a5f4-3d4ff0b4bc66": {
+            "paths": [
+                "metadata/model/ProductLayoutHasProductPersonalizeModel",
+                "app/model/override/ProductLayoutHasProductPersonalizeModel.js",
+                "app/model/ProductLayoutHasProductPersonalizeModel.js"
+            ],
+            "className": "ProductLayoutHasProductPersonalizeModel"
+        },
+        "888450b5-9cee-44c3-ad35-89666a14b954": {
+            "paths": [
+                "metadata/store/ReportReportJsonStore",
+                "app/store/override/ReportReportJsonStore.js",
+                "app/store/ReportReportJsonStore.js"
+            ],
+            "className": "ReportReportJsonStore"
+        },
+        "c55fbe14-08d8-4542-8e16-980bf7c0de5e": {
+            "paths": [
+                "metadata/model/ReportReportModel",
+                "app/model/override/ReportReportModel.js",
+                "app/model/ReportReportModel.js"
+            ],
+            "className": "ReportReportModel"
+        },
+        "0a15cfa6-3887-47b6-9f8e-cae60305fce4": {
+            "paths": [
+                "metadata/view/ReportReportPanel",
+                "app/view/override/ReportReportPanel.js",
+                "app/view/ReportReportPanel.js"
+            ],
+            "className": "ReportReportPanel"
+        },
+        "c638342d-9c12-4bcb-8962-f54575b78b43": {
+            "paths": [
+                "metadata/controller/ReportReportPanelController",
+                "app/controller/override/ReportReportPanelController.js",
+                "app/controller/ReportReportPanelController.js"
+            ],
+            "className": "ReportReportPanelController"
+        },
+        "7f36311c-f928-4f3a-9ea4-9317905b8999": {
+            "paths": [
+                "metadata/store/MetadataJsonStore",
+                "app/store/override/MetadataJsonStore.js",
+                "app/store/MetadataJsonStore.js"
+            ],
+            "className": "MetadataJsonStore"
+        },
+        "080042cf-5cd3-4bb0-98df-a0417275eb40": {
+            "paths": [
+                "metadata/model/MetadataModel",
+                "app/model/override/MetadataModel.js",
+                "app/model/MetadataModel.js"
+            ],
+            "className": "MetadataModel"
+        },
+        "84130508-1af0-4278-a88c-97903f1d14ed": {
+            "paths": [
+                "metadata/store/ReportFilterJsonStore",
+                "app/store/override/ReportFilterJsonStore.js",
+                "app/store/ReportFilterJsonStore.js"
+            ],
+            "className": "ReportFilterJsonStore"
+        },
+        "328a77aa-1b1f-45cc-aed1-0da238e3c71d": {
+            "paths": [
+                "metadata/store/ImportStackJsonStore",
+                "app/store/override/ImportStackJsonStore.js",
+                "app/store/ImportStackJsonStore.js"
+            ],
+            "className": "ImportStackJsonStore"
+        },
+        "ad4d53dc-c815-4b1f-ad81-4f2bd2d8000e": {
+            "paths": [
+                "metadata/model/ReportFilterModel",
+                "app/model/override/ReportFilterModel.js",
+                "app/model/ReportFilterModel.js"
+            ],
+            "className": "ReportFilterModel"
+        },
+        "aec4fe66-ee2e-4a21-a634-e4b48ab481c9": {
+            "paths": [
+                "metadata/model/ImportStackModel",
+                "app/model/override/ImportStackModel.js",
+                "app/model/ImportStackModel.js"
+            ],
+            "className": "ImportStackModel"
+        },
+        "f5188da4-bbf7-4b99-b7f6-e18cf33e11b4": {
+            "paths": [
+                "metadata/view/ImportExecutePanel",
+                "app/view/override/ImportExecutePanel.js",
+                "app/view/ImportExecutePanel.js"
+            ],
+            "className": "ImportExecutePanel"
+        },
+        "ea9d1853-1267-4fd4-96dd-cae0e3a95d9c": {
+            "paths": [
+                "metadata/controller/ImportExecutePanelController",
+                "app/controller/override/ImportExecutePanelController.js",
+                "app/controller/ImportExecutePanelController.js"
+            ],
+            "className": "ImportExecutePanelController"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "3447828b-4f98-4aea-b758-9b8484185428",
+            "bbff63a5-d698-449a-bf19-156d728846dc",
+            "5678f623-0c0b-4369-a7f1-c8b30a10696b",
+            "f7ad03d6-bc4b-403b-9019-7619555680dc",
+            "ea75cb9a-ed2e-481d-a4b8-aec6a3ec225b",
+            "0275f399-38f7-40b3-92e4-b5d79610624d",
+            "2fa636aa-2b79-498b-815c-b7c6d0bf5cd4",
+            "a0744bfe-d3fe-4d42-b3cb-3549c0119089",
+            "7568b646-5b61-467b-b766-118fc1791552",
+            "dd4c7da7-b67a-45c3-8903-5bdd85129c27",
+            "8d0c96f7-e35b-49b1-815f-17c28a50a44d",
+            "93538e35-4e8f-49c2-ba41-b2d0201f9a6f",
+            "44b8a41b-f3a8-4caf-b2af-2d094a3c0cb7",
+            "b38bc7f1-3f5a-4ed0-a129-8e57daa3c743",
+            "9ed30b9a-af66-4460-87c3-2387381d8c3d",
+            "93e2b9d5-dfd2-4242-a2ca-da5e99a5c45f",
+            "377dbe86-e24e-4164-a17f-92871eeab996",
+            "ce59226c-e8a1-41c2-b726-4c76d72795dc",
+            "0a15cfa6-3887-47b6-9f8e-cae60305fce4",
+            "f5188da4-bbf7-4b99-b7f6-e18cf33e11b4"
+        ],
+        "store": [
+            "311f6e01-255b-4244-a8ca-5618f6926b96",
+            "19af9c5f-17e3-4955-ae0d-c4775a8aa251",
+            "bfac933a-6f4c-48ef-8751-4947966e13df",
+            "4f3cc5b1-ef3b-4eb7-b3bd-64517917cfdb",
+            "7abc94cb-6b13-45ef-a12e-507478f97623",
+            "1313144e-b18a-4f30-9f99-994ca776518d",
+            "dfe583cc-a996-40eb-bb4f-652f9970e900",
+            "25f14b91-54f4-4e81-aa7e-f14ee12376c9",
+            "0f7f6bbb-7176-49d8-8a02-1014fa65ab5a",
+            "603ab758-385f-491b-b9e3-77133f5f0779",
+            "3a2cedef-7916-4531-9185-fea2015a4e49",
+            "9d2ed927-9041-4b5f-9fac-f46f967764c0",
+            "3760a912-050d-416b-af64-d6368f35710a",
+            "1d69ac3f-313b-4952-8a29-7d9233f0f5c8",
+            "426dd969-7a7d-4d53-93c8-e4ac1db31f04",
+            "888450b5-9cee-44c3-ad35-89666a14b954",
+            "7f36311c-f928-4f3a-9ea4-9317905b8999",
+            "84130508-1af0-4278-a88c-97903f1d14ed",
+            "328a77aa-1b1f-45cc-aed1-0da238e3c71d"
+        ],
+        "controller": [
+            "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
+            "5d3f39a7-52f1-42ae-b4ea-18ce3a74aed0",
+            "2a07670c-d7dd-4552-9dc1-2fc820f03a08",
+            "0a142e9a-d7f7-4dc1-afe6-fcee941d63a3",
+            "c975f2f2-6141-45c7-b7cb-964f6bd48a66",
+            "c638342d-9c12-4bcb-8962-f54575b78b43",
+            "da6991b7-092d-4de7-99cd-f509a4354a4c",
+            "fb1be29a-249a-49fb-98fe-d781638db8d8",
+            "d01d64ae-274b-4ac9-99d1-06a3eff7d4e6",
+            "b5b2eb8e-b939-4037-850e-6f4648546c50",
+            "71f90c79-a2c3-4a8a-8248-839a312225c6",
+            "219d603f-9d56-4f8b-b4bb-cfc7548604c7",
+            "5aed326c-bb37-42dc-89d7-df1e0629b563",
+            "3a10744c-2c5c-4d9a-a08e-27002b177ce0",
+            "a57a2efc-5944-4a8c-ae83-e97ba5eec2d2",
+            "ea51f8fb-6ba3-4bb9-b81b-d3b5dfb76b7b",
+            "1ded70dd-2c31-4bb1-978f-4ac685830c99",
+            "b9a0b6d2-8959-4036-8c22-a9a5fa0df6cb",
+            "e2dabfde-fd91-4792-861f-4df5e3f31002",
+            "ea9d1853-1267-4fd4-96dd-cae0e3a95d9c"
+        ],
+        "model": [
+            "86c11719-cac3-4a45-b8ee-9ca742ecbbc3",
+            "584c3f19-87af-4beb-ad06-1b9b46cdd0a1",
+            "ae0b904b-e5ea-4a81-b258-aa99007ebfd8",
+            "4500b8de-2b3c-41b6-a76f-20e44e197fec",
+            "0635b594-1b0c-45e0-9a88-43c7c829fe23",
+            "72d8273f-5c19-4f25-8e77-d6eb19bb4812",
+            "d482d389-0ed4-4627-bccf-aab1bc3c114a",
+            "0008bb11-5d12-4a07-8239-6d73f75dd2e4",
+            "8b4e283f-8dde-4d84-88ed-ff944ec10e0d",
+            "a3a2a5e0-a274-4a27-9681-5767edc40f54",
+            "771d28be-800a-4986-ae98-0db6e8241b3f",
+            "6121fc3e-0f85-4d5e-8029-e4f47064b19b",
+            "33b18761-5e67-47df-95fb-d2cfdcc1cddd",
+            "43f8bf52-63c5-4397-a5f4-3d4ff0b4bc66",
+            "c55fbe14-08d8-4542-8e16-980bf7c0de5e",
+            "080042cf-5cd3-4bb0-98df-a0417275eb40",
+            "ad4d53dc-c815-4b1f-ad81-4f2bd2d8000e",
+            "aec4fe66-ee2e-4a21-a634-e4b48ab481c9"
+        ],
+        "resource": [
+            "e718d5f0-9733-44c1-a396-ebed6e019623",
+            "19aac798-033b-4d49-91d0-9839bb23dfe7"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

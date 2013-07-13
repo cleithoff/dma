@@ -1,0 +1,106 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ReportPanelController"
+    },
+    "designerId": "c975f2f2-6141-45c7-b7cb-964f6bd48a66",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportGridPanelSelect",
+                "implHandler": [
+                    "// ImportImport\r",
+                    "var that = this;\r",
+                    "\r",
+                    "panel = this.getReportReportPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('ReportReportFormPanel');\r",
+                    "toolbar = panel.getComponent('ReportReportToolbar');\r",
+                    "formPanel.getForm().loadRecord(record);\r",
+                    "toolbar.getComponent('ReportReportEditButton').enable();\r",
+                    "toolbar.getComponent('ReportReportNewButton').enable();\r",
+                    "toolbar.getComponent('ReportReportCancelButton').disable();\r",
+                    "toolbar.getComponent('ReportReportSaveButton').disable();\r",
+                    "toolbar.getComponent('ReportReportDeleteButton').enable();\r",
+                    "\r",
+                    "toolbar.getComponent('ReportReportPreviewButton').enable();\r",
+                    "toolbar.getComponent('ReportReportPrintButton').enable();\r",
+                    "toolbar.getComponent('ReportReportExportButton').enable();\r",
+                    "\r",
+                    "store = Ext.getStore('ReportFilterJsonStore');\r",
+                    "\r",
+                    "store.on('load', function(store, records) {\r",
+                    "\tfilterFormPanel = that.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
+                    "    filterFormPanel.removeAll();\r",
+                    "\r",
+                    "    for(var idx in records) {\r",
+                    "    \tr = records[idx];\r",
+                    "        console.log(r.data);\r",
+                    "        switch(r.data.report_filtertype.key) {\r",
+                    "            case 'combobox':\r",
+                    "                console.log('combobox');\r",
+                    "                config = JSON.parse(r.data.jsonparam);\r",
+                    "                console.log(config);\r",
+                    "                filterFormPanel.add(\r",
+                    "                \tExt.create('Ext.form.field.ComboBox', config)\r",
+                    "                    );\r",
+                    "                break;\r",
+                    "        }\r",
+                    "    }\r",
+                    "    \r",
+                    "});\r",
+                    "\r",
+                    "store.clearFilter(true);\r",
+                    "store.filter([{property:\"report_report_id\",value:record.data.id}]);\r",
+                    "store.load();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#ReportReportGridPanel"
+            },
+            "designerId": "405470a2-75e7-432e-b83b-93deed3da7a2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ReportPanel",
+                "selector": "#ReportPanel",
+                "xtype": "reportpanel"
+            },
+            "designerId": "c3b6e981-44ea-43a0-9e78-a635278dd84d"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ReportReportPanel",
+                "selector": "#ReportReportPanel",
+                "xtype": "reportreportpanel"
+            },
+            "designerId": "142c1b88-83f3-4611-9c0a-ddb1837b6207"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "type": "viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "%module%Viewport",
+        "layout": "border"
+    },
+    "id": "ExtBox1-ext-gen%extjsgenid%",
+    "cn": [
+        {
+            "type": "tabpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "designer|userClassName": "%module%TabPanel",
+                "activeTab": 0,
+                "title": "%module%"
+            },
+            "cn": [
+            	%tabpanelmetadataitems%
+            ]
+        }
+    ]
+}

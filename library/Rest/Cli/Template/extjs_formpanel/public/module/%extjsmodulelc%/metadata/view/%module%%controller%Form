@@ -1,0 +1,80 @@
+{
+    "type": "form",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "%module%%controller%Form",
+        "height": 358,
+        "width": 400,
+        "bodyPadding": 10,
+        "title": "%controller% Form",
+        "id": "%module%%controller%Form",
+        "itemId": "%module%%controller%Form"
+    },
+    "id": "ExtBox1-ext-gen%extjsgenid%",
+    "cn": [
+        %extjsformfieldsmetadata%,
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "designer|userClassName": "MyToolbar"
+            },
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "%module%%controller%NewButton",
+                        "id": "%module%%controller%NewButton",
+                        "itemId": "%module%%controller%NewButton",
+                        "text": "New"
+                    }
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "%module%%controller%SaveButton",
+                        "id": "%module%%controller%SaveButton",
+                        "itemId": "%module%%controller%SaveButton",
+                        "text": "Save"
+                    }
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "%module%%controller%DeleteButton",
+                        "id": "%module%%controller%DeleteButton",
+                        "itemId": "%module%%controller%DeleteButton",
+                        "text": "Delete"
+                    }
+                }
+            ]
+        }
+    ]
+}

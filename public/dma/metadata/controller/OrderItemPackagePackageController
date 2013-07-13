@@ -1,0 +1,233 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OrderItemPackagePackageController"
+    },
+    "designerId": "b9a0b6d2-8959-4036-8c22-a9a5fa0df6cb",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemPackagePackageEditButtonClick",
+                "implHandler": [
+                    "panel = this.getOrderItemPackagePackagePanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemPackagePackageFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemPackagePackageToolbar');\r",
+                    "formPanel.enable();\r",
+                    "\r",
+                    "toolbar.getComponent('OrderItemPackagePackageEditButton').disable();\r",
+                    "//toolbar.getComponent('OrderItemPackagePackageNewButton').disable();\r",
+                    "toolbar.getComponent('OrderItemPackagePackageCancelButton').enable();\r",
+                    "toolbar.getComponent('OrderItemPackagePackageSaveButton').enable();\r",
+                    "toolbar.getComponent('OrderItemPackagePackageDeleteButton').disable();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemPackagePackageEditButton"
+            },
+            "designerId": "39e20d8d-1a7f-416b-859e-f4f6ff80fdfa"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemPackagePackageSaveButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('OrderItemPackagePackageJsonStore');\r",
+                    "panel = this.getOrderItemPackagePackagePanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemPackagePackageFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemPackagePackageToolbar');\r",
+                    "\r",
+                    "//grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "record = formPanel.getForm().getRecord();\r",
+                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                    "    values = formPanel.getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "    /*grid = button.ownerCt.ownerCt.ownerCt.getComponent('\" . $name . 'GridPanel' . \"');*/\r",
+                    "    //if (grid !== undefined) {\r",
+                    "    /*grid.getView().select(0);*/ /* BUG!!! */\r",
+                    "    //}\r",
+                    "} else {\r",
+                    "    formPanel.getForm().updateRecord();\r",
+                    "}\r",
+                    "formPanel.disable();\r",
+                    "//toolbar.getComponent('OrderItemPackagePackageNewButton').enable();\r",
+                    "toolbar.getComponent('OrderItemPackagePackageCancelButton').disable();\r",
+                    "toolbar.getComponent('OrderItemPackagePackageSaveButton').disable();\r",
+                    "\r",
+                    "if (panel.getComponent('OrderItemPackagePackageGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('OrderItemPackagePackageEditButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemPackagePackageDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('OrderItemPackagePackageEditButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemPackagePackageDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemPackagePackageSaveButton"
+            },
+            "designerId": "36b4ddb1-a0e8-4f7b-8185-405646992c02"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemPackagePackageCancelButtonClick",
+                "implHandler": [
+                    "panel = this.getOrderItemPackagePackagePanel();\r",
+                    "grid = panel.getComponent('OrderItemPackagePackageGridPanel');\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemPackagePackageFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemPackagePackageToolbar');\r",
+                    "record = formPanel.getForm().getRecord();\t\t\t\t\t\t\t\t\r",
+                    "if (record !== undefined) {\r",
+                    "    formPanel.getForm().reset();\r",
+                    "    formPanel.disable();\r",
+                    "\r",
+                    "    //toolbar.getComponent('OrderItemPackagePackageNewButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemPackagePackageCancelButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemPackagePackageSaveButton').disable();\r",
+                    "    if (grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "        toolbar.getComponent('OrderItemPackagePackageEditButton').enable();\r",
+                    "        toolbar.getComponent('OrderItemPackagePackageDeleteButton').enable();\r",
+                    "    } else {\r",
+                    "        toolbar.getComponent('OrderItemPackagePackageEditButton').disable();\r",
+                    "        toolbar.getComponent('OrderItemPackagePackageDeleteButton').disable();\r",
+                    "    }    \r",
+                    "}\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemPackagePackageCancelButton"
+            },
+            "designerId": "25dfc5a6-df0b-4efe-8526-088dfcc5ef25"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemPackagePackageDeleteButtonClick",
+                "implHandler": [
+                    "var store = Ext.getStore('PackagePackageJsonStore');\r",
+                    "var panel = this.getOrderItemPackagePackagePanel(); \r",
+                    "var grid = panel.getComponent('OrderItemPackagePackageGridPanel');\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "Ext.Msg.confirm('Attention!', 'Datensatz löschen?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "        //grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "        formPanel = panel.getComponent('OrderItemPackagePackageFormPanel');\r",
+                    "        record = formPanel.getForm().getRecord();\r",
+                    "        if (store !== undefined && record !== undefined) {\r",
+                    "            store.remove(record);\r",
+                    "            formPanel.getForm().reset();\r",
+                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "                grid.getView().select(0);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    "if (panel.getComponent('OrderItemPackagePackageGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('OrderItemPackagePackageDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('OrderItemPackagePackageDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemPackagePackageDeleteButton"
+            },
+            "designerId": "7445642d-34bc-45f2-a745-ac318daca005"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemPackagePackageGridPanelSelect",
+                "implHandler": [
+                    "//Ext.getStore('PackagePackageJsonStore').clearFilter(true);\r",
+                    "//Ext.getStore('PackagePackageJsonStore').filter([{property:'order_item_id',value:record.data.id}]);\r",
+                    "\r",
+                    "//Ext.getStore('PackagePackageJsonStore').clearFilter(true);\r",
+                    "//Ext.getStore('PackagePackageJsonStore').filter([{property:'order_item_id',value:record.data.id}]);\r",
+                    "\r",
+                    "panel = this.getOrderItemPackagePackagePanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemPackagePackageFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemPackagePackageToolbar');\r",
+                    "\r",
+                    "formPanel.getForm().loadRecord(record);\r",
+                    "toolbar.getComponent('OrderItemPackagePackageEditButton').enable();\r",
+                    "//toolbar.getComponent('OrderItemDetailNewButton').enable();\r",
+                    "toolbar.getComponent('OrderItemPackagePackageCancelButton').disable();\r",
+                    "toolbar.getComponent('OrderItemPackagePackageSaveButton').disable();\r",
+                    "toolbar.getComponent('OrderItemPackagePackageDeleteButton').enable();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#OrderItemPackagePackageGridPanel"
+            },
+            "designerId": "2592f901-e140-4d44-adfb-457ce86c3d3a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemPackagePackagePanel",
+                "selector": "#OrderItemPackagePackagePanel",
+                "xtype": "orderitempackagepackagepanel"
+            },
+            "designerId": "51fa3788-d204-4b67-a40c-0c3d7900311d"
+        }
+    ]
+}

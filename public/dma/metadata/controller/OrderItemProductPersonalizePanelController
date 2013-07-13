@@ -1,0 +1,311 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OrderItemProductPersonalizePanelController"
+    },
+    "designerId": "e2dabfde-fd91-4792-861f-4df5e3f31002",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemProductPersonalizeEditButtonClick",
+                "implHandler": [
+                    "panel = this.getOrderItemProductPersonalizePanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemProductPersonalizeFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemProductPersonalizeToolbar');\r",
+                    "formPanel.enable();\r",
+                    "\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeEditButton').disable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeNewButton').disable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeCancelButton').enable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeSaveButton').enable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeDeleteButton').disable();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemProductPersonalizeEditButton"
+            },
+            "designerId": "78de818c-2661-44ab-8b89-06d6d745117e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemProductPersonalizeNewButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('OrderItemHasProductPersonalizeJsonStore');\r",
+                    "panel = this.getOrderItemProductPersonalizePanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemProductPersonalizeFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemProductPersonalizeToolbar');\r",
+                    "if (store !== undefined) {\r",
+                    "    //formPanel = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"FormPanel')[0];\r",
+                    "    formPanel.enable();\r",
+                    "    record = new store.model();\r",
+                    "    record.data.order_item_id = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0].data.id;\r",
+                    "    formPanel.loadRecord(record);\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeEditButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeNewButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeCancelButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeSaveButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeDeleteButton').disable();\r",
+                    "    \r",
+                    "\r",
+                    "//Ext.getStore('OrderItemProductItemJsonStore').on('load', function(store, records, options){\r",
+                    "    combobox = this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeFormPanel').getComponent('OrderItemProductPersonalizeComboBox');\r",
+                    "    combobox.store.clearFilter();\r",
+                    "    combobox.store.filter([{property:'product_layout_id',value:Ext.getStore('OrderItemProductItemJsonStore').first().data.product_layout_id}]);\r",
+                    "    combobox.store.reload();\r",
+                    "//});\r",
+                    "\r",
+                    "//Ext.getStore('OrderItemProductItemJsonStore').clearFilter(true);\r",
+                    "//Ext.getStore('OrderItemProductItemJsonStore').filter([{property:'id',value:Ext.getStore('OrderItemProductItemJsonStore').first().data.id}]);\r",
+                    "//Ext.getStore('OrderItemProductItemJsonStore').load();    \r",
+                    "    \r",
+                    "    \r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemProductPersonalizeNewButton"
+            },
+            "designerId": "719bc3e0-ad97-47de-8e0e-3c10068409c7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemProductPersonalizeSaveButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('OrderItemHasProductPersonalizeJsonStore');\r",
+                    "panel = this.getOrderItemProductPersonalizePanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemProductPersonalizeFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemProductPersonalizeToolbar');\r",
+                    "\r",
+                    "//grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "record = formPanel.getForm().getRecord();\r",
+                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                    "    values = formPanel.getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "    /*grid = button.ownerCt.ownerCt.ownerCt.getComponent('\" . $name . 'GridPanel' . \"');*/\r",
+                    "    //if (grid !== undefined) {\r",
+                    "    /*grid.getView().select(0);*/ /* BUG!!! */\r",
+                    "    //}\r",
+                    "} else {\r",
+                    "    formPanel.getForm().updateRecord();\r",
+                    "}\r",
+                    "formPanel.disable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeNewButton').enable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeCancelButton').disable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeSaveButton').disable();\r",
+                    "\r",
+                    "if (panel.getComponent('OrderItemProductPersonalizeGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeEditButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeEditButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemProductPersonalizeSaveButton"
+            },
+            "designerId": "1aecde17-8acd-48c4-86a5-fed0990a50a9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemProductPersonalizeCancelButtonClick",
+                "implHandler": [
+                    "panel = this.getOrderItemProductPersonalizePanel();\r",
+                    "grid = panel.getComponent('OrderItemProductPersonalizeGridPanel');\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemProductPersonalizeFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemProductPersonalizeToolbar');\r",
+                    "record = formPanel.getForm().getRecord();\t\t\t\t\t\t\t\t\r",
+                    "if (record !== undefined) {\r",
+                    "    formPanel.getForm().reset();\r",
+                    "    formPanel.disable();\r",
+                    "\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeNewButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeCancelButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeSaveButton').disable();\r",
+                    "    if (grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "        toolbar.getComponent('OrderItemProductPersonalizeEditButton').enable();\r",
+                    "        toolbar.getComponent('OrderItemProductPersonalizeDeleteButton').enable();\r",
+                    "    } else {\r",
+                    "        toolbar.getComponent('OrderItemProductPersonalizeEditButton').disable();\r",
+                    "        toolbar.getComponent('OrderItemProductPersonalizeDeleteButton').disable();\r",
+                    "    }    \r",
+                    "}\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemProductPersonalizeCancelButton"
+            },
+            "designerId": "a9105d84-c50b-4d01-9a15-234579e5522c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemProductPersonalizeDeleteButtonClick",
+                "implHandler": [
+                    "var store = Ext.getStore('OrderItemHasProductPersonalizeJsonStore');\r",
+                    "var panel = this.getOrderItemProductPersonalizePanel(); \r",
+                    "var grid = panel.getComponent('OrderItemProductPersonalizeGridPanel');\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "Ext.Msg.confirm('Attention!', 'Datensatz löschen?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "        //grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "        formPanel = panel.getComponent('OrderItemProductPersonalizeFormPanel');\r",
+                    "        record = formPanel.getForm().getRecord();\r",
+                    "        if (store !== undefined && record !== undefined) {\r",
+                    "            store.remove(record);\r",
+                    "            formPanel.getForm().reset();\r",
+                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "                grid.getView().select(0);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    "if (panel.getComponent('OrderItemProductPersonalizeGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('OrderItemProductPersonalizeDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemProductPersonalizeDeleteButton"
+            },
+            "designerId": "aa76e5ca-d976-496d-a13f-1f7313a067c6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemProductPersonalizeGridPanelSelect",
+                "implHandler": [
+                    "panel = this.getOrderItemProductPersonalizePanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemProductPersonalizeFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemProductPersonalizeToolbar');\r",
+                    "\r",
+                    "formPanel.getForm().loadRecord(record);\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeEditButton').enable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeNewButton').enable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeCancelButton').disable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeSaveButton').disable();\r",
+                    "toolbar.getComponent('OrderItemProductPersonalizeDeleteButton').enable();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#OrderItemProductPersonalizeGridPanel"
+            },
+            "designerId": "1b9f7d56-5854-482a-b83a-36c2355dbd9b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemProductPersonalizePanel",
+                "selector": "#OrderItemProductPersonalizePanel",
+                "xtype": "orderitemproductpersonalizepanel"
+            },
+            "designerId": "84d9041b-b24d-4ad2-9766-d363d2e6ab35"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemProductPersonalizePanelActivate",
+                "implHandler": [
+                    ""
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#OrderItemProductPersonalizePanel"
+            },
+            "designerId": "d8f78d06-99ad-4527-92c9-ec0977476670"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemPanel",
+                "selector": "#OrderItemPanel",
+                "xtype": "orderitempanel"
+            },
+            "designerId": "c10e8d86-c987-41bf-95c8-28e95ade50f4"
+        }
+    ]
+}

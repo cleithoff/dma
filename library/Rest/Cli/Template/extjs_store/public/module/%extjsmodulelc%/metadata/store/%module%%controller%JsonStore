@@ -1,0 +1,38 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "%module%%controller%JsonStore",
+        "autoLoad": true,
+        "autoSync": true,        
+        "storeId": "%module%%controller%JsonStore",
+        "model": "%module%%controller%Model"
+    },
+    "id": "ExtBox1-ext-gen%extjsgenid%",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onJsonstoreUpdate",
+                "fn": "onJsonstoreUpdate",
+                "implHandler": [
+                    "form = Ext.getCmp('%module%%controller%Form');\r",
+                    "if (form !== undefined) {\r",
+                    "    form.loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "update",
+                "scope": "me"
+            }
+        }
+    ]    
+}

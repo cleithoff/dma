@@ -1,0 +1,79 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "itemId": "ImportPanel",
+        "width": 400,
+        "designer|userClassName": "ImportPanel",
+        "designer|userAlias": "importpanel",
+        "layout": "border",
+        "closable": true,
+        "title": "Import"
+    },
+    "designerId": "2fa636aa-2b79-498b-815c-b7c6d0bf5cd4",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "layout|split": true,
+                "itemId": "ImportImportGridPanel",
+                "width": 150,
+                "title": null,
+                "columnLines": false,
+                "hideHeaders": true,
+                "store": "ImportImportJsonStore"
+            },
+            "designerId": "6a04233f-f48d-44b1-b252-daac5446a99a",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "title",
+                        "text": "String",
+                        "flex": 1
+                    },
+                    "designerId": "bdcccd46-03f9-4a7b-952d-a6f77586cc73"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "4304336c-c0e3-4625-84fe-0ffa464223a6"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "layout|split": true,
+                "itemId": "ImportImportTabPanel"
+            },
+            "designerId": "3d4eb86a-f286-4696-b289-bedd281cca72"
+        }
+    ]
+}

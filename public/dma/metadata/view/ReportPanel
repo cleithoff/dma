@@ -1,0 +1,78 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "itemId": "ReportPanel",
+        "width": 400,
+        "designer|userClassName": "ReportPanel",
+        "designer|userAlias": "reportpanel",
+        "layout": "border",
+        "closable": true,
+        "closeAction": "hide",
+        "title": "Reporte"
+    },
+    "designerId": "ea75cb9a-ed2e-481d-a4b8-aec6a3ec225b",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "layout|split": true,
+                "itemId": "ReportReportGridPanel",
+                "width": 150,
+                "title": null,
+                "store": "ReportReportJsonStore"
+            },
+            "designerId": "2e14e811-2166-4ae0-bca5-062e88f1203f",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "title",
+                        "text": "Report",
+                        "flex": 1
+                    },
+                    "designerId": "1f1f8c6d-eb83-4c38-aab7-fa4fe62de5a2"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "77bab6b9-5865-466c-a960-026180259194"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "layout|split": true,
+                "itemId": "ReportReportTabPanel"
+            },
+            "designerId": "7ebca3e6-c095-42a5-b42e-c327208b3c03"
+        }
+    ]
+}

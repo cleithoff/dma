@@ -1,0 +1,95 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ProductLayoutHasProductPersonalizeModel"
+    },
+    "designerId": "43f8bf52-63c5-4397-a5f4-3d4ff0b4bc66",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "9962a2cd-bc11-412d-b501-055c23d1956f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "product_layout_id"
+            },
+            "designerId": "f05e71b9-4dab-4dfa-8ad6-af96b0d59424"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "product_personalize_id"
+            },
+            "designerId": "d7df3a21-d490-4435-b4b1-8859764e2e80"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "product_personalize"
+            },
+            "designerId": "f894ecb3-ba0e-4e94-8f5a-ea59d01594d7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "key"
+            },
+            "designerId": "2f9f2c11-ffbf-49cd-a2e4-585b11122e35",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "convert",
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "implHandler": [
+                            "return rec.data.product_personalize.key;"
+                        ]
+                    },
+                    "designerId": "c9c474bf-93d1-4e5f-b62b-e54806f5d7f3"
+                }
+            ]
+        }
+    ]
+}

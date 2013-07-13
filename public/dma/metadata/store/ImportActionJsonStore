@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "model": "ImportActionModel",
+        "designer|userClassName": "ImportActionJsonStore"
+    },
+    "designerId": "311f6e01-255b-4244-a8ca-5618f6926b96",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/import/action/index"
+            },
+            "designerId": "67f8c2f1-bcd9-43d9-af67-2db42631494f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data",
+                        "useSimpleAccessors": true
+                    },
+                    "designerId": "c74f876a-ac8c-4072-bd2e-5c193f64c7da"
+                }
+            ]
+        }
+    ]
+}

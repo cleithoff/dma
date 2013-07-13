@@ -1,0 +1,85 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 552,
+        "itemId": "PartnerPanel",
+        "width": 792,
+        "designer|userClassName": "PartnerPanel",
+        "designer|userAlias": "partnerpanel",
+        "autoDestroy": false,
+        "layout": "border",
+        "closable": true,
+        "closeAction": "hide",
+        "title": "Partner"
+    },
+    "designerId": "5678f623-0c0b-4369-a7f1-c8b30a10696b",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "layout|split": true,
+                "itemId": "PartnerPartnerGrid",
+                "width": 153,
+                "title": null,
+                "store": "PartnerPartnerJsonStore"
+            },
+            "designerId": "7e1dcbb4-7eb0-4bad-bc76-a0a10a76bd28",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "title",
+                        "text": "Partner",
+                        "flex": 1
+                    },
+                    "designerId": "78be868c-09da-423f-8ad4-1e17f500d542"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "PartnerPartnerJsonStore"
+                    },
+                    "designerId": "f250c6e4-389a-45ba-a6e7-1102f4fd3953"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "layout|split": true,
+                "itemId": "PartnerPartnerTabPanel"
+            },
+            "designerId": "1f11fcdd-ee70-4607-9332-c17fada26436"
+        }
+    ]
+}

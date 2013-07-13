@@ -1,0 +1,18 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "itemId": "PartnerAbsencePanel",
+        "width": 400,
+        "designer|userClassName": "PartnerAbsencePanel",
+        "designer|userAlias": "partnerabsencepanel",
+        "autoDestroy": false,
+        "title": "Abwesenheiten"
+    },
+    "designerId": "dd4c7da7-b67a-45c3-8903-5bdd85129c27"
+}

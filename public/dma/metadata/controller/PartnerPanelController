@@ -1,0 +1,110 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PartnerPanelController"
+    },
+    "designerId": "2a07670c-d7dd-4552-9dc1-2fc820f03a08",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "PartnerPanel",
+                "selector": "#PartnerPanel",
+                "xtype": "partnerpanel"
+            },
+            "designerId": "3edb8812-3c11-4d87-85fb-df065b6a1ba4"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "PartnerAddressPanel",
+                "selector": "#PartnerAddressPanel",
+                "xtype": "partneraddresspanel"
+            },
+            "designerId": "cdee8850-3bb9-4f5a-97a9-a20c078a9de5"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "PartnerAbsencePanel",
+                "selector": "#PartnerAbsencePanel",
+                "xtype": "partnerabsencepanel"
+            },
+            "designerId": "62be83c7-e4fe-4362-938e-786cf3821052"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "PartnerImportPanel",
+                "selector": "#PartnerImportPanel",
+                "xtype": "partnerimportpanel"
+            },
+            "designerId": "0f8d1edc-91cd-4687-9c48-5215135bb002"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "// add PartnerAddressPanel\r",
+                    "panel = this.getPartnerPanel().getComponent('PartnerPartnerTabPanel').getComponent(this.getPartnerAddressPanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getPartnerPanel().getComponent('PartnerPartnerTabPanel').add(this.getPartnerAddressPanel());\r",
+                    "}\r",
+                    "\r",
+                    "// add PartnerAbsencePanel\r",
+                    "panel = this.getPartnerPanel().getComponent('PartnerPartnerTabPanel').getComponent(this.getPartnerAbsencePanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getPartnerPanel().getComponent('PartnerPartnerTabPanel').add(this.getPartnerAbsencePanel());\r",
+                    "}\r",
+                    "\r",
+                    "// add PartnerImportPanel\r",
+                    "panel = this.getPartnerPanel().getComponent('PartnerPartnerTabPanel').getComponent(this.getPartnerImportPanel().ref);\r",
+                    "if (panel === undefined) {\r",
+                    "    this.getPartnerPanel().getComponent('PartnerPartnerTabPanel').add(this.getPartnerImportPanel());\r",
+                    "}\r",
+                    "\r",
+                    "this.getPartnerPanel().getComponent('PartnerPartnerTabPanel').setActiveTab(this.getPartnerAddressPanel());"
+                ]
+            },
+            "designerId": "7c1397ba-087f-4ca6-a0a3-937bbf9ae740"
+        }
+    ]
+}

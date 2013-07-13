@@ -1,0 +1,280 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ImportActionController"
+    },
+    "designerId": "a57a2efc-5944-4a8c-ae83-e97ba5eec2d2",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportActionPanel",
+                "selector": "#ImportActionPanel",
+                "xtype": "importactionpanel"
+            },
+            "designerId": "317c80d2-6e5a-4942-88aa-61aa94bdda6a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImportActionEditButtonClick",
+                "implHandler": [
+                    "panel = this.getImportActionPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('ImportActionFormPanel');\r",
+                    "toolbar = panel.getComponent('ImportActionToolbar');\r",
+                    "formPanel.enable();\r",
+                    "\r",
+                    "toolbar.getComponent('ImportActionEditButton').disable();\r",
+                    "toolbar.getComponent('ImportActionNewButton').disable();\r",
+                    "toolbar.getComponent('ImportActionCancelButton').enable();\r",
+                    "toolbar.getComponent('ImportActionSaveButton').enable();\r",
+                    "toolbar.getComponent('ImportActionDeleteButton').disable();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ImportActionEditButton"
+            },
+            "designerId": "c2a7e82f-cfcd-44ba-9ac0-4ccd53b85bf5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImportActionNewButtonClick",
+                "implHandler": [
+                    "console.log('new import action');\r",
+                    "\r",
+                    "store = Ext.getStore('ImportActionJsonStore');\r",
+                    "panel = this.getImportActionPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('ImportActionFormPanel');\r",
+                    "toolbar = panel.getComponent('ImportActionToolbar');\r",
+                    "if (store !== undefined) {\r",
+                    "    //formPanel = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"FormPanel')[0];\r",
+                    "    formPanel.enable();\r",
+                    "    record = new store.model();\r",
+                    "    record.data.import_import_id = this.getImportPanel().getComponent('ImportImportGridPanel').getSelectionModel().getSelection()[0].data.id;\r",
+                    "    formPanel.loadRecord(record);\r",
+                    "    toolbar.getComponent('ImportActionEditButton').disable();\r",
+                    "    toolbar.getComponent('ImportActionNewButton').disable();\r",
+                    "    toolbar.getComponent('ImportActionCancelButton').enable();\r",
+                    "    toolbar.getComponent('ImportActionSaveButton').enable();\r",
+                    "    toolbar.getComponent('ImportActionDeleteButton').disable();\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ImportActionNewButton"
+            },
+            "designerId": "5c342481-7d48-4155-aee2-80752e02197a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImportActionSaveButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('ImportActionJsonStore');\r",
+                    "panel = this.getImportActionPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('ImportActionFormPanel');\r",
+                    "toolbar = panel.getComponent('ImportActionToolbar');\r",
+                    "\r",
+                    "//grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "record = formPanel.getForm().getRecord();\r",
+                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                    "    values = formPanel.getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "    /*grid = button.ownerCt.ownerCt.ownerCt.getComponent('\" . $name . 'GridPanel' . \"');*/\r",
+                    "    //if (grid !== undefined) {\r",
+                    "    /*grid.getView().select(0);*/ /* BUG!!! */\r",
+                    "    //}\r",
+                    "} else {\r",
+                    "    formPanel.getForm().updateRecord();\r",
+                    "}\r",
+                    "formPanel.disable();\r",
+                    "toolbar.getComponent('ImportActionNewButton').enable();\r",
+                    "toolbar.getComponent('ImportActionCancelButton').disable();\r",
+                    "toolbar.getComponent('ImportActionSaveButton').disable();\r",
+                    "\r",
+                    "if (panel.getComponent('ImportActionGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('ImportActionEditButton').enable();\r",
+                    "    toolbar.getComponent('ImportActionDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('ImportActionEditButton').disable();\r",
+                    "    toolbar.getComponent('ImportActionDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ImportActionSaveButton"
+            },
+            "designerId": "3651cc0d-ae65-444f-928a-5553b7564c48"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImportActionCancelButtonClick",
+                "implHandler": [
+                    "panel = this.getImportActionPanel();\r",
+                    "grid = panel.getComponent('ImportActionGridPanel');\r",
+                    "\r",
+                    "formPanel = panel.getComponent('ImportActionFormPanel');\r",
+                    "toolbar = panel.getComponent('ImportActionToolbar');\r",
+                    "record = formPanel.getForm().getRecord();\t\t\t\t\t\t\t\t\r",
+                    "if (record !== undefined) {\r",
+                    "    formPanel.getForm().reset();\r",
+                    "    formPanel.disable();\r",
+                    "\r",
+                    "    toolbar.getComponent('ImportActionNewButton').enable();\r",
+                    "    toolbar.getComponent('ImportActionCancelButton').disable();\r",
+                    "    toolbar.getComponent('ImportActionSaveButton').disable();\r",
+                    "    if (panel.getComponent('ImportActionGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "        toolbar.getComponent('ImportActionEditButton').enable();\r",
+                    "        toolbar.getComponent('ImportActionDeleteButton').enable();\r",
+                    "    } else {\r",
+                    "        toolbar.getComponent('ImportActionEditButton').disable();\r",
+                    "        toolbar.getComponent('ImportActionDeleteButton').disable();\r",
+                    "    }    \r",
+                    "}\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "    grid.getView().select(0);\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ImportActionCancelButton"
+            },
+            "designerId": "ea021025-9afc-4df5-8e99-c2a6cfa2bfdc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImportActionDeleteButtonClick",
+                "implHandler": [
+                    "var store = Ext.getStore('ImportActionJsonStore');\r",
+                    "var panel = this.getImportActionPanel(); \r",
+                    "var grid = panel.getComponent('ImportActionGridPanel');\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "Ext.Msg.confirm('Attention!', 'Datensatz löschen?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "        //grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "        formPanel = panel.getComponent('ImportActionFormPanel');\r",
+                    "        record = formPanel.getForm().getRecord();\r",
+                    "        if (store !== undefined && record !== undefined) {\r",
+                    "            store.remove(record);\r",
+                    "            formPanel.getForm().reset();\r",
+                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "                grid.getView().select(0);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    "if (panel.getComponent('ImportActionGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('ImportActionDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('ImportActionDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ImportActionDeleteButton"
+            },
+            "designerId": "f072d918-f085-40c7-9ee9-a62098ed4d10"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImportActionGridPanelSelect",
+                "implHandler": [
+                    "panel = this.getImportActionPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('ImportActionFormPanel');\r",
+                    "toolbar = panel.getComponent('ImportActionToolbar');\r",
+                    "formPanel.getForm().loadRecord(record);\r",
+                    "toolbar.getComponent('ImportActionEditButton').enable();\r",
+                    "toolbar.getComponent('ImportActionNewButton').enable();\r",
+                    "toolbar.getComponent('ImportActionCancelButton').disable();\r",
+                    "toolbar.getComponent('ImportActionSaveButton').disable();\r",
+                    "toolbar.getComponent('ImportActionDeleteButton').enable();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#ImportActionGridPanel"
+            },
+            "designerId": "904a2183-28d2-4f0d-80b2-34ce900b0c84"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportPanel",
+                "selector": "#ImportPanel",
+                "xtype": "importpanel"
+            },
+            "designerId": "229b92b6-e13c-4de9-b43b-503d6d239084"
+        }
+    ]
+}

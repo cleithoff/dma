@@ -1,0 +1,44 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PartnerAddressPanelController"
+    },
+    "designerId": "71f90c79-a2c3-4a8a-8248-839a312225c6",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerAddressPLZButtonClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: '/partner/address/zipcleanup',\r",
+                    "    method: 'GET',\r",
+                    "    success: function(response, opts) {\r",
+                    "        alert('PLZ Bereinigung durchgeführt.');\r",
+                    "    },\r",
+                    "    failure: function(response, opts) {\r",
+                    "        alert('PLZ Bereinigung fehlgeschlagen.');\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerAddressPLZButton"
+            },
+            "designerId": "f4ae4f27-0ced-468d-8357-cdc823ebae31"
+        }
+    ]
+}

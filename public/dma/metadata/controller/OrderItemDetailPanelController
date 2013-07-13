@@ -1,0 +1,278 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OrderItemDetailPanelController"
+    },
+    "designerId": "1ded70dd-2c31-4bb1-978f-4ac685830c99",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemDetailEditButtonClick",
+                "implHandler": [
+                    "panel = this.getOrderItemDetailPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemDetailFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemDetailToolbar');\r",
+                    "formPanel.enable();\r",
+                    "\r",
+                    "toolbar.getComponent('OrderItemDetailEditButton').disable();\r",
+                    "//toolbar.getComponent('OrderItemDetailNewButton').disable();\r",
+                    "toolbar.getComponent('OrderItemDetailCancelButton').enable();\r",
+                    "toolbar.getComponent('OrderItemDetailSaveButton').enable();\r",
+                    "toolbar.getComponent('OrderItemDetailDeleteButton').disable();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemDetailEditButton"
+            },
+            "designerId": "a18657ab-221c-438a-815d-c2d9f0e06bfb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemDetailSaveButtonClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "\r",
+                    "store = Ext.getStore('OrderItemJsonStore');\r",
+                    "panel = this.getOrderItemDetailPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemDetailFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemDetailToolbar');\r",
+                    "\r",
+                    "//grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "record = formPanel.getForm().getRecord();\r",
+                    "\r",
+                    "record.store.on('write', function(store,options) {\r",
+                    "    that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style=\"width:100%;height:100%\" src=\"/deploy/' + record.data.authkey + '.pdf\" alt=\"pdf\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
+                    "    // \r",
+                    "});\r",
+                    "\r",
+                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                    "    values = formPanel.getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "    /*grid = button.ownerCt.ownerCt.ownerCt.getComponent('\" . $name . 'GridPanel' . \"');*/\r",
+                    "    //if (grid !== undefined) {\r",
+                    "    /*grid.getView().select(0);*/ /* BUG!!! */\r",
+                    "    //}\r",
+                    "} else {\r",
+                    "    formPanel.getForm().updateRecord();\r",
+                    "}\r",
+                    "formPanel.disable();\r",
+                    "//toolbar.getComponent('OrderItemDetailNewButton').enable();\r",
+                    "toolbar.getComponent('OrderItemDetailCancelButton').disable();\r",
+                    "toolbar.getComponent('OrderItemDetailSaveButton').disable();\r",
+                    "\r",
+                    "panel = this.getOrderItemPanel();\r",
+                    "\r",
+                    "if (panel.getComponent('OrderItemGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('OrderItemDetailEditButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemDetailDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('OrderItemDetailEditButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemDetailDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemDetailSaveButton"
+            },
+            "designerId": "2b35e5b2-5ca2-40f2-a3d0-3f94d49dd105"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemDetailCancelButtonClick",
+                "implHandler": [
+                    "panel = this.getOrderItemDetailPanel();\r",
+                    "grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemDetailFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemDetailToolbar');\r",
+                    "record = formPanel.getForm().getRecord();\t\t\t\t\t\t\t\t\r",
+                    "if (record !== undefined) {\r",
+                    "    formPanel.getForm().reset();\r",
+                    "    formPanel.disable();\r",
+                    "\r",
+                    "    //toolbar.getComponent('OrderItemDetailNewButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemDetailCancelButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemDetailSaveButton').disable();\r",
+                    "    if (grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "        toolbar.getComponent('OrderItemDetailEditButton').enable();\r",
+                    "        toolbar.getComponent('OrderItemDetailDeleteButton').enable();\r",
+                    "    } else {\r",
+                    "        toolbar.getComponent('OrderItemDetailEditButton').disable();\r",
+                    "        toolbar.getComponent('OrderItemDetailDeleteButton').disable();\r",
+                    "    }    \r",
+                    "}\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "    //grid.getView().select(0);\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemDetailCancelButton"
+            },
+            "designerId": "9e65bbba-9df0-4d29-96dd-a1c035fa71fc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemDetailDeleteButtonClick",
+                "implHandler": [
+                    "var store = Ext.getStore('OrderItemJsonStore');\r",
+                    "var panel = this.getOrderItemDetailPanel(); \r",
+                    "var grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "Ext.Msg.confirm('Attention!', 'Datensatz löschen?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "        //grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "        formPanel = panel.getComponent('OrderItemDetailFormPanel');\r",
+                    "        record = formPanel.getForm().getRecord();\r",
+                    "        if (store !== undefined && record !== undefined) {\r",
+                    "            store.remove(record);\r",
+                    "            formPanel.getForm().reset();\r",
+                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "                grid.getView().select(0);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    "if (panel.getComponent('OrderItemDetailGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('OrderItemDetailDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('OrderItemDetailDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemDetailDeleteButton"
+            },
+            "designerId": "1afb304b-3261-4296-87c6-c0bc15c2b69c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemDetailPanel",
+                "selector": "#OrderItemDetailPanel",
+                "xtype": "orderitemdetailpanel"
+            },
+            "designerId": "5c01fb7d-a80f-4df2-a5bb-a4b2d6ace619"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemPanel",
+                "selector": "#OrderItemPanel",
+                "xtype": "orderitempanel"
+            },
+            "designerId": "04721006-4dc3-41a2-ab32-4bde7cc7d973"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemDetailRefreshButtonClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "    \r",
+                    "if (record === undefined) return;\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "   url: '/order/item/refresh',\r",
+                    "    success: function() {\r",
+                    "\t\tthat.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style=\"width:100%;height:100%\" src=\"/deploy/' + record.data.authkey + '.pdf\" alt=\"pdf\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
+                    "    },\r",
+                    "    failure: function() {},\r",
+                    "   params: { id: record.data.id}\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemDetailRefreshButton"
+            },
+            "designerId": "f0e619f2-89d1-477a-ad54-9e1e96aa7b9a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemDetailPreviewButtonClick",
+                "implHandler": [
+                    "var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "if (record === undefined) return;\r",
+                    "\r",
+                    "this.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style=\"width:100%;height:100%\" src=\"/deploy/' + record.data.authkey + '.pdf\" alt=\"pdf\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemDetailPreviewButton"
+            },
+            "designerId": "3b50aab6-0309-42f3-af98-91c7f51f92ff"
+        }
+    ]
+}

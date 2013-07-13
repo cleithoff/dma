@@ -1,0 +1,148 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "%module%%controller%FormController",
+        "models": [
+            "%module%%controller%Model"
+        ],
+        "stores": [
+            "%module%%controller%JsonStore"
+        ],
+        "views": [
+            "%module%Viewport"
+        ]
+    },
+    "id": "ExtBox1-ext-gen%extjsgenid%",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onNewButtonClick",
+                "fn": "onNewButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('%module%%controller%JsonStore');\r",
+                    "if (store !== undefined) {\r",
+                    "    record = new store.model();\r",
+                    "    Ext.getCmp('%module%%controller%Form').loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#UsermgtPrivilegeNewButton"
+            }
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSaveButtonClick",
+                "fn": "onSaveButtonClick",
+                "implHandler": [
+                    "record = Ext.getCmp('%module%%controller%Form').getForm().getRecord();\r",
+                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                    "    values = Ext.getCmp('%module%%controller%Form').getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "    grid = Ext.getCmp('%module%%controller%GridPanel');\r",
+                    "    if (grid !== undefined) {\r",
+                    "        grid.getView().select(0);\r",
+                    "    }    \t\t\r",
+                    "} else {\r",
+                    "    Ext.getCmp('%module%%controller%Form').getForm().updateRecord();\r",
+                    "}\r",
+                    "\r",
+                    "/*\r",
+                    "\r",
+                    "// Saving with file upload.\r",
+                    "\r",
+                    "record = Ext.getCmp('UsermgtPrivilegeForm').getForm().getRecord();\r",
+                    "Ext.getCmp('UsermgtPrivilegeForm').getForm().submit({\r",
+                    "    clientValidation: true,\r",
+                    "    url: '/partner/partner/upload',\r",
+                    "    headers: {'Content-Type':'multipart/form-data; charset=UTF-8'},\r",
+                    "    params: {\r",
+                    "        newStatus: 'delivered',\r",
+                    "        id: record.data.id\r",
+                    "    },\r",
+                    "    success: function(form, action) {\r",
+                    "        files = action.result.files;\r",
+                    "        var o = {};\r",
+                    "        for (var index in files) {\r",
+                    "            o[index] = files[index];\r",
+                    "        }\r",
+                    "        Ext.getCmp('UsermgtPrivilegeForm').getForm().setValues(o);        \r",
+                    "        Ext.getCmp('UsermgtPrivilegeForm').getForm().updateRecord();\r",
+                    "        //Ext.Msg.alert('Success', action.result.msg);\r",
+                    "    },\r",
+                    "    failure: function(form, action) {\r",
+                    "        switch (action.failureType) {\r",
+                    "            case Ext.form.action.Action.CLIENT_INVALID:\r",
+                    "            Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');\r",
+                    "            break;\r",
+                    "            case Ext.form.action.Action.CONNECT_FAILURE:\r",
+                    "            Ext.Msg.alert('Failure', 'Ajax communication failed');\r",
+                    "            break;\r",
+                    "            case Ext.form.action.Action.SERVER_INVALID:\r",
+                    "            Ext.Msg.alert('Failure', action.result.msg);\r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    "*/"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#UsermgtPrivilegeSaveButton"
+            }
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDeleteButtonClick",
+                "fn": "onDeleteButtonClick",
+                "implHandler": [
+                    "Ext.Msg.confirm('Attention!', 'Really delete %controller%?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "        store = Ext.getStore('%module%%controller%JsonStore');\r",
+                    "        record = Ext.getCmp('%module%%controller%Form').getForm().getRecord();\r",
+                    "        if (store !== undefined && record !== undefined) {\r",
+                    "            store.remove(record);\r",
+                    "            Ext.getCmp('%module%%controller%Form').getForm().reset();\r",
+                    "\r",
+                    "            grid = Ext.getCmp('%module%%controller%GridPanel');\r",
+                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "                grid.getView().select(0);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#UsermgtPrivilegeDeleteButton"
+            }
+        }
+    ]
+}

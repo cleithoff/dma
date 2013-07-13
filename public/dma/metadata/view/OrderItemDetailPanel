@@ -1,0 +1,173 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 375,
+        "itemId": "OrderItemDetailPanel",
+        "width": 567,
+        "designer|userClassName": "OrderItemDetailPanel",
+        "designer|userAlias": "orderitemdetailpanel",
+        "layout": "border",
+        "title": "Detail"
+    },
+    "designerId": "93e2b9d5-dfd2-4242-a2ca-da5e99a5c45f",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "OrderItemDetailToolbar"
+            },
+            "designerId": "95b9a96b-3aad-4973-a4fe-c0cd1c9aae48",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemDetailEditButton",
+                        "text": "Bearbeiten"
+                    },
+                    "designerId": "e4c9d699-ef3e-47ac-b700-646750fccf1f"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemDetailSaveButton",
+                        "text": "Speichern"
+                    },
+                    "designerId": "c0526d33-4747-4ee0-8a99-6e67f32ac5ec"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemDetailCancelButton",
+                        "text": "Abbrechen"
+                    },
+                    "designerId": "17da4c75-cdf0-4d56-9efb-aac060bd1f6b"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemDetailDeleteButton",
+                        "text": "Löschen"
+                    },
+                    "designerId": "fd71d0be-5f33-483a-80b2-59a85df0d7ad"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "OrderItemDetailRefreshButton",
+                        "text": "Aktualisieren"
+                    },
+                    "designerId": "74c44ab2-8004-45b6-8ea4-56dd120cb866"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "OrderItemDetailPreviewButton",
+                        "text": "Preview"
+                    },
+                    "designerId": "583fa0df-87c7-41e8-83b2-0f6a6455d59d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "disabled": true,
+                "height": 45,
+                "itemId": "OrderItemDetailFormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "9c179ba0-97ec-4f5b-89b6-e57a790d23ae",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "OrderItemDetailOrderitemState",
+                        "fieldLabel": "Status",
+                        "name": "order_itemstate_id",
+                        "displayField": "title",
+                        "store": "OrderItemstateJsonStore",
+                        "valueField": "id"
+                    },
+                    "designerId": "c23c1e06-ac8a-49b4-9e9c-1b3706d0e952"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "itemId": "PreviewContainer"
+            },
+            "designerId": "79b978f5-fdd2-4391-b163-9f4eeaf9d7b7"
+        }
+    ]
+}

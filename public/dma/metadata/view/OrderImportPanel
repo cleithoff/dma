@@ -1,0 +1,1088 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 484,
+        "itemId": "OrderImportPanel",
+        "width": 400,
+        "designer|userClassName": "OrderImportPanel",
+        "designer|userAlias": "orderimportpanel",
+        "autoDestroy": false,
+        "layout": "border",
+        "header": null,
+        "title": "Import"
+    },
+    "designerId": "93538e35-4e8f-49c2-ba41-b2d0201f9a6f",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "height": 203,
+                "itemId": "OrderImportUploadFormPanel",
+                "bodyPadding": 10,
+                "header": null,
+                "title": null,
+                "titleCollapse": null,
+                "method": null,
+                "standardSubmit": false
+            },
+            "designerId": "138f23fc-f2ce-4246-9b62-390a3853ba70",
+            "cn": [
+                {
+                    "type": "Ext.form.field.File",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "formBind": null,
+                        "itemId": "OrderImportFileUpload",
+                        "fieldLabel": "CSV Datei",
+                        "name": null,
+                        "buttonText": "Auswählen..."
+                    },
+                    "designerId": "32ea35b8-187b-49c9-a2a6-e4c70d168a51"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "ImportImportComboBox",
+                        "fieldLabel": "Import",
+                        "displayField": "title",
+                        "store": "ImportImportJsonStore",
+                        "valueField": "id"
+                    },
+                    "designerId": "5d047746-f6c2-431c-8cdd-85998d4a9e88"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "OrderImportProductComboBox",
+                        "fieldLabel": "Produkt",
+                        "name": "product_product_id",
+                        "editable": false,
+                        "displayField": "title",
+                        "store": "ProductProductOrderImportJsonStore",
+                        "valueField": "id"
+                    },
+                    "designerId": "5e5e02e0-390d-4548-8846-9769932b342c",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderImportProductComboBoxSelect",
+                                "implHandler": [
+                                    "var cb = combo.ownerCt.getComponent('OrderImportItemComboBox');\r",
+                                    "\r",
+                                    "cb.setValue('');\r",
+                                    "cb.setDisabled(false);\r",
+                                    "\r",
+                                    "cb.store.reload({params: {product_product_id: records[0].data.id}});"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "designerId": "51daeee0-4f97-4b03-8494-9e6d52b38538"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "disabled": true,
+                        "itemId": "OrderImportItemComboBox",
+                        "fieldLabel": "Artikel",
+                        "name": "product_item_id",
+                        "displayField": "title",
+                        "queryMode": "local",
+                        "store": "ProductItemOrderImportJsonStore",
+                        "valueField": "id"
+                    },
+                    "designerId": "9609d88b-be3c-4b3e-89f4-5988573b905f"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "OrderImportHasposCheckbox",
+                        "fieldLabel": null,
+                        "hideEmptyLabel": false,
+                        "name": "haspos",
+                        "boxLabel": "POS",
+                        "inputValue": "1",
+                        "uncheckedValue": "0"
+                    },
+                    "designerId": "bc5c3644-81a1-4c1e-ad1e-aa97b31ac136"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "OrderImportWeightposNumberfield",
+                        "fieldLabel": "POS Gewicht",
+                        "name": "weightpos",
+                        "value": [
+                            "0.7"
+                        ]
+                    },
+                    "designerId": "ce0dcb7d-fae6-45c9-9007-180c371b04fe"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "OrderImportResetButton",
+                        "text": "Reset"
+                    },
+                    "designerId": "67c6c53a-d246-4332-ba03-b8077bdbd491"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "OrderImportUploadButton",
+                        "text": "Upload"
+                    },
+                    "designerId": "9f4c0424-b0c4-4fe9-b95c-b47539e56310"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "OrderImportRefreshButton",
+                        "text": "Aktualisieren"
+                    },
+                    "designerId": "99766eed-b606-4b5f-ab8e-8a9dc14bdad1"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "OrderImportImportButton",
+                        "text": "Import"
+                    },
+                    "designerId": "bccebcf9-dc44-415e-84f8-ca8668ecd861"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tree.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "itemId": "OrderImportGridPanel",
+                "collapsible": false,
+                "header": null,
+                "title": "Konflikte",
+                "enableColumnHide": false,
+                "enableColumnMove": false,
+                "rowLines": true,
+                "store": "ImportOrderTreeStore",
+                "rootVisible": false,
+                "useArrows": true
+            },
+            "designerId": "b3602ad8-c893-4c64-8965-c354e770545c",
+            "isBuiltIn": true,
+            "iconCls": "icon-treegridpanel",
+            "autoName": "TreeGrid",
+            "cn": [
+                {
+                    "type": "Ext.tree.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "stripeRows": true,
+                        "rootVisible": false
+                    },
+                    "designerId": "4e78049c-2e7a-4cd3-af1b-7f8bbab84984",
+                    "cn": [
+                        {
+                            "type": "basicfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "getRowClass",
+                                "designer|params": [
+                                    "record"
+                                ],
+                                "implHandler": [
+                                    "if (record.data.leaf !== true) {\r",
+                                    "    for (var idx in record.childNodes) {\r",
+                                    "        if (record.childNodes[idx].data.druck_anrede_fuer_hg_ng === null) record.childNodes[idx].data.druck_anrede_fuer_hg_ng = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_hg_name1 === null) record.childNodes[idx].data.druck_hg_name1 = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_hg_name2 === null) record.childNodes[idx].data.druck_hg_name2 = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_hg_strasse === null) record.childNodes[idx].data.druck_hg_strasse = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_hg_plz === null) record.childNodes[idx].data.druck_hg_plz = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_hg_ort === null) record.childNodes[idx].data.druck_hg_ort = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_hg_tel === null) record.childNodes[idx].data.druck_hg_tel = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_ng_name1 === null) record.childNodes[idx].data.druck_ng_name1 = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_ng_name2 === null) record.childNodes[idx].data.druck_ng_name2 = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_ng_strasse === null) record.childNodes[idx].data.druck_ng_strasse = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_ng_plz === null) record.childNodes[idx].data.druck_ng_plz = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_ng_ort === null) record.childNodes[idx].data.druck_ng_ort = \"\";\r",
+                                    "        if (record.childNodes[idx].data.druck_ng_tel === null) record.childNodes[idx].data.druck_ng_tel = \"\";\r",
+                                    "\r",
+                                    "        if (record.data.druck_anrede_fuer_hg_ng === null) record.data.druck_anrede_fuer_hg_ng = \"\";\r",
+                                    "        if (record.data.druck_hg_name1 === null) record.data.druck_hg_name1 = \"\";\r",
+                                    "        if (record.data.druck_hg_name2 === null) record.data.druck_hg_name2 = \"\";\r",
+                                    "        if (record.data.druck_hg_strasse === null) record.data.druck_hg_strasse = \"\";\r",
+                                    "        if (record.data.druck_hg_plz === null) record.data.druck_hg_plz = \"\";\r",
+                                    "        if (record.data.druck_hg_ort === null) record.data.druck_hg_ort = \"\";\r",
+                                    "        if (record.data.druck_hg_tel === null) record.data.druck_hg_tel = \"\";\r",
+                                    "        if (record.data.druck_ng_name1 === null) record.data.druck_ng_name1 = \"\";\r",
+                                    "        if (record.data.druck_ng_name2 === null) record.data.druck_ng_name2 = \"\";\r",
+                                    "        if (record.data.druck_ng_strasse === null) record.data.druck_ng_strasse = \"\";\r",
+                                    "        if (record.data.druck_ng_plz === null) record.data.druck_ng_plz = \"\";\r",
+                                    "        if (record.data.druck_ng_ort === null) record.data.druck_ng_ort = \"\";\r",
+                                    "        if (record.data.druck_ng_tel === null) record.data.druck_ng_tel = \"\";\r",
+                                    "\r",
+                                    "        \r",
+                                    "        if (\r",
+                                    "           record.childNodes[idx].data.druck_anrede_fuer_hg_ng != record.data.druck_anrede_fuer_hg_ng\r",
+                                    "        || record.childNodes[idx].data.druck_hg_name1 != record.data.druck_hg_name1\r",
+                                    "        || record.childNodes[idx].data.druck_hg_name2 != record.data.druck_hg_name2\r",
+                                    "        || record.childNodes[idx].data.druck_hg_strasse != record.data.druck_hg_strasse\r",
+                                    "        || record.childNodes[idx].data.druck_hg_plz != record.data.druck_hg_plz\r",
+                                    "        || record.childNodes[idx].data.druck_hg_ort != record.data.druck_hg_ort\r",
+                                    "        || record.childNodes[idx].data.druck_hg_tel != record.data.druck_hg_tel\r",
+                                    "            \r",
+                                    "        || record.childNodes[idx].data.druck_ng_name1 != record.data.druck_ng_name1\r",
+                                    "        || record.childNodes[idx].data.druck_ng_name2 != record.data.druck_ng_name2\r",
+                                    "        || record.childNodes[idx].data.druck_ng_strasse != record.data.druck_ng_strasse\r",
+                                    "        || record.childNodes[idx].data.druck_ng_plz != record.data.druck_ng_plz\r",
+                                    "        || record.childNodes[idx].data.druck_ng_ort != record.data.druck_ng_ort\r",
+                                    "        || record.childNodes[idx].data.druck_ng_tel != record.data.druck_ng_tel\r",
+                                    "        ) {\r",
+                                    "            console.log(record.childNodes[idx].data);\r",
+                                    "            console.log(record.data);\r",
+                                    "            return 'conflict';\r",
+                                    "        }\r",
+                                    "    }\r",
+                                    "} \r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "0a78846f-1ecb-4a3b-a305-f4c007d4e3a9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tree.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "minWidth": 150,
+                        "width": 150,
+                        "dataIndex": "text",
+                        "text": "Daten",
+                        "flex": 1
+                    },
+                    "designerId": "ab54e41f-d3be-4f0e-b1b4-ee9e51e0bc58"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "minWidth": 70,
+                        "width": 70,
+                        "align": "right",
+                        "dataIndex": "anzahl",
+                        "text": "Anzahl"
+                    },
+                    "designerId": "183949f9-1477-4ce0-8063-9d1b695c9212",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "095d983b-e544-46a2-848c-c9e9f01b6d15"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_anrede",
+                        "text": "Anrede"
+                    },
+                    "designerId": "94539eb4-2396-4091-9e0d-7a33c33f642e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "1d1d42b2-ff60-4ec8-9c69-67b7aede9584"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_name1",
+                        "text": "Name1"
+                    },
+                    "designerId": "7bb23367-12d7-4ee9-a7c2-109a258a438b",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "70b51c85-7839-4aeb-95dd-440c287438b7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_name2",
+                        "text": "Name2"
+                    },
+                    "designerId": "481567d3-f23c-4d9d-9752-e80981f7f130",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "f99529c0-f3c0-444e-bcc1-409563e9dc1b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_strasse",
+                        "text": "Strasse"
+                    },
+                    "designerId": "a42eb317-34a0-488b-8a2d-c3f933c49dbb",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "e65c5eac-cdf9-46c4-a1b6-ed0960be1ea2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_plz",
+                        "text": "PLZ"
+                    },
+                    "designerId": "d4d84af3-9079-4eea-9946-672c6afe0bd4",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "006bf9a2-fafd-4d08-ac3b-efde5797b0e7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "post_ort",
+                        "text": "Ort"
+                    },
+                    "designerId": "d4c9eee1-bb5a-401d-b87c-06f90de8122b",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "17b86fc1-f338-4fcb-bcc7-677747966cda"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_hg_name1",
+                        "text": "HG Name1"
+                    },
+                    "designerId": "753b5279-e19d-4c9b-a497-89ffb2ae49c4",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "81302801-109f-4bbf-84a2-e48b8082a6c8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_hg_name2",
+                        "text": "HG Name2"
+                    },
+                    "designerId": "8316d852-1e22-489d-b003-d8ed4e0257e2",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "59e8ae30-5e47-47fd-9802-38301532fc56"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_hg_strasse",
+                        "text": "HG Strasse"
+                    },
+                    "designerId": "8d92ea5d-b4db-4d07-baf6-e1b76d583623",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "c08be413-0166-4814-85b9-8283d09920cc"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_hg_plz",
+                        "text": "HG PLZ"
+                    },
+                    "designerId": "1c504c5f-9ee5-4454-b94d-15995e72350e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "7a8e3311-54ce-4542-a5c8-587696177f6b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_hg_ort",
+                        "text": "HG Ort"
+                    },
+                    "designerId": "7a4d4dec-f885-4d50-8b61-9b9dc75e0931",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "88d99b0b-6e34-4e3d-891a-f56f458a332b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_hg_tel",
+                        "text": "HG Tel"
+                    },
+                    "designerId": "6ff09e91-0d16-4e86-92ab-7c3007cd03f8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "17ccd22b-06a5-44e5-a695-3a78efef3b74"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_ng_name1",
+                        "text": "NG Name1"
+                    },
+                    "designerId": "b19e146d-1686-44ea-8ac8-37258a4b18bf",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "38d1fdd4-ff57-45c8-813a-a7c33b6083b5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_ng_name2",
+                        "text": "NG Name2"
+                    },
+                    "designerId": "26df887f-a142-4c84-952f-3f9d7887d873",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "b475388a-f38e-46e7-8df3-553e62d82501"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_ng_strasse",
+                        "text": "NG Strasse"
+                    },
+                    "designerId": "150d57c9-cd6a-47ba-913e-335c642a7a46",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "fd2fb0d4-6d7e-4f5f-854b-1bd1fb833e70"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_ng_plz",
+                        "text": "NG PLZ"
+                    },
+                    "designerId": "490edff5-de45-4928-b3e8-8cd7ef061ce7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "358ac3cc-a564-4c50-9b64-66425a7d7f3a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_ng_ort",
+                        "text": "NG Ort"
+                    },
+                    "designerId": "27cbb2f3-1b37-4d90-b32b-fb7c6d1bb21e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "8bacce7c-562b-4936-974e-9eba769dbe12"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "druck_ng_tel",
+                        "text": "NG Tel"
+                    },
+                    "designerId": "ae80446b-759b-4168-864f-48e7d53f223f",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "4ac67fbd-2760-40c0-ada2-b3d5eef94d04"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "line1",
+                        "text": "Line1"
+                    },
+                    "designerId": "7e7e6b76-8826-4bf1-bc14-7120f0e66151",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "86f6a339-a696-441d-b9b8-4c6786df6201"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "line2",
+                        "text": "Line2"
+                    },
+                    "designerId": "7cfa7cd3-6f49-4e8b-a888-b5f680942ee6",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "64fd57d8-aba9-4e03-bf82-ac6bb917fec4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "line3",
+                        "text": "Line3"
+                    },
+                    "designerId": "ad160bb2-1bbf-40ff-a464-4b2c526cf4ab",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "c50e959b-1d07-4ad1-90d8-a0b328dd2e57"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "line4",
+                        "text": "Line4"
+                    },
+                    "designerId": "947722e0-e9e1-4099-849e-60e4427e43ec",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "12fd3493-f9c8-4f32-b28e-db03f3087494"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "line5",
+                        "text": "Line5"
+                    },
+                    "designerId": "fe64c9c2-692d-4530-a013-5ffdfe601d6c",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "6d050d1a-745e-4c36-8c2c-91271339c2f7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "line6",
+                        "text": "Line6"
+                    },
+                    "designerId": "79fa1b62-9fdb-4adb-8749-a3fba88a3634",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "3eb38897-8839-4c36-8887-6d60c92f3005"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "line7",
+                        "text": "Line7"
+                    },
+                    "designerId": "94d2a927-7e6d-4e18-a1d8-2f1a861edf56",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "9fa0a4ee-1d81-4c73-b98c-567595507d4d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "designerId": "133a0deb-95e3-41d1-acfa-6f13fa986315",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCellEditingBeforeEdit",
+                                "implHandler": [
+                                    "var _event = e;\r",
+                                    "\r",
+                                    "if (e.record.data.leaf === true) {\r",
+                                    "\r",
+                                    "    e.record.parentNode.set(e.field, e.record.data[e.field]);\r",
+                                    "\r",
+                                    "    var params = new Object();\r",
+                                    "    params.id = e.record.parentNode.data.idx;\r",
+                                    "    params.partner_nr = e.record.parentNode.data.partner_nr;\r",
+                                    "    params.key = e.field;\r",
+                                    "    params.value = e.record.data[e.field];\r",
+                                    "\r",
+                                    "    Ext.Ajax.request({\r",
+                                    "        url: '/import/ordercompare',\r",
+                                    "        method: 'PUT',\r",
+                                    "        jsonData: JSON.stringify(params),\r",
+                                    "        success: function(response, opts) {\r",
+                                    "            _event.record.parentNode.commit();\r",
+                                    "        },\r",
+                                    "        failure: function(response, opts) {\r",
+                                    "            //console.log('server-side failure with status code ' + response.status);\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "\r",
+                                    "    return false;\r",
+                                    "}"
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "designerId": "b48abbb3-b19d-4068-9080-0ee4ffc0401e"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCellEditingEdit",
+                                "implHandler": [
+                                    "var _event = e;\r",
+                                    "\r",
+                                    "if (e.record.data.leaf === false) {\r",
+                                    "    var params = new Object();\r",
+                                    "    params.id = e.record.data.idx == \"\" ? 0 : e.record.data.idx;\r",
+                                    "    params.partner_nr = e.record.data.partner_nr;\r",
+                                    "    params.key = e.field;\r",
+                                    "    params.value = e.record.data[e.field];\r",
+                                    "    //params[e.field] = e.record.data[e.field];\r",
+                                    "\r",
+                                    "    Ext.Ajax.request({\r",
+                                    "        url: '/import/ordercompare',\r",
+                                    "        method: 'PUT',\r",
+                                    "        jsonData: JSON.stringify(params),\r",
+                                    "        success: function(response, opts) {\r",
+                                    "            _event.record.commit();\r",
+                                    "        },\r",
+                                    "        failure: function(response, opts) {\r",
+                                    "            //console.log('server-side failure with status code ' + response.status);\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "\r",
+                                    "    return false;\r",
+                                    "}"
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "designerId": "5ea26eab-d64b-480f-82a6-50092bce0ce1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.CellModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CellModel",
+                    "designerId": "5ad3be2c-79fd-49a8-925d-480f5c95ec68"
+                }
+            ]
+        }
+    ]
+}

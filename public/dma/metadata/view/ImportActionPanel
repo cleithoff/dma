@@ -1,0 +1,355 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "ImportActionPanel",
+        "designer|userClassName": "ImportActionPanel",
+        "designer|userAlias": "importactionpanel",
+        "layout": "border",
+        "title": "Import-Aktionen"
+    },
+    "designerId": "b38bc7f1-3f5a-4ed0-a129-8e57daa3c743",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "ImportActionToolbar"
+            },
+            "designerId": "dbdca26f-b745-4ba9-812e-5b0c10295c68",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ImportActionEditButton",
+                        "text": "Bearbeiten"
+                    },
+                    "designerId": "c047d3e3-75aa-4e32-bc4e-2e310183f948"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ImportActionNewButton",
+                        "text": "Neu"
+                    },
+                    "designerId": "880f49b0-5f7d-4296-92da-88bc703d9fda"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ImportActionSaveButton",
+                        "text": "Speichern"
+                    },
+                    "designerId": "4dcb9d05-b42d-4208-9efd-a36bcdcbe3e9"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ImportActionCancelButton",
+                        "text": "Abbrechen"
+                    },
+                    "designerId": "b01100b9-a121-4254-9653-6725cdbee9ae"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ImportActionDeleteButton",
+                        "text": "Löschen"
+                    },
+                    "designerId": "967175ad-3d06-41ce-8c96-b59742aca249"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "layout|split": true,
+                "itemId": "ImportActionGridPanel",
+                "title": null,
+                "store": "ImportActionJsonStore"
+            },
+            "designerId": "8739ef3c-9f07-49ee-be1c-101dbdb9c886",
+            "cn": [
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": null
+                    },
+                    "designerId": "21125e3d-e513-450c-aa06-0c31eba66dd2"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columnWidth": null,
+                        "width": 50,
+                        "defaultWidth": null,
+                        "align": "right",
+                        "dataIndex": "linenumber",
+                        "text": "#",
+                        "format": "0"
+                    },
+                    "designerId": "1f4a0466-7d77-48bb-83ea-810733237f38",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "columnWidth",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columnWidth": null,
+                        "width": 200,
+                        "dataIndex": "action",
+                        "text": "Aktion"
+                    },
+                    "designerId": "64d03721-cce0-4cc7-b276-0cd63ae48c21",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "columnWidth",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columnWidth": null,
+                        "width": 200,
+                        "dataIndex": "source",
+                        "text": "Quelle"
+                    },
+                    "designerId": "1e29caaf-2040-494b-a0c3-ce854202167f",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "columnWidth",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columnWidth": null,
+                        "width": 300,
+                        "dataIndex": "condition",
+                        "text": "Bedingung"
+                    },
+                    "designerId": "508190ad-6440-4f49-b3b3-b0c041021862",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "columnWidth",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columnWidth": null,
+                        "cls": null,
+                        "componentCls": null,
+                        "maxWidth": null,
+                        "overCls": null,
+                        "dataIndex": "setter",
+                        "tdCls": null,
+                        "text": "Setter",
+                        "flex": 1
+                    },
+                    "designerId": "1d5fa01c-4b34-4f9e-8154-4fc2bf90f765",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "columnWidth",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "layout|region": "north",
+                "layout|split": true,
+                "disabled": true,
+                "height": 264,
+                "itemId": "ImportActionFormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "aeb35d46-1675-441c-a9e1-5f0783769cee",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "height": null,
+                        "fieldLabel": "Zeilennummer",
+                        "name": "linenumber"
+                    },
+                    "designerId": "f96b7c4c-f1ec-4262-a736-e9f398c5abf0"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "height": null,
+                        "fieldLabel": "Aktion",
+                        "name": "action"
+                    },
+                    "designerId": "94222c51-4aeb-45fd-862e-21c7e40f73d8"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "width": 150,
+                        "fieldLabel": "Quelle",
+                        "name": "source"
+                    },
+                    "designerId": "bee8c4d1-09d6-4b9d-b0d3-afebffdd0d83"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "dock": null,
+                        "height": null,
+                        "fieldLabel": "Bedingung",
+                        "name": "condition"
+                    },
+                    "designerId": "a8727356-ffec-4729-a5df-cd5604f67e41"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "height": null,
+                        "maxHeight": null,
+                        "minHeight": null,
+                        "fieldLabel": "Setter",
+                        "name": "setter"
+                    },
+                    "designerId": "dc65b5bb-1576-4326-a469-070221b4561b"
+                }
+            ]
+        }
+    ]
+}

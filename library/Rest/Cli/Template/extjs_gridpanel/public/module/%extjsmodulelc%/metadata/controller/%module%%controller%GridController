@@ -1,0 +1,42 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "%module%%controller%GridController",
+        "models": [
+            "%module%%controller%Model"
+        ],
+        "stores": [
+            "%module%%controller%JsonStore"
+        ],
+        "views": [
+            "%module%Viewport"
+        ]
+    },
+    "id": "ExtBox1-ext-gen%extjsgenid%",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onGridpanelSelect",
+                "fn": "onGridpanelSelect",
+                "implHandler": [
+                    "Ext.getCmp('%module%%controller%Form').loadRecord(record);"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#%module%%controller%GridPanel"
+            },
+        }
+    ]
+}

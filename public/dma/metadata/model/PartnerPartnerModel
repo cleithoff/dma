@@ -1,0 +1,63 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PartnerPartnerModel",
+        "designer|userAlias": "partnerpartnermodel"
+    },
+    "designerId": "86c11719-cac3-4a45-b8ee-9ca742ecbbc3",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "46da0bd5-cbd2-479c-acd5-791eae6f3e25"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "title"
+            },
+            "designerId": "f79bcb16-aa32-475d-af4a-a09bcfa1b192"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "partner_address_id_invoice"
+            },
+            "designerId": "123a9eb3-df6f-4a5d-be1e-e387a0d67135"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "partner_address_id_delivery"
+            },
+            "designerId": "4ffe5bdf-1cbb-4c18-80a3-d64ff50c2bec"
+        }
+    ]
+}

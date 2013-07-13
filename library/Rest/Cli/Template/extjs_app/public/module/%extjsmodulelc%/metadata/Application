@@ -1,0 +1,12 @@
+{
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "name": "%extjsmodule%App"
+    },
+    "designerId": "application"
+}

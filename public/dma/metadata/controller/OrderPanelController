@@ -1,0 +1,85 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OrderPanelController"
+    },
+    "designerId": "0a142e9a-d7f7-4dc1-afe6-fcee941d63a3",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderPanel",
+                "selector": "#OrderPanel",
+                "xtype": "orderpanel"
+            },
+            "designerId": "2906cb5f-3fd7-47f9-abdf-8369440f4c82"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderImportPanel",
+                "selector": "#OrderImportPanel",
+                "xtype": "orderimportpanel"
+            },
+            "designerId": "8510408d-701a-4dff-91d2-59a669909adb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderOrderGridPanelSelect",
+                "implHandler": [
+                    "grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');\r",
+                    "grid.store.clearFilter(true);\r",
+                    "grid.store.filter([{property:'order_pool_id',value:record.data.order_pool_id}]);\r",
+                    "//grid.store.load(); // filter loads automatically - dont use .load because records lose store (record.store == null)\r",
+                    "/*\r",
+                    "Ext.getStore('OrderItemJsonStore').clearFilter(true);\r",
+                    "Ext.getStore('OrderItemJsonStore').filter([{property:'order_pool_id',value:record.data.order_pool_id}]);\r",
+                    "Ext.getStore('OrderItemJsonStore').load();*/"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#OrderOrderGridPanel"
+            },
+            "designerId": "da44c623-ae5b-480f-93cb-65ec053a401e"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemPanel",
+                "selector": "#OrderItemPanel",
+                "xtype": "orderitempanel"
+            },
+            "designerId": "7a738957-8f3f-4e85-8bcf-5478f23fa55f"
+        }
+    ]
+}

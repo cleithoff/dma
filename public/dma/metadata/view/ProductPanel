@@ -1,0 +1,19 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "itemId": "ProductPanel",
+        "width": 400,
+        "designer|userClassName": "ProductPanel",
+        "designer|userAlias": "productpanel",
+        "closable": true,
+        "closeAction": "hide",
+        "title": "Produkte"
+    },
+    "designerId": "0275f399-38f7-40b3-92e4-b5d79610624d"
+}

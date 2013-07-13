@@ -1,0 +1,12 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PartnerAbsencePanelController"
+    },
+    "designerId": "219d603f-9d56-4f8b-b4bb-cfc7548604c7"
+}
