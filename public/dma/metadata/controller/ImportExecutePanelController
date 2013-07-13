@@ -1,0 +1,115 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ImportExecutePanelController"
+    },
+    "designerId": "ea9d1853-1267-4fd4-96dd-cae0e3a95d9c",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onImportExecuteUploadButtonClick",
+                "implHandler": [
+                    "var fp = this.getImportExecutePanel().getComponent('ImportExecuteFormPanel');\r",
+                    "var p = this.getImportPanel();\r",
+                    "\r",
+                    "record = p.getComponent('ImportImportGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "if (record === undefined) {\r",
+                    "    alert('Bitte einen Import wählen.');\r",
+                    "    return;\r",
+                    "}\r",
+                    "\r",
+                    "var import_import_id = record.data.id;\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "//if(fp.getForm().isValid()){\r",
+                    "fp.getForm().submit({\r",
+                    "    url: '/import/fileupload/execute',\r",
+                    "    waitMsg: 'Datei wird hochgeladen...',\r",
+                    "    success: function(x, o){\r",
+                    "        Ext.Msg.show({\r",
+                    "            title: 'Datei-Upload',\r",
+                    "            msg: o.result.msg,\r",
+                    "            minWidth: 200,\r",
+                    "            modal: true,\r",
+                    "            icon: Ext.Msg.INFO,\r",
+                    "            buttons: Ext.Msg.OK\r",
+                    "        });\r",
+                    "        if (o.result.success === true) {\r",
+                    "            Ext.Ajax.request({\r",
+                    "                url: '/import/import/execute',\r",
+                    "                timeout: 60 * 10 * 1000, // 10 min\r",
+                    "                params: {\r",
+                    "                    filename: o.result.filename,\r",
+                    "                    import_import_id: import_import_id,\r",
+                    "                },\r",
+                    "                success: function(response, opts) {\r",
+                    "                    //var obj = Ext.decode(response.responseText);\r",
+                    "                    //console.dir(obj);\r",
+                    "                    alert('Daten verarbeitet.');\r",
+                    "                },\r",
+                    "                failure: function(response, opts) {\r",
+                    "                    //console.log('server-side failure with status code ' + response.status);\r",
+                    "                }\r",
+                    "            });\r",
+                    "        } else {\r",
+                    "        \talert('Upload fehlgeschlagen. Bitte die Datei schließen, falls diese noch geöffnet ist.');\r",
+                    "        }\r",
+                    "    },\r",
+                    "    failure: function(x,o) {\r",
+                    "        alert('Upload fehlgeschlagen. Bitte die Datei schließen, falls diese noch geöffnet ist.');\r",
+                    "    }\r",
+                    "});\r",
+                    "//}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ImportExecuteUploadButton"
+            },
+            "designerId": "b5ea7f07-ee22-48bf-8ea4-c1d01d29fd2c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportExecutePanel",
+                "selector": "#ImportExecutePanel",
+                "xtype": "importexecutepanel"
+            },
+            "designerId": "0ca1694c-038f-42f3-bdae-683bdda2de3d"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ImportPanel",
+                "selector": "#ImportPanel",
+                "xtype": "importpanel"
+            },
+            "designerId": "efb32ea4-248f-45c2-9583-5243576d8396"
+        }
+    ]
+}

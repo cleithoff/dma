@@ -1,0 +1,62 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "itemId": "ImportExecutePanel",
+        "width": 400,
+        "designer|userClassName": "ImportExecutePanel",
+        "designer|userAlias": "importexecutepanel",
+        "title": "Ausführen"
+    },
+    "designerId": "f5188da4-bbf7-4b99-b7f6-e18cf33e11b4",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "ImportExecuteFormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "8d526872-549b-41c1-bc5a-eee86b2535f4",
+            "cn": [
+                {
+                    "type": "Ext.form.field.File",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "ImportExecuteFileUpload",
+                        "fieldLabel": "CSV Datei"
+                    },
+                    "designerId": "4323e66c-bd74-43f0-8e9e-8fec20c19339"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "ImportExecuteUploadButton",
+                        "text": "Upload"
+                    },
+                    "designerId": "60cde352-74ab-48df-ab90-0f64b61b6cba"
+                }
+            ]
+        }
+    ]
+}
