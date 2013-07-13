@@ -1,10 +1,10 @@
 <?php
 
-class Order_Model_DbTable_ItemHasProductPersonalize extends Zend_Db_Table_Abstract
+class Order_Model_DbTable_Itemhasproductpersonalize extends Zend_Db_Table_Abstract
 {
 
     protected $_name = 'order_item_has_product_personalize';
-    protected $_rowClass = 'Order_Model_ItemHasProductPersonalize';
+    protected $_rowClass = 'Order_Model_Itemhasproductpersonalize';
 
 	protected $_referenceMap = array(
 		'order_item' => array(

@@ -4,7 +4,7 @@ class Product_Model_DbTable_LayoutHasProductPersonalize extends Zend_Db_Table_Ab
 {
 
     protected $_name = 'product_layout_has_product_personalize';
-    protected $_rowClass = 'Product_Model_LayoutHasProductPersonalize';
+    protected $_rowClass = 'Product_Model_Layouthasproductpersonalize';
 
 	protected $_referenceMap = array(
 		'product_layout' => array(
