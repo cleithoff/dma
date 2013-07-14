@@ -27,6 +27,7 @@ Ext.define('MyApp.store.OrderOrderJsonStore', {
             autoLoad: false,
             autoSync: true,
             model: 'MyApp.model.OrderOrderModel',
+            remoteFilter: true,
             storeId: 'OrderOrderJsonStore',
             proxy: {
                 type: 'rest',

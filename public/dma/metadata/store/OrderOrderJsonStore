@@ -9,6 +9,7 @@
         "autoLoad": false,
         "autoSync": true,
         "model": "OrderOrderModel",
+        "remoteFilter": true,
         "storeId": "OrderOrderJsonStore",
         "designer|userClassName": "OrderOrderJsonStore"
     },

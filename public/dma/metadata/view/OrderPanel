@@ -105,6 +105,94 @@
                         "store": "OrderOrderJsonStore"
                     },
                     "designerId": "e4c1b7be-2dea-4654-83ff-d1a7f22c9515"
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "itemId": "OrderOrderGridFilterFormPanel",
+                        "width": 100,
+                        "bodyPadding": 10,
+                        "title": null
+                    },
+                    "designerId": "1c58cdde-e476-4230-a180-3fa62d111c9e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Partner-Nr.",
+                                "name": "partner_nr",
+                                "decimalPrecision": 0
+                            },
+                            "designerId": "08c5b629-cf3e-4439-9381-67ccf28cbf4c"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Partner ID",
+                                "name": "id",
+                                "decimalPrecision": 0
+                            },
+                            "designerId": "6c3459df-c8cb-4ab9-a402-b948cf7e14bd"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Partner",
+                                "name": "title"
+                            },
+                            "designerId": "6763b3d4-15fa-40e2-9215-109d73141f39"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "OrderOrderFilterButton",
+                                "text": "Filtern"
+                            },
+                            "designerId": "699dab38-b65a-4ed4-9c94-6ec454e63ec2"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "OrderOrderClearFilterButton",
+                                "text": "Filter leeren"
+                            },
+                            "designerId": "328235b1-f8ae-4fd6-88d3-26d30ff4591d"
+                        }
+                    ]
                 }
             ]
         },

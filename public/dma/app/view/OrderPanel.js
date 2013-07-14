@@ -65,6 +65,45 @@ Ext.define('MyApp.view.OrderPanel', {
                             width: 360,
                             displayInfo: true,
                             store: 'OrderOrderJsonStore'
+                        },
+                        {
+                            xtype: 'form',
+                            dock: 'top',
+                            itemId: 'OrderOrderGridFilterFormPanel',
+                            width: 100,
+                            bodyPadding: 10,
+                            items: [
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Partner-Nr.',
+                                    name: 'partner_nr',
+                                    decimalPrecision: 0
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Partner ID',
+                                    name: 'id',
+                                    decimalPrecision: 0
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Partner',
+                                    name: 'title'
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'OrderOrderFilterButton',
+                                    text: 'Filtern'
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'OrderOrderClearFilterButton',
+                                    text: 'Filter leeren'
+                                }
+                            ]
                         }
                     ]
                 },

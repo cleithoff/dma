@@ -80,6 +80,69 @@
                 "xtype": "orderitempanel"
             },
             "designerId": "7a738957-8f3f-4e85-8bcf-5478f23fa55f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderOrderFilterButtonClick",
+                "implHandler": [
+                    "grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');\r",
+                    "\r",
+                    "grid.store.clearFilter(true);\r",
+                    "\r",
+                    "filter = [];\r",
+                    "\r",
+                    "values = grid.getComponent('OrderOrderGridFilterFormPanel').getForm().getValues();\r",
+                    "\r",
+                    "console.log(values);\r",
+                    "\r",
+                    "if (values.partner_nr !== \"\") {\r",
+                    "    filter.push({property:\"partner_partner.partner_nr\",value:values.partner_nr});\r",
+                    "}\r",
+                    "\r",
+                    "if (values.id !== \"\") {\r",
+                    "    filter.push({property:\"partner_partner_id\",value:values.id});\r",
+                    "}\r",
+                    "\r",
+                    "if (values.title !== \"\") {\r",
+                    "    filter.push({property:\"partner_partner.title\",value:values.title,operator:\"LIKE\"});\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "grid.store.filter(filter);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderOrderFilterButton"
+            },
+            "designerId": "fff0efb2-78c1-44be-b0ea-7b0788cb58bb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderOrderClearFilterButtonClick",
+                "implHandler": [
+                    "grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');\r",
+                    "\r",
+                    "grid.store.clearFilter();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderOrderClearFilterButton"
+            },
+            "designerId": "2dd26b20-15bd-4271-8fcd-d75273e560ac"
         }
     ]
 }

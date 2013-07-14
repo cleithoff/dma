@@ -48,10 +48,49 @@ Ext.define('MyApp.controller.OrderPanelController', {
         Ext.getStore('OrderItemJsonStore').load();*/
     },
 
+    onOrderOrderFilterButtonClick: function(button, e, eOpts) {
+        grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');
+
+        grid.store.clearFilter(true);
+
+        filter = [];
+
+        values = grid.getComponent('OrderOrderGridFilterFormPanel').getForm().getValues();
+
+        console.log(values);
+
+        if (values.partner_nr !== "") {
+            filter.push({property:"partner_partner.partner_nr",value:values.partner_nr});
+        }
+
+        if (values.id !== "") {
+            filter.push({property:"partner_partner_id",value:values.id});
+        }
+
+        if (values.title !== "") {
+            filter.push({property:"partner_partner.title",value:values.title,operator:"LIKE"});
+        }
+
+
+        grid.store.filter(filter);
+    },
+
+    onOrderOrderClearFilterButtonClick: function(button, e, eOpts) {
+        grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');
+
+        grid.store.clearFilter();
+    },
+
     init: function(application) {
         this.control({
             "#OrderOrderGridPanel": {
                 select: this.onOrderOrderGridPanelSelect
+            },
+            "#OrderOrderFilterButton": {
+                click: this.onOrderOrderFilterButtonClick
+            },
+            "#OrderOrderClearFilterButton": {
+                click: this.onOrderOrderClearFilterButtonClick
             }
         });
     }

@@ -85,10 +85,13 @@ class Rest_Model_Mapper_DbTable {
 		foreach ($rowset as $key => $row) {
 			foreach ($this->getStore()->info(Zend_Db_Table_Abstract::REFERENCE_MAP) as $tablename => $val) {
 				$table = $val['refTableClass'];
-				if ($res = $row->findParentRow(new $table())) {
-					$rowset[$key]->$tablename = $res->toArray();
+				$_row = $this->getStore()->find($row['id'])->current();
+				if ($res = $_row->findParentRow(new $table())) {
+					//var_dump($res); die();
+					$data = $res->toArray();
+					$rowset[$key][$tablename] = $data;
 				} else {
-					$rowset[$key]->$tablename = null;
+					$rowset[$key][$tablename] = null;
 				}	
 			}
 		}
@@ -100,7 +103,11 @@ class Rest_Model_Mapper_DbTable {
 			$select->where($val['property'] . ' IS NULL'); // . $this->getAdapter()->quote($val['value']));
 		} else {
 			if (empty($val['operator'])) {
-				$where = $this->getStore()->getAdapter()->quoteInto($this->getStore()->getAdapter()->quoteIdentifier($val['property']) . ' = ?', ($val['value']));
+				if (strpos($val['value'],'%') !== false) {
+					$where = $this->getStore()->getAdapter()->quoteInto($this->getStore()->getAdapter()->quoteIdentifier($val['property']) . ' LIKE ?', ($val['value']));
+				} else {
+					$where = $this->getStore()->getAdapter()->quoteInto($this->getStore()->getAdapter()->quoteIdentifier($val['property']) . ' = ?', ($val['value']));
+				}
 				$select->where($where);
 			} else {
 				switch (strtolower($val['operator'])) {
@@ -108,7 +115,11 @@ class Rest_Model_Mapper_DbTable {
 						$select->where($val['property'] . ' ' . $val['operator'] . ' (' . $this->getStore()->getAdapter()->quote($val['value']) . ')');
 						break;
 					default :
-						$select->where($val['property'] . ' ' . $val['operator'] . ' ' . $this->getStore()->getAdapter()->quote($val['value']));
+						if (strpos($val['value'],'%') !== false) {
+							$select->where($val['property'] . ' LIKE ' . $this->getStore()->getAdapter()->quote($val['value']));
+						} else {
+							$select->where($val['property'] . ' ' . $val['operator'] . ' ' . $this->getStore()->getAdapter()->quote($val['value']));
+						}
 				}
 			}
 		}
@@ -217,7 +228,7 @@ class Rest_Model_Mapper_DbTable {
 		
 		
 		$request = $req->getParams();
-		$select = $this->getStore()->select();
+		$select = Zend_Db_Table::getDefaultAdapter()->select()->from($this->getStore()->info('name')); //$this->getStore()->select();
 				
 		if (!empty($request['limit'])) {
 			$select->limit($request['limit'], intval($request['start']));
@@ -240,7 +251,10 @@ class Rest_Model_Mapper_DbTable {
 			}
 		}
 		
+		
+		
 		if (!empty($request['filter'])) {
+			$joins = array();
 			$filter = Zend_Json::decode($request['filter']);
 			//var_dump($request['filter']);			
 			/*try {
@@ -262,7 +276,14 @@ class Rest_Model_Mapper_DbTable {
 					try {
 					 	$_filter = Zend_Json::decode($val['property']);
 					 	foreach ($_filter as $_key => $_val) {
+					 		
+					 		//$select = new Zend_Db_Select();
+					 		if (strpos($val['property'], '.') > 0) {
+					 			$p = explode('.', $val['property']);
+					 			$select->joinInner($p[0], $p[0] . '_id = ' . $p[0] . '.id' , $val['property']);
+					 		}
 					 		$this->_filter($select, $_val);
+					 		
 					 	}
 					 	continue;
 					} catch (Exception $ex) {
@@ -270,15 +291,28 @@ class Rest_Model_Mapper_DbTable {
 					}					
 				}
 				
+				if (strpos($val['property'], '.') > 0) {
+					$p = explode('.', $val['property']);
+					//$select = new Zend_Db_Select();
+					$joins[$p[0]][] = $val;
+					//$select->join($p[0], $p[0] . '_id = ' . $p[0] . '.id' , $val['property']);
+				}
 				$this->_filter($select, $val);
 				
 			}
 			
+			foreach($joins as $name => $join) {
+				$cols = array();
+				foreach ($join as $col) {
+					$cols[] = $col['property'];
+				}
+				$select->join($name, $name . '_id = ' . $name . '.id' , $cols);
+			}
+			
 		}
 		
-		//echo $select->__toString();
-		
-		$rowset = $this->getStore()->fetchAll($select);
+		//echo $select->__toString();die();
+		$rowset = Zend_Db_Table::getDefaultAdapter()->query($select->__toString())->fetchAll(); // $this->getStore()->fetchAll($select);
 		
 		
 		// "join" referenced tables
