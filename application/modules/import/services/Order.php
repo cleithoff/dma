@@ -57,7 +57,7 @@ class Import_Service_Order
 			switch($source) {
 				case 'csv':
 					$col = trim(trim($str[1],'"'),'\''); // str_replace('"', '', $str[1]);
-					$replacement = $csv[$col];
+					$replacement = @$csv[$col];
 					break;
 				case 'result':
 					$table = $str[1];
@@ -205,7 +205,7 @@ class Import_Service_Order
 						if (empty($select[$action['source']])) {
 							$table = explode('_', $action['source']);
 							$prefix = array_shift($table);
-							$table = ucfirst($prefix) . '_Model_DbTable_' . str_replace(' ', '',ucwords(implode(' ', $table)));
+							$table = ucfirst($prefix) . '_Model_DbTable_' . ucfirst(implode('', $table)); //str_replace(' ', '',ucwords(implode(' ', $table)));
 							$where = $this->_getQuery($action['condition'], $csv, $result, $param);
 							$select[$action['source']] = Zend_Db_Table::getTableFromString($table)->fetchAll($where)->toArray();
 							$result[$action['source']] = current($select[$action['source']]);
