@@ -1,10 +1,10 @@
 <?php
 
-class Product_Model_DbTable_ItemHasProductCustomize extends Rest_Db_Table
+class Product_Model_DbTable_Itemhasproductcustomize extends Rest_Db_Table
 {
 
     protected $_name = 'product_item_has_product_customize';
-    protected $_rowClass = 'Product_Model_ItemHasProductCustomize';
+    protected $_rowClass = 'Product_Model_Itemhasproductcustomize';
 
 	protected $_referenceMap = array(
 		'fk_product_item_has_product_customize_product_customize1' => array(
