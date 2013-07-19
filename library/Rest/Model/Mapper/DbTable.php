@@ -3,6 +3,7 @@
 class Rest_Model_Mapper_DbTable {
 	
 	protected $_store = null;
+	protected $_rowCount = 0;
 	
 	protected function getStore() {
 		if (is_string($this->_store))  {
@@ -40,7 +41,9 @@ class Rest_Model_Mapper_DbTable {
 		$primary = $this->getStore()->info('primary');
 		if (is_array($primary)) {
 			foreach ($primary as $key => $val) {
-				$cols[$val] = $data[$val];
+				if (!empty($data[$val])) {
+					$cols[$val] = $data[$val];
+				}
 			}
 		} else {
 			if (empty($data[$primary])) {
@@ -48,19 +51,41 @@ class Rest_Model_Mapper_DbTable {
 			} else {
 				$cols[$primary] = $data[$primary];
 			}
-		}		
+		}
+
+		if (count($cols) == 0) {
+			$unique = $this->getStore()->getIndex('unique');
+			if (is_array($unique)) {
+				$unique = reset($unique);
+				if (!empty($unique) && is_array($unique) && count($unique)>0) {
+					foreach($unique as $key => $val) {
+						$cols[$val] = $data[$val];
+					}
+				}
+			}
+		}
 		
 		if (count($cols)>0) {
 			$rowset = $this->getStore()->find($cols);
 			$row = $rowset->current();
-		} 
+		}
+		if (is_array($primary)) {
+			foreach ($primary as $key => $val) {
+				unset($data[$val]);
+			}
+		} else {
+			unset($data[$primary]);
+		}
 		if (!empty($row)) {
-			$row->setFromArray($data);
+			foreach ($data as $key => $val) {
+				$row->$key = $val;
+			}
+			//$row->setFromArray($data)
 			$row->save();
 		} else {			
-			$set = array(); 
+			$set = array();
 			foreach($data as $key => $value) {
-				$set[] = '`' . $key . '` = "' . $value . '"';
+				$set[] = '`' . $key . '` = ' . Zend_Db_Table::getDefaultAdapter()->quote($value); // "' . $value . '"';
 			}
 			$set = implode(',', $set);
 			//upsert
@@ -78,7 +103,8 @@ class Rest_Model_Mapper_DbTable {
 	}
 	
 	public function rowCount() {
-		return $this->getStore()->getAdapter()->fetchOne('SELECT COUNT(*) AS total FROM `' . $this->getStore()->info('name') . '`');
+		return $this->_rowCount;
+		//return $this->getStore()->getAdapter()->fetchOne('SELECT COUNT(*) AS total FROM `' . $this->getStore()->info('name') . '`');
 	}
 	
 	protected function _getReferencedRows($rowset) {
@@ -229,10 +255,6 @@ class Rest_Model_Mapper_DbTable {
 		
 		$request = $req->getParams();
 		$select = Zend_Db_Table::getDefaultAdapter()->select()->from($this->getStore()->info('name')); //$this->getStore()->select();
-				
-		if (!empty($request['limit'])) {
-			$select->limit($request['limit'], intval($request['start']));
-		}
 		
 		if (!empty($request['sort'])) {
 			$sort = Zend_Json::decode($request['sort']);
@@ -312,9 +334,27 @@ class Rest_Model_Mapper_DbTable {
 		}
 		
 		//echo $select->__toString();die();
+		
+		//return $this->getStore()->getAdapter()->fetchOne('SELECT COUNT(*) AS total FROM `' . $this->getStore()->info('name') . '`');
+		
+		$rowCountSelect = clone $select;
+		$rowCountSelect->columns(new Zend_Db_Expr('COUNT(*) as _total'));
+		
+		//echo $rowCountSelect->__toString();
+		try {
+			$rowCount = Zend_Db_Table::getDefaultAdapter()->query($rowCountSelect->__toString())->fetch();
+		} catch(Exception $ex) {
+			echo $rowCountSelect->__toString();
+			die();
+		}
+		$this->_rowCount = $rowCount['_total'];
+
+		if (!empty($request['limit'])) {
+			$select->limit($request['limit'], intval($request['start']));
+		}
+		
 		$rowset = Zend_Db_Table::getDefaultAdapter()->query($select->__toString())->fetchAll(); // $this->getStore()->fetchAll($select);
-		
-		
+				
 		// "join" referenced tables
 		$rowset = $this->_getReferencedRows($rowset);
 				

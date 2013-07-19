@@ -1,6 +1,6 @@
 <?php
 
-class Order_Model_DbTable_Itemhasproductpersonalize extends Zend_Db_Table_Abstract
+class Order_Model_DbTable_Itemhasproductpersonalize extends Rest_Db_Table
 {
 
     protected $_name = 'order_item_has_product_personalize';

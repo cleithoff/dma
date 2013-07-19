@@ -56,7 +56,7 @@ class Import_Service_Order
 			$source = $str[0];
 			switch($source) {
 				case 'csv':
-					$col = str_replace('"', '', $str[1]);
+					$col = trim(trim($str[1],'"'),'\''); // str_replace('"', '', $str[1]);
 					$replacement = $csv[$col];
 					break;
 				case 'result':
@@ -81,7 +81,7 @@ class Import_Service_Order
 					break;
 			}
 			if ($doQuote) {
-				$replacement = '"' . $replacement . '"';
+				$replacement = Zend_Db_Table::getDefaultAdapter()->quote($replacement); //'"' . $replacement . '"';
 			}
 			array_push($replacements, $replacement); // $replacements
 		}
@@ -117,7 +117,7 @@ class Import_Service_Order
 		reset($actions);
 		foreach ($rows as $csv) {
 			$result = array();
-			$select = array();	
+			$select = array();
 			$linenumber = array();	
 			reset($actions);
 			while($action = current($actions)) {

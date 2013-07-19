@@ -1,6 +1,6 @@
 <?php
 
-class Product_Model_DbTable_LayoutHasProductPersonalize extends Zend_Db_Table_Abstract
+class Product_Model_DbTable_LayoutHasProductPersonalize extends Rest_Db_Table
 {
 
     protected $_name = 'product_layout_has_product_personalize';

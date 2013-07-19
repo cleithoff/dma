@@ -91,11 +91,10 @@ class Rest_Controller_Action_DbTable extends Zend_Controller_Action
     	
     	if (is_array($data)) {
     		$this->view->data = $data;
-    		$this->view->total = count($data);
     	} else {
-    		$this->view->data = $this->getMapper()->fetch($this->getRequest())->toArray();
-    		$this->view->total = $this->getMapper()->rowCount();
+    		$this->view->data = $data->toArray();
     	}
+    	$this->view->total = $this->getMapper()->rowCount();
     	return $this->view->data;
     }
     

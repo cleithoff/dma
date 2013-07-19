@@ -1,6 +1,6 @@
 <?php
 
-class User_Model_DbTable_RoleHasUserResource extends Zend_Db_Table_Abstract
+class User_Model_DbTable_RoleHasUserResource extends Rest_Db_Table
 {
 
     protected $_name = 'user_role_has_user_resource';

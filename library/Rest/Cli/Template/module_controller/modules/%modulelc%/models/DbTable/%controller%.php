@@ -1,6 +1,6 @@
 <?php
 
-class %module%_Model_DbTable_%controller% extends Zend_Db_Table_Abstract
+class %module%_Model_DbTable_%controller% extends Rest_Db_Table
 {
 
     protected $_name = '%modulelc%_%controllerlc%';

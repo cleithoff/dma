@@ -1,6 +1,6 @@
 <?php
 
-class Partner_Model_DbTable_Partner extends Zend_Db_Table_Abstract
+class Partner_Model_DbTable_Partner extends Rest_Db_Table
 {
 
     protected $_name = 'partner_partner';

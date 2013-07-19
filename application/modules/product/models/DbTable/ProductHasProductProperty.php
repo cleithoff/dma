@@ -1,6 +1,6 @@
 <?php
 
-class Product_Model_DbTable_ProductHasProductProperty extends Zend_Db_Table_Abstract
+class Product_Model_DbTable_ProductHasProductProperty extends Rest_Db_Table
 {
 
     protected $_name = 'product_product_has_product_property';

@@ -1,6 +1,6 @@
 <?php
 
-class Import_Model_DbTable_Action extends Zend_Db_Table_Abstract
+class Import_Model_DbTable_Action extends Rest_Db_Table
 {
 
     protected $_name = 'import_action';

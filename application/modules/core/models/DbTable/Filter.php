@@ -1,6 +1,6 @@
 <?php
 
-class Core_Model_DbTable_Filter extends Zend_Db_Table_Abstract
+class Core_Model_DbTable_Filter extends Rest_Db_Table
 {
 
     protected $_name = 'core_filter';

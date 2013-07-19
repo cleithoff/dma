@@ -27,6 +27,7 @@ Ext.define('MyApp.store.ImportActionJsonStore', {
             autoLoad: true,
             autoSync: true,
             model: 'MyApp.model.ImportActionModel',
+            storeId: 'ImportActionJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/import/action/index',

@@ -255,7 +255,7 @@ class Import_Service_Import
 					break;
 			}
 			if ($doQuote) {
-				$replacement = '"' . $replacement . '"';
+				$replacement = Zend_Db_Table::getDefaultAdapter()->quote($replacement); // '"' . $replacement . '"';
 			}
 			array_push($replacements, $replacement); // $replacements
 		}
