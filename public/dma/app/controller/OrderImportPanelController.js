@@ -85,6 +85,7 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
         Ext.Ajax.request({
             url: '/import/order/import',
             method: 'GET',
+            timeout: 60 * 10 * 1000, // 10 min
             params: {
                 import_import_id: this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('ImportImportComboBox').getValue(),
                 product_product_id: this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportProductComboBox').getValue(),

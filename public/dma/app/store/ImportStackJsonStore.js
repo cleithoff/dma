@@ -26,6 +26,7 @@ Ext.define('MyApp.store.ImportStackJsonStore', {
         me.callParent([Ext.apply({
             model: 'MyApp.model.ImportStackModel',
             storeId: 'ImportStackJsonStore',
+            pageSize: 1000,
             proxy: {
                 type: 'rest',
                 url: '/import/stack/index',
