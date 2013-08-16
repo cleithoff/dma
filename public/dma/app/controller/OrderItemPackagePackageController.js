@@ -22,6 +22,12 @@ Ext.define('MyApp.controller.OrderItemPackagePackageController', {
             ref: 'OrderItemPackagePackagePanel',
             selector: '#OrderItemPackagePackagePanel',
             xtype: 'orderitempackagepackagepanel'
+        },
+        {
+            autoCreate: true,
+            ref: 'OrderPanel',
+            selector: '#OrderPanel',
+            xtype: 'orderpanel'
         }
     ],
 
@@ -154,6 +160,29 @@ Ext.define('MyApp.controller.OrderItemPackagePackageController', {
         toolbar.getComponent('OrderItemPackagePackageDeleteButton').enable();
     },
 
+    onOrderItemPackagePackageGridPanelCellDblClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+        grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');
+
+        if (grid.getSelectionModel().getSelection().length > 0) {
+            order = grid.getSelectionModel().getSelection()[0];
+
+            Ext.Ajax.request({
+                url: '/partner/address/index',
+                method: 'GET',
+                success: function(response) {
+                    partner_address = JSON.parse(response.responseText);
+                    win = window.open('http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&zip=' + partner_address.data[0].post_plz + '&idc=' + record.data.sendingnumber,'_blank'); 
+                    win.focus();
+                },
+                failure: function() {},
+                params: { id: order.data.partner_partner.partner_address_id_delivery}
+            });
+
+        }
+
+
+    },
+
     init: function(application) {
         this.control({
             "#OrderItemPackagePackageEditButton": {
@@ -169,7 +198,8 @@ Ext.define('MyApp.controller.OrderItemPackagePackageController', {
                 click: this.onOrderItemPackagePackageDeleteButtonClick
             },
             "#OrderItemPackagePackageGridPanel": {
-                select: this.onOrderItemPackagePackageGridPanelSelect
+                select: this.onOrderItemPackagePackageGridPanelSelect,
+                celldblclick: this.onOrderItemPackagePackageGridPanelCellDblClick
             }
         });
     }

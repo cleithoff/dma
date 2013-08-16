@@ -24,7 +24,8 @@
             "ReportReportModel",
             "MetadataModel",
             "ReportFilterModel",
-            "ImportStackModel"
+            "ImportStackModel",
+            "OrderItemstatelogModel"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -45,7 +46,8 @@
             "ReportReportJsonStore",
             "MetadataJsonStore",
             "ReportFilterJsonStore",
-            "ImportStackJsonStore"
+            "ImportStackJsonStore",
+            "OrderItemstatelogJsonStore"
         ],
         "views": [
             "MainViewport",

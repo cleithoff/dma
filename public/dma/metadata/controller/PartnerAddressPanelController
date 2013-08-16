@@ -39,6 +39,312 @@
                 "designer|controlQuery": "#PartnerAddressPLZButton"
             },
             "designerId": "f4ae4f27-0ced-468d-8357-cdc823ebae31"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerPartnerEditButtonClick",
+                "implHandler": [
+                    "panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerPartnerPanel');\r",
+                    "\r",
+                    "panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerEditButton').disable();\r",
+                    "panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerSaveButton').enable();\r",
+                    "panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerCancelButton').enable();\r",
+                    "\r",
+                    "panel.getComponent('PartnerPartnerFormPanel').enable();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerPartnerEditButton"
+            },
+            "designerId": "a9f37e6e-331e-4a28-8476-d31a235f3b29"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerPartnerSaveButtonClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "\r",
+                    "store = Ext.getStore('PartnerPartnerJsonStore');\r",
+                    "panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerPartnerPanel');\r",
+                    "\r",
+                    "formPanel = panel.getComponent('PartnerPartnerFormPanel');\r",
+                    "toolbar = panel.getComponent('PartnerPartnerToolbar');\r",
+                    "\r",
+                    "//grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "record = formPanel.getForm().getRecord();\r",
+                    "\r",
+                    "/*\r",
+                    "record.store.on('write', function(store,options) {\r",
+                    "    that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style=\"width:100%;height:100%\" src=\"/deploy/' + record.data.authkey + '.pdf\" alt=\"pdf\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
+                    "    // \r",
+                    "});*/\r",
+                    "\r",
+                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                    "    values = formPanel.getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "    /*grid = button.ownerCt.ownerCt.ownerCt.getComponent('\" . $name . 'GridPanel' . \"');*/\r",
+                    "    //if (grid !== undefined) {\r",
+                    "    /*grid.getView().select(0);*/ /* BUG!!! */\r",
+                    "    //}\r",
+                    "} else {\r",
+                    "    formPanel.getForm().updateRecord();\r",
+                    "}\r",
+                    "formPanel.disable();\r",
+                    "//toolbar.getComponent('OrderItemDetailNewButton').enable();\r",
+                    "toolbar.getComponent('PartnerPartnerCancelButton').disable();\r",
+                    "toolbar.getComponent('PartnerPartnerSaveButton').disable();\r",
+                    "\r",
+                    "panel = this.getPartnerPanel();\r",
+                    "\r",
+                    "if (panel.getComponent('PartnerPartnerGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('PartnerPartnerEditButton').enable();\r",
+                    "    //toolbar.getComponent('OrderItemDetailDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('PartnerPartnerEditButton').disable();\r",
+                    "    //toolbar.getComponent('OrderItemDetailDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerPartnerSaveButton"
+            },
+            "designerId": "ee480460-a1ff-4952-aff4-23b5cdb52870"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerPartnerCancelButtonClick",
+                "implHandler": [
+                    "panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerPartnerPanel');\r",
+                    "\r",
+                    "panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerEditButton').enable();\r",
+                    "panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerSaveButton').disable();\r",
+                    "panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerCancelButton').disable();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('PartnerPartnerFormPanel');\r",
+                    "formPanel.getForm().reset();\r",
+                    "formPanel.disable();\r",
+                    "\r",
+                    "grid = this.getPartnerPanel().getComponent('PartnerPartnerGridPanel');\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerPartnerCancelButton"
+            },
+            "designerId": "4bf1ec83-c22b-4dad-b3a4-ed07c72f00f7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerAddressInvoiceEditButtonClick",
+                "implHandler": [
+                    "panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerAddressInvoicePanel');\r",
+                    "\r",
+                    "panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceEditButton').disable();\r",
+                    "panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceSaveButton').enable();\r",
+                    "panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceCancelButton').enable();\r",
+                    "\r",
+                    "panel.getComponent('PartnerAddressInvoiceFormPanel').enable();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerAddressInvoiceEditButton"
+            },
+            "designerId": "9b68e52a-6c00-463c-af57-887bc7a547ed"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerAddressInvoiceSaveButtonClick",
+                "implHandler": [
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerAddressInvoiceSaveButton"
+            },
+            "designerId": "eefe2f2e-b2b5-4932-b482-fc4bfe82eb54"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerAddressInvoiceCancelButtonClick",
+                "implHandler": [
+                    "panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerAddressInvoicePanel');\r",
+                    "\r",
+                    "panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceEditButton').enable();\r",
+                    "panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceSaveButton').disable();\r",
+                    "panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceCancelButton').disable();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('PartnerAddressInvoiceFormPanel');\r",
+                    "formPanel.getForm().reset();\r",
+                    "formPanel.disable();\r",
+                    "/*\r",
+                    "grid = this.getPartnerPanel().getComponent('PartnerPartnerGridPanel');\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}*/"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerAddressInvoiceCancelButton"
+            },
+            "designerId": "cacf80b3-0149-4e3e-b613-9f3cc476293d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerAddressDeliveryEditButtonClick",
+                "implHandler": [
+                    "panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerAddressDeliveryPanel');\r",
+                    "\r",
+                    "panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliveryEditButton').disable();\r",
+                    "panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliverySaveButton').enable();\r",
+                    "panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliveryCancelButton').enable();\r",
+                    "\r",
+                    "panel.getComponent('PartnerAddressDeliveryFormPanel').enable();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerAddressDeliveryEditButton"
+            },
+            "designerId": "c9fb2012-018e-4135-99bb-3ff563794aef"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerAddressDeliverySaveButtonClick",
+                "implHandler": [
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerAddressDeliverySaveButton"
+            },
+            "designerId": "d1a67c50-8063-4508-a413-d0039f1b9973"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerAddressDeliveryCancelButtonClick",
+                "implHandler": [
+                    "panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerAddressDeliveryPanel');\r",
+                    "\r",
+                    "panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliveryEditButton').enable();\r",
+                    "panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliverySaveButton').disable();\r",
+                    "panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliveryCancelButton').disable();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('PartnerAddressDeliveryFormPanel');\r",
+                    "formPanel.getForm().reset();\r",
+                    "formPanel.disable();\r",
+                    "/*\r",
+                    "grid = this.getPartnerPanel().getComponent('PartnerAddressDeliveryGridPanel');\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}*/"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerAddressDeliveryCancelButton"
+            },
+            "designerId": "f4f3d9fa-5503-4ac5-86b6-805ca9771f37"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "PartnerAddressPanel",
+                "selector": "#PartnerAddressPanel",
+                "xtype": "partneraddresspanel"
+            },
+            "designerId": "181cfa0c-0ba2-4002-87db-508de51a53aa"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "PartnerPanel",
+                "selector": "#PartnerPanel",
+                "xtype": "partnerpanel"
+            },
+            "designerId": "6f27e09e-2e76-4b28-9887-12cc1427aeca"
         }
     ]
 }

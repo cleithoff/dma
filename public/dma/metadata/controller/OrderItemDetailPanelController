@@ -63,8 +63,10 @@
                     "record = formPanel.getForm().getRecord();\r",
                     "\r",
                     "record.store.on('write', function(store,options) {\r",
+                    "    if (record.data.authkey !== null) {\r",
                     "    that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style=\"width:100%;height:100%\" src=\"/deploy/' + record.data.authkey + '.pdf\" alt=\"pdf\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
                     "    // \r",
+                    "    }\r",
                     "});\r",
                     "\r",
                     "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
@@ -232,16 +234,16 @@
                 "implHandler": [
                     "var that = this;\r",
                     "var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];\r",
-                    "    \r",
+                    "\r",
                     "if (record === undefined) return;\r",
                     "\r",
                     "Ext.Ajax.request({\r",
-                    "   url: '/order/item/refresh',\r",
+                    "    url: '/order/item/refresh',\r",
                     "    success: function() {\r",
-                    "\t\tthat.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style=\"width:100%;height:100%\" src=\"/deploy/' + record.data.authkey + '.pdf\" alt=\"pdf\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
+                    "        that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style=\"width:100%;height:100%\" src=\"/deploy/' + record.data.authkey + '.pdf\" alt=\"pdf\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
                     "    },\r",
                     "    failure: function() {},\r",
-                    "   params: { id: record.data.id}\r",
+                    "    params: { id: record.data.id}\r",
                     "});"
                 ],
                 "name": "click",
@@ -273,6 +275,67 @@
                 "designer|controlQuery": "#OrderItemDetailPreviewButton"
             },
             "designerId": "3b50aab6-0309-42f3-af98-91c7f51f92ff"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemDetailSendButtonClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "if (record === undefined) return;\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: '/order/item/send',\r",
+                    "    success: function(response) {\r",
+                    "        try {\r",
+                    "\t\t\tr = JSON.parse(response.responseText);\r",
+                    "            if (r['success'] !== undefined && r.success === true) {\r",
+                    "            \talert('E-Mail wurde versendet.');\r",
+                    "        \t} else {\r",
+                    "                alert('Die E-Mail konnte nicht versendet werden.');\t\r",
+                    "        \t}\r",
+                    "        } catch(ex) {\r",
+                    "            alert('Die E-Mail konnte nicht versendet werden.');\r",
+                    "        }        \r",
+                    "    },\r",
+                    "    failure: function() {\r",
+                    "        alert('Die E-Mail konnte nicht versendet werden.');\r",
+                    "    },\r",
+                    "    params: { id: record.data.id}\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemDetailSendButton"
+            },
+            "designerId": "43a924f5-36d6-45af-861d-d4c8fb42765b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemstatelogGridPanelSelect",
+                "implHandler": [
+                    "this.getOrderItemDetailPanel().getComponent('OrderItemstatelogGridPanel').getComponent('OrderItemstatelogFormPanel').getForm().loadRecord(record);"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#OrderItemstatelogGridPanel"
+            },
+            "designerId": "81eed936-2c79-4e9c-9efb-478f4fdf124e"
         }
     ]
 }

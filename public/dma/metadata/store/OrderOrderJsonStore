@@ -6,10 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "defaultSortDirection": "DESC",
         "autoLoad": false,
         "autoSync": true,
         "model": "OrderOrderModel",
         "remoteFilter": true,
+        "remoteSort": true,
         "storeId": "OrderOrderJsonStore",
         "designer|userClassName": "OrderOrderJsonStore"
     },
@@ -40,6 +42,19 @@
                     "designerId": "0a7bedb5-3584-4eed-821a-0f811964c4f3"
                 }
             ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "id"
+            },
+            "designerId": "365d54b3-603b-49cf-b9e6-2699262d9339"
         }
     ]
 }

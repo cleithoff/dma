@@ -60,8 +60,10 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
         record = formPanel.getForm().getRecord();
 
         record.store.on('write', function(store,options) {
-            that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + '.pdf" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
-            // 
+            if (record.data.authkey !== null) {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + '.pdf" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+                // 
+            }
         });
 
         if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {
@@ -175,6 +177,37 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
         this.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + '.pdf" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
     },
 
+    onOrderItemDetailSendButtonClick: function(button, e, eOpts) {
+        var that = this;
+        var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];
+
+        if (record === undefined) return;
+
+        Ext.Ajax.request({
+            url: '/order/item/send',
+            success: function(response) {
+                try {
+                    r = JSON.parse(response.responseText);
+                    if (r['success'] !== undefined && r.success === true) {
+                        alert('E-Mail wurde versendet.');
+                    } else {
+                        alert('Die E-Mail konnte nicht versendet werden.');	
+                    }
+                } catch(ex) {
+                    alert('Die E-Mail konnte nicht versendet werden.');
+                }        
+            },
+            failure: function() {
+                alert('Die E-Mail konnte nicht versendet werden.');
+            },
+            params: { id: record.data.id}
+        });
+    },
+
+    onOrderItemstatelogGridPanelSelect: function(rowmodel, record, index, eOpts) {
+        this.getOrderItemDetailPanel().getComponent('OrderItemstatelogGridPanel').getComponent('OrderItemstatelogFormPanel').getForm().loadRecord(record);
+    },
+
     init: function(application) {
         this.control({
             "#OrderItemDetailEditButton": {
@@ -194,6 +227,12 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
             },
             "#OrderItemDetailPreviewButton": {
                 click: this.onOrderItemDetailPreviewButtonClick
+            },
+            "#OrderItemDetailSendButton": {
+                click: this.onOrderItemDetailSendButtonClick
+            },
+            "#OrderItemstatelogGridPanel": {
+                select: this.onOrderItemstatelogGridPanelSelect
             }
         });
     }

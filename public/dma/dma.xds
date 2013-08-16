@@ -635,6 +635,22 @@
                 "app/controller/ImportExecutePanelController.js"
             ],
             "className": "ImportExecutePanelController"
+        },
+        "31b03dd1-ba2d-4dbd-8655-37fcdaabb0ed": {
+            "paths": [
+                "metadata/store/OrderItemstatelogJsonStore",
+                "app/store/override/OrderItemstatelogJsonStore.js",
+                "app/store/OrderItemstatelogJsonStore.js"
+            ],
+            "className": "OrderItemstatelogJsonStore"
+        },
+        "2847027b-060c-4421-92f1-03ef391c65ba": {
+            "paths": [
+                "metadata/model/OrderItemstatelogModel",
+                "app/model/override/OrderItemstatelogModel.js",
+                "app/model/OrderItemstatelogModel.js"
+            ],
+            "className": "OrderItemstatelogModel"
         }
     },
     "viewOrderMap": {
@@ -679,7 +695,8 @@
             "888450b5-9cee-44c3-ad35-89666a14b954",
             "7f36311c-f928-4f3a-9ea4-9317905b8999",
             "84130508-1af0-4278-a88c-97903f1d14ed",
-            "328a77aa-1b1f-45cc-aed1-0da238e3c71d"
+            "328a77aa-1b1f-45cc-aed1-0da238e3c71d",
+            "31b03dd1-ba2d-4dbd-8655-37fcdaabb0ed"
         ],
         "controller": [
             "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
@@ -721,7 +738,8 @@
             "c55fbe14-08d8-4542-8e16-980bf7c0de5e",
             "080042cf-5cd3-4bb0-98df-a0417275eb40",
             "ad4d53dc-c815-4b1f-ad81-4f2bd2d8000e",
-            "aec4fe66-ee2e-4a21-a634-e4b48ab481c9"
+            "aec4fe66-ee2e-4a21-a634-e4b48ab481c9",
+            "2847027b-060c-4421-92f1-03ef391c65ba"
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",

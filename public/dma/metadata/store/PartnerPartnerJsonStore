@@ -9,6 +9,7 @@
         "autoLoad": true,
         "autoSync": true,
         "model": "PartnerPartnerModel",
+        "remoteFilter": true,
         "storeId": "MyJsonStore",
         "designer|userClassName": "PartnerPartnerJsonStore"
     },
@@ -22,7 +23,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "partner/partner"
+                "url": "/partner/partner/index"
             },
             "designerId": "19d9edd6-e386-4744-95db-fa28ef960746",
             "cn": [
@@ -33,6 +34,9 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
                     "designerId": "c8c774aa-a1b2-47cf-a4f0-c6813f110dcc"
                 }
             ]

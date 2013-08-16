@@ -80,6 +80,7 @@ class Rest_Model_Mapper_DbTable {
 			foreach ($data as $key => $val) {
 				$row->$key = $val;
 			}
+			//var_dump($row);die();
 			//$row->setFromArray($data)
 			$row->save();
 		} else {			
@@ -89,6 +90,7 @@ class Rest_Model_Mapper_DbTable {
 			}
 			$set = implode(',', $set);
 			//upsert
+			//echo 'INSERT INTO ' . $this->getStore()->info('name') . ' SET ' . $set . ' ON DUPLICATE KEY UPDATE ' . $set;die();
 			Zend_Db_Table::getDefaultAdapter()->query('INSERT INTO ' . $this->getStore()->info('name') . ' SET ' . $set . ' ON DUPLICATE KEY UPDATE ' . $set);
 			return $data; //$this->insert($data);
 		}

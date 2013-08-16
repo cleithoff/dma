@@ -17,9 +17,9 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.orderitemdetailpanel',
 
-    height: 375,
+    height: 645,
     itemId: 'OrderItemDetailPanel',
-    width: 567,
+    width: 985,
     layout: {
         type: 'border'
     },
@@ -68,6 +68,11 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                             xtype: 'button',
                             itemId: 'OrderItemDetailPreviewButton',
                             text: 'Preview'
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'OrderItemDetailSendButton',
+                            text: 'Versenden'
                         }
                     ]
                 }
@@ -97,6 +102,77 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                     xtype: 'container',
                     region: 'center',
                     itemId: 'PreviewContainer'
+                },
+                {
+                    xtype: 'gridpanel',
+                    collapseMode: 'header',
+                    region: 'east',
+                    itemId: 'OrderItemstatelogGridPanel',
+                    width: 320,
+                    collapsible: true,
+                    title: 'Log Status',
+                    store: 'OrderItemstatelogJsonStore',
+                    columns: [
+                        {
+                            xtype: 'datecolumn',
+                            width: 120,
+                            defaultWidth: 120,
+                            dataIndex: 'datetime',
+                            text: 'Zeitpunkt',
+                            format: 'Y-m-d H:i:s'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                return record.data.fk_order_itemstate.title;
+                            },
+                            width: 120,
+                            defaultWidth: 120,
+                            dataIndex: 'fk_order_itemstate',
+                            text: 'Status'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'comment',
+                            text: 'Kommentar',
+                            flex: 1
+                        }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'form',
+                            dock: 'bottom',
+                            itemId: 'OrderItemstatelogFormPanel',
+                            width: 100,
+                            bodyPadding: 10,
+                            title: 'Log Detail',
+                            items: [
+                                {
+                                    xtype: 'datefield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Zeitpunkt',
+                                    name: 'datetime',
+                                    readOnly: true,
+                                    format: 'Y-m-d H:i:s'
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Kommentar',
+                                    name: 'comment',
+                                    readOnly: true,
+                                    rows: 8
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'pagingtoolbar',
+                            dock: 'bottom',
+                            width: 360,
+                            displayInfo: true,
+                            store: 'OrderItemstatelogJsonStore'
+                        }
+                    ]
                 }
             ]
         });

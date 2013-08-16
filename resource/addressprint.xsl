@@ -7,7 +7,7 @@
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 
 <fo:layout-master-set>
-<fo:simple-page-master master-name="main" page-height="7.9cm" page-width="13.08cm" font-family="sans-serif" margin="1.5cm">
+<fo:simple-page-master master-name="main" page-height="5.51cm" page-width="11.02cm" font-family="sans-serif" margin="0.5cm" margin-bottom="1.8cm">
 <fo:region-body />
 <fo:region-before />
 </fo:simple-page-master>

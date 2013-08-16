@@ -41,18 +41,6 @@ Ext.define('MyApp.view.PartnerAddressPanel', {
                             xtype: 'button',
                             itemId: 'PartnerAddressPLZButton',
                             text: 'PLZ Bereinigung'
-                        },
-                        {
-                            xtype: 'button',
-                            text: 'MyButton'
-                        },
-                        {
-                            xtype: 'button',
-                            text: 'MyButton'
-                        },
-                        {
-                            xtype: 'button',
-                            text: 'MyButton'
                         }
                     ]
                 }
@@ -62,27 +50,283 @@ Ext.define('MyApp.view.PartnerAddressPanel', {
                     xtype: 'tabpanel',
                     region: 'center',
                     itemId: 'PartnerAddressTabPanel',
-                    activeTab: 0,
                     items: [
                         {
-                            xtype: 'form',
-                            height: 150,
-                            itemId: 'PartnerPartnerFormPanel',
-                            bodyPadding: 10,
-                            title: 'Partner'
+                            xtype: 'panel',
+                            itemId: 'PartnerPartnerPanel',
+                            layout: {
+                                type: 'border'
+                            },
+                            title: 'Partner',
+                            tabConfig: {
+                                xtype: 'tab',
+                                closable: false
+                            },
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    itemId: 'PartnerPartnerToolbar',
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            disabled: true,
+                                            itemId: 'PartnerPartnerEditButton',
+                                            text: 'Bearbeiten'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            disabled: true,
+                                            itemId: 'PartnerPartnerSaveButton',
+                                            text: 'Speichern'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            disabled: true,
+                                            itemId: 'PartnerPartnerCancelButton',
+                                            text: 'Abbrechen'
+                                        }
+                                    ]
+                                }
+                            ],
+                            items: [
+                                {
+                                    xtype: 'form',
+                                    region: 'center',
+                                    disabled: true,
+                                    itemId: 'PartnerPartnerFormPanel',
+                                    bodyPadding: 10,
+                                    header: false,
+                                    title: 'Partner',
+                                    items: [
+                                        {
+                                            xtype: 'numberfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Partner Nr.',
+                                            name: 'partner_nr'
+                                        },
+                                        {
+                                            xtype: 'numberfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Partner ID',
+                                            name: 'id',
+                                            readOnly: true
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Partner',
+                                            name: 'title'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'E-Mail',
+                                            name: 'email'
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
-                            xtype: 'form',
-                            itemId: 'PartnerAddressInvoiceFormPanel',
-                            width: 150,
-                            bodyPadding: 10,
-                            title: 'Rechnungsaddresse'
+                            xtype: 'panel',
+                            itemId: 'PartnerAddressInvoicePanel',
+                            layout: {
+                                type: 'border'
+                            },
+                            title: 'Rechnungsaddresse',
+                            tabConfig: {
+                                xtype: 'tab',
+                                closable: false
+                            },
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    itemId: 'PartnerAddressInvoiceToolbar',
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            disabled: true,
+                                            itemId: 'PartnerAddressInvoiceEditButton',
+                                            text: 'Bearbeiten'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            disabled: true,
+                                            itemId: 'PartnerAddressInvoiceSaveButton',
+                                            text: 'Speichern'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            disabled: true,
+                                            itemId: 'PartnerAddressInvoiceCancelButton',
+                                            text: 'Abbrechen'
+                                        }
+                                    ]
+                                }
+                            ],
+                            items: [
+                                {
+                                    xtype: 'form',
+                                    region: 'center',
+                                    disabled: true,
+                                    itemId: 'PartnerAddressInvoiceFormPanel',
+                                    bodyPadding: 10,
+                                    header: false,
+                                    title: 'Rechnungsaddresse',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Anrede',
+                                            name: 'post_anrede'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Adresszeile 1',
+                                            name: 'post_name1'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Adresszeile 2',
+                                            name: 'post_name2'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Strasse',
+                                            name: 'post_strasse'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'PLZ',
+                                            name: 'post_plz'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Ort',
+                                            name: 'post_ort'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Telefon',
+                                            name: 'druck_hg_tel'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'E-Mail',
+                                            name: 'email'
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
-                            xtype: 'form',
-                            itemId: 'PartnerAddressDeliveryFormPanel',
-                            bodyPadding: 10,
-                            title: 'Lieferaddresse'
+                            xtype: 'panel',
+                            itemId: 'PartnerAddressDeliveryPanel',
+                            layout: {
+                                type: 'border'
+                            },
+                            title: 'Lieferaddresse',
+                            tabConfig: {
+                                xtype: 'tab',
+                                closable: false
+                            },
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    itemId: 'PartnerAddressDeliveryToolbar',
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            disabled: true,
+                                            itemId: 'PartnerAddressDeliveryEditButton',
+                                            text: 'Bearbeiten'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            disabled: true,
+                                            itemId: 'PartnerAddressDeliverySaveButton',
+                                            text: 'Speichern'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            disabled: true,
+                                            itemId: 'PartnerAddressDeliveryCancelButton',
+                                            text: 'Abbrechen'
+                                        }
+                                    ]
+                                }
+                            ],
+                            items: [
+                                {
+                                    xtype: 'form',
+                                    region: 'center',
+                                    disabled: true,
+                                    itemId: 'PartnerAddressDeliveryFormPanel',
+                                    bodyPadding: 10,
+                                    header: false,
+                                    title: 'Lieferaddresse',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Anrede',
+                                            name: 'post_anrede'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Adresszeile 1',
+                                            name: 'post_name1'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Adresszeile 2',
+                                            name: 'post_name2'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Strasse',
+                                            name: 'post_strasse'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'PLZ',
+                                            name: 'post_plz'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Ort',
+                                            name: 'post_ort'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Telefon',
+                                            name: 'druck_hg_tel'
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            anchor: '100%',
+                                            fieldLabel: 'E-Mail',
+                                            name: 'email'
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

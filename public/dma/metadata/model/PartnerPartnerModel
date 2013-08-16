@@ -31,6 +31,18 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "partner_nr"
+            },
+            "designerId": "a792e376-6fac-4fcd-b11b-df8fd9874f3a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "title"
             },
             "designerId": "f79bcb16-aa32-475d-af4a-a09bcfa1b192"
@@ -58,6 +70,18 @@
                 "name": "partner_address_id_delivery"
             },
             "designerId": "4ffe5bdf-1cbb-4c18-80a3-d64ff50c2bec"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "email"
+            },
+            "designerId": "1879ff86-2eeb-47ff-871c-4d930b72cbd8"
         }
     ]
 }

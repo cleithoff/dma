@@ -37,8 +37,8 @@ Ext.define('MyApp.view.PartnerPanel', {
                     xtype: 'gridpanel',
                     region: 'west',
                     split: true,
-                    itemId: 'PartnerPartnerGrid',
-                    width: 153,
+                    itemId: 'PartnerPartnerGridPanel',
+                    width: 320,
                     store: 'PartnerPartnerJsonStore',
                     columns: [
                         {
@@ -55,6 +55,45 @@ Ext.define('MyApp.view.PartnerPanel', {
                             width: 360,
                             displayInfo: true,
                             store: 'PartnerPartnerJsonStore'
+                        },
+                        {
+                            xtype: 'form',
+                            dock: 'top',
+                            itemId: 'PartnerPartnerGridFilterFormPanel',
+                            width: 100,
+                            bodyPadding: 10,
+                            header: false,
+                            title: 'My Form',
+                            items: [
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Partner-Nr.',
+                                    name: 'partner_nr'
+                                },
+                                {
+                                    xtype: 'numberfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Partner ID',
+                                    name: 'id'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Partner',
+                                    name: 'title'
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'PartnerPartnerFilterButton',
+                                    text: 'Filtern'
+                                },
+                                {
+                                    xtype: 'button',
+                                    itemId: 'PartnerPartnerClearFilterButton',
+                                    text: 'Filter leeren'
+                                }
+                            ]
                         }
                     ]
                 },

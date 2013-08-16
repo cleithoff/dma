@@ -44,45 +44,6 @@
                         "text": "PLZ Bereinigung"
                     },
                     "designerId": "50072b5a-9a5b-4fbf-8887-679031367ec6"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "text": "MyButton"
-                    },
-                    "designerId": "5a6ae397-a9ef-4a2d-9534-4184ffe87721"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "text": "MyButton"
-                    },
-                    "designerId": "ebd899cf-860f-48ee-a6eb-cc37a687486f"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "text": "MyButton"
-                    },
-                    "designerId": "99b8f865-7313-4228-a33d-64b09274ea23"
                 }
             ]
         },
@@ -95,25 +56,23 @@
             "codeClass": null,
             "userConfig": {
                 "layout|region": "center",
-                "itemId": "PartnerAddressTabPanel",
-                "activeTab": 0
+                "itemId": "PartnerAddressTabPanel"
             },
             "designerId": "3805e0d2-337d-4899-bf79-8c982af86f4d",
             "cn": [
                 {
-                    "type": "Ext.form.Panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 150,
-                        "itemId": "PartnerPartnerFormPanel",
-                        "bodyPadding": 10,
+                        "itemId": "PartnerPartnerPanel",
+                        "layout": "border",
                         "title": "Partner"
                     },
-                    "designerId": "d1cca9d9-ebcd-4f19-8ae7-8c3627da50ff",
+                    "designerId": "3dea1e71-2bf5-449d-8d53-e4330ba5530b",
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -122,24 +81,162 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "designerId": "d12cb722-d4fd-429d-a0f0-7c0454dc5723"
+                            "userConfig": {
+                                "closable": false
+                            },
+                            "designerId": "6098b085-7b35-4c52-b430-6d7ced1c73eb"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "itemId": "PartnerPartnerToolbar"
+                            },
+                            "designerId": "d4f43692-b23e-4ee8-ae2b-ac08a40b947f",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "disabled": true,
+                                        "itemId": "PartnerPartnerEditButton",
+                                        "text": "Bearbeiten"
+                                    },
+                                    "designerId": "a08401e7-3ceb-4668-a1ca-faf9a70d406c"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "disabled": true,
+                                        "itemId": "PartnerPartnerSaveButton",
+                                        "text": "Speichern"
+                                    },
+                                    "designerId": "99df6a94-090f-4502-aa50-5aeebea334a5"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "disabled": true,
+                                        "itemId": "PartnerPartnerCancelButton",
+                                        "text": "Abbrechen"
+                                    },
+                                    "designerId": "ee6160a4-6dc5-4cd5-a9e4-837ec13cc448"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|region": "center",
+                                "disabled": true,
+                                "itemId": "PartnerPartnerFormPanel",
+                                "bodyPadding": 10,
+                                "header": false,
+                                "title": "Partner"
+                            },
+                            "designerId": "d1cca9d9-ebcd-4f19-8ae7-8c3627da50ff",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Partner Nr.",
+                                        "name": "partner_nr"
+                                    },
+                                    "designerId": "9fba0c13-f928-4ba1-a600-f1a2f9982170"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Partner ID",
+                                        "name": "id",
+                                        "readOnly": true
+                                    },
+                                    "designerId": "61c80b5a-3bc6-417f-ab34-859329f87269"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Partner",
+                                        "name": "title"
+                                    },
+                                    "designerId": "a988c79e-2ae3-4dd2-9dbd-b4738e9c1d51"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "E-Mail",
+                                        "name": "email"
+                                    },
+                                    "designerId": "20657df0-37d9-462d-a93e-bfc75d180676"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "type": "Ext.form.Panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "PartnerAddressInvoiceFormPanel",
-                        "width": 150,
-                        "bodyPadding": 10,
+                        "itemId": "PartnerAddressInvoicePanel",
+                        "layout": "border",
                         "title": "Rechnungsaddresse"
                     },
-                    "designerId": "9b93dfe8-015b-472e-80ed-94ed0d370042",
+                    "designerId": "67982482-e3b7-4c09-9514-49d446cd78d0",
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -148,23 +245,217 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "designerId": "3363ce7b-b4e2-4a4b-94fd-56a0efd2efe6"
+                            "userConfig": {
+                                "closable": false
+                            },
+                            "designerId": "a2549f8b-ae1c-482a-bb98-095e804cce42"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "itemId": "PartnerAddressInvoiceToolbar"
+                            },
+                            "designerId": "e3e59073-6c08-4b3f-899a-5737cf6f681e",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "disabled": true,
+                                        "itemId": "PartnerAddressInvoiceEditButton",
+                                        "text": "Bearbeiten"
+                                    },
+                                    "designerId": "5b024907-e7c4-4817-877d-ebb6fd81f716"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "disabled": true,
+                                        "itemId": "PartnerAddressInvoiceSaveButton",
+                                        "text": "Speichern"
+                                    },
+                                    "designerId": "794a1b88-551f-48ba-8e3f-3dd5e0a5f0f7"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "disabled": true,
+                                        "itemId": "PartnerAddressInvoiceCancelButton",
+                                        "text": "Abbrechen"
+                                    },
+                                    "designerId": "32613ee9-5616-4415-b8ed-dd65490ff897"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|region": "center",
+                                "disabled": true,
+                                "itemId": "PartnerAddressInvoiceFormPanel",
+                                "bodyPadding": 10,
+                                "header": false,
+                                "title": "Rechnungsaddresse"
+                            },
+                            "designerId": "9b93dfe8-015b-472e-80ed-94ed0d370042",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Anrede",
+                                        "name": "post_anrede"
+                                    },
+                                    "designerId": "e0a732ff-e9bf-40a7-a5ed-ea5d41d02f3d"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Adresszeile 1",
+                                        "name": "post_name1"
+                                    },
+                                    "designerId": "d435b5a6-392b-4885-a77b-a1b4a51d4db9"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Adresszeile 2",
+                                        "name": "post_name2"
+                                    },
+                                    "designerId": "d3085c43-3aed-4fcf-89c4-6785cbd527fb"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Strasse",
+                                        "name": "post_strasse"
+                                    },
+                                    "designerId": "3ab44a42-b2ba-4c3d-94fa-bb21aaf0e763"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "PLZ",
+                                        "name": "post_plz"
+                                    },
+                                    "designerId": "68792478-1d29-4b87-822e-a7b5870c29be"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Ort",
+                                        "name": "post_ort"
+                                    },
+                                    "designerId": "2128c0d3-b570-4ab9-a7af-e6b8fbe82178"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Telefon",
+                                        "name": "druck_hg_tel"
+                                    },
+                                    "designerId": "a104aa80-e473-473b-a0d4-fad1988aa1cc"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "E-Mail",
+                                        "name": "email"
+                                    },
+                                    "designerId": "e49d2197-7eeb-4ff5-ae31-d96839285a67"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "type": "Ext.form.Panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "PartnerAddressDeliveryFormPanel",
-                        "bodyPadding": 10,
+                        "itemId": "PartnerAddressDeliveryPanel",
+                        "layout": "border",
                         "title": "Lieferaddresse"
                     },
-                    "designerId": "415941f9-10a5-4ad6-8979-861273559617",
+                    "designerId": "69538ee3-e055-4284-8736-4f3e79ed867d",
                     "cn": [
                         {
                             "type": "Ext.tab.Tab",
@@ -173,7 +464,201 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "designerId": "a35b1b9a-11b0-438b-81ed-31ab0204003f"
+                            "userConfig": {
+                                "closable": false
+                            },
+                            "designerId": "4a24c1fa-dc4c-4387-9e47-8c27b0907bf3"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "itemId": "PartnerAddressDeliveryToolbar"
+                            },
+                            "designerId": "1e2543d0-b2a1-467c-ba35-5ab6aff8dad6",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "disabled": true,
+                                        "itemId": "PartnerAddressDeliveryEditButton",
+                                        "text": "Bearbeiten"
+                                    },
+                                    "designerId": "a97c8f9e-455e-4bd6-ab77-a337bc1a4799"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "disabled": true,
+                                        "itemId": "PartnerAddressDeliverySaveButton",
+                                        "text": "Speichern"
+                                    },
+                                    "designerId": "a9f71a4e-0fea-4f45-a70a-b77163fed045"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "disabled": true,
+                                        "itemId": "PartnerAddressDeliveryCancelButton",
+                                        "text": "Abbrechen"
+                                    },
+                                    "designerId": "86da67f4-69af-4809-871d-40086a506c08"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|region": "center",
+                                "disabled": true,
+                                "itemId": "PartnerAddressDeliveryFormPanel",
+                                "bodyPadding": 10,
+                                "header": false,
+                                "title": "Lieferaddresse"
+                            },
+                            "designerId": "415941f9-10a5-4ad6-8979-861273559617",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Anrede",
+                                        "name": "post_anrede"
+                                    },
+                                    "designerId": "80d2c7a9-96fe-4d6c-a14c-dca276f54e2e"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Adresszeile 1",
+                                        "name": "post_name1"
+                                    },
+                                    "designerId": "ad36c94b-6d06-4843-ac6c-192e14055aa2"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Adresszeile 2",
+                                        "name": "post_name2"
+                                    },
+                                    "designerId": "72829593-8082-478e-b585-47528fd6210a"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Strasse",
+                                        "name": "post_strasse"
+                                    },
+                                    "designerId": "549a11d1-7804-4e77-bf55-6c0de4d531d4"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "PLZ",
+                                        "name": "post_plz"
+                                    },
+                                    "designerId": "3319d1e3-06ec-4c1d-8609-9778276c7293"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Ort",
+                                        "name": "post_ort"
+                                    },
+                                    "designerId": "f815d5b3-4423-4ca8-8c04-3ecb8166c2b0"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Telefon",
+                                        "name": "druck_hg_tel"
+                                    },
+                                    "designerId": "b7721347-1b9c-45eb-ab0d-61e474061163"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "E-Mail",
+                                        "name": "email"
+                                    },
+                                    "designerId": "db97b4f0-f569-44f2-b833-fad8ae000fd4"
+                                }
+                            ]
                         }
                     ]
                 }

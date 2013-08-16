@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 375,
+        "height": 645,
         "itemId": "OrderItemDetailPanel",
-        "width": 567,
+        "width": 985,
         "designer|userClassName": "OrderItemDetailPanel",
         "designer|userAlias": "orderitemdetailpanel",
         "layout": "border",
@@ -116,6 +116,20 @@
                         "text": "Preview"
                     },
                     "designerId": "583fa0df-87c7-41e8-83b2-0f6a6455d59d"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "OrderItemDetailSendButton",
+                        "text": "Versenden"
+                    },
+                    "designerId": "c75de847-f23e-49d0-b7ab-314c77a2c4e0"
                 }
             ]
         },
@@ -168,6 +182,171 @@
                 "itemId": "PreviewContainer"
             },
             "designerId": "79b978f5-fdd2-4391-b163-9f4eeaf9d7b7"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|collapseMode": "header",
+                "layout|region": "east",
+                "itemId": "OrderItemstatelogGridPanel",
+                "width": 320,
+                "collapsible": true,
+                "title": "Log Status",
+                "store": "OrderItemstatelogJsonStore"
+            },
+            "designerId": "7096610b-0a46-416d-bb04-e4ee37980ff4",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 120,
+                        "defaultWidth": 120,
+                        "dataIndex": "datetime",
+                        "text": "Zeitpunkt",
+                        "format": "Y-m-d H:i:s"
+                    },
+                    "designerId": "ef9f0e01-fe60-43b3-859e-85bf86e0a256"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 120,
+                        "defaultWidth": 120,
+                        "dataIndex": "fk_order_itemstate",
+                        "text": "Status"
+                    },
+                    "designerId": "ce4e88d0-7648-4cbc-b20c-5b89003d51a2",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.fk_order_itemstate.title;"
+                                ]
+                            },
+                            "designerId": "f9621d0f-1fec-479b-a8e7-7896a6d24804"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "comment",
+                        "text": "Kommentar",
+                        "flex": 1
+                    },
+                    "designerId": "6276e6b2-ea87-4d40-97cf-ecc642380bd3"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "c99c9120-752e-4f5d-ae4f-d6f0a233f558"
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "itemId": "OrderItemstatelogFormPanel",
+                        "width": 100,
+                        "bodyPadding": 10,
+                        "title": "Log Detail"
+                    },
+                    "designerId": "3c4bff7a-2fdf-4931-9922-5ca272175f4f",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Zeitpunkt",
+                                "name": "datetime",
+                                "readOnly": true,
+                                "format": "Y-m-d H:i:s"
+                            },
+                            "designerId": "4e0e100f-be8f-4a93-9d31-18b0c108f88b"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Kommentar",
+                                "name": "comment",
+                                "readOnly": true,
+                                "rows": 8
+                            },
+                            "designerId": "c96c0936-f382-4b5b-8305-07d90aeed7f9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "OrderItemstatelogJsonStore"
+                    },
+                    "designerId": "96cb80da-1cff-4f72-b3f0-d1115c721e41"
+                }
+            ]
         }
     ]
 }

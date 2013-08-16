@@ -105,6 +105,108 @@
                 ]
             },
             "designerId": "7c1397ba-087f-4ca6-a0a3-937bbf9ae740"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerPartnerFilterButtonClick",
+                "implHandler": [
+                    "grid = this.getPartnerPanel().getComponent('PartnerPartnerGridPanel');\r",
+                    "\r",
+                    "grid.store.clearFilter(true);\r",
+                    "\r",
+                    "filter = [];\r",
+                    "\r",
+                    "values = grid.getComponent('PartnerPartnerGridFilterFormPanel').getForm().getValues();\r",
+                    "\r",
+                    "console.log(values);\r",
+                    "\r",
+                    "if (values.partner_nr !== \"\") {\r",
+                    "    filter.push({property:\"partner_nr\",value:values.partner_nr});\r",
+                    "}\r",
+                    "\r",
+                    "if (values.id !== \"\") {\r",
+                    "    filter.push({property:\"id\",value:values.id});\r",
+                    "}\r",
+                    "\r",
+                    "if (values.title !== \"\") {\r",
+                    "    filter.push({property:\"title\",value:values.title,operator:\"LIKE\"});\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "grid.store.filter(filter);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerPartnerFilterButton"
+            },
+            "designerId": "c315ba1e-d2fa-40ee-a389-4af00f6addcb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerPartnerClearFilterButtonClick",
+                "implHandler": [
+                    "grid = this.getPartnerPanel().getComponent('PartnerPartnerGridPanel');\r",
+                    "\r",
+                    "grid.store.clearFilter();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#PartnerPartnerClearFilterButton"
+            },
+            "designerId": "01e5d1af-e20b-4ac8-a0f2-14830ecc6edc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPartnerPartnerGridPanelSelect",
+                "implHandler": [
+                    "panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel');\r",
+                    "\r",
+                    "panel.getComponent('PartnerPartnerPanel').getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerEditButton').enable();\r",
+                    "panel.getComponent('PartnerPartnerPanel').getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerSaveButton').disable();\r",
+                    "panel.getComponent('PartnerPartnerPanel').getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerCancelButton').disable();\r",
+                    "\r",
+                    "panel.getComponent('PartnerAddressInvoicePanel').getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceEditButton').enable();\r",
+                    "panel.getComponent('PartnerAddressInvoicePanel').getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceSaveButton').disable();\r",
+                    "panel.getComponent('PartnerAddressInvoicePanel').getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceCancelButton').disable();\r",
+                    "\r",
+                    "panel.getComponent('PartnerAddressDeliveryPanel').getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliveryEditButton').enable();\r",
+                    "panel.getComponent('PartnerAddressDeliveryPanel').getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliverySaveButton').disable();\r",
+                    "panel.getComponent('PartnerAddressDeliveryPanel').getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliveryCancelButton').disable();\r",
+                    "\r",
+                    "\r",
+                    "form = panel.getComponent('PartnerPartnerPanel').getComponent('PartnerPartnerFormPanel');\r",
+                    "form.getForm().loadRecord(record);\r",
+                    "\r",
+                    "/*grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');\r",
+                    "grid.store.clearFilter(true);\r",
+                    "grid.store.filter([{property:'order_pool_id',value:record.data.order_pool_id}]);*/"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#PartnerPartnerGridPanel"
+            },
+            "designerId": "d1218ba0-acf6-4d77-b373-6a66be81429f"
         }
     ]
 }

@@ -22,6 +22,9 @@ Ext.define('MyApp.model.PartnerPartnerModel', {
             name: 'id'
         },
         {
+            name: 'partner_nr'
+        },
+        {
             name: 'title'
         },
         {
@@ -29,6 +32,9 @@ Ext.define('MyApp.model.PartnerPartnerModel', {
         },
         {
             name: 'partner_address_id_delivery'
+        },
+        {
+            name: 'email'
         }
     ]
 });

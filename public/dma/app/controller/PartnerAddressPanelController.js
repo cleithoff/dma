@@ -16,6 +16,21 @@
 Ext.define('MyApp.controller.PartnerAddressPanelController', {
     extend: 'Ext.app.Controller',
 
+    refs: [
+        {
+            autoCreate: true,
+            ref: 'PartnerAddressPanel',
+            selector: '#PartnerAddressPanel',
+            xtype: 'partneraddresspanel'
+        },
+        {
+            autoCreate: true,
+            ref: 'PartnerPanel',
+            selector: '#PartnerPanel',
+            xtype: 'partnerpanel'
+        }
+    ],
+
     onPartnerAddressPLZButtonClick: function(button, e, eOpts) {
         var that = this;
 
@@ -31,10 +46,178 @@ Ext.define('MyApp.controller.PartnerAddressPanelController', {
         });
     },
 
+    onPartnerPartnerEditButtonClick: function(button, e, eOpts) {
+        panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerPartnerPanel');
+
+        panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerEditButton').disable();
+        panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerSaveButton').enable();
+        panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerCancelButton').enable();
+
+        panel.getComponent('PartnerPartnerFormPanel').enable();
+    },
+
+    onPartnerPartnerSaveButtonClick: function(button, e, eOpts) {
+        var that = this;
+
+        store = Ext.getStore('PartnerPartnerJsonStore');
+        panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerPartnerPanel');
+
+        formPanel = panel.getComponent('PartnerPartnerFormPanel');
+        toolbar = panel.getComponent('PartnerPartnerToolbar');
+
+        //grid = button.ownerCt.ownerCt.ownerCt.query('#" . $name . "GridPanel')[0];
+
+        record = formPanel.getForm().getRecord();
+
+        /*
+        record.store.on('write', function(store,options) {
+        that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + '.pdf" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+        // 
+    });*/
+
+    if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {
+        values = formPanel.getForm().getValues();
+        record.set(values);
+        store.insert(0, record);
+        /*grid = button.ownerCt.ownerCt.ownerCt.getComponent('" . $name . 'GridPanel' . "');*/
+        //if (grid !== undefined) {
+        /*grid.getView().select(0);*/ /* BUG!!! */
+        //}
+    } else {
+        formPanel.getForm().updateRecord();
+    }
+    formPanel.disable();
+    //toolbar.getComponent('OrderItemDetailNewButton').enable();
+    toolbar.getComponent('PartnerPartnerCancelButton').disable();
+    toolbar.getComponent('PartnerPartnerSaveButton').disable();
+
+    panel = this.getPartnerPanel();
+
+    if (panel.getComponent('PartnerPartnerGridPanel').getSelectionModel().getSelection().length > 0) {
+        toolbar.getComponent('PartnerPartnerEditButton').enable();
+        //toolbar.getComponent('OrderItemDetailDeleteButton').enable();
+    } else {
+        toolbar.getComponent('PartnerPartnerEditButton').disable();
+        //toolbar.getComponent('OrderItemDetailDeleteButton').disable();
+    }
+    },
+
+    onPartnerPartnerCancelButtonClick: function(button, e, eOpts) {
+        panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerPartnerPanel');
+
+        panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerEditButton').enable();
+        panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerSaveButton').disable();
+        panel.getComponent('PartnerPartnerToolbar').getComponent('PartnerPartnerCancelButton').disable();
+
+        formPanel = panel.getComponent('PartnerPartnerFormPanel');
+        formPanel.getForm().reset();
+        formPanel.disable();
+
+        grid = this.getPartnerPanel().getComponent('PartnerPartnerGridPanel');
+
+        if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {
+            record = grid.getSelectionModel().getSelection()[0];
+            formPanel.getForm().loadRecord(record);
+        }
+    },
+
+    onPartnerAddressInvoiceEditButtonClick: function(button, e, eOpts) {
+        panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerAddressInvoicePanel');
+
+        panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceEditButton').disable();
+        panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceSaveButton').enable();
+        panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceCancelButton').enable();
+
+        panel.getComponent('PartnerAddressInvoiceFormPanel').enable();
+    },
+
+    onPartnerAddressInvoiceSaveButtonClick: function(button, e, eOpts) {
+
+    },
+
+    onPartnerAddressInvoiceCancelButtonClick: function(button, e, eOpts) {
+        panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerAddressInvoicePanel');
+
+        panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceEditButton').enable();
+        panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceSaveButton').disable();
+        panel.getComponent('PartnerAddressInvoiceToolbar').getComponent('PartnerAddressInvoiceCancelButton').disable();
+
+        formPanel = panel.getComponent('PartnerAddressInvoiceFormPanel');
+        formPanel.getForm().reset();
+        formPanel.disable();
+        /*
+        grid = this.getPartnerPanel().getComponent('PartnerPartnerGridPanel');
+
+        if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {
+        record = grid.getSelectionModel().getSelection()[0];
+        formPanel.getForm().loadRecord(record);
+        }*/
+    },
+
+    onPartnerAddressDeliveryEditButtonClick: function(button, e, eOpts) {
+        panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerAddressDeliveryPanel');
+
+        panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliveryEditButton').disable();
+        panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliverySaveButton').enable();
+        panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliveryCancelButton').enable();
+
+        panel.getComponent('PartnerAddressDeliveryFormPanel').enable();
+    },
+
+    onPartnerAddressDeliverySaveButtonClick: function(button, e, eOpts) {
+
+    },
+
+    onPartnerAddressDeliveryCancelButtonClick: function(button, e, eOpts) {
+        panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerAddressDeliveryPanel');
+
+        panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliveryEditButton').enable();
+        panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliverySaveButton').disable();
+        panel.getComponent('PartnerAddressDeliveryToolbar').getComponent('PartnerAddressDeliveryCancelButton').disable();
+
+        formPanel = panel.getComponent('PartnerAddressDeliveryFormPanel');
+        formPanel.getForm().reset();
+        formPanel.disable();
+        /*
+        grid = this.getPartnerPanel().getComponent('PartnerAddressDeliveryGridPanel');
+
+        if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {
+        record = grid.getSelectionModel().getSelection()[0];
+        formPanel.getForm().loadRecord(record);
+        }*/
+    },
+
     init: function(application) {
         this.control({
             "#PartnerAddressPLZButton": {
                 click: this.onPartnerAddressPLZButtonClick
+            },
+            "#PartnerPartnerEditButton": {
+                click: this.onPartnerPartnerEditButtonClick
+            },
+            "#PartnerPartnerSaveButton": {
+                click: this.onPartnerPartnerSaveButtonClick
+            },
+            "#PartnerPartnerCancelButton": {
+                click: this.onPartnerPartnerCancelButtonClick
+            },
+            "#PartnerAddressInvoiceEditButton": {
+                click: this.onPartnerAddressInvoiceEditButtonClick
+            },
+            "#PartnerAddressInvoiceSaveButton": {
+                click: this.onPartnerAddressInvoiceSaveButtonClick
+            },
+            "#PartnerAddressInvoiceCancelButton": {
+                click: this.onPartnerAddressInvoiceCancelButtonClick
+            },
+            "#PartnerAddressDeliveryEditButton": {
+                click: this.onPartnerAddressDeliveryEditButtonClick
+            },
+            "#PartnerAddressDeliverySaveButton": {
+                click: this.onPartnerAddressDeliverySaveButtonClick
+            },
+            "#PartnerAddressDeliveryCancelButton": {
+                click: this.onPartnerAddressDeliveryCancelButtonClick
             }
         });
     }

@@ -228,6 +228,59 @@
                 "xtype": "orderitempackagepackagepanel"
             },
             "designerId": "51fa3788-d204-4b67-a40c-0c3d7900311d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemPackagePackageGridPanelCellDblClick",
+                "implHandler": [
+                    "grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');\r",
+                    "\r",
+                    "if (grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "    order = grid.getSelectionModel().getSelection()[0];\r",
+                    "    \r",
+                    "    Ext.Ajax.request({\r",
+                    "        url: '/partner/address/index',\r",
+                    "        method: 'GET',\r",
+                    "        success: function(response) {\r",
+                    "            partner_address = JSON.parse(response.responseText);\r",
+                    "\t\t\twin = window.open('http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&zip=' + partner_address.data[0].post_plz + '&idc=' + record.data.sendingnumber,'_blank'); \r",
+                    "            win.focus();\r",
+                    "        },\r",
+                    "        failure: function() {},\r",
+                    "        params: { id: order.data.partner_partner.partner_address_id_delivery}\r",
+                    "    });\r",
+                    "    \r",
+                    "}\r",
+                    "\r",
+                    ""
+                ],
+                "name": "celldblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#OrderItemPackagePackageGridPanel"
+            },
+            "designerId": "c6f8bad6-ac22-4959-8170-e056d7018087"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderPanel",
+                "selector": "#OrderPanel",
+                "xtype": "orderpanel"
+            },
+            "designerId": "715260cd-27f4-4191-8810-78ee68420eb7"
         }
     ]
 }

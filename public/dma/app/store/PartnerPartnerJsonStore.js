@@ -27,12 +27,14 @@ Ext.define('MyApp.store.PartnerPartnerJsonStore', {
             autoLoad: true,
             autoSync: true,
             model: 'MyApp.model.PartnerPartnerModel',
+            remoteFilter: true,
             storeId: 'MyJsonStore',
             proxy: {
                 type: 'rest',
-                url: 'partner/partner',
+                url: '/partner/partner/index',
                 reader: {
-                    type: 'json'
+                    type: 'json',
+                    root: 'data'
                 }
             }
         }, cfg)]);

@@ -69,7 +69,7 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
         Ext.getStore('OrderItemProductItemJsonStore').filter([{property:'id',value:record.data.product_item_id}]);
         Ext.getStore('OrderItemProductItemJsonStore').load();
 
-
+        //# OrderItemDetailPanel
         panel = this.getOrderItemDetailPanel();
         formPanel = panel.getComponent('OrderItemDetailFormPanel');
         toolbar = panel.getComponent('OrderItemDetailToolbar');
@@ -79,7 +79,14 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
         toolbar.getComponent('OrderItemDetailSaveButton').disable();
         toolbar.getComponent('OrderItemDetailDeleteButton').enable();
 
+        //# OrderItemDetailPanel / OrderItemstateGridPanel
+        grid = panel.getComponent('OrderItemstatelogGridPanel');
+        grid.store.clearFilter(true);
+        grid.store.filter([{property:'order_item_id',value:record.data.id}]);
+        grid.store.load();
+        formPanel = grid.getComponent('OrderItemstatelogFormPanel').getForm().reset();
 
+        //# OrderItemProductPersonalizePanel
         panel = this.getOrderItemProductPersonalizePanel();
         //formPanel = panel.getComponent('OrderItemProductPersonalizeFormPanel');
         toolbar = panel.getComponent('OrderItemProductPersonalizeToolbar');

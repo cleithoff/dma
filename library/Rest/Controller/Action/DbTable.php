@@ -102,6 +102,12 @@ class Rest_Controller_Action_DbTable extends Zend_Controller_Action
     	
     }
     
+    public function getJsonPayload() {
+    	$body = $this->getRequest()->getRawBody();
+    	$data = Zend_Json::decode($body);
+    	return $data;
+    }
+    
     public function putAction() {
     	$body = $this->getRequest()->getRawBody();
     	$data = Zend_Json::decode($body);    	

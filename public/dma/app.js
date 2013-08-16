@@ -37,7 +37,8 @@ Ext.application({
         'ReportReportModel',
         'MetadataModel',
         'ReportFilterModel',
-        'ImportStackModel'
+        'ImportStackModel',
+        'OrderItemstatelogModel'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -58,7 +59,8 @@ Ext.application({
         'ReportReportJsonStore',
         'MetadataJsonStore',
         'ReportFilterJsonStore',
-        'ImportStackJsonStore'
+        'ImportStackJsonStore',
+        'OrderItemstatelogJsonStore'
     ],
     views: [
         'MainViewport',

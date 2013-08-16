@@ -29,8 +29,8 @@
             "userConfig": {
                 "layout|region": "west",
                 "layout|split": true,
-                "itemId": "PartnerPartnerGrid",
-                "width": 153,
+                "itemId": "PartnerPartnerGridPanel",
+                "width": 320,
                 "title": null,
                 "store": "PartnerPartnerJsonStore"
             },
@@ -64,6 +64,93 @@
                         "store": "PartnerPartnerJsonStore"
                     },
                     "designerId": "f250c6e4-389a-45ba-a6e7-1102f4fd3953"
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "itemId": "PartnerPartnerGridFilterFormPanel",
+                        "width": 100,
+                        "bodyPadding": 10,
+                        "header": false,
+                        "title": "My Form"
+                    },
+                    "designerId": "9446775a-706e-432f-bc2d-b6ed055513f3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Partner-Nr.",
+                                "name": "partner_nr"
+                            },
+                            "designerId": "d9f9aeb7-a477-4677-a6f9-7d4ed8087429"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Partner ID",
+                                "name": "id"
+                            },
+                            "designerId": "8377e9fb-b938-4fdb-afe0-0429029fc296"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Partner",
+                                "name": "title"
+                            },
+                            "designerId": "cad711e1-d0e6-417b-90a6-649b97196461"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "PartnerPartnerFilterButton",
+                                "text": "Filtern"
+                            },
+                            "designerId": "d7723696-9b70-415c-9d18-5acc582899fa"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "PartnerPartnerClearFilterButton",
+                                "text": "Filter leeren"
+                            },
+                            "designerId": "28cc33a2-582e-4869-ad33-8ecbcd7bb50f"
+                        }
+                    ]
                 }
             ]
         },

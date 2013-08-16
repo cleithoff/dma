@@ -24,10 +24,12 @@ Ext.define('MyApp.store.OrderOrderJsonStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            defaultSortDirection: 'DESC',
             autoLoad: false,
             autoSync: true,
             model: 'MyApp.model.OrderOrderModel',
             remoteFilter: true,
+            remoteSort: true,
             storeId: 'OrderOrderJsonStore',
             proxy: {
                 type: 'rest',
@@ -36,6 +38,10 @@ Ext.define('MyApp.store.OrderOrderJsonStore', {
                     type: 'json',
                     root: 'data'
                 }
+            },
+            sorters: {
+                direction: 'DESC',
+                property: 'id'
             }
         }, cfg)]);
     }
