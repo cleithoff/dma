@@ -115,9 +115,9 @@ class Order_Service_Item
 		$mail->addTo($this->_partner['email']);
 		$mail->setSubject('Druckvorschau');
 		
-		$at = $mail->createAttachment(fopen(APPLICATION_PATH . '/../public/deploy/' . $this->getAuthkey() . '.pdf',"rb"), 'application/pdf');
-		$at->disposition = Zend_Mime::DISPOSITION_INLINE;
-		$at->encoding    = Zend_Mime::ENCODING_8BIT;
+		$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $this->getAuthkey() . '.pdf'), 'application/pdf');
+		$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
+		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $this->getAuthkey() . '.pdf'; //Hint! Hint!
 		
 		$mail->send();
@@ -128,7 +128,7 @@ class Order_Service_Item
 		$eml = new Zend_View();
 		$eml->setScriptPath(APPLICATION_PATH . '/modules/order/views/emails/item');
 	
-		// assign valeues
+		// assign values
 		$eml->assign('partner', $this->_partner);
 		$eml->assign('row', $this->_row);
 	
@@ -140,9 +140,9 @@ class Order_Service_Item
 		$mail->addTo($this->_partner['email']);
 		$mail->setSubject('Druckvorschau');
 	
-		$at = $mail->createAttachment(fopen(APPLICATION_PATH . '/../public/deploy/' . $this->getAuthkey() . '.pdf',"rb"), 'application/pdf');
-		$at->disposition = Zend_Mime::DISPOSITION_INLINE;
-		$at->encoding    = Zend_Mime::ENCODING_8BIT;
+		$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $this->getAuthkey() . '.pdf'), 'application/pdf');
+		$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
+		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $this->getAuthkey() . '.pdf'; //Hint! Hint!
 	
 		$mail->send();
