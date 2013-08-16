@@ -1,0 +1,56 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultSortDirection": "DESC",
+        "model": "OrderItemstatelogModel",
+        "remoteSort": true,
+        "designer|userClassName": "OrderItemstatelogJsonStore"
+    },
+    "designerId": "31b03dd1-ba2d-4dbd-8655-37fcdaabb0ed",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/order/itemstatelog/index"
+            },
+            "designerId": "a6954bc6-d752-416f-9009-51e73ef269c7",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "7d9acb3e-b98c-4301-ac7c-8676fbe0309e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "datetime"
+            },
+            "designerId": "f9271c27-278a-4247-a4f4-95c0ce1c9045"
+        }
+    ]
+}
