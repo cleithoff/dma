@@ -19,9 +19,9 @@
         <fo:footnote>
           <fo:inline/>
           <fo:footnote-body>
-    <fo:block>
-<xsl:apply-templates select="addressprint/addresslines" />
-</fo:block>
+            <fo:block>
+              <xsl:apply-templates select="data/product_personalize" />
+            </fo:block>
           </fo:footnote-body>
         </fo:footnote>
       </fo:block>
@@ -33,14 +33,30 @@
 
 </xsl:template>
 
-<xsl:template match="addressprint/addresslines">
+<xsl:template match="data/product_personalize">
 
 <fo:block font-size="7pt" width="65mm" height="32mm">
- <xsl:for-each select="addressline">
-   <xsl:if test=".">
-    <xsl:value-of select="."/><xsl:text>&#x2028;</xsl:text> 
+   <xsl:if test="./line1">
+    <xsl:value-of select="./line1"/><xsl:text>&#x2028;</xsl:text> 
    </xsl:if>
-  </xsl:for-each>
+   <xsl:if test="./line2">
+    <xsl:value-of select="./line2"/><xsl:text>&#x2028;</xsl:text> 
+   </xsl:if>
+   <xsl:if test="./line3">
+    <xsl:value-of select="./line3"/><xsl:text>&#x2028;</xsl:text> 
+   </xsl:if>
+   <xsl:if test="./line4">
+    <xsl:value-of select="./line4"/><xsl:text>&#x2028;</xsl:text> 
+   </xsl:if>
+   <xsl:if test="./line5">
+    <xsl:value-of select="./line5"/><xsl:text>&#x2028;</xsl:text> 
+   </xsl:if>
+   <xsl:if test="./line6">
+    <xsl:value-of select="./line6"/><xsl:text>&#x2028;</xsl:text> 
+   </xsl:if>
+   <xsl:if test="./line7">
+    <xsl:value-of select="./line7"/><xsl:text>&#x2028;</xsl:text> 
+   </xsl:if>
 
 </fo:block>
 

@@ -24,21 +24,43 @@ class Order_Service_Item
 		return $this->_authKey;
 	}
 
-	public function toXml() {
-		$addressprint = array(
-				'addresslines' => array(
-						'addressline' => array(
-								$this->_product_personalize['line1'],
-								$this->_product_personalize['line2'],
-								$this->_product_personalize['line3'],
-								$this->_product_personalize['line4'],
-								$this->_product_personalize['line5'],
-								$this->_product_personalize['line6'],
-								$this->_product_personalize['line7'],
-						)
-				)
-		);
-		return Rest_Xml::encode('addressprint', $addressprint);
+	public function toXml($order_item_id) {
+		$xml = array();
+		// order_item
+		$order_items = new Order_Model_DbTable_Item();
+		$order_item = $order_items->find($order_item_id)->current();		
+		$xml['order_item'] = $order_item->toArray();
+		
+		// order_order
+		$order_orders = new Order_Model_DbTable_Order();
+		$order_order = $order_orders->fetchRow(Zend_Db_Table::getDefaultAdapter()->quoteInto('order_pool_id = ?', $order_item->order_pool_id));
+		$xml['order_order'] = $order_order->toArray();
+		
+		// product_personalize
+		$sql = 'SELECT order_item_id,product_personalize.key, order_item_has_product_personalize.value FROM order_item_has_product_personalize
+			INNER JOIN product_personalize ON order_item_has_product_personalize.product_personalize_id = product_personalize.id
+			WHERE order_item_has_product_personalize.order_item_id = ?';		
+		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql, array($order_item_id))->fetchAll();
+		foreach ($rowset as $row) {
+			$xml['product_personalize'][$row['key']] = $row['value'];
+		}
+				
+		// partner_partner
+		$partner_partners = new Partner_Model_DbTable_Partner();
+		$partner_partner = $partner_partners->find($order_order->partner_partner_id)->current();
+		$xml['partner_partner'] = $partner_partner->toArray();
+		
+		// partner_address_invoice
+		$partner_addresses = new Partner_Model_DbTable_Address();
+		$partner_address = $partner_addresses->find($partner_partner->partner_address_id_invoice)->current();
+		$xml['partner_address_invoice'] = $partner_address->toArray();
+
+		// partner_address_delivery
+		$partner_addresses = new Partner_Model_DbTable_Address();
+		$partner_address = $partner_addresses->find($partner_partner->partner_address_id_delivery)->current();
+		$xml['partner_address_delivery'] = $partner_address->toArray();
+	
+		return Rest_Xml::encode('data', $xml);
 	}
 	
 	public function setRecentRow($row) {
@@ -73,7 +95,7 @@ class Order_Service_Item
 
 		$this->getAuthkey();
 		
-		$xml = $this->toXml();
+		$xml = $this->toXml($this->_row->id);
 		$xml->save(APPLICATION_PATH . '/../resource/xml/' . $this->_authKey . '.xml');
 		Rest_Pdf::fop(
 			APPLICATION_PATH . '/../resource/xml/' . $this->_authKey . '.xml',
