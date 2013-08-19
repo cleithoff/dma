@@ -9,6 +9,7 @@ class Order_Service_Itemstate
 	const ORDER_ITEM_STATE_PRODUCTION = 4;
 	const ORDER_ITEM_STATE_DELIVERY = 5;
 	const ORDER_ITEM_STATE_FINISHED = 6;
+	const ORDER_ITEM_STATE_CORRECTION = 9;
 	
 }
 

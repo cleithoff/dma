@@ -12,47 +12,75 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		->setDefaultContext('json')
 		->initContext('json')
 		;
-	}	
+	}
+	
+	/**
+	 * (non-PHPdoc)
+	 * @return Order_Service_Item
+	 * @see Rest_Controller_Action_DbTable::getService()
+	 */
+	protected function getService() {
+		return parent::getService();
+	}
 
 	public function postAction() {		
 		$row = parent::postAction();
 		
-		$this->getService()->setRow($row);
-		$this->getService()->createPreview();
-		
+		$order_items = new Order_Model_DbTable_Item();
+		$order_item = $order_items->find($row['id'])->current();
+		$this->getService()->createPreview(
+				$order_item, 
+				array(), 
+				$this->getRequest()->getParam('viewmode', Product_Model_Layout::VIEW_PREVIEW_FRONT),
+				$this->getRequest()->getParam('refresh', false)
+				);
 	}
 	
 	public function putAction() {
+		$order_items = new Order_Model_DbTable_Item();
 		$payload = $this->getJsonPayload();
+		$order_item_recent = null;
 		if (!empty($payload['id'])) {
-			$this->getService()->setRecentRow($payload);
+			$order_item_recent = $order_items->find($payload['id'])->current();
 		}
 		
 		$row = parent::putAction();
 		
-		$this->getService()->setRow($row);
-		$this->getService()->createPreview();
-		$this->getService()->checkState();
+		$order_item = $order_items->find($row['id'])->current();
+		$this->getService()->createPreview(
+				$order_item, 
+				array(), 
+				$this->getRequest()->getParam('viewmode', Product_Model_Layout::VIEW_PREVIEW_FRONT),
+				$this->getRequest()->getParam('refresh', false)
+				);
+		$this->getService()->checkState($order_item, $order_item_recent);
 	}
 	
 	public function refreshAction() {
-		$this->getService()->setRow(array('id' => $this->getRequest()->getParam('id')));
-		$this->getService()->createPreview();
+		$order_items = new Order_Model_DbTable_Item();
+		$order_item = $order_items->find($this->getRequest()->getParam('id'))->current();
+		$this->getService()->createPreview(
+				$order_item, 
+				array(), 
+				$this->getRequest()->getParam('viewmode', Product_Model_Layout::VIEW_PREVIEW_FRONT),
+				$this->getRequest()->getParam('refresh', false)
+				);
 		$this->view->success = true;
 	}
 	
 	public function sendAction() {
-		$this->getService()->setRow(array('id' => $this->getRequest()->getParam('id')));
-		$this->view->success = $this->getService()->sendPreview();
-		
+		$order_items = new Order_Model_DbTable_Item();
+		$order_item = $order_items->find($this->getRequest()->getParam('id'))->current();
+		$this->view->success = $this->getService()->sendPreview($order_item);
 	}
 	
 	public function releasedAction() {
-		$this->view->result = $this->getService()->changeState($this->getRequest()->getParam('authKey', null), Order_Service_Itemstate::ORDER_ITEM_STATE_RELEASED);		
+		$this->view->order_item = $order_item = $this->getService()->getOrderItemByAuthKey($this->getRequest()->getParam('authKey', null));
+		$this->view->result = $this->getService()->changeState($order_item, Order_Service_Itemstate::ORDER_ITEM_STATE_RELEASED);		
 	}
 	
-	public function denyAction() {
-		
+	public function denyAction() {	
+		$this->view->order_item = $order_item = $this->getService()->getOrderItemByAuthKey($this->getRequest()->getParam('authKey', null));
 		$this->view->result = false;
 		$form = new Order_Form_Itemstatedeny();
 		if ($this->getRequest()->isPost()) {
@@ -60,16 +88,52 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
             if ($form->isValid($values)) {            	
                 $values = $form->getValues();
 				$this->view->result = $this->getService()->changeState(
-						$this->getRequest()->getParam('authKey', null), 
+						$order_item, 
 						Order_Service_Itemstate::ORDER_ITEM_STATE_DENY, 
-						$values['comment']
+						$values
 				);
             }
             $form->populate($values);
         }
-        $this->view->form = $form;
-		
+        $this->view->form = $form;	
 	}
-	
+		
+	public function correctionAction() {
+		$command = null;
+		
+		$this->view->result = false;
+		
+		$this->view->order_item = $order_item = $this->getService()->getOrderItemByAuthKey($this->getRequest()->getParam('authKey', null));		
+		
+		$form = $this->getService()->CorrectionFormFactory($order_item);
+		
+		if ($this->getRequest()->isPost()) {
+			$values = $this->getRequest()->getPost();
+			if ($form->isValid($values)) {
+				if (!empty($values['_preview'])) $command = 'preview';
+				if (!empty($values['_correction'])) $command = 'correction';
+				
+				$values = $form->getValues();
+				if ($command === 'preview') {
+					$this->getService()->createPreview(
+							$order_item,
+							$values,
+							Product_Model_Layout::VIEW_PREVIEW_FRONT
+					);
+				} else 
+				if ($command === 'correction') {
+					$this->view->result = $this->getService()->changeState(
+							$order_item,
+							Order_Service_Itemstate::ORDER_ITEM_STATE_CORRECTION,
+							$values
+					);
+				}
+			}			
+		} else {
+			$values = $order_item->getProductPersonalize(); //$this->getService()->getProductPersonalizeValues($order_item);
+		}
+		$form->populate($values);
+		$this->view->form = $form;
+	}
 	
 }

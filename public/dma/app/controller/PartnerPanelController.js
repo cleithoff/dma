@@ -95,6 +95,27 @@ Ext.define('MyApp.controller.PartnerPanelController', {
         form = panel.getComponent('PartnerPartnerPanel').getComponent('PartnerPartnerFormPanel');
         form.getForm().loadRecord(record);
 
+        storeinvoice = Ext.getStore('PartnerAddressInvoiceJsonStore');
+        if (!storeinvoice.hasListener('load')) {
+            storeinvoice.on('load', function(that, records, successful, eOpts) {
+                form = panel.getComponent('PartnerAddressInvoicePanel').getComponent('PartnerAddressInvoiceFormPanel');
+                form.getForm().loadRecord(records[0]);
+            });
+        }
+        storeinvoice.clearFilter(true);
+        storeinvoice.filter([{property:'id',value:record.data.partner_address_id_invoice}]);
+
+        storedelivery = Ext.getStore('PartnerAddressDeliveryJsonStore');
+        if (!storedelivery.hasListener('load')) {
+            storedelivery.on('load', function(that, records, successful, eOpts) {
+                form = panel.getComponent('PartnerAddressDeliveryPanel').getComponent('PartnerAddressDeliveryFormPanel');
+                form.getForm().loadRecord(records[0]);
+            });
+        }
+        storedelivery.clearFilter(true);
+        storedelivery.filter([{property:'id',value:record.data.partner_address_id_delivery}]);
+
+
         /*grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');
         grid.store.clearFilter(true);
         grid.store.filter([{property:'order_pool_id',value:record.data.order_pool_id}]);*/

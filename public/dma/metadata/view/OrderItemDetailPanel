@@ -98,8 +98,151 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "itemId": "OrderItemViewmodeButton",
+                        "text": "Ansicht"
+                    },
+                    "designerId": "ae90cadd-d3f1-4fbb-939c-ab1fc5654123",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "OrderItemViewmodeMenu",
+                                "defaults": null
+                            },
+                            "designerId": "a8d8eec8-5df3-4f8d-aa1c-04903b9bc2fe",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.CheckItem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "value": "1",
+                                        "itemId": "OrderItemViewmodePreviewFrontMenuItem",
+                                        "text": "Preview Front",
+                                        "checked": true,
+                                        "group": "viewmodegroup"
+                                    },
+                                    "designerId": "c95f30ba-e696-4bb0-9a4c-c0c1ed072ea9",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "value",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "suffix",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.CheckItem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "value": "2",
+                                        "suffix": "_preview_back",
+                                        "itemId": "OrderItemViewmodePreviewBackMenuItem",
+                                        "text": "Preview Back",
+                                        "group": "viewmodegroup"
+                                    },
+                                    "designerId": "c2e11a15-3b88-4b14-9449-92fa2e7fecd8",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "value",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "suffix",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.CheckItem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "value": "3",
+                                        "suffix": "_print_front",
+                                        "itemId": "OrderItemViewmodePrintFrontMenuItem",
+                                        "text": "Print Front",
+                                        "group": "viewmodegroup"
+                                    },
+                                    "designerId": "1617757d-c833-4d24-96a4-87338bb2599b",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "value",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "suffix",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.CheckItem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "value": "4",
+                                        "suffix": "_print_back",
+                                        "itemId": "OrderItemViewmodePrintBackMenuItem",
+                                        "text": "Print Back",
+                                        "group": "viewmodegroup"
+                                    },
+                                    "designerId": "72c05bdc-f99b-4ecf-866b-83ad68bf9d94",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "value",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "suffix",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
                         "itemId": "OrderItemDetailRefreshButton",
-                        "text": "Aktualisieren"
+                        "text": "PDF Erzeugen"
                     },
                     "designerId": "74c44ab2-8004-45b6-8ea4-56dd120cb866"
                 },
@@ -112,6 +255,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "hidden": true,
                         "itemId": "OrderItemDetailPreviewButton",
                         "text": "Preview"
                     },

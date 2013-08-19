@@ -1,0 +1,34 @@
+
+<div class="container">
+	<h2>Vorschau</h2>
+	<div class="row">
+		<div class="span12">
+			<embed style="width:100%;height:300px" type="application/pdf" src="/deploy/<?=$this->order_item->authkey ?>.pdf#view=FitV?_dc=<?=microtime() ?>" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html"></embed>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<h2>Korrektur</h2>
+			<?php if ($this->result === false) : ?>
+	<div class="row-fluid">
+		<div class="span8">
+			<?=$this->form->render() ?>	
+		</div>
+		<div class="span4">
+			<strong>Bitte beachten Sie, dass</strong>
+			<ul>
+				<li>die einzelnen Zeilen unten ausgerichtet sind.</li>
+				<li>die erste benutzte Zeile immer "Fleurop-Fachgeschäft" lautet.</li>
+				<li>keine Zeile mehr als 60 Zeichen lang sein darf.</li>
+			</ul>	
+		</div>
+	</div>
+	<?php else : ?>
+	<div class="row">
+		<div class="span8">
+			<?='Vielen Dank für Ihre Änderungen. Wir werden die Drucksache prüfen.' ?> 
+		</div>
+	</div>
+			<?php endif ?>
+</div>

@@ -193,6 +193,37 @@
             "designerId": "1afb304b-3261-4296-87c6-c0bc15c2b69c"
         },
         {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemViewmodePrintBackMenuItemClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "if (record === undefined) return;\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: '/order/item/refresh',\r",
+                    "    success: function() {\r",
+                    "        that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src=\"/deploy/' + record.data.authkey + '_print_back.pdf\" alt=\"pdf\" style=\"width:100%;height:100%\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
+                    "    },\r",
+                    "    failure: function() {},\r",
+                    "    params: { id: record.data.id, viewmode: 4, refresh: 0}\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.CheckItem",
+                "designer|controlQuery": "#OrderItemViewmodePrintBackMenuItem"
+            },
+            "designerId": "c9d6ef18-fe17-4363-a4a6-0e2c2b13ed68"
+        },
+        {
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -237,13 +268,27 @@
                     "\r",
                     "if (record === undefined) return;\r",
                     "\r",
+                    "var view = null;\r",
+                    "\r",
+                    "menu = this.getOrderItemDetailPanel().getComponent('OrderItemDetailToolbar').getComponent('OrderItemViewmodeButton').menu;\r",
+                    "menu.items.each(function(menuitem){ if(menuitem.checked){view=menuitem;} });\r",
+                    "\r",
+                    "if (view.suffix === undefined || view.suffix === null) {\r",
+                    "\tview.suffix = '';\r",
+                    "}\r",
+                    "\r",
                     "Ext.Ajax.request({\r",
                     "    url: '/order/item/refresh',\r",
+                    "\r",
                     "    success: function() {\r",
-                    "        that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style=\"width:100%;height:100%\" src=\"/deploy/' + record.data.authkey + '.pdf\" alt=\"pdf\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
+                    "        that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src=\"/deploy/' + record.data.authkey + view.suffix + '.pdf?_dc=' + (new Date().getTime()) + '\" alt=\"pdf\" style=\"width:100%;height:100%\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
                     "    },\r",
                     "    failure: function() {},\r",
-                    "    params: { id: record.data.id}\r",
+                    "    params: { \r",
+                    "        id: record.data.id,    \r",
+                    "        viewmode: view.value,\r",
+                    "        refresh: 1\r",
+                    "    }\r",
                     "});"
                 ],
                 "name": "click",
@@ -336,6 +381,99 @@
                 "designer|controlQuery": "#OrderItemstatelogGridPanel"
             },
             "designerId": "81eed936-2c79-4e9c-9efb-478f4fdf124e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemViewmodePreviewFrontMenuItemClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "if (record === undefined) return;\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: '/order/item/refresh',\r",
+                    "    success: function() {\r",
+                    "        that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src=\"/deploy/' + record.data.authkey + '.pdf\" alt=\"pdf\" style=\"width:100%;height:100%\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
+                    "    },\r",
+                    "    failure: function() {},\r",
+                    "    params: { id: record.data.id, viewmode: 1, refresh: 0}\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.CheckItem",
+                "designer|controlQuery": "#OrderItemViewmodePreviewFrontMenuItem"
+            },
+            "designerId": "3498706c-ef27-492b-aa2b-fb2d5d274c68"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemViewmodePreviewBackMenuItemClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "if (record === undefined) return;\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: '/order/item/refresh',\r",
+                    "    success: function() {\r",
+                    "        that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src=\"/deploy/' + record.data.authkey + '_preview_back.pdf\" alt=\"pdf\" style=\"width:100%;height:100%\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
+                    "    },\r",
+                    "    failure: function() {},\r",
+                    "    params: { id: record.data.id, viewmode: 2, refresh: 0}\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.CheckItem",
+                "designer|controlQuery": "#OrderItemViewmodePreviewBackMenuItem"
+            },
+            "designerId": "45757e87-4d07-4262-9543-bbe4a93b8a7f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemViewmodePrintFrontMenuItemClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "if (record === undefined) return;\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: '/order/item/refresh',\r",
+                    "    success: function() {\r",
+                    "        that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src=\"/deploy/' + record.data.authkey + '_print_front.pdf\" alt=\"pdf\" style=\"width:100%;height:100%\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
+                    "    },\r",
+                    "    failure: function() {},\r",
+                    "    params: { id: record.data.id, viewmode: 3, refresh: 0}\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.CheckItem",
+                "designer|controlQuery": "#OrderItemViewmodePrintFrontMenuItem"
+            },
+            "designerId": "b111b195-aff8-4e55-bb10-2a516d67382c"
         }
     ]
 }

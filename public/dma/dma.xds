@@ -651,6 +651,30 @@
                 "app/model/OrderItemstatelogModel.js"
             ],
             "className": "OrderItemstatelogModel"
+        },
+        "a5ab0f7b-0114-45d4-8667-070b66794452": {
+            "paths": [
+                "metadata/store/PartnerAddressInvoiceJsonStore",
+                "app/store/override/PartnerAddressInvoiceJsonStore.js",
+                "app/store/PartnerAddressInvoiceJsonStore.js"
+            ],
+            "className": "PartnerAddressInvoiceJsonStore"
+        },
+        "7b0bcab2-f8f9-4f7f-b7eb-50be31f1d13f": {
+            "paths": [
+                "metadata/store/PartnerAddressDeliveryJsonStore",
+                "app/store/override/PartnerAddressDeliveryJsonStore.js",
+                "app/store/PartnerAddressDeliveryJsonStore.js"
+            ],
+            "className": "PartnerAddressDeliveryJsonStore"
+        },
+        "06771785-0b7d-4336-8620-6d6108579103": {
+            "paths": [
+                "metadata/model/PartnerAddressModel",
+                "app/model/override/PartnerAddressModel.js",
+                "app/model/PartnerAddressModel.js"
+            ],
+            "className": "PartnerAddressModel"
         }
     },
     "viewOrderMap": {
@@ -696,7 +720,9 @@
             "7f36311c-f928-4f3a-9ea4-9317905b8999",
             "84130508-1af0-4278-a88c-97903f1d14ed",
             "328a77aa-1b1f-45cc-aed1-0da238e3c71d",
-            "31b03dd1-ba2d-4dbd-8655-37fcdaabb0ed"
+            "31b03dd1-ba2d-4dbd-8655-37fcdaabb0ed",
+            "a5ab0f7b-0114-45d4-8667-070b66794452",
+            "7b0bcab2-f8f9-4f7f-b7eb-50be31f1d13f"
         ],
         "controller": [
             "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
@@ -739,7 +765,8 @@
             "080042cf-5cd3-4bb0-98df-a0417275eb40",
             "ad4d53dc-c815-4b1f-ad81-4f2bd2d8000e",
             "aec4fe66-ee2e-4a21-a634-e4b48ab481c9",
-            "2847027b-060c-4421-92f1-03ef391c65ba"
+            "2847027b-060c-4421-92f1-03ef391c65ba",
+            "06771785-0b7d-4336-8620-6d6108579103"
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",

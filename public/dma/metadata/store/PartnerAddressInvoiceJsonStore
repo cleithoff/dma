@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "PartnerAddressModel",
+        "remoteFilter": true,
+        "remoteSort": true,
+        "storeId": "PartnerAddressInvoiceJsonStore",
+        "designer|userClassName": "PartnerAddressInvoiceJsonStore"
+    },
+    "designerId": "a5ab0f7b-0114-45d4-8667-070b66794452",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/partner/address/index"
+            },
+            "designerId": "94e99588-2027-4da1-b185-4464d2e14248",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "f98b2dd3-6333-4e1c-8338-8a218ae56a62"
+                }
+            ]
+        }
+    ]
+}

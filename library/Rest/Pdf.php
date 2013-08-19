@@ -16,7 +16,7 @@ class Rest_Pdf {
 	
 	public static function toImage($pdf, $type = 'png') {
 		$pdfbox = 'java -jar ' . APPLICATION_PATH . '/../vendor/pdfbox-app-1.7.1.jar';
-		$exec = $pdfbox . ' PDFToImage -imageType '  . $type . ' ' . $pdf;
+		$exec = $pdfbox . ' PDFToImage -imageType ' . $type . ' ' . $pdf;
 		exec($exec);
 	}
 	

@@ -50,6 +50,8 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
                     buttons: Ext.Msg.OK
                 });
                 if (o.result.success === true) {
+                    var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Bitte warten Sie. Dieser Vorgang kann mehrere Minuten dauern!"});
+                    myMask.show();
                     Ext.Ajax.request({
                         url: '/import/import/order',
                         timeout: 60 * 10 * 1000, // 10 min
@@ -60,11 +62,14 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
                         success: function(response, opts) {
                             //var obj = Ext.decode(response.responseText);
                             //console.dir(obj);
-                            store = Ext.getStore('ImportOrderTreeStore');
+                            store = Ext.getStore('ImportOrderTreeStore');					
                             store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
                             store.reload();
+                            myMask.destroy();
+
                         },
                         failure: function(response, opts) {
+                            myMask.destroy();
                             //console.log('server-side failure with status code ' + response.status);
                         }
                     });
@@ -81,6 +86,9 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
 
     onOrderImportImportButtonClick: function(button, e, eOpts) {
         var that = this;
+
+        var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Bitte warten Sie. Dieser Vorgang kann mehrere Minuten dauern!"});
+        myMask.show();
 
         Ext.Ajax.request({
             url: '/import/order/import',
@@ -101,8 +109,10 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
                 store = Ext.getStore('ImportOrderTreeStore');
                 store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
                 store.reload();
+                myMask.destroy();
             },
             failure: function(response, opts) {
+                myMask.destroy();
                 //console.log('server-side failure with status code ' + response.status);
             }
         });

@@ -132,7 +132,38 @@ Ext.define('MyApp.controller.PartnerAddressPanelController', {
     },
 
     onPartnerAddressInvoiceSaveButtonClick: function(button, e, eOpts) {
+        var that = this;
 
+        store = Ext.getStore('PartnerAddressInvoiceJsonStore');
+        panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerAddressInvoicePanel');
+
+        formPanel = panel.getComponent('PartnerAddressInvoiceFormPanel');
+        toolbar = panel.getComponent('PartnerAddressInvoiceToolbar');
+
+        record = formPanel.getForm().getRecord();
+
+        if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {
+            values = formPanel.getForm().getValues();
+            record.set(values);
+            store.insert(0, record);
+        } else {
+            formPanel.getForm().updateRecord();
+            store.sync();
+        }
+        formPanel.disable();
+        //toolbar.getComponent('OrderItemDetailNewButton').enable();
+        toolbar.getComponent('PartnerAddressInvoiceCancelButton').disable();
+        toolbar.getComponent('PartnerAddressInvoiceSaveButton').disable();
+
+        panel = this.getPartnerPanel();
+
+        if (panel.getComponent('PartnerPartnerGridPanel').getSelectionModel().getSelection().length > 0) {
+            toolbar.getComponent('PartnerAddressInvoiceEditButton').enable();
+            //toolbar.getComponent('OrderItemDetailDeleteButton').enable();
+        } else {
+            toolbar.getComponent('PartnerAddressInvoiceEditButton').disable();
+            //toolbar.getComponent('OrderItemDetailDeleteButton').disable();
+        }
     },
 
     onPartnerAddressInvoiceCancelButtonClick: function(button, e, eOpts) {
@@ -165,7 +196,38 @@ Ext.define('MyApp.controller.PartnerAddressPanelController', {
     },
 
     onPartnerAddressDeliverySaveButtonClick: function(button, e, eOpts) {
+        var that = this;
 
+        store = Ext.getStore('PartnerAddressDeliveryJsonStore');
+        panel = this.getPartnerAddressPanel().getComponent('PartnerAddressTabPanel').getComponent('PartnerAddressDeliveryPanel');
+
+        formPanel = panel.getComponent('PartnerAddressDeliveryFormPanel');
+        toolbar = panel.getComponent('PartnerAddressDeliveryToolbar');
+
+        record = formPanel.getForm().getRecord();
+
+        if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {
+            values = formPanel.getForm().getValues();
+            record.set(values);
+            store.insert(0, record);
+        } else {
+            formPanel.getForm().updateRecord();
+            store.sync();
+        }
+        formPanel.disable();
+        //toolbar.getComponent('OrderItemDetailNewButton').enable();
+        toolbar.getComponent('PartnerAddressDeliveryCancelButton').disable();
+        toolbar.getComponent('PartnerAddressDeliverySaveButton').disable();
+
+        panel = this.getPartnerPanel();
+
+        if (panel.getComponent('PartnerPartnerGridPanel').getSelectionModel().getSelection().length > 0) {
+            toolbar.getComponent('PartnerAddressDeliveryEditButton').enable();
+            //toolbar.getComponent('OrderItemDetailDeleteButton').enable();
+        } else {
+            toolbar.getComponent('PartnerAddressDeliveryEditButton').disable();
+            //toolbar.getComponent('OrderItemDetailDeleteButton').disable();
+        }
     },
 
     onPartnerAddressDeliveryCancelButtonClick: function(button, e, eOpts) {

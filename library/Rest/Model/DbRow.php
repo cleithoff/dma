@@ -3,7 +3,7 @@
 class Rest_Model_DbRow extends Zend_Db_Table_Row_Abstract {
 	
 	protected $_virtual = array();
-	
+
 	public function __get($columnName) {
 		return parent::__get($columnName);
 	}

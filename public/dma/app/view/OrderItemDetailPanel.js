@@ -61,11 +61,55 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                         },
                         {
                             xtype: 'button',
-                            itemId: 'OrderItemDetailRefreshButton',
-                            text: 'Aktualisieren'
+                            itemId: 'OrderItemViewmodeButton',
+                            text: 'Ansicht',
+                            menu: {
+                                xtype: 'menu',
+                                itemId: 'OrderItemViewmodeMenu',
+                                items: [
+                                    {
+                                        xtype: 'menucheckitem',
+                                        value: '1',
+                                        itemId: 'OrderItemViewmodePreviewFrontMenuItem',
+                                        text: 'Preview Front',
+                                        checked: true,
+                                        group: 'viewmodegroup'
+                                    },
+                                    {
+                                        xtype: 'menucheckitem',
+                                        value: '2',
+                                        suffix: '_preview_back',
+                                        itemId: 'OrderItemViewmodePreviewBackMenuItem',
+                                        text: 'Preview Back',
+                                        group: 'viewmodegroup'
+                                    },
+                                    {
+                                        xtype: 'menucheckitem',
+                                        value: '3',
+                                        suffix: '_print_front',
+                                        itemId: 'OrderItemViewmodePrintFrontMenuItem',
+                                        text: 'Print Front',
+                                        group: 'viewmodegroup'
+                                    },
+                                    {
+                                        xtype: 'menucheckitem',
+                                        value: '4',
+                                        suffix: '_print_back',
+                                        itemId: 'OrderItemViewmodePrintBackMenuItem',
+                                        text: 'Print Back',
+                                        group: 'viewmodegroup'
+                                    }
+                                ]
+                            }
                         },
                         {
                             xtype: 'button',
+                            itemId: 'OrderItemDetailRefreshButton',
+                            text: 'PDF Erzeugen'
+                        },
+                        {
+                            xtype: 'button',
+                            hidden: true,
                             itemId: 'OrderItemDetailPreviewButton',
                             text: 'Preview'
                         },

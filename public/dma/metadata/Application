@@ -25,7 +25,8 @@
             "MetadataModel",
             "ReportFilterModel",
             "ImportStackModel",
-            "OrderItemstatelogModel"
+            "OrderItemstatelogModel",
+            "PartnerAddressModel"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -47,7 +48,9 @@
             "MetadataJsonStore",
             "ReportFilterJsonStore",
             "ImportStackJsonStore",
-            "OrderItemstatelogJsonStore"
+            "OrderItemstatelogJsonStore",
+            "PartnerAddressInvoiceJsonStore",
+            "PartnerAddressDeliveryJsonStore"
         ],
         "views": [
             "MainViewport",

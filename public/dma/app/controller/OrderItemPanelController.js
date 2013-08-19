@@ -93,7 +93,17 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
         //formPanel.getForm().loadRecord(record);
         toolbar.getComponent('OrderItemProductPersonalizeNewButton').enable();
 
-        this.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + '.pdf" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+        //# load pdf
+        var view = null;
+
+        menu = this.getOrderItemDetailPanel().getComponent('OrderItemDetailToolbar').getComponent('OrderItemViewmodeButton').menu;
+        menu.items.each(function(menuitem){ if(menuitem.checked){view=menuitem;} });
+
+        if (view.suffix === undefined || view.suffix === null) {
+            view.suffix = '';
+        }
+
+        this.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + view.suffix + '.pdf" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
     },
 
     onOrderItemGridPanelRender: function(component, eOpts) {

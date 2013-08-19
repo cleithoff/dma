@@ -153,7 +153,7 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
         }
     },
 
-    onOrderItemDetailRefreshButtonClick: function(button, e, eOpts) {
+    onOrderItemViewmodePrintBackMenuItemClick: function(item, e, eOpts) {
         var that = this;
         var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];
 
@@ -162,10 +162,40 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
         Ext.Ajax.request({
             url: '/order/item/refresh',
             success: function() {
-                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + '.pdf" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_print_back.pdf" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
             },
             failure: function() {},
-            params: { id: record.data.id}
+            params: { id: record.data.id, viewmode: 4, refresh: 0}
+        });
+    },
+
+    onOrderItemDetailRefreshButtonClick: function(button, e, eOpts) {
+        var that = this;
+        var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];
+
+        if (record === undefined) return;
+
+        var view = null;
+
+        menu = this.getOrderItemDetailPanel().getComponent('OrderItemDetailToolbar').getComponent('OrderItemViewmodeButton').menu;
+        menu.items.each(function(menuitem){ if(menuitem.checked){view=menuitem;} });
+
+        if (view.suffix === undefined || view.suffix === null) {
+            view.suffix = '';
+        }
+
+        Ext.Ajax.request({
+            url: '/order/item/refresh',
+
+            success: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + view.suffix + '.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
+            failure: function() {},
+            params: { 
+                id: record.data.id,    
+                viewmode: view.value,
+                refresh: 1
+            }
         });
     },
 
@@ -208,6 +238,54 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
         this.getOrderItemDetailPanel().getComponent('OrderItemstatelogGridPanel').getComponent('OrderItemstatelogFormPanel').getForm().loadRecord(record);
     },
 
+    onOrderItemViewmodePreviewFrontMenuItemClick: function(item, e, eOpts) {
+        var that = this;
+        var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];
+
+        if (record === undefined) return;
+
+        Ext.Ajax.request({
+            url: '/order/item/refresh',
+            success: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '.pdf" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
+            failure: function() {},
+            params: { id: record.data.id, viewmode: 1, refresh: 0}
+        });
+    },
+
+    onOrderItemViewmodePreviewBackMenuItemClick: function(item, e, eOpts) {
+        var that = this;
+        var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];
+
+        if (record === undefined) return;
+
+        Ext.Ajax.request({
+            url: '/order/item/refresh',
+            success: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_preview_back.pdf" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
+            failure: function() {},
+            params: { id: record.data.id, viewmode: 2, refresh: 0}
+        });
+    },
+
+    onOrderItemViewmodePrintFrontMenuItemClick: function(item, e, eOpts) {
+        var that = this;
+        var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];
+
+        if (record === undefined) return;
+
+        Ext.Ajax.request({
+            url: '/order/item/refresh',
+            success: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_print_front.pdf" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
+            failure: function() {},
+            params: { id: record.data.id, viewmode: 3, refresh: 0}
+        });
+    },
+
     init: function(application) {
         this.control({
             "#OrderItemDetailEditButton": {
@@ -222,6 +300,9 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
             "#OrderItemDetailDeleteButton": {
                 click: this.onOrderItemDetailDeleteButtonClick
             },
+            "#OrderItemViewmodePrintBackMenuItem": {
+                click: this.onOrderItemViewmodePrintBackMenuItemClick
+            },
             "#OrderItemDetailRefreshButton": {
                 click: this.onOrderItemDetailRefreshButtonClick
             },
@@ -233,6 +314,15 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
             },
             "#OrderItemstatelogGridPanel": {
                 select: this.onOrderItemstatelogGridPanelSelect
+            },
+            "#OrderItemViewmodePreviewFrontMenuItem": {
+                click: this.onOrderItemViewmodePreviewFrontMenuItemClick
+            },
+            "#OrderItemViewmodePreviewBackMenuItem": {
+                click: this.onOrderItemViewmodePreviewBackMenuItemClick
+            },
+            "#OrderItemViewmodePrintFrontMenuItem": {
+                click: this.onOrderItemViewmodePrintFrontMenuItemClick
             }
         });
     }

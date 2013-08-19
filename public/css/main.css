@@ -1,0 +1,70 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.container-logo {
+	background-color: #fff;
+}
+
+.span8 .zend_form dt {
+	width:100px;
+}
+
+.span8 .zend_form dd input, .span8 .zend_form dd textarea {
+	width:420px;
+}
+
+.span8 .zend_form dd textarea {
+	height:70px;
+}
+
+.zend_form dt {
+	padding: 5px 6px;
+	float:left;
+}
+
+.zend_form dd {
+	clear:right;
+}
+
+.zend_form fieldset#fieldset-submit dt {
+	float:left;
+	display:none;
+}
+
+.zend_form fieldset#fieldset-submit dd {
+	float:left;
+}
+
+.zend_form fieldset#fieldset-submit dd input[type=submit] {
+	width:100px;
+}
+
+.zend_form dd textarea.error, 
+.zend_form dd input[type="text"].error, 
+.zend_form dd input[type="password"].error, 
+.zend_form dd input[type="datetime"].error, 
+.zend_form dd input[type="datetime-local"].error, 
+.zend_form dd input[type="date"].error, 
+.zend_form dd input[type="month"].error, 
+.zend_form dd input[type="time"].error, 
+.zend_form dd input[type="week"].error, 
+.zend_form dd input[type="number"].error, 
+.zend_form dd input[type="email"].error, 
+.zend_form dd input[type="url"].error, 
+.zend_form dd input[type="search"].error, 
+.zend_form dd input[type="tel"].error, 
+.zend_form dd input[type="color"].error, 
+.zend_form dd .uneditable-input {
+	background-color: #fcc;
+}
+
+.zend_form dd ul.errors {
+	margin-left:110px;
+}
+
+.zend_form dd ul.errors li {
+	display:inline;
+}
