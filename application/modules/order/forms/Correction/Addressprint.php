@@ -3,7 +3,9 @@
 class Order_Form_Correction_Addressprint extends Order_Form_Itemstatecorrection {
 	
 	public function isValid($data) {
-		$result = true;
+		$result = parent::isValid($data);
+		
+		if (!$result) return $result;
 		
 		$firstFound = false;
 		$lines = array();
@@ -30,7 +32,7 @@ class Order_Form_Correction_Addressprint extends Order_Form_Itemstatecorrection 
 			$this->getElement('line' . $j)->setValue($line);
 		}
 		
-		return parent::isValid($data) && $result;
+		return $result;
 	}
 	
 	public function init() {

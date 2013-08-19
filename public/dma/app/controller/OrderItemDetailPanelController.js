@@ -59,12 +59,13 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
 
         record = formPanel.getForm().getRecord();
 
+        /*
         record.store.on('write', function(store,options) {
-            if (record.data.authkey !== null) {
-                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + '.pdf" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
-                // 
-            }
+        if (record.data.authkey !== null) {
+        that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + '.pdf" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">'); 
+        }
         });
+        */
 
         if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {
             values = formPanel.getForm().getValues();

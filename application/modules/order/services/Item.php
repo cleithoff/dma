@@ -274,7 +274,7 @@ class Order_Service_Item
 	 * @param array $values
 	 * @return boolean|Ambigous <mixed, multitype:>
 	 */
-	public function changeState(Order_Model_Item $order_item, $order_itemstate_id, array $values = null) {
+	public function changeState(Order_Model_Item $order_item, $order_itemstate_id, array $values = array()) {
 		if (!$order_item instanceof Order_Model_Item) return false;			
 		$order_item->order_itemstate_id = $order_itemstate_id;
 		$order_item->save();

@@ -115,23 +115,27 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 				
 				$values = $form->getValues();
 				if ($command === 'preview') {
+
 					$this->getService()->createPreview(
 							$order_item,
 							$values,
-							Product_Model_Layout::VIEW_PREVIEW_FRONT
+							Product_Model_Layout::VIEW_PREVIEW_FRONT,
+							true
 					);
 				} else 
 				if ($command === 'correction') {
 					$this->view->result = $this->getService()->changeState(
 							$order_item,
 							Order_Service_Itemstate::ORDER_ITEM_STATE_CORRECTION,
-							$values
+							$values,
+							true
 					);
 				}
 			}			
 		} else {
 			$values = $order_item->getProductPersonalize(); //$this->getService()->getProductPersonalizeValues($order_item);
 		}
+		
 		$form->populate($values);
 		$this->view->form = $form;
 	}
