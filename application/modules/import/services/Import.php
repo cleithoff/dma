@@ -88,6 +88,9 @@ class Import_Service_Import
 			if (empty($data[$key])) {
 				$data[$key] = null;
 			}
+			if (strtolower($value) == 'anzahl') {
+				$data[$key] = str_replace(',', '.', str_replace('.', '', $data[$key]));
+			}
 			$row = array(
 				'partner_nr' => $data[$partner_nr],
 				'key' => $value,
@@ -209,6 +212,9 @@ class Import_Service_Import
 		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql, array($product_item_id))->fetchAll();
 		
 		foreach($rowset as $row) {
+			if (strtolower($row['key']) == 'anzahl') {
+				$row['value'] = str_replace(',', '.', str_replace('.', '', $row['value']));
+			}
 			$sql = 'INSERT INTO import_ordercompare SET `partner_nr` = ?,`key` = ?,`value` = ? ON DUPLICATE KEY UPDATE `value` = ?';
 			Zend_Db_Table::getDefaultAdapter()->query($sql, array($row['partner_nr'],$row['key'],$row['value'],$row['value']));
 		}
