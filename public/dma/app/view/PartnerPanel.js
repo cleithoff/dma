@@ -69,19 +69,37 @@ Ext.define('MyApp.view.PartnerPanel', {
                                     xtype: 'numberfield',
                                     anchor: '100%',
                                     fieldLabel: 'Partner-Nr.',
-                                    name: 'partner_nr'
+                                    name: 'partner_nr',
+                                    listeners: {
+                                        specialkey: {
+                                            fn: me.onNumberfieldSpecialkey,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'numberfield',
                                     anchor: '100%',
                                     fieldLabel: 'Partner ID',
-                                    name: 'id'
+                                    name: 'id',
+                                    listeners: {
+                                        specialkey: {
+                                            fn: me.onNumberfieldSpecialkey1,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
                                     fieldLabel: 'Partner',
-                                    name: 'title'
+                                    name: 'title',
+                                    listeners: {
+                                        specialkey: {
+                                            fn: me.onTextfieldSpecialkey,
+                                            scope: me
+                                        }
+                                    }
                                 },
                                 {
                                     xtype: 'button',
@@ -107,6 +125,33 @@ Ext.define('MyApp.view.PartnerPanel', {
         });
 
         me.callParent(arguments);
+    },
+
+    onNumberfieldSpecialkey: function(field, e, eOpts) {
+        // e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,
+        // e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN
+        if (e.getKey() == e.ENTER) {
+            field.up('form').down('#PartnerPartnerFilterButton').fireEvent('click', field.up('form').down('#PartnerPartnerFilterButton'));
+        }
+
+    },
+
+    onNumberfieldSpecialkey1: function(field, e, eOpts) {
+        // e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,
+        // e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN
+        if (e.getKey() == e.ENTER) {
+            field.up('form').down('#PartnerPartnerFilterButton').fireEvent('click', field.up('form').down('#PartnerPartnerFilterButton'));
+        }
+
+    },
+
+    onTextfieldSpecialkey: function(field, e, eOpts) {
+        // e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,
+        // e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN
+        if (e.getKey() == e.ENTER) {
+            field.up('form').down('#PartnerPartnerFilterButton').fireEvent('click', field.up('form').down('#PartnerPartnerFilterButton'));
+        }
+
     }
 
 });

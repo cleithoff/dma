@@ -179,6 +179,7 @@
             "userConfig": {
                 "itemId": "OrderItemProductPersonalizeGridPanel",
                 "title": null,
+                "columnLines": true,
                 "store": "OrderItemHasProductPersonalizeJsonStore"
             },
             "designerId": "34ab846d-630c-493e-aa6e-7c1e3d3d34be",
@@ -196,6 +197,50 @@
                         "text": "Schlüssel"
                     },
                     "designerId": "117b7301-858c-4096-a103-43d353c93b67"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 70,
+                        "align": "right",
+                        "text": "#Zeichen"
+                    },
+                    "designerId": "1f03cf41-6642-467e-a7c3-ac8fae13025d",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (!Ext.isEmpty(record.data.value, false)) {\r",
+                                    "    return record.data.value.length;\r",
+                                    "}\r",
+                                    "\r",
+                                    "return '';"
+                                ]
+                            },
+                            "designerId": "ea0df34d-0a96-4af4-bec5-5b9a70843829"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",

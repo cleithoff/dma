@@ -72,7 +72,7 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
                                     buttons: Ext.Msg.OK
                                 });
                             } else {	
-                                store = Ext.getStore('ImportOrderTreeStore');					
+                                store = that.getOrderImportPanel().down('#OrderImportGridPanel').getStore(); //Ext.getStore('ImportOrderTreeStore');					
                                 store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
                                 store.reload();
                             }
@@ -117,7 +117,7 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
                 //console.dir(obj);
                 //Ext.getStore('ImportOrderTreeStore').removeAll();
                 //Ext.getStore('ImportOrderTreeStore').sync();
-                store = Ext.getStore('ImportOrderTreeStore');
+                store = that.getOrderImportPanel().down('#OrderImportGridPanel').getStore(); //store = Ext.getStore('ImportOrderTreeStore');
                 store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
                 store.reload();
                 myMask.destroy();
@@ -130,8 +130,10 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
     },
 
     onOrderImportRefreshButtonClick: function(button, e, eOpts) {
-        store = Ext.getStore('ImportOrderTreeStore');
-        store.getProxy().setExtraParam('product_item_id', this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
+        var me = this;
+        //store = Ext.getStore('ImportOrderTreeStore');
+        store = me.getOrderImportPanel().down('#OrderImportGridPanel').getStore();
+        store.getProxy().setExtraParam('product_item_id', me.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
         store.reload();
     },
 

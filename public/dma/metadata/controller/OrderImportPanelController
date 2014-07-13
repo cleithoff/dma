@@ -81,7 +81,7 @@
                     "                            buttons: Ext.Msg.OK\r",
                     "                        });\r",
                     "                    } else {\t\r",
-                    "                        store = Ext.getStore('ImportOrderTreeStore');\t\t\t\t\t\r",
+                    "                        store = that.getOrderImportPanel().down('#OrderImportGridPanel').getStore(); //Ext.getStore('ImportOrderTreeStore');\t\t\t\t\t\r",
                     "                        store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
                     "                        store.reload();\r",
                     "                    }\r",
@@ -156,7 +156,7 @@
                     "        //console.dir(obj);\r",
                     "        //Ext.getStore('ImportOrderTreeStore').removeAll();\r",
                     "        //Ext.getStore('ImportOrderTreeStore').sync();\r",
-                    "        store = Ext.getStore('ImportOrderTreeStore');\r",
+                    "        store = that.getOrderImportPanel().down('#OrderImportGridPanel').getStore(); //store = Ext.getStore('ImportOrderTreeStore');\r",
                     "        store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
                     "        store.reload();\r",
                     "        myMask.destroy();\r",
@@ -184,8 +184,10 @@
             "userConfig": {
                 "fn": "onOrderImportRefreshButtonClick",
                 "implHandler": [
-                    "store = Ext.getStore('ImportOrderTreeStore');\r",
-                    "store.getProxy().setExtraParam('product_item_id', this.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
+                    "var me = this;\r",
+                    "//store = Ext.getStore('ImportOrderTreeStore');\r",
+                    "store = me.getOrderImportPanel().down('#OrderImportGridPanel').getStore();\r",
+                    "store.getProxy().setExtraParam('product_item_id', me.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
                     "store.reload();"
                 ],
                 "name": "click",

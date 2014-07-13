@@ -100,6 +100,7 @@ Ext.define('MyApp.view.OrderItemProductPersonalizePanel', {
                 {
                     xtype: 'gridpanel',
                     itemId: 'OrderItemProductPersonalizeGridPanel',
+                    columnLines: true,
                     store: 'OrderItemHasProductPersonalizeJsonStore',
                     columns: [
                         {
@@ -107,6 +108,19 @@ Ext.define('MyApp.view.OrderItemProductPersonalizePanel', {
                             width: 200,
                             dataIndex: 'key',
                             text: 'Schlüssel'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (!Ext.isEmpty(record.data.value, false)) {
+                                    return record.data.value.length;
+                                }
+
+                                return '';
+                            },
+                            width: 70,
+                            align: 'right',
+                            text: '#Zeichen'
                         },
                         {
                             xtype: 'gridcolumn',

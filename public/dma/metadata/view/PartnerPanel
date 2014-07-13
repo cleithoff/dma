@@ -94,7 +94,31 @@
                                 "fieldLabel": "Partner-Nr.",
                                 "name": "partner_nr"
                             },
-                            "designerId": "d9f9aeb7-a477-4677-a6f9-7d4ed8087429"
+                            "designerId": "d9f9aeb7-a477-4677-a6f9-7d4ed8087429",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onNumberfieldSpecialkey",
+                                        "implHandler": [
+                                            "// e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,\r",
+                                            "// e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN\r",
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    field.up('form').down('#PartnerPartnerFilterButton').fireEvent('click', field.up('form').down('#PartnerPartnerFilterButton'));\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "901a6d2b-9ab1-45fd-8404-65a719729aaa"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -108,7 +132,31 @@
                                 "fieldLabel": "Partner ID",
                                 "name": "id"
                             },
-                            "designerId": "8377e9fb-b938-4fdb-afe0-0429029fc296"
+                            "designerId": "8377e9fb-b938-4fdb-afe0-0429029fc296",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onNumberfieldSpecialkey1",
+                                        "implHandler": [
+                                            "// e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,\r",
+                                            "// e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN\r",
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    field.up('form').down('#PartnerPartnerFilterButton').fireEvent('click', field.up('form').down('#PartnerPartnerFilterButton'));\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "379e9643-09a0-4c4b-890d-cb5efd7cadbf"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -122,7 +170,31 @@
                                 "fieldLabel": "Partner",
                                 "name": "title"
                             },
-                            "designerId": "cad711e1-d0e6-417b-90a6-649b97196461"
+                            "designerId": "cad711e1-d0e6-417b-90a6-649b97196461",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldSpecialkey",
+                                        "implHandler": [
+                                            "// e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,\r",
+                                            "// e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN\r",
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    field.up('form').down('#PartnerPartnerFilterButton').fireEvent('click', field.up('form').down('#PartnerPartnerFilterButton'));\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "e0c91c7b-64a3-4eab-8e82-24c151745d03"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",

@@ -135,7 +135,31 @@
                                 "name": "partner_nr",
                                 "decimalPrecision": 0
                             },
-                            "designerId": "08c5b629-cf3e-4439-9381-67ccf28cbf4c"
+                            "designerId": "08c5b629-cf3e-4439-9381-67ccf28cbf4c",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onNumberfieldSpecialkey",
+                                        "implHandler": [
+                                            "// e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,\r",
+                                            "// e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN\r",
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));\r",
+                                            "}\r",
+                                            ""
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "93ff52e6-5045-47dc-a41a-b85a6057bbca"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -150,7 +174,30 @@
                                 "name": "id",
                                 "decimalPrecision": 0
                             },
-                            "designerId": "6c3459df-c8cb-4ab9-a402-b948cf7e14bd"
+                            "designerId": "6c3459df-c8cb-4ab9-a402-b948cf7e14bd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onNumberfieldSpecialkey1",
+                                        "implHandler": [
+                                            "// e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,\r",
+                                            "// e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN\r",
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));\r",
+                                            "}"
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "a7148e1f-5ca4-4863-b92d-d179f69c089e"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.form.field.Text",
@@ -164,7 +211,30 @@
                                 "fieldLabel": "Partner",
                                 "name": "title"
                             },
-                            "designerId": "6763b3d4-15fa-40e2-9215-109d73141f39"
+                            "designerId": "6763b3d4-15fa-40e2-9215-109d73141f39",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldSpecialkey",
+                                        "implHandler": [
+                                            "// e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,\r",
+                                            "// e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN\r",
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));\r",
+                                            "}"
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "bc27a458-2fa2-4305-b5b7-aa8297eabd9f"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.button.Button",

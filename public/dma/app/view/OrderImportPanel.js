@@ -140,53 +140,53 @@ Ext.define('MyApp.view.OrderImportPanel', {
                         getRowClass: function(record) {
                             if (record.data.leaf !== true) {
                                 for (var idx in record.childNodes) {
-                                    if (record.childNodes[idx].data.druck_anrede_fuer_hg_ng === null) record.childNodes[idx].data.druck_anrede_fuer_hg_ng = "";
-                                    if (record.childNodes[idx].data.druck_hg_name1 === null) record.childNodes[idx].data.druck_hg_name1 = "";
-                                    if (record.childNodes[idx].data.druck_hg_name2 === null) record.childNodes[idx].data.druck_hg_name2 = "";
-                                    if (record.childNodes[idx].data.druck_hg_strasse === null) record.childNodes[idx].data.druck_hg_strasse = "";
-                                    if (record.childNodes[idx].data.druck_hg_plz === null) record.childNodes[idx].data.druck_hg_plz = "";
-                                    if (record.childNodes[idx].data.druck_hg_ort === null) record.childNodes[idx].data.druck_hg_ort = "";
-                                    if (record.childNodes[idx].data.druck_hg_tel === null) record.childNodes[idx].data.druck_hg_tel = "";
-                                    if (record.childNodes[idx].data.druck_ng_name1 === null) record.childNodes[idx].data.druck_ng_name1 = "";
-                                    if (record.childNodes[idx].data.druck_ng_name2 === null) record.childNodes[idx].data.druck_ng_name2 = "";
-                                    if (record.childNodes[idx].data.druck_ng_strasse === null) record.childNodes[idx].data.druck_ng_strasse = "";
-                                    if (record.childNodes[idx].data.druck_ng_plz === null) record.childNodes[idx].data.druck_ng_plz = "";
-                                    if (record.childNodes[idx].data.druck_ng_ort === null) record.childNodes[idx].data.druck_ng_ort = "";
-                                    if (record.childNodes[idx].data.druck_ng_tel === null) record.childNodes[idx].data.druck_ng_tel = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_anrede_fuer_hg_ng)) record.childNodes[idx].data.druck_anrede_fuer_hg_ng = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_hg_name1)) record.childNodes[idx].data.druck_hg_name1 = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_hg_name2)) record.childNodes[idx].data.druck_hg_name2 = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_hg_strasse)) record.childNodes[idx].data.druck_hg_strasse = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_hg_plz)) record.childNodes[idx].data.druck_hg_plz = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_hg_ort)) record.childNodes[idx].data.druck_hg_ort = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_hg_tel)) record.childNodes[idx].data.druck_hg_tel = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_ng_name1)) record.childNodes[idx].data.druck_ng_name1 = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_ng_name2)) record.childNodes[idx].data.druck_ng_name2 = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_ng_strasse)) record.childNodes[idx].data.druck_ng_strasse = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_ng_plz)) record.childNodes[idx].data.druck_ng_plz = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_ng_ort)) record.childNodes[idx].data.druck_ng_ort = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.druck_ng_tel)) record.childNodes[idx].data.druck_ng_tel = "";
 
-                                    if (record.data.druck_anrede_fuer_hg_ng === null) record.data.druck_anrede_fuer_hg_ng = "";
-                                    if (record.data.druck_hg_name1 === null) record.data.druck_hg_name1 = "";
-                                    if (record.data.druck_hg_name2 === null) record.data.druck_hg_name2 = "";
-                                    if (record.data.druck_hg_strasse === null) record.data.druck_hg_strasse = "";
-                                    if (record.data.druck_hg_plz === null) record.data.druck_hg_plz = "";
-                                    if (record.data.druck_hg_ort === null) record.data.druck_hg_ort = "";
-                                    if (record.data.druck_hg_tel === null) record.data.druck_hg_tel = "";
-                                    if (record.data.druck_ng_name1 === null) record.data.druck_ng_name1 = "";
-                                    if (record.data.druck_ng_name2 === null) record.data.druck_ng_name2 = "";
-                                    if (record.data.druck_ng_strasse === null) record.data.druck_ng_strasse = "";
-                                    if (record.data.druck_ng_plz === null) record.data.druck_ng_plz = "";
-                                    if (record.data.druck_ng_ort === null) record.data.druck_ng_ort = "";
-                                    if (record.data.druck_ng_tel === null) record.data.druck_ng_tel = "";
+                                    if (Ext.isEmpty(record.data.druck_anrede_fuer_hg_ng)) record.data.druck_anrede_fuer_hg_ng = "";
+                                    if (Ext.isEmpty(record.data.druck_hg_name1)) record.data.druck_hg_name1 = "";
+                                    if (Ext.isEmpty(record.data.druck_hg_name2)) record.data.druck_hg_name2 = "";
+                                    if (Ext.isEmpty(record.data.druck_hg_strasse)) record.data.druck_hg_strasse = "";
+                                    if (Ext.isEmpty(record.data.druck_hg_plz)) record.data.druck_hg_plz = "";
+                                    if (Ext.isEmpty(record.data.druck_hg_ort)) record.data.druck_hg_ort = "";
+                                    if (Ext.isEmpty(record.data.druck_hg_tel)) record.data.druck_hg_tel = "";
+                                    if (Ext.isEmpty(record.data.druck_ng_name1)) record.data.druck_ng_name1 = "";
+                                    if (Ext.isEmpty(record.data.druck_ng_name2)) record.data.druck_ng_name2 = "";
+                                    if (Ext.isEmpty(record.data.druck_ng_strasse)) record.data.druck_ng_strasse = "";
+                                    if (Ext.isEmpty(record.data.druck_ng_plz)) record.data.druck_ng_plz = "";
+                                    if (Ext.isEmpty(record.data.druck_ng_ort)) record.data.druck_ng_ort = "";
+                                    if (Ext.isEmpty(record.data.druck_ng_tel)) record.data.druck_ng_tel = "";
 
 
                                     if (
-                                    record.childNodes[idx].data.druck_anrede_fuer_hg_ng != record.data.druck_anrede_fuer_hg_ng
-                                    || record.childNodes[idx].data.druck_hg_name1 != record.data.druck_hg_name1
-                                    || record.childNodes[idx].data.druck_hg_name2 != record.data.druck_hg_name2
-                                    || record.childNodes[idx].data.druck_hg_strasse != record.data.druck_hg_strasse
-                                    || record.childNodes[idx].data.druck_hg_plz != record.data.druck_hg_plz
-                                    || record.childNodes[idx].data.druck_hg_ort != record.data.druck_hg_ort
-                                    || record.childNodes[idx].data.druck_hg_tel != record.data.druck_hg_tel
+                                    record.childNodes[idx].data.druck_anrede_fuer_hg_ng.trim() != record.data.druck_anrede_fuer_hg_ng.trim()
+                                    || record.childNodes[idx].data.druck_hg_name1.trim() != record.data.druck_hg_name1.trim()
+                                    || record.childNodes[idx].data.druck_hg_name2.trim() != record.data.druck_hg_name2.trim()
+                                    || record.childNodes[idx].data.druck_hg_strasse.trim() != record.data.druck_hg_strasse.trim()
+                                    || record.childNodes[idx].data.druck_hg_plz.trim() != record.data.druck_hg_plz.trim()
+                                    || record.childNodes[idx].data.druck_hg_ort.trim() != record.data.druck_hg_ort.trim()
+                                    || record.childNodes[idx].data.druck_hg_tel.trim() != record.data.druck_hg_tel.trim()
 
-                                    || record.childNodes[idx].data.druck_ng_name1 != record.data.druck_ng_name1
-                                    || record.childNodes[idx].data.druck_ng_name2 != record.data.druck_ng_name2
-                                    || record.childNodes[idx].data.druck_ng_strasse != record.data.druck_ng_strasse
-                                    || record.childNodes[idx].data.druck_ng_plz != record.data.druck_ng_plz
-                                    || record.childNodes[idx].data.druck_ng_ort != record.data.druck_ng_ort
-                                    || record.childNodes[idx].data.druck_ng_tel != record.data.druck_ng_tel
+                                    || record.childNodes[idx].data.druck_ng_name1.trim() != record.data.druck_ng_name1.trim()
+                                    || record.childNodes[idx].data.druck_ng_name2.trim() != record.data.druck_ng_name2.trim()
+                                    || record.childNodes[idx].data.druck_ng_strasse.trim() != record.data.druck_ng_strasse.trim()
+                                    || record.childNodes[idx].data.druck_ng_plz.trim() != record.data.druck_ng_plz.trim()
+                                    || record.childNodes[idx].data.druck_ng_ort.trim() != record.data.druck_ng_ort.trim()
+                                    || record.childNodes[idx].data.druck_ng_tel.trim() != record.data.druck_ng_tel.trim()
                                     ) {
-                                        console.log(record.childNodes[idx].data);
-                                        console.log(record.data);
+                                        //console.log(record.childNodes[idx].data);
+                                        //console.log(record.data);
                                         return 'conflict';
                                     }
                                 }
