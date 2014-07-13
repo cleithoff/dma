@@ -211,7 +211,7 @@ class Import_Service_Import
 		Zend_Db_Table::getDefaultAdapter()->query('UPDATE import_ordercompare SET value = REPLACE(value,".","") WHERE `key` = "anzahl";');
 		Zend_Db_Table::getDefaultAdapter()->query('UPDATE import_order        SET value = REPLACE(value,".","") WHERE `key` = "anzahl";');
 		
-		Zend_Db_Table::getDefaultAdapter()->query('CALL getLines();');
+		Zend_Db_Table::getDefaultAdapter()->query('CALL generateLines();');
 	}
 
 	private function _getImportAction() {
