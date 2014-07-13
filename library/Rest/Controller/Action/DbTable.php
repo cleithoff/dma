@@ -23,33 +23,42 @@ class Rest_Controller_Action_DbTable extends Zend_Controller_Action
 
     public function indexAction()
     {
-        if($this->getRequest()->getMethod() === 'POST')
-    	{
-    		return $this->_forward('post');
+    	$data = array();
+    	try {
+	        if($this->getRequest()->getMethod() === 'POST')
+	    	{
+	    		$data =  $this->_forward('post');
+	    	}
+	
+	    	if($this->getRequest()->getMethod() === 'GET')
+	    	{
+	    		$data =  $this->_forward('get');
+	    	}
+	    	
+	    	if($this->getRequest()->getMethod() === 'PUT')
+	    	{
+	    		$data =  $this->_forward('put');
+	    	}
+	    	
+	    	if($this->getRequest()->getMethod() === 'DELETE')
+	    	{
+	    		$data =  $this->_forward('delete');
+	    	}
+	    	if($this->getRequest()->getMethod() === 'META')
+	    	{
+	    		$data =  $this->_forward('meta');
+	    	}
+	    	if($this->getRequest()->getMethod() === 'EXPORT')
+	    	{
+	    		$data =  $this->_forward('export');
+	    	}
+    	} catch (Exception $ex) {
+    		// {"message":"Applicationerror","exception":{},"request":{}}
+    		$data = array(
+    				"message" => $ex->getMessage(),
+    				);
     	}
-
-    	if($this->getRequest()->getMethod() === 'GET')
-    	{
-    		return $this->_forward('get');
-    	}
-    	
-    	if($this->getRequest()->getMethod() === 'PUT')
-    	{
-    		return $this->_forward('put');
-    	}
-    	
-    	if($this->getRequest()->getMethod() === 'DELETE')
-    	{
-    		return $this->_forward('delete');
-    	}
-    	if($this->getRequest()->getMethod() === 'META')
-    	{
-    		return $this->_forward('meta');
-    	}
-    	if($this->getRequest()->getMethod() === 'EXPORT')
-    	{
-    		return $this->_forward('export');
-    	}
+    	return $data;
     }
     
     protected function getService() {

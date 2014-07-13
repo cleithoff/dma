@@ -41,7 +41,7 @@ class Import_OrderController extends Rest_Controller_Action_DbTable
 		SELECT 0 as idx, `ppartner`.`partner_nr`, `ppersonalize`.`key`, `oihpp`.`value`, 'personalize' AS origin FROM (
 			SELECT `partner_partner_id`, `order_pool_id` FROM (
 				SELECT `oo`.`partner_partner_id`, `oo`.`order_pool_id`, `oo`.`incoming` FROM `order_order` `oo` 
-				ORDER BY `oo`.`incoming` DESC
+				ORDER BY `oo`.`order_pool_id` /*`oo`.`incoming`*/ DESC
 			) `oo2` GROUP BY `partner_partner_id`
 		) `oo3`
 		INNER JOIN `order_item` `oi` ON `oo3`.`order_pool_id` = `oi`.`order_pool_id` AND `oi`.`product_item_id` = " . $product_item_id . "

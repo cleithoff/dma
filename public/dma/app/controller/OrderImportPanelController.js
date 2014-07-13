@@ -54,17 +54,28 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
                     myMask.show();
                     Ext.Ajax.request({
                         url: '/import/import/order',
-                        timeout: 60 * 10 * 1000, // 10 min
+                        timeout: 60 * 30 * 1000, // 30 min
                         params: {
                             filename: o.result.filename,
                             product_item_id: fp.getComponent('OrderImportItemComboBox').getValue(),
                         },
                         success: function(response, opts) {
-                            //var obj = Ext.decode(response.responseText);
+                            var obj = Ext.decode(response.responseText);
                             //console.dir(obj);
-                            store = Ext.getStore('ImportOrderTreeStore');					
-                            store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
-                            store.reload();
+                            if (obj.success == 0) {
+                                Ext.Msg.show({
+                                    title: 'Fehler',
+                                    msg: obj.message,
+                                    minWidth: 200,
+                                    modal: true,
+                                    icon: Ext.Msg.INFO,
+                                    buttons: Ext.Msg.OK
+                                });
+                            } else {	
+                                store = Ext.getStore('ImportOrderTreeStore');					
+                                store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
+                                store.reload();
+                            }
                             myMask.destroy();
 
                         },

@@ -27,6 +27,7 @@ Ext.define('MyApp.store.OrderItemstatelogJsonStore', {
             defaultSortDirection: 'DESC',
             model: 'MyApp.model.OrderItemstatelogModel',
             remoteSort: true,
+            storeId: 'OrderItemstatelogJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/order/itemstatelog/index',

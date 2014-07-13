@@ -168,11 +168,11 @@ class Import_Service_Import
 	public function loadImportOrder($filename, $product_item_id) {
 		
 		$this->setImportTable(new Import_Model_DbTable_Order());
-		Zend_Db_Table::getDefaultAdapter()->query('DELETE FROM import_ordercompare'); //->execute();
-		Zend_Db_Table::getDefaultAdapter()->query('DELETE FROM import_order'); //->execute();
+		Zend_Db_Table::getDefaultAdapter()->query('TRUNCATE import_ordercompare'); //->execute();
+		Zend_Db_Table::getDefaultAdapter()->query('TRUNCATE import_order'); //->execute();
 		
-		Zend_Db_Table::getDefaultAdapter()->query('ALTER TABLE import_ordercompare AUTO_INCREMENT = 1');
-		Zend_Db_Table::getDefaultAdapter()->query('ALTER TABLE import_order AUTO_INCREMENT = 1');
+		//Zend_Db_Table::getDefaultAdapter()->query('ALTER TABLE import_ordercompare AUTO_INCREMENT = 1');
+		//Zend_Db_Table::getDefaultAdapter()->query('ALTER TABLE import_order AUTO_INCREMENT = 1');
 		
 		$fields = array();
 		$row = 1;
@@ -190,8 +190,32 @@ class Import_Service_Import
 		Zend_Db_Table::getDefaultAdapter()->query('INSERT INTO import_ordercompare SELECT * FROM import_order'); //->execute();
 		
 		// todo: update for used values
+		
 		$sql = "
-		SELECT `ppartner`.`partner_nr`, `pp`.`key`, `oihpp`.`value`, `oo`.`incoming` FROM `product_item` `pi`
+		INSERT IGNORE INTO import_ordercompare (`partner_nr`, `key`, `value`) SELECT `ppartner`.`partner_nr`, `pp`.`key`, `oihpp`.`value` FROM `product_item` `pi`
+		
+		INNER JOIN `product_layout` `pl` ON `pl`.`id` = `pi`.`product_layout_id`
+		INNER JOIN `product_layout_has_product_personalize` `plhpp` ON `plhpp`.`product_layout_id` = `pl`.`id`
+		INNER JOIN `product_personalize` `pp` ON `pp`.`id` = `plhpp`.`product_personalize_id`
+		INNER JOIN `order_item_has_product_personalize` `oihpp` ON `oihpp`.`product_personalize_id` = `pp`.`id`
+		INNER JOIN `order_item` `oi` ON `oihpp`.`order_item_id` = `oi`.`id` 
+		INNER JOIN `order_order` `oo` ON `oo`.`order_pool_id` = `oi`.`order_pool_id` 
+		INNER JOIN `partner_partner` `ppartner` ON `oo`.`partner_partner_id` = `ppartner`.`id` AND (SELECT order_order.order_pool_id FROM order_order WHERE order_order.`partner_partner_id` = `oo`.`partner_partner_id` ORDER BY order_order.order_pool_id DESC LIMIT 1) = oo.order_pool_id
+		INNER JOIN import_ordercompare ON `import_ordercompare`.`partner_nr` = `ppartner`.`partner_nr`
+		
+		WHERE `pi`.`id` = ?
+		GROUP BY `ppartner`.`partner_nr`, `pp`.`key`, `oihpp`.`value`
+		
+		";
+		
+		// ORDER BY `order_pool_id` DESC, `key` ASC
+		Zend_Db_Table::getDefaultAdapter()->query('SET GLOBAL LOG_WARNINGS = 0');
+		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql, array($product_item_id));
+		Zend_Db_Table::getDefaultAdapter()->query('SET GLOBAL LOG_WARNINGS = 1');
+		
+		/*
+		$sql = "
+		SELECT `ppartner`.`partner_nr`, `pp`.`key`, `oihpp`.`value`, `oo`.`incoming`, `oo`.`order_pool_id` FROM `product_item` `pi`
 
 		INNER JOIN `product_layout` `pl` ON `pl`.`id` = `pi`.`product_layout_id`
 		INNER JOIN `product_layout_has_product_personalize` `plhpp` ON `plhpp`.`product_layout_id` = `pl`.`id`
@@ -204,20 +228,25 @@ class Import_Service_Import
 		
 		WHERE `pi`.`id` = ?
 		
-		ORDER BY `incoming` ASC, `key` ASC
+		ORDER BY `order_pool_id` DESC, `key` ASC
 		";
 		
 		
 		
 		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql, array($product_item_id))->fetchAll();
 		
+		Zend_Db_Table::getDefaultAdapter()->query('SET GLOBAL LOG_WARNINGS = 0');
+		
 		foreach($rowset as $row) {
 			if (strtolower($row['key']) == 'anzahl') {
 				$row['value'] = str_replace(',', '.', str_replace('.', '', $row['value']));
 			}
-			$sql = 'INSERT INTO import_ordercompare SET `partner_nr` = ?,`key` = ?,`value` = ? ON DUPLICATE KEY UPDATE `value` = ?';
-			Zend_Db_Table::getDefaultAdapter()->query($sql, array($row['partner_nr'],$row['key'],$row['value'],$row['value']));
+			$sql = 'INSERT IGNORE INTO import_ordercompare SET `partner_nr` = ?,`key` = ?,`value` = ? '; // ON DUPLICATE KEY UPDATE `value` = ?
+			Zend_Db_Table::getDefaultAdapter()->query($sql, array($row['partner_nr'],$row['key'],$row['value'])); //,$row['value']
 		}
+		
+		Zend_Db_Table::getDefaultAdapter()->query('SET GLOBAL LOG_WARNINGS = 1');
+		*/
 	}
 
 	private function _getImportAction() {
