@@ -81,6 +81,12 @@ Ext.define('MyApp.view.ReportReportPanel', {
                             disabled: true,
                             itemId: 'ReportReportExportButton',
                             text: 'Export'
+                        },
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            itemId: 'ReportReportExecuteButton',
+                            text: 'Ausführen'
                         }
                     ]
                 }
@@ -91,7 +97,7 @@ Ext.define('MyApp.view.ReportReportPanel', {
                     region: 'north',
                     split: true,
                     disabled: true,
-                    height: 209,
+                    height: 295,
                     itemId: 'ReportReportFormPanel',
                     bodyPadding: 10,
                     items: [
@@ -112,6 +118,12 @@ Ext.define('MyApp.view.ReportReportPanel', {
                             anchor: '100%',
                             fieldLabel: 'Query',
                             name: 'sql'
+                        },
+                        {
+                            xtype: 'textareafield',
+                            anchor: '100%',
+                            fieldLabel: 'Execute Query',
+                            name: 'execsql'
                         },
                         {
                             xtype: 'textfield',

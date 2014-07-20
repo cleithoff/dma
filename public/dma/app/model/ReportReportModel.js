@@ -31,6 +31,11 @@ Ext.define('MyApp.model.ReportReportModel', {
         },
         {
             name: 'fileprefix'
+        },
+        {
+            name: 'execsql',
+            type: 'string',
+            useNull: true
         }
     ]
 });

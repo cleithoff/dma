@@ -26,7 +26,8 @@
             "ReportFilterModel",
             "ImportStackModel",
             "OrderItemstatelogModel",
-            "PartnerAddressModel"
+            "PartnerAddressModel",
+            "AppHelpModel"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -50,7 +51,9 @@
             "ImportStackJsonStore",
             "OrderItemstatelogJsonStore",
             "PartnerAddressInvoiceJsonStore",
-            "PartnerAddressDeliveryJsonStore"
+            "PartnerAddressDeliveryJsonStore",
+            "ProductProductJsonStore",
+            "AppHelpJsonStore"
         ],
         "views": [
             "MainViewport",
@@ -72,7 +75,8 @@
             "OrderItemPackagePackagePanel",
             "OrderItemProductPersonalizePanel",
             "ReportReportPanel",
-            "ImportExecutePanel"
+            "ImportExecutePanel",
+            "AppHelpPanel"
         ],
         "autoCreateViewport": true,
         "controllers": [
@@ -95,7 +99,8 @@
             "OrderItemPackagePackageController",
             "OrderItemProductPersonalizePanelController",
             "ReportReportPanelController",
-            "ImportExecutePanelController"
+            "ImportExecutePanelController",
+            "AppHelpController"
         ],
         "name": "MyApp"
     },

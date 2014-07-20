@@ -154,6 +154,4 @@ BEGIN
     SET _shift_line = _shift_line - 1;
   END LOOP;
 
-  
-
 END; $$

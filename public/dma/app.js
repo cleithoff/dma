@@ -39,7 +39,8 @@ Ext.application({
         'ReportFilterModel',
         'ImportStackModel',
         'OrderItemstatelogModel',
-        'PartnerAddressModel'
+        'PartnerAddressModel',
+        'AppHelpModel'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -63,7 +64,9 @@ Ext.application({
         'ImportStackJsonStore',
         'OrderItemstatelogJsonStore',
         'PartnerAddressInvoiceJsonStore',
-        'PartnerAddressDeliveryJsonStore'
+        'PartnerAddressDeliveryJsonStore',
+        'ProductProductJsonStore',
+        'AppHelpJsonStore'
     ],
     views: [
         'MainViewport',
@@ -85,7 +88,8 @@ Ext.application({
         'OrderItemPackagePackagePanel',
         'OrderItemProductPersonalizePanel',
         'ReportReportPanel',
-        'ImportExecutePanel'
+        'ImportExecutePanel',
+        'AppHelpPanel'
     ],
     autoCreateViewport: true,
     controllers: [
@@ -108,7 +112,8 @@ Ext.application({
         'OrderItemPackagePackageController',
         'OrderItemProductPersonalizePanelController',
         'ReportReportPanelController',
-        'ImportExecutePanelController'
+        'ImportExecutePanelController',
+        'AppHelpController'
     ],
     name: 'MyApp'
 });

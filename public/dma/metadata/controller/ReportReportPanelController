@@ -35,6 +35,7 @@
                     "toolbar.getComponent('ReportReportPreviewButton').disable();\r",
                     "toolbar.getComponent('ReportReportPrintButton').disable();\r",
                     "toolbar.getComponent('ReportReportExportButton').disable();\r",
+                    "toolbar.getComponent('ReportReportExecuteButton').disable();\r",
                     ""
                 ],
                 "name": "click",
@@ -68,10 +69,11 @@
                     "    toolbar.getComponent('ReportReportCancelButton').enable();\r",
                     "    toolbar.getComponent('ReportReportSaveButton').enable();\r",
                     "    toolbar.getComponent('ReportReportDeleteButton').disable();\r",
-                    "    \r",
+                    "\r",
                     "    toolbar.getComponent('ReportReportPreviewButton').disable();\r",
                     "    toolbar.getComponent('ReportReportPrintButton').disable();\r",
                     "    toolbar.getComponent('ReportReportExportButton').disable();\r",
+                    "    toolbar.getComponent('ReportReportExecuteButton').disable();\r",
                     "}\r",
                     ""
                 ],
@@ -115,7 +117,8 @@
                     "\r",
                     "toolbar.getComponent('ReportReportPreviewButton').enable();\r",
                     "toolbar.getComponent('ReportReportPrintButton').enable();\r",
-                    "toolbar.getComponent('ReportReportExportButton').enable();"
+                    "toolbar.getComponent('ReportReportExportButton').enable();\r",
+                    "toolbar.getComponent('ReportReportExecuteButton').disable();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -147,10 +150,11 @@
                     "    toolbar.getComponent('ReportReportNewButton').enable();\r",
                     "    toolbar.getComponent('ReportReportCancelButton').disable();\r",
                     "    toolbar.getComponent('ReportReportSaveButton').disable();\r",
-                    "    \r",
+                    "\r",
                     "    toolbar.getComponent('ReportReportPreviewButton').enable();\r",
                     "    toolbar.getComponent('ReportReportPrintButton').enable();\r",
-                    "    toolbar.getComponent('ReportReportExportButton').enable();    \r",
+                    "    toolbar.getComponent('ReportReportExportButton').enable();\r",
+                    "\ttoolbar.getComponent('ReportReportExecuteButton').disable();    \r",
                     "}\r",
                     "\r",
                     "if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
@@ -215,6 +219,9 @@
                 "fn": "onReportReportPreviewButtonClick",
                 "implHandler": [
                     "var that = this;\r",
+                    "\r",
+                    "panel = this.getReportReportPanel();\r",
+                    "toolbar = panel.getComponent('ReportReportToolbar');\r",
                     "\r",
                     "filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
                     "\r",
@@ -319,6 +326,7 @@
                     "            ]*/\r",
                     "        });\r",
                     "        that.getReportReportPanel().add(panel);\r",
+                    "        toolbar.getComponent('ReportReportExecuteButton').enable();\r",
                     "    },\r",
                     "    failure: function(response, opts) {\r",
                     "        console.log('server-side failure with status code ' + response.status);\r",
@@ -370,7 +378,7 @@
                     "strParams = '';\r",
                     "\r",
                     "for (var idx in params) {\r",
-                    "\tstrParams = strParams + '&' + idx + '=' + params[idx];\r",
+                    "    strParams = strParams + '&' + idx + '=' + params[idx];\r",
                     "}\r",
                     "\r",
                     "record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];\r",
@@ -413,6 +421,51 @@
                 "xtype": "reportreportpanel"
             },
             "designerId": "993bb329-dac5-4e24-a4f7-3fe0c045c0bb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportExecuteButtonClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "\r",
+                    "panel = that.getReportReportPanel();\r",
+                    "toolbar = panel.getComponent('ReportReportToolbar');\r",
+                    "\r",
+                    "Ext.MessageBox.confirm('Achtung!', 'Soll die Query wirklich ausgeführt werden?', function (btn) {\r",
+                    "    if (btn === 'yes') {\r",
+                    "        filterFormPanel = that.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
+                    "        \r",
+                    "        params = filterFormPanel.getValues();\r",
+                    "        \r",
+                    "        params._sql = that.getReportReportPanel().getComponent('ReportReportFormPanel').getForm().findField('execsql').getValue();\r",
+                    "        \r",
+                    "        Ext.Ajax.request({\r",
+                    "            url: '/report/report/execute',\r",
+                    "            params: params,\r",
+                    "            success: function(response, opts) {\r",
+                    "                that.onReportReportPreviewButtonClick();\r",
+                    "                Ext.MessageBox.alert('', 'Die Query wurde ausgeführt.');\r",
+                    "                toolbar.getComponent('ReportReportExecuteButton').disable();\r",
+                    "            },\r",
+                    "            failure: function(response, opts) {\r",
+                    "                console.log('server-side failure with status code ' + response.status);\r",
+                    "            }\r",
+                    "        });\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportExecuteButton"
+            },
+            "designerId": "e7e64aac-018b-465d-aea0-18d5d3e0a205"
         }
     ]
 }

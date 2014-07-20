@@ -58,7 +58,6 @@ Ext.define('MyApp.controller.ReportPanelController', {
 
             for(var idx in records) {
                 r = records[idx];
-                console.log(r.data);
                 switch(r.data.report_filtertype.key) {
                     case 'combobox':
                     console.log('combobox');
@@ -66,6 +65,14 @@ Ext.define('MyApp.controller.ReportPanelController', {
                     console.log(config);
                     filterFormPanel.add(
                     Ext.create('Ext.form.field.ComboBox', config)
+                    );
+                    break;
+                    case 'datetime':
+                    console.log('datefield');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    filterFormPanel.add(
+                    Ext.create('Ext.form.field.Date', config)
                     );
                     break;
                 }

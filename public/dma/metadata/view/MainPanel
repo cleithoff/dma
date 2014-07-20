@@ -191,6 +191,19 @@
                 "itemId": "AppTabPanel"
             },
             "designerId": "6e42a520-86b5-4421-8f2d-886d68042e61"
+        },
+        {
+            "type": "Ext.panel.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "AppHelpTool",
+                "type": "help"
+            },
+            "designerId": "7a28834d-b827-4202-a336-c4952c5e7cbf"
         }
     ]
 }

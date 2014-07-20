@@ -98,6 +98,13 @@ Ext.define('MyApp.view.MainPanel', {
                     xtype: 'tabpanel',
                     itemId: 'AppTabPanel'
                 }
+            ],
+            tools: [
+                {
+                    xtype: 'tool',
+                    itemId: 'AppHelpTool',
+                    type: 'help'
+                }
             ]
         });
 

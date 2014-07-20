@@ -47,6 +47,7 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
         toolbar.getComponent('ReportReportPreviewButton').disable();
         toolbar.getComponent('ReportReportPrintButton').disable();
         toolbar.getComponent('ReportReportExportButton').disable();
+        toolbar.getComponent('ReportReportExecuteButton').disable();
 
     },
 
@@ -69,6 +70,7 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
             toolbar.getComponent('ReportReportPreviewButton').disable();
             toolbar.getComponent('ReportReportPrintButton').disable();
             toolbar.getComponent('ReportReportExportButton').disable();
+            toolbar.getComponent('ReportReportExecuteButton').disable();
         }
 
     },
@@ -98,6 +100,7 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
         toolbar.getComponent('ReportReportPreviewButton').enable();
         toolbar.getComponent('ReportReportPrintButton').enable();
         toolbar.getComponent('ReportReportExportButton').enable();
+        toolbar.getComponent('ReportReportExecuteButton').disable();
     },
 
     onReportReportCancelButtonClick: function(button, e, eOpts) {
@@ -117,7 +120,8 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
 
             toolbar.getComponent('ReportReportPreviewButton').enable();
             toolbar.getComponent('ReportReportPrintButton').enable();
-            toolbar.getComponent('ReportReportExportButton').enable();    
+            toolbar.getComponent('ReportReportExportButton').enable();
+            toolbar.getComponent('ReportReportExecuteButton').disable();    
         }
 
         if(grid !== undefined && grid.getView().getNodes().length > 0) {
@@ -152,6 +156,9 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
 
     onReportReportPreviewButtonClick: function(button, e, eOpts) {
         var that = this;
+
+        panel = this.getReportReportPanel();
+        toolbar = panel.getComponent('ReportReportToolbar');
 
         filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');
 
@@ -256,6 +263,7 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
                     ]*/
                 });
                 that.getReportReportPanel().add(panel);
+                toolbar.getComponent('ReportReportExecuteButton').enable();
             },
             failure: function(response, opts) {
                 console.log('server-side failure with status code ' + response.status);
@@ -285,6 +293,36 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
         document.location = "/report/report/export?_dc=" + _dc + "&report_report_id=" + record.data.id + strParams;
     },
 
+    onReportReportExecuteButtonClick: function(button, e, eOpts) {
+        var that = this;
+
+        panel = that.getReportReportPanel();
+        toolbar = panel.getComponent('ReportReportToolbar');
+
+        Ext.MessageBox.confirm('Achtung!', 'Soll die Query wirklich ausgeführt werden?', function (btn) {
+            if (btn === 'yes') {
+                filterFormPanel = that.getReportReportPanel().getComponent('ReportFilterFormPanel');
+
+                params = filterFormPanel.getValues();
+
+                params._sql = that.getReportReportPanel().getComponent('ReportReportFormPanel').getForm().findField('execsql').getValue();
+
+                Ext.Ajax.request({
+                    url: '/report/report/execute',
+                    params: params,
+                    success: function(response, opts) {
+                        that.onReportReportPreviewButtonClick();
+                        Ext.MessageBox.alert('', 'Die Query wurde ausgeführt.');
+                        toolbar.getComponent('ReportReportExecuteButton').disable();
+                    },
+                    failure: function(response, opts) {
+                        console.log('server-side failure with status code ' + response.status);
+                    }
+                });
+            }
+        });
+    },
+
     init: function(application) {
         this.control({
             "#ReportReportEditButton": {
@@ -310,6 +348,9 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
             },
             "#ReportReportExportButton": {
                 click: this.onReportReportExportButtonClick
+            },
+            "#ReportReportExecuteButton": {
+                click: this.onReportReportExecuteButtonClick
             }
         });
     }

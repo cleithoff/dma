@@ -675,6 +675,46 @@
                 "app/model/PartnerAddressModel.js"
             ],
             "className": "PartnerAddressModel"
+        },
+        "16cc70e8-13b8-47a5-b55f-fa1bd2770eef": {
+            "paths": [
+                "metadata/store/ProductProductJsonStore",
+                "app/store/override/ProductProductJsonStore.js",
+                "app/store/ProductProductJsonStore.js"
+            ],
+            "className": "ProductProductJsonStore"
+        },
+        "0546824c-ad5e-4f1c-a779-21aa93c744fe": {
+            "paths": [
+                "metadata/store/AppHelpJsonStore",
+                "app/store/override/AppHelpJsonStore.js",
+                "app/store/AppHelpJsonStore.js"
+            ],
+            "className": "AppHelpJsonStore"
+        },
+        "bd8b78fc-0d72-433c-9854-f73579de4d16": {
+            "paths": [
+                "metadata/model/AppHelpModel",
+                "app/model/override/AppHelpModel.js",
+                "app/model/AppHelpModel.js"
+            ],
+            "className": "AppHelpModel"
+        },
+        "4c9779e6-ce77-4acf-aae1-0fa81d51a936": {
+            "paths": [
+                "metadata/view/AppHelpPanel",
+                "app/view/override/AppHelpPanel.js",
+                "app/view/AppHelpPanel.js"
+            ],
+            "className": "AppHelpPanel"
+        },
+        "3f55390b-156a-4a28-a69b-5a89ba3d5d2a": {
+            "paths": [
+                "metadata/controller/AppHelpController",
+                "app/controller/override/AppHelpController.js",
+                "app/controller/AppHelpController.js"
+            ],
+            "className": "AppHelpController"
         }
     },
     "viewOrderMap": {
@@ -698,7 +738,8 @@
             "377dbe86-e24e-4164-a17f-92871eeab996",
             "ce59226c-e8a1-41c2-b726-4c76d72795dc",
             "0a15cfa6-3887-47b6-9f8e-cae60305fce4",
-            "f5188da4-bbf7-4b99-b7f6-e18cf33e11b4"
+            "f5188da4-bbf7-4b99-b7f6-e18cf33e11b4",
+            "4c9779e6-ce77-4acf-aae1-0fa81d51a936"
         ],
         "store": [
             "311f6e01-255b-4244-a8ca-5618f6926b96",
@@ -722,7 +763,9 @@
             "328a77aa-1b1f-45cc-aed1-0da238e3c71d",
             "31b03dd1-ba2d-4dbd-8655-37fcdaabb0ed",
             "a5ab0f7b-0114-45d4-8667-070b66794452",
-            "7b0bcab2-f8f9-4f7f-b7eb-50be31f1d13f"
+            "7b0bcab2-f8f9-4f7f-b7eb-50be31f1d13f",
+            "16cc70e8-13b8-47a5-b55f-fa1bd2770eef",
+            "0546824c-ad5e-4f1c-a779-21aa93c744fe"
         ],
         "controller": [
             "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
@@ -744,7 +787,8 @@
             "1ded70dd-2c31-4bb1-978f-4ac685830c99",
             "b9a0b6d2-8959-4036-8c22-a9a5fa0df6cb",
             "e2dabfde-fd91-4792-861f-4df5e3f31002",
-            "ea9d1853-1267-4fd4-96dd-cae0e3a95d9c"
+            "ea9d1853-1267-4fd4-96dd-cae0e3a95d9c",
+            "3f55390b-156a-4a28-a69b-5a89ba3d5d2a"
         ],
         "model": [
             "86c11719-cac3-4a45-b8ee-9ca742ecbbc3",
@@ -766,7 +810,8 @@
             "ad4d53dc-c815-4b1f-ad81-4f2bd2d8000e",
             "aec4fe66-ee2e-4a21-a634-e4b48ab481c9",
             "2847027b-060c-4421-92f1-03ef391c65ba",
-            "06771785-0b7d-4336-8620-6d6108579103"
+            "06771785-0b7d-4336-8620-6d6108579103",
+            "bd8b78fc-0d72-433c-9854-f73579de4d16"
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",

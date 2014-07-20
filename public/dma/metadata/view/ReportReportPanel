@@ -147,6 +147,21 @@
                         "text": "Export"
                     },
                     "designerId": "0266a3b8-6259-484b-82ee-243c1f161530"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportReportExecuteButton",
+                        "text": "Ausführen"
+                    },
+                    "designerId": "dd2a2e3f-c5af-47c9-a140-6db3419d1372"
                 }
             ]
         },
@@ -161,7 +176,7 @@
                 "layout|region": "north",
                 "layout|split": true,
                 "disabled": true,
-                "height": 209,
+                "height": 295,
                 "itemId": "ReportReportFormPanel",
                 "bodyPadding": 10,
                 "title": null
@@ -209,6 +224,20 @@
                         "name": "sql"
                     },
                     "designerId": "1a7a0f02-314e-4263-86ae-456104e79650"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Execute Query",
+                        "name": "execsql"
+                    },
+                    "designerId": "6534e735-54a8-41db-94b6-61955a47f759"
                 },
                 {
                     "type": "Ext.form.field.Text",

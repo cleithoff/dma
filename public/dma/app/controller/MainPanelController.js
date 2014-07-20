@@ -112,6 +112,12 @@ Ext.define('MyApp.controller.MainPanelController', {
             ref: 'ImportExecutePanel',
             selector: '#ImportExecutePanel',
             xtype: 'importexecutepanel'
+        },
+        {
+            autoCreate: true,
+            ref: 'AppHelpPanel',
+            selector: '#AppHelpPanel',
+            xtype: 'apphelppanel'
         }
     ],
 
@@ -295,6 +301,18 @@ Ext.define('MyApp.controller.MainPanelController', {
         }
     },
 
+    onAppHelpToolClick: function(tool, e, eOpts) {
+        var me = this;
+
+        var panel = me.getMainPanel().getComponent('AppTabPanel').getComponent(this.getAppHelpPanel().ref);
+
+        if (panel === undefined) {
+            me.getMainPanel().getComponent('AppTabPanel').add(this.getAppHelpPanel());
+        }
+
+        me.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getAppHelpPanel());
+    },
+
     init: function(application) {
         this.control({
             "#CloseMenuItem": {
@@ -317,6 +335,9 @@ Ext.define('MyApp.controller.MainPanelController', {
             },
             "#ImportMenuItem": {
                 click: this.onImportMenuItemClick
+            },
+            "#AppHelpTool": {
+                click: this.onAppHelpToolClick
             }
         });
     }

@@ -69,6 +69,20 @@
                 "name": "fileprefix"
             },
             "designerId": "6d80aefd-5e70-4773-908c-51966df79f2b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "execsql",
+                "type": "string",
+                "useNull": true
+            },
+            "designerId": "19c2f349-7e91-4343-aae9-dce08eefca8c"
         }
     ]
 }

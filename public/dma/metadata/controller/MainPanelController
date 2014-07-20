@@ -534,6 +534,48 @@
                 "xtype": "importexecutepanel"
             },
             "designerId": "7bd91dd5-3d08-4517-bef9-2118ad3c83b7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAppHelpToolClick",
+                "implHandler": [
+                    "var me = this;\r",
+                    "\r",
+                    "var panel = me.getMainPanel().getComponent('AppTabPanel').getComponent(this.getAppHelpPanel().ref);\r",
+                    "\r",
+                    "if (panel === undefined) {\r",
+                    "    me.getMainPanel().getComponent('AppTabPanel').add(this.getAppHelpPanel());\r",
+                    "}\r",
+                    "\r",
+                    "me.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getAppHelpPanel());"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "#AppHelpTool"
+            },
+            "designerId": "31f783a1-cad3-437c-af8b-1dba35a5c07c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "AppHelpPanel",
+                "selector": "#AppHelpPanel",
+                "xtype": "apphelppanel"
+            },
+            "designerId": "13a1ef56-264a-46cc-ae5d-e7fa4977974f"
         }
     ]
 }

@@ -150,8 +150,14 @@ class Report_Service_Report
 		
 		$file = $this->writeCsv($fields, $rowset, $types);
 		
-		
 	}
 	
+	public function execute(Zend_Controller_Request_Http $request) {
+	
+		$sql = $this->_getQuery($request->getParam('_sql', null), array(), array(), $request->getParams());
+
+		$result = Zend_Db_Table::getDefaultAdapter()->query($sql);
+		
+	}
 }
 
