@@ -1,0 +1,204 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "itemId": "AppHelpPanel",
+        "width": null,
+        "designer|userClassName": "AppHelpPanel",
+        "designer|userAlias": "apphelppanel",
+        "layout": "border",
+        "closable": true,
+        "closeAction": "hide",
+        "title": "Hilfe und Dokumentation"
+    },
+    "designerId": "4c9779e6-ce77-4acf-aae1-0fa81d51a936",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "AppHelpToolbar"
+            },
+            "designerId": "099d6883-b8ad-43f1-9777-fd4b7a789f96",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "AppHelpEditButton",
+                        "text": "Bearbeiten"
+                    },
+                    "designerId": "c824b59f-758b-45ec-b1e1-ce71dc8e167e"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "AppHelpNewButton",
+                        "text": "Neu"
+                    },
+                    "designerId": "3211bfbb-a433-4b22-bc9a-5767efcb9813"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "AppHelpSaveButton",
+                        "text": "Speichern"
+                    },
+                    "designerId": "5f531a2c-bbef-40a8-9005-1be92bd79a00"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "AppHelpCancelButton",
+                        "text": "Abbrechen"
+                    },
+                    "designerId": "fd29920a-1d48-42ad-bcb7-6b507735be06"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "AppHelpDeleteButton",
+                        "text": "Löschen"
+                    },
+                    "designerId": "d0b5eca3-70ac-4694-bee6-5a1e5d3ab11a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "layout|split": true,
+                "itemId": "AppHelpGridPanel",
+                "width": 150,
+                "title": null,
+                "store": "AppHelpJsonStore"
+            },
+            "designerId": "e23f2e3b-d09e-4b9f-92ed-465124796af3",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "title",
+                        "text": "Thema",
+                        "flex": 1
+                    },
+                    "designerId": "3b6b2b96-8c07-4942-8210-d5744d4fdc87"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "d5c71915-5210-4e01-9b59-b8339e430559"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "layout|split": true,
+                "container|align": "stretch",
+                "disabled": true,
+                "itemId": "AppHelpFormPanel",
+                "layout": "vbox",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "46e7d9e9-76fb-4447-a474-82bdd6d190c9",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Title",
+                        "name": "title"
+                    },
+                    "designerId": "55f029bf-60d3-411c-8d4f-4efccca1cd9c"
+                },
+                {
+                    "type": "Ext.form.field.HtmlEditor",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "height": 436,
+                        "itemId": "text",
+                        "fieldLabel": "Beschreibung",
+                        "name": "text"
+                    },
+                    "designerId": "1aa46d5b-4e96-4acf-ab04-892740ef54c0"
+                }
+            ]
+        }
+    ]
+}

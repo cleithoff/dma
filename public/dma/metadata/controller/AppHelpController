@@ -1,0 +1,260 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AppHelpController"
+    },
+    "designerId": "3f55390b-156a-4a28-a69b-5a89ba3d5d2a",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "AppHelpPanel",
+                "selector": "#AppHelpPanel",
+                "xtype": "apphelppanel"
+            },
+            "designerId": "6d30d516-43a5-4e05-86c4-7c4b8cb292b8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAppHelpEditButtonClick",
+                "implHandler": [
+                    "panel = this.getAppHelpPanel();\r",
+                    "\r",
+                    "formPanel = panel.down('#AppHelpFormPanel');\r",
+                    "toolbar = panel.down('#AppHelpToolbar');\r",
+                    "formPanel.enable();\r",
+                    "\r",
+                    "toolbar.getComponent('AppHelpEditButton').disable();\r",
+                    "toolbar.getComponent('AppHelpNewButton').disable();\r",
+                    "toolbar.getComponent('AppHelpCancelButton').enable();\r",
+                    "toolbar.getComponent('AppHelpSaveButton').enable();\r",
+                    "toolbar.getComponent('AppHelpDeleteButton').disable();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AppHelpEditButton"
+            },
+            "designerId": "2ec58d16-dab1-4d0c-a1a8-fc5c077df506"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAppHelpNewButtonClick",
+                "implHandler": [
+                    "var me = this;\r",
+                    "\r",
+                    "var panel = me.getAppHelpPanel();\r",
+                    "\r",
+                    "var formPanel = panel.down('#AppHelpFormPanel');\r",
+                    "var toolbar = panel.down('#AppHelpToolbar');\r",
+                    "var grid = panel.getComponent('AppHelpGridPanel');\r",
+                    "\r",
+                    "store = grid.getStore();\r",
+                    "\r",
+                    "if (store !== undefined) {\r",
+                    "    formPanel.enable();\r",
+                    "    record = new store.model();\r",
+                    "    formPanel.loadRecord(record);\r",
+                    "    toolbar.getComponent('AppHelpEditButton').disable();\r",
+                    "    toolbar.getComponent('AppHelpNewButton').disable();\r",
+                    "    toolbar.getComponent('AppHelpCancelButton').enable();\r",
+                    "    toolbar.getComponent('AppHelpSaveButton').enable();\r",
+                    "    toolbar.getComponent('AppHelpDeleteButton').disable();\r",
+                    "\r",
+                    "}\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AppHelpNewButton"
+            },
+            "designerId": "28426b15-d117-4a1e-9459-8a99b409204b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAppHelpSaveButtonClick",
+                "implHandler": [
+                    "var me = this;\r",
+                    "\r",
+                    "var panel = me.getAppHelpPanel();\r",
+                    "\r",
+                    "var grid = panel.getComponent('AppHelpGridPanel');\r",
+                    "var store = grid.getStore();\r",
+                    "\r",
+                    "var formPanel = panel.getComponent('AppHelpFormPanel');\r",
+                    "var toolbar = panel.getComponent('AppHelpToolbar');\r",
+                    "\r",
+                    "var record = formPanel.getForm().getRecord();\r",
+                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                    "    values = formPanel.getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "} else {\r",
+                    "    formPanel.getForm().updateRecord();\r",
+                    "}\r",
+                    "formPanel.disable();\r",
+                    "\r",
+                    "toolbar.getComponent('AppHelpEditButton').enable();\r",
+                    "toolbar.getComponent('AppHelpNewButton').enable();\r",
+                    "toolbar.getComponent('AppHelpCancelButton').disable();\r",
+                    "toolbar.getComponent('AppHelpSaveButton').disable();\r",
+                    "toolbar.getComponent('AppHelpDeleteButton').enable();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AppHelpSaveButton"
+            },
+            "designerId": "b12b4bc1-14fb-4abe-9d79-d4c3d2b5deb4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAppHelpCancelButtonClick",
+                "implHandler": [
+                    "var me = this;\r",
+                    "\r",
+                    "var panel = me.getAppHelpPanel();\r",
+                    "var grid = panel.getComponent('AppHelpGridPanel');\r",
+                    "\r",
+                    "var formPanel = panel.getComponent('AppHelpFormPanel');\r",
+                    "var toolbar = panel.getComponent('AppHelpToolbar');\r",
+                    "var record = formPanel.getForm().getRecord();\t\t\t\t\t\t\t\t\r",
+                    "if (record !== undefined) {\r",
+                    "    formPanel.getForm().reset();\r",
+                    "    formPanel.disable();\r",
+                    "    toolbar.getComponent('AppHelpEditButton').enable();\r",
+                    "    toolbar.getComponent('AppHelpNewButton').enable();\r",
+                    "    toolbar.getComponent('AppHelpCancelButton').disable();\r",
+                    "    toolbar.getComponent('AppHelpSaveButton').disable();  \r",
+                    "    toolbar.getComponent('AppHelpDeleteButton').disable(); \r",
+                    "}\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "    grid.getView().select(0);\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AppHelpCancelButton"
+            },
+            "designerId": "9b1af37a-b7aa-4a1c-9900-9ea4604138db"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAppHelpDeleteButtonClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "\r",
+                    "var panel = that.getAppHelpPanel();\r",
+                    "\r",
+                    "var formPanel = panel.getComponent('AppHelpFormPanel');\r",
+                    "var toolbar = panel.getComponent('AppHelpToolbar');\r",
+                    "var grid = panel.getComponent('AppHelpGridPanel');\r",
+                    "var store = grid.getStore();\r",
+                    "\r",
+                    "Ext.Msg.confirm('Achtung!', 'Datensatz löschen?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "\r",
+                    "        toolbar.getComponent('AppHelpEditButton').disable();\r",
+                    "        toolbar.getComponent('AppHelpNewButton').disable();\r",
+                    "        toolbar.getComponent('AppHelpCancelButton').disable();\r",
+                    "        toolbar.getComponent('AppHelpSaveButton').disable();\r",
+                    "        toolbar.getComponent('AppHelpDeleteButton').disable();\r",
+                    "        \r",
+                    "        record = formPanel.getForm().getRecord();\r",
+                    "        if (store !== undefined && record !== undefined) {\r",
+                    "            store.remove(record);\r",
+                    "            formPanel.getForm().reset();\r",
+                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "                grid.getView().select(0);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#AppHelpDeleteButton"
+            },
+            "designerId": "b18b2b0a-f48d-4181-a0f0-4dafbaa9ce9b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAppHelpGridPanelSelect",
+                "implHandler": [
+                    "var that = this;\r",
+                    "\r",
+                    "var panel = that.getAppHelpPanel();\r",
+                    "var formPanel = panel.getComponent('AppHelpFormPanel');\r",
+                    "var toolbar = panel.getComponent('AppHelpToolbar');\r",
+                    "\r",
+                    "formPanel.getForm().loadRecord(record);\r",
+                    "\r",
+                    "toolbar.getComponent('AppHelpEditButton').enable();\r",
+                    "toolbar.getComponent('AppHelpNewButton').enable();\r",
+                    "toolbar.getComponent('AppHelpCancelButton').disable();\r",
+                    "toolbar.getComponent('AppHelpSaveButton').disable();\r",
+                    "toolbar.getComponent('AppHelpDeleteButton').enable();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#AppHelpGridPanel"
+            },
+            "designerId": "2c176750-c653-4d50-b8ca-dc7a9a9ffcbb"
+        }
+    ]
+}
