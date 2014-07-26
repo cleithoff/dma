@@ -19,7 +19,7 @@ class Package_Service_Package
 	
 	public function createPackages($order_item_id, $haspos, $weightpos) {
 		
-		$method = 'createPackagesFleurop';
+		//$method = 'createPackagesFleurop2011';
 		
 		$orderItem = new Order_Model_DbTable_Item();
 		$productItem = new Product_Model_DbTable_Item();
@@ -31,7 +31,9 @@ class Package_Service_Package
 		$productProductRow = $productProduct->find($productItemRow->product_product_id)->current();
 		$productPackageRow = $productPackage->find($productProductRow->productPackageRow)->current();
 
-		$this->$method($productPackageRow->method, $haspos, $weightpos);
+		$method = $productPackageRow->method;
+		
+		$this->$method($order_item_id, $haspos, $weightpos);
 		
 	}
 	
