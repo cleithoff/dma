@@ -397,7 +397,7 @@
                             "userConfig": {
                                 "fn": "onOrderItemDetailSendButtonAfterRender",
                                 "implHandler": [
-                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.PUBLISH));"
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.RELEASE));"
                                 ],
                                 "name": "afterrender",
                                 "scope": "me"

@@ -291,7 +291,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
     },
 
     onOrderItemDetailSendButtonAfterRender: function(component, eOpts) {
-        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.PUBLISH));
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.RELEASE));
     }
 
 });
