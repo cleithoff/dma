@@ -755,6 +755,12 @@
                 "app/model/ActiveUserResourceModel.js"
             ],
             "className": "ActiveUserResourceModel"
+        },
+        "27ebc538-d6af-48bc-92d7-44bd0921686a": {
+            "paths": [
+                "metadata/resource/js"
+            ],
+            "className": "js"
         }
     },
     "viewOrderMap": {
@@ -860,7 +866,8 @@
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",
-            "19aac798-033b-4d49-91d0-9839bb23dfe7"
+            "19aac798-033b-4d49-91d0-9839bb23dfe7",
+            "27ebc538-d6af-48bc-92d7-44bd0921686a"
         ],
         "app": [
             "application"
