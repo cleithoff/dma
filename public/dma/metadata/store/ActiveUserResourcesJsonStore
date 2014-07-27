@@ -1,0 +1,15 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "ActiveUserResourceModel",
+        "storeId": "ActiveUserResourcesJsonStore",
+        "designer|userClassName": "ActiveUserResourcesJsonStore",
+        "singleton": true
+    },
+    "designerId": "fdea1909-89d6-443d-9d2e-8cc5f9f32d6a"
+}

@@ -1,0 +1,84 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ActiveUserResourceModel"
+    },
+    "designerId": "a6ab9f57-9d79-413b-9b13-435f4d4d0af4",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "persist": false,
+                "type": "int"
+            },
+            "designerId": "195ac7fb-6c63-4b39-b5e6-187043c44510"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "persist": false,
+                "type": "string"
+            },
+            "designerId": "a91c0127-3a28-4921-b90b-6d22765b6c91"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "slug",
+                "persist": false,
+                "type": "string"
+            },
+            "designerId": "c589aadb-d0e5-4400-a49a-42d537e16816"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "allow",
+                "persist": false,
+                "type": "int"
+            },
+            "designerId": "0474b4ef-e9a4-4f5a-a0b2-b27491834c87"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "deny",
+                "persist": false,
+                "type": "int"
+            },
+            "designerId": "38a20683-ca66-4c1d-9a00-5ce3b5ee15aa"
+        }
+    ]
+}

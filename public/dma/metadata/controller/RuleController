@@ -1,0 +1,111 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "rights": [
+            "{\r",
+            "    CREATE: 1,\r",
+            "    READ: 2,\r",
+            "    UPDATE: 4,\r",
+            "    DELETE: 8,\r",
+            "    EXECUTE: 16,\r",
+            "    RELEASE: 32\r",
+            "}"
+        ],
+        "designer|userClassName": "RuleController"
+    },
+    "configAlternates": {
+        "rights": "object"
+    },
+    "designerId": "122ee99e-cf98-44d0-8dee-c1236e5399da",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "rights",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "allow",
+                "designer|params": [
+                    "resource",
+                    "right"
+                ],
+                "implHandler": [
+                    "var me = this;\r",
+                    "var store = Ext.getStore('ActiveUserResourcesJsonStore');\r",
+                    "\r",
+                    "if (Ext.isEmpty(resource)) return true;\r",
+                    "\r",
+                    "var rule = store.findRecord('slug', resource);\r",
+                    "\r",
+                    "if (Ext.isEmpty(rule)) return false;\r",
+                    "\r",
+                    "return (right & rule.data.allow & ~rule.data.deny) > 0;\r",
+                    ""
+                ]
+            },
+            "designerId": "c7c5bbbe-800a-4171-9330-2e355c5faeba"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ruleMainMenuItems",
+                "implHandler": [
+                    "var me = this;\r",
+                    "\r",
+                    "var mainPanel = me.getMainPanel();\r",
+                    "\r",
+                    "var menuitems = mainPanel.down('#MainToolbar').query('menuitem');\r",
+                    "\r",
+                    "for(var idx in menuitems) {\r",
+                    "    if (!me.allow(menuitems[idx].itemId, me.rights.READ)) {\r",
+                    "        menuitems[idx].destroy();\r",
+                    "    }\r",
+                    "}\r",
+                    "\r",
+                    "var buttons = mainPanel.down('#MainToolbar').query('button');\r",
+                    "\r",
+                    "for(idx in buttons) {\r",
+                    "    if (!me.allow(buttons[idx].itemId, me.rights.READ)) {\r",
+                    "        buttons[idx].destroy();\r",
+                    "    }\r",
+                    "}"
+                ]
+            },
+            "designerId": "c3af1e83-f0a0-4064-a4cf-1136b2670de5"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "MainPanel",
+                "selector": "#MainPanel",
+                "xtype": "mainpanel"
+            },
+            "designerId": "dc61ebd5-6041-4be4-8978-b95c0ce85cde"
+        }
+    ]
+}
