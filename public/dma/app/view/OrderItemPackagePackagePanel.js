@@ -36,25 +36,49 @@ Ext.define('MyApp.view.OrderItemPackagePackagePanel', {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemPackagePackageEditButton',
-                            text: 'Bearbeiten'
+                            text: 'Bearbeiten',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemPackagePackageEditButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemPackagePackageSaveButton',
-                            text: 'Speichern'
+                            text: 'Speichern',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemPackagePackageSaveButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemPackagePackageCancelButton',
-                            text: 'Abbrechen'
+                            text: 'Abbrechen',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemPackagePackageCancelButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemPackagePackageDeleteButton',
-                            text: 'Löschen'
+                            text: 'Löschen',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemPackagePackageDeleteButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -150,6 +174,22 @@ Ext.define('MyApp.view.OrderItemPackagePackagePanel', {
         });
 
         me.callParent(arguments);
+    },
+
+    onOrderItemPackagePackageEditButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemPackagePackagePanel', MyApp.app.getRuleControllerController().rights.UPDATE));
+    },
+
+    onOrderItemPackagePackageSaveButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemPackagePackagePanel', MyApp.app.getRuleControllerController().rights.UPDATE));
+    },
+
+    onOrderItemPackagePackageCancelButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemPackagePackagePanel', MyApp.app.getRuleControllerController().rights.UPDATE));
+    },
+
+    onOrderItemPackagePackageDeleteButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemPackagePackagePanel', MyApp.app.getRuleControllerController().rights.DELETE));
     }
 
 });

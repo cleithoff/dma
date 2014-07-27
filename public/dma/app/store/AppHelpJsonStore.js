@@ -29,6 +29,7 @@ Ext.define('MyApp.store.AppHelpJsonStore', {
             model: 'MyApp.model.AppHelpModel',
             remoteFilter: true,
             remoteSort: true,
+            storeId: 'AppHelpJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/app/help/index',

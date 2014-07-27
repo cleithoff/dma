@@ -715,11 +715,52 @@
                 "app/controller/AppHelpController.js"
             ],
             "className": "AppHelpController"
+        },
+        "cf16158a-8e1d-4a94-be65-403c72deb657": {
+            "paths": [
+                "metadata/view/LoginPanel",
+                "app/view/override/LoginPanel.js",
+                "app/view/LoginPanel.js"
+            ],
+            "className": "LoginPanel"
+        },
+        "b2c759a9-181b-40c8-82a7-84c3d423940c": {
+            "paths": [
+                "metadata/model/UserRessourceModel",
+                "app/model/override/UserRessourceModel.js",
+                "app/model/UserRessourceModel.js"
+            ],
+            "className": "UserRessourceModel"
+        },
+        "fdea1909-89d6-443d-9d2e-8cc5f9f32d6a": {
+            "paths": [
+                "metadata/store/ActiveUserResourcesJsonStore",
+                "app/store/override/ActiveUserResourcesJsonStore.js",
+                "app/store/ActiveUserResourcesJsonStore.js"
+            ],
+            "className": "ActiveUserResourcesJsonStore"
+        },
+        "122ee99e-cf98-44d0-8dee-c1236e5399da": {
+            "paths": [
+                "metadata/controller/RuleController",
+                "app/controller/override/RuleController.js",
+                "app/controller/RuleController.js"
+            ],
+            "className": "RuleController"
+        },
+        "a6ab9f57-9d79-413b-9b13-435f4d4d0af4": {
+            "paths": [
+                "metadata/model/ActiveUserResourceModel",
+                "app/model/override/ActiveUserResourceModel.js",
+                "app/model/ActiveUserResourceModel.js"
+            ],
+            "className": "ActiveUserResourceModel"
         }
     },
     "viewOrderMap": {
         "view": [
             "3447828b-4f98-4aea-b758-9b8484185428",
+            "cf16158a-8e1d-4a94-be65-403c72deb657",
             "bbff63a5-d698-449a-bf19-156d728846dc",
             "5678f623-0c0b-4369-a7f1-c8b30a10696b",
             "f7ad03d6-bc4b-403b-9019-7619555680dc",
@@ -765,7 +806,8 @@
             "a5ab0f7b-0114-45d4-8667-070b66794452",
             "7b0bcab2-f8f9-4f7f-b7eb-50be31f1d13f",
             "16cc70e8-13b8-47a5-b55f-fa1bd2770eef",
-            "0546824c-ad5e-4f1c-a779-21aa93c744fe"
+            "0546824c-ad5e-4f1c-a779-21aa93c744fe",
+            "fdea1909-89d6-443d-9d2e-8cc5f9f32d6a"
         ],
         "controller": [
             "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
@@ -788,7 +830,8 @@
             "b9a0b6d2-8959-4036-8c22-a9a5fa0df6cb",
             "e2dabfde-fd91-4792-861f-4df5e3f31002",
             "ea9d1853-1267-4fd4-96dd-cae0e3a95d9c",
-            "3f55390b-156a-4a28-a69b-5a89ba3d5d2a"
+            "3f55390b-156a-4a28-a69b-5a89ba3d5d2a",
+            "122ee99e-cf98-44d0-8dee-c1236e5399da"
         ],
         "model": [
             "86c11719-cac3-4a45-b8ee-9ca742ecbbc3",
@@ -811,7 +854,9 @@
             "aec4fe66-ee2e-4a21-a634-e4b48ab481c9",
             "2847027b-060c-4421-92f1-03ef391c65ba",
             "06771785-0b7d-4336-8620-6d6108579103",
-            "bd8b78fc-0d72-433c-9854-f73579de4d16"
+            "bd8b78fc-0d72-433c-9854-f73579de4d16",
+            "b2c759a9-181b-40c8-82a7-84c3d423940c",
+            "a6ab9f57-9d79-413b-9b13-435f4d4d0af4"
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",

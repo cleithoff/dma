@@ -40,7 +40,9 @@ Ext.application({
         'ImportStackModel',
         'OrderItemstatelogModel',
         'PartnerAddressModel',
-        'AppHelpModel'
+        'AppHelpModel',
+        'UserRessourceModel',
+        'ActiveUserResourceModel'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -66,7 +68,8 @@ Ext.application({
         'PartnerAddressInvoiceJsonStore',
         'PartnerAddressDeliveryJsonStore',
         'ProductProductJsonStore',
-        'AppHelpJsonStore'
+        'AppHelpJsonStore',
+        'ActiveUserResourcesJsonStore'
     ],
     views: [
         'MainViewport',
@@ -89,7 +92,8 @@ Ext.application({
         'OrderItemProductPersonalizePanel',
         'ReportReportPanel',
         'ImportExecutePanel',
-        'AppHelpPanel'
+        'AppHelpPanel',
+        'LoginPanel'
     ],
     autoCreateViewport: true,
     controllers: [
@@ -113,7 +117,22 @@ Ext.application({
         'OrderItemProductPersonalizePanelController',
         'ReportReportPanelController',
         'ImportExecutePanelController',
-        'AppHelpController'
+        'AppHelpController',
+        'RuleController'
     ],
-    name: 'MyApp'
+    name: 'MyApp',
+
+    launch: function() {
+        Ext.override(Ext.data.Record, {
+            forceDirty: function(name, value) {
+                var me = this;
+                if (Ext.isEmpty(value)) {
+                    value = me.get(name);
+                }
+                me.set(name, 'forced dirty');
+                me.set(name, value);
+            }
+        });
+    }
+
 });

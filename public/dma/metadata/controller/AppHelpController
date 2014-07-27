@@ -206,7 +206,7 @@
                     "        toolbar.getComponent('AppHelpCancelButton').disable();\r",
                     "        toolbar.getComponent('AppHelpSaveButton').disable();\r",
                     "        toolbar.getComponent('AppHelpDeleteButton').disable();\r",
-                    "        \r",
+                    "\r",
                     "        record = formPanel.getForm().getRecord();\r",
                     "        if (store !== undefined && record !== undefined) {\r",
                     "            store.remove(record);\r",

@@ -168,7 +168,24 @@ Ext.define('MyApp.view.OrderImportPanel', {
                                     if (Ext.isEmpty(record.data.druck_ng_ort)) record.data.druck_ng_ort = "";
                                     if (Ext.isEmpty(record.data.druck_ng_tel)) record.data.druck_ng_tel = "";
 
-
+                                    /*
+                                    if (record.childNodes[idx].data.druck_anrede_fuer_hg_ng.trim() != record.data.druck_anrede_fuer_hg_ng.trim()) {
+                                    record.forceDirty('druck_anrede_fuer_hg_ng');
+                                    record.childNodes[idx].forceDirty('');
+                                    }
+                                    if (record.childNodes[idx].data.druck_hg_name1.trim() != record.data.druck_hg_name1.trim()) {record.forceDirty('druck_hg_name1');record.childNodes[idx].forceDirty('druck_hg_name1');}
+                                    if (record.childNodes[idx].data.druck_hg_name2.trim() != record.data.druck_hg_name2.trim()) {record.forceDirty('druck_hg_name2');record.childNodes[idx].forceDirty('druck_hg_name2');}
+                                    if (record.childNodes[idx].data.druck_hg_strasse.trim() != record.data.druck_hg_strasse.trim()) {record.forceDirty('druck_hg_strasse');record.childNodes[idx].forceDirty('druck_hg_strasse');}
+                                    if (record.childNodes[idx].data.druck_hg_plz.trim() != record.data.druck_hg_plz.trim()) {record.forceDirty('druck_hg_plz');record.childNodes[idx].forceDirty('druck_hg_plz');}
+                                    if (record.childNodes[idx].data.druck_hg_ort.trim() != record.data.druck_hg_ort.trim()) {record.forceDirty('druck_hg_ort');record.childNodes[idx].forceDirty('druck_hg_ort');}
+                                    if (record.childNodes[idx].data.druck_hg_tel.trim() != record.data.druck_hg_tel.trim()) {record.forceDirty('druck_hg_tel');record.childNodes[idx].forceDirty('druck_hg_tel');}
+                                    if (record.childNodes[idx].data.druck_ng_name1.trim() != record.data.druck_ng_name1.trim()) {record.forceDirty('druck_ng_name1');record.childNodes[idx].forceDirty('druck_ng_name1');}
+                                    if (record.childNodes[idx].data.druck_ng_name2.trim() != record.data.druck_ng_name2.trim()) {record.forceDirty('druck_ng_name2');record.childNodes[idx].forceDirty('druck_ng_name2');}
+                                    if (record.childNodes[idx].data.druck_ng_strasse.trim() != record.data.druck_ng_strasse.trim()) {record.forceDirty('druck_ng_strasse');record.childNodes[idx].forceDirty('druck_ng_strasse');}
+                                    if (record.childNodes[idx].data.druck_ng_plz.trim() != record.data.druck_ng_plz.trim()) {record.forceDirty('druck_ng_plz');record.childNodes[idx].forceDirty('druck_ng_plz');}
+                                    if (record.childNodes[idx].data.druck_ng_ort.trim() != record.data.druck_ng_ort.trim()) {record.forceDirty('druck_ng_ort');record.childNodes[idx].forceDirty('druck_ng_ort');}
+                                    if (record.childNodes[idx].data.druck_ng_tel.trim() != record.data.druck_ng_tel.trim()) {record.forceDirty('druck_ng_tel');record.childNodes[idx].forceDirty('druck_ng_tel');}
+                                    */
                                     if (
                                     record.childNodes[idx].data.druck_anrede_fuer_hg_ng.trim() != record.data.druck_anrede_fuer_hg_ng.trim()
                                     || record.childNodes[idx].data.druck_hg_name1.trim() != record.data.druck_hg_name1.trim()

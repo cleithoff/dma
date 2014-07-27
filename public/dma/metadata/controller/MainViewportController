@@ -41,6 +41,21 @@
             "designerId": "b2c9e281-54ec-4cf1-a02d-15f9e8783436"
         },
         {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "LoginPanel",
+                "selector": "#LoginPanel",
+                "xtype": "loginpanel"
+            },
+            "designerId": "53d5957f-54cd-4763-8e0e-129e8418e4a0"
+        },
+        {
             "type": "fixedfunction",
             "reference": {
                 "name": "items",
@@ -50,7 +65,11 @@
             "userConfig": {
                 "fn": "onLaunch",
                 "implHandler": [
-                    "this.getMainViewport().add(this.getMainPanel());"
+                    "var me = this;\r",
+                    "\r",
+                    "me.getMainViewport().add(me.getLoginPanel());\r",
+                    "\r",
+                    "// me.getMainViewport().add(me.getMainPanel());"
                 ]
             },
             "designerId": "f58f5d1a-5af4-4869-920e-7c3d853b43d1"

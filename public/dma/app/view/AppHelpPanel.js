@@ -98,7 +98,6 @@ Ext.define('MyApp.view.AppHelpPanel', {
                     items: [
                         {
                             xtype: 'textfield',
-                            anchor: '100%',
                             fieldLabel: 'Title',
                             name: 'title'
                         },

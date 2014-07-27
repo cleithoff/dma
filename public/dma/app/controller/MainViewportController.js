@@ -28,11 +28,21 @@ Ext.define('MyApp.controller.MainViewportController', {
             ref: 'MainPanel',
             selector: '#MainPanel',
             xtype: 'mainpanel'
+        },
+        {
+            autoCreate: true,
+            ref: 'LoginPanel',
+            selector: '#LoginPanel',
+            xtype: 'loginpanel'
         }
     ],
 
     onLaunch: function() {
-        this.getMainViewport().add(this.getMainPanel());
+        var me = this;
+
+        me.getMainViewport().add(me.getLoginPanel());
+
+        // me.getMainViewport().add(me.getMainPanel());
     }
 
 });

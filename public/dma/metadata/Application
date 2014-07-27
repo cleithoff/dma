@@ -27,7 +27,9 @@
             "ImportStackModel",
             "OrderItemstatelogModel",
             "PartnerAddressModel",
-            "AppHelpModel"
+            "AppHelpModel",
+            "UserRessourceModel",
+            "ActiveUserResourceModel"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -53,7 +55,8 @@
             "PartnerAddressInvoiceJsonStore",
             "PartnerAddressDeliveryJsonStore",
             "ProductProductJsonStore",
-            "AppHelpJsonStore"
+            "AppHelpJsonStore",
+            "ActiveUserResourcesJsonStore"
         ],
         "views": [
             "MainViewport",
@@ -76,7 +79,8 @@
             "OrderItemProductPersonalizePanel",
             "ReportReportPanel",
             "ImportExecutePanel",
-            "AppHelpPanel"
+            "AppHelpPanel",
+            "LoginPanel"
         ],
         "autoCreateViewport": true,
         "controllers": [
@@ -100,9 +104,36 @@
             "OrderItemProductPersonalizePanelController",
             "ReportReportPanelController",
             "ImportExecutePanelController",
-            "AppHelpController"
+            "AppHelpController",
+            "RuleController"
         ],
         "name": "MyApp"
     },
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.override(Ext.data.Record, {\r",
+                    "    forceDirty: function(name, value) {\r",
+                    "        var me = this;\r",
+                    "        if (Ext.isEmpty(value)) {\r",
+                    "            value = me.get(name);\r",
+                    "        }\r",
+                    "        me.set(name, 'forced dirty');\r",
+                    "        me.set(name, value);\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "f017b21f-7ae0-4029-a8d0-549408de001b"
+        }
+    ]
 }

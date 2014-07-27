@@ -39,25 +39,49 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemDetailEditButton',
-                            text: 'Bearbeiten'
+                            text: 'Bearbeiten',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemDetailEditButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemDetailSaveButton',
-                            text: 'Speichern'
+                            text: 'Speichern',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemDetailSaveButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemDetailCancelButton',
-                            text: 'Abbrechen'
+                            text: 'Abbrechen',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemDetailCancelButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemDetailDeleteButton',
-                            text: 'Löschen'
+                            text: 'Löschen',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemDetailDeleteButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
@@ -100,12 +124,24 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                                         group: 'viewmodegroup'
                                     }
                                 ]
+                            },
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemViewmodeButtonAfterRender,
+                                    scope: me
+                                }
                             }
                         },
                         {
                             xtype: 'button',
                             itemId: 'OrderItemDetailRefreshButton',
-                            text: 'PDF Erzeugen'
+                            text: 'PDF Erzeugen',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemDetailRefreshButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
@@ -116,7 +152,13 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                         {
                             xtype: 'button',
                             itemId: 'OrderItemDetailSendButton',
-                            text: 'Versenden'
+                            text: 'Versenden',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemDetailSendButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -222,6 +264,34 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
         });
 
         me.callParent(arguments);
+    },
+
+    onOrderItemDetailEditButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.UPDATE));
+    },
+
+    onOrderItemDetailSaveButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.UPDATE));
+    },
+
+    onOrderItemDetailCancelButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.CREATE | MyApp.app.getRuleControllerController().rights.UPDATE));
+    },
+
+    onOrderItemDetailDeleteButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.DELETE));
+    },
+
+    onOrderItemViewmodeButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.READ));
+    },
+
+    onOrderItemDetailRefreshButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.EXECUTE));
+    },
+
+    onOrderItemDetailSendButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.PUBLISH));
     }
 
 });

@@ -41,7 +41,26 @@
                         "itemId": "OrderItemPackagePackageEditButton",
                         "text": "Bearbeiten"
                     },
-                    "designerId": "50f543d8-268b-4073-8bf9-673505e19c47"
+                    "designerId": "50f543d8-268b-4073-8bf9-673505e19c47",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemPackagePackageEditButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemPackagePackagePanel', MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "99cc9709-744f-4aef-9058-3c4638e03cda"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -56,7 +75,26 @@
                         "itemId": "OrderItemPackagePackageSaveButton",
                         "text": "Speichern"
                     },
-                    "designerId": "89edf956-524f-4e0f-bd96-73cf17bf820b"
+                    "designerId": "89edf956-524f-4e0f-bd96-73cf17bf820b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemPackagePackageSaveButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemPackagePackagePanel', MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "f9c0b05c-7cc0-4b65-9ac9-4e7bc765cebc"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -71,7 +109,26 @@
                         "itemId": "OrderItemPackagePackageCancelButton",
                         "text": "Abbrechen"
                     },
-                    "designerId": "667849b9-56bb-432e-bd9a-c3211809840d"
+                    "designerId": "667849b9-56bb-432e-bd9a-c3211809840d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemPackagePackageCancelButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemPackagePackagePanel', MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "ec175f38-3396-476a-acc0-d0b59a48da36"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -86,7 +143,26 @@
                         "itemId": "OrderItemPackagePackageDeleteButton",
                         "text": "Löschen"
                     },
-                    "designerId": "406956a0-2c64-4519-a1a4-e322ff2c39c0"
+                    "designerId": "406956a0-2c64-4519-a1a4-e322ff2c39c0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemPackagePackageDeleteButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemPackagePackagePanel', MyApp.app.getRuleControllerController().rights.DELETE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "1ca9f02e-f04e-4906-a748-d1cb20fec18d"
+                        }
+                    ]
                 }
             ]
         },

@@ -122,7 +122,7 @@ Ext.define('MyApp.controller.MainPanelController', {
     ],
 
     onCloseMenuItemClick: function(item, e, eOpts) {
-        window.close();
+        window.location.reload();
     },
 
     onPartnerMenuItemClick: function(item, e, eOpts) {
@@ -136,6 +136,10 @@ Ext.define('MyApp.controller.MainPanelController', {
     },
 
     onOrderMenuItemClick: function(item, e, eOpts) {
+        if (!MyApp.app.getRuleControllerController().allow('OrderPanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            return;
+        }
+
         panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getOrderPanel().ref);
 
         if (panel === undefined) {
@@ -145,82 +149,99 @@ Ext.define('MyApp.controller.MainPanelController', {
         this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getOrderPanel());
 
 
-        // Order Item
-        panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderItemPanel().ref);
-        if (panel === undefined) {
-            this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderItemPanel());
+        if (MyApp.app.getRuleControllerController().allow('OrderItemPanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            // Order Item
+            panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderItemPanel().ref);
+            if (panel === undefined) {
+                this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderItemPanel());
+            }
         }
 
-        // Order Item Detail
-        panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemDetailPanel().ref);
-        if (panel === undefined) {
-            this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemDetailPanel());
+        if (MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            // Order Item Detail
+            panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemDetailPanel().ref);
+            if (panel === undefined) {
+                this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemDetailPanel());
+            }
         }
 
-        // Order Item Package Package
-        panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemPackagePackagePanel().ref);
-        if (panel === undefined) {
-            this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemPackagePackagePanel());
-            var orderItemPackagePackageGridPanel = this.getOrderItemPackagePackagePanel().getComponent('OrderItemPackagePackageGridPanel');
-            var orderItemPackagePackageFormPanel = this.getOrderItemPackagePackagePanel().getComponent('OrderItemPackagePackageFormPanel');
-            var orderItemPackagePackageToolbar = this.getOrderItemPackagePackagePanel().getComponent('OrderItemPackagePackageToolbar');
+        if (MyApp.app.getRuleControllerController().allow('OrderItemPackagePackagePanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            // Order Item Package Package
+            panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemPackagePackagePanel().ref);
+            if (panel === undefined) {
+                this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemPackagePackagePanel());
+                var orderItemPackagePackageGridPanel = this.getOrderItemPackagePackagePanel().getComponent('OrderItemPackagePackageGridPanel');
+                var orderItemPackagePackageFormPanel = this.getOrderItemPackagePackagePanel().getComponent('OrderItemPackagePackageFormPanel');
+                var orderItemPackagePackageToolbar = this.getOrderItemPackagePackagePanel().getComponent('OrderItemPackagePackageToolbar');
 
-            orderItemPackagePackageGridPanel.store.on('load', function(store, records, options){
-                if (orderItemPackagePackageGridPanel.getView().getNodes().length > 0) {
-                    orderItemPackagePackageGridPanel.getSelectionModel().select(0); 
-                    orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageEditButton').enable();
-                    orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageSaveButton').disable();
-                    orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageCancelButton').disable();
-                    orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageDeleteButton').enable();
-                } else {
-                    orderItemPackagePackageFormPanel.getForm().reset();
-                    orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageEditButton').disable();
-                    orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageSaveButton').disable();
-                    orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageCancelButton').disable();
-                    orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageDeleteButton').disable();
-                }
-            });
+                orderItemPackagePackageGridPanel.store.on('load', function(store, records, options){
 
+
+                    if (orderItemPackagePackageGridPanel.getView().getNodes().length > 0) {
+                        orderItemPackagePackageGridPanel.getSelectionModel().select(0); 
+                        orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageEditButton').enable();
+                        orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageSaveButton').disable();
+                        orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageCancelButton').disable();
+                        orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageDeleteButton').enable();
+
+
+                    } else {
+                        orderItemPackagePackageFormPanel.getForm().reset();
+                        orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageEditButton').disable();
+                        orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageSaveButton').disable();
+                        orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageCancelButton').disable();
+                        orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageDeleteButton').disable();
+                    }
+                });
+
+            }
         }
 
+        if (MyApp.app.getRuleControllerController().allow('OrderItemProductPersonalizePanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            // Order Item Product Personalize
+            panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemProductPersonalizePanel().ref);
+            if (panel === undefined) {
+                this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemProductPersonalizePanel());
+                var orderItemProductPersonalizeGridPanel = this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel');
+                var orderItemProductPersonalizeFormPanel = this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeFormPanel');
+                var orderItemProductPersonalizeToolbar = this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeToolbar');
 
-        // Order Item Product Personalize
-        panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemProductPersonalizePanel().ref);
-        if (panel === undefined) {
-            this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemProductPersonalizePanel());
-            var orderItemProductPersonalizeGridPanel = this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel');
-            var orderItemProductPersonalizeFormPanel = this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeFormPanel');
-            var orderItemProductPersonalizeToolbar = this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeToolbar');
+                orderItemProductPersonalizeGridPanel.store.on('load', function(store, records, options){
+                    //orderItemProductPersonalizeGridPanel.getSelectionModel().select(0);
+                    if (orderItemProductPersonalizeGridPanel.getView().getNodes().length > 0) {
+                        orderItemProductPersonalizeGridPanel.getSelectionModel().select(0); 
+                        orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeEditButton').enable();
+                        orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeSaveButton').disable();
+                        orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeCancelButton').disable();
+                        orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeDeleteButton').enable();
 
-            orderItemProductPersonalizeGridPanel.store.on('load', function(store, records, options){
-                //orderItemProductPersonalizeGridPanel.getSelectionModel().select(0);
-                if (orderItemProductPersonalizeGridPanel.getView().getNodes().length > 0) {
-                    orderItemProductPersonalizeGridPanel.getSelectionModel().select(0); 
-                    orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeEditButton').enable();
-                    orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeSaveButton').disable();
-                    orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeCancelButton').disable();
-                    orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeDeleteButton').enable();
-                } else {
-                    orderItemProductPersonalizeFormPanel.getForm().reset();
-                    orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeEditButton').disable();
-                    orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeSaveButton').disable();
-                    orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeCancelButton').disable();
-                    orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeDeleteButton').disable();
-                }        
-            });    
+                    } else {
+                        orderItemProductPersonalizeFormPanel.getForm().reset();
+                        orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeEditButton').disable();
+                        orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeSaveButton').disable();
+                        orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeCancelButton').disable();
+                        orderItemProductPersonalizeToolbar.getComponent('OrderItemProductPersonalizeDeleteButton').disable();
+                    }        
+                });    
 
+            }
         }
 
-        this.getOrderItemPanel().getComponent('OrderItemTabPanel').setActiveTab(this.getOrderItemDetailPanel());
-
-        // Order Import
-        panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderImportPanel().ref);
-        if (panel === undefined) {
-            this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderImportPanel());
+        if (MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            this.getOrderItemPanel().getComponent('OrderItemTabPanel').setActiveTab(this.getOrderItemDetailPanel());
         }
 
-        this.getOrderPanel().getComponent('OrderOrderTabPanel').setActiveTab(this.getOrderItemPanel());
+        if (MyApp.app.getRuleControllerController().allow('OrderImportPanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            // Order Import
+            panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderImportPanel().ref);
+            if (panel === undefined) {
+                this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderImportPanel());
+            }
+        }
 
+        if (MyApp.app.getRuleControllerController().allow('OrderItemPanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            this.getOrderPanel().getComponent('OrderOrderTabPanel').setActiveTab(this.getOrderItemPanel());
+        }
 
         // preselect order
         var orderOrderGridPanel = this.getOrderPanel().getComponent('OrderOrderGridPanel');

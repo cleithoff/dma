@@ -25,6 +25,7 @@ Ext.define('MyApp.store.ProductProductJsonStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             model: 'MyApp.model.ProductProductModel',
+            storeId: 'ProductProductJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/product/product/index',

@@ -176,7 +176,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "fieldLabel": "Title",
                         "name": "title"
                     },

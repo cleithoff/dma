@@ -17,6 +17,8 @@ Ext.define('MyApp.view.MainPanel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.mainpanel',
 
+    singleton: true,
+
     itemId: 'MainPanel',
     layout: {
         type: 'fit'

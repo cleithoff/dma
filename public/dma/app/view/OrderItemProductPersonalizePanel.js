@@ -36,31 +36,61 @@ Ext.define('MyApp.view.OrderItemProductPersonalizePanel', {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemProductPersonalizeEditButton',
-                            text: 'Bearbeiten'
+                            text: 'Bearbeiten',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemProductPersonalizeEditButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemProductPersonalizeNewButton',
-                            text: 'Neu'
+                            text: 'Neu',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemProductPersonalizeNewButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemProductPersonalizeSaveButton',
-                            text: 'Speichern'
+                            text: 'Speichern',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemProductPersonalizeSaveButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemProductPersonalizeCancelButton',
-                            text: 'Abbrechen'
+                            text: 'Abbrechen',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemProductPersonalizeCancelButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             disabled: true,
                             itemId: 'OrderItemProductPersonalizeDeleteButton',
-                            text: 'Löschen'
+                            text: 'Löschen',
+                            listeners: {
+                                afterrender: {
+                                    fn: me.onOrderItemProductPersonalizeDeleteButtonAfterRender,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -134,6 +164,26 @@ Ext.define('MyApp.view.OrderItemProductPersonalizePanel', {
         });
 
         me.callParent(arguments);
+    },
+
+    onOrderItemProductPersonalizeEditButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemProductPersonalizePanel', MyApp.app.getRuleControllerController().rights.UPDATE));
+    },
+
+    onOrderItemProductPersonalizeNewButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemProductPersonalizePanel', MyApp.app.getRuleControllerController().rights.CREATE));
+    },
+
+    onOrderItemProductPersonalizeSaveButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemProductPersonalizePanel', MyApp.app.getRuleControllerController().rights.CREATE | MyApp.app.getRuleControllerController().rights.UPDATE));
+    },
+
+    onOrderItemProductPersonalizeCancelButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemProductPersonalizePanel', MyApp.app.getRuleControllerController().rights.CREATE | MyApp.app.getRuleControllerController().rights.UPDATE));
+    },
+
+    onOrderItemProductPersonalizeDeleteButtonAfterRender: function(component, eOpts) {
+        component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemProductPersonalizePanel', MyApp.app.getRuleControllerController().rights.DELETE));
     }
 
 });

@@ -9,6 +9,7 @@
         "itemId": "MainPanel",
         "designer|userClassName": "MainPanel",
         "designer|userAlias": "mainpanel",
+        "singleton": true,
         "layout": "fit",
         "title": "DMA"
     },

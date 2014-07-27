@@ -42,7 +42,26 @@
                         "itemId": "OrderItemDetailEditButton",
                         "text": "Bearbeiten"
                     },
-                    "designerId": "e4c9d699-ef3e-47ac-b700-646750fccf1f"
+                    "designerId": "e4c9d699-ef3e-47ac-b700-646750fccf1f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemDetailEditButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "b718adf4-6a52-4e49-8cae-83cff95580ec"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -57,7 +76,26 @@
                         "itemId": "OrderItemDetailSaveButton",
                         "text": "Speichern"
                     },
-                    "designerId": "c0526d33-4747-4ee0-8a99-6e67f32ac5ec"
+                    "designerId": "c0526d33-4747-4ee0-8a99-6e67f32ac5ec",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemDetailSaveButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "72dd35d9-2ff4-402a-92b2-e17734c18888"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -72,7 +110,26 @@
                         "itemId": "OrderItemDetailCancelButton",
                         "text": "Abbrechen"
                     },
-                    "designerId": "17da4c75-cdf0-4d56-9efb-aac060bd1f6b"
+                    "designerId": "17da4c75-cdf0-4d56-9efb-aac060bd1f6b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemDetailCancelButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.CREATE | MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "ce3cfc33-ea4a-4999-8ac3-750a10084e51"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -87,7 +144,26 @@
                         "itemId": "OrderItemDetailDeleteButton",
                         "text": "Löschen"
                     },
-                    "designerId": "fd71d0be-5f33-483a-80b2-59a85df0d7ad"
+                    "designerId": "fd71d0be-5f33-483a-80b2-59a85df0d7ad",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemDetailDeleteButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.DELETE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "dd6b67cc-a657-4400-bdc4-4122da8b0693"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -229,6 +305,23 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemViewmodeButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.READ));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "160ae059-38db-497c-a766-1821ce0d064c"
                         }
                     ]
                 },
@@ -244,7 +337,26 @@
                         "itemId": "OrderItemDetailRefreshButton",
                         "text": "PDF Erzeugen"
                     },
-                    "designerId": "74c44ab2-8004-45b6-8ea4-56dd120cb866"
+                    "designerId": "74c44ab2-8004-45b6-8ea4-56dd120cb866",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemDetailRefreshButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.EXECUTE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "b20304ca-9746-4afb-a34e-8bc4566ee97d"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -273,7 +385,26 @@
                         "itemId": "OrderItemDetailSendButton",
                         "text": "Versenden"
                     },
-                    "designerId": "c75de847-f23e-49d0-b7ab-314c77a2c4e0"
+                    "designerId": "c75de847-f23e-49d0-b7ab-314c77a2c4e0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemDetailSendButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.PUBLISH));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "16c94e1f-c42d-4dc2-8472-0681ef905ec3"
+                        }
+                    ]
                 }
             ]
         },
