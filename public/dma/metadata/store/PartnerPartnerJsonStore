@@ -10,7 +10,7 @@
         "autoSync": true,
         "model": "PartnerPartnerModel",
         "remoteFilter": true,
-        "storeId": "MyJsonStore",
+        "storeId": "PartnerPartnerJsonStore",
         "designer|userClassName": "PartnerPartnerJsonStore"
     },
     "designerId": "7abc94cb-6b13-45ef-a12e-507478f97623",

@@ -34,6 +34,9 @@ Ext.define('MyApp.model.OrderOrderModel', {
         },
         {
             name: 'partner_partner'
+        },
+        {
+            name: 'order_no_external'
         }
     ]
 });

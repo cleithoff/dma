@@ -76,11 +76,6 @@ Ext.define('MyApp.view.MainPanel', {
                                     },
                                     {
                                         xtype: 'menuitem',
-                                        itemId: 'ProductMenuItem',
-                                        text: 'Produkte'
-                                    },
-                                    {
-                                        xtype: 'menuitem',
                                         itemId: 'UserMenuItem',
                                         text: 'Benutzer'
                                     },
@@ -88,6 +83,124 @@ Ext.define('MyApp.view.MainPanel', {
                                         xtype: 'menuitem',
                                         itemId: 'ImportMenuItem',
                                         text: 'Import'
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            text: 'Produkte',
+                            menu: {
+                                xtype: 'menu',
+                                width: 240,
+                                items: [
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'productpanel',
+                                        itemId: 'ProductMenuItem',
+                                        text: 'Produkte',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onProductMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'productlayoutpanel',
+                                        itemId: 'ProductLayoutMenuItem',
+                                        text: 'Produktlayout Definition',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onProductLayoutMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'productcategorypanel',
+                                        itemId: 'ProductCategoryMenuItem',
+                                        text: 'Kategorie Definition',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onProductCategoryMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'productpackagepanel',
+                                        itemId: 'ProductPackageMenuItem',
+                                        text: 'Paket Definition',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onProductPackageMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'productdatatypepanel',
+                                        itemId: 'ProductDatatypeMenuItem',
+                                        text: 'Datentyp Definition',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onProductDatatypeMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'productpropertypanel',
+                                        itemId: 'ProductPropertyMenuItem',
+                                        text: 'Produkteigenschaften Definition',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onProductPropertyMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'productcustomizepanel',
+                                        itemId: 'ProductCustomizeMenuItem',
+                                        text: 'Produktanpassungen Definition',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onProductCustomizeMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'productpersonalizepanel',
+                                        itemId: 'ProductPersonalizeMenuItem',
+                                        text: 'Produktpersonalisierung Definition',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onProductPersonalizeMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'productcurrencypanel',
+                                        itemId: 'ProductCurrencyMenuItem',
+                                        text: 'Währung Definition',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onProductCurrencyMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
                                     }
                                 ]
                             }
@@ -111,6 +224,42 @@ Ext.define('MyApp.view.MainPanel', {
         });
 
         me.callParent(arguments);
+    },
+
+    onProductMenuItemClick: function(item, e, eOpts) {
+        var panel = MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onProductLayoutMenuItemClick: function(item, e, eOpts) {
+        MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onProductCategoryMenuItemClick: function(item, e, eOpts) {
+        MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onProductPackageMenuItemClick: function(item, e, eOpts) {
+        MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onProductDatatypeMenuItemClick: function(item, e, eOpts) {
+        MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onProductPropertyMenuItemClick: function(item, e, eOpts) {
+        MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onProductCustomizeMenuItemClick: function(item, e, eOpts) {
+        MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onProductPersonalizeMenuItemClick: function(item, e, eOpts) {
+        MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onProductCurrencyMenuItemClick: function(item, e, eOpts) {
+        MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
     }
 
 });

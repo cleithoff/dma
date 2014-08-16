@@ -9,6 +9,11 @@
 	background: none !important;
 }
 
+.x-item-disabled .x-form-item-label, .x-item-disabled .x-form-field, .x-item-disabled .x-form-display-field, .x-item-disabled .x-form-cb-label, .x-item-disabled .x-form-trigger {
+filter: alpha(opacity=75);
+opacity: 0.75;
+}
+
 .width-10 {
 	width:10%;
 }

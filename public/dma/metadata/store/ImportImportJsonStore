@@ -10,7 +10,8 @@
         "autoSync": true,
         "model": "ImportImportModel",
         "storeId": "ImportImportJsonStore",
-        "designer|userClassName": "ImportImportJsonStore"
+        "designer|userClassName": "ImportImportJsonStore",
+        "pageSize": 1000000
     },
     "designerId": "19af9c5f-17e3-4955-ae0d-c4775a8aa251",
     "cn": [

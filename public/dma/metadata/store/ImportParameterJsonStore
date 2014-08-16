@@ -1,0 +1,42 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "ImportParameterModel",
+        "storeId": "MyJsonStore",
+        "designer|userClassName": "ImportParameterJsonStore"
+    },
+    "designerId": "9fbd19ea-1066-44d3-b2bb-b30b16b4086f",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/import/parameter/index"
+            },
+            "designerId": "75f1a57e-fdab-48f9-a16f-0a05c918afa1",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "eccf89ca-c5f8-4a51-b35b-f149325dd268"
+                }
+            ]
+        }
+    ]
+}

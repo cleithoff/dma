@@ -105,6 +105,105 @@
             ]
         },
         {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "layout|region": "north",
+                "layout|split": true,
+                "disabled": true,
+                "height": 264,
+                "itemId": "ImportActionFormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "aeb35d46-1675-441c-a9e1-5f0783769cee",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "height": null,
+                        "fieldLabel": "Zeilennummer",
+                        "name": "linenumber"
+                    },
+                    "designerId": "f96b7c4c-f1ec-4262-a736-e9f398c5abf0"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "height": null,
+                        "fieldLabel": "Aktion",
+                        "name": "action"
+                    },
+                    "designerId": "94222c51-4aeb-45fd-862e-21c7e40f73d8"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "width": 150,
+                        "fieldLabel": "Quelle",
+                        "name": "source"
+                    },
+                    "designerId": "bee8c4d1-09d6-4b9d-b0d3-afebffdd0d83"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "dock": null,
+                        "height": null,
+                        "fieldLabel": "Bedingung",
+                        "name": "condition"
+                    },
+                    "designerId": "a8727356-ffec-4729-a5df-cd5604f67e41"
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "height": null,
+                        "maxHeight": null,
+                        "minHeight": null,
+                        "fieldLabel": "Setter",
+                        "name": "setter"
+                    },
+                    "designerId": "dc65b5bb-1576-4326-a469-070221b4561b"
+                }
+            ]
+        },
+        {
             "type": "Ext.grid.Panel",
             "reference": {
                 "name": "items",
@@ -113,7 +212,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|region": "center",
-                "layout|split": true,
+                "layout|split": false,
                 "itemId": "ImportActionGridPanel",
                 "title": null,
                 "store": "ImportActionJsonStore"
@@ -249,105 +348,6 @@
                             "type": "string"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "type": "Ext.form.Panel",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "layout|flex": null,
-                "layout|region": "north",
-                "layout|split": true,
-                "disabled": true,
-                "height": 264,
-                "itemId": "ImportActionFormPanel",
-                "bodyPadding": 10,
-                "title": null
-            },
-            "designerId": "aeb35d46-1675-441c-a9e1-5f0783769cee",
-            "cn": [
-                {
-                    "type": "Ext.form.field.Number",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "height": null,
-                        "fieldLabel": "Zeilennummer",
-                        "name": "linenumber"
-                    },
-                    "designerId": "f96b7c4c-f1ec-4262-a736-e9f398c5abf0"
-                },
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "height": null,
-                        "fieldLabel": "Aktion",
-                        "name": "action"
-                    },
-                    "designerId": "94222c51-4aeb-45fd-862e-21c7e40f73d8"
-                },
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "width": 150,
-                        "fieldLabel": "Quelle",
-                        "name": "source"
-                    },
-                    "designerId": "bee8c4d1-09d6-4b9d-b0d3-afebffdd0d83"
-                },
-                {
-                    "type": "Ext.form.field.TextArea",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "dock": null,
-                        "height": null,
-                        "fieldLabel": "Bedingung",
-                        "name": "condition"
-                    },
-                    "designerId": "a8727356-ffec-4729-a5df-cd5604f67e41"
-                },
-                {
-                    "type": "Ext.form.field.TextArea",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "height": null,
-                        "maxHeight": null,
-                        "minHeight": null,
-                        "fieldLabel": "Setter",
-                        "name": "setter"
-                    },
-                    "designerId": "dc65b5bb-1576-4326-a469-070221b4561b"
                 }
             ]
         }

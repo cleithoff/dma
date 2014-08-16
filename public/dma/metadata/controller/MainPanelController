@@ -225,31 +225,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onProductMenuItemClick",
-                "implHandler": [
-                    "panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getProductPanel().ref);\r",
-                    "\r",
-                    "if (panel === undefined) {\r",
-                    "\tthis.getMainPanel().getComponent('AppTabPanel').add(this.getProductPanel());\r",
-                    "}\r",
-                    "\r",
-                    "this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getProductPanel());"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.menu.Item",
-                "designer|controlQuery": "#ProductMenuItem"
-            },
-            "designerId": "0aa3cd33-5fb3-4cf8-b54a-b6a41021c614"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "onUserMenuItemClick",
                 "implHandler": [
                     "panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getUserPanel().ref);\r",
@@ -394,7 +369,6 @@
                     "panel = this.getImportImportPanel().getComponent('ImportActionPanel');\r",
                     "\r",
                     "if (panel === undefined) {\r",
-                    "\r",
                     "    this.getImportImportPanel().add(this.getImportActionPanel());\r",
                     "    this.getImportActionPanel().setRegion('center');\r",
                     "}"

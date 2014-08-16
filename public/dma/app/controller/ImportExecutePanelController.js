@@ -32,8 +32,9 @@ Ext.define('MyApp.controller.ImportExecutePanelController', {
     ],
 
     onImportExecuteUploadButtonClick: function(button, e, eOpts) {
-        var fp = this.getImportExecutePanel().getComponent('ImportExecuteFormPanel');
-        var p = this.getImportPanel();
+        var me = this;
+        var fp = me.getImportExecutePanel().getComponent('ImportExecuteFormPanel');
+        var p = me.getImportPanel();
 
         record = p.getComponent('ImportImportGridPanel').getSelectionModel().getSelection()[0];
 
@@ -60,13 +61,22 @@ Ext.define('MyApp.controller.ImportExecutePanelController', {
                     buttons: Ext.Msg.OK
                 });
                 if (o.result.success === true) {
+
+                    var paramobj = {
+                        filename: o.result.filename,
+                        import_import_id: import_import_id
+                    };
+
+                    var values = p.down('#ImportParameterFormPanel').getForm().getValues();
+
+                    for (var idx in values) {
+                        paramobj[idx] = values[idx];
+                    }
+
                     Ext.Ajax.request({
                         url: '/import/import/execute',
                         timeout: 60 * 10 * 1000, // 10 min
-                        params: {
-                            filename: o.result.filename,
-                            import_import_id: import_import_id,
-                        },
+                        params: paramobj,
                         success: function(response, opts) {
                             //var obj = Ext.decode(response.responseText);
                             //console.dir(obj);

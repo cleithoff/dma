@@ -42,6 +42,7 @@ Ext.define('MyApp.view.OrderPanel', {
                     columns: [
                         {
                             xtype: 'numbercolumn',
+                            hidden: true,
                             width: 60,
                             align: 'right',
                             dataIndex: 'id',
@@ -50,12 +51,29 @@ Ext.define('MyApp.view.OrderPanel', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            align: 'right',
+                            dataIndex: 'order_no_external',
+                            text: 'Auftrag-Nr.',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                return record.data.partner_partner.partner_nr;
+                            },
+                            align: 'right',
+                            dataIndex: 'partner_partner.partner_nr',
+                            text: 'Partner-Nr.',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 return record.data.partner_partner.title;
                             },
                             dataIndex: 'partner_partner.title',
                             text: 'Partner',
-                            flex: 1
+                            flex: 2
                         }
                     ],
                     dockedItems: [

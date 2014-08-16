@@ -29,6 +29,15 @@ Ext.define('MyApp.view.ImportExecutePanel', {
             items: [
                 {
                     xtype: 'form',
+                    border: false,
+                    itemId: 'ImportParameterFormPanel',
+                    bodyPadding: 10,
+                    header: false,
+                    title: 'Parameter'
+                },
+                {
+                    xtype: 'form',
+                    border: false,
                     itemId: 'ImportExecuteFormPanel',
                     bodyPadding: 10,
                     items: [

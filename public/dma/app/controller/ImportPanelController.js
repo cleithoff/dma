@@ -38,6 +38,8 @@ Ext.define('MyApp.controller.ImportPanelController', {
     ],
 
     onImportImportGridPanelSelect: function(rowmodel, record, index, eOpts) {
+        var me = this;
+
         // ImportImport
         panel = this.getImportImportPanel();
 
@@ -63,6 +65,59 @@ Ext.define('MyApp.controller.ImportPanelController', {
 
         Ext.getStore('ImportActionJsonStore').clearFilter(true);
         Ext.getStore('ImportActionJsonStore').filter([{property:'import_import_id',value:record.data.id}]);
+
+        // Import Parameter
+        store = Ext.getStore('ImportParameterJsonStore');
+
+        store.on('load', function(store, records) {
+            var importParameterFormPanel = me.getImportPanel().down('#ImportParameterFormPanel');
+            importParameterFormPanel.removeAll();
+
+            var r = null;
+
+            for(var idx in records) {
+                r = records[idx];
+                switch(r.data.report_filtertype.key) {
+                    case 'string':
+                    console.log('string');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    importParameterFormPanel.add(
+                    Ext.create('Ext.form.field.Text', config)
+                    );
+                    break;
+                    case 'int':
+                    console.log('int');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    importParameterFormPanel.add(
+                    Ext.create('Ext.form.field.Number', config)
+                    );
+                    break;
+                    case 'combobox':
+                    console.log('combobox');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    importParameterFormPanel.add(
+                    Ext.create('Ext.form.field.ComboBox', config)
+                    );
+                    break;
+                    case 'datetime':
+                    console.log('datefield');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    importParameterFormPanel.add(
+                    Ext.create('Ext.form.field.Date', config)
+                    );
+                    break;
+                }
+            }
+
+        });
+
+        store.clearFilter(true);
+        store.filter([{property:"import_import_id",value:record.data.id}]);
+        store.load();
     },
 
     init: function(application) {

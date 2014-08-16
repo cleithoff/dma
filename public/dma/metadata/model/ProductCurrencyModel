@@ -1,0 +1,66 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ProductCurrencyModel"
+    },
+    "designerId": "0eaa5c6c-b80a-4941-9bce-5b178c42d0e7",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "designerId": "45891fb7-dadf-4dff-85c4-e54e0dde54a7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "title",
+                "type": "string"
+            },
+            "designerId": "c03687d6-bf73-4619-bee3-e416f8a495d2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sign",
+                "type": "string"
+            },
+            "designerId": "7cc8b7e8-e9ff-432a-87b5-fd1d5d7d1651"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "short",
+                "type": "string"
+            },
+            "designerId": "57e61f9d-cea7-47df-810d-d8582e579c7c"
+        }
+    ]
+}

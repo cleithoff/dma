@@ -90,7 +90,11 @@ class Rest_Controller_Action_DbTable extends Zend_Controller_Action
     public function postAction() {
     	$body = $this->getRequest()->getRawBody();
     	$data = Zend_Json::decode($body);
-    	return $this->view->data = $this->getMapper()->insert($data)->toArray();
+    	$this->view->data = $this->getMapper()->insert($data)->toArray();
+    	
+    	
+    	$this->getRequest()->setParam('filter', '[{"property":"id", "value":' . $this->view->data['id'] . '}]');
+    	return $this->getAction();
     }
     
     public function getAction() {
@@ -121,7 +125,10 @@ class Rest_Controller_Action_DbTable extends Zend_Controller_Action
     	$body = $this->getRequest()->getRawBody();
     	$data = Zend_Json::decode($body);    	
     	$row = $this->getMapper()->update($data);
-    	return $this->view->data = is_array($row) ? $row : $row->toArray();  	
+    	$this->view->data = is_array($row) ? $row : $row->toArray();  
+
+    	$this->getRequest()->setParam('filter', '[{"property":"id", "value":' . $this->view->data['id'] . '}]');
+    	return $this->getAction();
     }
     
     public function deleteAction() {

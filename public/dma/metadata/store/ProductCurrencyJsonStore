@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "model": "ProductCurrencyModel",
+        "designer|userClassName": "ProductCurrencyJsonStore",
+        "pageSize": 1000000
+    },
+    "designerId": "3c3476fb-619b-4315-9e83-1223e76652b5",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/product/currency/index"
+            },
+            "designerId": "1a64b84a-9b81-4e86-aead-d504d44a3e3d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "650c5ea7-4d20-4b5d-a5da-39b4797348e6"
+                }
+            ]
+        }
+    ]
+}

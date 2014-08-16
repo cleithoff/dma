@@ -245,7 +245,8 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
                             root: 'data'
                         }
                     },
-                    autoLoad: true
+                    autoLoad: true,
+                    pageSize: 1000000
                 });
                 panel = Ext.create('Ext.grid.Panel', {
                     split: true,
@@ -253,8 +254,15 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
                     itemId: 'ReportPreviewGridPanel',
                     //title: 'Number Column Demo',
                     store: metaStore,
-                    columns: columns
-
+                    columns: columns,
+                    dockedItems: [
+                    {
+                        xtype: 'pagingtoolbar',
+                        dock: 'bottom',
+                        displayInfo: true,
+                        store: metaStore
+                    }
+                    ]
                     /*[
                     { text: 'Symbol',         dataIndex: 'symbol', flex: 1 },
                     { text: 'Current Price',  dataIndex: 'price',  renderer: Ext.util.Format.usMoney },

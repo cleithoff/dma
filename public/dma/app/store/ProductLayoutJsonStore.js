@@ -24,10 +24,11 @@ Ext.define('MyApp.store.ProductLayoutJsonStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: false,
+            autoLoad: true,
             autoSync: true,
             model: 'MyApp.model.ProductLayoutModel',
             storeId: 'ProductLayoutJsonStore',
+            pageSize: 1000000,
             proxy: {
                 type: 'rest',
                 url: '/product/layout/index',

@@ -268,16 +268,6 @@ Ext.define('MyApp.controller.MainPanelController', {
         this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getReportPanel());
     },
 
-    onProductMenuItemClick: function(item, e, eOpts) {
-        panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getProductPanel().ref);
-
-        if (panel === undefined) {
-            this.getMainPanel().getComponent('AppTabPanel').add(this.getProductPanel());
-        }
-
-        this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getProductPanel());
-    },
-
     onUserMenuItemClick: function(item, e, eOpts) {
         panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getUserPanel().ref);
 
@@ -316,7 +306,6 @@ Ext.define('MyApp.controller.MainPanelController', {
         panel = this.getImportImportPanel().getComponent('ImportActionPanel');
 
         if (panel === undefined) {
-
             this.getImportImportPanel().add(this.getImportActionPanel());
             this.getImportActionPanel().setRegion('center');
         }
@@ -347,9 +336,6 @@ Ext.define('MyApp.controller.MainPanelController', {
             },
             "#ReportMenuItem": {
                 click: this.onReportMenuItemClick
-            },
-            "#ProductMenuItem": {
-                click: this.onProductMenuItemClick
             },
             "#UserMenuItem": {
                 click: this.onUserMenuItemClick

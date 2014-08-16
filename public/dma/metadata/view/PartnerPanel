@@ -44,11 +44,41 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "title",
-                        "text": "Partner",
+                        "align": "right",
+                        "dataIndex": "partner_nr",
+                        "text": "Partner-Nr.",
                         "flex": 1
                     },
                     "designerId": "78be868c-09da-423f-8ad4-1e17f500d542"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "title",
+                        "text": "Partner",
+                        "flex": 3
+                    },
+                    "designerId": "5f5b781d-43e5-4bb5-8955-071814c014e4"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "dataIndex": "id",
+                        "text": "Partner ID",
+                        "flex": 1
+                    },
+                    "designerId": "6dd5d5c7-0a8b-41ef-8783-ef270c3af868"
                 },
                 {
                     "type": "Ext.toolbar.Paging",

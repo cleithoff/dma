@@ -81,6 +81,18 @@
                 "name": "partner_partner"
             },
             "designerId": "c3bdff1c-b8b2-439d-b243-5f953d81ba27"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "order_no_external"
+            },
+            "designerId": "2ae3930c-0f7c-435d-952c-fae24fe259c9"
         }
     ]
 }

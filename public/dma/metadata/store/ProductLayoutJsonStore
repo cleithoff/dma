@@ -6,11 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoLoad": false,
+        "autoLoad": true,
         "autoSync": true,
         "model": "ProductLayoutModel",
         "storeId": "ProductLayoutJsonStore",
-        "designer|userClassName": "ProductLayoutJsonStore"
+        "designer|userClassName": "ProductLayoutJsonStore",
+        "pageSize": 1000000
     },
     "designerId": "1d69ac3f-313b-4952-8a29-7d9233f0f5c8",
     "cn": [

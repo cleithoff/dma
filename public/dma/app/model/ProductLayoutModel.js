@@ -18,19 +18,52 @@ Ext.define('MyApp.model.ProductLayoutModel', {
 
     fields: [
         {
-            name: 'id'
+            name: 'id',
+            type: 'int'
         },
         {
-            name: 'description'
+            name: 'description',
+            type: 'string'
         },
         {
-            name: 'xsl'
+            name: 'hotfolder',
+            type: 'string'
         },
         {
-            name: 'hotfolder'
+            name: 'xsl_front_preview',
+            type: 'string'
         },
         {
-            name: 'metapdf'
+            name: 'pdf_front_preview',
+            type: 'string'
+        },
+        {
+            name: 'xsl_back_preview',
+            type: 'string'
+        },
+        {
+            name: 'pdf_back_preview',
+            type: 'string'
+        },
+        {
+            name: 'xsl_front_print',
+            type: 'string'
+        },
+        {
+            name: 'pdf_front_print',
+            type: 'string'
+        },
+        {
+            name: 'xsl_back_print',
+            type: 'string'
+        },
+        {
+            name: 'pdf_back_print',
+            type: 'string'
+        },
+        {
+            name: 'correction_form_class',
+            type: 'string'
         }
     ]
 });

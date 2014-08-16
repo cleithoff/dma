@@ -1,0 +1,430 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "itemId": null,
+        "width": null,
+        "designer|userClassName": "ProductCurrencyPanel",
+        "designer|userAlias": "productcurrencypanel",
+        "layout": "border",
+        "closable": true,
+        "title": "Produkt Währungen"
+    },
+    "designerId": "f4bc69c3-575d-4337-ae62-59dd7e1052c6",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "layout|split": true,
+                "itemId": "GridPanel",
+                "width": 150,
+                "header": false,
+                "title": "My Grid Panel",
+                "store": "ProductCurrencyJsonStore"
+            },
+            "designerId": "ca01092b-fff1-4d80-8d06-384e794094bd",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "title",
+                        "text": "Bezeichnung",
+                        "flex": 1
+                    },
+                    "designerId": "3c6834af-4b7a-4832-88ac-c66a2aac2f78"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "373fb02a-db7b-4e97-ad6b-5d254e7b72b6"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "ProductCurrencyJsonStore"
+                    },
+                    "designerId": "8666fcfd-b8dc-4e3c-9522-4fc32dbd209f",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processMyPagingToolbar3",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "\r",
+                                    "if (Ext.isEmpty(me.store)) {\r",
+                                    "\tme.store = Ext.create('MyApp.store.' + config.store);\r",
+                                    "}\r",
+                                    "\r",
+                                    "config.store = me.store;\r",
+                                    "\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "e891e4d5-a21a-478d-b526-2f84f32854de"
+                        }
+                    ]
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processGridPanel",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "var me = this;\r",
+                            "\r",
+                            "if (Ext.isEmpty(me.store)) {\r",
+                            "\tme.store = Ext.create('MyApp.store.' + config.store);\r",
+                            "}\r",
+                            "\r",
+                            "config.store = me.store;\r",
+                            "\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "d186fe14-6c0d-45af-a1c2-9fb7638d62a5"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridPanelSelect",
+                        "implHandler": [
+                            "MyApp.app.getCrudControllerController().onGridPanelSelect(rowmodel, record, index, eOpts);"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "designerId": "4108ad1b-abb2-4eb6-9f40-687a065210ff"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "itemId": "Container",
+                "layout": "border"
+            },
+            "designerId": "3be3eb20-da0a-4f36-897f-b46b31cf3c22",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "north",
+                        "height": null,
+                        "itemId": "ActionToolbar"
+                    },
+                    "designerId": "da414331-54f0-4f54-a960-f8e938b62d37",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "itemId": "NewButton",
+                                "text": "Neu"
+                            },
+                            "designerId": "80de415a-104d-46b6-8771-e94a8a16fae9",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onNewButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onNewButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "a94a5a69-07b0-405d-8a7a-98d895949bec"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "EditButton",
+                                "text": "Bearbeiten"
+                            },
+                            "designerId": "64bf7d82-93be-4711-91d0-92863669f6f5",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onEditButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onEditButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "1734158f-5001-4e40-a044-ba378a92008b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "SaveButton",
+                                "text": "Speichern"
+                            },
+                            "designerId": "38a013de-5b2d-4042-a206-fb33fed1b20d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onSaveButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "1d3f3e02-c0aa-42f6-88fb-56a427acdf86"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "CancelButton",
+                                "text": "Abbrechen"
+                            },
+                            "designerId": "f2f84c92-5f1b-4338-8549-a79fd2175806",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCancelButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onCancelButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "eb7fbc28-5412-4abf-84de-e477ea5495cd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "DeleteButton",
+                                "text": "Löschen"
+                            },
+                            "designerId": "4fca4928-d53b-4493-9048-07f66d50d7c9",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDeleteButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onDeleteButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "f911cb50-fa6e-4c1f-b981-645edacbd1e1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "west",
+                        "layout|split": true,
+                        "disabled": true,
+                        "itemId": "FormPanel",
+                        "width": 320,
+                        "bodyPadding": 10,
+                        "header": false,
+                        "title": "My Form",
+                        "trackResetOnLoad": true
+                    },
+                    "designerId": "3d08a52a-77c7-4b61-a703-a0cd1446896f",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Bezeichnung",
+                                "name": "title"
+                            },
+                            "designerId": "2f3b17bc-a3ac-462b-8135-9ee44f190363"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Zeichen",
+                                "name": "sign"
+                            },
+                            "designerId": "faab6cd4-5a72-463c-aac0-a6ad4c0fe874"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Kürzel",
+                                "name": "short"
+                            },
+                            "designerId": "b8471cad-98ca-4bd3-bb00-37dd112bbf8a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "center",
+                        "itemId": "DummyPanel",
+                        "header": false,
+                        "title": "My Panel"
+                    },
+                    "designerId": "98ae888e-7c4e-423c-9fb8-6443f19eebe4"
+                }
+            ]
+        }
+    ]
+}

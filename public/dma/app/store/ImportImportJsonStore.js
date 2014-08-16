@@ -28,6 +28,7 @@ Ext.define('MyApp.store.ImportImportJsonStore', {
             autoSync: true,
             model: 'MyApp.model.ImportImportModel',
             storeId: 'ImportImportJsonStore',
+            pageSize: 1000000,
             proxy: {
                 type: 'rest',
                 url: '/import/import/index',

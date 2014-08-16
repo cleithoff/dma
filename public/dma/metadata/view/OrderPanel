@@ -43,6 +43,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "hidden": true,
                         "width": 60,
                         "align": "right",
                         "dataIndex": "id",
@@ -59,11 +60,67 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "partner_partner.title",
-                        "text": "Partner",
+                        "align": "right",
+                        "dataIndex": "order_no_external",
+                        "text": "Auftrag-Nr.",
                         "flex": 1
                     },
-                    "designerId": "a2f4ae13-02f2-4ef7-b361-0fbbed347ea1",
+                    "designerId": "a2f4ae13-02f2-4ef7-b361-0fbbed347ea1"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "dataIndex": "partner_partner.partner_nr",
+                        "text": "Partner-Nr.",
+                        "flex": 1
+                    },
+                    "designerId": "791696ee-a0d1-40d5-98ca-97dd432435d8",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.partner_partner.partner_nr;"
+                                ]
+                            },
+                            "designerId": "5cfe55b2-9020-4029-a090-ec797eed27b1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "partner_partner.title",
+                        "text": "Partner",
+                        "flex": 2
+                    },
+                    "designerId": "dddec45e-6315-4f37-af43-a779e0fbfaac",
                     "cn": [
                         {
                             "type": "fixedfunction",
@@ -87,7 +144,7 @@
                                     "return record.data.partner_partner.title;"
                                 ]
                             },
-                            "designerId": "27c2cb7b-401f-45b8-8925-bf45d8eab563"
+                            "designerId": "ff81ecc3-2fad-4e62-8418-fc5d98b7752c"
                         }
                     ]
                 },

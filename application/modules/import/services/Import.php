@@ -221,7 +221,7 @@ class Import_Service_Import
 		return $rows;
 	}
 	
-	private function _getReplaces($matches, $doQuote, $csv, $result, $param) {
+	private function _getReplaces($matches, $doQuote, $csv, $result, $param, $exists = array()) {
 	
 		$replacements = array();
 		foreach ($matches as $match) {
@@ -237,6 +237,10 @@ class Import_Service_Import
 					$table = $str[1];
 					$col = $str[2];
 					$replacement = $result[$table][$col];
+					break;
+				case 'exists':
+					$table = $str[1];
+					$replacement = intval($exists[$table]);
 					break;
 				case 'param':
 					$key = $str[1];
@@ -262,11 +266,11 @@ class Import_Service_Import
 		return $replacements;
 	}
 	
-	private function _getQuery($sql, $csv, $result, $param) {
+	private function _getQuery($sql, $csv, $result, $param, $exists = array()) {
 		$matches = array();
 		preg_match_all('/\{[^\{\}]*\}/', $sql, $matches);
 		if (count($matches) > 0) {
-			$replacements = $this->_getReplaces($matches[0], true, $csv, $result, $param);
+			$replacements = $this->_getReplaces($matches[0], true, $csv, $result, $param, $exists);
 			foreach($matches[0] as $key => $match) {
 				$matches[0][$key] = '/' . str_replace(array('{','.','}'), array('\\{','\\.','\\}'), $match) . '/';
 			}
@@ -276,7 +280,7 @@ class Import_Service_Import
 		$matches = array();
 		preg_match_all('/\{.*?\}/', $sql, $matches);
 		if (count($matches) > 0) {
-			$replacements = $this->_getReplaces($matches[0], true, $csv, $result, $param);
+			$replacements = $this->_getReplaces($matches[0], true, $csv, $result, $param, $exists);
 			foreach($matches[0] as $key => $match) {
 				$matches[0][$key] = '/' . str_replace(array('{','.','}'), array('\\{','\\.','\\}'), $match) . '/';
 			}
@@ -291,6 +295,7 @@ class Import_Service_Import
 		reset($actions);
 		foreach ($rows as $csv) {
 			$result = array();
+			$exists = array();
 			$select = array();
 			$linenumber = array();
 			reset($actions);
@@ -332,6 +337,14 @@ class Import_Service_Import
 							$result[$action['source']] = $resultset;
 						}
 						break;
+					case 'EXISTS':
+						$result[$action['source']] = null;
+						$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . $action['condition'];
+						$sql = $this->_getQuery($sql, $csv, $result, $param);
+						$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
+						$resultset = reset($resultset);
+						$exists[$action['source']] = $resultset;
+						break;
 					case 'UPDATE':
 						$sql = 'UPDATE ' . $action['source'] . ' SET ' . $action['setter'] . ' WHERE ' . $action['condition'];
 						$sql = $this->_getQuery($sql, $csv, $result, $param);
@@ -347,6 +360,10 @@ class Import_Service_Import
 						$result[$action['source']] = reset($resultset);
 						break;
 					case 'INSERT':
+						if (!empty($action['condition'])) {
+							$eval = $this->_getQuery($sql, $csv, $result, $param, $exists);
+							if (!eval($eval)) continue;
+						}
 						$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['setter']; // . ' WHERE ' . $action['condition'];
 						$sql = str_replace(array("\r\n", "\r", "\n"), '', $sql);
 						$sql = $this->_getQuery($sql, $csv, $result, $param);

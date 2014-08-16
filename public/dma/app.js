@@ -42,7 +42,18 @@ Ext.application({
         'PartnerAddressModel',
         'AppHelpModel',
         'UserRessourceModel',
-        'ActiveUserResourceModel'
+        'ActiveUserResourceModel',
+        'ProductCurrencyModel',
+        'ProductDatatypeModel',
+        'ProductPropertyModel',
+        'ProductCustomizeModel',
+        'ProductPersonalizeModel',
+        'ProductPackageModel',
+        'ProductCategoryModel',
+        'ProductWeightModel',
+        'ProductItemHasProductCustomizeModel',
+        'ProductProductHasProductPropertyModel',
+        'ImportParameterModel'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -69,7 +80,19 @@ Ext.application({
         'PartnerAddressDeliveryJsonStore',
         'ProductProductJsonStore',
         'AppHelpJsonStore',
-        'ActiveUserResourcesJsonStore'
+        'ActiveUserResourcesJsonStore',
+        'ProductCurrencyJsonStore',
+        'ProductDatatypeJsonStore',
+        'ProductPropertyJsonStore',
+        'ProductCustomizeJsonStore',
+        'ProductPersonalizeJsonStore',
+        'ProductPackageJsonStore',
+        'ProductCategoryJsonStore',
+        'ProductItemJsonStore',
+        'ProductWeightJsonStore',
+        'ProductItemHasProductCustomizeJsonStore',
+        'ProductProductHasProductPropertyJsonStore',
+        'ImportParameterJsonStore'
     ],
     views: [
         'MainViewport',
@@ -78,7 +101,7 @@ Ext.application({
         'OrderPanel',
         'ReportPanel',
         'UserPanel',
-        'ProductPanel',
+        'ProductPanel_Obsolete',
         'PartnerAddressPanel',
         'PartnerAbsencePanel',
         'PartnerImportPanel',
@@ -93,7 +116,20 @@ Ext.application({
         'ReportReportPanel',
         'ImportExecutePanel',
         'AppHelpPanel',
-        'LoginPanel'
+        'LoginPanel',
+        'ProductCurrencyPanel',
+        'ProductDatatypePanel',
+        'ProductPropertyPanel',
+        'ProductCustomizePanel',
+        'ProductPersonalizePanel',
+        'ProductPackagePanel',
+        'ProductCategoryPanel',
+        'ProductLayoutPanel',
+        'ProductPanel',
+        'ProductItemPanel',
+        'ProductWeightPanel',
+        'ProductItemHasProductCustomizePanel',
+        'ProductProductHasProductPropertyPanel'
     ],
     autoCreateViewport: true,
     controllers: [
@@ -118,7 +154,8 @@ Ext.application({
         'ReportReportPanelController',
         'ImportExecutePanelController',
         'AppHelpController',
-        'RuleController'
+        'RuleController',
+        'CrudController'
     ],
     name: 'MyApp',
 

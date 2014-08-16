@@ -1,0 +1,79 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ProductPersonalizeModel"
+    },
+    "designerId": "f2101970-2572-4536-b2f6-dbe9d93b0c9a",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "designerId": "58fc6af1-8bb8-46f0-8ef7-ac0da146c0bd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "label",
+                "type": "string"
+            },
+            "designerId": "db31a169-97dd-4c93-b268-a5cab9769f44"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "key",
+                "type": "string"
+            },
+            "designerId": "5d61187b-7aa9-4fad-b2e5-e19661b9b369"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "default",
+                "type": "string"
+            },
+            "designerId": "57973065-f318-4bcd-b0ad-9e9e8861709a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "product_datatype_id",
+                "type": "int"
+            },
+            "designerId": "b943a2a6-b49b-48b4-890f-dbe5a70b4aad"
+        }
+    ]
+}

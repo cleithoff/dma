@@ -1,0 +1,381 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CrudController"
+    },
+    "designerId": "d95eb8c5-8297-47dd-aeae-e66c3d487e78",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLinkButtonClick",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts",
+                    "linkCallback"
+                ],
+                "implHandler": [
+                    "console.log(eOpts.scope);\r",
+                    "\r",
+                    "var panel = eOpts.scope, //panel = button.up('#LinkPanel'),\r",
+                    "    bag = panel.down('#BagGridPanel'),\r",
+                    "    lib = panel.down('#LibGridPanel'),\r",
+                    "    bagstore = bag.getStore(),\r",
+                    "    libstore = lib.getStore(),\r",
+                    "    linkrecord = panel.linkrecord\r",
+                    "    ;\r",
+                    "\r",
+                    "librecord = lib.getSelectionModel().getSelection();\r",
+                    "\r",
+                    "if (Ext.isArray(librecord)) librecord = librecord[0];\r",
+                    "\r",
+                    "console.log(linkrecord, librecord);\r",
+                    "\r",
+                    "if (!Ext.isEmpty(linkrecord) && !Ext.isEmpty(librecord)) {\r",
+                    "    var record = new bagstore.model(linkCallback(linkrecord, librecord));\r",
+                    "    bagstore.insert(0, record);\r",
+                    "}\r",
+                    "\r",
+                    ""
+                ]
+            },
+            "designerId": "66edc41f-bc24-4c80-a0d0-0054c13ffeca"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUnlinkButtonClick",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "implHandler": [
+                    "var panel = eOpts.scope, //panel = button.up('#LinkPanel'),\r",
+                    "    bag = panel.down('#BagGridPanel'),\r",
+                    "    lib = panel.down('#LibGridPanel'),\r",
+                    "    bagstore = bag.getStore(),\r",
+                    "    libstore = lib.getStore(),\r",
+                    "    bagrecord = bag.getSelectionModel().getSelection()\r",
+                    "    ;\r",
+                    "\r",
+                    "if (Ext.isArray(bagrecord) && bagrecord.length > 0) {\r",
+                    "    bagrecord = bagrecord[0];\r",
+                    "}\r",
+                    "\r",
+                    "Ext.Msg.confirm('Achtung!', 'Datensatz löschen?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "        if (bagstore !== undefined && bagrecord !== undefined) {\r",
+                    "            bagstore.remove(bagrecord);\r",
+                    "        }\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "0c0d1a96-e98e-4bbe-8221-f737611c9898"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNewButtonClick",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts",
+                    "newCallback"
+                ],
+                "implHandler": [
+                    "var panel = eOpts.scope, //button.up('#CrudPanel'),\r",
+                    "    toolbar = panel.down('#ActionToolbar'),\r",
+                    "    form = panel.down('#FormPanel'),\r",
+                    "    grid = panel.down('#GridPanel'),\r",
+                    "    store = grid.getStore()\r",
+                    "    ;\r",
+                    "\r",
+                    "if (!Ext.isEmpty(store)) {\r",
+                    "    form.enable();\r",
+                    "    record = new store.model();\r",
+                    "    if (!Ext.isEmpty(newCallback)) {\r",
+                    "        newCallback(panel.masterRecord, record);\r",
+                    "    }\r",
+                    "    form.loadRecord(record);\r",
+                    "    toolbar.getComponent('EditButton').disable();\r",
+                    "    toolbar.getComponent('NewButton').disable();\r",
+                    "    toolbar.getComponent('CancelButton').enable();\r",
+                    "    toolbar.getComponent('SaveButton').enable();\r",
+                    "    toolbar.getComponent('DeleteButton').disable();\r",
+                    "}"
+                ]
+            },
+            "designerId": "2ff71407-4b78-4ea4-a7a7-d9667310e6c7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditButtonClick",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "implHandler": [
+                    "var panel = eOpts.scope, //button.up('#CrudPanel'),\r",
+                    "    toolbar = panel.down('#ActionToolbar'),\r",
+                    "    form = panel.down('#FormPanel'),\r",
+                    "    grid = panel.down('#GridPanel'),\r",
+                    "    store = grid.getStore()\r",
+                    "    ;\r",
+                    "\r",
+                    "form.enable();\r",
+                    "\r",
+                    "toolbar.getComponent('EditButton').disable();\r",
+                    "toolbar.getComponent('NewButton').disable();\r",
+                    "toolbar.getComponent('CancelButton').enable();\r",
+                    "toolbar.getComponent('SaveButton').enable();\r",
+                    "toolbar.getComponent('DeleteButton').disable();\r",
+                    ""
+                ]
+            },
+            "designerId": "cfd8fe32-6add-4482-909f-d2a880ee5300"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSaveButtonClick",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "implHandler": [
+                    "var panel = eOpts.scope, //button.up('#CrudPanel'),\r",
+                    "    toolbar = panel.down('#ActionToolbar'),\r",
+                    "    form = panel.down('#FormPanel'),\r",
+                    "    grid = panel.down('#GridPanel'),\r",
+                    "    store = grid.getStore(),\r",
+                    "    record = form.getForm().getRecord()\r",
+                    "    ;\r",
+                    "\r",
+                    "if (!Ext.isEmpty(record) && (record.data.id === undefined || record.data.id === 0)) {\r",
+                    "    var values = form.getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "} else {\r",
+                    "    form.getForm().updateRecord();\r",
+                    "}\r",
+                    "form.disable();\r",
+                    "toolbar.getComponent('NewButton').enable();\r",
+                    "toolbar.getComponent('CancelButton').disable();\r",
+                    "toolbar.getComponent('SaveButton').disable();\r",
+                    "\r",
+                    "if (grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('EditButton').enable();\r",
+                    "    toolbar.getComponent('DeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('EditButton').disable();\r",
+                    "    toolbar.getComponent('DeleteButton').disable();\r",
+                    "}"
+                ]
+            },
+            "designerId": "b11d4235-f2f7-4f3c-81aa-ff77b27b6868"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCancelButtonClick",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "implHandler": [
+                    "var panel = eOpts.scope, //button.up('#CrudPanel'),\r",
+                    "    toolbar = panel.down('#ActionToolbar'),\r",
+                    "    form = panel.down('#FormPanel'),\r",
+                    "    grid = panel.down('#GridPanel'),\r",
+                    "    store = grid.getStore(),\r",
+                    "    record = form.getForm().getRecord()\r",
+                    "    ;\t\t\t\t\t\t\t\t\r",
+                    "    if (!Ext.isEmpty(record)) {\r",
+                    "        form.getForm().reset();\r",
+                    "    form.disable();\r",
+                    "\r",
+                    "    toolbar.getComponent('NewButton').enable();\r",
+                    "    toolbar.getComponent('CancelButton').disable();\r",
+                    "    toolbar.getComponent('SaveButton').disable();\r",
+                    "    if (grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "        toolbar.getComponent('EditButton').enable();\r",
+                    "        toolbar.getComponent('DeleteButton').enable();\r",
+                    "    } else {\r",
+                    "        toolbar.getComponent('EditButton').disable();\r",
+                    "        toolbar.getComponent('DeleteButton').disable();\r",
+                    "    }    \r",
+                    "}\r",
+                    "/*\r",
+                    "if(!Ext.isEmpty(grid) && grid.getView().getNodes().length > 0) {\r",
+                    "grid.getView().select(0);\r",
+                    "record = grid.getSelectionModel().getSelection()[0];\r",
+                    "form.getForm().loadRecord(record);\r",
+                    "}\r",
+                    "\r",
+                    "*/"
+                ]
+            },
+            "designerId": "6cb5c5d6-3594-40fc-8ca1-1ccbda5874b7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDeleteButtonClick",
+                "designer|params": [
+                    "button",
+                    "e",
+                    "eOpts"
+                ],
+                "implHandler": [
+                    "var panel = eOpts.scope, //button.up('#CrudPanel'),\r",
+                    "    toolbar = panel.down('#ActionToolbar'),\r",
+                    "    form = panel.down('#FormPanel'),\r",
+                    "    grid = panel.down('#GridPanel'),\r",
+                    "    store = grid.getStore(),\r",
+                    "    record = form.getForm().getRecord()\r",
+                    "    ;\r",
+                    "\r",
+                    "Ext.Msg.confirm('Achtung!', 'Datensatz löschen?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "        if (store !== undefined && record !== undefined) {\r",
+                    "            store.remove(record);\r",
+                    "            form.getForm().reset();\r",
+                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "                grid.getView().select(0);\r",
+                    "                toolbar.getComponent('DeleteButton').enable();\r",
+                    "            } else {\r",
+                    "                toolbar.getComponent('DeleteButton').disable();\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "4986df37-cb99-49ff-afbe-733a39cd55ca"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridPanelSelect",
+                "designer|params": [
+                    "rowmodel",
+                    "record",
+                    "index",
+                    "eOpts"
+                ],
+                "implHandler": [
+                    "var panel = eOpts.scope,\r",
+                    "    toolbar = panel.down('#ActionToolbar'),\r",
+                    "    form = panel.down('#FormPanel'),\r",
+                    "    grid = panel.down('#GridPanel'),\r",
+                    "    store = grid.getStore()\r",
+                    "    ;\r",
+                    "\r",
+                    "form.getForm().loadRecord(record);\r",
+                    "toolbar.getComponent('EditButton').enable();\r",
+                    "toolbar.getComponent('NewButton').enable();\r",
+                    "toolbar.getComponent('CancelButton').disable();\r",
+                    "toolbar.getComponent('SaveButton').disable();\r",
+                    "toolbar.getComponent('DeleteButton').enable();"
+                ]
+            },
+            "designerId": "b1559523-5c07-481d-8015-63496ab06611"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMenuItemClick",
+                "designer|params": [
+                    "item",
+                    "e",
+                    "eOpts"
+                ],
+                "implHandler": [
+                    "var me = this;\r",
+                    "var panel = me.getMainPanel().getComponent('AppTabPanel').down(item.widget);\r",
+                    "\r",
+                    "if (Ext.isEmpty(panel)) {\r",
+                    "    panel = Ext.createByAlias('widget.' + item.widget);    \r",
+                    "    me.getMainPanel().getComponent('AppTabPanel').add(panel);\r",
+                    "}\r",
+                    "me.getMainPanel().getComponent('AppTabPanel').setActiveTab(panel);\r",
+                    "\r",
+                    "return panel;"
+                ]
+            },
+            "designerId": "a51ceec6-7657-4cbd-a2de-329bd5b58176"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "MainPanel",
+                "selector": "#MainPanel",
+                "xtype": "mainpanel"
+            },
+            "designerId": "5979aec1-f9d7-46e3-ad16-1b45f2768164"
+        }
+    ]
+}

@@ -285,7 +285,7 @@
                 "itemId": "ReportPreviewGridPanel",
                 "title": null
             },
-            "designerId": "78eb32e9-66f1-46ba-841e-99ef2251f52e",
+            "designerId": "e982a485-b3e6-46c2-b15f-b1b28cf9e67d",
             "cn": [
                 {
                     "type": "Ext.grid.column.Number",
@@ -308,6 +308,20 @@
                     },
                     "codeClass": null,
                     "designerId": "a25fec68-48b9-41a8-b366-f59e1e9727c5"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true
+                    },
+                    "designerId": "036ed7ac-1a67-4491-a3d1-0241c6a2c82a"
                 }
             ]
         }

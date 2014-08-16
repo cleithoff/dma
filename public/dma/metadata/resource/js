@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js",
+        "url": "ext-lang-de.js"
+    },
+    "designerId": "27ebc538-d6af-48bc-92d7-44bd0921686a"
+}

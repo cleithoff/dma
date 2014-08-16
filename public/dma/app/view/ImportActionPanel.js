@@ -68,47 +68,6 @@ Ext.define('MyApp.view.ImportActionPanel', {
             ],
             items: [
                 {
-                    xtype: 'gridpanel',
-                    region: 'center',
-                    split: true,
-                    itemId: 'ImportActionGridPanel',
-                    store: 'ImportActionJsonStore',
-                    columns: [
-                        {
-                            xtype: 'numbercolumn',
-                            width: 50,
-                            align: 'right',
-                            dataIndex: 'linenumber',
-                            text: '#',
-                            format: '0'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            width: 200,
-                            dataIndex: 'action',
-                            text: 'Aktion'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            width: 200,
-                            dataIndex: 'source',
-                            text: 'Quelle'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            width: 300,
-                            dataIndex: 'condition',
-                            text: 'Bedingung'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'setter',
-                            text: 'Setter',
-                            flex: 1
-                        }
-                    ]
-                },
-                {
                     xtype: 'form',
                     region: 'north',
                     split: true,
@@ -147,6 +106,47 @@ Ext.define('MyApp.view.ImportActionPanel', {
                             anchor: '100%',
                             fieldLabel: 'Setter',
                             name: 'setter'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'gridpanel',
+                    region: 'center',
+                    split: false,
+                    itemId: 'ImportActionGridPanel',
+                    store: 'ImportActionJsonStore',
+                    columns: [
+                        {
+                            xtype: 'numbercolumn',
+                            width: 50,
+                            align: 'right',
+                            dataIndex: 'linenumber',
+                            text: '#',
+                            format: '0'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            width: 200,
+                            dataIndex: 'action',
+                            text: 'Aktion'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            width: 200,
+                            dataIndex: 'source',
+                            text: 'Quelle'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            width: 300,
+                            dataIndex: 'condition',
+                            text: 'Bedingung'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'setter',
+                            text: 'Setter',
+                            flex: 1
                         }
                     ]
                 }

@@ -153,6 +153,14 @@ Ext.define('MyApp.view.ReportReportPanel', {
                             dataIndex: 'bool',
                             text: 'Boolean'
                         }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'pagingtoolbar',
+                            dock: 'bottom',
+                            width: 360,
+                            displayInfo: true
+                        }
                     ]
                 }
             ]

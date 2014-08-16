@@ -23,6 +23,24 @@
             },
             "codeClass": null,
             "userConfig": {
+                "border": false,
+                "height": null,
+                "itemId": "ImportParameterFormPanel",
+                "bodyPadding": 10,
+                "header": false,
+                "title": "Parameter"
+            },
+            "designerId": "fe185da8-6387-4bc6-ae6b-9ea46209c690"
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": false,
                 "itemId": "ImportExecuteFormPanel",
                 "bodyPadding": 10,
                 "title": null

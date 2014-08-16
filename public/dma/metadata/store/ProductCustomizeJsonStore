@@ -1,0 +1,45 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "model": "ProductCustomizeModel",
+        "storeId": "ProductCustomizeJsonStore",
+        "designer|userClassName": "ProductCustomizeJsonStore",
+        "pageSize": 1000000
+    },
+    "designerId": "471bf013-2ac4-4549-a990-a110713567c1",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/product/customize/index"
+            },
+            "designerId": "003c0b16-3ac2-4ccc-832a-20a940f7cbc2",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "302f93a4-34fb-456e-9d6b-4c414676ad5a"
+                }
+            ]
+        }
+    ]
+}

@@ -43,8 +43,22 @@ Ext.define('MyApp.view.PartnerPanel', {
                     columns: [
                         {
                             xtype: 'gridcolumn',
+                            align: 'right',
+                            dataIndex: 'partner_nr',
+                            text: 'Partner-Nr.',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
                             dataIndex: 'title',
                             text: 'Partner',
+                            flex: 3
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            hidden: true,
+                            dataIndex: 'id',
+                            text: 'Partner ID',
                             flex: 1
                         }
                     ],

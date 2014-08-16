@@ -1,0 +1,45 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "autoSync": true,
+        "model": "ProductWeightModel",
+        "storeId": "MyJsonStore",
+        "designer|userClassName": "ProductWeightJsonStore",
+        "pageSize": 1000000
+    },
+    "designerId": "a50603c8-075d-42f2-bdc4-573f106cb453",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/product/weight/index"
+            },
+            "designerId": "7d09a368-95c2-4f48-8b53-df68529aa42f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "3b310542-86f2-4e95-b48f-fa28900f9879"
+                }
+            ]
+        }
+    ]
+}

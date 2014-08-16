@@ -29,7 +29,7 @@ class Package_Service_Package
 		$orderItemRow = $orderItem->find($order_item_id)->current();
 		$productItemRow = $productItem->find($orderItemRow->product_item_id)->current();
 		$productProductRow = $productProduct->find($productItemRow->product_product_id)->current();
-		$productPackageRow = $productPackage->find($productProductRow->idproduct_package)->current();
+		$productPackageRow = $productPackage->find($productProductRow->id)->current();
 
 		$method = $productPackageRow->method;
 		

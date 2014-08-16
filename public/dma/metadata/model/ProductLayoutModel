@@ -18,7 +18,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id"
+                "name": "id",
+                "type": "int"
             },
             "designerId": "26edb921-c26b-4dd5-b8c0-bea1ca3e8a03"
         },
@@ -30,7 +31,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "description"
+                "name": "description",
+                "type": "string"
             },
             "designerId": "33163bb1-ad11-4aa0-b8b5-0f64c0d16520"
         },
@@ -42,19 +44,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "xsl"
-            },
-            "designerId": "d0950459-25ba-4850-add2-411a5bba0f20"
-        },
-        {
-            "type": "Ext.data.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "hotfolder"
+                "name": "hotfolder",
+                "type": "string"
             },
             "designerId": "2bfd5328-120f-45de-8b4e-8fa36242bd48"
         },
@@ -66,9 +57,114 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "metapdf"
+                "name": "xsl_front_preview",
+                "type": "string"
             },
-            "designerId": "8da74d0b-1f91-49d3-a7c5-846101b425fd"
+            "designerId": "a915f6cc-0916-44f6-a2a9-421b8f8c7918"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pdf_front_preview",
+                "type": "string"
+            },
+            "designerId": "1937a0dd-ea6b-413e-930e-2a0380da0a84"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "xsl_back_preview",
+                "type": "string"
+            },
+            "designerId": "a3409a60-0224-4365-824d-15356adb2aff"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pdf_back_preview",
+                "type": "string"
+            },
+            "designerId": "03dfbd96-b45b-4735-b59f-e3ffb9448b12"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "xsl_front_print",
+                "type": "string"
+            },
+            "designerId": "ca0ea333-e18e-4c32-a60a-8ce112cefa6f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pdf_front_print",
+                "type": "string"
+            },
+            "designerId": "1f0232b8-1014-4c2b-ac8c-2710ab4ddd60"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "xsl_back_print",
+                "type": "string"
+            },
+            "designerId": "85436f96-a6d0-4646-a3a0-3f192c6053d8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pdf_back_print",
+                "type": "string"
+            },
+            "designerId": "385e40d7-558b-4893-8dec-6f77130ee92c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "correction_form_class",
+                "type": "string"
+            },
+            "designerId": "3f49161f-d5d1-4a5b-9f41-c2191eb53452"
         }
     ]
 }

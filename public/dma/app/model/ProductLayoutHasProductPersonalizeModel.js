@@ -18,22 +18,36 @@ Ext.define('MyApp.model.ProductLayoutHasProductPersonalizeModel', {
 
     fields: [
         {
-            name: 'id'
+            name: 'id',
+            type: 'int'
         },
         {
-            name: 'product_layout_id'
+            name: 'product_layout_id',
+            type: 'int'
         },
         {
-            name: 'product_personalize_id'
+            name: 'product_personalize_id',
+            type: 'int'
         },
         {
-            name: 'product_personalize'
+            name: 'product_personalize',
+            persist: false
         },
         {
             convert: function(v, rec) {
                 return rec.data.product_personalize.key;
             },
-            name: 'key'
+            name: 'key',
+            persist: false,
+            type: 'string'
+        },
+        {
+            convert: function(v, rec) {
+                return rec.data.product_personalize.label;
+            },
+            name: 'label',
+            persist: false,
+            type: 'string'
         }
     ]
 });

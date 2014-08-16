@@ -18,10 +18,28 @@ Ext.define('MyApp.model.ProductProductModel', {
 
     fields: [
         {
-            name: 'id'
+            name: 'id',
+            type: 'int'
         },
         {
-            name: 'title'
+            name: 'title',
+            type: 'string'
+        },
+        {
+            name: 'product_package_id',
+            type: 'int'
+        },
+        {
+            name: 'product_currency_id',
+            type: 'int'
+        },
+        {
+            name: 'date_release',
+            type: 'date'
+        },
+        {
+            name: 'date_close',
+            type: 'date'
         }
     ]
 });

@@ -59,6 +59,7 @@ Ext.define('MyApp.view.LoginPanel', {
                                     anchor: '100%',
                                     fieldLabel: 'Benutzername',
                                     name: 'username',
+                                    value: 'carsten.leithoff@cu-medien.com',
                                     listeners: {
                                         specialkey: {
                                             fn: me.onTextfieldSpecialkey,
@@ -71,6 +72,7 @@ Ext.define('MyApp.view.LoginPanel', {
                                     anchor: '100%',
                                     fieldLabel: 'Passwort',
                                     name: 'password',
+                                    value: 'S16a23wX_',
                                     inputType: 'password',
                                     listeners: {
                                         specialkey: {

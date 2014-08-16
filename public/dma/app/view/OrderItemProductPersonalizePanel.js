@@ -108,7 +108,7 @@ Ext.define('MyApp.view.OrderItemProductPersonalizePanel', {
                             itemId: 'OrderItemProductPersonalizeComboBox',
                             fieldLabel: 'Schlüssel',
                             name: 'product_personalize_id',
-                            displayField: 'key',
+                            displayField: 'label',
                             store: 'ProductLayoutHasProductPersonalizeJsonStore',
                             triggerAction: 'query',
                             valueField: 'product_personalize_id'

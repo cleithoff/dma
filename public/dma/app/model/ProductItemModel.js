@@ -18,34 +18,53 @@ Ext.define('MyApp.model.ProductItemModel', {
 
     fields: [
         {
-            name: 'id'
+            name: 'id',
+            type: 'int'
         },
         {
-            name: 'title'
+            name: 'title',
+            type: 'string'
         },
         {
-            name: 'product_product_id'
+            name: 'product_product_id',
+            type: 'int'
         },
         {
-            name: 'product_product'
+            name: 'product_product',
+            persist: false
         },
         {
-            name: 'product_layout_id'
+            name: 'product_layout_id',
+            type: 'int'
         },
         {
-            name: 'price'
+            name: 'price',
+            type: 'float'
         },
         {
-            name: 'weight'
+            name: 'weight',
+            type: 'float'
         },
         {
-            name: 'released'
+            name: 'released',
+            type: 'boolean'
         },
         {
-            name: 'amount_available'
+            name: 'amount_available',
+            type: 'int'
         },
         {
-            name: 'product_layout'
+            name: 'product_layout',
+            persist: false
+        },
+        {
+            name: 'product_item_no'
+        },
+        {
+            name: 'product_item_no_internal'
+        },
+        {
+            name: 'product_item_no_external'
         }
     ]
 });

@@ -144,19 +144,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "itemId": "ProductMenuItem",
-                                        "text": "Produkte"
-                                    },
-                                    "designerId": "fc626375-4e92-4db5-9ed5-aeeb3b9b61c5"
-                                },
-                                {
-                                    "type": "Ext.menu.Item",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
                                         "itemId": "UserMenuItem",
                                         "text": "Benutzer"
                                     },
@@ -174,6 +161,395 @@
                                         "text": "Import"
                                     },
                                     "designerId": "f28ab5d8-b448-4235-ad2d-117441ec031b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "text": "Produkte"
+                    },
+                    "designerId": "7459eb47-17e8-4933-8b99-c5a7ce333d94",
+                    "cn": [
+                        {
+                            "type": "Ext.menu.Menu",
+                            "reference": {
+                                "name": "menu",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 240
+                            },
+                            "designerId": "5ad80233-a667-4c6e-b9dc-4572f2b9a4ae",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "widget": "productpanel",
+                                        "itemId": "ProductMenuItem",
+                                        "text": "Produkte"
+                                    },
+                                    "designerId": "fc626375-4e92-4db5-9ed5-aeeb3b9b61c5",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "widget",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onProductMenuItemClick",
+                                                "implHandler": [
+                                                    "var panel = MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "8ee41c34-e4c6-4fcc-bb8c-ff93f86ca4aa"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "widget": "productlayoutpanel",
+                                        "itemId": "ProductLayoutMenuItem",
+                                        "text": "Produktlayout Definition"
+                                    },
+                                    "designerId": "38c19b19-5a6c-4d25-995b-6d4fd9477e7c",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "widget",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onProductLayoutMenuItemClick",
+                                                "implHandler": [
+                                                    "MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "f1de0567-6103-4b5c-a3d0-f7da20b2e0cf"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "widget": "productcategorypanel",
+                                        "itemId": "ProductCategoryMenuItem",
+                                        "text": "Kategorie Definition"
+                                    },
+                                    "designerId": "65a30c12-e248-40b8-8440-f4e9d4ac1a65",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "widget",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onProductCategoryMenuItemClick",
+                                                "implHandler": [
+                                                    "MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "50a86f1a-e199-49fc-b295-a233a467163b"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "widget": "productpackagepanel",
+                                        "itemId": "ProductPackageMenuItem",
+                                        "text": "Paket Definition"
+                                    },
+                                    "designerId": "38394dcc-f088-4e0d-ac2c-2c93787a1f73",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "widget",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onProductPackageMenuItemClick",
+                                                "implHandler": [
+                                                    "MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "25e8b825-a369-4c28-9787-daed830fbfce"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "widget": "productdatatypepanel",
+                                        "itemId": "ProductDatatypeMenuItem",
+                                        "text": "Datentyp Definition"
+                                    },
+                                    "designerId": "c3126482-7214-41e1-9987-19c57f1c37b1",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "widget",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onProductDatatypeMenuItemClick",
+                                                "implHandler": [
+                                                    "MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "4c46c839-a949-4333-a6c7-4ce0b6d6b940"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "widget": "productpropertypanel",
+                                        "itemId": "ProductPropertyMenuItem",
+                                        "text": "Produkteigenschaften Definition"
+                                    },
+                                    "designerId": "c2193851-052c-4b74-bee9-d7dfc2505928",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "widget",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onProductPropertyMenuItemClick",
+                                                "implHandler": [
+                                                    "MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "28ccb38e-5f0e-40c7-ac64-7bd41d51bff1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "widget": "productcustomizepanel",
+                                        "itemId": "ProductCustomizeMenuItem",
+                                        "text": "Produktanpassungen Definition"
+                                    },
+                                    "designerId": "35816771-4824-4ba5-aa50-bd70a58caa6c",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "widget",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onProductCustomizeMenuItemClick",
+                                                "implHandler": [
+                                                    "MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "ff24626c-7e9d-4b2a-820c-e94b8789c0c8"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "widget": "productpersonalizepanel",
+                                        "itemId": "ProductPersonalizeMenuItem",
+                                        "text": "Produktpersonalisierung Definition"
+                                    },
+                                    "designerId": "d72cd0d1-392b-42f3-912c-22d5a2c97955",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "widget",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onProductPersonalizeMenuItemClick",
+                                                "implHandler": [
+                                                    "MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "73d2f734-f85e-4413-ae29-9fe6c3959e44"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "widget": "productcurrencypanel",
+                                        "itemId": "ProductCurrencyMenuItem",
+                                        "text": "Währung Definition"
+                                    },
+                                    "designerId": "5a2d07af-7ed4-4045-bc68-f21fa6059a0c",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "widget",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onProductCurrencyMenuItemClick",
+                                                "implHandler": [
+                                                    "MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "72f29874-60ad-4476-a5d6-e77193c85c4e"
+                                        }
+                                    ]
                                 }
                             ]
                         }

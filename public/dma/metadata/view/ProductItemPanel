@@ -1,0 +1,588 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "border": false,
+        "height": null,
+        "itemId": null,
+        "width": null,
+        "designer|userClassName": "ProductItemPanel",
+        "designer|userAlias": "productitempanel",
+        "layout": "border",
+        "title": "Artikel"
+    },
+    "designerId": "afa2141a-dc96-4ab4-819c-76f14af83d04",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "layout|split": true,
+                "itemId": "GridPanel",
+                "width": 150,
+                "header": false,
+                "title": "My Grid Panel",
+                "store": "ProductItemJsonStore"
+            },
+            "designerId": "1d670618-37f5-4ecd-bfa3-ca74a0a882f6",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "title",
+                        "text": "Bezeichnung",
+                        "flex": 1
+                    },
+                    "designerId": "8c9198e2-31c3-43fe-a9ee-2eb0c31d049d"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "dd673140-aed5-470f-9f3c-6264f0d46af5"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "ProductItemJsonStore"
+                    },
+                    "designerId": "3765ca39-634f-4e24-8099-919efd29efce",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processMyPagingToolbar3",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "\r",
+                                    "if (Ext.isEmpty(me.store)) {\r",
+                                    "\tme.store = Ext.create('MyApp.store.' + config.store);\r",
+                                    "}\r",
+                                    "\r",
+                                    "config.store = me.store;\r",
+                                    "\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "e33b287d-1d7f-4f62-a1f5-6f4226d3f801"
+                        }
+                    ]
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processGridPanel",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "var me = this;\r",
+                            "\r",
+                            "if (Ext.isEmpty(me.store)) {\r",
+                            "\tme.store = Ext.create('MyApp.store.' + config.store);\r",
+                            "}\r",
+                            "\r",
+                            "config.store = me.store;\r",
+                            "\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "c294b8a0-7678-40d5-b381-b7fe6d0d2a99"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridPanelSelect",
+                        "implHandler": [
+                            "MyApp.app.getCrudControllerController().onGridPanelSelect(rowmodel, record, index, eOpts);\r",
+                            "\r",
+                            "\r",
+                            "var productweightpanel = eOpts.scope.down('productweightpanel');\r",
+                            "\r",
+                            "productweightpanel.masterRecord = record;\r",
+                            "\r",
+                            "var productweightgrid = productweightpanel.down('#GridPanel');\r",
+                            "var productweightstore = productweightgrid.getStore();\r",
+                            "\r",
+                            "productweightstore.clearFilter(true);\r",
+                            "productweightstore.filter([{property:\"product_item_id\", value: record.data.id}]);\r",
+                            "productweightstore.load({\r",
+                            "    callback: function(records, operation, success) {\r",
+                            "        productweightgrid.getSelectionModel().select(0);\r",
+                            "    }\r",
+                            "});\r",
+                            "\r",
+                            "//if (!Ext.isEmpty(eOpts.scope.down('productitemhasproductcustomizepanel'))) {\r",
+                            "    \r",
+                            "    var bagstore = eOpts.scope.down('productitemhasproductcustomizepanel').down('#BagGridPanel').getStore();\r",
+                            "\r",
+                            "    bagstore.clearFilter(true);\r",
+                            "    bagstore.filter([{property: 'product_item_id', value: record.data.id}]);\r",
+                            "    bagstore.load();\r",
+                            "    \r",
+                            "\teOpts.scope.down('productitemhasproductcustomizepanel').linkrecord = record;\r",
+                            "//}\r",
+                            ""
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "designerId": "13725218-ff87-4a46-8e64-d83fc759600d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "itemId": "Container",
+                "layout": "border"
+            },
+            "designerId": "eac58848-629c-46cd-92b2-77e13c84e2e4",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "north",
+                        "height": null,
+                        "itemId": "ActionToolbar"
+                    },
+                    "designerId": "1ca477b7-2ef5-43dc-bb71-ec3a269810b7",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "itemId": "NewButton",
+                                "text": "Neu"
+                            },
+                            "designerId": "ca764d52-2deb-49fe-951a-ae0979dbb3e3",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onNewButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onNewButtonClick(button, e, eOpts, function(masterRecord, record) {\r",
+                                            "\trecord.data.product_product_id = masterRecord.data.id;\r",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "37fc9b30-40f7-4233-a4bf-6f2fd322f34a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "EditButton",
+                                "text": "Bearbeiten"
+                            },
+                            "designerId": "652b1de6-5414-4479-b002-1d43441feae6",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onEditButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onEditButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "2497e755-ed86-45ad-8d0a-0c26b21854e2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "SaveButton",
+                                "text": "Speichern"
+                            },
+                            "designerId": "a134b837-ba14-4fe7-b150-6e9291dfa7cc",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onSaveButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "41a2b1bf-aca3-4f01-9f10-1cdec7325f1c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "CancelButton",
+                                "text": "Abbrechen"
+                            },
+                            "designerId": "d542493c-c315-4e31-9f64-b910807ebec1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCancelButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onCancelButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "e88743f4-4b46-43a8-a4e2-3c9f4f81fe3a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "DeleteButton",
+                                "text": "Löschen"
+                            },
+                            "designerId": "8ba7b4b0-e6aa-4d79-960b-ec4c9bf52171",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDeleteButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onDeleteButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "612f8989-d0bd-4429-9b98-51a2560e03af"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "west",
+                        "layout|split": true,
+                        "disabled": true,
+                        "itemId": "FormPanel",
+                        "width": 320,
+                        "bodyPadding": 10,
+                        "header": false,
+                        "title": "My Form",
+                        "trackResetOnLoad": true
+                    },
+                    "designerId": "63e3804c-9298-4832-bd03-23843217a45e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Bezeichnung",
+                                "name": "title"
+                            },
+                            "designerId": "baecce1d-06ac-4b24-b044-1f824606957a"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Produkt Layout",
+                                "name": "product_layout_id",
+                                "displayField": "description",
+                                "store": "ProductLayoutJsonStore",
+                                "valueField": "id"
+                            },
+                            "designerId": "a00f203d-9d72-4e1b-859b-7004fd438d6b"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Preis",
+                                "name": "price"
+                            },
+                            "designerId": "fefeff54-00c3-4636-ae00-605ca1287a58"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Gewicht",
+                                "name": "weight"
+                            },
+                            "designerId": "170f4299-58ef-470e-8e28-648749c52e43"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": null,
+                                "hideEmptyLabel": false,
+                                "name": "released",
+                                "boxLabel": "Freigegeben"
+                            },
+                            "designerId": "3b24eab8-c276-4be8-adce-0d786770f58d"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Anzahl verfügbar",
+                                "name": "amount_available"
+                            },
+                            "designerId": "a7af9273-1621-42ef-a87d-86eff8407a1d"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Artikelnummer",
+                                "name": "product_item_no"
+                            },
+                            "designerId": "647344d9-4f2d-443a-8148-3372635eadb7"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "ArtikelNr intern",
+                                "name": "product_item_no_internal"
+                            },
+                            "designerId": "b38f126d-b933-42a3-bc31-7cc6dcbc3be2"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "ArtikelNr extern",
+                                "name": "product_item_no_external"
+                            },
+                            "designerId": "194e66f3-f3a1-457d-a017-ade47f2bf520"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "center",
+                        "itemId": "DummyPanel",
+                        "header": false,
+                        "title": "My Panel"
+                    },
+                    "designerId": "0ebd059b-025b-4c1a-aae8-3b3cff583871"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "eOpts.scope.down('#GridPanel').getStore().load({\r",
+                    "    callback: function(records, operation, success) {\r",
+                    "    \r",
+                    "        var productWeightPanel = Ext.create('MyApp.view.ProductWeightPanel', {region: 'center'});\r",
+                    "        eOpts.scope.down('#DummyPanel').add(productWeightPanel);\r",
+                    "        \r",
+                    "        \r",
+                    "        \r",
+                    "        var productItemHasProductCustomizePanel = Ext.create('MyApp.view.ProductItemHasProductCustomizePanel', {region: 'center'}); \r",
+                    "        eOpts.scope.down('#DummyPanel').add(productItemHasProductCustomizePanel);\r",
+                    "        var bagstore = productItemHasProductCustomizePanel.down('#BagGridPanel').getStore();\r",
+                    "        \r",
+                    "        console.log(bagstore);\r",
+                    "        \r",
+                    "        bagstore.clearFilter(true);\r",
+                    "        bagstore.filter([{property: 'product_item_id', value: records[0].data.id}]);\r",
+                    "        bagstore.load();\r",
+                    "        productItemHasProductCustomizePanel.linkrecord = records[0];\r",
+                    "        \r",
+                    "        eOpts.scope.down('#GridPanel').getSelectionModel().select(0);\r",
+                    "        \r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "cc0df123-d562-45f7-8437-8fab2e5b4b24"
+        }
+    ]
+}
