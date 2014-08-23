@@ -9,7 +9,7 @@
         "autoLoad": false,
         "autoSync": true,
         "model": "ProductWeightModel",
-        "storeId": "MyJsonStore",
+        "storeId": "ProductWeightJsonStore",
         "designer|userClassName": "ProductWeightJsonStore",
         "pageSize": 1000000
     },

@@ -27,7 +27,7 @@ Ext.define('MyApp.store.ProductWeightJsonStore', {
             autoLoad: false,
             autoSync: true,
             model: 'MyApp.model.ProductWeightModel',
-            storeId: 'MyJsonStore',
+            storeId: 'ProductWeightJsonStore',
             pageSize: 1000000,
             proxy: {
                 type: 'rest',

@@ -49,13 +49,13 @@ Ext.define('MyApp.controller.OrderPanelController', {
     },
 
     onOrderOrderFilterButtonClick: function(button, e, eOpts) {
-        grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');
+        var grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');
 
         grid.store.clearFilter(true);
 
-        filter = [];
+        var filter = [];
 
-        values = grid.getComponent('OrderOrderGridFilterFormPanel').getForm().getValues();
+        var values = grid.getComponent('OrderOrderGridFilterFormPanel').getForm().getValues();
 
         console.log(values);
 
@@ -71,12 +71,21 @@ Ext.define('MyApp.controller.OrderPanelController', {
             filter.push({property:"partner_partner.title",value:values.title,operator:"LIKE"});
         }
 
+        if (values.import_import_id !== "") {
+            filter.push({property:"import_import_id",value:values.import_import_id,operator:"="});
+        }
+
+        if (values.import_stack_id !== "") {
+            filter.push({property:"import_stack_id",value:values.import_stack_id,operator:"="});
+        }
 
         grid.store.filter(filter);
     },
 
     onOrderOrderClearFilterButtonClick: function(button, e, eOpts) {
-        grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');
+        var grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');
+
+        grid.getComponent('OrderOrderGridFilterFormPanel').getForm().reset();
 
         grid.store.clearFilter();
     },

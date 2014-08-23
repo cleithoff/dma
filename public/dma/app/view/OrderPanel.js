@@ -43,6 +43,7 @@ Ext.define('MyApp.view.OrderPanel', {
                         {
                             xtype: 'numbercolumn',
                             hidden: true,
+                            maxWidth: 100,
                             width: 60,
                             align: 'right',
                             dataIndex: 'id',
@@ -51,6 +52,7 @@ Ext.define('MyApp.view.OrderPanel', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            maxWidth: 100,
                             align: 'right',
                             dataIndex: 'order_no_external',
                             text: 'Auftrag-Nr.',
@@ -61,6 +63,7 @@ Ext.define('MyApp.view.OrderPanel', {
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 return record.data.partner_partner.partner_nr;
                             },
+                            maxWidth: 100,
                             align: 'right',
                             dataIndex: 'partner_partner.partner_nr',
                             text: 'Partner-Nr.',
@@ -73,6 +76,32 @@ Ext.define('MyApp.view.OrderPanel', {
                             },
                             dataIndex: 'partner_partner.title',
                             text: 'Partner',
+                            flex: 2
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (Ext.isEmpty(record.data.import_import)) return '';
+
+                                return record.data.import_import.title;
+                            },
+                            hidden: true,
+                            maxWidth: 120,
+                            dataIndex: 'partner_partner.title',
+                            text: 'Import',
+                            flex: 2
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (Ext.isEmpty(record.data.import_stack)) return '';
+
+                                return record.data.import_stack.title;
+                            },
+                            hidden: true,
+                            maxWidth: 300,
+                            dataIndex: 'partner_partner.title',
+                            text: 'Importstack',
                             flex: 2
                         }
                     ],
@@ -130,6 +159,46 @@ Ext.define('MyApp.view.OrderPanel', {
                                     }
                                 },
                                 {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: 'Import',
+                                    name: 'import_import_id',
+                                    autoSelect: false,
+                                    displayField: 'title',
+                                    store: 'ImportImportJsonStore',
+                                    valueField: 'id',
+                                    listeners: {
+                                        specialkey: {
+                                            fn: me.onTextfieldSpecialkey1,
+                                            scope: me
+                                        },
+                                        select: {
+                                            fn: me.onComboboxSelect,
+                                            scope: me
+                                        }
+                                    }
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: 'Importstapel',
+                                    name: 'import_stack_id',
+                                    autoSelect: false,
+                                    displayField: 'title',
+                                    store: 'ImportStackJsonStore',
+                                    valueField: 'id',
+                                    listeners: {
+                                        specialkey: {
+                                            fn: me.onTextfieldSpecialkey11,
+                                            scope: me
+                                        },
+                                        select: {
+                                            fn: me.onComboboxSelect1,
+                                            scope: me
+                                        }
+                                    }
+                                },
+                                {
                                     xtype: 'button',
                                     itemId: 'OrderOrderFilterButton',
                                     text: 'Filtern'
@@ -178,6 +247,32 @@ Ext.define('MyApp.view.OrderPanel', {
         if (e.getKey() == e.ENTER) {
             field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));
         }
+    },
+
+    onTextfieldSpecialkey1: function(field, e, eOpts) {
+        // e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,
+        // e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN
+        if (e.getKey() == e.ENTER) {
+            field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));
+        }
+    },
+
+    onComboboxSelect: function(combo, records, eOpts) {
+        combo.up('form').down('#OrderOrderFilterButton').fireEvent('click', combo.up('form').down('#OrderOrderFilterButton'));
+
+    },
+
+    onTextfieldSpecialkey11: function(field, e, eOpts) {
+        // e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,
+        // e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN
+        if (e.getKey() == e.ENTER) {
+            field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));
+        }
+    },
+
+    onComboboxSelect1: function(combo, records, eOpts) {
+        combo.up('form').down('#OrderOrderFilterButton').fireEvent('click', combo.up('form').down('#OrderOrderFilterButton'));
+
     }
 
 });

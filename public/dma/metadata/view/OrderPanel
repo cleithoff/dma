@@ -44,6 +44,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": true,
+                        "maxWidth": 100,
                         "width": 60,
                         "align": "right",
                         "dataIndex": "id",
@@ -60,6 +61,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "maxWidth": 100,
                         "align": "right",
                         "dataIndex": "order_no_external",
                         "text": "Auftrag-Nr.",
@@ -75,6 +77,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "maxWidth": 100,
                         "align": "right",
                         "dataIndex": "partner_partner.partner_nr",
                         "text": "Partner-Nr.",
@@ -116,6 +119,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "maxWidth": null,
                         "dataIndex": "partner_partner.title",
                         "text": "Partner",
                         "flex": 2
@@ -145,6 +149,94 @@
                                 ]
                             },
                             "designerId": "ff81ecc3-2fad-4e62-8418-fc5d98b7752c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "maxWidth": 120,
+                        "dataIndex": "partner_partner.title",
+                        "text": "Import",
+                        "flex": 2
+                    },
+                    "designerId": "afb198d7-a0b2-422f-97a0-6c1d83b4fa0b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (Ext.isEmpty(record.data.import_import)) return '';\r",
+                                    "\r",
+                                    "return record.data.import_import.title;"
+                                ]
+                            },
+                            "designerId": "5720b19a-9aeb-44ea-b32f-4087d270ba3b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "maxWidth": 300,
+                        "dataIndex": "partner_partner.title",
+                        "text": "Importstack",
+                        "flex": 2
+                    },
+                    "designerId": "bcff7b6f-f8eb-435e-85e7-5735e4c8e725",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (Ext.isEmpty(record.data.import_stack)) return '';\r",
+                                    "\r",
+                                    "return record.data.import_stack.title;"
+                                ]
+                            },
+                            "designerId": "a57fade4-c416-4d39-8b71-8539d476115e"
                         }
                     ]
                 },
@@ -290,6 +382,124 @@
                                         "scope": "me"
                                     },
                                     "designerId": "bc27a458-2fa2-4305-b5b7-aa8297eabd9f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Import",
+                                "name": "import_import_id",
+                                "autoSelect": false,
+                                "displayField": "title",
+                                "store": "ImportImportJsonStore",
+                                "valueField": "id"
+                            },
+                            "designerId": "eb572058-42ef-481a-a4c1-1453bb64a6cc",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldSpecialkey1",
+                                        "implHandler": [
+                                            "// e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,\r",
+                                            "// e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN\r",
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));\r",
+                                            "}"
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "e3bd664d-4a6c-4a47-80e5-b678edbfbe0d"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect",
+                                        "implHandler": [
+                                            "combo.up('form').down('#OrderOrderFilterButton').fireEvent('click', combo.up('form').down('#OrderOrderFilterButton'));\r",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "ce1167b7-4e28-425d-a6a3-fdeb4975d5f3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Importstapel",
+                                "name": "import_stack_id",
+                                "autoSelect": false,
+                                "displayField": "title",
+                                "store": "ImportStackJsonStore",
+                                "valueField": "id"
+                            },
+                            "designerId": "0ce0c9ce-10f3-4218-b6ca-6506f5a936e4",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldSpecialkey11",
+                                        "implHandler": [
+                                            "// e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,\r",
+                                            "// e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN\r",
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));\r",
+                                            "}"
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "b9430353-d247-4e3d-92ca-e20cb89b2307"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect1",
+                                        "implHandler": [
+                                            "combo.up('form').down('#OrderOrderFilterButton').fireEvent('click', combo.up('form').down('#OrderOrderFilterButton'));\r",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "35063ca6-28a3-43f8-b8aa-a3e2fab0ac7f"
                                 }
                             ]
                         },

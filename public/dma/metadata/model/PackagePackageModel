@@ -78,7 +78,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "outgoing"
+                "name": "outgoing",
+                "type": "date"
             },
             "designerId": "b4a82def-5f74-4fdc-8477-441ac485b092"
         },

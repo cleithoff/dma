@@ -192,9 +192,7 @@
                         "layout|anchor": "100%",
                         "fieldLabel": "Mantel",
                         "name": "frame_type_title",
-                        "value": [
-                            "Display Field"
-                        ]
+                        "value": null
                     },
                     "designerId": "d11b295f-654c-4b50-b090-ecedd5f36274"
                 },
@@ -207,11 +205,9 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "fieldLabel": "Packet",
+                        "fieldLabel": "Paket",
                         "name": "package_type_title",
-                        "value": [
-                            "Display Field"
-                        ]
+                        "value": null
                     },
                     "designerId": "a2909749-9b31-419d-8ed4-783c25985db0"
                 },
@@ -224,7 +220,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "fieldLabel": "Label",
+                        "fieldLabel": null,
                         "name": "readytosend",
                         "boxLabel": "fertig zum Versand",
                         "inputValue": "1",
@@ -242,7 +238,10 @@
                     "userConfig": {
                         "layout|anchor": "100%",
                         "fieldLabel": "Ausgangsdatum",
-                        "name": "outgoing"
+                        "name": "outgoing",
+                        "altFormats": "m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j|d.m.Y",
+                        "format": "d.m.Y",
+                        "submitFormat": "Y-m-d"
                     },
                     "designerId": "db93cb3e-16e0-4b2f-a6b9-ab8fb7acf559"
                 },
@@ -324,7 +323,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "package_type.title",
-                        "text": "Packet"
+                        "text": "Paket"
                     },
                     "designerId": "6a000727-b447-4c11-afc3-db660d4f1bcc",
                     "cn": [
@@ -347,6 +346,7 @@
                                     "view"
                                 ],
                                 "implHandler": [
+                                    "console.log(record);\r",
                                     "return record.data.package_type.title;"
                                 ]
                             },

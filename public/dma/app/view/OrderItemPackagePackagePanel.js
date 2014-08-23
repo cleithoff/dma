@@ -94,20 +94,17 @@ Ext.define('MyApp.view.OrderItemPackagePackagePanel', {
                             xtype: 'displayfield',
                             anchor: '100%',
                             fieldLabel: 'Mantel',
-                            name: 'frame_type_title',
-                            value: 'Display Field'
+                            name: 'frame_type_title'
                         },
                         {
                             xtype: 'displayfield',
                             anchor: '100%',
-                            fieldLabel: 'Packet',
-                            name: 'package_type_title',
-                            value: 'Display Field'
+                            fieldLabel: 'Paket',
+                            name: 'package_type_title'
                         },
                         {
                             xtype: 'checkboxfield',
                             anchor: '100%',
-                            fieldLabel: 'Label',
                             name: 'readytosend',
                             boxLabel: 'fertig zum Versand',
                             inputValue: '1',
@@ -117,7 +114,10 @@ Ext.define('MyApp.view.OrderItemPackagePackagePanel', {
                             xtype: 'datefield',
                             anchor: '100%',
                             fieldLabel: 'Ausgangsdatum',
-                            name: 'outgoing'
+                            name: 'outgoing',
+                            altFormats: 'm/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j|d.m.Y',
+                            format: 'd.m.Y',
+                            submitFormat: 'Y-m-d'
                         },
                         {
                             xtype: 'textfield',
@@ -143,10 +143,11 @@ Ext.define('MyApp.view.OrderItemPackagePackagePanel', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                console.log(record);
                                 return record.data.package_type.title;
                             },
                             dataIndex: 'package_type.title',
-                            text: 'Packet'
+                            text: 'Paket'
                         },
                         {
                             xtype: 'gridcolumn',

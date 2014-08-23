@@ -231,7 +231,8 @@ class Import_Service_Import
 			switch($source) {
 				case 'csv':
 					$col = str_replace('"', '', $str[1]);
-					$replacement = $csv[$col];
+					$col = str_replace('\'', '', $str[1]);
+					$replacement = @$csv[$col];
 					break;
 				case 'result':
 					$table = $str[1];
@@ -291,155 +292,166 @@ class Import_Service_Import
 	}
 	
 	private function _doImport(array $actions, array $rows, array $fields, array $param) {
-	
-		reset($actions);
-		foreach ($rows as $csv) {
-			$result = array();
-			$exists = array();
-			$select = array();
-			$linenumber = array();
+		Zend_Db_Table::getDefaultAdapter()->beginTransaction();
+		try {
 			reset($actions);
-			while($action = current($actions)) {
-				$key = key($actions);
-				//foreach ($actions as $key => $action) {
-	
-				switch($action['action']) {
-					case 'UPSERT':
-						$insert_id = null;
-						$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['condition'] . ',  ' . $action['setter'] . ' ON DUPLICATE KEY UPDATE ' . $action['setter'];
-						$sql = $this->_getQuery($sql, $csv, $result, $param);
-						try {
-							Zend_Db_Table::getDefaultAdapter()->query($sql);
-							$insert_id = Zend_Db_Table::getDefaultAdapter()->lastInsertId($action['source']);
-						} catch (Exception $ex) {
-							echo $sql;
-							die();
-						}
-						if (!empty($insert_id)) {
-							$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE id = ' . $insert_id;
+			foreach ($rows as $csv) {
+				$result = array();
+				$exists = array();
+				$select = array();
+				$linenumber = array();
+				reset($actions);
+				while($action = current($actions)) {
+					$key = key($actions);
+					//foreach ($actions as $key => $action) {
+		
+					switch($action['action']) {
+						case 'UPSERT':
+							$insert_id = null;
+							$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['condition'] . ',  ' . $action['setter'] . ' ON DUPLICATE KEY UPDATE ' . $action['setter'];
 							$sql = $this->_getQuery($sql, $csv, $result, $param);
-						} else {
-							$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . str_replace(',', ' AND ', $action['condition']);
+
+							try {
+								Zend_Db_Table::getDefaultAdapter()->query($sql);
+								$insert_id = Zend_Db_Table::getDefaultAdapter()->lastInsertId($action['source']);
+							} catch (Exception $ex) {
+								echo $sql;
+								throw($ex);
+							}
+							if (!empty($insert_id)) {
+								$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE id = ' . $insert_id;
+								$sql = $this->_getQuery($sql, $csv, $result, $param);
+							} else {
+								$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . str_replace(',', ' AND ', $action['condition']);
+								$sql = $this->_getQuery($sql, $csv, $result, $param);
+								$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
+								$result[$action['source']] = reset($resultset);
+							}
+							$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
+							$result[$action['source']] = reset($resultset);
+							break;
+						case 'GET':
+							$result[$action['source']] = null;
+							$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . $action['condition'];
+							$sql = $this->_getQuery($sql, $csv, $result, $param);
+							$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
+							$resultset = reset($resultset);
+							if (!empty($resultset)) {
+								$result[$action['source']] = $resultset;
+							}
+							break;
+						case 'EXISTS':
+							$result[$action['source']] = null;
+							$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . $action['condition'];
+							$sql = $this->_getQuery($sql, $csv, $result, $param);
+							$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
+							$resultset = reset($resultset);
+							$exists[$action['source']] = $resultset;
+							if (!empty($resultset)) {
+								$result[$action['source']] = $resultset;
+							}
+							break;
+						case 'UPDATE':
+							$sql = 'UPDATE ' . $action['source'] . ' SET ' . $action['setter'] . ' WHERE ' . $action['condition'];
+							$sql = $this->_getQuery($sql, $csv, $result, $param);
+							try {
+								Zend_Db_Table::getDefaultAdapter()->query($sql);
+							} catch(Exception $ex) {
+								echo $sql;
+								throw($ex);
+							}
+							$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . $action['condition'];
 							$sql = $this->_getQuery($sql, $csv, $result, $param);
 							$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
 							$result[$action['source']] = reset($resultset);
-						}
-						$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
-						$result[$action['source']] = reset($resultset);
-						break;
-					case 'GET':
-						$result[$action['source']] = null;
-						$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . $action['condition'];
-						$sql = $this->_getQuery($sql, $csv, $result, $param);
-						$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
-						$resultset = reset($resultset);
-						if (!empty($resultset)) {
-							$result[$action['source']] = $resultset;
-						}
-						break;
-					case 'EXISTS':
-						$result[$action['source']] = null;
-						$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . $action['condition'];
-						$sql = $this->_getQuery($sql, $csv, $result, $param);
-						$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
-						$resultset = reset($resultset);
-						$exists[$action['source']] = $resultset;
-						break;
-					case 'UPDATE':
-						$sql = 'UPDATE ' . $action['source'] . ' SET ' . $action['setter'] . ' WHERE ' . $action['condition'];
-						$sql = $this->_getQuery($sql, $csv, $result, $param);
-						try {
-							Zend_Db_Table::getDefaultAdapter()->query($sql);
-						} catch(Exception $ex) {
-							echo $sql;
-							die();
-						}
-						$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . $action['condition'];
-						$sql = $this->_getQuery($sql, $csv, $result, $param);
-						$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
-						$result[$action['source']] = reset($resultset);
-						break;
-					case 'INSERT':
-						if (!empty($action['condition'])) {
-							$eval = $this->_getQuery($sql, $csv, $result, $param, $exists);
-							if (!eval($eval)) continue;
-						}
-						$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['setter']; // . ' WHERE ' . $action['condition'];
-						$sql = str_replace(array("\r\n", "\r", "\n"), '', $sql);
-						$sql = $this->_getQuery($sql, $csv, $result, $param);
-						try {
-							Zend_Db_Table::getDefaultAdapter()->query($sql);
-						} catch(Exception $ex) {
-							echo $sql;
-							die();
-						}
-						$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE id = ' . Zend_Db_Table::getDefaultAdapter()->lastInsertId();
-						$sql = str_replace(array("\r\n", "\r", "\n"), '', $sql);
-						$sql = $this->_getQuery($sql, $csv, $result, $param);
-						$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
-						$result[$action['source']] = reset($resultset);
-						break;
-					case 'SCRIPT':
-						$classname = $action['source'];
-						$method = $this->_getQuery($action['setter'], $csv, $result, $param);
-						$class = new $classname();
-						$eval = '$class = new ' . $classname . '(); $class->' . $method . ';';
-						eval($eval);
-						break;
-					case 'EXECUTE':
-						$sql = 'CALL ' . $action['source']; // . ' SET ' . $action['setter']; // . ' WHERE ' . $action['condition'];
-						$sql = $this->_getQuery($sql, $csv, $result, $param);
-						Zend_Db_Table::getDefaultAdapter()->query($sql);
-						break;
-					case 'SELECT':
-						$linenumber[$action['linenumber']] = $key;
-						if (empty($select[$action['source']])) {
-							$table = explode('_', $action['source']);
-							$prefix = array_shift($table);
-							$table = ucfirst($prefix) . '_Model_DbTable_' . str_replace(' ', '',ucwords(implode(' ', $table)));
-							$where = $this->_getQuery($action['condition'], $csv, $result, $param);
-							$select[$action['source']] = Zend_Db_Table::getTableFromString($table)->fetchAll($where)->toArray();
-							$result[$action['source']] = current($select[$action['source']]);
-						} else {
-							$result[$action['source']] = next($select[$action['source']]);
-						}
-						if (empty($result[$action['source']])) {
-	
-							$linenumber = $action['setter'];
-							while (next($actions)) {
-								$action = current($actions);
-								if ($action['linenumber'] == $linenumber) {
-									// GOTO setter - 1, see next() below
-									prev($actions);
-									break;
-								}
+							break;
+						case 'INSERT':
+							if (!empty($action['condition'])) {
+								$eval = 'return ' . $this->_getQuery($action['condition'], $csv, $result, $param, $exists) . ';';
+								if (!eval($eval)) continue;
 							}
-							continue;
-						}
-						break;
-					case 'NEXT':
-						if (!empty($result[$action['source']])) {
-							$linenumber = $action['setter'];
-							//$i = 0;
-							while (prev($actions)) {
-								$action = current($actions);
-								if (!$action || $action['linenumber'] == $linenumber) {
-									// GOTO setter - 1, see next() below
-									prev($actions);
-									break;
-								}
-								/*$i++;
-									if ($i > 6) {
-								die();
-								}*/
+							$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['setter']; // . ' WHERE ' . $action['condition'];
+							$sql = str_replace(array("\r\n", "\r", "\n"), '', $sql);
+							$sql = $this->_getQuery($sql, $csv, $result, $param);
+							try {
+								Zend_Db_Table::getDefaultAdapter()->query($sql);
+							} catch(Exception $ex) {
+								echo $sql;
+								throw($ex);
 							}
-							continue;
-						}
-						break;
-	
+							$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE id = ' . Zend_Db_Table::getDefaultAdapter()->lastInsertId();
+							$sql = str_replace(array("\r\n", "\r", "\n"), '', $sql);
+							$sql = $this->_getQuery($sql, $csv, $result, $param);
+							$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
+							$result[$action['source']] = reset($resultset);
+							break;
+						case 'SCRIPT':
+							$classname = $action['source'];
+							$method = $this->_getQuery($action['setter'], $csv, $result, $param);
+							$class = new $classname();
+							$eval = '$class = new ' . $classname . '(); $class->' . $method . ';';
+							eval($eval);
+							break;
+						case 'EXECUTE':
+							$sql = 'CALL ' . $action['source']; // . ' SET ' . $action['setter']; // . ' WHERE ' . $action['condition'];
+							$sql = $this->_getQuery($sql, $csv, $result, $param);
+							Zend_Db_Table::getDefaultAdapter()->query($sql);
+							break;
+						case 'SELECT':
+							$linenumber[$action['linenumber']] = $key;
+							if (empty($select[$action['source']])) {
+								$table = explode('_', $action['source']);
+								$prefix = array_shift($table);
+								$table = ucfirst($prefix) . '_Model_DbTable_' . str_replace(' ', '',ucwords(implode(' ', $table)));
+								$where = $this->_getQuery($action['condition'], $csv, $result, $param);
+								$select[$action['source']] = Zend_Db_Table::getTableFromString($table)->fetchAll($where)->toArray();
+								$result[$action['source']] = current($select[$action['source']]);
+							} else {
+								$result[$action['source']] = next($select[$action['source']]);
+							}
+							if (empty($result[$action['source']])) {
+		
+								$linenumber = $action['setter'];
+								while (next($actions)) {
+									$action = current($actions);
+									if ($action['linenumber'] == $linenumber) {
+										// GOTO setter - 1, see next() below
+										prev($actions);
+										break;
+									}
+								}
+								continue;
+							}
+							break;
+						case 'NEXT':
+							if (!empty($result[$action['source']])) {
+								$linenumber = $action['setter'];
+								//$i = 0;
+								while (prev($actions)) {
+									$action = current($actions);
+									if (!$action || $action['linenumber'] == $linenumber) {
+										// GOTO setter - 1, see next() below
+										prev($actions);
+										break;
+									}
+									/*$i++;
+										if ($i > 6) {
+									die();
+									}*/
+								}
+								continue;
+							}
+							break;
+		
+					}
+					next($actions);
 				}
-				next($actions);
 			}
+			Zend_Db_Table::getDefaultAdapter()->commit();
+		} catch(Exception $ex) {
+			Zend_Db_Table::getDefaultAdapter()->rollBack();
+			//throw ($ex);
+			die();
 		}
 		return true;
 	}

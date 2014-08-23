@@ -91,13 +91,13 @@
             "userConfig": {
                 "fn": "onOrderOrderFilterButtonClick",
                 "implHandler": [
-                    "grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');\r",
+                    "var grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');\r",
                     "\r",
                     "grid.store.clearFilter(true);\r",
                     "\r",
-                    "filter = [];\r",
+                    "var filter = [];\r",
                     "\r",
-                    "values = grid.getComponent('OrderOrderGridFilterFormPanel').getForm().getValues();\r",
+                    "var values = grid.getComponent('OrderOrderGridFilterFormPanel').getForm().getValues();\r",
                     "\r",
                     "console.log(values);\r",
                     "\r",
@@ -113,6 +113,13 @@
                     "    filter.push({property:\"partner_partner.title\",value:values.title,operator:\"LIKE\"});\r",
                     "}\r",
                     "\r",
+                    "if (values.import_import_id !== \"\") {\r",
+                    "    filter.push({property:\"import_import_id\",value:values.import_import_id,operator:\"=\"});\r",
+                    "}\r",
+                    "\r",
+                    "if (values.import_stack_id !== \"\") {\r",
+                    "    filter.push({property:\"import_stack_id\",value:values.import_stack_id,operator:\"=\"});\r",
+                    "}\r",
                     "\r",
                     "grid.store.filter(filter);"
                 ],
@@ -133,7 +140,9 @@
             "userConfig": {
                 "fn": "onOrderOrderClearFilterButtonClick",
                 "implHandler": [
-                    "grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');\r",
+                    "var grid = this.getOrderPanel().getComponent('OrderOrderGridPanel');\r",
+                    "\r",
+                    "grid.getComponent('OrderOrderGridFilterFormPanel').getForm().reset();\r",
                     "\r",
                     "grid.store.clearFilter();"
                 ],

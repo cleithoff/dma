@@ -525,6 +525,34 @@
                                 "name": "product_item_no_external"
                             },
                             "designerId": "194e66f3-f3a1-457d-a017-ade47f2bf520"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "ArtikelNr intern Lager",
+                                "name": "product_item_no_internal_stock"
+                            },
+                            "designerId": "28ed5a35-a122-4385-8152-5c2aa5d4a0ba"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "ArtikelNr extern Lager",
+                                "name": "product_item_no_external_stock"
+                            },
+                            "designerId": "662a62da-6686-4984-91d3-a98b23bb1e00"
                         }
                     ]
                 },

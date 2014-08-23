@@ -37,6 +37,22 @@ Ext.define('MyApp.model.OrderOrderModel', {
         },
         {
             name: 'order_no_external'
+        },
+        {
+            name: 'import_import_id',
+            type: 'int'
+        },
+        {
+            name: 'import_stack_id',
+            type: 'int'
+        },
+        {
+            name: 'import_import',
+            persist: false
+        },
+        {
+            name: 'import_stack',
+            persist: false
         }
     ]
 });

@@ -65,6 +65,12 @@ Ext.define('MyApp.model.ProductItemModel', {
         },
         {
             name: 'product_item_no_external'
+        },
+        {
+            name: 'product_item_no_internal_stock'
+        },
+        {
+            name: 'product_item_no_external_stock'
         }
     ]
 });

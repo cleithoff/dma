@@ -204,6 +204,18 @@ Ext.define('MyApp.view.ProductItemPanel', {
                                     anchor: '100%',
                                     fieldLabel: 'ArtikelNr extern',
                                     name: 'product_item_no_external'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'ArtikelNr intern Lager',
+                                    name: 'product_item_no_internal_stock'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'ArtikelNr extern Lager',
+                                    name: 'product_item_no_external_stock'
                                 }
                             ]
                         },

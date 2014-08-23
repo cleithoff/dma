@@ -9,7 +9,7 @@
         "model": "ImportStackModel",
         "storeId": "ImportStackJsonStore",
         "designer|userClassName": "ImportStackJsonStore",
-        "pageSize": 1000
+        "pageSize": 1000000
     },
     "designerId": "328a77aa-1b1f-45cc-aed1-0da238e3c71d",
     "cn": [

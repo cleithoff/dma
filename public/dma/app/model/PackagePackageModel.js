@@ -33,7 +33,8 @@ Ext.define('MyApp.model.PackagePackageModel', {
             name: 'readytosend'
         },
         {
-            name: 'outgoing'
+            name: 'outgoing',
+            type: 'date'
         },
         {
             name: 'sendingnumber'

@@ -175,6 +175,30 @@
                 "name": "product_item_no_external"
             },
             "designerId": "1296f03f-2cf6-44fc-b232-113147a0bfcc"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "product_item_no_internal_stock"
+            },
+            "designerId": "8b355c61-627a-474f-a500-3e2d30a70bb6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "product_item_no_external_stock"
+            },
+            "designerId": "fcb91ccd-8566-41bd-854c-1e438d48927c"
         }
     ]
 }
