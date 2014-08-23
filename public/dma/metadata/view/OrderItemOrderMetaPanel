@@ -1,0 +1,395 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 250,
+        "itemId": "OrderItemOrderMetaPanel",
+        "width": 400,
+        "designer|userClassName": "OrderItemOrderMetaPanel",
+        "designer|userAlias": "orderitemordermetapanel",
+        "title": "Metadaten"
+    },
+    "designerId": "16e225f6-219a-48e1-b84c-d0dae6f7e413",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "OrderItemOrderMetaToolbar"
+            },
+            "designerId": "7ae81023-d594-4e36-a843-1a3ebfad07ae",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemOrderMetaEditButton",
+                        "text": "Bearbeiten"
+                    },
+                    "designerId": "160762aa-9145-4935-99dc-64a16dafdb61",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemOrderMetaEditButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemOrderMetaPanel', MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "f95ce55b-311e-4d2c-8e68-28ad0b6568b7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemOrderMetaNewButton",
+                        "text": "Neu"
+                    },
+                    "designerId": "00ba36bd-556c-44b7-9a84-3315ba89695d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemOrderMetaNewButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemOrderMetaPanel', MyApp.app.getRuleControllerController().rights.CREATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "24a65f4d-f226-4c7c-bb13-a495dd7e6f45"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemOrderMetaSaveButton",
+                        "text": "Speichern"
+                    },
+                    "designerId": "8e24f89b-b064-43b9-af7b-cfeac53a278f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemOrderMetaSaveButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemOrderMetaPanel', MyApp.app.getRuleControllerController().rights.CREATE | MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "b34f2716-b885-4bc0-b4df-70dea9721323"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemOrderMetaCancelButton",
+                        "text": "Abbrechen"
+                    },
+                    "designerId": "c441139b-db8d-45f1-9fd3-2909822ee6e5",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemOrderMetaCancelButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemOrderMetaPanel', MyApp.app.getRuleControllerController().rights.CREATE | MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "64b00afd-fb2c-4861-ae32-045ebad9b64f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderItemOrderMetaDeleteButton",
+                        "text": "Löschen"
+                    },
+                    "designerId": "1c25f817-44cb-4ff7-905b-4c11d917ae79",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemOrderMetaDeleteButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemOrderMetaPanel', MyApp.app.getRuleControllerController().rights.DELETE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "1f494fb2-9c41-440c-9517-df1e4342c7e6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "itemId": "OrderItemOrderMetaFormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "e4a9720c-1e17-4fc4-9c43-6aaca0677ea3",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "OrderMetaComboBox",
+                        "fieldLabel": "Schlüssel",
+                        "name": "order_meta_id",
+                        "autoSelect": null,
+                        "displayField": "title",
+                        "store": "OrderMetaJsonStore",
+                        "triggerAction": null,
+                        "valueField": "id"
+                    },
+                    "designerId": "994e4b66-b79d-4767-8253-ecf3944e688e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderMetaComboBoxChange",
+                                "implHandler": [
+                                    "var record = field.findRecordByValue(newValue);\r",
+                                    "\r",
+                                    "console.log(record);\r",
+                                    "\r",
+                                    "if (!Ext.isEmpty(record) && record !== false) {\r",
+                                    "\tfield.up('form').down('#OrderMetaKey').setValue(record.data.key);\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "28bb1f3d-578c-4eaf-8dfc-24409457bfc2"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderMetaComboBoxAfterRender",
+                                "implHandler": [
+                                    "component.store.reload();"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "aec541cd-a214-4147-a69a-4d2b93e0c3a3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Wert",
+                        "name": "value"
+                    },
+                    "designerId": "c60827f6-57a6-4e2d-9c7c-801c9740943d"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "OrderMetaKey",
+                        "fieldLabel": "Label",
+                        "name": "order_meta_key"
+                    },
+                    "designerId": "b68c3916-aca7-4971-a2b6-3168d74b9d5f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "OrderItemOrderMetaGridPanel",
+                "title": null,
+                "columnLines": true,
+                "store": "OrderItemHasOrderMetaJsonStore"
+            },
+            "designerId": "7291d256-45cb-47a7-a9e3-7eee221f80c8",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 200,
+                        "dataIndex": "order_meta.title",
+                        "text": "Schlüssel"
+                    },
+                    "designerId": "a3ec636d-8400-408d-8b4b-4b5536ff43a2",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.order_meta.title;"
+                                ]
+                            },
+                            "designerId": "0d445cd0-0921-4451-8c43-f4af20518cba"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "value",
+                        "text": "Wert",
+                        "flex": 1
+                    },
+                    "designerId": "19490c3d-7a96-4cbd-af79-92785f13b1bd"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "76a86550-2d04-49b9-bd96-d1f118b786f3"
+                }
+            ]
+        }
+    ]
+}

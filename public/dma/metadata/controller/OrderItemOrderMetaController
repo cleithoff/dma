@@ -1,0 +1,292 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "OrderItemOrderMetaController"
+    },
+    "designerId": "d97b915a-80d1-4c78-b47c-070a86f51319",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemOrderMetaEditButtonClick",
+                "implHandler": [
+                    "var panel = this.getOrderItemOrderMetaPanel();\r",
+                    "\r",
+                    "var formPanel = panel.getComponent('OrderItemOrderMetaFormPanel');\r",
+                    "var toolbar = panel.getComponent('OrderItemOrderMetaToolbar');\r",
+                    "formPanel.enable();\r",
+                    "\r",
+                    "toolbar.getComponent('OrderItemOrderMetaEditButton').disable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaNewButton').disable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaCancelButton').enable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaSaveButton').enable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaDeleteButton').disable();\r",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemOrderMetaEditButton"
+            },
+            "designerId": "77b48d03-7191-4ca1-8cc5-50e3e1208506"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemOrderMetaNewButtonClick",
+                "implHandler": [
+                    "var store = Ext.getStore('OrderItemHasOrderMetaJsonStore');\r",
+                    "var panel = this.getOrderItemOrderMetaPanel();\r",
+                    "\r",
+                    "var formPanel = panel.getComponent('OrderItemOrderMetaFormPanel');\r",
+                    "var toolbar = panel.getComponent('OrderItemOrderMetaToolbar');\r",
+                    "\r",
+                    "\r",
+                    "if (store !== undefined) {\r",
+                    "    //formPanel = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"FormPanel')[0];\r",
+                    "    formPanel.enable();\r",
+                    "    record = new store.model();\r",
+                    "    record.data.order_item_id = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0].data.id;\r",
+                    "    formPanel.loadRecord(record);\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaEditButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaNewButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaCancelButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaSaveButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaDeleteButton').disable();\r",
+                    "\r",
+                    "    //Ext.getStore('OrderItemProductItemJsonStore').on('load', function(store, records, options){\r",
+                    "    combobox = this.getOrderItemOrderMetaPanel().getComponent('OrderItemOrderMetaFormPanel').getComponent('OrderMetaComboBox');\r",
+                    "    combobox.store.reload();\r",
+                    "    //});\r",
+                    "\r",
+                    "    //Ext.getStore('OrderItemProductItemJsonStore').clearFilter(true);\r",
+                    "    //Ext.getStore('OrderItemProductItemJsonStore').filter([{property:'id',value:Ext.getStore('OrderItemProductItemJsonStore').first().data.id}]);\r",
+                    "    //Ext.getStore('OrderItemProductItemJsonStore').load();    \r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemOrderMetaNewButton"
+            },
+            "designerId": "c7f385a8-9a46-4535-888f-0f3ba1c3d508"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemOrderMetaSaveButtonClick",
+                "implHandler": [
+                    "store = Ext.getStore('OrderItemHasOrderMetaJsonStore');\r",
+                    "panel = this.getOrderItemOrderMetaPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemOrderMetaFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemOrderMetaToolbar');\r",
+                    "\r",
+                    "//grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "record = formPanel.getForm().getRecord();\r",
+                    "\r",
+                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                    "    values = formPanel.getForm().getValues();\r",
+                    "    record.set(values);\r",
+                    "    store.insert(0, record);\r",
+                    "    /*grid = button.ownerCt.ownerCt.ownerCt.getComponent('\" . $name . 'GridPanel' . \"');*/\r",
+                    "    //if (grid !== undefined) {\r",
+                    "    /*grid.getView().select(0);*/ /* BUG!!! */\r",
+                    "    //}\r",
+                    "} else {\r",
+                    "    formPanel.getForm().updateRecord();\r",
+                    "}\r",
+                    "formPanel.disable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaNewButton').enable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaCancelButton').disable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaSaveButton').disable();\r",
+                    "\r",
+                    "if (panel.getComponent('OrderItemOrderMetaGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaEditButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaEditButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemOrderMetaSaveButton"
+            },
+            "designerId": "86a61233-c932-425a-9e00-7b2635ad2231"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemOrderMetaCancelButtonClick",
+                "implHandler": [
+                    "panel = this.getOrderItemOrderMetaPanel();\r",
+                    "grid = panel.getComponent('OrderItemOrderMetaGridPanel');\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemOrderMetaFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemOrderMetaToolbar');\r",
+                    "record = formPanel.getForm().getRecord();\t\t\t\t\t\t\t\t\r",
+                    "if (record !== undefined) {\r",
+                    "    formPanel.getForm().reset();\r",
+                    "    formPanel.disable();\r",
+                    "\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaNewButton').enable();\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaCancelButton').disable();\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaSaveButton').disable();\r",
+                    "    if (grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "        toolbar.getComponent('OrderItemOrderMetaEditButton').enable();\r",
+                    "        toolbar.getComponent('OrderItemOrderMetaDeleteButton').enable();\r",
+                    "    } else {\r",
+                    "        toolbar.getComponent('OrderItemOrderMetaEditButton').disable();\r",
+                    "        toolbar.getComponent('OrderItemOrderMetaDeleteButton').disable();\r",
+                    "    }    \r",
+                    "}\r",
+                    "\r",
+                    "if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {\r",
+                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                    "    formPanel.getForm().loadRecord(record);\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemOrderMetaCancelButton"
+            },
+            "designerId": "770965d8-bfea-47ce-92a6-c401c170e92a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemOrderMetaDeleteButtonClick",
+                "implHandler": [
+                    "var store = Ext.getStore('OrderItemHasOrderMetaJsonStore');\r",
+                    "var panel = this.getOrderItemOrderMetaPanel(); \r",
+                    "var grid = panel.getComponent('OrderItemOrderMetaGridPanel');\r",
+                    "\r",
+                    "var that = this;\r",
+                    "\r",
+                    "Ext.Msg.confirm('Attention!', 'Datensatz löschen?', function(btn) {\r",
+                    "    if(btn == 'yes') {\r",
+                    "        //grid = button.ownerCt.ownerCt.ownerCt.query('#\" . $name . \"GridPanel')[0];\r",
+                    "\r",
+                    "        formPanel = panel.getComponent('OrderItemOrderMetaFormPanel');\r",
+                    "        record = formPanel.getForm().getRecord();\r",
+                    "        if (store !== undefined && record !== undefined) {\r",
+                    "            store.remove(record);\r",
+                    "            formPanel.getForm().reset();\r",
+                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                    "                grid.getView().select(0);\r",
+                    "            }\r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
+                    "\r",
+                    "if (panel.getComponent('OrderItemOrderMetaGridPanel').getSelectionModel().getSelection().length > 0) {\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaDeleteButton').enable();\r",
+                    "} else {\r",
+                    "    toolbar.getComponent('OrderItemOrderMetaDeleteButton').disable();\r",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemOrderMetaDeleteButton"
+            },
+            "designerId": "5985fd07-6d6c-4706-9f97-bef8459c47a0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemOrderMetaGridPanelSelect",
+                "implHandler": [
+                    "panel = this.getOrderItemOrderMetaPanel();\r",
+                    "\r",
+                    "formPanel = panel.getComponent('OrderItemOrderMetaFormPanel');\r",
+                    "toolbar = panel.getComponent('OrderItemOrderMetaToolbar');\r",
+                    "\r",
+                    "formPanel.getForm().loadRecord(record);\r",
+                    "toolbar.getComponent('OrderItemOrderMetaEditButton').enable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaNewButton').enable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaCancelButton').disable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaSaveButton').disable();\r",
+                    "toolbar.getComponent('OrderItemOrderMetaDeleteButton').enable();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#OrderItemOrderMetaGridPanel"
+            },
+            "designerId": "5cd7f42e-a81b-46c9-b541-d706046dce95"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemOrderMetaPanel",
+                "selector": "#OrderItemOrderMetaPanel",
+                "xtype": "orderitemordermetapanel"
+            },
+            "designerId": "f4d5e1e2-11a5-49b7-8bbb-999c0dcdeb86"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderItemPanel",
+                "selector": "#OrderItemPanel",
+                "xtype": "orderitempanel"
+            },
+            "designerId": "5f162ddf-6b00-4ce1-a126-31808d3d40d7"
+        }
+    ]
+}
