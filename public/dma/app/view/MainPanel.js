@@ -201,6 +201,18 @@ Ext.define('MyApp.view.MainPanel', {
                                                 scope: me
                                             }
                                         }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'ordermetapanel',
+                                        itemId: 'OrderMetaMenuItem',
+                                        text: 'Metabestelldaten Definition',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onOrderMetaMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
                                     }
                                 ]
                             }
@@ -259,6 +271,10 @@ Ext.define('MyApp.view.MainPanel', {
     },
 
     onProductCurrencyMenuItemClick: function(item, e, eOpts) {
+        MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onOrderMetaMenuItemClick: function(item, e, eOpts) {
         MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
     }
 

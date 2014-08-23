@@ -117,6 +117,12 @@
             <controllerFile controllerName="State">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Meta">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+            <controllerFile controllerName="Itemhasordermeta">
+              <actionMethod actionName="index"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false"/>
           <layoutsDirectory enabled="false"/>
@@ -128,7 +134,11 @@
               <dbTableFile dbTableName="Address"/>
               <dbTableFile dbTableName="Order"/>
               <dbTableFile dbTableName="Type"/>
+              <dbTableFile dbTableName="Meta"/>
+              <dbTableFile dbTableName="Itemhasordermeta"/>
             </dbTableDirectory>
+            <modelFile modelName="Meta"/>
+            <modelFile modelName="Itemhasordermeta"/>
           </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory>
@@ -142,6 +152,12 @@
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="State">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Meta">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Itemhasordermeta">
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>

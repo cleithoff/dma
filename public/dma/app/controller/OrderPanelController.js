@@ -38,9 +38,10 @@ Ext.define('MyApp.controller.OrderPanelController', {
     ],
 
     onOrderOrderGridPanelSelect: function(rowmodel, record, index, eOpts) {
-        grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');
+        var grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');
         grid.store.clearFilter(true);
         grid.store.filter([{property:'order_pool_id',value:record.data.order_pool_id}]);
+
         //grid.store.load(); // filter loads automatically - dont use .load because records lose store (record.store == null)
         /*
         Ext.getStore('OrderItemJsonStore').clearFilter(true);

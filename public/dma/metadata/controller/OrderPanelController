@@ -50,9 +50,10 @@
             "userConfig": {
                 "fn": "onOrderOrderGridPanelSelect",
                 "implHandler": [
-                    "grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');\r",
+                    "var grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');\r",
                     "grid.store.clearFilter(true);\r",
                     "grid.store.filter([{property:'order_pool_id',value:record.data.order_pool_id}]);\r",
+                    "\r",
                     "//grid.store.load(); // filter loads automatically - dont use .load because records lose store (record.store == null)\r",
                     "/*\r",
                     "Ext.getStore('OrderItemJsonStore').clearFilter(true);\r",

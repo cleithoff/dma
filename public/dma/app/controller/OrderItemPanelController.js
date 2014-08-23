@@ -40,6 +40,12 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
             ref: 'OrderItemPanel',
             selector: '#OrderItemPanel',
             xtype: 'orderitempanel'
+        },
+        {
+            autoCreate: true,
+            ref: 'OrderItemOrderMetaPanel',
+            selector: '#OrderItemOrderMetaPanel',
+            xtype: 'orderitemordermetapanel'
         }
     ],
 
@@ -52,6 +58,11 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
         this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.clearFilter(true);
         this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.filter([{property:'order_item_id',value:record.data.id}]);
         this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.load();
+
+        this.getOrderItemOrderMetaPanel().getComponent('OrderItemOrderMetaGridPanel').store.clearFilter(true);
+        this.getOrderItemOrderMetaPanel().getComponent('OrderItemOrderMetaGridPanel').store.filter([{property:'order_item_id',value:record.data.id}]);
+        this.getOrderItemOrderMetaPanel().getComponent('OrderItemOrderMetaGridPanel').store.load();
+
         //Ext.getStore('OrderItemHasProductPersonalizeJsonStore').load();
 
         var that = this;

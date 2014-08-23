@@ -1057,6 +1057,62 @@
                 "app/model/ImportParameterModel.js"
             ],
             "className": "ImportParameterModel"
+        },
+        "c188d4c9-134b-44b3-9748-571c67f00e80": {
+            "paths": [
+                "metadata/view/OrderMetaPanel",
+                "app/view/override/OrderMetaPanel.js",
+                "app/view/OrderMetaPanel.js"
+            ],
+            "className": "OrderMetaPanel"
+        },
+        "9514308e-4976-4065-9993-49f6365099cb": {
+            "paths": [
+                "metadata/model/OrderMetaModel",
+                "app/model/override/OrderMetaModel.js",
+                "app/model/OrderMetaModel.js"
+            ],
+            "className": "OrderMetaModel"
+        },
+        "62c7cb05-55d6-4c99-ba7f-9f90b49bf364": {
+            "paths": [
+                "metadata/model/OrderItemHasOrderMeta",
+                "app/model/override/OrderItemHasOrderMeta.js",
+                "app/model/OrderItemHasOrderMeta.js"
+            ],
+            "className": "OrderItemHasOrderMeta"
+        },
+        "c3d3cad3-dbf7-4cce-8cfb-9293b471fdae": {
+            "paths": [
+                "metadata/store/OrderMetaJsonStore",
+                "app/store/override/OrderMetaJsonStore.js",
+                "app/store/OrderMetaJsonStore.js"
+            ],
+            "className": "OrderMetaJsonStore"
+        },
+        "f3c38dd3-292c-44f6-a053-1de19f029efc": {
+            "paths": [
+                "metadata/store/OrderItemHasOrderMetaJsonStore",
+                "app/store/override/OrderItemHasOrderMetaJsonStore.js",
+                "app/store/OrderItemHasOrderMetaJsonStore.js"
+            ],
+            "className": "OrderItemHasOrderMetaJsonStore"
+        },
+        "16e225f6-219a-48e1-b84c-d0dae6f7e413": {
+            "paths": [
+                "metadata/view/OrderItemOrderMetaPanel",
+                "app/view/override/OrderItemOrderMetaPanel.js",
+                "app/view/OrderItemOrderMetaPanel.js"
+            ],
+            "className": "OrderItemOrderMetaPanel"
+        },
+        "d97b915a-80d1-4c78-b47c-070a86f51319": {
+            "paths": [
+                "metadata/controller/OrderItemOrderMetaController",
+                "app/controller/override/OrderItemOrderMetaController.js",
+                "app/controller/OrderItemOrderMetaController.js"
+            ],
+            "className": "OrderItemOrderMetaController"
         }
     },
     "viewOrderMap": {
@@ -1082,6 +1138,7 @@
             "93e2b9d5-dfd2-4242-a2ca-da5e99a5c45f",
             "377dbe86-e24e-4164-a17f-92871eeab996",
             "ce59226c-e8a1-41c2-b726-4c76d72795dc",
+            "16e225f6-219a-48e1-b84c-d0dae6f7e413",
             "0a15cfa6-3887-47b6-9f8e-cae60305fce4",
             "f5188da4-bbf7-4b99-b7f6-e18cf33e11b4",
             "4c9779e6-ce77-4acf-aae1-0fa81d51a936",
@@ -1095,7 +1152,8 @@
             "30c0f26b-edbe-43a6-8318-38b5d75cda57",
             "0ef76be2-6133-4d9e-a5d3-eb196a443236",
             "d73cf8bc-b737-47dd-abf9-cb94e000ff89",
-            "929aef3d-310b-49d6-85c3-cf2fa8f334f8"
+            "929aef3d-310b-49d6-85c3-cf2fa8f334f8",
+            "c188d4c9-134b-44b3-9748-571c67f00e80"
         ],
         "store": [
             "311f6e01-255b-4244-a8ca-5618f6926b96",
@@ -1134,7 +1192,9 @@
             "f6fe2e56-9e0f-45d9-901d-f815ada3e445",
             "a50603c8-075d-42f2-bdc4-573f106cb453",
             "e5f9f4af-c767-4f65-9db6-2ca1b9c75b9b",
-            "6d1685c8-d1f6-425a-9fa0-9de2cd9017b2"
+            "6d1685c8-d1f6-425a-9fa0-9de2cd9017b2",
+            "c3d3cad3-dbf7-4cce-8cfb-9293b471fdae",
+            "f3c38dd3-292c-44f6-a053-1de19f029efc"
         ],
         "controller": [
             "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
@@ -1159,7 +1219,8 @@
             "ea9d1853-1267-4fd4-96dd-cae0e3a95d9c",
             "3f55390b-156a-4a28-a69b-5a89ba3d5d2a",
             "122ee99e-cf98-44d0-8dee-c1236e5399da",
-            "d95eb8c5-8297-47dd-aeae-e66c3d487e78"
+            "d95eb8c5-8297-47dd-aeae-e66c3d487e78",
+            "d97b915a-80d1-4c78-b47c-070a86f51319"
         ],
         "model": [
             "86c11719-cac3-4a45-b8ee-9ca742ecbbc3",
@@ -1195,7 +1256,9 @@
             "8aa5bde6-b4b9-4a15-b22a-e062ec30a178",
             "b9a524f3-5bdd-4b5c-acee-83458ecf0e43",
             "29f30f00-263f-416a-8d1f-f75e46d297ef",
-            "fe8b46de-b66d-437b-a3be-e74cdc3767d7"
+            "fe8b46de-b66d-437b-a3be-e74cdc3767d7",
+            "9514308e-4976-4065-9993-49f6365099cb",
+            "62c7cb05-55d6-4c99-ba7f-9f90b49bf364"
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",

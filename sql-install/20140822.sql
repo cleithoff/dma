@@ -53,3 +53,19 @@ UPDATE order_order
 INNER JOIN order_pool ON order_order.order_pool_id = order_pool.id
 INNER JOIN import_stack ON order_pool.import_stack_id = import_stack.id
 SET order_order.import_import_id = import_stack.import_import_id, order_order.import_stack_id = import_stack.id;
+
+
+CREATE  TABLE `rest`.`order_meta` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `key` VARCHAR(45) NOT NULL ,
+  `title` VARCHAR(255) NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `key` (`key` ASC) ) ENGINE=InnoDB;
+
+CREATE  TABLE `rest`.`order_item_has_order_meta` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `order_item_id` INT NOT NULL ,
+  `order_meta_id` INT NOT NULL ,
+  `order_meta_key` VARCHAR(45) NOT NULL ,
+  `value` VARCHAR(4096) NULL ,
+  PRIMARY KEY (`id`) )  ENGINE=InnoDB;

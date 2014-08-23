@@ -550,6 +550,46 @@
                                             "designerId": "72f29874-60ad-4476-a5d6-e77193c85c4e"
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "Ext.menu.Item",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "widget": "ordermetapanel",
+                                        "itemId": "OrderMetaMenuItem",
+                                        "text": "Metabestelldaten Definition"
+                                    },
+                                    "designerId": "d8dc7c5d-7def-4e28-a76e-4abffd9e1fbf",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "widget",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onOrderMetaMenuItemClick",
+                                                "implHandler": [
+                                                    "MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "3d0e2b05-f53b-4953-9a64-f450c7339be0"
+                                        }
+                                    ]
                                 }
                             ]
                         }

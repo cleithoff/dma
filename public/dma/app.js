@@ -53,7 +53,9 @@ Ext.application({
         'ProductWeightModel',
         'ProductItemHasProductCustomizeModel',
         'ProductProductHasProductPropertyModel',
-        'ImportParameterModel'
+        'ImportParameterModel',
+        'OrderMetaModel',
+        'OrderItemHasOrderMeta'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -92,7 +94,9 @@ Ext.application({
         'ProductWeightJsonStore',
         'ProductItemHasProductCustomizeJsonStore',
         'ProductProductHasProductPropertyJsonStore',
-        'ImportParameterJsonStore'
+        'ImportParameterJsonStore',
+        'OrderMetaJsonStore',
+        'OrderItemHasOrderMetaJsonStore'
     ],
     views: [
         'MainViewport',
@@ -129,7 +133,9 @@ Ext.application({
         'ProductItemPanel',
         'ProductWeightPanel',
         'ProductItemHasProductCustomizePanel',
-        'ProductProductHasProductPropertyPanel'
+        'ProductProductHasProductPropertyPanel',
+        'OrderMetaPanel',
+        'OrderItemOrderMetaPanel'
     ],
     autoCreateViewport: true,
     controllers: [
@@ -155,7 +161,8 @@ Ext.application({
         'ImportExecutePanelController',
         'AppHelpController',
         'RuleController',
-        'CrudController'
+        'CrudController',
+        'OrderItemOrderMetaController'
     ],
     name: 'MyApp',
 

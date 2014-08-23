@@ -118,6 +118,12 @@ Ext.define('MyApp.controller.MainPanelController', {
             ref: 'AppHelpPanel',
             selector: '#AppHelpPanel',
             xtype: 'apphelppanel'
+        },
+        {
+            autoCreate: true,
+            ref: 'OrderItemOrderMetaPanel',
+            selector: '#OrderItemOrderMetaPanel',
+            xtype: 'orderitemordermetapanel'
         }
     ],
 
@@ -183,8 +189,6 @@ Ext.define('MyApp.controller.MainPanelController', {
                         orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageSaveButton').disable();
                         orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageCancelButton').disable();
                         orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageDeleteButton').enable();
-
-
                     } else {
                         orderItemPackagePackageFormPanel.getForm().reset();
                         orderItemPackagePackageToolbar.getComponent('OrderItemPackagePackageEditButton').disable();
@@ -226,6 +230,39 @@ Ext.define('MyApp.controller.MainPanelController', {
 
             }
         }
+
+        if (MyApp.app.getRuleControllerController().allow('OrderItemOrderMetaPanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            // Order Item Order Meta
+            panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemOrderMetaPanel().ref);
+            if (panel === undefined) {
+                this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemOrderMetaPanel());
+                var orderItemOrderMetaGridPanel = this.getOrderItemOrderMetaPanel().getComponent('OrderItemOrderMetaGridPanel');
+                var orderItemOrderMetaFormPanel = this.getOrderItemOrderMetaPanel().getComponent('OrderItemOrderMetaFormPanel');
+                var orderItemOrderMetaToolbar = this.getOrderItemOrderMetaPanel().getComponent('OrderItemOrderMetaToolbar');
+
+                orderItemOrderMetaToolbar.getComponent('OrderItemOrderMetaNewButton').enable();
+
+                orderItemOrderMetaGridPanel.store.on('load', function(store, records, options){
+                    //orderItemProductPersonalizeGridPanel.getSelectionModel().select(0);
+                    if (orderItemOrderMetaGridPanel.getView().getNodes().length > 0) {
+                        orderItemOrderMetaGridPanel.getSelectionModel().select(0); 
+                        orderItemOrderMetaToolbar.getComponent('OrderItemOrderMetaEditButton').enable();
+                        orderItemOrderMetaToolbar.getComponent('OrderItemOrderMetaSaveButton').disable();
+                        orderItemOrderMetaToolbar.getComponent('OrderItemOrderMetaCancelButton').disable();
+                        orderItemOrderMetaToolbar.getComponent('OrderItemOrderMetaDeleteButton').enable();
+
+                    } else {
+                        orderItemOrderMetaFormPanel.getForm().reset();
+                        orderItemOrderMetaToolbar.getComponent('OrderItemOrderMetaEditButton').disable();
+                        orderItemOrderMetaToolbar.getComponent('OrderItemOrderMetaSaveButton').disable();
+                        orderItemOrderMetaToolbar.getComponent('OrderItemOrderMetaCancelButton').disable();
+                        orderItemOrderMetaToolbar.getComponent('OrderItemOrderMetaDeleteButton').disable();
+                    }        
+                });    
+
+            }
+        }
+
 
         if (MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.READ)) {
             this.getOrderItemPanel().getComponent('OrderItemTabPanel').setActiveTab(this.getOrderItemDetailPanel());

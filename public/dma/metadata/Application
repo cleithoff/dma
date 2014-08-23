@@ -40,7 +40,9 @@
             "ProductWeightModel",
             "ProductItemHasProductCustomizeModel",
             "ProductProductHasProductPropertyModel",
-            "ImportParameterModel"
+            "ImportParameterModel",
+            "OrderMetaModel",
+            "OrderItemHasOrderMeta"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -79,7 +81,9 @@
             "ProductWeightJsonStore",
             "ProductItemHasProductCustomizeJsonStore",
             "ProductProductHasProductPropertyJsonStore",
-            "ImportParameterJsonStore"
+            "ImportParameterJsonStore",
+            "OrderMetaJsonStore",
+            "OrderItemHasOrderMetaJsonStore"
         ],
         "views": [
             "MainViewport",
@@ -116,7 +120,9 @@
             "ProductItemPanel",
             "ProductWeightPanel",
             "ProductItemHasProductCustomizePanel",
-            "ProductProductHasProductPropertyPanel"
+            "ProductProductHasProductPropertyPanel",
+            "OrderMetaPanel",
+            "OrderItemOrderMetaPanel"
         ],
         "autoCreateViewport": true,
         "controllers": [
@@ -142,7 +148,8 @@
             "ImportExecutePanelController",
             "AppHelpController",
             "RuleController",
-            "CrudController"
+            "CrudController",
+            "OrderItemOrderMetaController"
         ],
         "name": "MyApp"
     },
