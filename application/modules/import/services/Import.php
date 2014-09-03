@@ -422,7 +422,8 @@ class Import_Service_Import
 								$prefix = array_shift($table);
 								$table = ucfirst($prefix) . '_Model_DbTable_' . ucfirst(strtolower(str_replace(' ', '',ucwords(implode(' ', $table)))));
 								$where = $this->_getQuery($action['condition'], $csv, $result, $param);
-								$select[$action['source']] = Zend_Db_Table::getTableFromString($table)->fetchAll($where)->toArray();
+								$t = new $table();
+								$select[$action['source']] = $t->fetchAll($where)->toArray();// Zend_Db_Table::getTableFromString($table)->fetchAll($where)->toArray();
 								$result[$action['source']] = current($select[$action['source']]);
 							} else {
 								$result[$action['source']] = next($select[$action['source']]);
