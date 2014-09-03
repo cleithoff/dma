@@ -1596,6 +1596,10 @@ abstract class Zend_Db_Table_Abstract
             	
             	$t = explode('_',$tableName);
             	foreach($t as $k => $v) {
+            		if ($v == 'DbTable') {
+            			$t[$k] = $v;
+            			continue;
+            		}
             		$t[$k] = ucfirst(strtolower($v));
             	}
             	
