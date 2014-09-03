@@ -225,9 +225,19 @@ class Import_Service_Import
 	
 		$replacements = array();
 		foreach ($matches as $match) {
+			$doForceQuote = $doQuote;
 			$str = str_replace(array('{','}','"'), array('','','"'), $match);
 			$str = explode('.', $str);
 			$source = $str[0];
+			
+			$str1 = explode('|', $str[1]);
+			$str[1] = $str1[0];
+			switch(@$str1[1]) {
+				case '#':
+					$doForceQuote = false;
+					break;
+			}
+			
 			switch($source) {
 				case 'csv':
 					$col = str_replace('"', '', $str[1]);
@@ -259,7 +269,7 @@ class Import_Service_Import
 					$replacement = '';
 					break;
 			}
-			if ($doQuote) {
+			if ($doForceQuote) {
 				$replacement = Zend_Db_Table::getDefaultAdapter()->quote($replacement); // '"' . $replacement . '"';
 			}
 			array_push($replacements, $replacement); // $replacements
@@ -273,7 +283,7 @@ class Import_Service_Import
 		if (count($matches) > 0) {
 			$replacements = $this->_getReplaces($matches[0], true, $csv, $result, $param, $exists);
 			foreach($matches[0] as $key => $match) {
-				$matches[0][$key] = '/' . str_replace(array('{','.','}'), array('\\{','\\.','\\}'), $match) . '/';
+				$matches[0][$key] = '/' . str_replace(array('{','.','}','|','#'), array('\\{','\\.','\\}','\\|','\\#'), $match) . '/';
 			}
 			$sql = preg_replace($matches[0], $replacements, $sql);
 		}
@@ -333,6 +343,9 @@ class Import_Service_Import
 						case 'GET':
 							$result[$action['source']] = null;
 							$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . $action['condition'];
+							if (!empty($action['limitation'])) {
+								$sql .= ' LIMIT ' . $action['limitation'];
+							}
 							$sql = $this->_getQuery($sql, $csv, $result, $param);
 							$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
 							$resultset = reset($resultset);
@@ -353,6 +366,9 @@ class Import_Service_Import
 							break;
 						case 'UPDATE':
 							$sql = 'UPDATE ' . $action['source'] . ' SET ' . $action['setter'] . ' WHERE ' . $action['condition'];
+							if (!empty($action['limitation'])) {
+								$sql .= ' LIMIT ' . $action['limitation'];
+							}
 							$sql = $this->_getQuery($sql, $csv, $result, $param);
 							try {
 								Zend_Db_Table::getDefaultAdapter()->query($sql);
@@ -376,6 +392,8 @@ class Import_Service_Import
 							try {
 								Zend_Db_Table::getDefaultAdapter()->query($sql);
 							} catch(Exception $ex) {
+								var_dump($csv);
+								var_dump($result['product_item']);
 								echo $sql;
 								throw($ex);
 							}

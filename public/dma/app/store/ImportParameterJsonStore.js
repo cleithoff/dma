@@ -25,7 +25,7 @@ Ext.define('MyApp.store.ImportParameterJsonStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             model: 'MyApp.model.ImportParameterModel',
-            storeId: 'MyJsonStore',
+            storeId: 'ImportParameterJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/import/parameter/index',

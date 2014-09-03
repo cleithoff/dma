@@ -41,6 +41,17 @@ Ext.define('MyApp.view.OrderItemPanel', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (Ext.isEmpty(record.data.product_product)) return '';
+                                return record.data.product_product.title;
+                            },
+                            dataIndex: 'product_item.title',
+                            text: 'Produkt',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (Ext.isEmpty(record.data.product_item)) return '';
                                 return record.data.product_item.title;
                             },
                             dataIndex: 'product_item.title',
@@ -58,11 +69,21 @@ Ext.define('MyApp.view.OrderItemPanel', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                if (Ext.isEmpty(record.data.order_itemstate)) return '';
                                 return record.data.order_itemstate.title;
                             },
                             width: 70,
                             dataIndex: 'order_itemstate.title',
                             text: 'Status'
+                        }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'pagingtoolbar',
+                            dock: 'bottom',
+                            width: 360,
+                            displayInfo: true,
+                            store: 'OrderItemJsonStore'
                         }
                     ]
                 },

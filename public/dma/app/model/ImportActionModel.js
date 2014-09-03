@@ -38,6 +38,9 @@ Ext.define('MyApp.model.ImportActionModel', {
         },
         {
             name: 'setter'
+        },
+        {
+            name: 'limitation'
         }
     ]
 });

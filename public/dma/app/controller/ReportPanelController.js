@@ -75,6 +75,22 @@ Ext.define('MyApp.controller.ReportPanelController', {
                     Ext.create('Ext.form.field.Date', config)
                     );
                     break;
+                    case 'string':
+                    console.log('textfield');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    filterFormPanel.add(
+                    Ext.create('Ext.form.field.Text', config)
+                    );
+                    break;
+                    case 'integer':
+                    console.log('integer');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    filterFormPanel.add(
+                    Ext.create('Ext.form.field.Number', config)
+                    );
+                    break;
                 }
             }
 

@@ -40,6 +40,10 @@ Ext.define('MyApp.model.OrderItemModel', {
         },
         {
             name: 'authkey'
+        },
+        {
+            name: 'product_product',
+            persist: false
         }
     ]
 });

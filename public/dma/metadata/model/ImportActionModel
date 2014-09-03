@@ -94,6 +94,18 @@
                 "name": "setter"
             },
             "designerId": "59ecdc08-f12e-474d-8d41-670039cf46e2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "limitation"
+            },
+            "designerId": "e74df054-7b07-4496-9c35-39defcb7466e"
         }
     ]
 }

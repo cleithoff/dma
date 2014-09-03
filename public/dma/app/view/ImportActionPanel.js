@@ -106,6 +106,12 @@ Ext.define('MyApp.view.ImportActionPanel', {
                             anchor: '100%',
                             fieldLabel: 'Setter',
                             name: 'setter'
+                        },
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            fieldLabel: 'Limit',
+                            name: 'limit'
                         }
                     ]
                 },
@@ -146,6 +152,12 @@ Ext.define('MyApp.view.ImportActionPanel', {
                             xtype: 'gridcolumn',
                             dataIndex: 'setter',
                             text: 'Setter',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'limitation',
+                            text: 'Limit',
                             flex: 1
                         }
                     ]

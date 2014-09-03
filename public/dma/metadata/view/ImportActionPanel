@@ -200,6 +200,23 @@
                         "name": "setter"
                     },
                     "designerId": "dc65b5bb-1576-4326-a469-070221b4561b"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "height": null,
+                        "maxHeight": null,
+                        "minHeight": null,
+                        "fieldLabel": "Limit",
+                        "name": "limit"
+                    },
+                    "designerId": "c9041ae8-3a5f-41f0-96b7-8bbc852211f1"
                 }
             ]
         },
@@ -341,6 +358,33 @@
                         "flex": 1
                     },
                     "designerId": "1d5fa01c-4b34-4f9e-8154-4fc2bf90f765",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "columnWidth",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "columnWidth": null,
+                        "cls": null,
+                        "componentCls": null,
+                        "maxWidth": null,
+                        "overCls": null,
+                        "dataIndex": "limitation",
+                        "tdCls": null,
+                        "text": "Limit",
+                        "flex": 1
+                    },
+                    "designerId": "87cb24d0-f54d-4f2a-a9f2-13cb180d59b5",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",

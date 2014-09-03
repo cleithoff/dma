@@ -42,7 +42,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dataIndex": "product_item.title",
-                        "text": "Artikel",
+                        "text": "Produkt",
                         "flex": 1
                     },
                     "designerId": "aa0d2a87-8f43-4e97-9dc9-a8c20afc73fb",
@@ -66,10 +66,52 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "return record.data.product_item.title;"
+                                    "if (Ext.isEmpty(record.data.product_product)) return '';\r",
+                                    "return record.data.product_product.title;"
                                 ]
                             },
                             "designerId": "b40083d3-d2a8-46b9-bd64-48e1b2b1425b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "product_item.title",
+                        "text": "Artikel",
+                        "flex": 1
+                    },
+                    "designerId": "c055913f-1ab2-4e00-b329-7086cd507314",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if (Ext.isEmpty(record.data.product_item)) return '';\r",
+                                    "return record.data.product_item.title;"
+                                ]
+                            },
+                            "designerId": "c9a88c30-c70c-4aed-983b-69b6ffc9fad3"
                         }
                     ]
                 },
@@ -122,6 +164,7 @@
                                     "view"
                                 ],
                                 "implHandler": [
+                                    "if (Ext.isEmpty(record.data.order_itemstate)) return '';\r",
                                     "return record.data.order_itemstate.title;"
                                 ]
                             },
@@ -137,6 +180,21 @@
                     },
                     "codeClass": null,
                     "designerId": "f911e383-646d-45cc-8d84-c8ebcd19c573"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "OrderItemJsonStore"
+                    },
+                    "designerId": "769cdbd3-0b65-4573-9907-66678b1dc697"
                 }
             ]
         },

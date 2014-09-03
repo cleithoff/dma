@@ -51,6 +51,16 @@ Ext.define('MyApp.view.OrderPanel', {
                             format: '0'
                         },
                         {
+                            xtype: 'numbercolumn',
+                            hidden: true,
+                            maxWidth: 100,
+                            width: 60,
+                            align: 'right',
+                            dataIndex: 'order_pool_id',
+                            text: 'BestellID',
+                            format: '0'
+                        },
+                        {
                             xtype: 'gridcolumn',
                             maxWidth: 100,
                             align: 'right',

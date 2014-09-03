@@ -8,7 +8,7 @@
     "userConfig": {
         "autoSync": true,
         "model": "ProductProductHasProductPropertyModel",
-        "storeId": "MyJsonStore1",
+        "storeId": "ProductProductHasProductPropertyJsonStore",
         "designer|userClassName": "ProductProductHasProductPropertyJsonStore"
     },
     "designerId": "6d1685c8-d1f6-425a-9fa0-9de2cd9017b2",

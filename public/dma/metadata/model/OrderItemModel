@@ -105,6 +105,19 @@
                 "name": "authkey"
             },
             "designerId": "062b1292-0d24-409f-9885-2531e3f4b683"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "product_product",
+                "persist": false
+            },
+            "designerId": "423aafd7-033b-4329-a0b6-a406b3d7d5c7"
         }
     ]
 }

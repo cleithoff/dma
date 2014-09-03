@@ -21,7 +21,12 @@ class Order_Model_DbTable_Item extends Rest_Db_Table
 			'columns'		=> array('product_item_id'),
 			'refTableClass'	=> 'Product_Model_DbTable_Item',
 			'refColumns'	=> array('id')
-		)
+		),
+		'product_product' => array(
+				'columns'		=> array('product_product_id'),
+				'refTableClass'	=> 'Product_Model_DbTable_Product',
+				'refColumns'	=> array('id')
+		),
 	);
 
 }

@@ -12,7 +12,8 @@
         "model": "OrderItemModel",
         "remoteFilter": true,
         "storeId": "OrderItemJsonStore",
-        "designer|userClassName": "OrderItemJsonStore"
+        "designer|userClassName": "OrderItemJsonStore",
+        "pageSize": 500
     },
     "designerId": "0f7f6bbb-7176-49d8-8a02-1014fa65ab5a",
     "cn": [

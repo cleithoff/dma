@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "model": "ImportParameterModel",
-        "storeId": "MyJsonStore",
+        "storeId": "ImportParameterJsonStore",
         "designer|userClassName": "ImportParameterJsonStore"
     },
     "designerId": "9fbd19ea-1066-44d3-b2bb-b30b16b4086f",

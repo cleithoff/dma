@@ -54,6 +54,24 @@
                     "designerId": "2ab5e50c-26df-4ba0-be59-eb03b3e825b9"
                 },
                 {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "maxWidth": 100,
+                        "width": 60,
+                        "align": "right",
+                        "dataIndex": "order_pool_id",
+                        "text": "BestellID",
+                        "format": "0"
+                    },
+                    "designerId": "0c742f49-6bf3-42f3-8723-bd16d86d08ba"
+                },
+                {
                     "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",

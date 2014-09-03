@@ -26,7 +26,7 @@ Ext.define('MyApp.store.ProductProductHasProductPropertyJsonStore', {
         me.callParent([Ext.apply({
             autoSync: true,
             model: 'MyApp.model.ProductProductHasProductPropertyModel',
-            storeId: 'MyJsonStore1',
+            storeId: 'ProductProductHasProductPropertyJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/product/producthasproductproperty/index',
