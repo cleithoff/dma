@@ -1593,8 +1593,19 @@ abstract class Zend_Db_Table_Abstract
                 require_once 'Zend/Loader.php';
                 Zend_Loader::loadClass($tableName);
             } catch (Zend_Exception $e) {
-                require_once 'Zend/Db/Table/Row/Exception.php';
-                throw new Zend_Db_Table_Row_Exception($e->getMessage(), $e->getCode(), $e);
+            	
+            	$t = explode('_',$tableName);
+            	foreach($t as $k => $v) {
+            		$t[$k] = ucfirst(strtolower($tableName));
+            	}
+            	
+            	try {
+	            	$tableName = implode('_', $t);
+	            	Zend_Loader::loadClass($tableName);
+            	} catch (Zend_Exception $e) {
+	                require_once 'Zend/Db/Table/Row/Exception.php';
+	                throw new Zend_Db_Table_Row_Exception($e->getMessage(), $e->getCode(), $e);
+            	}
             }
         }
 
