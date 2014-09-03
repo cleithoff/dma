@@ -1607,6 +1607,7 @@ abstract class Zend_Db_Table_Abstract
 	            	$tableName = implode('_', $t);
 	            	Zend_Loader::loadClass($tableName);
             	} catch (Zend_Exception $e) {
+            		var_dump($tableName);die();
 	                require_once 'Zend/Db/Table/Row/Exception.php';
 	                throw new Zend_Db_Table_Row_Exception($e->getMessage(), $e->getCode(), $e);
             	}
