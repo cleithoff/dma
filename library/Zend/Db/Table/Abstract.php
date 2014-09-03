@@ -1596,7 +1596,7 @@ abstract class Zend_Db_Table_Abstract
             	
             	$t = explode('_',$tableName);
             	foreach($t as $k => $v) {
-            		$t[$k] = ucfirst(strtolower($tableName));
+            		$t[$k] = ucfirst(strtolower($v));
             	}
             	
             	try {
