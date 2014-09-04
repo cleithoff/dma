@@ -145,6 +145,18 @@
                 "persist": false
             },
             "designerId": "950b2c3f-4b1a-4e48-b6a4-1b1bf447c672"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "comment"
+            },
+            "designerId": "adee6050-15e8-41ba-9306-44b7bdd6c070"
         }
     ]
 }

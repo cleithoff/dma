@@ -42,6 +42,10 @@ Ext.define('MyApp.controller.OrderPanelController', {
         grid.store.clearFilter(true);
         grid.store.filter([{property:'order_pool_id',value:record.data.order_pool_id}]);
 
+        if (!Ext.isEmpty(record.data.comment)) {
+            Ext.MessageBox.alert('Hinweis', record.data.comment);
+        }
+
         //grid.store.load(); // filter loads automatically - dont use .load because records lose store (record.store == null)
         /*
         Ext.getStore('OrderItemJsonStore').clearFilter(true);

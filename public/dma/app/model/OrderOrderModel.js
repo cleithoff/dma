@@ -53,6 +53,9 @@ Ext.define('MyApp.model.OrderOrderModel', {
         {
             name: 'import_stack',
             persist: false
+        },
+        {
+            name: 'comment'
         }
     ]
 });

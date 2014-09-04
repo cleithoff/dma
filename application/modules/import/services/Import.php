@@ -469,8 +469,8 @@ class Import_Service_Import
 			Zend_Db_Table::getDefaultAdapter()->commit();
 		} catch(Exception $ex) {
 			Zend_Db_Table::getDefaultAdapter()->rollBack();
-			throw ($ex);
-			die();
+			//throw ($ex);
+			//die();
 		}
 		return true;
 	}
