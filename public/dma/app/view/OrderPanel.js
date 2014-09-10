@@ -52,7 +52,6 @@ Ext.define('MyApp.view.OrderPanel', {
                         },
                         {
                             xtype: 'numbercolumn',
-                            hidden: true,
                             maxWidth: 100,
                             width: 60,
                             align: 'right',

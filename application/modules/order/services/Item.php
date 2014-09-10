@@ -218,6 +218,7 @@ class Order_Service_Item
 	}
 	
 	protected function processStateRelease(Order_Model_Item $order_item) {
+		
 		// for transport config look at application.ini
 		$eml = new Zend_View();
 		$eml->setScriptPath(APPLICATION_PATH . '/modules/order/views/emails/item');
