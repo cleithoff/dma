@@ -33,10 +33,12 @@ Ext.define('MyApp.model.OrderItemModel', {
             name: 'order_itemstate_id'
         },
         {
-            name: 'product_item'
+            name: 'product_item',
+            persist: false
         },
         {
-            name: 'order_itemstate'
+            name: 'order_itemstate',
+            persist: false
         },
         {
             name: 'authkey'

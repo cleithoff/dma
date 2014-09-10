@@ -78,7 +78,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "product_item"
+                "name": "product_item",
+                "persist": false
             },
             "designerId": "369f08b2-c192-4017-b376-da547fca860c"
         },
@@ -90,7 +91,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "order_itemstate"
+                "name": "order_itemstate",
+                "persist": false
             },
             "designerId": "cb8a1a48-01d7-4010-a1a5-8e9978cf8534"
         },

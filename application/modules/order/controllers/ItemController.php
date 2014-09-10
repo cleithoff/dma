@@ -46,6 +46,8 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		
 		$row = parent::putAction();
 		
+		$row = reset($row);
+		
 		$order_item = $order_items->find($row['id'])->current();
 		$this->getService()->createPreview(
 				$order_item, 
