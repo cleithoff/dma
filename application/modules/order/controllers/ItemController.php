@@ -129,6 +129,12 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 							Product_Model_Layout::VIEW_PREVIEW_FRONT,
 							true
 					);
+					$this->getService()->createPreview(
+							$order_item,
+							$values,
+							Product_Model_Layout::VIEW_PREVIEW_BACK,
+							true
+					);
 				} else 
 				if ($command === 'correction') {
 					$this->view->result = $this->getService()->changeState(
