@@ -83,7 +83,9 @@
                                 "layout|anchor": "100%",
                                 "fieldLabel": "Benutzername",
                                 "name": "username",
-                                "value": null
+                                "value": [
+                                    "carsten.leithoff@cu-medien.com"
+                                ]
                             },
                             "designerId": "06368574-3330-4fec-84dd-14c49e3fe175",
                             "cn": [
@@ -140,7 +142,9 @@
                                 "layout|anchor": "100%",
                                 "fieldLabel": "Passwort",
                                 "name": "password",
-                                "value": null,
+                                "value": [
+                                    "S16a23wX_"
+                                ],
                                 "inputType": "password"
                             },
                             "designerId": "6b292644-894f-46a2-9de4-4480a003c53a",

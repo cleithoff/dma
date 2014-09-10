@@ -212,6 +212,13 @@ Ext.define('MyApp.view.ProductLayoutPanel', {
                                     anchor: '100%',
                                     fieldLabel: 'Korrektur Class',
                                     name: 'correction_form_class'
+                                },
+                                {
+                                    xtype: 'textareafield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Plugin Classes',
+                                    name: 'plugin_classes',
+                                    grow: true
                                 }
                             ]
                         },

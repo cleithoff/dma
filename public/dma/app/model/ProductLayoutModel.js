@@ -64,6 +64,11 @@ Ext.define('MyApp.model.ProductLayoutModel', {
         {
             name: 'correction_form_class',
             type: 'string'
+        },
+        {
+            name: 'plugin_classes',
+            type: 'string',
+            useNull: true
         }
     ]
 });

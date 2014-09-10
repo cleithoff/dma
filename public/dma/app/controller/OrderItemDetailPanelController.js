@@ -188,8 +188,10 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
         Ext.Ajax.request({
             url: '/order/item/refresh',
 
-            success: function() {
-                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + view.suffix + '.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            success: function(response, operation, success) {
+                // console.log(response, operation, success);
+                records = JSON.parse(response.responseText);
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + records.data[0].authkey + view.suffix + '.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
             },
             failure: function() {},
             params: { 
@@ -280,7 +282,8 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
         Ext.Ajax.request({
             url: '/order/item/refresh',
             success: function() {
-                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_print_front.pdf" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+                var dc = new Date().getTime();
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_print_front.pdf?_dc=' + dc + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
             },
             failure: function() {},
             params: { id: record.data.id, viewmode: 3, refresh: 0}

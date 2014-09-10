@@ -165,6 +165,20 @@
                 "type": "string"
             },
             "designerId": "3f49161f-d5d1-4a5b-9f41-c2191eb53452"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "plugin_classes",
+                "type": "string",
+                "useNull": true
+            },
+            "designerId": "ac18236c-1b5e-4667-9588-9ba798ec4d9d"
         }
     ]
 }

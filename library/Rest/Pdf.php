@@ -3,7 +3,7 @@
 class Rest_Pdf {
 	
 	public static function fop($xml, $xsl, $pdf) {
-		$fop = APPLICATION_PATH . '/../vendor/fop/fop';
+		$fop = APPLICATION_PATH . Zend_Registry::getInstance()->config->cli->fop;
 		$exec = $fop . ' -xml ' . $xml . ' -xsl ' . $xsl . ' -pdf ' . $pdf;
 		exec($exec);
 	}

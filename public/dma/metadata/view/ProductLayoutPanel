@@ -527,6 +527,21 @@
                                 "name": "correction_form_class"
                             },
                             "designerId": "e0f4f077-a539-42a7-9156-07d888773b74"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Plugin Classes",
+                                "name": "plugin_classes",
+                                "grow": true
+                            },
+                            "designerId": "489c5734-4617-411c-824b-9b4adcf438a0"
                         }
                     ]
                 },

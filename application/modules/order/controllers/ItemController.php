@@ -66,6 +66,11 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 				$this->getRequest()->getParam('refresh', false)
 				);
 		$this->view->success = true;
+		$this->view->total = 1;
+		$this->view->data = array();
+		$data = new stdClass();
+		$data->authkey = $order_item->getAuthkey();
+		array_push($this->view->data, $data);
 	}
 	
 	public function sendAction() {

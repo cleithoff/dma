@@ -15,6 +15,7 @@ class Order_Model_Item extends Rest_Model_DbRow
 	public function getAuthkey() {
 		if (empty($this->authkey)) {
 			$this->authkey = MD5($this->id . $this->_secretkey);
+			$this->save();
 		}
 		return $this->authkey;
 	}
