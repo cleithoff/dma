@@ -74,7 +74,6 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		return $logoFilename;
 	}
 	
-	
 	public function execute(Order_Model_Item $order_item, $xml) {
 		
 		$productPersonalize = $order_item->getProductPersonalize();
@@ -103,7 +102,9 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		
 		$logoFilename = $this->setLogo($width,$height,$dpi,$x,$x,$filename_graphics);
 		
-		return array('logo' => str_replace('\\', '/', realpath($logoFilename)));
+		return array(
+				'logo' => str_replace('\\', '/', realpath($logoFilename))
+		);
 		
 	}
 	

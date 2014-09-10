@@ -7,7 +7,7 @@
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 
 <fo:layout-master-set>
-<fo:simple-page-master master-name="main" page-height="54mm" page-width="85mm" font-family="sans-serif" margin="3.5mm" margin-bottom="1.5cm">
+<fo:simple-page-master master-name="main" page-height="54mm" page-width="85mm" font-family="sans-serif" font-weight="300" margin="3.5mm" margin-bottom="1.4cm">
 <fo:region-body />
 <fo:region-before />
 </fo:simple-page-master>
@@ -34,15 +34,16 @@
 </xsl:template>
 
 <xsl:template match="data/product_personalize">
-
-<fo:block font-size="7pt" color="white" text-align="center" width="65mm" height="32mm">
+<fo:block font-size="5.5pt" color="white" text-align="center" width="65mm" line-height="10pt">
+Dieser Geschenkgutschein kann eingelöst werden bei:
+</fo:block>
+<fo:block font-size="5.5pt" color="white" text-align="center" width="65mm" line-height="7pt">
    <xsl:if test="./gutscheincard_line_1">
     <xsl:value-of select="./gutscheincard_line_1"/><xsl:text>&#x2028;</xsl:text> 
    </xsl:if>
    <xsl:if test="./gutscheincard_line_2">
     <xsl:value-of select="./gutscheincard_line_2"/><xsl:text>&#x2028;</xsl:text> 
    </xsl:if>
-
 </fo:block>
 
 </xsl:template>
