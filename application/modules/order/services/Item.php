@@ -164,7 +164,7 @@ class Order_Service_Item
 	
 		$mail = new Zend_Mail();
 		$mail->setBodyText($bodyText);
-		$mail->addTo('carsten.leithoff@cu-medien.com' /*$this->_partner['email']*/);
+		$mail->addTo($this->_partner['email']);
 		$mail->setSubject('Druckvorschau');
 	
 		$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
@@ -172,6 +172,18 @@ class Order_Service_Item
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
 	
+		$mail->send();
+		
+		$mail = new Zend_Mail();
+		$mail->setBodyText($bodyText);
+		$mail->addTo('carsten.leithoff@cu-medien.com');
+		$mail->setSubject('Druckvorschau');
+		
+		$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
+		$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
+		$at->encoding    = Zend_Mime::ENCODING_BASE64;
+		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
+		
 		$mail->send();
 	}
 	
@@ -232,7 +244,7 @@ class Order_Service_Item
 	
 		$mail = new Zend_Mail();
 		$mail->setBodyText($bodyText);
-		$mail->addTo('carsten.leithoff@cu-medien.com' /*$order_item->getOrderOrder()->getPartnerPartner()->email*/);
+		$mail->addTo($order_item->getOrderOrder()->getPartnerPartner()->email);
 		$mail->setSubject('Druckvorschau');
 	
 		$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
@@ -240,6 +252,18 @@ class Order_Service_Item
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
 	
+		$mail->send();
+		
+		$mail = new Zend_Mail();
+		$mail->setBodyText($bodyText);
+		$mail->addTo('carsten.leithoff@cu-medien.com');
+		$mail->setSubject('Druckvorschau');
+		
+		$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
+		$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
+		$at->encoding    = Zend_Mime::ENCODING_BASE64;
+		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
+		
 		$mail->send();
 	}
 	
