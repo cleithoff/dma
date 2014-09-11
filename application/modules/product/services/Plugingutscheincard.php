@@ -2,6 +2,11 @@
 
 class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 
+	protected $width = 50;
+	protected $height = 50;
+	protected $border = 2;
+	protected $dpi = 300;
+	
 	const mm2inch = 0.03937007874;
 	
 	/**
@@ -86,9 +91,10 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		 
 		$pathinfo = pathinfo(APPLICATION_PATH . '/../resource/logo_original/' . $productPersonalize['filename_graphics']);
 		
-		$width = $height = 50;
-		$border = 2;
-		$dpi = 300;
+		$width = $this->width;
+		$height = $this->height;
+		$border = $this->border;
+		$dpi = $this->dpi;
 		
 		$backgroundFilename = $this->initBackground($width,$height,$dpi,$border);
 		

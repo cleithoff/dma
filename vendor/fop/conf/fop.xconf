@@ -15,13 +15,14 @@ the location of this file.
 <!-- NOTE: This is the version of the configuration -->
 <fop version="1.0">
 
+
   <!-- Base URL for resolving relative URLs -->
   <base>.</base>
   
   <!-- Source resolution in dpi (dots/pixels per inch) for determining the size of pixels in SVG and bitmap images, default: 72dpi -->
-  <source-resolution>72</source-resolution>
+  <source-resolution>150</source-resolution>
   <!-- Target resolution in dpi (dots/pixels per inch) for specifying the target resolution for generated bitmaps, default: 72dpi -->
-  <target-resolution>72</target-resolution>
+  <target-resolution>150</target-resolution>
   
   <!-- Default page-height and page-width, in case
        value is specified as auto -->
@@ -45,6 +46,20 @@ the location of this file.
       </filterList>
 
       <fonts>
+      
+      <!-- register a particular font -->
+         <!-- <font metrics-url="file:///C:/xampp/htdocs/dma/resource/Frutiger.xml" kerning="yes"
+           embed-url="file:///C:/xampp/htdocs/dma/resource/Frutiger.ttf"
+           encoding-mode="single-byte">
+            <font-triplet name="Frutiger" style="normal" weight="400"/>
+         </font> -->
+         
+                  <font metrics-url="Frutiger.xml" kerning="yes"
+           embed-url="Frutiger.ttf"
+           encoding-mode="single-byte">
+            <font-triplet name="Frutiger" style="normal" weight="400"/>
+         </font>
+         
         <!-- embedded fonts -->
         <!--
         This information must exactly match the font specified
@@ -86,14 +101,14 @@ the location of this file.
       </xml-handler-->
 
     </renderer>
-
+    
     <renderer mime="application/x-afp">
       <!--
            The bit depth and type of images produced
            (this is the default setting)
       -->
       <images mode="b+w" bits-per-pixel="8"/>
-      <renderer-resolution>240</renderer-resolution>
+      <renderer-resolution>150</renderer-resolution>
       <line-width-correction>2.5</line-width-correction>
       <resource-group-file>resources.afp</resource-group-file>
 
