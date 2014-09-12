@@ -165,6 +165,7 @@ class Order_Service_Item
 		$mail = new Zend_Mail();
 		$mail->setBodyText($bodyText);
 		$mail->addTo($this->_partner['email']);
+		$mail->addBcc(array('carsten.leithoff@cu-medien.com','cradlbeck@dm-mundschenk.de'));
 		$mail->setSubject('Druckvorschau');
 	
 		$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
@@ -172,19 +173,14 @@ class Order_Service_Item
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
 	
+		if (file_exists(APPLICATION_PATH . "/../public/deploy/" . $this->order_item->authkey . "_preview_back.pdf")) {
+			$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '_preview_back.pdf'), 'application/pdf');
+			$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
+			$at->encoding    = Zend_Mime::ENCODING_BASE64;
+			$at->filename    = $order_item->getAuthkey() . '_preview_back.pdf'; //Hint! Hint!
+		}
 		$mail->send();
 		
-		$mail = new Zend_Mail();
-		$mail->setBodyText($bodyText);
-		$mail->addTo('carsten.leithoff@cu-medien.com');
-		$mail->setSubject('Druckvorschau');
-		
-		$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
-		$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
-		$at->encoding    = Zend_Mime::ENCODING_BASE64;
-		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
-		
-		$mail->send();
 	}
 	
 	public function checkState(Order_Model_Item $order_item, Order_Model_Item $order_item_recent) {
