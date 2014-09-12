@@ -167,7 +167,7 @@ class Order_Service_Item
 		$mail->clearFrom();
 		$mail->setFrom('fleurop@dm-mundschenk.de', 'Mundschenk Druck+Medien');
 		$mail->addTo($this->_partner['email']);
-		$mail->addBcc(array('carsten.leithoff@cu-medien.com','cradlbeck@dm-mundschenk.de'));
+		$mail->addBcc('carsten.leithoff@cu-medien.com');
 		$mail->setSubject('Druckvorschau');
 	
 		$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
