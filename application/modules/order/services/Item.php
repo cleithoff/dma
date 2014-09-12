@@ -173,7 +173,7 @@ class Order_Service_Item
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
 	
-		if (file_exists(APPLICATION_PATH . "/../public/deploy/" . $this->order_item->authkey . "_preview_back.pdf")) {
+		if (file_exists(APPLICATION_PATH . "/../public/deploy/" . $order_item->getAuthkey() . "_preview_back.pdf")) {
 			$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '_preview_back.pdf'), 'application/pdf');
 			$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
 			$at->encoding    = Zend_Mime::ENCODING_BASE64;
