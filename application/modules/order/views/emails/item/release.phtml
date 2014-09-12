@@ -4,7 +4,7 @@ im Auftrag der Fleurop AG senden wir Ihnen die Druckfreigabe
 für die von Ihnen bestellten individualisierten Werbemittel.
 
 Im Anhang finden Sie die Ihre Druckvorschau für den Artikel
-<?=$this->order_item->getProductItem()->getProductProduct()->getTitle() ?>, <?=$this->order_item->getProductItem()->getTitle() ?>.
+<?=$this->order_item->getProductProduct()->getTitle() ?>, <?=$this->order_item->getProductItem()->getTitle() ?>.
 
 Um die Druckvorschau für den Druck freizugeben, klicken Sie bitte auf folgenden Link:
 <?=Zend_Registry::get('config')->external->host ?>/order/item/released?authKey=<?=$this->order_item->authkey ?>
