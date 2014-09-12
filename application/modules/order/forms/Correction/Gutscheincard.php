@@ -44,7 +44,7 @@ class Order_Form_Correction_Gutscheincard extends Order_Form_Itemstatecorrection
 				'label'      => 'Zeile 1:',
 				//'required'   => true,
 				'validators' => array(
-				 		array('validator' => 'StringLength', 'options' => array(0, 60)),
+				 		array('validator' => 'StringLength', 'options' => array(0, 75)),
 				),
 				'filters'    => array(
 						array('filter' => 'StripTags'),
@@ -56,7 +56,7 @@ class Order_Form_Correction_Gutscheincard extends Order_Form_Itemstatecorrection
 				'label'      => 'Zeile 2:',
 				//'required'   => true,
 				'validators' => array(
-						array('validator' => 'StringLength', 'options' => array(0, 60)),
+						array('validator' => 'StringLength', 'options' => array(0, 75)),
 				),
 				'filters'    => array(
 						array('filter' => 'StripTags'),

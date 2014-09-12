@@ -164,6 +164,8 @@ class Order_Service_Item
 	
 		$mail = new Zend_Mail();
 		$mail->setBodyText($bodyText);
+		$mail->clearFrom();
+		$mail->setFrom('fleurop@dm-mundschenk.de', 'Mundschenk Druck+Medien');
 		$mail->addTo($this->_partner['email']);
 		$mail->addBcc(array('carsten.leithoff@cu-medien.com','cradlbeck@dm-mundschenk.de'));
 		$mail->setSubject('Druckvorschau');
@@ -173,8 +175,10 @@ class Order_Service_Item
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
 	
-		if (file_exists(APPLICATION_PATH . "/../public/deploy/" . $order_item->getAuthkey() . "_preview_back.pdf")) {
-			$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '_preview_back.pdf'), 'application/pdf');
+		$backFilename = realpath(APPLICATION_PATH . "/../public/deploy/") . $order_item->getAuthkey() . "_preview_back.pdf";
+		
+		if (file_exists($backFilename)) {
+			$at = $mail->createAttachment(file_get_contents($backFilename), 'application/pdf');
 			$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
 			$at->encoding    = Zend_Mime::ENCODING_BASE64;
 			$at->filename    = $order_item->getAuthkey() . '_preview_back.pdf'; //Hint! Hint!
