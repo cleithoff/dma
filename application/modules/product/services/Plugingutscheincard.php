@@ -27,7 +27,9 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		
 		$filename = APPLICATION_PATH . '/../resource/logo_assembly/background_' . intval($widthpx) . 'x' . intval($heightpx) . '.png';
 		
-		unlink($filename);
+		if (file_exists($filename)) {
+			unlink($filename);
+		}
 		
 		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:black -fill white -stroke black -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx) . "\" -define png:compression-level=0 " . $filename;
 		exec($exec);
@@ -101,7 +103,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		for ($x = intval($width - $border);$x > $border; $x = $x - $border) {
 			$assembledFilename = $this->overlayLogo($width,$height,$dpi,$x,$x,$filename_graphics,$backgroundFilename, $x);
 			
-			if (filesize($backgroundFilename) === filesize($assembledFilename)) {
+			if (filesize($backgroundFilename) <= filesize($assembledFilename)) {
 				break;
 			}
 		}

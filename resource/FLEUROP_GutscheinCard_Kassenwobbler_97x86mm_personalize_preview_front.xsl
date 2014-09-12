@@ -6,7 +6,7 @@
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 <fo:layout-master-set>
 <fo:simple-page-master master-name="main" page-height="86mm" page-width="97mm" font-family="sans-serif" margin="0mm">
-<fo:region-body margin-left="70mm" margin-top="16mm" />
+<fo:region-body margin-left="69mm" margin-top="17mm" />
 </fo:simple-page-master>
 </fo:layout-master-set>
 
