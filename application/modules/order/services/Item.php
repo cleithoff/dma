@@ -173,11 +173,13 @@ class Order_Service_Item
 		$mail->addHeader('Bcc', 'carsten.leithoff@cu-medien.com,fleurop@dm-mundschenk.de,cradlbeck@dm-mundschenk.de');
 		$mail->setSubject('Druckvorschau');
 		
+		/*
 		$at =& $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
 		$at->disposition = Zend_Mime::DISPOSITION_INLINE;
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
-	
+		*/
+		
 		$backFilename = realpath(APPLICATION_PATH . "/../public/deploy") . '/' . $order_item->getAuthkey() . "_preview_back.pdf";
 		
 		if (file_exists($backFilename)) {
