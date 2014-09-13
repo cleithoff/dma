@@ -173,7 +173,7 @@ class Order_Service_Item
 		$mail->setSubject('Druckvorschau');
 	
 		$at = $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
-		$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
+		$at->disposition = Zend_Mime::DISPOSITION_INLINE;
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
 	
@@ -181,7 +181,7 @@ class Order_Service_Item
 		
 		if (file_exists($backFilename)) {
 			$at = $mail->createAttachment(file_get_contents($backFilename), 'application/pdf');
-			$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
+			$at->disposition = Zend_Mime::DISPOSITION_INLINE;
 			$at->encoding    = Zend_Mime::ENCODING_BASE64;
 			$at->filename    = $order_item->getAuthkey() . '_preview_back.pdf'; //Hint! Hint!
 		} else {
