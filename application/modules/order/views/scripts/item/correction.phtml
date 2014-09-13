@@ -17,10 +17,10 @@
 
 <div class="container">
 	<h2>Korrektur</h2>
+			<?php if ($this->result === false) : ?>
 	<p>Wenn Sie einen Korrekturwunsch haben, tragen Sie diesen bitte in das Kommentarfeld ein und klicken Sie bitte auf den Button Korrektur. Wir werden dann umgehend Ihren Korrekturwunsch bearbeiten.</p>
 	<p>Sie können Personalisierungen, soweit vorhanden, auch im Formular korrigieren und klicken dann bitte auf den Button Vorschau.</p>
 	<p>Sind Sie mit dem Ergebnis zufrieden, so klicken Sie bitte auf den Button Freigabe.</p>
-			<?php if ($this->result === false) : ?>
 	<div class="row-fluid">
 		<div class="span8">
 			<?=$this->form->render() ?>	
