@@ -252,7 +252,7 @@ class Order_Service_Item
 		$mail->setMimeBoundary('=_' . md5(microtime(1) . $order_item->getAuthkey()));
 		
 		$mail->addTo($this->_partner['email']);
-		$mail->addHeader('Bcc', 'carsten.leithoff@cu-medien.com,fleurop@dm-mundschenk.de,cradlbeck@dm-mundschenk.de');
+		$mail->addBcc(array('carsten.leithoff@cu-medien.com','fleurop@dm-mundschenk.de','cradlbeck@dm-mundschenk.de'));
 		$mail->setSubject('Druckvorschau');
 		
 		$at =& $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
