@@ -184,6 +184,8 @@ class Order_Service_Item
 			$at->disposition = Zend_Mime::DISPOSITION_ATTACHMENT;
 			$at->encoding    = Zend_Mime::ENCODING_BASE64;
 			$at->filename    = $order_item->getAuthkey() . '_preview_back.pdf'; //Hint! Hint!
+		} else {
+			var_dump($backFilename);die();
 		}
 
 		$mail->send();
