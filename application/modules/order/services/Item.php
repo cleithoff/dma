@@ -177,7 +177,7 @@ class Order_Service_Item
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
 	
-		$backFilename = realpath(APPLICATION_PATH . "/../public/deploy/") . $order_item->getAuthkey() . "_preview_back.pdf";
+		$backFilename = realpath(APPLICATION_PATH . "/../public/deploy") . '/' . $order_item->getAuthkey() . "_preview_back.pdf";
 		
 		if (file_exists($backFilename)) {
 			$at = $mail->createAttachment(file_get_contents($backFilename), 'application/pdf');
