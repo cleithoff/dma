@@ -33,6 +33,13 @@ class Order_Form_Itemstatecorrection extends Zend_Form {
 				'class'		=> 'btn',
 				'value'	    => '',
 				'ignore'    => true,
+				'label'     => 'Vorschau',
+		));
+		
+		$this->addElement('submit', '_deny', array(
+				'class'		=> 'btn',
+				'value'	    => '',
+				'ignore'    => true,
 				'label'     => 'Korrektur',
 		));
 		
@@ -43,7 +50,7 @@ class Order_Form_Itemstatecorrection extends Zend_Form {
             'label'     => 'Freigeben',
         ));
         
-        $this->addDisplayGroup(array('_preview', '_correction'), 'submit');
+        $this->addDisplayGroup(array('_preview', '_deny', '_correction'), 'submit');
  
         // Und letztendlich etwas CSRF Protektion hinzufügen
         $this->addElement('hash', 'csrf', array(

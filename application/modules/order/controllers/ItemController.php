@@ -117,6 +117,7 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		if ($this->getRequest()->isPost()) {
 			$values = $this->getRequest()->getPost();
 			if ($form->isValid($values)) {
+				if (!empty($values['_deny'])) $command = 'deny';
 				if (!empty($values['_preview'])) $command = 'preview';
 				if (!empty($values['_correction'])) $command = 'correction';
 				
@@ -136,6 +137,14 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 							true
 					);
 				} else 
+				if ($command === 'deny') {
+					$this->view->result = $this->getService()->changeState(
+							$order_item,
+							Order_Service_Itemstate::ORDER_ITEM_STATE_DENY,
+							$values,
+							true
+					);
+				} else
 				if ($command === 'correction') {
 					$this->view->result = $this->getService()->changeState(
 							$order_item,
