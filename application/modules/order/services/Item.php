@@ -271,6 +271,7 @@ class Order_Service_Item
 		}
 		
 		$mail->setBodyText($bodyText);
+		$mail->send();
 		
 		/*
 		
