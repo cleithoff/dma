@@ -185,20 +185,23 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
             view.suffix = '';
         }
 
-        //var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Bitte warten Sie. Die Ausgabe wird erzeugt!"});
-        //myMask.show();
+        var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Bitte warten Sie. Die Ausgabe wird erzeugt!"});
+        myMask.show();
 
         Ext.Ajax.request({
             url: '/order/item/refresh',
 
             success: function(response, operation, success) {
                 // console.log(response, operation, success);
+                myMask.destroy();
                 records = JSON.parse(response.responseText);
                 that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + records.data[0].authkey + view.suffix + '.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
-                //myMask.destroy();
+
             },
             failure: function() {
+                myMask.destroy();
                 Ext.MessageBox.alert('Fehler', 'Bei der Erzeugung ist ein Fehler aufgetreten.');
+
             },
             params: { 
                 id: record.data.id,    
