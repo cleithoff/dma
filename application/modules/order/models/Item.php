@@ -8,6 +8,7 @@ class Order_Model_Item extends Rest_Model_DbRow
 	protected $_order_order = null;
 	protected $_product_personalize = null;
 	protected $_product_item = null;
+	protected $_product_product = null;
 	
 	/**
 	 * @return string
