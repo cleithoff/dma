@@ -167,11 +167,12 @@ class Order_Service_Item
 		$bodyText = $eml->render('release.phtml');
 	
 		$mail = new Zend_Mail();
-		$mail->setBodyText($bodyText);
+		$mail->setMimeBoundary('=_' . md5(microtime(1) . $order_item->getAuthkey()));
+		
 		$mail->addTo($this->_partner['email']);
 		$mail->addHeader('Bcc', 'carsten.leithoff@cu-medien.com,fleurop@dm-mundschenk.de,cradlbeck@dm-mundschenk.de');
 		$mail->setSubject('Druckvorschau');
-	
+		
 		$at =& $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
 		$at->disposition = Zend_Mime::DISPOSITION_INLINE;
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
@@ -184,9 +185,9 @@ class Order_Service_Item
 			$at2->disposition = Zend_Mime::DISPOSITION_INLINE;
 			$at2->encoding    = Zend_Mime::ENCODING_BASE64;
 			$at2->filename    = $order_item->getAuthkey() . '_preview_back.pdf'; //Hint! Hint!
-		} else {
-			var_dump($backFilename);die();
 		}
+		
+		$mail->setBodyText($bodyText);
 
 		$mail->send();
 		
