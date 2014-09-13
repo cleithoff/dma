@@ -251,7 +251,7 @@ class Order_Service_Item
 		$mail = new Zend_Mail();
 		$mail->setMimeBoundary('=_' . md5(microtime(1) . $order_item->getAuthkey()));
 		
-		$mail->addTo($this->_partner['email']);
+		$mail->addTo($order_item->getOrderOrder()->getPartnerPartner()->email);
 		$mail->addBcc(array('carsten.leithoff@cu-medien.com','fleurop@dm-mundschenk.de','cradlbeck@dm-mundschenk.de'));
 		$mail->setSubject('Druckvorschau');
 		
