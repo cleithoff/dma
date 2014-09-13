@@ -283,7 +283,7 @@
                     "\r",
                     "Ext.Ajax.request({\r",
                     "    url: '/order/item/refresh',\r",
-                    "    \r",
+                    "    timeout: 1000 * 60 * 5,\r",
                     "    success: function(response, operation, success) {\r",
                     "        // console.log(response, operation, success);\r",
                     "        myMask.destroy();\r",

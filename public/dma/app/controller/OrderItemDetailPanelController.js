@@ -190,7 +190,7 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
 
         Ext.Ajax.request({
             url: '/order/item/refresh',
-
+            timeout: 1000 * 60 * 5,
             success: function(response, operation, success) {
                 // console.log(response, operation, success);
                 myMask.destroy();
