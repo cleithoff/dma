@@ -173,12 +173,10 @@ class Order_Service_Item
 		$mail->addHeader('Bcc', 'carsten.leithoff@cu-medien.com,fleurop@dm-mundschenk.de,cradlbeck@dm-mundschenk.de');
 		$mail->setSubject('Druckvorschau');
 		
-		/*
 		$at =& $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
 		$at->disposition = Zend_Mime::DISPOSITION_INLINE;
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
-		*/
 		
 		$backFilename = realpath(APPLICATION_PATH . "/../public/deploy") . '/' . $order_item->getAuthkey() . "_preview_back.pdf";
 		
@@ -249,7 +247,33 @@ class Order_Service_Item
 	
 		// render view
 		$bodyText = $eml->render('release.phtml');
-	
+
+		$mail = new Zend_Mail();
+		$mail->setMimeBoundary('=_' . md5(microtime(1) . $order_item->getAuthkey()));
+		
+		$mail->addTo($this->_partner['email']);
+		$mail->addHeader('Bcc', 'carsten.leithoff@cu-medien.com,fleurop@dm-mundschenk.de,cradlbeck@dm-mundschenk.de');
+		$mail->setSubject('Druckvorschau');
+		
+		$at =& $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
+		$at->disposition = Zend_Mime::DISPOSITION_INLINE;
+		$at->encoding    = Zend_Mime::ENCODING_BASE64;
+		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
+		
+		$backFilename = realpath(APPLICATION_PATH . "/../public/deploy") . '/' . $order_item->getAuthkey() . "_preview_back.pdf";
+		
+		if (file_exists($backFilename)) {
+			$at2 =& $mail->createAttachment(file_get_contents($backFilename), 'application/pdf');
+			$at2->disposition = Zend_Mime::DISPOSITION_INLINE;
+			$at2->encoding    = Zend_Mime::ENCODING_BASE64;
+			$at2->filename    = $order_item->getAuthkey() . '_preview_back.pdf'; //Hint! Hint!
+		}
+		
+		$mail->setBodyText($bodyText);
+		
+		/*
+		
+		
 		$mail = new Zend_Mail();
 		$mail->setBodyText($bodyText);
 		$mail->addTo($order_item->getOrderOrder()->getPartnerPartner()->email);
@@ -272,7 +296,7 @@ class Order_Service_Item
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
 		
-		$mail->send();
+		$mail->send();*/
 	}
 	
 	protected function processStateDeny(Order_Model_Item $order_item) {
