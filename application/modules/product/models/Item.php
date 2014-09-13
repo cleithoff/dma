@@ -18,5 +18,18 @@ class Product_Model_Item extends Rest_Model_DbRow
 		return $this->_product_layout;
 	}
 	
+	/**
+	 *
+	 * @param bool $refresh
+	 * @return Product_Model_Product
+	 */
+	public function getProductProduct(bool $refresh = null) {
+		if (empty($this->_product_product) || $refresh) {
+			$product_products = new Product_Model_DbTable_Product();
+			$this->_product_product = $product_products->find($this->product_product_id)->current();
+		}
+		return $this->_product_product;
+	}
+	
 }
 

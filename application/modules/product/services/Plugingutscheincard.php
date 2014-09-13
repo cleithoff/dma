@@ -26,6 +26,8 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		$borderpx = intval(floatval($dpi) * self::mm2inch * floatval($border));
 		
 		$filename = APPLICATION_PATH . '/../resource/logo_assembly/background_' . intval($widthpx) . 'x' . intval($heightpx) . '.png';
+		$filenameNegate = APPLICATION_PATH . '/../resource/logo_assembly/background_' . intval($widthpx) . 'x' . intval($heightpx) . '_negate.png';
+		$filenameBlack = APPLICATION_PATH . '/../resource/logo_assembly/background_' . intval($widthpx) . 'x' . intval($heightpx) . '_black.png';
 		
 		if (file_exists($filename)) {
 			unlink($filename);
@@ -33,11 +35,19 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		
 		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:black -fill white -stroke black -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx) . "\" -define png:compression-level=0 " . $filename;
 		exec($exec);
+		
+		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:white -fill black -stroke white -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx + 3) . "\" -define png:compression-level=0 " . $filenameNegate;
+		exec($exec);
+		
+		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:black -define png:compression-level=0 " . $filenameBlack;
+		exec($exec);
 				
 		return $filename;
 	}
 	
 	protected function overlayLogo($width, $height, $dpi = 300, $useWidth, $useHeight, $filename, $backgroundFilename, $x) {
+		
+		$backgroundFilenameNegate = str_replace('.png', '_negate.png', $backgroundFilename);
 		
 		$widthpx = intval(floatval($dpi) * self::mm2inch * floatval($width));
 		
@@ -52,6 +62,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		$overlayFilename = APPLICATION_PATH . '/../resource/logo_assembly/overlay_' . intval($widthpx) . 'x' . intval($heightpx) . '.png';
 		
 		$assembledFilename = APPLICATION_PATH . '/../resource/logo_assembly/assembled_' . intval($widthpx) . 'x' . intval($heightpx) . '.png';
+		$assembledFilenameProof = APPLICATION_PATH . '/../resource/logo_assembly/assembled_' . intval($widthpx) . 'x' . intval($heightpx) . '_' . intval($x) . '.png';
 		
 		$exec = "convert " . $filename . " -monochrome -resize " . intval($useWidthpx) . "x" . intval($useHeightpx) . " -size " . intval($widthpx) . "x" . intval($heightpx) . " xc:white +swap -gravity center -composite -negate " . $overlayFilename;
 		exec($exec);
@@ -59,6 +70,12 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		$exec = "convert " . $backgroundFilename . " " . $overlayFilename . " -compose plus -composite -define png:compression-level=0 " . $assembledFilename;
 		exec($exec);
 
+		$exec = "convert " . $backgroundFilename . " " . $overlayFilename . " -compose plus -composite -define png:compression-level=0 " . $assembledFilenameProof;
+		exec($exec);
+		
+		$exec = "convert " . $backgroundFilenameNegate . " " . $assembledFilename . " -compose darken -composite -define png:compression-level=0 " . $assembledFilename;
+		exec($exec);
+		
 		return $assembledFilename;
 		 // === radialmaskbw.png
 		
@@ -99,17 +116,64 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		$dpi = $this->dpi;
 		
 		$backgroundFilename = $this->initBackground($width,$height,$dpi,$border);
+		$backgroundFilenameBlack = str_replace('.png', '_black.png', $backgroundFilename); 
 		
-		for ($x = intval($width - $border);$x > $border; $x = $x - $border) {
+		//$sizeback = getimagesize($backgroundFilename);
+		//$sizefile = getimagesize($filename_graphics);
+		
+		
+		$success = false;
+		
+		$oddeven = false;
+		
+		$x = $width;
+		
+		/*
+		do {
+			
+			$oddeven = !$oddeven;
+			
 			$assembledFilename = $this->overlayLogo($width,$height,$dpi,$x,$x,$filename_graphics,$backgroundFilename, $x);
 			
-			if (filesize($backgroundFilename) <= filesize($assembledFilename)) {
+			if (filesize($backgroundFilename) == filesize($assembledFilename)) {
+				$count++;
+			} else {
+				
+			}
+			
+			if ($count == 2) break;
+			
+		} while (!$success);
+		*/
+		
+		$steps = 10;
+		
+		$count = 0;
+		for ($x = intval($width); $x > intval($width/2); $x = intval($x - $width/$steps)) {
+			
+			$count++;
+			
+			$assembledFilename = $this->overlayLogo($width,$height,$dpi,$x,$x,$filename_graphics,$backgroundFilename, $x);
+				
+			if (filesize($backgroundFilenameBlack) == filesize($assembledFilename)) {
 				break;
 			}
 		}
 		
+		//$assembledFilename = $this->overlayLogo($width,$height,$dpi,$x,$x,$filename_graphics,$backgroundFilename, $x);
+
+		/*
+		for ($x = intval($width - $border);$x > $border; $x = $x - $border) {
+			$assembledFilename = $this->overlayLogo($width,$height,$dpi,$x,$x,$filename_graphics,$backgroundFilename, $x);
+			
+			if (filesize($backgroundFilename) == filesize($assembledFilename)) {
+				break;
+			}
+		}
+		*/
 		$logoFilename = $this->setLogo($width,$height,$dpi,$x,$x,$filename_graphics);
-		
+		//$logoFilename = $this->setLogo($width,$height,$dpi,$x-$border,$x-$border,$filename_graphics);
+
 		return array(
 				'logo' => str_replace('\\', '/', realpath($logoFilename))
 		);

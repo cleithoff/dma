@@ -154,7 +154,7 @@ class Order_Service_Item
 		// for transport config look at application.ini
 		$eml = new Zend_View();
 		$eml->setScriptPath(APPLICATION_PATH . '/modules/order/views/emails/item');
-	
+
 		// assign values
 		$eml->assign('partner_partner', $order_item->getOrderOrder()->getPartnerPartner());
 		$eml->assign('order_item', $order_item);
