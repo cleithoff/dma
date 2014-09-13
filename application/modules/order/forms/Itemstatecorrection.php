@@ -33,7 +33,7 @@ class Order_Form_Itemstatecorrection extends Zend_Form {
 				'class'		=> 'btn',
 				'value'	    => '',
 				'ignore'    => true,
-				'label'     => 'Vorschau',
+				'label'     => 'Korrektur',
 		));
 		
         $this->addElement('submit', '_correction', array(
