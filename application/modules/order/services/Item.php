@@ -179,7 +179,6 @@ class Order_Service_Item
 		$at->encoding    = Zend_Mime::ENCODING_BASE64;
 		$at->filename    = $order_item->getAuthkey() . '.pdf'; //Hint! Hint!
 	
-		/*
 		$backFilename = realpath(APPLICATION_PATH . "/../public/deploy/") . $order_item->getAuthkey() . "_preview_back.pdf";
 		
 		if (file_exists($backFilename)) {
@@ -188,7 +187,7 @@ class Order_Service_Item
 			$at->encoding    = Zend_Mime::ENCODING_BASE64;
 			$at->filename    = $order_item->getAuthkey() . '_preview_back.pdf'; //Hint! Hint!
 		}
-		*/
+
 		$mail->send();
 		
 	}

@@ -41,7 +41,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		
 		$exec = "convert " . $filenameNegate . " " . $filename . " -compose darken -composite -define png:compression-level=0 " . $filenameBlack;
 		exec($exec);
-				
+
 		return $filename;
 	}
 	
