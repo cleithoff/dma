@@ -103,6 +103,10 @@ class Order_Service_Item
 		
 		$xml = $this->toXml($order_item, $product_personalize_override);
 		
+		if (file_exists(APPLICATION_PATH . '/../public/deploy/' . $authkey . $suffix . '.pdf')) {
+			unlink(APPLICATION_PATH . '/../public/deploy/' . $authkey . $suffix . '.pdf');
+		}
+		
 		$xml->save(APPLICATION_PATH . '/../resource/xml/' . $authkey . '.xml');
 		Rest_Pdf::fop(
 			APPLICATION_PATH . '/../resource/xml/' . $authkey . '.xml',
