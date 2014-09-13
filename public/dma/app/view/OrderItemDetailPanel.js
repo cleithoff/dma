@@ -167,11 +167,25 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                 {
                     xtype: 'form',
                     region: 'north',
-                    disabled: true,
-                    height: 45,
+                    height: 95,
                     itemId: 'OrderItemDetailFormPanel',
                     bodyPadding: 10,
                     items: [
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            itemId: 'OrderItemPath',
+                            fieldLabel: 'Pfad',
+                            value: '/var/www/html/dma/dma/public/deploy',
+                            readOnly: true
+                        },
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            itemId: 'OrderItemFilename',
+                            fieldLabel: 'Dateiname',
+                            readOnly: true
+                        },
                         {
                             xtype: 'combobox',
                             anchor: '100%',

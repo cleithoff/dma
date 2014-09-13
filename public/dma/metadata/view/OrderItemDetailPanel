@@ -417,14 +417,46 @@
             "codeClass": null,
             "userConfig": {
                 "layout|region": "north",
-                "disabled": true,
-                "height": 45,
+                "height": 95,
                 "itemId": "OrderItemDetailFormPanel",
                 "bodyPadding": 10,
                 "title": null
             },
             "designerId": "9c179ba0-97ec-4f5b-89b6-e57a790d23ae",
             "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "OrderItemPath",
+                        "fieldLabel": "Pfad",
+                        "value": [
+                            "/var/www/html/dma/dma/public/deploy"
+                        ],
+                        "readOnly": true
+                    },
+                    "designerId": "c2c05bf2-25b1-462d-9a9e-f3e3e6a755e2"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "OrderItemFilename",
+                        "fieldLabel": "Dateiname",
+                        "readOnly": true
+                    },
+                    "designerId": "6ba37ef7-c661-4980-8292-ae0fee70fc01"
+                },
                 {
                     "type": "Ext.form.field.ComboBox",
                     "reference": {

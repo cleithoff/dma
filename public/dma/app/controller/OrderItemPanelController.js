@@ -114,6 +114,8 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
             view.suffix = '';
         }
 
+        this.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey + view.suffix + '.pdf');
+
         this.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + view.suffix + '.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
     },
 
