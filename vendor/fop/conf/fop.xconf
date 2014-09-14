@@ -46,14 +46,16 @@ the location of this file.
       </filterList>
 
       <fonts>
-      
+         <directory>/var/www/html/dma/dma/fop</directory>
+         <auto-detect/>
+         <
       <!-- register a particular font -->
          <!-- <font metrics-url="file:///C:/xampp/htdocs/dma/resource/Frutiger.xml" kerning="yes"
            embed-url="file:///C:/xampp/htdocs/dma/resource/Frutiger.ttf"
            encoding-mode="single-byte">
             <font-triplet name="Frutiger" style="normal" weight="400"/>
          </font> -->
-         
+         <!--
          <font metrics-file="HelveticaNeueLTStd-HvCn.xml" kerning="yes" embed-url="HelveticaNeueLTStd-HvCn.ttf" embed-file="HelveticaNeueLTStd-HvCn.ttf">
 			<font-triplet name="HelveticaNeueLTStd-HvCn" style="normal" weight="400" />
 		 </font>
@@ -63,7 +65,7 @@ the location of this file.
            encoding-mode="single-byte">
             <font-triplet name="Frutiger" style="normal" weight="400"/>
          </font>
-         
+          -->
         <!-- embedded fonts -->
         <!--
         This information must exactly match the font specified
