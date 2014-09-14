@@ -34,7 +34,7 @@
 </xsl:template>
 
 <xsl:template match="data/product_personalize">
-<fo:block font-size="5pt" font-family="HelveticaNeueLT" font-weight="400" color="white" text-align="center" width="65mm" line-height="10pt">
+<fo:block font-size="5pt" font-family="Helvetica Neue LT Std Med Cn" font-weight="400" color="white" text-align="center" width="65mm" line-height="10pt">
 Dieser Geschenkgutschein kann eingelöst werden bei:
 </fo:block>
 <fo:block font-size="5.5pt" font-family="HelveticaNeueLT" font-weight="400" color="white" text-align="center" width="65mm" line-height="7pt">
