@@ -4,8 +4,7 @@ class Rest_Pdf {
 	
 	public static function fop($xml, $xsl, $pdf) {
 		$fop = APPLICATION_PATH . Zend_Registry::getInstance()->config->cli->fop;
-		echo $exec = $fop . ' -c conf/userconfig.xml -xml ' . $xml . ' -xsl ' . $xsl . ' -pdf ' . $pdf;
-		die();
+		$exec = $fop . ' -c conf/userconfig.xml -xml ' . $xml . ' -xsl ' . $xsl . ' -pdf ' . $pdf;
 		exec($exec);
 	}
 	
