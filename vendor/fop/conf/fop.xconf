@@ -54,7 +54,11 @@ the location of this file.
             <font-triplet name="Frutiger" style="normal" weight="400"/>
          </font> -->
          
-                  <font metrics-url="Frutiger.xml" kerning="yes"
+         <font metrics-file="HelveticaNeueLTStd-HvCn.xml" kerning="yes" embed-file="HelveticaNeueLTStd-HvCn.ttf">
+			<font-triplet name="HelveticaNeueLT" style="normal" weight="400" />
+		 </font>
+         
+         <font metrics-url="Frutiger.xml" kerning="yes"
            embed-url="Frutiger.ttf"
            encoding-mode="single-byte">
             <font-triplet name="Frutiger" style="normal" weight="400"/>
