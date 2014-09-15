@@ -254,7 +254,7 @@ class Order_Service_Item
 		//$mail->addTo('carsten.leithoff@cu-medien.com');
 		$mail->addTo($order_item->getOrderOrder()->getPartnerPartner()->email);
 		$mail->addBcc(array('carsten.leithoff@cu-medien.com','fleurop@dm-mundschenk.de','cradlbeck@dm-mundschenk.de'));
-		$mail->setSubject('Druckvorschau');
+		$mail->setSubject('Druckvorschau ' . $order_item->getProductProduct()->title . ', ' . $order_item->getProductItem()->title);
 		
 		$at =& $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
 		$at->disposition = Zend_Mime::DISPOSITION_INLINE;
