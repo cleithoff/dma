@@ -112,7 +112,7 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		
 		$this->view->order_item = $order_item = $this->getService()->getOrderItemByAuthKey($this->getRequest()->getParam('authKey', null));		
 		
-		if ($order_item->order_itemstate_id !== Order_Service_Itemstate::ORDER_ITEM_STATE_RELEASE) {
+		if (intval($order_item->order_itemstate_id) !== intval(Order_Service_Itemstate::ORDER_ITEM_STATE_RELEASE)) {
 			$this->view->form = null;
 			return;
 		}
