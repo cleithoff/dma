@@ -36,6 +36,10 @@ class Order_Form_Itemstatecorrection extends Zend_Form {
 				'label'     => 'Vorschau',
 		));
 		
+		$previewButton = $this->getElement('_preview');
+		
+		$previewButton->setAttrib('onclick', 'document.getElementById("loading-indicator").style.display="block";document.getElementById("overlay").style.display="block";window.scrollTo(0,0);return true;');
+		
 		$this->addElement('submit', '_deny', array(
 				'class'		=> 'btn',
 				'value'	    => '',
