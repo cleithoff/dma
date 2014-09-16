@@ -112,6 +112,11 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		
 		$this->view->order_item = $order_item = $this->getService()->getOrderItemByAuthKey($this->getRequest()->getParam('authKey', null));		
 		
+		if ($order_item->order_itemstate_id !== Order_Service_Itemstate::ORDER_ITEM_STATE_RELEASE) {
+			$this->view->form = null;
+			return;
+		}
+		
 		$form = $this->getService()->CorrectionFormFactory($order_item);
 		
 		if ($this->getRequest()->isPost()) {
@@ -146,12 +151,21 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 					);
 				} else
 				if ($command === 'correction') {
-					$this->view->result = $this->getService()->changeState(
-							$order_item,
-							Order_Service_Itemstate::ORDER_ITEM_STATE_CORRECTION,
-							$values,
-							true
-					);
+					if (empty($values['comment'])) {
+						$this->view->result = $this->getService()->changeState(
+								$order_item,
+								Order_Service_Itemstate::ORDER_ITEM_STATE_RELEASED,
+								$values,
+								true
+						);
+					} else {
+						$this->view->result = $this->getService()->changeState(
+								$order_item,
+								Order_Service_Itemstate::ORDER_ITEM_STATE_CORRECTION,
+								$values,
+								true
+						);
+					}
 				}
 			}			
 		} else {
