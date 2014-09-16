@@ -11,7 +11,6 @@ Relative config url's will be resolved relative to
 the location of this file.
 
 -->
-
 <!-- NOTE: This is the version of the configuration -->
 <fop version="1.0">
 
@@ -46,9 +45,11 @@ the location of this file.
       </filterList>
 
       <fonts>
-         <directory>/var/www/html/dma/dma/fop</directory>
+
+         
+         <directory>/MyFonts</directory>
          <auto-detect/>
-         <
+         
       <!-- register a particular font -->
          <!-- <font metrics-url="file:///C:/xampp/htdocs/dma/resource/Frutiger.xml" kerning="yes"
            embed-url="file:///C:/xampp/htdocs/dma/resource/Frutiger.ttf"
