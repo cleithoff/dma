@@ -39,6 +39,7 @@ class Order_Service_Item
 		$plugin_classes = explode(',', $plugin_classes);
 		foreach ($plugin_classes as $plugin_class) {
 			$plugin_class = trim($plugin_class);
+			if (empty($plugin_class)) continue;
 			$plugin_obj = new $plugin_class(); 
 			if ($plugin_obj instanceof Product_Service_Plugin) {
 				$xml[$plugin_class] = $plugin_obj->execute($order_item, $xml);
