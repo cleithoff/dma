@@ -307,7 +307,7 @@ class Order_Service_Item
 	}
 	
 	protected function processStateReleased(Order_Model_Item $order_item, array $values = array()) {
-		if (count($values) > 0) {
+		if (is_array($values) && count($values) > 0) {
 			return $order_item->setProductPersonalize($values);
 		}
 	}
