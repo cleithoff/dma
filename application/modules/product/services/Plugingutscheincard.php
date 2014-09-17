@@ -110,9 +110,9 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		 
 		$pathinfo = pathinfo(APPLICATION_PATH . '/../resource/logo_original/' . $productPersonalize['filename_graphics']);
 		
-		$width = 50;
-		$height = 50;
-		$border = 3;
+		$width = 10;
+		$height = 10;
+		$border = 1;
 		$dpi = 150;
 		
 		$backgroundFilename = $this->initBackground($width,$height,$dpi,$border);
