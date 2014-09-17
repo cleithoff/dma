@@ -215,7 +215,7 @@ class Order_Service_Item
 				return $this->processStateDeny($order_item);
 				break;
 			case Order_Service_Itemstate::ORDER_ITEM_STATE_RELEASED:
-				return $this->processStateReleased($order_item);
+				return $this->processStateReleased($order_item, $values);
 				break;
 			case Order_Service_Itemstate::ORDER_ITEM_STATE_PRODUCTION:
 				return $this->processStateProduction($order_item);
@@ -306,8 +306,10 @@ class Order_Service_Item
 	
 	}
 	
-	protected function processStateReleased(Order_Model_Item $order_item) {
-	
+	protected function processStateReleased(Order_Model_Item $order_item, array $values = array()) {
+		if (count($values) > 0) {
+			return $order_item->setProductPersonalize($values);
+		}
 	}
 	
 	protected function processStateProduction(Order_Model_Item $order_item) {
