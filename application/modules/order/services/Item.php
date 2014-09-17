@@ -212,7 +212,7 @@ class Order_Service_Item
 				return $this->processStateRelease($order_item);
 				break;
 			case Order_Service_Itemstate::ORDER_ITEM_STATE_DENY:
-				return $this->processStateDeny($order_item);
+				return $this->processStateDeny($order_item, $values);
 				break;
 			case Order_Service_Itemstate::ORDER_ITEM_STATE_RELEASED:
 				return $this->processStateReleased($order_item, $values);
@@ -302,8 +302,10 @@ class Order_Service_Item
 		$mail->send();*/
 	}
 	
-	protected function processStateDeny(Order_Model_Item $order_item) {
-	
+	protected function processStateDeny(Order_Model_Item $order_item, array $values = array()) {
+		if (is_array($values) && count($values) > 0) {
+			return $order_item->setProductPersonalize($values);
+		}
 	}
 	
 	protected function processStateReleased(Order_Model_Item $order_item, array $values = array()) {
@@ -325,7 +327,9 @@ class Order_Service_Item
 	}
 	
 	protected function processStateCorrection(Order_Model_Item $order_item, array $values = array()) {
-		return $order_item->setProductPersonalize($values);
+		if (is_array($values) && count($values) > 0) {
+			return $order_item->setProductPersonalize($values);
+		}
 	}
 	
 	protected function logState(Order_Model_Item $order_item, array $values = null) {		
