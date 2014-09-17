@@ -112,7 +112,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		
 		$width = 10;
 		$height = 10;
-		$border = 1.2;
+		$border = 1.1;
 		$dpi = 150;
 		
 		$backgroundFilename = $this->initBackground($width,$height,$dpi,$border);
