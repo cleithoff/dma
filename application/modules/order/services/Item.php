@@ -228,6 +228,9 @@ class Order_Service_Item
 				break;
 			case Order_Service_Itemstate::ORDER_ITEM_STATE_CORRECTION:
 				return $this->processStateCorrection($order_item, $values);
+				break;			
+			case Order_Service_Itemstate::ORDER_ITEM_STATE_CANCELLATION:
+				return $this->processStateCancellation($order_item, $values);
 				break;
 		}
 	}
@@ -330,6 +333,10 @@ class Order_Service_Item
 		if (is_array($values) && count($values) > 0) {
 			return $order_item->setProductPersonalize($values);
 		}
+	}
+	
+	protected function processStateCancellation(Order_Model_Item $order_item, array $values = array()) {
+
 	}
 	
 	protected function logState(Order_Model_Item $order_item, array $values = null) {		
