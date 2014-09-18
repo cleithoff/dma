@@ -90,6 +90,12 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
         toolbar.getComponent('OrderItemDetailSaveButton').disable();
         toolbar.getComponent('OrderItemDetailDeleteButton').enable();
 
+        if (record.data.locked_render === true) {
+            toolbar.getComponent('OrderItemDetailRefreshButton').disable();
+        } else {
+            toolbar.getComponent('OrderItemDetailRefreshButton').enable();
+        }
+
         //# OrderItemDetailPanel / OrderItemstateGridPanel
         grid = panel.getComponent('OrderItemstatelogGridPanel');
         grid.store.clearFilter(true);

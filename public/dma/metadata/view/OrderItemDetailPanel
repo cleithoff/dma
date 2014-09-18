@@ -417,7 +417,7 @@
             "codeClass": null,
             "userConfig": {
                 "layout|region": "north",
-                "height": 95,
+                "height": 119,
                 "itemId": "OrderItemDetailFormPanel",
                 "bodyPadding": 10,
                 "title": null
@@ -474,6 +474,21 @@
                         "valueField": "id"
                     },
                     "designerId": "c23c1e06-ac8a-49b4-9e9c-1b3706d0e952"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": null,
+                        "hideEmptyLabel": false,
+                        "name": "locked_render",
+                        "boxLabel": "PDF Erzeugen abschalten"
+                    },
+                    "designerId": "afc861c2-4496-4417-ace9-fd559b8dce0d"
                 }
             ]
         },

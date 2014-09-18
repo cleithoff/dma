@@ -167,7 +167,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                 {
                     xtype: 'form',
                     region: 'north',
-                    height: 95,
+                    height: 119,
                     itemId: 'OrderItemDetailFormPanel',
                     bodyPadding: 10,
                     items: [
@@ -195,6 +195,12 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                             displayField: 'title',
                             store: 'OrderItemstateJsonStore',
                             valueField: 'id'
+                        },
+                        {
+                            xtype: 'checkboxfield',
+                            hideEmptyLabel: false,
+                            name: 'locked_render',
+                            boxLabel: 'PDF Erzeugen abschalten'
                         }
                     ]
                 },

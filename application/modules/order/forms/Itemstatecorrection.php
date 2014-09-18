@@ -1,6 +1,16 @@
 <?php
 
 class Order_Form_Itemstatecorrection extends Zend_Form {
+
+	protected $_order_item = null;
+	
+	public function __construct(array $options = array()) {
+		$this->_order_item = $options['order_item'];
+		
+		unset($options['order_item']);
+		
+		parent::__construct($options);
+	}
 	
 	public function init() {
 		$this->setMethod('post');
@@ -29,16 +39,19 @@ class Order_Form_Itemstatecorrection extends Zend_Form {
             )
         ));*/
 		
-		$this->addElement('submit', '_preview', array(
-				'class'		=> 'btn',
-				'value'	    => '',
-				'ignore'    => true,
-				'label'     => 'Vorschau',
-		));
+		$buttonGroup = array();
 		
-		$previewButton = $this->getElement('_preview');
-		
-		$previewButton->setAttrib('onclick', 'document.getElementById("loading-indicator").style.display="block";document.getElementById("overlay").style.display="block";window.scrollTo(0,0);return true;');
+		if (empty($this->_order_item->locked_render)) {
+			$this->addElement('submit', '_preview', array(
+					'class'		=> 'btn',
+					'value'	    => '',
+					'ignore'    => true,
+					'label'     => 'Vorschau',
+			));		
+			$previewButton = $this->getElement('_preview');		
+			$previewButton->setAttrib('onclick', 'document.getElementById("loading-indicator").style.display="block";document.getElementById("overlay").style.display="block";window.scrollTo(0,0);return true;');
+			$buttonGroup[] = '_preview';
+		}
 		
 		$this->addElement('submit', '_deny', array(
 				'class'		=> 'btn',
@@ -46,6 +59,7 @@ class Order_Form_Itemstatecorrection extends Zend_Form {
 				'ignore'    => true,
 				'label'     => 'Korrektur',
 		));
+		$buttonGroup[] = '_deny';
 		
         $this->addElement('submit', '_correction', array(
         	'class'		=> 'btn',
@@ -53,8 +67,9 @@ class Order_Form_Itemstatecorrection extends Zend_Form {
             'ignore'    => true,
             'label'     => 'Freigeben',
         ));
+        $buttonGroup[] = '_correction';
         
-        $this->addDisplayGroup(array('_preview', '_deny', '_correction'), 'submit');
+        $this->addDisplayGroup($buttonGroup, 'submit');
  
         // Und letztendlich etwas CSRF Protektion hinzufügen
         $this->addElement('hash', 'csrf', array(

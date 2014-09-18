@@ -371,8 +371,9 @@ class Order_Service_Item
 	 * @return Order_Form_Itemstatecorrection
 	 */
 	public function CorrectionFormFactory(Order_Model_Item $order_item) {
-		$form = $order_item->getProductItem()->getProductLayout()->correction_form_class;
-		return new $form();
+		$correction_form_class = $order_item->getProductItem()->getProductLayout()->correction_form_class;
+		$form = new $correction_form_class(array('order_item' => $order_item));
+		return $form;
 	}
 
 }

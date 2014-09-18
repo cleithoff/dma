@@ -46,6 +46,10 @@ Ext.define('MyApp.model.OrderItemModel', {
         {
             name: 'product_product',
             persist: false
+        },
+        {
+            name: 'locked_render',
+            type: 'boolean'
         }
     ]
 });
