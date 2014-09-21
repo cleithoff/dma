@@ -41,7 +41,7 @@ class Order_Form_Itemstatecorrection extends Zend_Form {
 		
 		$buttonGroup = array();
 		
-		if (empty($this->_order_item->locked_render)) {
+		if (empty($this->_order_item->locked_render_front_preview) || empty($this->_order_item->locked_render_back_preview)) {
 			$this->addElement('submit', '_preview', array(
 					'class'		=> 'btn',
 					'value'	    => '',
