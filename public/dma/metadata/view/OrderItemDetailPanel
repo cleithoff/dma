@@ -303,6 +303,62 @@
                                             "type": "string"
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "Ext.menu.CheckItem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "value": "5",
+                                        "suffix": "_test_front",
+                                        "itemId": "OrderItemViewmodeTestFrontMenuItem",
+                                        "text": "Test Front",
+                                        "group": "viewmodegroup"
+                                    },
+                                    "designerId": "9590d2fb-edb8-447d-a169-9734324a246f",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "value",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "suffix",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.menu.CheckItem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "value": "6",
+                                        "suffix": "_test_back",
+                                        "itemId": "OrderItemViewmodeTestBackMenuItem",
+                                        "text": "Test Back",
+                                        "group": "viewmodegroup"
+                                    },
+                                    "designerId": "9b1ce9fd-aa93-4a3f-97ae-2516f7dce4aa",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "value",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "suffix",
+                                            "type": "string"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -417,12 +473,158 @@
             "codeClass": null,
             "userConfig": {
                 "layout|region": "north",
-                "height": 119,
+                "border": false,
+                "disabled": true,
+                "height": 74,
                 "itemId": "OrderItemDetailFormPanel",
                 "bodyPadding": 10,
                 "title": null
             },
             "designerId": "9c179ba0-97ec-4f5b-89b6-e57a790d23ae",
+            "cn": [
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "OrderItemDetailOrderitemState",
+                        "fieldLabel": "Status",
+                        "name": "order_itemstate_id",
+                        "displayField": "title",
+                        "store": "OrderItemstateJsonStore",
+                        "valueField": "id"
+                    },
+                    "designerId": "c23c1e06-ac8a-49b4-9e9c-1b3706d0e952"
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "height": 120,
+                        "layout": "hbox",
+                        "fieldLabel": "PDF erzeugen abschalten"
+                    },
+                    "designerId": "66711092-ac05-44fb-8ce1-ff111518b42b",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|margins": "0 20 0 0",
+                                "fieldLabel": null,
+                                "name": "locked_render_front_preview",
+                                "boxLabel": "Preview Front"
+                            },
+                            "designerId": "afc861c2-4496-4417-ace9-fd559b8dce0d"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|margins": "0 20 0 0",
+                                "fieldLabel": null,
+                                "name": "locked_render_back_preview",
+                                "boxLabel": "Preview Back"
+                            },
+                            "designerId": "9bf0ec1c-a326-45e3-b690-643805e4e18e"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|margins": "0 20 0 0",
+                                "fieldLabel": null,
+                                "name": "locked_render_front_print",
+                                "boxLabel": "Print Front"
+                            },
+                            "designerId": "110b8297-3c81-4555-a13b-1845906714fd"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|margins": "0 20 0 0",
+                                "fieldLabel": null,
+                                "name": "locked_render_back_print",
+                                "boxLabel": "Print Back"
+                            },
+                            "designerId": "1c3a97aa-eb09-42bd-a2ea-243d2af3970a"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|margins": "0 20 0 0",
+                                "fieldLabel": null,
+                                "name": "locked_render_front_test",
+                                "boxLabel": "Test Front"
+                            },
+                            "designerId": "086fb766-dfb3-4335-a3ad-69f4e0b6c4b5"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|margins": "0 20 0 0",
+                                "fieldLabel": null,
+                                "name": "locked_render_back_test",
+                                "boxLabel": "Test Back"
+                            },
+                            "designerId": "15d4a5b6-6c12-48bf-a6a5-4fab9a9c6d20"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "border": false,
+                "height": 68,
+                "bodyPadding": 10,
+                "header": false,
+                "title": "My Form"
+            },
+            "designerId": "372c4118-9ae7-4990-ab61-335e8d2ddc92",
             "cn": [
                 {
                     "type": "Ext.form.field.Text",
@@ -456,39 +658,6 @@
                         "readOnly": true
                     },
                     "designerId": "6ba37ef7-c661-4980-8292-ae0fee70fc01"
-                },
-                {
-                    "type": "Ext.form.field.ComboBox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|anchor": "100%",
-                        "itemId": "OrderItemDetailOrderitemState",
-                        "fieldLabel": "Status",
-                        "name": "order_itemstate_id",
-                        "displayField": "title",
-                        "store": "OrderItemstateJsonStore",
-                        "valueField": "id"
-                    },
-                    "designerId": "c23c1e06-ac8a-49b4-9e9c-1b3706d0e952"
-                },
-                {
-                    "type": "Ext.form.field.Checkbox",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": null,
-                        "hideEmptyLabel": false,
-                        "name": "locked_render",
-                        "boxLabel": "PDF Erzeugen abschalten"
-                    },
-                    "designerId": "afc861c2-4496-4417-ace9-fd559b8dce0d"
                 }
             ]
         },

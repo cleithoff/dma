@@ -62,6 +62,22 @@ Ext.define('MyApp.model.ProductLayoutModel', {
             type: 'string'
         },
         {
+            name: 'xsl_front_test',
+            type: 'string'
+        },
+        {
+            name: 'pdf_front_test',
+            type: 'string'
+        },
+        {
+            name: 'xsl_back_test',
+            type: 'string'
+        },
+        {
+            name: 'pdf_back_test',
+            type: 'string'
+        },
+        {
             name: 'correction_form_class',
             type: 'string'
         },

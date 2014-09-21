@@ -161,6 +161,58 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "xsl_front_test",
+                "type": "string"
+            },
+            "designerId": "2851047e-8e6c-4d4e-b04b-f253157a3634"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pdf_front_test",
+                "type": "string"
+            },
+            "designerId": "2ab6ed54-a0aa-4003-b7ba-e4dd84d0f341"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "xsl_back_test",
+                "type": "string"
+            },
+            "designerId": "aea71be3-ded5-462a-ba0f-2cca16358b96"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pdf_back_test",
+                "type": "string"
+            },
+            "designerId": "a64b94de-a5d3-43ce-9974-6e78baf69580"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "correction_form_class",
                 "type": "string"
             },

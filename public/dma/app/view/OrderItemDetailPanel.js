@@ -122,6 +122,22 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                                         itemId: 'OrderItemViewmodePrintBackMenuItem',
                                         text: 'Print Back',
                                         group: 'viewmodegroup'
+                                    },
+                                    {
+                                        xtype: 'menucheckitem',
+                                        value: '5',
+                                        suffix: '_test_front',
+                                        itemId: 'OrderItemViewmodeTestFrontMenuItem',
+                                        text: 'Test Front',
+                                        group: 'viewmodegroup'
+                                    },
+                                    {
+                                        xtype: 'menucheckitem',
+                                        value: '6',
+                                        suffix: '_test_back',
+                                        itemId: 'OrderItemViewmodeTestBackMenuItem',
+                                        text: 'Test Back',
+                                        group: 'viewmodegroup'
                                     }
                                 ]
                             },
@@ -167,9 +183,79 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                 {
                     xtype: 'form',
                     region: 'north',
-                    height: 119,
+                    border: false,
+                    disabled: true,
+                    height: 74,
                     itemId: 'OrderItemDetailFormPanel',
                     bodyPadding: 10,
+                    items: [
+                        {
+                            xtype: 'combobox',
+                            anchor: '100%',
+                            itemId: 'OrderItemDetailOrderitemState',
+                            fieldLabel: 'Status',
+                            name: 'order_itemstate_id',
+                            displayField: 'title',
+                            store: 'OrderItemstateJsonStore',
+                            valueField: 'id'
+                        },
+                        {
+                            xtype: 'fieldcontainer',
+                            height: 120,
+                            layout: {
+                                align: 'stretch',
+                                type: 'hbox'
+                            },
+                            fieldLabel: 'PDF erzeugen abschalten',
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    margins: '0 20 0 0',
+                                    name: 'locked_render_front_preview',
+                                    boxLabel: 'Preview Front'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    margins: '0 20 0 0',
+                                    name: 'locked_render_back_preview',
+                                    boxLabel: 'Preview Back'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    margins: '0 20 0 0',
+                                    name: 'locked_render_front_print',
+                                    boxLabel: 'Print Front'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    margins: '0 20 0 0',
+                                    name: 'locked_render_back_print',
+                                    boxLabel: 'Print Back'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    margins: '0 20 0 0',
+                                    name: 'locked_render_front_test',
+                                    boxLabel: 'Test Front'
+                                },
+                                {
+                                    xtype: 'checkboxfield',
+                                    margins: '0 20 0 0',
+                                    name: 'locked_render_back_test',
+                                    boxLabel: 'Test Back'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'form',
+                    region: 'north',
+                    border: false,
+                    height: 68,
+                    bodyPadding: 10,
+                    header: false,
+                    title: 'My Form',
                     items: [
                         {
                             xtype: 'textfield',
@@ -185,22 +271,6 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                             itemId: 'OrderItemFilename',
                             fieldLabel: 'Dateiname',
                             readOnly: true
-                        },
-                        {
-                            xtype: 'combobox',
-                            anchor: '100%',
-                            itemId: 'OrderItemDetailOrderitemState',
-                            fieldLabel: 'Status',
-                            name: 'order_itemstate_id',
-                            displayField: 'title',
-                            store: 'OrderItemstateJsonStore',
-                            valueField: 'id'
-                        },
-                        {
-                            xtype: 'checkboxfield',
-                            hideEmptyLabel: false,
-                            name: 'locked_render',
-                            boxLabel: 'PDF Erzeugen abschalten'
                         }
                     ]
                 },

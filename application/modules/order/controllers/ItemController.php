@@ -58,15 +58,20 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		$this->getService()->checkState($order_item, $order_item_recent);
 	}
 	
+
+	
 	public function refreshAction() {
 		$order_items = new Order_Model_DbTable_Item();
 		$order_item = $order_items->find($this->getRequest()->getParam('id'))->current();
-		$this->getService()->createPreview(
-				$order_item, 
-				array(), 
-				$this->getRequest()->getParam('viewmode', Product_Model_Layout::VIEW_PREVIEW_FRONT),
-				$this->getRequest()->getParam('refresh', false)
-				);
+		$viewmode = $this->getRequest()->getParam('viewmode', Product_Model_Layout::VIEW_PREVIEW_FRONT);
+
+			$this->getService()->createPreview(
+					$order_item, 
+					array(), 
+					$viewmode,
+					$this->getRequest()->getParam('refresh', false)
+					);
+
 		$this->view->success = true;
 		$this->view->total = 1;
 		$this->view->data = array();

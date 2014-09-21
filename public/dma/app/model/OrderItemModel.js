@@ -48,7 +48,27 @@ Ext.define('MyApp.model.OrderItemModel', {
             persist: false
         },
         {
-            name: 'locked_render',
+            name: 'locked_render_front_preview',
+            type: 'boolean'
+        },
+        {
+            name: 'locked_render_back_preview',
+            type: 'boolean'
+        },
+        {
+            name: 'locked_render_front_print',
+            type: 'boolean'
+        },
+        {
+            name: 'locked_render_back_print',
+            type: 'boolean'
+        },
+        {
+            name: 'locked_render_front_test',
+            type: 'boolean'
+        },
+        {
+            name: 'locked_render_back_test',
             type: 'boolean'
         }
     ]

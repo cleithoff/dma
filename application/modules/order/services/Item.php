@@ -3,6 +3,34 @@
 class Order_Service_Item
 {
 	
+	protected function isLockedRender($order_item, $viewmode) {
+	
+		switch($viewmode) {
+			case Product_Model_Layout::VIEW_PREVIEW_FRONT:
+				return (intval($order_item->locked_render_front_preview) === 1);
+				break;
+			case Product_Model_Layout::VIEW_PREVIEW_BACK:
+				return (intval($order_item->locked_render_back_preview) === 1);
+				break;
+			case Product_Model_Layout::VIEW_PRINT_FRONT:
+				return (intval($order_item->locked_render_front_print) === 1);
+				break;
+			case Product_Model_Layout::VIEW_PRINT_BACK:
+				return (intval($order_item->locked_render_back_print) === 1);
+				break;
+			case Product_Model_Layout::VIEW_TEST_FRONT:
+				return (intval($order_item->locked_render_front_test) === 1);
+				break;
+			case Product_Model_Layout::VIEW_TEST_BACK:
+				return (intval($order_item->locked_render_back_test) === 1);
+				break;
+			default:
+				return true;
+		}
+	
+		return true;
+	}
+	
 	/**
 	 * 
 	 * @param Order_Model_Item $order_item
@@ -75,7 +103,9 @@ class Order_Service_Item
 
 		if (!$order_item instanceof Order_Model_Item) return false;
 
-		$authkey = $order_item->getAuthkey();	
+		if ($this->isLockedRender($order_item, $view)) return false;
+		
+		$authkey = $order_item->getAuthkey();
 		
 		switch($view) {
 			case Product_Model_Layout::VIEW_PREVIEW_BACK:
@@ -97,6 +127,16 @@ class Order_Service_Item
 				$xsl = $order_item->getProductItem()->getProductLayout()->xsl_front_print;
 				$pdf = $order_item->getProductItem()->getProductLayout()->pdf_front_print;
 				$suffix = Product_Model_Layout::VIEW_PRINT_FRONT_SUFFIX;
+				break;
+			case Product_Model_Layout::VIEW_TEST_FRONT:
+				$xsl = $order_item->getProductItem()->getProductLayout()->xsl_front_test;
+				$pdf = $order_item->getProductItem()->getProductLayout()->pdf_front_test;
+				$suffix = Product_Model_Layout::VIEW_TEST_FRONT_SUFFIX;
+				break;
+			case Product_Model_Layout::VIEW_TEST_BACK:
+				$xsl = $order_item->getProductItem()->getProductLayout()->xsl_back_test;
+				$pdf = $order_item->getProductItem()->getProductLayout()->pdf_back_test;
+				$suffix = Product_Model_Layout::VIEW_TEST_BACK_SUFFIX;
 				break;
 		}
 		

@@ -523,6 +523,62 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "fieldLabel": "XSL Front Test",
+                                "name": "xsl_front_test"
+                            },
+                            "designerId": "0989022b-7dae-4821-8a5d-e43befcbe285"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "PDF Front Test",
+                                "name": "pdf_front_test"
+                            },
+                            "designerId": "57338870-ce50-42a1-95c2-1d65c89f3b31"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "XSL Back Test",
+                                "name": "xsl_back_test"
+                            },
+                            "designerId": "c6f5c7db-b34b-4934-8829-5b627d536676"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "PDF Back Test",
+                                "name": "pdf_back_test"
+                            },
+                            "designerId": "44f5788d-09de-4946-be45-fad5e11d1f55"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
                                 "fieldLabel": "Korrektur Class",
                                 "name": "correction_form_class"
                             },

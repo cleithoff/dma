@@ -210,6 +210,30 @@ Ext.define('MyApp.view.ProductLayoutPanel', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    fieldLabel: 'XSL Front Test',
+                                    name: 'xsl_front_test'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'PDF Front Test',
+                                    name: 'pdf_front_test'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'XSL Back Test',
+                                    name: 'xsl_back_test'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'PDF Back Test',
+                                    name: 'pdf_back_test'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
                                     fieldLabel: 'Korrektur Class',
                                     name: 'correction_form_class'
                                 },

@@ -129,10 +129,75 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "locked_render",
+                "name": "locked_render_front_preview",
                 "type": "boolean"
             },
             "designerId": "af9773d8-1bd5-4b80-bb0e-19bf354ebffa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "locked_render_back_preview",
+                "type": "boolean"
+            },
+            "designerId": "bc2f0a9e-687f-4d1e-b7e6-71ca6483e18c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "locked_render_front_print",
+                "type": "boolean"
+            },
+            "designerId": "6282b202-faee-4015-b9c2-9f50f1d66645"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "locked_render_back_print",
+                "type": "boolean"
+            },
+            "designerId": "eab78783-defc-4444-befb-28f5879ddd67"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "locked_render_front_test",
+                "type": "boolean"
+            },
+            "designerId": "11e95785-95ef-488b-a4f2-041412fb962d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "locked_render_back_test",
+                "type": "boolean"
+            },
+            "designerId": "b75c68eb-049e-4adf-952a-31c7ed9b0f63"
         }
     ]
 }
