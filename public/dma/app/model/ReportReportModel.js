@@ -36,6 +36,12 @@ Ext.define('MyApp.model.ReportReportModel', {
             name: 'execsql',
             type: 'string',
             useNull: true
+        },
+        {
+            name: 'xmlgrouping'
+        },
+        {
+            name: 'xslfile'
         }
     ]
 });

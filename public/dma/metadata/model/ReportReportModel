@@ -83,6 +83,30 @@
                 "useNull": true
             },
             "designerId": "19c2f349-7e91-4343-aae9-dce08eefca8c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "xmlgrouping"
+            },
+            "designerId": "2596eded-17c8-4307-b21d-9d01b9efb9b1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "xslfile"
+            },
+            "designerId": "aa4fdcb4-00c4-4e64-83ed-e331fb01d333"
         }
     ]
 }

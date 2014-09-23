@@ -95,6 +95,7 @@ class Report_Service_Report
 	}
 	
 	private function _getQuery($sql, $csv, $result, $param) {
+		
 		$matches = array();
 		preg_match_all('/\{[^\{\}]*\}/', $sql, $matches);
 		if (count($matches) > 0) {
@@ -118,15 +119,9 @@ class Report_Service_Report
 		return $sql;
 	}	
 
-	public function export(Zend_Controller_Request_Http $request) {
+	public function exportcsv(Zend_Controller_Request_Http $request) {
 		
-		$report_report_id = $request->getParam('report_report_id', null);
-		
-		if ($report_report_id === null) return;
-		
-		$report = new Report_Model_DbTable_Report();
-		
-		$row = $report->find($report_report_id)->current();
+		$row = $this->getReport($request);
 		
 		$sql = $this->_getQuery($row->sql, array(), array(), $request->getParams());
 		
@@ -150,6 +145,202 @@ class Report_Service_Report
 		
 		$file = $this->writeCsv($fields, $rowset, $types);
 		
+	}
+	
+	protected function generateXml($row, Zend_Controller_Request_Http $request) {
+		$sql = $this->_getQuery($row->sql, array(), array(), $request->getParams());
+		Zend_Db_Table::getDefaultAdapter()->query("SET @counter:=0;");
+		$result = Zend_Db_Table::getDefaultAdapter()->query($sql);
+		
+		$i = 0;
+		$info = array();
+		while ($meta = $result->getColumnMeta($i)) {
+			$info[] = $meta;
+			$i++;
+		}
+		
+		$fields = $this->getFieldsFromInfo($info);
+		
+		$types = $this->getTypesFromInfo($info);
+		Zend_Db_Table::getDefaultAdapter()->query("SET @counter:=0;");
+		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql);
+		
+		header('Content-type: text/xml');
+		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.xml"');
+		
+		$filename = $this->createXmlFile();
+		
+		$this->writeXml($filename, $fields, $rowset, $types, $row->xmlgrouping, 'ReportDetail');
+		
+		return $filename;
+	}
+	
+	protected function getReport(Zend_Controller_Request_Http $request) {
+		$report_report_id = $request->getParam('report_report_id', null);
+		
+		if ($report_report_id === null) return;
+		
+		$report = new Report_Model_DbTable_Report();
+		
+		$row = $report->find($report_report_id)->current();
+		
+		return $row;
+	}
+	
+	protected function generateXsd($xmlfilename, $row, $request) {
+		$xsdfilename = tempnam(sys_get_temp_dir() , "exportxsd") . ".xsd";
+		
+		$exec = "java -jar " . APPLICATION_PATH . Zend_Registry::getInstance()->config->cli->trang . " " . $xmlfilename . " " . $xsdfilename;
+
+		exec($exec);
+		
+		return $xsdfilename;
+	}
+	
+	public function exportxsd(Zend_Controller_Request_Http $request) {
+		
+		$row = $this->getReport($request);
+		
+		$filename = $this->generateXml($row, $request);
+		
+		$filename = $this->generateXsd($filename, $row, $request);
+		
+		header('Content-type: text/xsd');
+		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.xsd"');
+		
+		readfile($filename);
+		
+	}
+	
+	public function exportxml(Zend_Controller_Request_Http $request) {
+		
+		$row = $this->getReport($request);
+		
+		$filename = $this->generateXml($row, $request);
+		
+		header('Content-type: text/xml');
+		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.xml"');
+		
+		readfile($filename);
+		
+	}
+	
+	public function exportpdf(Zend_Controller_Request_Http $request) {
+
+		$row = $this->getReport($request);
+	
+		$xmlfilename = $this->generateXml($row, $request);
+		
+		$pdffilename = APPLICATION_PATH . '/../resource/report_pdf/' . $row->fileprefix . '_' . @date('YmdHis') . '.pdf';
+		
+		Rest_Pdf::fop($xmlfilename, APPLICATION_PATH . '/../resource/report_xsl/' . $row->xslfile, $pdffilename);
+		
+		header('Content-type: application/pdf');
+		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.pdf"');
+		
+		readfile($pdffilename);
+		unlink($pdffilename);
+	}
+	
+	protected function createXMLFile($filename = null) {
+		if (empty($filename)) {
+			$filename = tempnam(sys_get_temp_dir() , "exportxml") . ".xml";
+		}
+		$handle = fopen($filename, "w+");
+		fwrite($handle, '<?xml version="1.0" encoding="UTF-8" ?><data></data>');
+		fclose($handle);
+		
+		return $filename;
+	}
+	
+	protected function writeXmlRecursive($node, $fields, $rowset, $types, $xmlgrouping = array(), $nodename, $lvl) {
+		
+		$listnode = $node->addChild('ListOf' . $node->getName());
+		
+		foreach($rowset as $row) {
+			$itemnode = $listnode->addChild('ItemOf' . $node->getName());
+			foreach($fields as $field) {
+				$propertyNode = $itemnode->addChild($field, $row[$field]);
+			}
+			
+			if (!empty($xmlgrouping[$lvl])) {
+				$this->writeXmlRecursive($node, $fields, $rowset, $types, $xmlgrouping = array(), $nodename, $lvl);
+			}
+			
+		}
+		
+	}
+	
+	protected function writeXml($filename, $fields, $rowset, $types, $xmlgrouping, $nodename) {
+		
+		$xml = simplexml_load_file($filename);
+		
+		$xmlgrouping = explode(',', $xmlgrouping);
+		
+		$node = $xml->addChild($nodename);
+		
+		if (count($xmlgrouping) === 0) {
+			$listnode = $node->addChild('ListOf' . $node->getName());
+			foreach($rowset as $row) {
+				$itemnode = $listnode->addChild('ItemOf' . $node->getName());
+				foreach($fields as $field) {
+					$propertyNode = $itemnode->addChild($field, $row[$field]);
+				}
+			}				
+		} else {
+			$listnode = $node->addChild('ListOf' . $node->getName());
+			$xmlgroupvals = array();
+			foreach ($xmlgrouping as $xmlgroup) {
+				$xmlgroupvals[$xmlgroup] = null;
+			}
+			
+			
+			
+			foreach($rowset as $row) {
+				
+				$activelistnode = $listnode;
+				
+				foreach ($xmlgrouping as $key => $xmlgroup) {
+					
+					$listname = 'ListOf' . $node->getName() . $xmlgroup;
+					
+					if ($row[$xmlgroup] !== $xmlgroupvals[$xmlgroup]) {
+						
+						$xmlgroupvals[$xmlgroup] = $row[$xmlgroup];
+						
+						if (empty($activelistnode->$listname) || empty($activelistnode->$listname[0])) {
+							$activelistnode = $activelistnode->addChild('ListOf' . $node->getName() . $xmlgroup);
+						} else {
+							$activelistnode = $activelistnode->$listname[0];
+						}
+						
+						$activenode = $activelistnode->addChild('ListItemOf' . $node->getName() . $xmlgroup);
+
+						foreach($fields as $field) {
+							$propertyNode = $activenode->addChild($field, $row[$field]);
+						}
+						
+						for ($i = $key; $i < count($xmlgroup);$i++) {
+							$xmlgroupvals[$xmlgroup[$i]] = null;
+						}
+					} else {
+						$activelistnode = $activelistnode->$listname;
+					}
+				}
+
+				$activenode = $activelistnode->addChild('ItemOf' . $node->getName() . $xmlgroup);
+				foreach($fields as $field) {
+					$propertyNode = $activenode->addChild($field, $row[$field]);
+				}
+			}
+		}		
+		
+		//$this->writeXmlRecursive($node, $fields, $rowset, $types, $xmlgrouping, $nodename, 0);
+		
+		$handle = fopen($filename, "wb");
+		fwrite($handle, $xml->asXML());
+		fclose($handle);
+
 	}
 	
 	public function execute(Zend_Controller_Request_Http $request) {

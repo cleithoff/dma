@@ -17,7 +17,7 @@ Ext.define('MyApp.view.ReportReportPanel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.reportreportpanel',
 
-    height: 557,
+    height: 710,
     itemId: 'ReportReportPanel',
     width: 753,
     layout: {
@@ -73,14 +73,26 @@ Ext.define('MyApp.view.ReportReportPanel', {
                         {
                             xtype: 'button',
                             disabled: true,
-                            itemId: 'ReportReportPrintButton',
-                            text: 'Drucken'
+                            itemId: 'ReportReportExportPdfButton',
+                            text: 'Export PDF'
                         },
                         {
                             xtype: 'button',
                             disabled: true,
-                            itemId: 'ReportReportExportButton',
-                            text: 'Export'
+                            itemId: 'ReportReportExportCsvButton',
+                            text: 'Export CSV'
+                        },
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            itemId: 'ReportReportExportXmlButton',
+                            text: 'Export XML'
+                        },
+                        {
+                            xtype: 'button',
+                            disabled: true,
+                            itemId: 'ReportReportExportXsdButton',
+                            text: 'Export XSD'
                         },
                         {
                             xtype: 'button',
@@ -97,7 +109,7 @@ Ext.define('MyApp.view.ReportReportPanel', {
                     region: 'north',
                     split: true,
                     disabled: true,
-                    height: 295,
+                    height: 341,
                     itemId: 'ReportReportFormPanel',
                     bodyPadding: 10,
                     items: [
@@ -118,6 +130,19 @@ Ext.define('MyApp.view.ReportReportPanel', {
                             anchor: '100%',
                             fieldLabel: 'Query',
                             name: 'sql'
+                        },
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            fieldLabel: 'XML Gruppierung',
+                            name: 'xmlgrouping'
+                        },
+                        {
+                            xtype: 'textfield',
+                            anchor: '100%',
+                            width: 150,
+                            fieldLabel: 'XSL für Druck',
+                            name: 'xslfile'
                         },
                         {
                             xtype: 'textareafield',

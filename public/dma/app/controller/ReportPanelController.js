@@ -47,8 +47,10 @@ Ext.define('MyApp.controller.ReportPanelController', {
         toolbar.getComponent('ReportReportDeleteButton').enable();
 
         toolbar.getComponent('ReportReportPreviewButton').enable();
-        toolbar.getComponent('ReportReportPrintButton').enable();
-        toolbar.getComponent('ReportReportExportButton').enable();
+        toolbar.getComponent('ReportReportExportPdfButton').enable();
+        toolbar.getComponent('ReportReportExportCsvButton').enable();
+        toolbar.getComponent('ReportReportExportXmlButton').enable();
+        toolbar.getComponent('ReportReportExportXsdButton').enable();
 
         store = Ext.getStore('ReportFilterJsonStore');
 

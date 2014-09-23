@@ -45,8 +45,10 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
         toolbar.getComponent('ReportReportDeleteButton').disable();
 
         toolbar.getComponent('ReportReportPreviewButton').disable();
-        toolbar.getComponent('ReportReportPrintButton').disable();
-        toolbar.getComponent('ReportReportExportButton').disable();
+        toolbar.getComponent('ReportReportExportPdfButton').disable();
+        toolbar.getComponent('ReportReportExportCsvButton').disable();
+        toolbar.getComponent('ReportReportExportXmlButton').disable();
+        toolbar.getComponent('ReportReportExportXsdButton').disable();
         toolbar.getComponent('ReportReportExecuteButton').disable();
 
     },
@@ -68,8 +70,10 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
             toolbar.getComponent('ReportReportDeleteButton').disable();
 
             toolbar.getComponent('ReportReportPreviewButton').disable();
-            toolbar.getComponent('ReportReportPrintButton').disable();
-            toolbar.getComponent('ReportReportExportButton').disable();
+            toolbar.getComponent('ReportReportExportPdfButton').disable();
+            toolbar.getComponent('ReportReportExportCsvButton').disable();
+            toolbar.getComponent('ReportReportExportXmlButton').disable();
+            toolbar.getComponent('ReportReportExportXsdButton').disable();
             toolbar.getComponent('ReportReportExecuteButton').disable();
         }
 
@@ -98,8 +102,10 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
         toolbar.getComponent('ReportReportDeleteButton').enable();
 
         toolbar.getComponent('ReportReportPreviewButton').enable();
-        toolbar.getComponent('ReportReportPrintButton').enable();
-        toolbar.getComponent('ReportReportExportButton').enable();
+        toolbar.getComponent('ReportReportExportPdfButton').enable();
+        toolbar.getComponent('ReportReportExportCsvButton').enable();
+        toolbar.getComponent('ReportReportExportXmlButton').enable();
+        toolbar.getComponent('ReportReportExportXsdButton').enable();
         toolbar.getComponent('ReportReportExecuteButton').disable();
     },
 
@@ -119,8 +125,10 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
             toolbar.getComponent('ReportReportSaveButton').disable();
 
             toolbar.getComponent('ReportReportPreviewButton').enable();
-            toolbar.getComponent('ReportReportPrintButton').enable();
-            toolbar.getComponent('ReportReportExportButton').enable();
+            toolbar.getComponent('ReportReportExportPdfButton').enable();
+            toolbar.getComponent('ReportReportExportCsvButton').enable();
+            toolbar.getComponent('ReportReportExportXmlButton').enable();
+            toolbar.getComponent('ReportReportExportXsdButton').enable();
             toolbar.getComponent('ReportReportExecuteButton').disable();    
         }
 
@@ -279,28 +287,6 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
         });
     },
 
-    onReportReportPrintButtonClick: function(button, e, eOpts) {
-
-    },
-
-    onReportReportExportButtonClick: function(button, e, eOpts) {
-        var _dc = new Date().getTime();
-
-        filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');
-
-        params = filterFormPanel.getValues();
-
-        strParams = '';
-
-        for (var idx in params) {
-            strParams = strParams + '&' + idx + '=' + params[idx];
-        }
-
-        record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];
-
-        document.location = "/report/report/export?_dc=" + _dc + "&report_report_id=" + record.data.id + strParams;
-    },
-
     onReportReportExecuteButtonClick: function(button, e, eOpts) {
         var that = this;
 
@@ -331,6 +317,78 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
         });
     },
 
+    onReportReportExportXmlButtonClick: function(button, e, eOpts) {
+        var _dc = new Date().getTime();
+
+        filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');
+
+        params = filterFormPanel.getValues();
+
+        strParams = '';
+
+        for (var idx in params) {
+            strParams = strParams + '&' + idx + '=' + params[idx];
+        }
+
+        record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];
+
+        document.location = "/report/report/exportxml?_dc=" + _dc + "&report_report_id=" + record.data.id + strParams;
+    },
+
+    onReportReportExportXsdButtonClick: function(button, e, eOpts) {
+        var _dc = new Date().getTime();
+
+        filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');
+
+        params = filterFormPanel.getValues();
+
+        strParams = '';
+
+        for (var idx in params) {
+            strParams = strParams + '&' + idx + '=' + params[idx];
+        }
+
+        record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];
+
+        document.location = "/report/report/exportxsd?_dc=" + _dc + "&report_report_id=" + record.data.id + strParams;
+    },
+
+    onReportReportExportPdfButtonClick: function(button, e, eOpts) {
+        var _dc = new Date().getTime();
+
+        filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');
+
+        params = filterFormPanel.getValues();
+
+        strParams = '';
+
+        for (var idx in params) {
+            strParams = strParams + '&' + idx + '=' + params[idx];
+        }
+
+        record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];
+
+        document.location = "/report/report/exportpdf?_dc=" + _dc + "&report_report_id=" + record.data.id + strParams;
+    },
+
+    onReportReportExportCsvButtonClick: function(button, e, eOpts) {
+        var _dc = new Date().getTime();
+
+        filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');
+
+        params = filterFormPanel.getValues();
+
+        strParams = '';
+
+        for (var idx in params) {
+            strParams = strParams + '&' + idx + '=' + params[idx];
+        }
+
+        record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];
+
+        document.location = "/report/report/exportcsv?_dc=" + _dc + "&report_report_id=" + record.data.id + strParams;
+    },
+
     init: function(application) {
         this.control({
             "#ReportReportEditButton": {
@@ -351,14 +409,20 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
             "#ReportReportPreviewButton": {
                 click: this.onReportReportPreviewButtonClick
             },
-            "#ReportReportPrintButton": {
-                click: this.onReportReportPrintButtonClick
-            },
-            "#ReportReportExportButton": {
-                click: this.onReportReportExportButtonClick
-            },
             "#ReportReportExecuteButton": {
                 click: this.onReportReportExecuteButtonClick
+            },
+            "#ReportReportExportXmlButton": {
+                click: this.onReportReportExportXmlButtonClick
+            },
+            "#ReportReportExportXsdButton": {
+                click: this.onReportReportExportXsdButtonClick
+            },
+            "#ReportReportExportPdfButton": {
+                click: this.onReportReportExportPdfButtonClick
+            },
+            "#ReportReportExportCsvButton": {
+                click: this.onReportReportExportCsvButtonClick
             }
         });
     }

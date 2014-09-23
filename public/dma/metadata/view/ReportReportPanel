@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 557,
+        "height": 710,
         "itemId": "ReportReportPanel",
         "width": 753,
         "designer|userClassName": "ReportReportPanel",
@@ -128,8 +128,8 @@
                     "userConfig": {
                         "layout|flex": null,
                         "disabled": true,
-                        "itemId": "ReportReportPrintButton",
-                        "text": "Drucken"
+                        "itemId": "ReportReportExportPdfButton",
+                        "text": "Export PDF"
                     },
                     "designerId": "9dde29fe-6e92-43e2-8295-401b908ea1cf"
                 },
@@ -143,10 +143,40 @@
                     "userConfig": {
                         "layout|flex": null,
                         "disabled": true,
-                        "itemId": "ReportReportExportButton",
-                        "text": "Export"
+                        "itemId": "ReportReportExportCsvButton",
+                        "text": "Export CSV"
                     },
                     "designerId": "0266a3b8-6259-484b-82ee-243c1f161530"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportReportExportXmlButton",
+                        "text": "Export XML"
+                    },
+                    "designerId": "3b6bb9a8-c688-4851-ba5b-e67ce04ccc19"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportReportExportXsdButton",
+                        "text": "Export XSD"
+                    },
+                    "designerId": "f4718b79-f120-4774-a1c7-c2e3b7510cf2"
                 },
                 {
                     "type": "Ext.button.Button",
@@ -176,7 +206,7 @@
                 "layout|region": "north",
                 "layout|split": true,
                 "disabled": true,
-                "height": 295,
+                "height": 341,
                 "itemId": "ReportReportFormPanel",
                 "bodyPadding": 10,
                 "title": null
@@ -224,6 +254,35 @@
                         "name": "sql"
                     },
                     "designerId": "1a7a0f02-314e-4263-86ae-456104e79650"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "XML Gruppierung",
+                        "name": "xmlgrouping"
+                    },
+                    "designerId": "28e1f44d-0d31-4ed9-940b-d5e7dcca4852"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "width": 150,
+                        "fieldLabel": "XSL für Druck",
+                        "name": "xslfile"
+                    },
+                    "designerId": "83899465-7da8-4655-928b-697f20d96301"
                 },
                 {
                     "type": "Ext.form.field.TextArea",

@@ -33,8 +33,10 @@
                     "toolbar.getComponent('ReportReportDeleteButton').disable();\r",
                     "\r",
                     "toolbar.getComponent('ReportReportPreviewButton').disable();\r",
-                    "toolbar.getComponent('ReportReportPrintButton').disable();\r",
-                    "toolbar.getComponent('ReportReportExportButton').disable();\r",
+                    "toolbar.getComponent('ReportReportExportPdfButton').disable();\r",
+                    "toolbar.getComponent('ReportReportExportCsvButton').disable();\r",
+                    "toolbar.getComponent('ReportReportExportXmlButton').disable();\r",
+                    "toolbar.getComponent('ReportReportExportXsdButton').disable();\r",
                     "toolbar.getComponent('ReportReportExecuteButton').disable();\r",
                     ""
                 ],
@@ -71,8 +73,10 @@
                     "    toolbar.getComponent('ReportReportDeleteButton').disable();\r",
                     "\r",
                     "    toolbar.getComponent('ReportReportPreviewButton').disable();\r",
-                    "    toolbar.getComponent('ReportReportPrintButton').disable();\r",
-                    "    toolbar.getComponent('ReportReportExportButton').disable();\r",
+                    "    toolbar.getComponent('ReportReportExportPdfButton').disable();\r",
+                    "    toolbar.getComponent('ReportReportExportCsvButton').disable();\r",
+                    "    toolbar.getComponent('ReportReportExportXmlButton').disable();\r",
+                    "    toolbar.getComponent('ReportReportExportXsdButton').disable();\r",
                     "    toolbar.getComponent('ReportReportExecuteButton').disable();\r",
                     "}\r",
                     ""
@@ -116,8 +120,10 @@
                     "toolbar.getComponent('ReportReportDeleteButton').enable();\r",
                     "\r",
                     "toolbar.getComponent('ReportReportPreviewButton').enable();\r",
-                    "toolbar.getComponent('ReportReportPrintButton').enable();\r",
-                    "toolbar.getComponent('ReportReportExportButton').enable();\r",
+                    "toolbar.getComponent('ReportReportExportPdfButton').enable();\r",
+                    "toolbar.getComponent('ReportReportExportCsvButton').enable();\r",
+                    "toolbar.getComponent('ReportReportExportXmlButton').enable();\r",
+                    "toolbar.getComponent('ReportReportExportXsdButton').enable();\r",
                     "toolbar.getComponent('ReportReportExecuteButton').disable();"
                 ],
                 "name": "click",
@@ -152,9 +158,11 @@
                     "    toolbar.getComponent('ReportReportSaveButton').disable();\r",
                     "\r",
                     "    toolbar.getComponent('ReportReportPreviewButton').enable();\r",
-                    "    toolbar.getComponent('ReportReportPrintButton').enable();\r",
-                    "    toolbar.getComponent('ReportReportExportButton').enable();\r",
-                    "\ttoolbar.getComponent('ReportReportExecuteButton').disable();    \r",
+                    "    toolbar.getComponent('ReportReportExportPdfButton').enable();\r",
+                    "    toolbar.getComponent('ReportReportExportCsvButton').enable();\r",
+                    "    toolbar.getComponent('ReportReportExportXmlButton').enable();\r",
+                    "    toolbar.getComponent('ReportReportExportXsdButton').enable();\r",
+                    "    toolbar.getComponent('ReportReportExecuteButton').disable();    \r",
                     "}\r",
                     "\r",
                     "if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
@@ -319,12 +327,12 @@
                     "            store: metaStore,\r",
                     "            columns: columns,\r",
                     "            dockedItems: [\r",
-                    "                {\r",
-                    "                    xtype: 'pagingtoolbar',\r",
-                    "                    dock: 'bottom',\r",
-                    "                    displayInfo: true,\r",
-                    "                    store: metaStore\r",
-                    "                }\r",
+                    "            {\r",
+                    "                xtype: 'pagingtoolbar',\r",
+                    "                dock: 'bottom',\r",
+                    "                displayInfo: true,\r",
+                    "                store: metaStore\r",
+                    "            }\r",
                     "            ]\r",
                     "            /*[\r",
                     "            { text: 'Symbol',         dataIndex: 'symbol', flex: 1 },\r",
@@ -347,58 +355,6 @@
                 "designer|controlQuery": "#ReportReportPreviewButton"
             },
             "designerId": "e6736e1f-cd2d-41de-9c80-e9ce2731f68e"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onReportReportPrintButtonClick",
-                "implHandler": [
-                    ""
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#ReportReportPrintButton"
-            },
-            "designerId": "a629894c-2732-4f45-aaf6-adc5f9636b5c"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onReportReportExportButtonClick",
-                "implHandler": [
-                    "var _dc = new Date().getTime();\r",
-                    "\r",
-                    "filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
-                    "\r",
-                    "params = filterFormPanel.getValues();\r",
-                    "\r",
-                    "strParams = '';\r",
-                    "\r",
-                    "for (var idx in params) {\r",
-                    "    strParams = strParams + '&' + idx + '=' + params[idx];\r",
-                    "}\r",
-                    "\r",
-                    "record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];\r",
-                    "\r",
-                    "document.location = \"/report/report/export?_dc=\" + _dc + \"&report_report_id=\" + record.data.id + strParams;"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#ReportReportExportButton"
-            },
-            "designerId": "90f2a8c4-1cd0-4021-86d6-9dbe25b0df45"
         },
         {
             "type": "controllerref",
@@ -448,11 +404,11 @@
                     "Ext.MessageBox.confirm('Achtung!', 'Soll die Query wirklich ausgeführt werden?', function (btn) {\r",
                     "    if (btn === 'yes') {\r",
                     "        filterFormPanel = that.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
-                    "        \r",
+                    "\r",
                     "        params = filterFormPanel.getValues();\r",
-                    "        \r",
+                    "\r",
                     "        params._sql = that.getReportReportPanel().getComponent('ReportReportFormPanel').getForm().findField('execsql').getValue();\r",
-                    "        \r",
+                    "\r",
                     "        Ext.Ajax.request({\r",
                     "            url: '/report/report/execute',\r",
                     "            params: params,\r",
@@ -474,6 +430,138 @@
                 "designer|controlQuery": "#ReportReportExecuteButton"
             },
             "designerId": "e7e64aac-018b-465d-aea0-18d5d3e0a205"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportExportXmlButtonClick",
+                "implHandler": [
+                    "var _dc = new Date().getTime();\r",
+                    "\r",
+                    "filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
+                    "\r",
+                    "params = filterFormPanel.getValues();\r",
+                    "\r",
+                    "strParams = '';\r",
+                    "\r",
+                    "for (var idx in params) {\r",
+                    "    strParams = strParams + '&' + idx + '=' + params[idx];\r",
+                    "}\r",
+                    "\r",
+                    "record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "document.location = \"/report/report/exportxml?_dc=\" + _dc + \"&report_report_id=\" + record.data.id + strParams;"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportExportXmlButton"
+            },
+            "designerId": "3a67b083-aebd-47b8-8656-7e6cb89dab2e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportExportXsdButtonClick",
+                "implHandler": [
+                    "var _dc = new Date().getTime();\r",
+                    "\r",
+                    "filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
+                    "\r",
+                    "params = filterFormPanel.getValues();\r",
+                    "\r",
+                    "strParams = '';\r",
+                    "\r",
+                    "for (var idx in params) {\r",
+                    "    strParams = strParams + '&' + idx + '=' + params[idx];\r",
+                    "}\r",
+                    "\r",
+                    "record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "document.location = \"/report/report/exportxsd?_dc=\" + _dc + \"&report_report_id=\" + record.data.id + strParams;"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportExportXsdButton"
+            },
+            "designerId": "67bc2bee-9877-4ec6-b918-258a5935d0d7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportExportPdfButtonClick",
+                "implHandler": [
+                    "var _dc = new Date().getTime();\r",
+                    "\r",
+                    "filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
+                    "\r",
+                    "params = filterFormPanel.getValues();\r",
+                    "\r",
+                    "strParams = '';\r",
+                    "\r",
+                    "for (var idx in params) {\r",
+                    "    strParams = strParams + '&' + idx + '=' + params[idx];\r",
+                    "}\r",
+                    "\r",
+                    "record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "document.location = \"/report/report/exportpdf?_dc=\" + _dc + \"&report_report_id=\" + record.data.id + strParams;"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportExportPdfButton"
+            },
+            "designerId": "aea98d3c-20f3-4838-b99e-560df7d0bfc1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onReportReportExportCsvButtonClick",
+                "implHandler": [
+                    "var _dc = new Date().getTime();\r",
+                    "\r",
+                    "filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');\r",
+                    "\r",
+                    "params = filterFormPanel.getValues();\r",
+                    "\r",
+                    "strParams = '';\r",
+                    "\r",
+                    "for (var idx in params) {\r",
+                    "    strParams = strParams + '&' + idx + '=' + params[idx];\r",
+                    "}\r",
+                    "\r",
+                    "record = this.getReportPanel().getComponent('ReportReportGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "document.location = \"/report/report/exportcsv?_dc=\" + _dc + \"&report_report_id=\" + record.data.id + strParams;"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#ReportReportExportCsvButton"
+            },
+            "designerId": "83835a4e-675c-4711-a742-25430e827663"
         }
     ]
 }
