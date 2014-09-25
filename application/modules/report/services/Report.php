@@ -240,6 +240,8 @@ class Report_Service_Report
 		
 		readfile($pdffilename);
 		unlink($pdffilename);
+		
+		die();
 	}
 	
 	protected function createXMLFile($filename = null) {
