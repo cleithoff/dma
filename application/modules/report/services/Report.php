@@ -239,8 +239,7 @@ class Report_Service_Report
 		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.pdf"');
 		
 		readfile($pdffilename);
-		// unlink($pdffilename);
-		
+		unlink($pdffilename);
 		die();
 	}
 	
