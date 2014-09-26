@@ -178,6 +178,9 @@ class Rest_Model_Mapper_DbTable {
 				case 'static':
 					$static = $str[1];
 					switch($static) {
+						case 'APPLICATION_PATH':
+							$replacement = str_replace(DIRECTORY_SEPARATOR, '/', APPLICATION_PATH);
+							break;
 						case 'PHPSESSID':
 							$replacement = Zend_Session::getId();
 							break;

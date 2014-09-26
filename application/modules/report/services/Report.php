@@ -74,9 +74,19 @@ class Report_Service_Report
 					$key = $str[1];
 					$replacement = $param[$key];
 					break;
+				case 'config':
+					$replacement = Zend_Registry::getInstance()->config;
+					foreach ($str as $k => $s) {
+						if ($k == 0) continue;
+						$replacement = $replacement->$s;
+					}
+					break;
 				case 'static':
 					$static = $str[1];
 					switch($static) {
+						case 'APPLICATION_PATH':
+							$replacement = str_replace(DIRECTORY_SEPARATOR, '/', APPLICATION_PATH);
+							break;
 						case 'PHPSESSID':
 							$replacement = Zend_Session::getId();
 							break;
