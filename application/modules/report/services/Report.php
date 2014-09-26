@@ -291,41 +291,44 @@ class Report_Service_Report
 		} else {
 			$listnode = $node->addChild('ListOf' . $node->getName());
 			$xmlgroupvals = array();
-			foreach ($xmlgrouping as $xmlgroup) {
+			/*foreach ($xmlgrouping as $xmlgroup) {
 				$xmlgroupvals[$xmlgroup] = null;
-			}
-			
-			
+			}*/
 			
 			foreach($rowset as $row) {
-				
+
 				$activelistnode = $listnode;
 				
 				foreach ($xmlgrouping as $key => $xmlgroup) {
 					
 					$listname = 'ListOf' . $node->getName() . $xmlgroup;
-					
-					if ($row[$xmlgroup] !== $xmlgroupvals[$xmlgroup]) {
-						
+					//echo $row[$xmlgroup];echo "|";
+					if (!isset($xmlgroupvals[$xmlgroup]) || $row[$xmlgroup] !== $xmlgroupvals[$xmlgroup]) {
+//echo "@";
 						$xmlgroupvals[$xmlgroup] = $row[$xmlgroup];
-						
+						$activelistnode = $activelistnode->addChild($listname);
+						/*
 						if (empty($activelistnode->$listname) || empty($activelistnode->$listname[0])) {
-							$activelistnode = $activelistnode->addChild('ListOf' . $node->getName() . $xmlgroup);
+							$activelistnode = $activelistnode->addChild($listname);
 						} else {
-							$activelistnode = $activelistnode->$listname[0];
+							$activelistnode = $activelistnode->$listname; //[0];
 						}
-						
+						*/
 						$activenode = $activelistnode->addChild('ListItemOf' . $node->getName() . $xmlgroup);
 
 						foreach($fields as $field) {
 							$propertyNode = $activenode->addChild($field, $row[$field]);
 						}
 						
-						for ($i = $key; $i < count($xmlgroup);$i++) {
-							$xmlgroupvals[$xmlgroup[$i]] = null;
+						for ($i = $key; $i < count($xmlgrouping);$i++) {
+							//$xmlgroupvals[$xmlgrouping[$i]] = null;
+							//unset($xmlgroupvals[$xmlgrouping[$i]]);
 						}
 					} else {
-						$activelistnode = $activelistnode->$listname;
+						 $children = $activelistnode->children();
+						 $activelistnode = $children[$activelistnode->count()-1];
+						//var_dump($count);
+						//$activelistnode = end($activelistnodes);
 					}
 				}
 
