@@ -313,6 +313,9 @@ class Report_Service_Report
 					
 					$listname = 'ListOf' . $node->getName() . $xmlgroup;
 					//echo $row[$xmlgroup];echo "|";
+					
+					if (empty($row[$xmlgroup])) continue;
+					
 					if (!isset($xmlgroupvals[$xmlgroup]) || $row[$xmlgroup] !== $xmlgroupvals[$xmlgroup]) {
 //echo "@";
 						$xmlgroupvals[$xmlgroup] = $row[$xmlgroup];
@@ -340,12 +343,19 @@ class Report_Service_Report
 						//var_dump($count);
 						//$activelistnode = end($activelistnodes);
 					}
+					
+					$activenode = $activelistnode->addChild('ItemOf' . $node->getName() . $xmlgroup);
+					foreach($fields as $field) {
+						$propertyNode = $activenode->addChild($field, $row[$field]);
+					}
+					
+					$activelistnode = $activenode;
 				}
 
-				$activenode = $activelistnode->addChild('ItemOf' . $node->getName() . $xmlgroup);
+				/*$activenode = $activelistnode->addChild('ItemOf' . $node->getName() . $xmlgroup);
 				foreach($fields as $field) {
 					$propertyNode = $activenode->addChild($field, $row[$field]);
-				}
+				}*/
 			}
 		}		
 		
