@@ -404,7 +404,8 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "fieldLabel": "Gewicht",
-                                "name": "weight"
+                                "name": "weight",
+                                "decimalPrecision": 4
                             },
                             "designerId": "98228ef0-fb3a-434d-ade7-d9c10322302f"
                         }

@@ -162,7 +162,8 @@ Ext.define('MyApp.view.ProductWeightPanel', {
                                     xtype: 'numberfield',
                                     anchor: '100%',
                                     fieldLabel: 'Gewicht',
-                                    name: 'weight'
+                                    name: 'weight',
+                                    decimalPrecision: 4
                                 }
                             ]
                         },
