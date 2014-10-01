@@ -34,6 +34,10 @@ Ext.define('MyApp.store.ImportStackJsonStore', {
                     type: 'json',
                     root: 'data'
                 }
+            },
+            sorters: {
+                direction: 'DESC',
+                property: 'id'
             }
         }, cfg)]);
     }
