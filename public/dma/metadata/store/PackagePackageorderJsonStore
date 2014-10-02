@@ -6,14 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoLoad": true,
+        "autoLoad": false,
         "autoSync": true,
-        "model": "OrderMetaModel",
-        "storeId": "OrderMetaJsonStore",
-        "designer|userClassName": "OrderMetaJsonStore",
-        "pageSize": 1000000
+        "model": "PackagePackageorderModel",
+        "remoteFilter": true,
+        "storeId": "MyJsonStore",
+        "designer|userClassName": "PackagePackageorderJsonStore"
     },
-    "designerId": "c3d3cad3-dbf7-4cce-8cfb-9293b471fdae",
+    "designerId": "5d54f813-0850-4260-bb04-ad53f6f4acd4",
     "cn": [
         {
             "type": "Ext.data.proxy.Rest",
@@ -23,9 +23,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "/order/meta/index"
+                "url": "/package/packageorder/index"
             },
-            "designerId": "719f06c0-be3b-4a65-a260-8c57436a0363",
+            "designerId": "0a4bbcc0-be7a-4b47-80e2-8070039541b2",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -37,7 +37,7 @@
                     "userConfig": {
                         "root": "data"
                     },
-                    "designerId": "864b8ffc-c8d1-4ae6-a542-95691b0d13d9"
+                    "designerId": "6ea8d387-5f65-4bf5-8f4f-ea23552b5b76"
                 }
             ]
         }

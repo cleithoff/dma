@@ -42,7 +42,8 @@
             "ProductProductHasProductPropertyModel",
             "ImportParameterModel",
             "OrderMetaModel",
-            "OrderItemHasOrderMeta"
+            "OrderItemHasOrderMeta",
+            "PackagePackageorderModel"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -83,7 +84,8 @@
             "ProductProductHasProductPropertyJsonStore",
             "ImportParameterJsonStore",
             "OrderMetaJsonStore",
-            "OrderItemHasOrderMetaJsonStore"
+            "OrderItemHasOrderMetaJsonStore",
+            "PackagePackageorderJsonStore"
         ],
         "views": [
             "MainViewport",
@@ -122,7 +124,8 @@
             "ProductItemHasProductCustomizePanel",
             "ProductProductHasProductPropertyPanel",
             "OrderMetaPanel",
-            "OrderItemOrderMetaPanel"
+            "OrderItemOrderMetaPanel",
+            "OrderPackagePackageorderPanel"
         ],
         "autoCreateViewport": true,
         "controllers": [

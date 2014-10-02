@@ -163,7 +163,7 @@
                     "        var orderItemOrderMetaToolbar = this.getOrderItemOrderMetaPanel().getComponent('OrderItemOrderMetaToolbar');\r",
                     "\r",
                     "        orderItemOrderMetaToolbar.getComponent('OrderItemOrderMetaNewButton').enable();\r",
-                    "        \r",
+                    "\r",
                     "        orderItemOrderMetaGridPanel.store.on('load', function(store, records, options){\r",
                     "            //orderItemProductPersonalizeGridPanel.getSelectionModel().select(0);\r",
                     "            if (orderItemOrderMetaGridPanel.getView().getNodes().length > 0) {\r",
@@ -195,6 +195,14 @@
                     "    panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderImportPanel().ref);\r",
                     "    if (panel === undefined) {\r",
                     "        this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderImportPanel());\r",
+                    "    }\r",
+                    "}\r",
+                    "\r",
+                    "if (MyApp.app.getRuleControllerController().allow('OrderPackagePackageorderPanel', MyApp.app.getRuleControllerController().rights.READ)) {\r",
+                    "    // Order Package\r",
+                    "    panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderPackagePackageorderPanel().ref);\r",
+                    "    if (panel === undefined) {\r",
+                    "        this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderPackagePackageorderPanel());\r",
                     "    }\r",
                     "}\r",
                     "\r",
@@ -617,6 +625,21 @@
                 "xtype": "orderitemordermetapanel"
             },
             "designerId": "7b420e41-67f8-4fe1-b58a-326291ed3ca9"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderPackagePackageorderPanel",
+                "selector": "#OrderPackagePackageorderPanel",
+                "xtype": "orderpackagepackageorderpanel"
+            },
+            "designerId": "b3841677-46ec-4210-8c4b-0aaa64291244"
         }
     ]
 }

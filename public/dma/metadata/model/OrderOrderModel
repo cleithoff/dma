@@ -157,6 +157,19 @@
                 "name": "comment"
             },
             "designerId": "adee6050-15e8-41ba-9306-44b7bdd6c070"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "order_combine_id",
+                "type": "int"
+            },
+            "designerId": "e0100fa3-1d86-47a5-902b-c87170e45f73"
         }
     ]
 }

@@ -172,7 +172,8 @@ Ext.define('MyApp.view.ProductItemPanel', {
                                     xtype: 'numberfield',
                                     anchor: '100%',
                                     fieldLabel: 'Gewicht',
-                                    name: 'weight'
+                                    name: 'weight',
+                                    decimalPrecision: 4
                                 },
                                 {
                                     xtype: 'checkboxfield',

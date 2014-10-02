@@ -55,7 +55,8 @@ Ext.application({
         'ProductProductHasProductPropertyModel',
         'ImportParameterModel',
         'OrderMetaModel',
-        'OrderItemHasOrderMeta'
+        'OrderItemHasOrderMeta',
+        'PackagePackageorderModel'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -96,7 +97,8 @@ Ext.application({
         'ProductProductHasProductPropertyJsonStore',
         'ImportParameterJsonStore',
         'OrderMetaJsonStore',
-        'OrderItemHasOrderMetaJsonStore'
+        'OrderItemHasOrderMetaJsonStore',
+        'PackagePackageorderJsonStore'
     ],
     views: [
         'MainViewport',
@@ -135,7 +137,8 @@ Ext.application({
         'ProductItemHasProductCustomizePanel',
         'ProductProductHasProductPropertyPanel',
         'OrderMetaPanel',
-        'OrderItemOrderMetaPanel'
+        'OrderItemOrderMetaPanel',
+        'OrderPackagePackageorderPanel'
     ],
     autoCreateViewport: true,
     controllers: [

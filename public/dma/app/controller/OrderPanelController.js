@@ -34,6 +34,12 @@ Ext.define('MyApp.controller.OrderPanelController', {
             ref: 'OrderItemPanel',
             selector: '#OrderItemPanel',
             xtype: 'orderitempanel'
+        },
+        {
+            autoCreate: true,
+            ref: 'OrderPackagePackageorderPanel',
+            selector: '#OrderPackagePackageorderPanel',
+            xtype: 'orderpackagepackageorderpanel'
         }
     ],
 
@@ -45,6 +51,17 @@ Ext.define('MyApp.controller.OrderPanelController', {
         if (!Ext.isEmpty(record.data.comment)) {
             Ext.MessageBox.alert('Hinweis', record.data.comment);
         }
+
+        this.getOrderPackagePackageorderPanel().record = record;
+
+        var grid = this.getOrderPackagePackageorderPanel().getComponent('OrderPackagePackageorderGridPanel');
+        grid.store.clearFilter(true);
+        grid.store.filter([{property:'order_combine_id',value:record.data.order_combine_id}]);
+        grid.store.load();
+        if (!Ext.isEmpty(record.data.comment)) {
+            Ext.MessageBox.alert('Hinweis', record.data.comment);
+        }
+
 
         //grid.store.load(); // filter loads automatically - dont use .load because records lose store (record.store == null)
         /*

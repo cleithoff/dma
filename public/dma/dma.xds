@@ -1113,6 +1113,30 @@
                 "app/controller/OrderItemOrderMetaController.js"
             ],
             "className": "OrderItemOrderMetaController"
+        },
+        "4a5818bf-bdb3-46bd-98f1-ebda93749a64": {
+            "paths": [
+                "metadata/view/OrderPackagePackageorderPanel",
+                "app/view/override/OrderPackagePackageorderPanel.js",
+                "app/view/OrderPackagePackageorderPanel.js"
+            ],
+            "className": "OrderPackagePackageorderPanel"
+        },
+        "5d54f813-0850-4260-bb04-ad53f6f4acd4": {
+            "paths": [
+                "metadata/store/PackagePackageorderJsonStore",
+                "app/store/override/PackagePackageorderJsonStore.js",
+                "app/store/PackagePackageorderJsonStore.js"
+            ],
+            "className": "PackagePackageorderJsonStore"
+        },
+        "a5db5f12-b7fa-435c-be53-5316e21a0d44": {
+            "paths": [
+                "metadata/model/PackagePackageorderModel",
+                "app/model/override/PackagePackageorderModel.js",
+                "app/model/PackagePackageorderModel.js"
+            ],
+            "className": "PackagePackageorderModel"
         }
     },
     "viewOrderMap": {
@@ -1137,6 +1161,7 @@
             "9ed30b9a-af66-4460-87c3-2387381d8c3d",
             "93e2b9d5-dfd2-4242-a2ca-da5e99a5c45f",
             "377dbe86-e24e-4164-a17f-92871eeab996",
+            "4a5818bf-bdb3-46bd-98f1-ebda93749a64",
             "ce59226c-e8a1-41c2-b726-4c76d72795dc",
             "16e225f6-219a-48e1-b84c-d0dae6f7e413",
             "0a15cfa6-3887-47b6-9f8e-cae60305fce4",
@@ -1166,6 +1191,7 @@
             "25f14b91-54f4-4e81-aa7e-f14ee12376c9",
             "0f7f6bbb-7176-49d8-8a02-1014fa65ab5a",
             "603ab758-385f-491b-b9e3-77133f5f0779",
+            "5d54f813-0850-4260-bb04-ad53f6f4acd4",
             "3a2cedef-7916-4531-9185-fea2015a4e49",
             "9d2ed927-9041-4b5f-9fac-f46f967764c0",
             "3760a912-050d-416b-af64-d6368f35710a",
@@ -1233,6 +1259,7 @@
             "0008bb11-5d12-4a07-8239-6d73f75dd2e4",
             "8b4e283f-8dde-4d84-88ed-ff944ec10e0d",
             "a3a2a5e0-a274-4a27-9681-5767edc40f54",
+            "a5db5f12-b7fa-435c-be53-5316e21a0d44",
             "771d28be-800a-4986-ae98-0db6e8241b3f",
             "6121fc3e-0f85-4d5e-8029-e4f47064b19b",
             "33b18761-5e67-47df-95fb-d2cfdcc1cddd",

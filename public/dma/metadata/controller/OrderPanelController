@@ -58,6 +58,17 @@
                     "    Ext.MessageBox.alert('Hinweis', record.data.comment);\r",
                     "}\r",
                     "\r",
+                    "this.getOrderPackagePackageorderPanel().record = record;\r",
+                    "\r",
+                    "var grid = this.getOrderPackagePackageorderPanel().getComponent('OrderPackagePackageorderGridPanel');\r",
+                    "grid.store.clearFilter(true);\r",
+                    "grid.store.filter([{property:'order_combine_id',value:record.data.order_combine_id}]);\r",
+                    "grid.store.load();\r",
+                    "if (!Ext.isEmpty(record.data.comment)) {\r",
+                    "    Ext.MessageBox.alert('Hinweis', record.data.comment);\r",
+                    "}\r",
+                    "\r",
+                    "\r",
                     "//grid.store.load(); // filter loads automatically - dont use .load because records lose store (record.store == null)\r",
                     "/*\r",
                     "Ext.getStore('OrderItemJsonStore').clearFilter(true);\r",
@@ -157,6 +168,21 @@
                 "designer|controlQuery": "#OrderOrderClearFilterButton"
             },
             "designerId": "2dd26b20-15bd-4271-8fcd-d75273e560ac"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderPackagePackageorderPanel",
+                "selector": "#OrderPackagePackageorderPanel",
+                "xtype": "orderpackagepackageorderpanel"
+            },
+            "designerId": "cd153360-c61d-49a7-99ce-5e428de28935"
         }
     ]
 }

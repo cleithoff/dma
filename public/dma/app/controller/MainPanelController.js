@@ -124,6 +124,12 @@ Ext.define('MyApp.controller.MainPanelController', {
             ref: 'OrderItemOrderMetaPanel',
             selector: '#OrderItemOrderMetaPanel',
             xtype: 'orderitemordermetapanel'
+        },
+        {
+            autoCreate: true,
+            ref: 'OrderPackagePackageorderPanel',
+            selector: '#OrderPackagePackageorderPanel',
+            xtype: 'orderpackagepackageorderpanel'
         }
     ],
 
@@ -273,6 +279,14 @@ Ext.define('MyApp.controller.MainPanelController', {
             panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderImportPanel().ref);
             if (panel === undefined) {
                 this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderImportPanel());
+            }
+        }
+
+        if (MyApp.app.getRuleControllerController().allow('OrderPackagePackageorderPanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            // Order Package
+            panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderPackagePackageorderPanel().ref);
+            if (panel === undefined) {
+                this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderPackagePackageorderPanel());
             }
         }
 

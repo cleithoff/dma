@@ -1,0 +1,498 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 492,
+        "itemId": "OrderPackagePackageorderPanel",
+        "width": 400,
+        "designer|userClassName": "OrderPackagePackageorderPanel",
+        "designer|userAlias": "orderpackagepackageorderpanel",
+        "layout": "border",
+        "title": "Pakete der gesamten Bestellung"
+    },
+    "designerId": "4a5818bf-bdb3-46bd-98f1-ebda93749a64",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "OrderPackagePackageorderToolbar"
+            },
+            "designerId": "179dc6d8-99e2-4be7-9eef-3571de14cde4",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderPackagePackageorderEditButton",
+                        "text": "Bearbeiten"
+                    },
+                    "designerId": "dbbc2054-9001-4dbb-b2e9-1cd266bde1a3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemPackagePackageEditButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderPackagePackageorderPanel', MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "e746cb63-27a1-430e-8628-fa5affaecf9f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderPackagePackageorderSaveButton",
+                        "text": "Speichern"
+                    },
+                    "designerId": "1e034155-5604-468d-9cb3-5c82ced9559b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemPackagePackageSaveButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderPackagePackageorderPanel', MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "9e62e3a2-dc73-41e4-8f08-3d0fc61588c4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderPackagePackageorderCancelButton",
+                        "text": "Abbrechen"
+                    },
+                    "designerId": "8ebd00d2-b3da-49ca-9245-021b16f2e8d4",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemPackagePackageCancelButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderPackagePackageorderPanel', MyApp.app.getRuleControllerController().rights.UPDATE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "8d74d485-8cce-4b8a-afd4-cd21140f1a90"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "OrderPackagePackageorderDeleteButton",
+                        "text": "Löschen"
+                    },
+                    "designerId": "27eb8a13-88dc-4777-ac4b-129891088b75",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemPackagePackageDeleteButtonAfterRender",
+                                "implHandler": [
+                                    "component.setVisible(MyApp.app.getRuleControllerController().allow('OrderPackagePackageorderPanel', MyApp.app.getRuleControllerController().rights.DELETE));"
+                                ],
+                                "name": "afterrender",
+                                "scope": "me"
+                            },
+                            "designerId": "1cac5ab5-cc6e-440d-8c80-443a12f09d2e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "OrderPackagePackageorderRefreshButton",
+                        "text": "Aktualisieren"
+                    },
+                    "designerId": "804bc77a-684e-4702-befb-37722994da99",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderPackagePackageorderRefreshButtonClick",
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "\r",
+                                    "Ext.Ajax.request({\r",
+                                    "    url: '/package/packageorder/refresh',\r",
+                                    "    method: 'GET',\r",
+                                    "    params: {\"filter\": JSON.stringify([{\"property\":\"order_combine_id\",\"value\":me.record.data.order_combine_id}])},\r",
+                                    "    success: function(response, opts) {\r",
+                                    "        var obj = Ext.decode(response.responseText);\r",
+                                    "        console.dir(obj);\r",
+                                    "\r",
+                                    "        var grid = me.down('#OrderPackagePackageorderGridPanel');\r",
+                                    "        grid.store.clearFilter(true);\r",
+                                    "        grid.store.filter([{property:'order_combine_id',value:me.record.data.order_combine_id}]);\r",
+                                    "        grid.store.load();\r",
+                                    "        if (!Ext.isEmpty(record.data.comment)) {\r",
+                                    "            Ext.MessageBox.alert('Hinweis', record.data.comment);\r",
+                                    "        }\r",
+                                    "\r",
+                                    "    },\r",
+                                    "    failure: function(response, opts) {\r",
+                                    "        console.log('server-side failure with status code ' + response.status);\r",
+                                    "    }\r",
+                                    "});\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "3bd458a0-9b96-4b82-928f-8ce8873f0710"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "disabled": true,
+                "height": 150,
+                "itemId": "OrderPackagePackageorderFormPanel",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "531a04d7-dc6d-4ede-a1c7-db0c42d1ccca",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Mantel",
+                        "name": "frame_type_title",
+                        "value": null
+                    },
+                    "designerId": "bf7062f0-dc74-41b2-807e-07704d989c90"
+                },
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Paket",
+                        "name": "package_type_title",
+                        "value": null
+                    },
+                    "designerId": "3d06ed15-741a-439d-92e6-234107a1fa57"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": null,
+                        "name": "readytosend",
+                        "boxLabel": "fertig zum Versand",
+                        "inputValue": "1",
+                        "uncheckedValue": "0"
+                    },
+                    "designerId": "39c20874-5ce6-4b3f-a58a-21d72be22afd"
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Ausgangsdatum",
+                        "name": "outgoing",
+                        "altFormats": "m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j|d.m.Y",
+                        "format": "d.m.Y",
+                        "submitFormat": "Y-m-d"
+                    },
+                    "designerId": "cd5ae6d0-f11b-4005-866a-8a81527046ef"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Sendungsnummer",
+                        "name": "sendingnumber"
+                    },
+                    "designerId": "7511630a-25ef-4730-b872-8d221f868ac2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "itemId": "OrderPackagePackageorderGridPanel",
+                "title": null,
+                "store": "PackagePackageorderJsonStore"
+            },
+            "designerId": "cf1dc8fe-43e4-4be2-9372-f73879a7e1bd",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "frame_type.title",
+                        "text": "Mantel"
+                    },
+                    "designerId": "54a3bd22-ae51-4070-9a5b-5dcf2d330b6b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.frame_type.title;"
+                                ]
+                            },
+                            "designerId": "4e8ef19a-f6eb-4dc2-8317-b0fa8ad4b04b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "package_type.title",
+                        "text": "Paket"
+                    },
+                    "designerId": "557e367b-d005-4d37-8c16-75b361b1d5cd",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "console.log(record);\r",
+                                    "return record.data.package_type.title;"
+                                ]
+                            },
+                            "designerId": "e99ccf43-d2ab-4030-a665-4112055589a2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "amount",
+                        "text": "Menge"
+                    },
+                    "designerId": "58566c2e-94bd-431e-9a72-6bd18539ef7d"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "weight",
+                        "text": "Gewicht",
+                        "format": "0,000.0000"
+                    },
+                    "designerId": "188059a9-2ded-4ad6-8f85-559781b2fb97"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "outgoing",
+                        "text": "Ausgang"
+                    },
+                    "designerId": "72e8a76e-b5a0-462f-a69c-66442fca6daa"
+                },
+                {
+                    "type": "Ext.grid.column.CheckColumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "readytosend",
+                        "text": "versandfertig"
+                    },
+                    "designerId": "d9eaa51b-80e4-4239-89dd-dcb4bdecef8f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "sendingnumber",
+                        "text": "Sendungsnummer"
+                    },
+                    "designerId": "c6ae0951-63cc-45b2-9604-939896cc1f11"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "34b9037f-bcba-4aeb-9a48-cb8dd02924bf"
+                }
+            ]
+        }
+    ]
+}

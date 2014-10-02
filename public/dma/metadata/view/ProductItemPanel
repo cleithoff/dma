@@ -450,7 +450,8 @@
                             "userConfig": {
                                 "layout|anchor": "100%",
                                 "fieldLabel": "Gewicht",
-                                "name": "weight"
+                                "name": "weight",
+                                "decimalPrecision": 4
                             },
                             "designerId": "170f4299-58ef-470e-8e28-648749c52e43"
                         },

@@ -18,7 +18,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id"
+                "name": "id",
+                "type": "int"
             },
             "designerId": "32dd7188-1e67-4b4a-86b1-641e5e9eaaaa"
         },
@@ -42,7 +43,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "import_import_id"
+                "name": "import_import_id",
+                "type": "int"
             },
             "designerId": "20740dee-0a78-4c35-ab42-bffd5f6d5142"
         },
@@ -54,7 +56,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "product_item_id"
+                "name": "product_item_id",
+                "type": "int"
             },
             "designerId": "44763617-2ae0-4c53-8211-cdba7db19a76"
         },

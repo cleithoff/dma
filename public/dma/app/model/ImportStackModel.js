@@ -18,16 +18,19 @@ Ext.define('MyApp.model.ImportStackModel', {
 
     fields: [
         {
-            name: 'id'
+            name: 'id',
+            type: 'int'
         },
         {
             name: 'title'
         },
         {
-            name: 'import_import_id'
+            name: 'import_import_id',
+            type: 'int'
         },
         {
-            name: 'product_item_id'
+            name: 'product_item_id',
+            type: 'int'
         },
         {
             name: 'creation_date'
