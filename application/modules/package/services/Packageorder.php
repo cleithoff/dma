@@ -74,6 +74,7 @@ class Package_Service_Packageorder
 					'amount' => 0,
 					'weight' => $weight,
 					'count' => 1,
+					'maxcount' => 1,
 			));
 		} else {
 			$packagesPackagesOrderRow->weight = $weight;
