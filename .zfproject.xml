@@ -126,6 +126,9 @@
             <controllerFile controllerName="Itemhasordermeta">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Combine">
+              <actionMethod actionName="index"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false"/>
           <layoutsDirectory enabled="false"/>
@@ -139,9 +142,11 @@
               <dbTableFile dbTableName="Type"/>
               <dbTableFile dbTableName="Meta"/>
               <dbTableFile dbTableName="Itemhasordermeta"/>
+              <dbTableFile dbTableName="Combine"/>
             </dbTableDirectory>
             <modelFile modelName="Meta"/>
             <modelFile modelName="Itemhasordermeta"/>
+            <modelFile modelName="Combine"/>
           </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory>
@@ -161,6 +166,9 @@
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Itemhasordermeta">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Combine">
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
@@ -187,6 +195,9 @@
             <controllerFile controllerName="Weight">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Packagecontroller">
+              <actionMethod actionName="index"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false"/>
           <layoutsDirectory enabled="false"/>
@@ -202,7 +213,9 @@
               <dbTableFile dbTableName="Stack"/>
               <dbTableFile dbTableName="Type"/>
               <dbTableFile dbTableName="Weight"/>
+              <dbTableFile dbTableName="Packageorder"/>
             </dbTableDirectory>
+            <modelFile modelName="Packageorder"/>
           </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory>
@@ -219,6 +232,9 @@
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Weight">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Packagecontroller">
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
