@@ -1,0 +1,45 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "autoSync": true,
+        "model": "ReportAdditionalModel",
+        "remoteFilter": true,
+        "storeId": "MyJsonStore",
+        "designer|userClassName": "ReportAdditionalJsonStore"
+    },
+    "designerId": "ed54d9dd-5f23-4354-b102-cf14c1f34fb0",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/report/additional/index"
+            },
+            "designerId": "61cc976e-b05a-43d3-9505-dbf21c08fb4e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "b9352e61-469a-40a0-896f-50b092c2665d"
+                }
+            ]
+        }
+    ]
+}

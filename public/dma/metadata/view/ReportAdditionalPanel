@@ -1,0 +1,688 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 710,
+        "itemId": "ReportAdditionalPanel",
+        "width": 753,
+        "designer|userClassName": "ReportAdditionalPanel",
+        "designer|userAlias": "reportadditionalpanel",
+        "layout": "border",
+        "title": "zusätzliche Daten"
+    },
+    "designerId": "d3a9632e-373d-4dbd-bd6d-777ea6900a23",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "itemId": "ReportAdditionalToolbar"
+            },
+            "designerId": "0e9c39eb-a380-4cef-b633-722e3c371779",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportAdditionalEditButton",
+                        "text": "Bearbeiten"
+                    },
+                    "designerId": "04f465fd-8d2a-421f-9ac2-4f08d4a9476e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReportAdditionalEditButtonClick",
+                                "implHandler": [
+                                    "var panel = this;\r",
+                                    "\r",
+                                    "var formPanel = panel.down('#ReportAdditionalFormPanel');\r",
+                                    "var toolbar = panel.down('#ReportAdditionalToolbar');\r",
+                                    "formPanel.enable();\r",
+                                    "\r",
+                                    "toolbar.getComponent('ReportAdditionalEditButton').disable();\r",
+                                    "toolbar.getComponent('ReportAdditionalNewButton').disable();\r",
+                                    "toolbar.getComponent('ReportAdditionalCancelButton').enable();\r",
+                                    "toolbar.getComponent('ReportAdditionalSaveButton').enable();\r",
+                                    "toolbar.getComponent('ReportAdditionalDeleteButton').disable();\r",
+                                    "\r",
+                                    "toolbar.getComponent('ReportAdditionalPreviewButton').disable();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "843813c3-4605-4462-8786-3d2ca4f152b2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "ReportAdditionalNewButton",
+                        "text": "Neu"
+                    },
+                    "designerId": "b0f6cbac-3a05-4b37-ba2c-7d9eb51d6807",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReportAdditionalNewButtonClick",
+                                "implHandler": [
+                                    "var panel = this;\r",
+                                    "var formPanel = panel.down('#ReportAdditionalFormPanel');\r",
+                                    "var toolbar = panel.down('#ReportAdditionalToolbar');\r",
+                                    "var grid = panel.down('#ReportAdditionalGridPanel');\r",
+                                    "var store = grid.getStore();\r",
+                                    "\r",
+                                    "if (store !== undefined) {\r",
+                                    "    formPanel.enable();\r",
+                                    "    record = new store.model();\r",
+                                    "    record.data.report_report_id = panel.record.data.id;\r",
+                                    "    formPanel.loadRecord(record);\r",
+                                    "    toolbar.getComponent('ReportAdditionalEditButton').disable();\r",
+                                    "    toolbar.getComponent('ReportAdditionalNewButton').disable();\r",
+                                    "    toolbar.getComponent('ReportAdditionalCancelButton').enable();\r",
+                                    "    toolbar.getComponent('ReportAdditionalSaveButton').enable();\r",
+                                    "    toolbar.getComponent('ReportAdditionalDeleteButton').disable();\r",
+                                    "\r",
+                                    "    toolbar.getComponent('ReportAdditionalPreviewButton').disable();\r",
+                                    "}\r",
+                                    ""
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "10500eb9-a0cd-45f3-b7f4-3be53048730b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportAdditionalSaveButton",
+                        "text": "Speichern"
+                    },
+                    "designerId": "9b94854b-422e-4912-ac68-87c5068d1bbe",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReportAdditionalSaveButtonClick",
+                                "implHandler": [
+                                    "var panel = this;\r",
+                                    "var formPanel = panel.down('#ReportAdditionalFormPanel');\r",
+                                    "var toolbar = panel.down('#ReportAdditionalToolbar');\r",
+                                    "var grid = panel.down('#ReportAdditionalGridPanel');\r",
+                                    "var store = grid.getStore();\r",
+                                    "\r",
+                                    "record = formPanel.getForm().getRecord();\r",
+                                    "if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {\r",
+                                    "    values = formPanel.getForm().getValues();\r",
+                                    "    record.set(values);\r",
+                                    "    store.insert(0, record);\r",
+                                    "} else {\r",
+                                    "    formPanel.getForm().updateRecord();\r",
+                                    "}\r",
+                                    "formPanel.disable();\r",
+                                    "toolbar.getComponent('ReportAdditionalEditButton').enable();\r",
+                                    "toolbar.getComponent('ReportAdditionalNewButton').enable();\r",
+                                    "toolbar.getComponent('ReportAdditionalCancelButton').disable();\r",
+                                    "toolbar.getComponent('ReportAdditionalSaveButton').disable();\r",
+                                    "toolbar.getComponent('ReportAdditionalDeleteButton').enable();\r",
+                                    "toolbar.getComponent('ReportAdditionalPreviewButton').enable();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "7aa12785-4c98-4d26-b5a3-cd4eeea66889"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportAdditionalCancelButton",
+                        "text": "Abbrechen"
+                    },
+                    "designerId": "78b75f03-9c08-464b-b9dc-5aa96257206b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReportAdditionalCancelButtonClick",
+                                "implHandler": [
+                                    "var panel = this;\r",
+                                    "var formPanel = panel.down('#ReportAdditionalFormPanel');\r",
+                                    "var toolbar = panel.down('#ReportAdditionalToolbar');\r",
+                                    "var grid = panel.down('#ReportAdditionalGridPanel');\r",
+                                    "var store = grid.getStore();\r",
+                                    "\r",
+                                    "var record = formPanel.getForm().getRecord();\t\t\t\t\t\t\t\t\r",
+                                    "if (record !== undefined) {\r",
+                                    "    formPanel.getForm().reset();\r",
+                                    "    formPanel.disable();\r",
+                                    "    toolbar.getComponent('ReportAdditionalEditButton').enable();\r",
+                                    "    toolbar.getComponent('ReportAdditionalNewButton').enable();\r",
+                                    "    toolbar.getComponent('ReportAdditionalCancelButton').disable();\r",
+                                    "    toolbar.getComponent('ReportAdditionalSaveButton').disable();\r",
+                                    "\r",
+                                    "    toolbar.getComponent('ReportAdditionalPreviewButton').enable(); \r",
+                                    "}\r",
+                                    "\r",
+                                    "if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                                    "    grid.getView().select(0);\r",
+                                    "    record = grid.getSelectionModel().getSelection()[0];\r",
+                                    "    formPanel.getForm().loadRecord(record);\r",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "5ce10fc5-aab6-4b35-8099-5fc94e805275"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportAdditionalDeleteButton",
+                        "text": "Löschen"
+                    },
+                    "designerId": "1f46ed37-aaba-408d-93be-ab6589c088fc",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReportAdditionalDeleteButtonClick",
+                                "implHandler": [
+                                    "var panel = this;\r",
+                                    "var formPanel = panel.down('#ReportAdditionalFormPanel');\r",
+                                    "var toolbar = panel.down('#ReportAdditionalToolbar');\r",
+                                    "var grid = panel.down('#ReportAdditionalGridPanel');\r",
+                                    "var store = grid.getStore();\r",
+                                    "\r",
+                                    "var that = this;\r",
+                                    "\r",
+                                    "Ext.Msg.confirm('Attention!', 'Datensatz löschen?', function(btn) {\r",
+                                    "    if(btn == 'yes') {\r",
+                                    "\r",
+                                    "        var record = formPanel.getForm().getRecord();\r",
+                                    "        if (store !== undefined && record !== undefined) {\r",
+                                    "            store.remove(record);\r",
+                                    "            formPanel.getForm().reset();\r",
+                                    "            if(grid !== undefined && grid.getView().getNodes().length > 0) {\r",
+                                    "                grid.getView().select(0);\r",
+                                    "            }\r",
+                                    "        }\r",
+                                    "    }\r",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "0261fba2-cf51-4b96-9698-c531fe2ea73a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "disabled": true,
+                        "itemId": "ReportAdditionalPreviewButton",
+                        "text": "Vorschau"
+                    },
+                    "designerId": "de8fbef2-3d85-48e9-9f40-0d271a18cc2d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReportAdditionalPreviewButtonClick",
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "\r",
+                                    "var panel = me;\r",
+                                    "toolbar = panel.down('#ReportAdditionalToolbar');\r",
+                                    "\r",
+                                    "filterFormPanel = me.ownerCt.down('#ReportFilterFormPanel');\r",
+                                    "\r",
+                                    "params = filterFormPanel.getValues();\r",
+                                    "\r",
+                                    "params._sql = me.down('#ReportAdditionalFormPanel').getForm().findField('sql').getValue();\r",
+                                    "\r",
+                                    "Ext.Ajax.request({\r",
+                                    "    url: '/report/additional/meta',\r",
+                                    "    params: params,\r",
+                                    "    success: function(response, opts) {\r",
+                                    "        var obj = Ext.decode(response.responseText);\r",
+                                    "        me.remove(me.getComponent('ReportPreviewGridPanel'));\r",
+                                    "        columns = [];\r",
+                                    "        fields = [];\r",
+                                    "        for (var idx in obj.data) {\r",
+                                    "            field = obj.data[idx];\r",
+                                    "            switch(field.native_type) {\r",
+                                    "                case 'LONG':\r",
+                                    "                columns.push({\r",
+                                    "                    dataIndex: field.name,\r",
+                                    "                    align: 'right',\r",
+                                    "                    text: field.name,\r",
+                                    "                    xtype: 'numbercolumn',\r",
+                                    "                    format: '0'\r",
+                                    "                });\r",
+                                    "                fields.push({\r",
+                                    "                    name: field.name,\r",
+                                    "                    type: 'int',\r",
+                                    "                });\r",
+                                    "                break;\r",
+                                    "                case 'VAR_STRING':\r",
+                                    "                columns.push({\r",
+                                    "                    dataIndex: field.name,\r",
+                                    "                    align: 'left',\r",
+                                    "                    text: field.name,\r",
+                                    "                    xtype: 'gridcolumn'\r",
+                                    "                });\r",
+                                    "                fields.push({\r",
+                                    "                    name: field.name,\r",
+                                    "                    type: 'string',\r",
+                                    "                });\r",
+                                    "                break;\r",
+                                    "                case 'BLOB':\r",
+                                    "                columns.push({\r",
+                                    "                    dataIndex: field.name,\r",
+                                    "                    align: 'left',\r",
+                                    "                    text: field.name,\r",
+                                    "                    xtype: 'gridcolumn'\r",
+                                    "                });\r",
+                                    "                fields.push({\r",
+                                    "                    name: field.name,\r",
+                                    "                    type: 'string',\r",
+                                    "                });                    \r",
+                                    "                break;\r",
+                                    "                default:\r",
+                                    "                columns.push({\r",
+                                    "                    dataIndex: field.name,\r",
+                                    "                    align: 'left',\r",
+                                    "                    text: field.name,\r",
+                                    "                    xtype: 'gridcolumn'\r",
+                                    "                });\r",
+                                    "                fields.push({\r",
+                                    "                    name: field.name,\r",
+                                    "                    type: 'string',\r",
+                                    "                });                    \r",
+                                    "                break;\r",
+                                    "            }\r",
+                                    "        }\r",
+                                    "        Ext.define('Meta', {\r",
+                                    "            extend: 'Ext.data.Model',\r",
+                                    "            fields: fields\r",
+                                    "        });\r",
+                                    "\r",
+                                    "        var metaStore = Ext.create('Ext.data.Store', {\r",
+                                    "            model: 'Meta',\r",
+                                    "            proxy: {\r",
+                                    "                type: 'rest',\r",
+                                    "                url: '/report/additional/index',\r",
+                                    "                extraParams: params,\r",
+                                    "                reader: {\r",
+                                    "                    type: 'json',\r",
+                                    "                    root: 'data'\r",
+                                    "                }\r",
+                                    "            },\r",
+                                    "            autoLoad: true,\r",
+                                    "            pageSize: 1000000\r",
+                                    "        });\r",
+                                    "        var panel = Ext.create('Ext.grid.Panel', {\r",
+                                    "            split: true,\r",
+                                    "            region: 'center',\r",
+                                    "            itemId: 'ReportPreviewGridPanel',\r",
+                                    "            //title: 'Number Column Demo',\r",
+                                    "            store: metaStore,\r",
+                                    "            columns: columns,\r",
+                                    "            dockedItems: [\r",
+                                    "            {\r",
+                                    "                xtype: 'pagingtoolbar',\r",
+                                    "                dock: 'bottom',\r",
+                                    "                displayInfo: true,\r",
+                                    "                store: metaStore\r",
+                                    "            }\r",
+                                    "            ]\r",
+                                    "            /*[\r",
+                                    "            { text: 'Symbol',         dataIndex: 'symbol', flex: 1 },\r",
+                                    "            { text: 'Current Price',  dataIndex: 'price',  renderer: Ext.util.Format.usMoney },\r",
+                                    "            { text: 'Change',         dataIndex: 'change', xtype: 'numbercolumn', format:'0.00' },\r",
+                                    "            { text: 'Volume',         dataIndex: 'volume', xtype: 'numbercolumn', format:'0,000' }\r",
+                                    "            ]*/\r",
+                                    "        });\r",
+                                    "\r",
+                                    "\r",
+                                    "        me.add(panel);\r",
+                                    "        //toolbar.getComponent('ReportReportExecuteButton').enable();\r",
+                                    "    },\r",
+                                    "    failure: function(response, opts) {\r",
+                                    "        console.log('server-side failure with status code ' + response.status);\r",
+                                    "    }\r",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "0a6fc06c-77be-4cf1-b695-7d3d7e44387f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "layout|split": true,
+                "border": false,
+                "height": 242,
+                "itemId": "MyPanel",
+                "layout": "border",
+                "header": false,
+                "title": "My Panel"
+            },
+            "designerId": "92a93de5-9e7e-4dff-88da-f60f9137a849",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "west",
+                        "layout|split": true,
+                        "dock": null,
+                        "itemId": "ReportAdditionalGridPanel",
+                        "width": 150,
+                        "header": false,
+                        "title": "My Grid Panel",
+                        "store": "ReportAdditionalJsonStore"
+                    },
+                    "designerId": "b5bf3165-cc81-4ab0-ba30-20feb35582a2",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "title",
+                                "text": "zusätzliche Daten",
+                                "flex": 1
+                            },
+                            "designerId": "396b12ce-2706-45dd-a8fc-4a9295650891"
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "02926df8-5c9b-4a4a-ac3f-f7eff36553a5"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onReportAdditionalGridPanelSelect",
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "var panel = me;\r",
+                                    "var formPanel = panel.down('#ReportAdditionalFormPanel');\r",
+                                    "var toolbar = panel.down('#ReportAdditionalToolbar');\r",
+                                    "formPanel.getForm().loadRecord(record);\r",
+                                    "toolbar.getComponent('ReportAdditionalEditButton').enable();\r",
+                                    "toolbar.getComponent('ReportAdditionalNewButton').enable();\r",
+                                    "toolbar.getComponent('ReportAdditionalCancelButton').disable();\r",
+                                    "toolbar.getComponent('ReportAdditionalSaveButton').disable();\r",
+                                    "toolbar.getComponent('ReportAdditionalDeleteButton').enable();\r",
+                                    "\r",
+                                    "toolbar.getComponent('ReportAdditionalPreviewButton').enable();"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "designerId": "67cc9954-1709-4fa6-b7c8-173cf765d828"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "center",
+                        "layout|split": true,
+                        "disabled": true,
+                        "itemId": "ReportAdditionalFormPanel",
+                        "bodyPadding": 10,
+                        "title": null
+                    },
+                    "designerId": "7c9df6e2-21a4-429f-b0f3-82233ea4a2fa",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Title",
+                                "name": "title"
+                            },
+                            "designerId": "307b92b2-2d9c-4883-b4c3-ebfc018ca115"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Kürzel",
+                                "name": "slug"
+                            },
+                            "designerId": "464bb303-8ef5-42cf-a1c9-b78bd667d036"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Beschreibung",
+                                "name": "description"
+                            },
+                            "designerId": "573179f7-f191-4e0b-8d92-fcc567a9ab73"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Query",
+                                "name": "sql"
+                            },
+                            "designerId": "0973b410-5418-40e1-9eb5-7d4400bb3909"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "XML Gruppierung",
+                                "name": "xmlgrouping"
+                            },
+                            "designerId": "11715f0c-c0f2-49c9-9c2b-9d412960161a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "layout|split": true,
+                "itemId": "ReportPreviewGridPanel",
+                "title": null
+            },
+            "designerId": "34f6b108-ae85-43ce-b4e1-bf8e721ff626",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "bool",
+                        "text": "Boolean"
+                    },
+                    "designerId": "a902fbb4-b9c7-47df-9c51-a7b71b559de0"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "cece89d5-c63b-46d6-bc3c-dbe61dc2b1d2"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true
+                    },
+                    "designerId": "5de94e27-3bb7-4e49-99e9-b400a291351d"
+                }
+            ]
+        }
+    ]
+}
