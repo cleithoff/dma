@@ -20,6 +20,9 @@ class Report_Service_Report
 		$types = array();
 	
 		foreach($info as $field) {
+			if (!array_key_exists('native_type', $field)) {
+				$field['native_type'] = "VAR_STRING";
+			}
 			$types[$field['name']] = $field['native_type'];
 		}
 	
@@ -157,7 +160,7 @@ class Report_Service_Report
 		
 	}
 	
-	protected function generateXml($row, Zend_Controller_Request_Http $request) {
+	protected function generateXmlFromRow($filename, $row, $request, $name = 'ReportDetail') {
 		$sql = $this->_getQuery($row->sql, array(), array(), $request->getParams());
 		Zend_Db_Table::getDefaultAdapter()->query("SET @counter:=0;");
 		$result = Zend_Db_Table::getDefaultAdapter()->query($sql);
@@ -173,14 +176,30 @@ class Report_Service_Report
 		
 		$types = $this->getTypesFromInfo($info);
 		Zend_Db_Table::getDefaultAdapter()->query("SET @counter:=0;");
+		// echo $sql;
 		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql);
 		
+		$this->writeXml($filename, $fields, $rowset, $types, $row->xmlgrouping, $name);
+	}
+	
+	protected function generateXml($row, Zend_Controller_Request_Http $request) {
+		
+		/*
 		header('Content-type: text/xml');
 		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.xml"');
+		*/
 		
 		$filename = $this->createXmlFile();
 		
-		$this->writeXml($filename, $fields, $rowset, $types, $row->xmlgrouping, 'ReportDetail');
+		$this->generateXmlFromRow($filename, $row, $request);
+		
+		$reportAdditional = new Report_Model_DbTable_Additional();
+
+		$rows = $reportAdditional->fetchAll("report_report_id = " . intval($row->id));
+		
+		foreach ($rows as $rowsub) {
+			$this->generateXmlFromRow($filename, $rowsub, $request, ucfirst($rowsub->slug) . 'Detail');
+		}
 		
 		return $filename;
 	}
@@ -286,11 +305,11 @@ class Report_Service_Report
 		
 		$xml = simplexml_load_file($filename);
 		
-		$xmlgrouping = explode(',', $xmlgrouping);
+		$xmlgrouping = explode(',', trim($xmlgrouping));
 		
 		$node = $xml->addChild($nodename);
 		
-		if (count($xmlgrouping) === 0) {
+		if (count($xmlgrouping) === 0 || empty($xmlgrouping[0])) {
 			$listnode = $node->addChild('ListOf' . $node->getName());
 			foreach($rowset as $row) {
 				$itemnode = $listnode->addChild('ItemOf' . $node->getName());
