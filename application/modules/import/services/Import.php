@@ -318,7 +318,12 @@ class Import_Service_Import
 					switch($action['action']) {
 						case 'UPSERT':
 							$insert_id = null;
-							$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['condition'] . ',  ' . $action['setter'] . ' ON DUPLICATE KEY UPDATE ' . $action['setter'];
+							if (empty($action['condition'])) {
+								$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['setter'] . ' ON DUPLICATE KEY UPDATE ' . $action['setter'];
+							} else {
+								$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['condition'] . ',  ' . $action['setter'] . ' ON DUPLICATE KEY UPDATE ' . $action['setter'];
+							}
+							
 							$sql = $this->_getQuery($sql, $csv, $result, $param);
 
 							try {
@@ -332,7 +337,12 @@ class Import_Service_Import
 								$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE id = ' . $insert_id;
 								$sql = $this->_getQuery($sql, $csv, $result, $param);
 							} else {
-								$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . str_replace(',', ' AND ', $action['condition']);
+								if (empty($action['condition'])) {
+									$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . str_replace(',', ' AND ', $action['setter']);
+								} else {
+									$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . str_replace(',', ' AND ', $action['condition']);
+								}
+								
 								$sql = $this->_getQuery($sql, $csv, $result, $param);
 								$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
 								$result[$action['source']] = reset($resultset);
@@ -469,8 +479,8 @@ class Import_Service_Import
 			Zend_Db_Table::getDefaultAdapter()->commit();
 		} catch(Exception $ex) {
 			Zend_Db_Table::getDefaultAdapter()->rollBack();
-			//throw ($ex);
-			//die();
+			throw ($ex);
+			die();
 		}
 		return true;
 	}

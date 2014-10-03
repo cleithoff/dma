@@ -28,7 +28,7 @@ Ext.define('MyApp.store.PackagePackageorderJsonStore', {
             autoSync: true,
             model: 'MyApp.model.PackagePackageorderModel',
             remoteFilter: true,
-            storeId: 'MyJsonStore',
+            storeId: 'PackagePackageorderJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/package/packageorder/index',

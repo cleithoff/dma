@@ -43,7 +43,8 @@
             "ImportParameterModel",
             "OrderMetaModel",
             "OrderItemHasOrderMeta",
-            "PackagePackageorderModel"
+            "PackagePackageorderModel",
+            "ReportAdditionalModel"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -85,7 +86,8 @@
             "ImportParameterJsonStore",
             "OrderMetaJsonStore",
             "OrderItemHasOrderMetaJsonStore",
-            "PackagePackageorderJsonStore"
+            "PackagePackageorderJsonStore",
+            "ReportAdditionalJsonStore"
         ],
         "views": [
             "MainViewport",
@@ -125,14 +127,14 @@
             "ProductProductHasProductPropertyPanel",
             "OrderMetaPanel",
             "OrderItemOrderMetaPanel",
-            "OrderPackagePackageorderPanel"
+            "OrderPackagePackageorderPanel",
+            "ReportAdditionalPanel"
         ],
         "autoCreateViewport": true,
         "controllers": [
             "MainPanelController",
             "MainViewportController",
             "PartnerPanelController",
-            "ReportPanelController",
             "ProductPanelController",
             "UserPanelController",
             "PartnerAddressPanelController",
@@ -152,7 +154,8 @@
             "AppHelpController",
             "RuleController",
             "CrudController",
-            "OrderItemOrderMetaController"
+            "OrderItemOrderMetaController",
+            "UtilController"
         ],
         "name": "MyApp"
     },

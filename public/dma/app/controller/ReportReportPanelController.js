@@ -32,10 +32,10 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
     ],
 
     onReportReportEditButtonClick: function(button, e, eOpts) {
-        panel = this.getReportReportPanel();
+        var panel = this.getReportReportPanel();
 
-        formPanel = panel.getComponent('ReportReportFormPanel');
-        toolbar = panel.getComponent('ReportReportToolbar');
+        var formPanel = panel.getComponent('ReportReportFormPanel');
+        var toolbar = panel.getComponent('ReportReportToolbar');
         formPanel.enable();
 
         toolbar.getComponent('ReportReportEditButton').disable();
@@ -165,7 +165,7 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
     onReportReportPreviewButtonClick: function(button, e, eOpts) {
         var that = this;
 
-        panel = this.getReportReportPanel();
+        var panel = this.getReportReportPanel();
         toolbar = panel.getComponent('ReportReportToolbar');
 
         filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');
@@ -179,7 +179,6 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
             params: params,
             success: function(response, opts) {
                 var obj = Ext.decode(response.responseText);
-                console.log(obj);
                 that.getReportReportPanel().remove(that.getReportReportPanel().getComponent('ReportPreviewGridPanel'));
                 columns = [];
                 fields = [];
@@ -256,7 +255,7 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
                     autoLoad: true,
                     pageSize: 1000000
                 });
-                panel = Ext.create('Ext.grid.Panel', {
+                var panel = Ext.create('Ext.grid.Panel', {
                     split: true,
                     region: 'center',
                     itemId: 'ReportPreviewGridPanel',
@@ -278,6 +277,8 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
                     { text: 'Volume',         dataIndex: 'volume', xtype: 'numbercolumn', format:'0,000' }
                     ]*/
                 });
+
+
                 that.getReportReportPanel().add(panel);
                 toolbar.getComponent('ReportReportExecuteButton').enable();
             },

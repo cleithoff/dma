@@ -10,7 +10,7 @@
         "autoSync": true,
         "model": "PackagePackageorderModel",
         "remoteFilter": true,
-        "storeId": "MyJsonStore",
+        "storeId": "PackagePackageorderJsonStore",
         "designer|userClassName": "PackagePackageorderJsonStore"
     },
     "designerId": "5d54f813-0850-4260-bb04-ad53f6f4acd4",

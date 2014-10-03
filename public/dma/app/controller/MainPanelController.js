@@ -109,6 +109,12 @@ Ext.define('MyApp.controller.MainPanelController', {
         },
         {
             autoCreate: true,
+            ref: 'ReportAdditionalPanel',
+            selector: '#ReportAdditionalPanel',
+            xtype: 'reportadditionalpanel'
+        },
+        {
+            autoCreate: true,
             ref: 'ImportExecutePanel',
             selector: '#ImportExecutePanel',
             xtype: 'importexecutepanel'
@@ -152,7 +158,7 @@ Ext.define('MyApp.controller.MainPanelController', {
             return;
         }
 
-        panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getOrderPanel().ref);
+        var panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getOrderPanel().ref);
 
         if (panel === undefined) {
             this.getMainPanel().getComponent('AppTabPanel').add(this.getOrderPanel());
@@ -304,19 +310,29 @@ Ext.define('MyApp.controller.MainPanelController', {
     },
 
     onReportMenuItemClick: function(item, e, eOpts) {
-        panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getReportPanel().ref);
+        var panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getReportPanel().ref);
 
         if (panel === undefined) {
             this.getMainPanel().getComponent('AppTabPanel').add(this.getReportPanel());
         }
 
         // Report Report
-        panel = this.getReportPanel().getComponent('ReportReportTabPanel').getComponent(this.getReportReportPanel().ref);
-        if (panel === undefined) {
-            this.getReportPanel().getComponent('ReportReportTabPanel').add(this.getReportReportPanel());
+        var panelReportReport = this.getReportPanel().getComponent('ReportReportTabPanel').getComponent(this.getReportReportPanel().ref);
+        if (panelReportReport === undefined) {
+            panelReportReport = this.getReportReportPanel();
+            this.getReportPanel().getComponent('ReportReportTabPanel').add(panelReportReport);
         }
 
+        var panelReportAdditional = this.getReportPanel().getComponent('ReportReportTabPanel').getComponent(this.getReportAdditionalPanel().ref);
+        if (panelReportAdditional === undefined) {
+            panelReportAdditional = this.getReportAdditionalPanel();
+            this.getReportPanel().getComponent('ReportReportTabPanel').add(panelReportAdditional);
+        }
+
+
         this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getReportPanel());
+
+        this.getReportPanel().getComponent('ReportReportTabPanel').setActiveTab(panelReportReport);
     },
 
     onUserMenuItemClick: function(item, e, eOpts) {

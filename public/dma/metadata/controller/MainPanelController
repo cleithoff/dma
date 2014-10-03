@@ -68,7 +68,7 @@
                     "    return;\r",
                     "}\r",
                     "\r",
-                    "panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getOrderPanel().ref);\r",
+                    "var panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getOrderPanel().ref);\r",
                     "\r",
                     "if (panel === undefined) {\r",
                     "    this.getMainPanel().getComponent('AppTabPanel').add(this.getOrderPanel());\r",
@@ -235,19 +235,29 @@
             "userConfig": {
                 "fn": "onReportMenuItemClick",
                 "implHandler": [
-                    "panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getReportPanel().ref);\r",
+                    "var panel = this.getMainPanel().getComponent('AppTabPanel').getComponent(this.getReportPanel().ref);\r",
                     "\r",
                     "if (panel === undefined) {\r",
                     "    this.getMainPanel().getComponent('AppTabPanel').add(this.getReportPanel());\r",
                     "}\r",
                     "\r",
                     "// Report Report\r",
-                    "panel = this.getReportPanel().getComponent('ReportReportTabPanel').getComponent(this.getReportReportPanel().ref);\r",
-                    "if (panel === undefined) {\r",
-                    "    this.getReportPanel().getComponent('ReportReportTabPanel').add(this.getReportReportPanel());\r",
+                    "var panelReportReport = this.getReportPanel().getComponent('ReportReportTabPanel').getComponent(this.getReportReportPanel().ref);\r",
+                    "if (panelReportReport === undefined) {\r",
+                    "    panelReportReport = this.getReportReportPanel();\r",
+                    "    this.getReportPanel().getComponent('ReportReportTabPanel').add(panelReportReport);\r",
                     "}\r",
                     "\r",
-                    "this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getReportPanel());"
+                    "var panelReportAdditional = this.getReportPanel().getComponent('ReportReportTabPanel').getComponent(this.getReportAdditionalPanel().ref);\r",
+                    "if (panelReportAdditional === undefined) {\r",
+                    "    panelReportAdditional = this.getReportAdditionalPanel();\r",
+                    "    this.getReportPanel().getComponent('ReportReportTabPanel').add(panelReportAdditional);\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "this.getMainPanel().getComponent('AppTabPanel').setActiveTab(this.getReportPanel());\r",
+                    "\r",
+                    "this.getReportPanel().getComponent('ReportReportTabPanel').setActiveTab(panelReportReport);"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -553,6 +563,21 @@
                 "xtype": "reportreportpanel"
             },
             "designerId": "d2709de7-4b56-423b-bda8-7e7960e4d6eb"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "ReportAdditionalPanel",
+                "selector": "#ReportAdditionalPanel",
+                "xtype": "reportadditionalpanel"
+            },
+            "designerId": "46d9fee3-9339-48e3-b2f0-288d0227c284"
         },
         {
             "type": "controllerref",

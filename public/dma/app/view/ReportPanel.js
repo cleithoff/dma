@@ -46,7 +46,13 @@ Ext.define('MyApp.view.ReportPanel', {
                             text: 'Report',
                             flex: 1
                         }
-                    ]
+                    ],
+                    listeners: {
+                        select: {
+                            fn: me.onReportReportGridPanelSelect,
+                            scope: me
+                        }
+                    }
                 },
                 {
                     xtype: 'tabpanel',
@@ -58,6 +64,94 @@ Ext.define('MyApp.view.ReportPanel', {
         });
 
         me.callParent(arguments);
+    },
+
+    onReportReportGridPanelSelect: function(rowmodel, record, index, eOpts) {
+        var me = this;
+
+        var panel = me.down('#ReportReportPanel');
+
+        var panelReportAdditional = me.down('#ReportAdditionalPanel');
+
+        panelReportAdditional.record = record;
+
+        var storeReportAdditional = panelReportAdditional.down('#ReportAdditionalGridPanel').getStore();
+
+        storeReportAdditional.clearFilter(true);
+        storeReportAdditional.filter([{property:"report_report_id",value:record.data.id}]);
+        storeReportAdditional.load({
+            callback: function(records, operation, success) {
+                if (records.length > 0) {
+                    panelReportAdditional.down('#ReportAdditionalGridPanel').getSelectionModel().select(0);
+                }
+            }
+        });
+
+
+        var formPanel = panel.getComponent('ReportReportFormPanel');
+        var toolbar = panel.getComponent('ReportReportToolbar');
+        formPanel.getForm().loadRecord(record);
+        toolbar.getComponent('ReportReportEditButton').enable();
+        toolbar.getComponent('ReportReportNewButton').enable();
+        toolbar.getComponent('ReportReportCancelButton').disable();
+        toolbar.getComponent('ReportReportSaveButton').disable();
+        toolbar.getComponent('ReportReportDeleteButton').enable();
+
+        toolbar.getComponent('ReportReportPreviewButton').enable();
+        toolbar.getComponent('ReportReportExportPdfButton').enable();
+        toolbar.getComponent('ReportReportExportCsvButton').enable();
+        toolbar.getComponent('ReportReportExportXmlButton').enable();
+        toolbar.getComponent('ReportReportExportXsdButton').enable();
+
+        var store = Ext.getStore('ReportFilterJsonStore');
+
+        store.on('load', function(store, records) {
+            var filterFormPanel = panel.getComponent('ReportFilterFormPanel');
+            filterFormPanel.removeAll();
+
+            for(var idx in records) {
+                r = records[idx];
+                switch(r.data.report_filtertype.key) {
+                    case 'combobox':
+                    console.log('combobox');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    filterFormPanel.add(
+                    Ext.create('Ext.form.field.ComboBox', config)
+                    );
+                    break;
+                    case 'datetime':
+                    console.log('datefield');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    filterFormPanel.add(
+                    Ext.create('Ext.form.field.Date', config)
+                    );
+                    break;
+                    case 'string':
+                    console.log('textfield');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    filterFormPanel.add(
+                    Ext.create('Ext.form.field.Text', config)
+                    );
+                    break;
+                    case 'integer':
+                    console.log('integer');
+                    config = JSON.parse(r.data.jsonparam);
+                    console.log(config);
+                    filterFormPanel.add(
+                    Ext.create('Ext.form.field.Number', config)
+                    );
+                    break;
+                }
+            }
+
+        });
+
+        store.clearFilter(true);
+        store.filter([{property:"report_report_id",value:record.data.id}]);
+        store.load();
     }
 
 });
