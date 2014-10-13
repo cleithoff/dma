@@ -26,55 +26,55 @@
   <fo:table-column column-width="2.7cm"/>
   <fo:table-body>
     <fo:table-row    background-color="#ffffff"  height="0.9cm"   >
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="center">Auftrags- nummer</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="center">PartnerNr</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="left">Kunde</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="center">Top Karton</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="center">Top Plexi</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="center">GSC PVC</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="center">GSC Karton</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="center">Plakat A3</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="center">Wob- bler</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="center">Logo</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 24f4751aec7b4b76bdd0f2b57ac7ca8a -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="left">E-Mail</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 24f4751aec7b4b76bdd0f2b57ac7ca8a -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="left">Telefon</fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
   </fo:table-body>
@@ -124,7 +124,7 @@
 <!-- START Area Detail -->
 <xsl:if test="data/ReportDetail/ListOfReportDetail/ListOfReportDetailBestelldatum" >
 <!-- eee3850f09314f2d8a1ce452ca36bed6 -->
-<fo:table  width="27.7cm"   border-color="#000000" border-style="solid" border-width="medium" >
+<fo:table  width="27.7cm"   border-color="#000000" border-style="solid" border-width="thin" >
   <fo:table-column column-width="27.7cm"/>
   <fo:table-body>
   <xsl:for-each select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailBestelldatum">
@@ -173,19 +173,19 @@
   <fo:table-body>
   <xsl:for-each select="ItemOfReportDetailBestelldatum">
     <fo:table-row    background-color="#ffffff"  height="0.3cm"   >
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="right"><xsl:value-of select="AuftragsNr"></xsl:value-of></fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="right"><xsl:value-of select="PartnerNr"></xsl:value-of></fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- e217feddfcc747a98b1728ccad0311cb -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="6pt"  font-family="SansSerif"  color="#000000"   text-align="left"><xsl:value-of select="Kunde"></xsl:value-of></fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
 <xsl:choose>
 <xsl:when test="ColorTopperKarton = &apos;red&apos;">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
@@ -205,7 +205,7 @@
 </xsl:otherwise>
 </xsl:choose>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
 <xsl:choose>
 <xsl:when test="ColorTopperPlexiglas=&apos;green&apos;">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
@@ -225,7 +225,7 @@
 </xsl:otherwise>
 </xsl:choose>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
 <xsl:choose>
 <xsl:when test="ColorGSCPVC = &apos;red&apos;">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
@@ -245,7 +245,7 @@
 </xsl:otherwise>
 </xsl:choose>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
 <xsl:choose>
 <xsl:when test="ColorGSCKarton=&apos;green&apos;">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
@@ -265,7 +265,7 @@
 </xsl:otherwise>
 </xsl:choose>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
 <xsl:choose>
 <xsl:when test="ColorPlakatA3=&apos;red&apos;">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
@@ -285,7 +285,7 @@
 </xsl:otherwise>
 </xsl:choose>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
 <xsl:choose>
 <xsl:when test="ColorWobbler=&apos;red&apos;">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
@@ -305,19 +305,19 @@
 </xsl:otherwise>
 </xsl:choose>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="center"><xsl:value-of select="Logo"></xsl:value-of></fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 24f4751aec7b4b76bdd0f2b57ac7ca8a -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="left"><xsl:value-of select="Mail"></xsl:value-of></fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
       <!-- 24f4751aec7b4b76bdd0f2b57ac7ca8a -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="left"><xsl:value-of select="Telefon"></xsl:value-of></fo:block>
         </fo:table-cell>
-        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="medium"  number-columns-spanned="1">
+        <fo:table-cell   padding="1mm"  border-color="#000000" border-style="solid" border-width="thin"  number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
 <fo:table-row>
@@ -327,7 +327,7 @@
 <!-- START Area Detail 3 -->
 <xsl:if test="ListOfReportDetailKommentar/ListItemOfReportDetailKommentar" >
 <!-- 64ef9f8e30804da08b05047c907db63f -->
-<fo:table  width="27.7cm"   border-color="#000000" border-style="solid" border-width="medium" >
+<fo:table  width="27.7cm"   border-color="#000000" border-style="solid" border-width="thin" >
   <fo:table-column column-width="27.7cm"/>
   <fo:table-body>
   <xsl:for-each select="ListOfReportDetailKommentar/ListItemOfReportDetailKommentar">
