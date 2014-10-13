@@ -409,7 +409,6 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "console.log(record);\r",
                                     "return record.data.package_type.title;"
                                 ]
                             },
@@ -491,6 +490,41 @@
                     },
                     "codeClass": null,
                     "designerId": "34b9037f-bcba-4aeb-9a48-cb8dd02924bf"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onOrderPackagePackageorderGridPanelCellDblClick",
+                        "implHandler": [
+                            "var grid = tableview.up('#OrderPanel').down('#OrderOrderGridPanel');\r",
+                            "\r",
+                            "if (grid.getSelectionModel().getSelection().length > 0) {\r",
+                            "    order = grid.getSelectionModel().getSelection()[0];\r",
+                            "\r",
+                            "    Ext.Ajax.request({\r",
+                            "        url: '/partner/address/index',\r",
+                            "        method: 'GET',\r",
+                            "        success: function(response) {\r",
+                            "            partner_address = JSON.parse(response.responseText);\r",
+                            "            win = window.open('http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&zip=' + partner_address.data[0].post_plz + '&idc=' + record.data.sendingnumber,'_blank'); \r",
+                            "            win.focus();\r",
+                            "        },\r",
+                            "        failure: function() {},\r",
+                            "        params: { id: order.data.partner_partner.partner_address_id_delivery}\r",
+                            "    });\r",
+                            "\r",
+                            "}\r",
+                            ""
+                        ],
+                        "name": "celldblclick",
+                        "scope": "me"
+                    },
+                    "designerId": "4bf934f2-af02-4080-9d12-019a4c2749f6"
                 }
             ]
         }

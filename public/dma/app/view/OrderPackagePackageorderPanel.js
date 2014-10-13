@@ -160,7 +160,6 @@ Ext.define('MyApp.view.OrderPackagePackageorderPanel', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                console.log(record);
                                 return record.data.package_type.title;
                             },
                             dataIndex: 'package_type.title',
@@ -192,7 +191,13 @@ Ext.define('MyApp.view.OrderPackagePackageorderPanel', {
                             dataIndex: 'sendingnumber',
                             text: 'Sendungsnummer'
                         }
-                    ]
+                    ],
+                    listeners: {
+                        celldblclick: {
+                            fn: me.onOrderPackagePackageorderGridPanelCellDblClick,
+                            scope: me
+                        }
+                    }
                 }
             ]
         });
@@ -243,6 +248,28 @@ Ext.define('MyApp.view.OrderPackagePackageorderPanel', {
 
 
 
+
+    },
+
+    onOrderPackagePackageorderGridPanelCellDblClick: function(tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+        var grid = tableview.up('#OrderPanel').down('#OrderOrderGridPanel');
+
+        if (grid.getSelectionModel().getSelection().length > 0) {
+            order = grid.getSelectionModel().getSelection()[0];
+
+            Ext.Ajax.request({
+                url: '/partner/address/index',
+                method: 'GET',
+                success: function(response) {
+                    partner_address = JSON.parse(response.responseText);
+                    win = window.open('http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&zip=' + partner_address.data[0].post_plz + '&idc=' + record.data.sendingnumber,'_blank'); 
+                    win.focus();
+                },
+                failure: function() {},
+                params: { id: order.data.partner_partner.partner_address_id_delivery}
+            });
+
+        }
 
     }
 

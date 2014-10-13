@@ -143,7 +143,6 @@ Ext.define('MyApp.view.OrderItemPackagePackagePanel', {
                         {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                console.log(record);
                                 return record.data.package_type.title;
                             },
                             dataIndex: 'package_type.title',

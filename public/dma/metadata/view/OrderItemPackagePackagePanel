@@ -346,7 +346,6 @@
                                     "view"
                                 ],
                                 "implHandler": [
-                                    "console.log(record);\r",
                                     "return record.data.package_type.title;"
                                 ]
                             },
