@@ -280,73 +280,131 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                     itemId: 'PreviewContainer'
                 },
                 {
-                    xtype: 'gridpanel',
-                    collapseMode: 'header',
+                    xtype: 'container',
                     region: 'east',
-                    itemId: 'OrderItemstatelogGridPanel',
                     width: 320,
-                    collapsible: true,
-                    title: 'Log Status',
-                    store: 'OrderItemstatelogJsonStore',
-                    columns: [
-                        {
-                            xtype: 'datecolumn',
-                            width: 120,
-                            defaultWidth: 120,
-                            dataIndex: 'datetime',
-                            text: 'Zeitpunkt',
-                            format: 'Y-m-d H:i:s'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                return record.data.fk_order_itemstate.title;
-                            },
-                            width: 120,
-                            defaultWidth: 120,
-                            dataIndex: 'fk_order_itemstate',
-                            text: 'Status'
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'comment',
-                            text: 'Kommentar',
-                            flex: 1
-                        }
-                    ],
-                    dockedItems: [
+                    layout: {
+                        type: 'border'
+                    },
+                    items: [
                         {
                             xtype: 'form',
-                            dock: 'bottom',
-                            itemId: 'OrderItemstatelogFormPanel',
-                            width: 100,
+                            region: 'north',
+                            height: 150,
+                            itemId: 'LogoFormPanel',
                             bodyPadding: 10,
-                            title: 'Log Detail',
+                            title: 'Logo',
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    itemId: 'LogoToolbar',
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            hidden: true,
+                                            itemId: 'LogoEditButton',
+                                            text: 'Bearbeiten'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            itemId: 'LogoSaveButton',
+                                            text: 'Speichern',
+                                            listeners: {
+                                                click: {
+                                                    fn: me.onLogoSaveButtonClick,
+                                                    scope: me
+                                                }
+                                            }
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            hidden: true,
+                                            itemId: 'LogoCancelButton',
+                                            text: 'Abbrechen'
+                                        }
+                                    ]
+                                }
+                            ],
                             items: [
                                 {
-                                    xtype: 'datefield',
+                                    xtype: 'textfield',
                                     anchor: '100%',
-                                    fieldLabel: 'Zeitpunkt',
-                                    name: 'datetime',
-                                    readOnly: true,
-                                    format: 'Y-m-d H:i:s'
-                                },
-                                {
-                                    xtype: 'textareafield',
-                                    anchor: '100%',
+                                    itemId: 'LogoCommentTextfield',
                                     fieldLabel: 'Kommentar',
-                                    name: 'comment',
-                                    readOnly: true,
-                                    rows: 8
+                                    name: 'logo_comment'
                                 }
                             ]
                         },
                         {
-                            xtype: 'pagingtoolbar',
-                            dock: 'bottom',
-                            width: 360,
-                            displayInfo: true,
-                            store: 'OrderItemstatelogJsonStore'
+                            xtype: 'gridpanel',
+                            collapseMode: 'header',
+                            region: 'center',
+                            itemId: 'OrderItemstatelogGridPanel',
+                            collapsible: true,
+                            title: 'Log Status',
+                            store: 'OrderItemstatelogJsonStore',
+                            columns: [
+                                {
+                                    xtype: 'datecolumn',
+                                    width: 120,
+                                    defaultWidth: 120,
+                                    dataIndex: 'datetime',
+                                    text: 'Zeitpunkt',
+                                    format: 'Y-m-d H:i:s'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                        return record.data.fk_order_itemstate.title;
+                                    },
+                                    width: 120,
+                                    defaultWidth: 120,
+                                    dataIndex: 'fk_order_itemstate',
+                                    text: 'Status'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'comment',
+                                    text: 'Kommentar',
+                                    flex: 1
+                                }
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'form',
+                                    dock: 'bottom',
+                                    itemId: 'OrderItemstatelogFormPanel',
+                                    width: 100,
+                                    bodyPadding: 10,
+                                    title: 'Log Detail',
+                                    items: [
+                                        {
+                                            xtype: 'datefield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Zeitpunkt',
+                                            name: 'datetime',
+                                            readOnly: true,
+                                            format: 'Y-m-d H:i:s'
+                                        },
+                                        {
+                                            xtype: 'textareafield',
+                                            anchor: '100%',
+                                            fieldLabel: 'Kommentar',
+                                            name: 'comment',
+                                            readOnly: true,
+                                            rows: 8
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'pagingtoolbar',
+                                    dock: 'bottom',
+                                    width: 360,
+                                    displayInfo: true,
+                                    store: 'OrderItemstatelogJsonStore'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -382,6 +440,12 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
 
     onOrderItemDetailSendButtonAfterRender: function(component, eOpts) {
         component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.RELEASE));
+    },
+
+    onLogoSaveButtonClick: function(button, e, eOpts) {
+        button.up('#LogoFormPanel').getForm().updateRecord();
+        var record = button.up('#LogoFormPanel').getForm().getRecord();
+        record.save();
     }
 
 });

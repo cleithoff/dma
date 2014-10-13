@@ -82,6 +82,46 @@
                 "name": "email"
             },
             "designerId": "1879ff86-2eeb-47ff-871c-4d930b72cbd8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "logo_comment",
+                "type": "string"
+            },
+            "designerId": "15838048-0bfc-4937-b38b-e140599cbeb7"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/partner/partner/index"
+            },
+            "designerId": "6203769f-7fb7-46aa-b555-14ab8f7d1a2f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "id",
+                        "root": "data"
+                    },
+                    "designerId": "03c28b64-79ce-49ea-ad6d-f7acbf894aed"
+                }
+            ]
         }
     ]
 }

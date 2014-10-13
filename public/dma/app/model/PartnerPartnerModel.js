@@ -35,6 +35,20 @@ Ext.define('MyApp.model.PartnerPartnerModel', {
         },
         {
             name: 'email'
+        },
+        {
+            name: 'logo_comment',
+            type: 'string'
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: '/partner/partner/index',
+        reader: {
+            type: 'json',
+            idProperty: 'id',
+            root: 'data'
+        }
+    }
 });

@@ -54,7 +54,6 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
         Ext.getStore('PackagePackageJsonStore').filter([{property:'order_item_id',value:record.data.id}]);
         Ext.getStore('PackagePackageJsonStore').load();
 
-
         this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.clearFilter(true);
         this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.filter([{property:'order_item_id',value:record.data.id}]);
         this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.load();
@@ -91,11 +90,11 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
         toolbar.getComponent('OrderItemDetailDeleteButton').enable();
 
         //# OrderItemDetailPanel / OrderItemstateGridPanel
-        grid = panel.getComponent('OrderItemstatelogGridPanel');
+        var grid = panel.down('#OrderItemstatelogGridPanel');
         grid.store.clearFilter(true);
         grid.store.filter([{property:'order_item_id',value:record.data.id}]);
         grid.store.load();
-        formPanel = grid.getComponent('OrderItemstatelogFormPanel').getForm().reset();
+        formPanel = grid.down('#OrderItemstatelogFormPanel').getForm().reset();
 
         //# OrderItemProductPersonalizePanel
         panel = this.getOrderItemProductPersonalizePanel();
@@ -117,6 +116,18 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
         this.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey + view.suffix + '.pdf');
 
         this.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed style="width:100%;height:100%" src="/deploy/' + record.data.authkey + view.suffix + '.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+
+        // LogoFormPanel
+        var orderRecord = this.getOrderPanel().down('#OrderOrderGridPanel').getSelectionModel().getSelection()[0];
+        var logoFormPanel = this.getOrderItemDetailPanel().down('#LogoFormPanel');
+        var PartnerPartner = MyApp.app.getModel('PartnerPartnerModel');
+        PartnerPartner.load( orderRecord.data.partner_partner_id, {
+            callback: function(record, operation, success) {
+                logoFormPanel.loadRecord(record);
+            }
+        });
+
+
     },
 
     onOrderItemGridPanelRender: function(component, eOpts) {

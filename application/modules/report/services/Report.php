@@ -349,7 +349,13 @@ class Report_Service_Report
 						$activenode = $activelistnode->addChild('ListItemOf' . $node->getName() . $xmlgroup);
 
 						foreach($fields as $field) {
-							$propertyNode = $activenode->addChild($field, $row[$field]);
+							//$propertyNode = $activenode->addChild($field, $row[$field]);
+							
+							$propertyNode = $activenode->addChild($field);
+							
+							$cdnode = dom_import_simplexml($propertyNode);
+							$cdno   = $cdnode->ownerDocument;
+							$cdnode->appendChild($cdno->createCDATASection($row[$field]));
 						}
 						
 						for ($i = $key; $i < count($xmlgrouping);$i++) {
@@ -365,7 +371,13 @@ class Report_Service_Report
 					
 					$activenode = $activelistnode->addChild('ItemOf' . $node->getName() . $xmlgroup);
 					foreach($fields as $field) {
-						$propertyNode = $activenode->addChild($field, $row[$field]);
+						$propertyNode = $activenode->addChild($field);
+						
+						$cdnode = dom_import_simplexml($propertyNode);
+						$cdno   = $cdnode->ownerDocument;
+						$cdnode->appendChild($cdno->createCDATASection($row[$field]));
+						
+						// $propertyNode->addChild($xml->ownerDocument->createCDATASection($row[$field]));
 					}
 					
 					$activelistnode = $activenode;
