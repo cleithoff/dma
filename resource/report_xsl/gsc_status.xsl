@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet version="1.0" xmlns:j4lif="http://java4less.com/fop/iform" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:j4lext="xalan://com.java4less.xreport.fop.XLSTExtension" extension-element-prefixes="j4lext j4luserext" xmlns:j4luserext="xalan://com.java4less.xreport.fop.XLSTDummyExtension"  >
 <xsl:template match="/"><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 <fo:layout-master-set>
-<fo:simple-page-master master-name="master0" page-width="21.0cm" page-height="29.7cm" margin-top="1.0cm"   margin-bottom="1.0cm" margin-left="1.0cm"  margin-right="1.0cm" reference-orientation="90" > 
+<fo:simple-page-master master-name="master0" page-width="29.7cm" page-height="21.0cm" margin-top="1.0cm"   margin-bottom="1.0cm" margin-left="1.0cm"  margin-right="1.0cm"  > 
   <fo:region-body  region-name="body0" margin-top="0.9cm" margin-bottom="0.0cm"  /> 
   <fo:region-before region-name="header0" extent="0.9cm"/> 
   <fo:region-after region-name="footer0" extent="0.0cm"/> 
