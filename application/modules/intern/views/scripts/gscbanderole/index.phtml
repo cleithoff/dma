@@ -1,0 +1,112 @@
+<script>
+
+	function tabFieldNext(e) {
+		console.log(e);
+		if (e.ctrlKey == true) return false;
+		//if (this.value.length == 32 && e.keyCode >= 32) return false;
+		if (e.keyCode == 13) {
+			
+			 	var $input = $('form.authkeySaveForm input[type=text]');
+		        if( $(this).is( $input.last() ) )
+		        {
+		            //Time to submit the form!!!!
+		            //alert( 'Hooray .....' );
+		            return true;
+		        }
+		        else
+		        {
+		        	e.preventDefault();
+		            $input.eq( $input.index( this ) + 1 ).focus();
+		            $input.eq( $input.index( this ) + 1 ).select();
+		        }
+			return false;
+		}
+		if (e.keyCode <= 32) {
+			return false;
+		}
+	}
+/*
+	function fieldSelect(e) {
+		e.stopPropagation();
+		this.select();
+		e.stopPropagation();
+		return false;
+	}
+	*/
+
+</script>
+
+<div class="container">
+
+<?php if(!empty($this->message)): ?>
+	<div class="alert alert-danger"><?php echo $this->message; ?></div>
+<?php endif ?>
+
+<?php if(!empty($this->success)): ?>
+	<div class="alert alert-success"><?php echo $this->success; ?></div>
+<?php endif ?>
+
+<form class="navbar-form" name="authkeyLoadForm" method="POST">
+	<h1>Produktcode</h1>
+	<input type="text" name="authkey" value="<?php echo $this->authkey; ?>" class="span4" id="authkeyInput" />
+	<input type="submit" name="cmd" value="Laden" class="btn" id="authkeyLoadFormButton" style="display:none" /><br/>
+</form>
+<br/><br/>
+<?php if ($this->cmd == "Laden" || $this->cmd == "Speichern"): ?>
+
+<form class="navbar-form authkeySaveForm" method="POST">
+	
+	<input type="hidden" name="authkey" value="<?php echo $this->authkey; ?>" />
+	<h1>Banderolencodes</h1>
+	<?php for($i = 0; $i < $this->barcodeCount;$i++): ?>
+	<input type="text" name="barcode[<?php echo $i ?>]" value="<?php echo @$this->barcodes[$i] ?>" class="span5 barcodes" id="barcodes<?php echo $i ?>" /><br/>
+	
+	<?php if ($i == 0): ?>
+	<script>
+		document.getElementById('barcodes0').focus();
+		document.getElementById('barcodes0').select();
+		</script>
+	<?php endif ?>
+	
+	<?php endfor ?>
+	<input type="submit" name="cmd" value="Speichern" class="btn" style="display:none" />
+</form>
+
+<?php endif ?>
+
+
+</div>
+
+<script>
+	$( document ).ready(function() {
+
+		$('.barcodes').bind("keydown", tabFieldNext); 
+		//$('.barcodes').bind("focus", fieldSelect); 
+
+<?php if ($this->cmd != "Laden"): ?>
+	document.getElementById('authkeyInput').focus();
+	document.getElementById('authkeyInput').select();
+<?php endif ?>
+		
+
+		document.getElementById('authkeyInput').onkeydown = function(e) {
+			/*if (document.getElementById('authkeyInput').value.length >= 32) {
+				document.getElementById('authkeyLoadFormButton').click();
+				//return false;
+			}*/
+			if (e.ctrlKey == true) return false;
+			if (document.getElementById('authkeyInput').value.length >= 32 && e.keyCode >= 32) {
+				console.log(e);
+				return false;
+			}
+			if (e.keyCode == 13) {
+				document.getElementById('authkeyLoadFormButton').click();
+			}
+//			console.log(document.getElementById('authkeyInput').value);
+			
+			};
+			
+	});
+	
+
+</script>
