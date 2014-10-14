@@ -245,14 +245,15 @@
 <!-- START Area Header -->
 <!-- 11b30adb221a4154b18e69cc2afd077b -->
 <fo:table  width="17.0cm"   >
-  <fo:table-column column-width="1.7cm"/>
+  <fo:table-column column-width="1.25cm"/>
+  <fo:table-column column-width="0.45cm"/>
   <fo:table-column column-width="0.3cm"/>
   <fo:table-column column-width="2.0cm"/>
   <fo:table-column column-width="8.0cm"/>
   <fo:table-column column-width="5.0cm"/>
   <fo:table-body>
     <fo:table-row    background-color="#ffffff"  height="3.0cm"   >
-        <fo:table-cell    number-columns-spanned="1">
+        <fo:table-cell    number-columns-spanned="2">
       <!-- f772f27b69ef4508aee657b5ecea7e2d -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="2.7cm"  font-size="6pt"  font-family="Interstate-Bold"  font-weight="bold"  color="#000000"   text-align="left">MUNDSCHENK</fo:block>
         </fo:table-cell>
@@ -264,7 +265,7 @@
         <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="2.0cm"   >
-        <fo:table-cell    number-columns-spanned="4">
+        <fo:table-cell    number-columns-spanned="5">
       <!-- 33cdf657bf554537b48b03d9c321fffc -->
       <fo:block     margin-left="0.0cm" margin-right="6.0cm"  margin-top="0.2cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_anrede"></xsl:value-of></fo:block>
       <!-- 993f725debf949868875f6e2bbfb46ed -->
@@ -283,11 +284,11 @@
     <fo:table-row    background-color="#ffffff"  height="0.7cm"   >
         <fo:table-cell    number-columns-spanned="1">
       <!-- ab8c546999844d839d17f6230ccbd003 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.2cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_plz"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="format-number(/data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_plz, '00000')"></xsl:value-of></fo:block>
         </fo:table-cell>
-        <fo:table-cell    number-columns-spanned="3">
+        <fo:table-cell    number-columns-spanned="4">
       <!-- b254affb6c494394900e16ed294db299 -->
-      <fo:block     margin-left="0.0cm" margin-right="5.8cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_ort"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="6.25cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_ort"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="0.5cm"   >
@@ -299,9 +300,11 @@
         <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="0.5cm"   >
-        <fo:table-cell    number-columns-spanned="3">
+        <fo:table-cell    number-columns-spanned="4">
       <!-- 663b93b5077c4dc28c3ae7c0e558008a -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Kundennummer</fo:block>
         </fo:table-cell>
@@ -311,7 +314,7 @@
         </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="0.5cm"   >
-        <fo:table-cell    number-columns-spanned="3">
+        <fo:table-cell    number-columns-spanned="4">
       <!-- aff285bafaeb49a49181729796ac522d -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Lieferung vom</fo:block>
         </fo:table-cell>
@@ -321,13 +324,13 @@
         </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="1.0cm"   >
-        <fo:table-cell    number-columns-spanned="5">
+        <fo:table-cell    number-columns-spanned="6">
       <!-- ab103267d8b54a1681bc8762ba856cce -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.5cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Bd"  font-weight="bold"  color="#000000"   text-align="left">Als Druckerei der Fleurop AG liefern wir Ihnen aufgrund Ihrer Bestellung folgende Positionen:</fo:block>
         </fo:table-cell>
     </fo:table-row>
 <fo:table-row>
-<fo:table-cell number-columns-spanned="5">
+<fo:table-cell number-columns-spanned="6">
 <fo:block>
 
 <!-- START Area Detail -->
@@ -520,7 +523,7 @@
 </fo:table-cell>
 </fo:table-row>
 <fo:table-row>
-<fo:table-cell number-columns-spanned="5">
+<fo:table-cell number-columns-spanned="6">
 <fo:block>
 
 <!-- START Area Footer -->
@@ -541,17 +544,17 @@
     </fo:table-row>
     <fo:table-row   background-color="#ffffff"  height="0.5cm">
       <fo:table-cell><fo:table>
-      <fo:table-column column-width="2.7cm"/>
-      <fo:table-column column-width="14.3cm"/>
+      <fo:table-column column-width="4.0cm"/>
+      <fo:table-column column-width="13.0cm"/>
       <fo:table-body>
       <fo:table-row   background-color="#ffffff"  height="0.5cm">
         <fo:table-cell    number-columns-spanned="1">
       <!-- e3da5cbb985c46809e7c03fe2633a874 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.2cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Paketanzahl:</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="1.5cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Paketanzahl:</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 0b123818c0714cfcad4fca96fb1d4748 -->
-      <fo:block     margin-left="0.0cm" margin-right="12.3cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/PackageDetail/ListOfPackageDetail/ItemOfPackageDetail/maxcount"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="11.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/PackageDetail/ListOfPackageDetail/ItemOfPackageDetail/maxcount"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
     </fo:table-body>
@@ -559,22 +562,22 @@
     </fo:table-row>
     <fo:table-row   background-color="#ffffff"  height="0.5cm">
       <fo:table-cell><fo:table>
-      <fo:table-column column-width="2.7cm"/>
-      <fo:table-column column-width="2.0cm"/>
-      <fo:table-column column-width="12.3cm"/>
+      <fo:table-column column-width="4.0cm"/>
+      <fo:table-column column-width="1.0cm"/>
+      <fo:table-column column-width="12.0cm"/>
       <fo:table-body>
       <fo:table-row   background-color="#ffffff"  height="0.5cm">
         <fo:table-cell    number-columns-spanned="1">
       <!-- 3f65ee75840545389b77da9a67bb9587 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.2cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Gesamtgewicht:</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="1.5cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Gesamtgewicht:</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 23de3513449f47528f0a3a0c0d4d343f -->
-      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/PackageDetail/ListOfPackageDetail/ItemOfPackageDetail/weight"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="format-number(/data/PackageDetail/ListOfPackageDetail/ItemOfPackageDetail/weight, '#.00')"></xsl:value-of></fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 23de3513449f47528f0a3a0c0d4d343f -->
-      <fo:block     margin-left="0.0cm" margin-right="10.3cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">kg</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="10.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">kg</fo:block>
         </fo:table-cell>
     </fo:table-row>
     </fo:table-body>
@@ -582,17 +585,17 @@
     </fo:table-row>
     <fo:table-row   background-color="#ffffff"  height="1.0cm">
       <fo:table-cell><fo:table>
-      <fo:table-column column-width="2.7cm"/>
-      <fo:table-column column-width="14.3cm"/>
+      <fo:table-column column-width="4.0cm"/>
+      <fo:table-column column-width="13.0cm"/>
       <fo:table-body>
       <fo:table-row   background-color="#ffffff"  height="1.0cm">
         <fo:table-cell    number-columns-spanned="1">
       <!-- d4157276208c4254b2e48e5df2b51859 -->
-      <fo:block     margin-left="0.0cm" margin-right="1.35cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Versand:</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="2.65cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Versand:</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- a4b786292ad045b0a4af73b02e0c6a18 -->
-      <fo:block     margin-left="0.0cm" margin-right="12.3cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">per DHL</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="9.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">per DHL</fo:block>
         </fo:table-cell>
     </fo:table-row>
     </fo:table-body>
