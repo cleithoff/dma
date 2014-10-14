@@ -4315,6 +4315,7 @@
         },
         "c3d3cad3-dbf7-4cce-8cfb-9293b471fdae": {
             "id": "c3d3cad3-dbf7-4cce-8cfb-9293b471fdae",
+            "expanded": false,
             "cn": [
                 {
                     "id": "719f06c0-be3b-4a65-a260-8c57436a0363",
@@ -4342,6 +4343,7 @@
         },
         "86c11719-cac3-4a45-b8ee-9ca742ecbbc3": {
             "id": "86c11719-cac3-4a45-b8ee-9ca742ecbbc3",
+            "expanded": false,
             "cn": [
                 {
                     "id": "46da0bd5-cbd2-479c-acd5-791eae6f3e25"

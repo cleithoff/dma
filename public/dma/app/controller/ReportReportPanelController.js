@@ -170,9 +170,13 @@ Ext.define('MyApp.controller.ReportReportPanelController', {
 
         filterFormPanel = this.getReportReportPanel().getComponent('ReportFilterFormPanel');
 
-        //params = filterFormPanel.getValues();
+        var params2 = filterFormPanel.getValues();
 
         var params = {};
+
+        if (params2.length > 0) {
+            params = params2;
+        }
 
         params._sql = this.getReportReportPanel().getComponent('ReportReportFormPanel').getForm().findField('sql').getValue();
 
