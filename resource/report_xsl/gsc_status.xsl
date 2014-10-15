@@ -169,7 +169,7 @@
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- b92b079377684f4e864bcf9f4dcc0396 -->
-      <fo:block     margin-left="0.0cm" margin-right="15.2cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="left"><xsl:value-of select="ItemOfReportDetailBestelldatum/ImportStackTitle"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="15.2cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="left"><xsl:value-of select="ItemOfReportDetailBestelldatum/ImportStackTitel"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
     </fo:table-body>
