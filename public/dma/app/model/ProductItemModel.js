@@ -71,6 +71,15 @@ Ext.define('MyApp.model.ProductItemModel', {
         },
         {
             name: 'product_item_no_external_stock'
+        },
+        {
+            convert: function(v, rec) {
+                return rec.data.product_product.title + ', ' + rec.data.title; 
+            },
+            name: 'fulltitle',
+            persist: false,
+            type: 'string',
+            useNull: true
         }
     ]
 });

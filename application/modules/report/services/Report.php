@@ -40,7 +40,7 @@ class Report_Service_Report
 			foreach ($row as $key => $value) {
 				switch ($types[$key]) {
 					case 'DOUBLE':
-						$row[$key] = number_format($value, 2, ',', '');
+						$row[$key] = number_format(floatval($value), 2, ',', '');
 						break;
 					default:
 						$row[$key] = utf8_decode($value); 
@@ -71,7 +71,11 @@ class Report_Service_Report
 				case 'result':
 					$table = $str[1];
 					$col = $str[2];
-					$replacement = $result[$table][$col];
+					if (is_object($result[$table])) {
+						$replacement = $result[$table]->$col;
+					} else {
+						$replacement = $result[$table][$col];
+					}
 					break;
 				case 'param':
 					$key = $str[1];
@@ -107,12 +111,12 @@ class Report_Service_Report
 		return $replacements;
 	}
 	
-	private function _getQuery($sql, $csv, $result, $param) {
+	private function _getQuery($sql, $csv, $result, $param, $doQuote = true) {
 		
 		$matches = array();
 		preg_match_all('/\{[^\{\}]*\}/', $sql, $matches);
 		if (count($matches) > 0) {
-			$replacements = $this->_getReplaces($matches[0], true, $csv, $result, $param);
+			$replacements = $this->_getReplaces($matches[0], $doQuote, $csv, $result, $param);
 			foreach($matches[0] as $key => $match) {
 				$matches[0][$key] = '/' . str_replace(array('{','.','}'), array('\\{','\\.','\\}'), $match) . '/';
 			}
@@ -122,7 +126,7 @@ class Report_Service_Report
 		$matches = array();
 		preg_match_all('/\{.*?\}/', $sql, $matches);
 		if (count($matches) > 0) {
-			$replacements = $this->_getReplaces($matches[0], true, $csv, $result, $param);
+			$replacements = $this->_getReplaces($matches[0], $doQuote, $csv, $result, $param);
 			foreach($matches[0] as $key => $match) {
 				$matches[0][$key] = '/' . str_replace(array('{','.','}'), array('\\{','\\.','\\}'), $match) . '/';
 			}
@@ -132,6 +136,15 @@ class Report_Service_Report
 		return $sql;
 	}	
 
+	protected function getFilename(Zend_Controller_Request_Http $request, $rowset, $report) {
+		
+		$result['main'] = $rowset->fetchObject();
+		
+		$filename = $this->_getQuery($report->fileprefix, array(), $result, $request->getParams(), false);
+		
+		return $filename;
+	}
+	
 	public function exportcsv(Zend_Controller_Request_Http $request) {
 		
 		$row = $this->getReport($request);
@@ -154,8 +167,9 @@ class Report_Service_Report
 		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql);
 
 		header('Content-type: text/csv');
-		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.csv"');
-		
+		header('Content-Disposition: attachment; filename="' . $this->getFilename($request, $rowset, $row) . '_' . @date('YmdHis') . '.csv"');
+		Zend_Db_Table::getDefaultAdapter()->query("SET @counter:=0;");
+		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql);
 		$file = $this->writeCsv($fields, $rowset, $types);
 		
 	}
