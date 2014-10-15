@@ -2,9 +2,9 @@
 <xsl:template match="/"><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 <fo:layout-master-set>
 <fo:simple-page-master master-name="master0" page-width="29.7cm" page-height="21.0cm" margin-top="1.0cm"   margin-bottom="1.0cm" margin-left="1.0cm"  margin-right="1.0cm"  > 
-  <fo:region-body  region-name="body0" margin-top="0.9cm" margin-bottom="0.4cm"  /> 
+  <fo:region-body  region-name="body0" margin-top="0.9cm" margin-bottom="0.5cm"  /> 
   <fo:region-before region-name="header0" extent="0.9cm"/> 
-  <fo:region-after region-name="footer0" extent="0.4cm"/> 
+  <fo:region-after region-name="footer0" extent="0.5cm"/> 
   </fo:simple-page-master>
 </fo:layout-master-set>
 <fo:page-sequence master-reference="master0">
@@ -85,15 +85,13 @@
 <fo:table  width="27.7cm"   >
   <fo:table-column column-width="27.7cm"/>
   <fo:table-body>
-    <fo:table-row   background-color="#ffffff"  height="0.4cm">
+    <fo:table-row   background-color="#ffffff"  height="0.5cm">
       <fo:table-cell><fo:table>
-      <fo:table-column column-width="0.5cm"/>
-      <fo:table-column column-width="21.5cm"/>
-      <fo:table-column column-width="5.7cm"/>
+      <fo:table-column column-width="5.0cm"/>
+      <fo:table-column column-width="20.2cm"/>
+      <fo:table-column column-width="2.5cm"/>
       <fo:table-body>
-      <fo:table-row   background-color="#ffffff"  height="0.4cm">
-        <fo:table-cell    number-columns-spanned="1">
-        <fo:block></fo:block>        </fo:table-cell>
+      <fo:table-row   background-color="#ffffff"  height="0.5cm">
         <fo:table-cell    number-columns-spanned="1">
 
 <!-- 42bdbf4c353244a791f0f65921f0f7cf -->
@@ -113,8 +111,12 @@
     <xsl:value-of select="date:second-in-minute($now)"/>
  </fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
+      <!-- 17f5496c455f4864b3757891cf3236d4 -->
+      <fo:block     margin-left="0.0cm" margin-right="0.2cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="center">N neu | FE Freigabe erteilt | P Produktion | V Versand | A Abgeschlossen | FAN Freigabe angefordert | FAB Freigabe abgelehnt | K Korrektur | S Storno</fo:block>
+        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
       <!-- 2c85b1d0e6a84cfa9188c8e151e7c233 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.7cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="right">Seite <fo:page-number></fo:page-number> von <fo:page-number-citation ref-id='last-page'/></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="right">Seite <fo:page-number></fo:page-number> von <fo:page-number-citation ref-id='last-page'/></fo:block>
         </fo:table-cell>
     </fo:table-row>
     </fo:table-body>
@@ -163,11 +165,11 @@
         <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- c3b009578d8b4073abae3ab1eec26f0a -->
-      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="left">Bestelldatum</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="left">Importstapel</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- b92b079377684f4e864bcf9f4dcc0396 -->
-      <fo:block     margin-left="0.0cm" margin-right="15.2cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="left"><xsl:value-of select="ItemOfReportDetailBestelldatum/Bestelldatum"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="15.2cm"  margin-top="0.0cm"  font-size="9pt"  font-family="SansSerif"  color="#000000"   text-align="left"><xsl:value-of select="ItemOfReportDetailBestelldatum/ImportStackTitle"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
     </fo:table-body>
