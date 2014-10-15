@@ -144,7 +144,7 @@
       <!-- 9aad98c770594b528b7a2db56dc4fbdc -->
       <fo:block     margin-left="0.0cm" margin-right="6.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/partner_nr"></xsl:value-of></fo:block>
       <!-- 92a049ace3f04d10a754782c525e445b -->
-      <fo:block     margin-left="0.0cm" margin-right="3.0cm"  margin-top="0.01cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/order_incoming_date"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="3.0cm"  margin-top="0.01cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/import_stack_title"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
 <fo:table-row>
