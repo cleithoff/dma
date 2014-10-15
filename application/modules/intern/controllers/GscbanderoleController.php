@@ -38,7 +38,7 @@ class Intern_GscbanderoleController extends Zend_Controller_Action
     	
     	
     	
-    	$barcodeCount = floor($orderItem->amount/$productItemhasproductcustomizeVE->value); // FIXME: VE verwenden
+    	$barcodeCount = floor($orderItem->amount/$productItemhasproductcustomizeVE->value);
     	if (empty($barcodeCount)) {
     		throw new Exception("Produkt benötigt keine Banderolencodes.");
     	}
