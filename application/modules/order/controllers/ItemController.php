@@ -39,6 +39,9 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 	public function putAction() {
 		$order_items = new Order_Model_DbTable_Item();
 		$payload = $this->getJsonPayload();
+		
+		$comment = $payload['comment'];
+		
 		$order_item_recent = null;
 		if (!empty($payload['id'])) {
 			$order_item_recent = $order_items->find($payload['id'])->current();
@@ -49,13 +52,15 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		$row = reset($row);
 		
 		$order_item = $order_items->find($row['id'])->current();
-		$this->getService()->createPreview(
+		
+		/* $this->getService()->createPreview(
 				$order_item, 
 				array(), 
 				$this->getRequest()->getParam('viewmode', Product_Model_Layout::VIEW_PREVIEW_FRONT),
 				$this->getRequest()->getParam('refresh', false)
 				);
-		$this->getService()->checkState($order_item, $order_item_recent);
+		*/
+		$this->getService()->checkState($order_item, $order_item_recent, $comment);
 	}
 	
 

@@ -169,7 +169,7 @@ class Order_Service_Item
 		return true;
 	}
 	
-	public function sendPreview(Order_Model_Item $order_item) {		
+	public function sendPreview(Order_Model_Item $order_item, $comment = null) {		
 		// for transport config look at application.ini
 		$eml = new Zend_View();
 		$eml->setScriptPath(APPLICATION_PATH . '/modules/order/views/emails/item');
@@ -177,6 +177,7 @@ class Order_Service_Item
 		// assign valeues
 		$eml->assign('partner_partner', $order_item->getOrderOrder()->getPartnerPartner());
 		$eml->assign('order_item', $order_item);
+		$eml->assign('comment', $comment);
 		
 		// render view
 		$bodyText = $eml->render('send.phtml');
@@ -195,7 +196,7 @@ class Order_Service_Item
 		return true;
 	}
 	
-	public function releasePreview(Order_Model_Item $order_item) {
+	public function releasePreview(Order_Model_Item $order_item, $comment = null) {
 		// for transport config look at application.ini
 		$eml = new Zend_View();
 		$eml->setScriptPath(APPLICATION_PATH . '/modules/order/views/emails/item');
@@ -203,6 +204,7 @@ class Order_Service_Item
 		// assign values
 		$eml->assign('partner_partner', $order_item->getOrderOrder()->getPartnerPartner());
 		$eml->assign('order_item', $order_item);
+		$eml->assign('comment', $comment);
 	
 		// render view
 		$bodyText = $eml->render('release.phtml');
@@ -234,22 +236,32 @@ class Order_Service_Item
 		
 	}
 	
-	public function checkState(Order_Model_Item $order_item, Order_Model_Item $order_item_recent) {
+	public function checkState(Order_Model_Item $order_item, Order_Model_Item $order_item_recent, $comment = null) {
 		if ($order_item->order_itemstate_id != $order_item_recent->order_itemstate_id) {
-			$this->processState($order_item);
+			$this->processState($order_item, array(), $comment);
 		}
 	}
 	
-	protected function processState(Order_Model_Item $order_item, array $values = array()) {
+	protected function processState(Order_Model_Item $order_item, array $values = array(), $comment = null) {
 	
-		$this->logState($order_item, $values);
+		$logvalues = array();
+		
+		foreach ($values as $key => $val) {
+			$logvalues[$key] = $val;
+		}
+		
+		if (!empty($comment) && empty($logvalues['comment'])) {
+			$logvalues['comment'] = $comment;
+		}
+		
+		$this->logState($order_item, $logvalues);
 		
 		switch ($order_item->order_itemstate_id) {
 			case Order_Service_Itemstate::ORDER_ITEM_STATE_NEW:
 				return $this->processStateNew($order_item);
 				break;
 			case Order_Service_Itemstate::ORDER_ITEM_STATE_RELEASE:
-				return $this->processStateRelease($order_item);
+				return $this->processStateRelease($order_item, $comment);
 				break;
 			case Order_Service_Itemstate::ORDER_ITEM_STATE_DENY:
 				return $this->processStateDeny($order_item, $values);
@@ -279,7 +291,7 @@ class Order_Service_Item
 	
 	}
 	
-	protected function processStateRelease(Order_Model_Item $order_item) {
+	protected function processStateRelease(Order_Model_Item $order_item, $comment = null) {
 		
 		// for transport config look at application.ini
 		$eml = new Zend_View();
@@ -288,6 +300,7 @@ class Order_Service_Item
 		// assign valeues
 		$eml->assign('partner_partner', $order_item->getOrderOrder()->getPartnerPartner());
 		$eml->assign('order_item', $order_item);
+		$eml->assign('comment', $comment);
 	
 		// render view
 		$bodyText = $eml->render('release.phtml');
@@ -298,7 +311,7 @@ class Order_Service_Item
 		//$mail->addTo('carsten.leithoff@cu-medien.com');
 		$mail->addTo($order_item->getOrderOrder()->getPartnerPartner()->email);
 		$mail->addBcc(array('carsten.leithoff@cu-medien.com','fleurop@dm-mundschenk.de','cradlbeck@dm-mundschenk.de'));
-		$mail->setSubject('Druckvorschau ' . $order_item->getProductProduct()->title . ', ' . $order_item->getProductItem()->title);
+		$mail->setSubject('Druckvorschau ' . $order_item->getProductProduct()->title . ', ' . $order_item->getProductItem()->title . ' | PartnerNr:' . $order_item->getOrderOrder()->getPartnerPartner()->partner_nr . ' ');
 		
 		$at =& $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
 		$at->disposition = Zend_Mime::DISPOSITION_INLINE;

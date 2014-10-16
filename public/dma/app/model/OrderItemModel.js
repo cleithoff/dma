@@ -70,6 +70,9 @@ Ext.define('MyApp.model.OrderItemModel', {
         {
             name: 'locked_render_back_test',
             type: 'boolean'
+        },
+        {
+            name: 'comment'
         }
     ]
 });

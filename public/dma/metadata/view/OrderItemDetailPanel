@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 645,
+        "height": null,
         "itemId": "OrderItemDetailPanel",
-        "width": 985,
+        "width": null,
         "designer|userClassName": "OrderItemDetailPanel",
         "designer|userAlias": "orderitemdetailpanel",
         "layout": "border",
@@ -478,7 +478,8 @@
                 "height": 74,
                 "itemId": "OrderItemDetailFormPanel",
                 "bodyPadding": 10,
-                "title": null
+                "title": null,
+                "trackResetOnLoad": true
             },
             "designerId": "9c179ba0-97ec-4f5b-89b6-e57a790d23ae",
             "cn": [
@@ -606,6 +607,22 @@
                             "designerId": "15d4a5b6-6c12-48bf-a6a5-4fab9a9c6d20"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "hidden": true,
+                        "itemId": "OrderItemDetailComment",
+                        "fieldLabel": "Label",
+                        "name": "comment"
+                    },
+                    "designerId": "d31f785a-4465-4e71-9964-a62f2c33c5e9"
                 }
             ]
         },
@@ -675,7 +692,7 @@
             "designerId": "79b978f5-fdd2-4391-b163-9f4eeaf9d7b7"
         },
         {
-            "type": "Ext.container.Container",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -684,7 +701,10 @@
             "userConfig": {
                 "layout|region": "east",
                 "width": 320,
-                "layout": "border"
+                "layout": "border",
+                "collapsed": false,
+                "collapsible": true,
+                "title": "Logo"
             },
             "designerId": "96dfaf3e-8575-4bb2-9d29-4305116289d6",
             "cn": [
@@ -696,10 +716,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|region": "north",
-                        "height": 150,
+                        "layout|region": "center",
                         "itemId": "LogoFormPanel",
                         "bodyPadding": 10,
+                        "header": false,
                         "title": "Logo"
                     },
                     "designerId": "105be75b-46d1-4da2-936b-2dfd9a1875bd",
@@ -785,7 +805,7 @@
                             ]
                         },
                         {
-                            "type": "Ext.form.field.Text",
+                            "type": "Ext.form.field.TextArea",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -795,7 +815,10 @@
                                 "layout|anchor": "100%",
                                 "itemId": "LogoCommentTextfield",
                                 "fieldLabel": "Kommentar",
-                                "name": "logo_comment"
+                                "name": "logo_comment",
+                                "grow": true,
+                                "growMin": 48,
+                                "rows": 1
                             },
                             "designerId": "87b94965-cf5f-4b08-a848-e0a287ffc30e"
                         }
@@ -810,9 +833,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|collapseMode": "header",
-                        "layout|region": "center",
+                        "layout|region": "south",
+                        "layout|split": true,
+                        "height": 480,
                         "itemId": "OrderItemstatelogGridPanel",
-                        "collapsible": true,
+                        "collapsible": false,
                         "title": "Log Status",
                         "store": "OrderItemstatelogJsonStore"
                     },

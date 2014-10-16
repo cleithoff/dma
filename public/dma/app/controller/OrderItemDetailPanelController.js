@@ -49,15 +49,15 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
     onOrderItemDetailSaveButtonClick: function(button, e, eOpts) {
         var that = this;
 
-        store = Ext.getStore('OrderItemJsonStore');
-        panel = this.getOrderItemDetailPanel();
+        var store = Ext.getStore('OrderItemJsonStore');
+        var panel = this.getOrderItemDetailPanel();
 
-        formPanel = panel.getComponent('OrderItemDetailFormPanel');
-        toolbar = panel.getComponent('OrderItemDetailToolbar');
+        var formPanel = panel.getComponent('OrderItemDetailFormPanel');
+        var toolbar = panel.getComponent('OrderItemDetailToolbar');
 
         //grid = button.ownerCt.ownerCt.ownerCt.query('#" . $name . "GridPanel')[0];
 
-        record = formPanel.getForm().getRecord();
+        var record = formPanel.getForm().getRecord();
 
         /*
         record.store.on('write', function(store,options) {
@@ -67,6 +67,23 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
         });
         */
 
+        function updatePanel() {
+            formPanel.disable();
+            //toolbar.getComponent('OrderItemDetailNewButton').enable();
+            toolbar.getComponent('OrderItemDetailCancelButton').disable();
+            toolbar.getComponent('OrderItemDetailSaveButton').disable();
+
+            panel = that.getOrderItemPanel();
+
+            if (panel.getComponent('OrderItemGridPanel').getSelectionModel().getSelection().length > 0) {
+                toolbar.getComponent('OrderItemDetailEditButton').enable();
+                toolbar.getComponent('OrderItemDetailDeleteButton').enable();
+            } else {
+                toolbar.getComponent('OrderItemDetailEditButton').disable();
+                toolbar.getComponent('OrderItemDetailDeleteButton').disable();
+            }
+        }
+
         if (record !== undefined && (record.data.id === undefined || record.data.id == 0)) {
             values = formPanel.getForm().getValues();
             record.set(values);
@@ -75,23 +92,36 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
             //if (grid !== undefined) {
             /*grid.getView().select(0);*/ /* BUG!!! */
             //}
+            updatePanel();
         } else {
-            formPanel.getForm().updateRecord();
-        }
-        formPanel.disable();
-        //toolbar.getComponent('OrderItemDetailNewButton').enable();
-        toolbar.getComponent('OrderItemDetailCancelButton').disable();
-        toolbar.getComponent('OrderItemDetailSaveButton').disable();
+            var order_itemstate_id = record.data.order_itemstate_id;
 
-        panel = this.getOrderItemPanel();
+            var order_itemstate_id_new = formPanel.down('#OrderItemDetailOrderitemState').getSubmitValue();
 
-        if (panel.getComponent('OrderItemGridPanel').getSelectionModel().getSelection().length > 0) {
-            toolbar.getComponent('OrderItemDetailEditButton').enable();
-            toolbar.getComponent('OrderItemDetailDeleteButton').enable();
-        } else {
-            toolbar.getComponent('OrderItemDetailEditButton').disable();
-            toolbar.getComponent('OrderItemDetailDeleteButton').disable();
+            if (order_itemstate_id != order_itemstate_id_new) {
+                Ext.Msg.defaultTextHeight = 320;
+                var msg = Ext.Msg.prompt('Kommentar', 'Kommentar (wird für Log und E-Mail verwendet):', function(btn, text){
+                    if (btn == 'ok'){
+                        formPanel.down('#OrderItemDetailComment').setValue(text);
+                        formPanel.getForm().updateRecord();
+                    } else {
+                        formPanel.getForm().reset();
+                    }
+                    updatePanel();
+                }, this, 120);
+
+                msg.setSize(480, 'auto').center();
+                var textareaEl = msg.body.child('textarea');
+                textareaEl.setWidth(textareaEl.dom.parentNode.offsetWidth);
+
+            } else {
+                formPanel.getForm().updateRecord();
+                updatePanel();
+            }
+
+
         }
+
     },
 
     onOrderItemDetailCancelButtonClick: function(button, e, eOpts) {

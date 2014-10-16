@@ -17,9 +17,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.orderitemdetailpanel',
 
-    height: 645,
     itemId: 'OrderItemDetailPanel',
-    width: 985,
     layout: {
         type: 'border'
     },
@@ -188,6 +186,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                     height: 74,
                     itemId: 'OrderItemDetailFormPanel',
                     bodyPadding: 10,
+                    trackResetOnLoad: true,
                     items: [
                         {
                             xtype: 'combobox',
@@ -245,6 +244,14 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                                     boxLabel: 'Test Back'
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'textareafield',
+                            anchor: '100%',
+                            hidden: true,
+                            itemId: 'OrderItemDetailComment',
+                            fieldLabel: 'Label',
+                            name: 'comment'
                         }
                     ]
                 },
@@ -280,19 +287,22 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                     itemId: 'PreviewContainer'
                 },
                 {
-                    xtype: 'container',
+                    xtype: 'panel',
                     region: 'east',
                     width: 320,
                     layout: {
                         type: 'border'
                     },
+                    collapsed: false,
+                    collapsible: true,
+                    title: 'Logo',
                     items: [
                         {
                             xtype: 'form',
-                            region: 'north',
-                            height: 150,
+                            region: 'center',
                             itemId: 'LogoFormPanel',
                             bodyPadding: 10,
+                            header: false,
                             title: 'Logo',
                             dockedItems: [
                                 {
@@ -328,20 +338,25 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                             ],
                             items: [
                                 {
-                                    xtype: 'textfield',
+                                    xtype: 'textareafield',
                                     anchor: '100%',
                                     itemId: 'LogoCommentTextfield',
                                     fieldLabel: 'Kommentar',
-                                    name: 'logo_comment'
+                                    name: 'logo_comment',
+                                    grow: true,
+                                    growMin: 48,
+                                    rows: 1
                                 }
                             ]
                         },
                         {
                             xtype: 'gridpanel',
                             collapseMode: 'header',
-                            region: 'center',
+                            region: 'south',
+                            split: true,
+                            height: 480,
                             itemId: 'OrderItemstatelogGridPanel',
-                            collapsible: true,
+                            collapsible: false,
                             title: 'Log Status',
                             store: 'OrderItemstatelogJsonStore',
                             columns: [

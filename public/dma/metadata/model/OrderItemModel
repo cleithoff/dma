@@ -198,6 +198,18 @@
                 "type": "boolean"
             },
             "designerId": "b75c68eb-049e-4adf-952a-31c7ed9b0f63"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "comment"
+            },
+            "designerId": "e1bcfaa8-cef3-495a-947c-cd0ec6cee1dd"
         }
     ]
 }
