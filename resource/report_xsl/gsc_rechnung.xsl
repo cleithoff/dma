@@ -401,6 +401,17 @@
   <fo:table-column column-width="17.0cm"/>
   <!-- 0a0094d07b814e2c9546a8d8480e3861 -->
   <fo:table-header>
+    <fo:table-row   background-color="#ffffff"  height="0.0cm">
+      <fo:table-cell><fo:table>
+      <fo:table-column column-width="17.0cm"/>
+      <fo:table-body>
+      <fo:table-row   background-color="#ffffff"  height="0.0cm">
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+    </fo:table-row>
+    </fo:table-body>
+    </fo:table></fo:table-cell>
+    </fo:table-row>
     <fo:table-row   background-color="#ffffff"  height="0.5cm">
       <fo:table-cell><fo:table>
       <fo:table-column column-width="1.0cm"/>
@@ -412,36 +423,35 @@
       <fo:table-row   background-color="#ffffff"  height="0.5cm">
         <fo:table-cell    number-columns-spanned="1">
       <!-- e584be1db4004909863ad7e1611fa479 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.25cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Pos.</fo:block>
+      <fo:block  border-bottom="0.5pt solid 0x0"   margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Pos.</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- b8e08f48e7b646e09353c3893883149b -->
-      <fo:block     margin-left="0.0cm" margin-right="0.4cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Artikel Nr</fo:block>
+      <fo:block  border-bottom="0.5pt solid 0x0"   margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Artikel Nr</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 548be73631134ed69781fe95dfe30ef7 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Bezeichnung</fo:block>
+      <fo:block  border-bottom="0.5pt solid 0x0"   margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Bezeichnung</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 134be212f65f40fa8ea3cc6a25dab109 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.25cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Menge</fo:block>
+      <fo:block  border-bottom="0.5pt solid 0x0"   margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Menge</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 134be212f65f40fa8ea3cc6a25dab109 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">EUR</fo:block>
+      <fo:block  border-bottom="0.5pt solid 0x0"   margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="right">EUR</fo:block>
         </fo:table-cell>
     </fo:table-row>
     </fo:table-body>
     </fo:table></fo:table-cell>
     </fo:table-row>
-    <fo:table-row   background-color="#ffffff"  height="0.25cm">
+    <fo:table-row   background-color="#ffffff"  height="0.0cm">
       <fo:table-cell><fo:table>
       <fo:table-column column-width="17.0cm"/>
       <fo:table-body>
-      <fo:table-row   background-color="#ffffff"  height="0.25cm">
+      <fo:table-row   background-color="#ffffff"  height="0.0cm">
         <fo:table-cell    number-columns-spanned="1">
-        <fo:block text-align-last="justify">      <!-- 5b5ca47ca7944e69a22698c423cc4408 -->
-      <fo:leader leader-pattern="rule"   color="#000000"  rule-thickness="1.0pt"  rule-style="solid" />        </fo:block>        </fo:table-cell>
+        <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
     </fo:table-body>
     </fo:table></fo:table-cell>
@@ -449,7 +459,18 @@
   </fo:table-header>
   <fo:table-body>
   <xsl:for-each select="ItemOfReportDetailorder_no_external">
-    <fo:table-row   background-color="#ffffff"  height="0.5cm">
+    <fo:table-row   background-color="#ffffff"  height="0.0cm">
+      <fo:table-cell><fo:table>
+      <fo:table-column column-width="17.0cm"/>
+      <fo:table-body>
+      <fo:table-row   background-color="#ffffff"  height="0.0cm">
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+    </fo:table-row>
+    </fo:table-body>
+    </fo:table></fo:table-cell>
+    </fo:table-row>
+    <fo:table-row   background-color="#ffffff"  height="0.3cm">
       <fo:table-cell><fo:table>
       <fo:table-column column-width="1.0cm"/>
       <fo:table-column column-width="2.0cm"/>
@@ -458,7 +479,7 @@
       <fo:table-column column-width="1.5cm"/>
       <fo:table-column column-width="1.5cm"/>
       <fo:table-body>
-      <fo:table-row   background-color="#ffffff"  height="0.5cm">
+      <fo:table-row   background-color="#ffffff"  height="0.3cm">
         <fo:table-cell    number-columns-spanned="1">
       <!-- c9cf74d99fcc4bc1903cd14dc58d816c -->
       <fo:block     margin-left="0.0cm" margin-right="0.25cm"  margin-top="0.0cm"  font-size="8pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="right"><xsl:value-of select="lfdnr"></xsl:value-of></fo:block>
@@ -481,17 +502,17 @@
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 96c0f1e446894279bae2ee5bbf4f255c -->
-      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><fo:marker marker-class-name="markerPrice"><xsl:value-of select="product_item_price_sum + sum(preceding::product_item_price_sum)"/></fo:marker><xsl:value-of select="product_item_price_sum"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="right"><fo:marker marker-class-name="markerPrice"><xsl:value-of select="product_item_price_sum + sum(preceding::product_item_price_sum)"/></fo:marker><xsl:value-of select="product_item_price_sum"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
     </fo:table-body>
     </fo:table></fo:table-cell>
     </fo:table-row>
-    <fo:table-row   background-color="#ffffff"  height="-0.2cm">
+    <fo:table-row   background-color="#ffffff"  height="0.0cm">
       <fo:table-cell><fo:table>
       <fo:table-column column-width="17.0cm"/>
       <fo:table-body>
-      <fo:table-row   background-color="#ffffff"  height="-0.2cm">
+      <fo:table-row   background-color="#ffffff"  height="0.0cm">
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
@@ -509,6 +530,17 @@
   <fo:table-column column-width="17.0cm"/>
   <fo:table-body>
   <xsl:for-each select="ListOfReportDetailbanderole">
+    <fo:table-row   background-color="#ffffff"  height="0.0cm">
+      <fo:table-cell><fo:table>
+      <fo:table-column column-width="17.0cm"/>
+      <fo:table-body>
+      <fo:table-row   background-color="#ffffff"  height="0.0cm">
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+    </fo:table-row>
+    </fo:table-body>
+    </fo:table></fo:table-cell>
+    </fo:table-row>
     <fo:table-row   background-color="#ffffff"  height="0.3cm">
       <fo:table-cell><fo:table>
       <fo:table-column column-width="3.0cm"/>
@@ -521,6 +553,17 @@
       <!-- 486cfec43f6b4f548cd9ba8df3d95caf -->
       <fo:block     margin-left="0.0cm" margin-right="3.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="ListItemOfReportDetailbanderole/banderole"></xsl:value-of></fo:block>
         </fo:table-cell>
+    </fo:table-row>
+    </fo:table-body>
+    </fo:table></fo:table-cell>
+    </fo:table-row>
+    <fo:table-row   background-color="#ffffff"  height="0.0cm">
+      <fo:table-cell><fo:table>
+      <fo:table-column column-width="17.0cm"/>
+      <fo:table-body>
+      <fo:table-row   background-color="#ffffff"  height="0.0cm">
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
     </fo:table-body>
     </fo:table></fo:table-cell>
