@@ -136,6 +136,12 @@ Ext.define('MyApp.controller.MainPanelController', {
             ref: 'OrderPackagePackageorderPanel',
             selector: '#OrderPackagePackageorderPanel',
             xtype: 'orderpackagepackageorderpanel'
+        },
+        {
+            autoCreate: true,
+            ref: 'OrderCombineitemPanel',
+            selector: '#OrderCombineitemPanel',
+            xtype: 'ordercombineitempanel'
         }
     ],
 
@@ -293,6 +299,14 @@ Ext.define('MyApp.controller.MainPanelController', {
             panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderPackagePackageorderPanel().ref);
             if (panel === undefined) {
                 this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderPackagePackageorderPanel());
+            }
+        }
+
+        if (MyApp.app.getRuleControllerController().allow('OrderCombineitemPanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            // Order Combineitem
+            panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderCombineitemPanel().ref);
+            if (panel === undefined) {
+                this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderCombineitemPanel());
             }
         }
 

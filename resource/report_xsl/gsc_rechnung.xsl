@@ -379,8 +379,16 @@
       <fo:table-body>
       <fo:table-row   background-color="#ffffff"  height="0.6cm">
         <fo:table-cell    number-columns-spanned="1">
+<xsl:choose>
+<xsl:when test="ItemOfReportDetailorder_no_external/order_no_external = &quot; &quot;">
       <!-- f0938bf2e5824bbfa31def33e7003a3e -->
-      <fo:block     margin-left="0.0cm" margin-right="0.84cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Bd"  font-weight="bold"  color="#000000"   text-align="left">Auftrags-Nr.</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Bd"  font-weight="bold"  color="#000000"   text-align="left">zus. Positionen</fo:block>
+</xsl:when>
+<xsl:otherwise>
+      <!-- f0938bf2e5824bbfa31def33e7003a3e -->
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Bd"  font-weight="bold"  color="#000000"   text-align="left">Auftrags-Nr.</fo:block>
+</xsl:otherwise>
+</xsl:choose>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- f8369a87f0c541599191d924cabf78e5 -->

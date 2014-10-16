@@ -57,7 +57,8 @@ Ext.application({
         'OrderMetaModel',
         'OrderItemHasOrderMeta',
         'PackagePackageorderModel',
-        'ReportAdditionalModel'
+        'ReportAdditionalModel',
+        'OrderCombineitemModel'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -100,7 +101,8 @@ Ext.application({
         'OrderMetaJsonStore',
         'OrderItemHasOrderMetaJsonStore',
         'PackagePackageorderJsonStore',
-        'ReportAdditionalJsonStore'
+        'ReportAdditionalJsonStore',
+        'OrderCombineitemJsonStore'
     ],
     views: [
         'MainViewport',
@@ -141,7 +143,8 @@ Ext.application({
         'OrderMetaPanel',
         'OrderItemOrderMetaPanel',
         'OrderPackagePackageorderPanel',
-        'ReportAdditionalPanel'
+        'ReportAdditionalPanel',
+        'OrderCombineitemPanel'
     ],
     autoCreateViewport: true,
     controllers: [

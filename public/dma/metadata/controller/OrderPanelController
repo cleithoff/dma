@@ -64,10 +64,19 @@
                     "grid.store.clearFilter(true);\r",
                     "grid.store.filter([{property:'order_combine_id',value:record.data.order_combine_id}]);\r",
                     "grid.store.load();\r",
+                    "\r",
+                    "this.getOrderCombineitemPanel().record = record;\r",
+                    "this.getOrderCombineitemPanel().linkrecord = record;\r",
+                    "\r",
+                    "var grid = this.getOrderCombineitemPanel().down('#BagGridPanel');\r",
+                    "grid.store.clearFilter(true);\r",
+                    "grid.store.filter([{property:'order_combine_id',value:record.data.order_combine_id}]);\r",
+                    "grid.store.load();\r",
+                    "\r",
+                    "\r",
                     "if (!Ext.isEmpty(record.data.comment)) {\r",
                     "    Ext.MessageBox.alert('Hinweis', record.data.comment);\r",
                     "}\r",
-                    "\r",
                     "\r",
                     "//grid.store.load(); // filter loads automatically - dont use .load because records lose store (record.store == null)\r",
                     "/*\r",
@@ -183,6 +192,21 @@
                 "xtype": "orderpackagepackageorderpanel"
             },
             "designerId": "cd153360-c61d-49a7-99ce-5e428de28935"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderCombineitemPanel",
+                "selector": "#OrderCombineitemPanel",
+                "xtype": "ordercombineitempanel"
+            },
+            "designerId": "251956a5-daf2-486a-89f1-1383f47cdf2b"
         }
     ]
 }

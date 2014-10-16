@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoSync": true,
+        "model": "OrderCombineitemModel",
+        "remoteFilter": true,
+        "designer|userClassName": "OrderCombineitemJsonStore"
+    },
+    "designerId": "59a6b800-3dd5-4662-af46-d4bc8ab04f66",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/order/combineitem/index"
+            },
+            "designerId": "ef9c5132-f328-4f2c-a933-2ae09af33e3c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "29dffcc4-72dd-4150-881c-1c780dc38453"
+                }
+            ]
+        }
+    ]
+}

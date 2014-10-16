@@ -129,6 +129,9 @@
             <controllerFile controllerName="Combine">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Combineitem">
+              <actionMethod actionName="index"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false"/>
           <layoutsDirectory enabled="false"/>
@@ -143,10 +146,12 @@
               <dbTableFile dbTableName="Meta"/>
               <dbTableFile dbTableName="Itemhasordermeta"/>
               <dbTableFile dbTableName="Combine"/>
+              <dbTableFile dbTableName="Combineitem"/>
             </dbTableDirectory>
             <modelFile modelName="Meta"/>
             <modelFile modelName="Itemhasordermeta"/>
             <modelFile modelName="Combine"/>
+            <modelFile modelName="Combineitem"/>
           </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory>
@@ -169,6 +174,9 @@
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Combine">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Combineitem">
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>

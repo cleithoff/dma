@@ -206,6 +206,14 @@
                     "    }\r",
                     "}\r",
                     "\r",
+                    "if (MyApp.app.getRuleControllerController().allow('OrderCombineitemPanel', MyApp.app.getRuleControllerController().rights.READ)) {\r",
+                    "    // Order Combineitem\r",
+                    "    panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderCombineitemPanel().ref);\r",
+                    "    if (panel === undefined) {\r",
+                    "        this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderCombineitemPanel());\r",
+                    "    }\r",
+                    "}\r",
+                    "\r",
                     "if (MyApp.app.getRuleControllerController().allow('OrderItemPanel', MyApp.app.getRuleControllerController().rights.READ)) {\r",
                     "    this.getOrderPanel().getComponent('OrderOrderTabPanel').setActiveTab(this.getOrderItemPanel());\r",
                     "}\r",
@@ -665,6 +673,21 @@
                 "xtype": "orderpackagepackageorderpanel"
             },
             "designerId": "b3841677-46ec-4210-8c4b-0aaa64291244"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "OrderCombineitemPanel",
+                "selector": "#OrderCombineitemPanel",
+                "xtype": "ordercombineitempanel"
+            },
+            "designerId": "028e88bf-bc1c-4e4a-972b-3b2cad44f91d"
         }
     ]
 }

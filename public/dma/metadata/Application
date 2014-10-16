@@ -44,7 +44,8 @@
             "OrderMetaModel",
             "OrderItemHasOrderMeta",
             "PackagePackageorderModel",
-            "ReportAdditionalModel"
+            "ReportAdditionalModel",
+            "OrderCombineitemModel"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -87,7 +88,8 @@
             "OrderMetaJsonStore",
             "OrderItemHasOrderMetaJsonStore",
             "PackagePackageorderJsonStore",
-            "ReportAdditionalJsonStore"
+            "ReportAdditionalJsonStore",
+            "OrderCombineitemJsonStore"
         ],
         "views": [
             "MainViewport",
@@ -128,7 +130,8 @@
             "OrderMetaPanel",
             "OrderItemOrderMetaPanel",
             "OrderPackagePackageorderPanel",
-            "ReportAdditionalPanel"
+            "ReportAdditionalPanel",
+            "OrderCombineitemPanel"
         ],
         "autoCreateViewport": true,
         "controllers": [
