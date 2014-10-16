@@ -175,6 +175,18 @@
                     "designerId": "3322db81-1f62-4917-9044-699bffb2ab3c"
                 }
             ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "partner_partner_id"
+            },
+            "designerId": "f93417dd-7db2-4129-8304-871bd4f24ef0"
         }
     ]
 }

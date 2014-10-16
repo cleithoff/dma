@@ -120,6 +120,7 @@
                                             "\r",
                                             "    return {\r",
                                             "        order_combine_id: linkrecord.data.order_combine_id,\r",
+                                            "        partner_partner_id: linkrecord.data.partner_partner_id,\r",
                                             "        product_product_id: librecord.data.product_product_id,\r",
                                             "        product_item_id: librecord.data.id,\r",
                                             "        amount: 1\r",

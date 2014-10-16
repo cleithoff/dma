@@ -57,6 +57,9 @@ Ext.define('MyApp.model.OrderCombineitemModel', {
             persist: false,
             type: 'string',
             useNull: true
+        },
+        {
+            name: 'partner_partner_id'
         }
     ],
 

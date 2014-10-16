@@ -187,6 +187,7 @@ Ext.define('MyApp.view.OrderCombineitemPanel', {
 
             return {
                 order_combine_id: linkrecord.data.order_combine_id,
+                partner_partner_id: linkrecord.data.partner_partner_id,
                 product_product_id: librecord.data.product_product_id,
                 product_item_id: librecord.data.id,
                 amount: 1
