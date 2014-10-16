@@ -10,6 +10,8 @@ class Import_Service_Fileupload
 		
 		$result = new stdClass();
 		
+		$result->file = APPLICATION_PATH . '/../upload/' . $destination;
+		
 		if (!@$adapter->receive()) {
 			//$messages = $adapter->getMessages();
 			//$message = implode("\n", $messages);

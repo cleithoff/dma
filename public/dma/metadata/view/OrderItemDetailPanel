@@ -716,7 +716,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|region": "center",
+                        "layout|region": "north",
+                        "layout|split": true,
+                        "height": 150,
                         "itemId": "LogoFormPanel",
                         "bodyPadding": 10,
                         "header": false,
@@ -821,6 +823,131 @@
                                 "rows": 1
                             },
                             "designerId": "87b94965-cf5f-4b08-a848-e0a287ffc30e"
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "middle",
+                                "container|pack": "center",
+                                "border": null,
+                                "height": 50,
+                                "itemId": "dropbox",
+                                "width": null,
+                                "layout": "hbox",
+                                "bodyBorder": null,
+                                "bodyStyle": [
+                                    "{\r",
+                                    "    border:\"4px dashed #CCC\",\r",
+                                    "    borderRadius:\"4px\",\r",
+                                    "    transition:\"background-color .1s linear .1s\"\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "e3def3e7-8621-4132-9a4d-a0a212b44258",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDropboxAfterRender",
+                                        "implHandler": [
+                                            "\r",
+                                            "var html5module = html5Upload.initialize({\r",
+                                            "    // URL that handles uploaded files\r",
+                                            "    uploadUrl: '/import/fileupload/logo',\r",
+                                            "    \r",
+                                            "    // HTML element on which files should be dropped (optional)\r",
+                                            "    dropContainer: document.getElementById(component.id),\r",
+                                            "\r",
+                                            "    // HTML file input element that allows to select files (optional)\r",
+                                            "    //inputField: document.getElementById('upload-input'),\r",
+                                            "\r",
+                                            "    // Key for the file data (optional, default: 'file')\r",
+                                            "    key: 'File',\r",
+                                            "\r",
+                                            "    // Additional data submitted with file (optional)\r",
+                                            "    data: { },\r",
+                                            "\r",
+                                            "    // Maximum number of simultaneous uploads\r",
+                                            "    // Other uploads will be added to uploads queue (optional)\r",
+                                            "    maxSimultaneousUploads: 2,\r",
+                                            "\r",
+                                            "    // Callback for each dropped or selected file\r",
+                                            "    // It receives one argument, add callbacks \r",
+                                            "    // by passing events map object: file.on({ ... })\r",
+                                            "    onFileAdded: function (file) {\r",
+                                            "\r",
+                                            "        this.data = { partner_nr: component.up('#OrderPanel').down('#OrderOrderGridPanel').getSelectionModel().getSelection()[0].data.partner_partner.partner_nr };\r",
+                                            "        \r",
+                                            "        //var fileModel = new models.FileViewModel(file);\r",
+                                            "        //uploadsModel.uploads.push(fileModel);\r",
+                                            "\r",
+                                            "        file.on({\r",
+                                            "            // Called after received response from the server\r",
+                                            "            onCompleted: function (response) {\r",
+                                            "                el = document.getElementById(component.id + '-body');\r",
+                                            "                el.style.background = \"#fff\";\r",
+                                            "\r",
+                                            "                try {\r",
+                                            "                    response = JSON.parse(response);\r",
+                                            "                }\r",
+                                            "                catch (e) {\r",
+                                            "                    alert('Upload fehlgeschlagen.');\r",
+                                            "                    return;\r",
+                                            "                }\r",
+                                            "                \r",
+                                            "                if (response.success === false) {\r",
+                                            "                    alert('Upload fehlgeschlagen.');\r",
+                                            "                    return;\r",
+                                            "                }\r",
+                                            "\r",
+                                            "            },\r",
+                                            "            // Called during upload progress, first parameter\r",
+                                            "            // is decimal value from 0 to 100.\r",
+                                            "            onProgress: function (progress, fileSize, uploadedBytes) {\r",
+                                            "                \r",
+                                            "                el = document.getElementById(component.id + '-body');\r",
+                                            "                el.style.background = \"linear-gradient(to right,  #8fc800 0%,#8fc800 \" + progress + \"%,#ffffff 0%,#ffffff 100%)\";\r",
+                                            "            }\r",
+                                            "        });\r",
+                                            "    }\r",
+                                            "});"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "09763001-d043-4f3a-bca5-7d6fe95e1f42"
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "style": [
+                                            "{\r",
+                                            "    fontWeight:\"bold\",\r",
+                                            "    fontSize:\"10pt\",\r",
+                                            "    color:\"#ccc\"\r",
+                                            "}"
+                                        ],
+                                        "defaultAlign": null,
+                                        "text": "Upload Logo per Drag'nDrop"
+                                    },
+                                    "designerId": "fc6dcffd-6bfb-4298-9be8-5a9b97c820f6"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -833,9 +960,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|collapseMode": "header",
-                        "layout|region": "south",
+                        "layout|region": "center",
                         "layout|split": true,
-                        "height": 480,
                         "itemId": "OrderItemstatelogGridPanel",
                         "collapsible": false,
                         "title": "Log Status",
