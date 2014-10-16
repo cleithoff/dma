@@ -248,8 +248,12 @@ class Report_Service_Report
 		
 		$filename = $this->generateXsd($filename, $row, $request);
 		
+		$sql = $this->_getQuery($row->sql, array(), array(), $request->getParams());
+		Zend_Db_Table::getDefaultAdapter()->query("SET @counter:=0;");
+		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql);
+		
 		header('Content-type: text/xsd');
-		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.xsd"');
+		header('Content-Disposition: attachment; filename="' . $this->getFilename($request, $rowset, $row) . '_' . @date('YmdHis') . '.xsd"');
 		
 		readfile($filename);
 		
@@ -258,11 +262,15 @@ class Report_Service_Report
 	public function exportxml(Zend_Controller_Request_Http $request) {
 		
 		$row = $this->getReport($request);
-		
+
 		$filename = $this->generateXml($row, $request);
 		
+		$sql = $this->_getQuery($row->sql, array(), array(), $request->getParams());
+		Zend_Db_Table::getDefaultAdapter()->query("SET @counter:=0;");
+		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql);
+		
 		header('Content-type: text/xml');
-		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.xml"');
+		header('Content-Disposition: attachment; filename="' . $this->getFilename($request, $rowset, $row) . '_' . @date('YmdHis') . '.xml"');
 		
 		readfile($filename);
 		
@@ -278,8 +286,12 @@ class Report_Service_Report
 		
 		Rest_Pdf::fop($xmlfilename, APPLICATION_PATH . '/../resource/report_xsl/' . $row->xslfile, $pdffilename);
 		
+		$sql = $this->_getQuery($row->sql, array(), array(), $request->getParams());
+		Zend_Db_Table::getDefaultAdapter()->query("SET @counter:=0;");
+		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql);
+		
 		header('Content-type: application/pdf');
-		header('Content-Disposition: attachment; filename="' . $row->fileprefix . '_' . @date('YmdHis') . '.pdf"');
+		header('Content-Disposition: attachment; filename="' . $this->getFilename($request, $rowset, $row) . '_' . @date('YmdHis') . '.pdf"');
 		
 		readfile($pdffilename);
 		unlink($pdffilename);
