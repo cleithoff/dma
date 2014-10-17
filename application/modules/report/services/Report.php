@@ -8,7 +8,7 @@ class Report_Service_Report
 		$fields = array();
 		
 		foreach($info as $field) {
-			$fields[] = $field['name'];
+			$fields[] = utf8_decode($field['name']);
 		}
 		
 		return $fields;
