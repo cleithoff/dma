@@ -261,7 +261,7 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
     },
 
     onOrderItemstatelogGridPanelSelect: function(rowmodel, record, index, eOpts) {
-        this.getOrderItemDetailPanel().getComponent('OrderItemstatelogGridPanel').getComponent('OrderItemstatelogFormPanel').getForm().loadRecord(record);
+        this.getOrderItemDetailPanel().down('#OrderItemstatelogGridPanel').down('#OrderItemstatelogFormPanel').getForm().loadRecord(record);
     },
 
     onOrderItemViewmodePreviewFrontMenuItemClick: function(item, e, eOpts) {

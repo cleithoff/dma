@@ -384,7 +384,7 @@
             "userConfig": {
                 "fn": "onOrderItemstatelogGridPanelSelect",
                 "implHandler": [
-                    "this.getOrderItemDetailPanel().getComponent('OrderItemstatelogGridPanel').getComponent('OrderItemstatelogFormPanel').getForm().loadRecord(record);"
+                    "this.getOrderItemDetailPanel().down('#OrderItemstatelogGridPanel').down('#OrderItemstatelogFormPanel').getForm().loadRecord(record);"
                 ],
                 "name": "select",
                 "scope": "me",
