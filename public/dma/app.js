@@ -58,7 +58,8 @@ Ext.application({
         'OrderItemHasOrderMeta',
         'PackagePackageorderModel',
         'ReportAdditionalModel',
-        'OrderCombineitemModel'
+        'OrderCombineitemModel',
+        'OrderStateModel'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -102,7 +103,8 @@ Ext.application({
         'OrderItemHasOrderMetaJsonStore',
         'PackagePackageorderJsonStore',
         'ReportAdditionalJsonStore',
-        'OrderCombineitemJsonStore'
+        'OrderCombineitemJsonStore',
+        'OrderStateJsonStore'
     ],
     views: [
         'MainViewport',

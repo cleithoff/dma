@@ -35,6 +35,9 @@ Ext.define('MyApp.store.OrderItemstateJsonStore', {
                     type: 'json',
                     root: 'data'
                 }
+            },
+            sorters: {
+                property: 'sortorder'
             }
         }, cfg)]);
     }

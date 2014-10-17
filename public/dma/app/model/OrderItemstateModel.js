@@ -31,6 +31,10 @@ Ext.define('MyApp.model.OrderItemstateModel', {
         },
         {
             name: 'order_itemstate_id_next'
+        },
+        {
+            name: 'sortorder',
+            type: 'int'
         }
     ]
 });

@@ -74,5 +74,14 @@ Ext.define('MyApp.model.OrderItemModel', {
         {
             name: 'comment'
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: '/order/item/index',
+        reader: {
+            type: 'json',
+            root: 'data'
+        }
+    }
 });

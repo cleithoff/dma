@@ -217,9 +217,74 @@ Ext.define('MyApp.view.OrderPanel', {
                                     itemId: 'OrderOrderClearFilterButton',
                                     text: 'Filter leeren'
                                 }
+                            ],
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            itemId: 'PrintButton',
+                                            text: 'Drucken'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'bottom',
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            text: 'Produktion',
+                                            listeners: {
+                                                click: {
+                                                    fn: me.onButtonClick,
+                                                    scope: me
+                                                }
+                                            }
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            text: 'Versand',
+                                            listeners: {
+                                                click: {
+                                                    fn: me.onButtonClick1,
+                                                    scope: me
+                                                }
+                                            }
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            text: 'Abrechnung',
+                                            listeners: {
+                                                click: {
+                                                    fn: me.onButtonClick2,
+                                                    scope: me
+                                                }
+                                            }
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            text: 'Abgeschlossen',
+                                            listeners: {
+                                                click: {
+                                                    fn: me.onButtonClick3,
+                                                    scope: me
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
                             ]
                         }
-                    ]
+                    ],
+                    viewConfig: {
+                        getRowClass: function(record, rowIndex, rowParams, store) {
+                            return 'dma_order_state_' + record.data.order_state.key;
+
+                        }
+                    }
                 },
                 {
                     xtype: 'tabpanel',
@@ -282,6 +347,55 @@ Ext.define('MyApp.view.OrderPanel', {
     onComboboxSelect1: function(combo, records, eOpts) {
         combo.up('form').down('#OrderOrderFilterButton').fireEvent('click', combo.up('form').down('#OrderOrderFilterButton'));
 
+    },
+
+    onButtonClick: function(button, e, eOpts) {
+        var 
+        me = this;
+
+        me.setOrderState(button, 'production', 'production');
+    },
+
+    onButtonClick1: function(button, e, eOpts) {
+        var 
+        me = this;
+
+        me.setOrderState(button, 'delivery', 'delivery');
+    },
+
+    onButtonClick2: function(button, e, eOpts) {
+        var 
+        me = this;
+
+        me.setOrderState(button, 'invoice', 'invoice');
+    },
+
+    onButtonClick3: function(button, e, eOpts) {
+        var 
+        me = this;
+
+        me.setOrderState(button, 'finished_order', 'finished');
+    },
+
+    setOrderState: function(component, order_state_key, order_itemstate_key) {
+        var 
+        me = this
+        ,record = me.down('#OrderOrderGridPanel').getSelectionModel().getSelection()[0]
+        ,orderStateRecord = Ext.getStore('OrderStateJsonStore').findRecord('key',order_state_key)
+        ,orderItemstateRecord = Ext.getStore('OrderItemstateJsonStore').findRecord('key',order_itemstate_key)
+        ;
+
+        record.data.order_state_id = orderStateRecord.data.id;
+
+        record.save();
+
+        me.down('#OrderItemGridPanel').getStore().each(function(record,idx){
+            //do whatever you want with the record 
+            if (record.data.order_itemstate_id == 10 || record.data.order_itemstate_id == 11) return;
+
+            record.data.order_itemstate_id = orderItemstateRecord.data.id;
+            record.save();
+        });
     }
 
 });

@@ -224,6 +224,8 @@
                     "    orderOrderGridPanel.getSelectionModel().select(0);\r",
                     "});\r",
                     "Ext.getStore('OrderOrderJsonStore').load();\r",
+                    "\r",
+                    "MyApp.app.getUtilControllerController().assignReportsToPrintButton(this.getOrderPanel().down('#PrintButton'),this.getOrderPanel());\r",
                     ""
                 ],
                 "name": "click",

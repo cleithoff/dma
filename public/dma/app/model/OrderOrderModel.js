@@ -60,6 +60,19 @@ Ext.define('MyApp.model.OrderOrderModel', {
         {
             name: 'order_combine_id',
             type: 'int'
+        },
+        {
+            name: 'order_state',
+            persist: false
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: '/order/order/index',
+        reader: {
+            type: 'json',
+            root: 'data'
+        }
+    }
 });

@@ -106,6 +106,31 @@
                 "xtype": "mainpanel"
             },
             "designerId": "dc61ebd5-6041-4be4-8978-b95c0ce85cde"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getResourceIdBySlug",
+                "designer|params": [
+                    "slug"
+                ],
+                "implHandler": [
+                    "var me = this;\r",
+                    "var store = Ext.getStore('ActiveUserResourcesJsonStore');\r",
+                    "\r",
+                    "if (Ext.isEmpty(resource)) return true;\r",
+                    "\r",
+                    "var rule = store.findRecord('slug', name);\r",
+                    "\r",
+                    "console.log(rule);"
+                ]
+            },
+            "designerId": "72f3e824-07fe-42a0-a1e1-458a8de5380d"
         }
     ]
 }

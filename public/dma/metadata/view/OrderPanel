@@ -545,6 +545,221 @@
                                 "text": "Filter leeren"
                             },
                             "designerId": "328235b1-f8ae-4fd6-88d3-26d30ff4591d"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "designerId": "c13b79ce-3fc6-4788-8ee0-c68349ecee64",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "itemId": "PrintButton",
+                                        "text": "Drucken"
+                                    },
+                                    "designerId": "0a9f473c-2c2a-4b60-9a2c-a189f64bb02d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom"
+                            },
+                            "designerId": "fd7b9f9f-382e-4a69-9d3f-f5c3f8aafb38",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "text": "Produktion"
+                                    },
+                                    "designerId": "31e8c3d9-448c-46ea-b16b-527fab3188d4",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick",
+                                                "implHandler": [
+                                                    "var \r",
+                                                    "\tme = this;\r",
+                                                    "\r",
+                                                    "me.setOrderState(button, 'production', 'production');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "46139f74-7ad6-4f1c-8d51-cd0c79ef74cb"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "text": "Versand"
+                                    },
+                                    "designerId": "396f1fa9-fb4a-4808-8339-23b0d5c3efd1",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick1",
+                                                "implHandler": [
+                                                    "var \r",
+                                                    "\tme = this;\r",
+                                                    "\r",
+                                                    "me.setOrderState(button, 'delivery', 'delivery');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "251ab969-76cb-4a91-81b4-b27c763c319e"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "text": "Abrechnung"
+                                    },
+                                    "designerId": "9226767a-4644-47eb-a254-9d0eeb38b97f",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick2",
+                                                "implHandler": [
+                                                    "var \r",
+                                                    "\tme = this;\r",
+                                                    "\r",
+                                                    "me.setOrderState(button, 'invoice', 'invoice');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "ef6fe07d-349d-4e0f-9f12-fd1d2e291720"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "text": "Abgeschlossen"
+                                    },
+                                    "designerId": "b4a9865f-125d-42bc-913a-23e68664f4ac",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick3",
+                                                "implHandler": [
+                                                    "var \r",
+                                                    "\tme = this;\r",
+                                                    "\r",
+                                                    "me.setOrderState(button, 'finished_order', 'finished');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "e1de784f-9d84-4dc1-85e6-f5270ebd6904"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "084b5abd-38c6-4242-875c-e410d22973aa",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "getRowClass",
+                                "designer|params": [
+                                    "record",
+                                    "rowIndex",
+                                    "rowParams",
+                                    "store"
+                                ],
+                                "implHandler": [
+                                    "return 'dma_order_state_' + record.data.order_state.key;\r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "97921010-8263-488b-a881-ab7ccd4040d0"
                         }
                     ]
                 }
@@ -563,6 +778,43 @@
                 "itemId": "OrderOrderTabPanel"
             },
             "designerId": "648ed746-6f76-4394-92c0-d2aca6cce81c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setOrderState",
+                "designer|params": [
+                    "component",
+                    "order_state_key",
+                    "order_itemstate_key"
+                ],
+                "implHandler": [
+                    "var \r",
+                    "\tme = this\r",
+                    "\t,record = me.down('#OrderOrderGridPanel').getSelectionModel().getSelection()[0]\r",
+                    "    ,orderStateRecord = Ext.getStore('OrderStateJsonStore').findRecord('key',order_state_key)\r",
+                    "    ,orderItemstateRecord = Ext.getStore('OrderItemstateJsonStore').findRecord('key',order_itemstate_key)\r",
+                    ";\r",
+                    "\r",
+                    "record.data.order_state_id = orderStateRecord.data.id;\r",
+                    "\r",
+                    "record.save();\r",
+                    "\r",
+                    "me.down('#OrderItemGridPanel').getStore().each(function(record,idx){\r",
+                    "    //do whatever you want with the record \r",
+                    "    if (record.data.order_itemstate_id == 10 || record.data.order_itemstate_id == 11) return;\r",
+                    "    \r",
+                    "    record.data.order_itemstate_id = orderItemstateRecord.data.id;\r",
+                    "    record.save();\r",
+                    "});"
+                ]
+            },
+            "designerId": "a7820611-5721-4012-81b5-1dfa990390c1"
         }
     ]
 }

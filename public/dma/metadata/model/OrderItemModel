@@ -210,6 +210,32 @@
                 "name": "comment"
             },
             "designerId": "e1bcfaa8-cef3-495a-947c-cd0ec6cee1dd"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/order/item/index"
+            },
+            "designerId": "3c70b31e-9b2c-41bd-9da2-13836bae2873",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "1d9719dd-65b8-4f2d-8e3a-5d047026aa95"
+                }
+            ]
         }
     ]
 }

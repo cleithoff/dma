@@ -170,6 +170,45 @@
                 "type": "int"
             },
             "designerId": "e0100fa3-1d86-47a5-902b-c87170e45f73"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/order/order/index"
+            },
+            "designerId": "5c1cb10b-8dff-4064-9b11-286964a1c326",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "bc740364-6c7e-402b-b184-4d1fe7314da0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "order_state",
+                "persist": false
+            },
+            "designerId": "d43a988f-154e-499c-805e-60615d801591"
         }
     ]
 }

@@ -1191,6 +1191,22 @@
                 "metadata/resource/js1"
             ],
             "className": "js1"
+        },
+        "48e33910-db52-4342-8a95-6e0a38d31077": {
+            "paths": [
+                "metadata/store/OrderStateJsonStore",
+                "app/store/override/OrderStateJsonStore.js",
+                "app/store/OrderStateJsonStore.js"
+            ],
+            "className": "OrderStateJsonStore"
+        },
+        "0b44b633-af7e-4a6a-92ea-9a26c443161f": {
+            "paths": [
+                "metadata/model/OrderStateModel",
+                "app/model/override/OrderStateModel.js",
+                "app/model/OrderStateModel.js"
+            ],
+            "className": "OrderStateModel"
         }
     },
     "viewOrderMap": {
@@ -1278,7 +1294,8 @@
             "6d1685c8-d1f6-425a-9fa0-9de2cd9017b2",
             "c3d3cad3-dbf7-4cce-8cfb-9293b471fdae",
             "f3c38dd3-292c-44f6-a053-1de19f029efc",
-            "59a6b800-3dd5-4662-af46-d4bc8ab04f66"
+            "59a6b800-3dd5-4662-af46-d4bc8ab04f66",
+            "48e33910-db52-4342-8a95-6e0a38d31077"
         ],
         "controller": [
             "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
@@ -1345,7 +1362,8 @@
             "fe8b46de-b66d-437b-a3be-e74cdc3767d7",
             "9514308e-4976-4065-9993-49f6365099cb",
             "62c7cb05-55d6-4c99-ba7f-9f90b49bf364",
-            "36ca6268-c3e2-4cf6-94a7-6c3ed043a7e1"
+            "36ca6268-c3e2-4cf6-94a7-6c3ed043a7e1",
+            "0b44b633-af7e-4a6a-92ea-9a26c443161f"
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",

@@ -45,7 +45,8 @@
             "OrderItemHasOrderMeta",
             "PackagePackageorderModel",
             "ReportAdditionalModel",
-            "OrderCombineitemModel"
+            "OrderCombineitemModel",
+            "OrderStateModel"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -89,7 +90,8 @@
             "OrderItemHasOrderMetaJsonStore",
             "PackagePackageorderJsonStore",
             "ReportAdditionalJsonStore",
-            "OrderCombineitemJsonStore"
+            "OrderCombineitemJsonStore",
+            "OrderStateJsonStore"
         ],
         "views": [
             "MainViewport",

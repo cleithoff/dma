@@ -69,6 +69,19 @@
                 "name": "order_itemstate_id_next"
             },
             "designerId": "af33a230-9c9a-43d5-b51b-4bd4e4ec1acd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "sortorder",
+                "type": "int"
+            },
+            "designerId": "d3f33365-6f46-40cf-95e9-4ee6d0096332"
         }
     ]
 }

@@ -68,6 +68,17 @@ Ext.define('MyApp.controller.RuleController', {
                 buttons[idx].destroy();
             }
         }
+    },
+
+    getResourceIdBySlug: function(slug) {
+        var me = this;
+        var store = Ext.getStore('ActiveUserResourcesJsonStore');
+
+        if (Ext.isEmpty(resource)) return true;
+
+        var rule = store.findRecord('slug', name);
+
+        console.log(rule);
     }
 
 });

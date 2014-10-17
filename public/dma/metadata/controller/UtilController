@@ -8,5 +8,27 @@
     "userConfig": {
         "designer|userClassName": "UtilController"
     },
-    "designerId": "4ead814c-fb54-4753-940d-1367a7b38d21"
+    "designerId": "4ead814c-fb54-4753-940d-1367a7b38d21",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "assignReportsToPrintButton",
+                "designer|params": [
+                    "button",
+                    "component"
+                ],
+                "implHandler": [
+                    "\r",
+                    "var user_resource_id = component.itemId;"
+                ]
+            },
+            "designerId": "64caf03c-018c-4a14-8e61-37deb85b0fd2"
+        }
+    ]
 }

@@ -14,5 +14,11 @@
  */
 
 Ext.define('MyApp.controller.UtilController', {
-    extend: 'Ext.app.Controller'
+    extend: 'Ext.app.Controller',
+
+    assignReportsToPrintButton: function(button, component) {
+
+        var user_resource_id = component.itemId;
+    }
+
 });

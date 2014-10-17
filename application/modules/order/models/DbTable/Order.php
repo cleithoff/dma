@@ -7,12 +7,12 @@ class Order_Model_DbTable_Order extends Rest_Db_Table
     protected $_rowClass = 'Order_Model_Order';
 
 	protected $_referenceMap = array(
-		'fk_order_order_order_pool1' => array(
+		'order_pool' => array(
 			'columns'		=> array('order_pool_id'),
 			'refTableClass'	=> 'Order_Model_DbTable_Pool',
 			'refColumns'	=> array('id')
 		),
-		'fk_order_order_order_state1' => array(
+		'order_state' => array(
 			'columns'		=> array('order_state_id'),
 			'refTableClass'	=> 'Order_Model_DbTable_State',
 			'refColumns'	=> array('id')

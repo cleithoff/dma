@@ -321,6 +321,8 @@ Ext.define('MyApp.controller.MainPanelController', {
         });
         Ext.getStore('OrderOrderJsonStore').load();
 
+        MyApp.app.getUtilControllerController().assignReportsToPrintButton(this.getOrderPanel().down('#PrintButton'),this.getOrderPanel());
+
     },
 
     onReportMenuItemClick: function(item, e, eOpts) {
