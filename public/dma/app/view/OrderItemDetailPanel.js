@@ -604,7 +604,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                             return;
                         }
 
-                        component.up('#OrderPanel').down('#PreviewContainer').update('<embed src="/deploy/' + component.up('#OrderPanel').down('#OrderItemFilename') + '?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+                        component.up('#OrderPanel').down('#PreviewContainer').update('<embed src="/deploy/' + component.up('#OrderPanel').down('#OrderItemFilename').getValue() + '?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
                     },
                     // Called during upload progress, first parameter
                     // is decimal value from 0 to 100.

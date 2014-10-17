@@ -6565,10 +6565,10 @@
     },
     "inspectorState": {
         "topInstance": "93e2b9d5-dfd2-4242-a2ca-da5e99a5c45f",
-        "selectedInstance": "79b978f5-fdd2-4391-b163-9f4eeaf9d7b7"
+        "selectedInstance": "aa6fda8e-d3ad-41ed-9aa1-b272c553cbd4"
     },
     "codeState": {
         "topInstance": "93e2b9d5-dfd2-4242-a2ca-da5e99a5c45f"
     },
-    "editMode": "design"
+    "editMode": "code"
 }
