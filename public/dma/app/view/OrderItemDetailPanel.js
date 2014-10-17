@@ -260,31 +260,91 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                     region: 'north',
                     border: false,
                     height: 68,
+                    layout: {
+                        type: 'hbox'
+                    },
                     bodyPadding: 10,
                     header: false,
                     title: 'My Form',
                     items: [
                         {
-                            xtype: 'textfield',
-                            anchor: '100%',
-                            itemId: 'OrderItemPath',
-                            fieldLabel: 'Pfad',
-                            value: '/var/www/html/dma/dma/public/deploy',
-                            readOnly: true
+                            xtype: 'fieldcontainer',
+                            height: 120,
+                            width: 320,
+                            layout: {
+                                type: 'anchor'
+                            },
+                            items: [
+                                {
+                                    xtype: 'panel',
+                                    height: 50,
+                                    itemId: 'DropboxPDFPanel',
+                                    layout: {
+                                        align: 'middle',
+                                        pack: 'center',
+                                        type: 'hbox'
+                                    },
+                                    bodyStyle: {
+                                        border: '4px dashed #CCC',
+                                        borderRadius: '4px',
+                                        transition: 'background-color .1s linear .1s'
+                                    },
+                                    listeners: {
+                                        afterrender: {
+                                            fn: me.onDropboxAfterRender1,
+                                            scope: me
+                                        }
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'label',
+                                            itemId: 'UploadPDFTextField',
+                                            style: {
+                                                fontWeight: 'bold',
+                                                fontSize: '10pt',
+                                                color: '#ccc'
+                                            },
+                                            text: 'Upload Preview Front per Drag\'nDrop'
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
-                            xtype: 'textfield',
-                            anchor: '100%',
-                            itemId: 'OrderItemFilename',
-                            fieldLabel: 'Dateiname',
-                            readOnly: true
+                            xtype: 'fieldcontainer',
+                            flex: 1,
+                            height: 120,
+                            padding: '0 0 0 15',
+                            layout: {
+                                type: 'anchor'
+                            },
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    itemId: 'OrderItemPath',
+                                    fieldLabel: 'Pfad',
+                                    value: '/var/www/html/dma/dma/public/deploy',
+                                    readOnly: true
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    itemId: 'OrderItemFilename',
+                                    fieldLabel: 'Dateiname',
+                                    readOnly: true
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     xtype: 'container',
                     region: 'center',
-                    itemId: 'PreviewContainer'
+                    itemId: 'PreviewContainer',
+                    style: {
+                        background: '#CCC'
+                    }
                 },
                 {
                     xtype: 'panel',
@@ -488,6 +548,74 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
 
     onOrderItemDetailSendButtonAfterRender: function(component, eOpts) {
         component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.RELEASE));
+    },
+
+    onDropboxAfterRender1: function(component, eOpts) {
+
+        var html5module = html5Upload.initialize({
+            // URL that handles uploaded files
+            uploadUrl: '/import/fileupload/pdf',
+
+            // HTML element on which files should be dropped (optional)
+            dropContainer: document.getElementById(component.id),
+
+            // HTML file input element that allows to select files (optional)
+            //inputField: document.getElementById('upload-input'),
+
+            // Key for the file data (optional, default: 'file')
+            key: 'File',
+
+            // Additional data submitted with file (optional)
+            data: { },
+
+            // Maximum number of simultaneous uploads
+            // Other uploads will be added to uploads queue (optional)
+            maxSimultaneousUploads: 2,
+
+            // Callback for each dropped or selected file
+            // It receives one argument, add callbacks 
+            // by passing events map object: file.on({ ... })
+            onFileAdded: function (file) {
+
+                this.data = { 
+                    partner_nr: component.up('#OrderPanel').down('#OrderOrderGridPanel').getSelectionModel().getSelection()[0].data.partner_partner.partner_nr,
+                    full_filename: component.up('#OrderPanel').down('#OrderItemFilename').getValue()
+                };
+
+                //var fileModel = new models.FileViewModel(file);
+                //uploadsModel.uploads.push(fileModel);
+
+                file.on({
+                    // Called after received response from the server
+                    onCompleted: function (response) {
+                        el = document.getElementById(component.id + '-body');
+                        el.style.background = "#fff";
+
+                        try {
+                            response = JSON.parse(response);
+                        }
+                        catch (e) {
+                            alert('Upload fehlgeschlagen.');
+                            return;
+                        }
+
+                        if (response.success === false) {
+                            alert('Upload fehlgeschlagen.');
+                            return;
+                        }
+
+                        component.up('#OrderPanel').down('#PreviewContainer').update('<embed src="/deploy/' + component.up('#OrderPanel').down('#OrderItemFilename') + '?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+                    },
+                    // Called during upload progress, first parameter
+                    // is decimal value from 0 to 100.
+                    onProgress: function (progress, fileSize, uploadedBytes) {
+
+                        el = document.getElementById(component.id + '-body');
+                        el.style.background = "linear-gradient(to right,  #8fc800 0%,#8fc800 " + progress + "%,#ffffff 0%,#ffffff 100%)";
+                    }
+                });
+            }
+        });
     },
 
     onLogoSaveButtonClick: function(button, e, eOpts) {

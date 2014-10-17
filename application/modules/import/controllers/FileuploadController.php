@@ -14,6 +14,7 @@ class Import_FileuploadController extends Zend_Controller_Action
     	->addActionContext('order', 'json')
     	->addActionContext('execute', 'json')
     	->addActionContext('logo', 'json')
+    	->addActionContext('pdf', 'json')
     	->setDefaultContext('json')
     	->initContext('json')
     	;    	
@@ -63,6 +64,19 @@ class Import_FileuploadController extends Zend_Controller_Action
     		}
     		$exec = "convert " . $pdfoptions . $result->file . DIRECTORY_SEPARATOR . $result->filename . " " . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".png";
     		exec($exec);
+    	}
+    	
+    	foreach ($result as $key => $value) {
+    		$this->view->$key = $value;
+    	}
+    }
+    
+    public function pdfAction() {
+    	$result = $this->getService()->upload('pdf');
+    	
+    	if ($result->success == "true") {
+			copy ($result->file . DIRECTORY_SEPARATOR . $result->filename, APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/pdf" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('full_filename'));    		
+			copy ($result->file . DIRECTORY_SEPARATOR . $result->filename, APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "public/deploy" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('full_filename'));    		
     	}
     	
     	foreach ($result as $key => $value) {

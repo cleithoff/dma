@@ -184,23 +184,6 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
         }
     },
 
-    onOrderItemViewmodePrintBackMenuItemClick: function(item, e, eOpts) {
-        var that = this;
-        var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];
-
-        if (record === undefined) return;
-
-        Ext.Ajax.request({
-            url: '/order/item/refresh',
-            success: function() {
-                that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey +'_print_back.pdf');
-                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_print_back.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
-            },
-            failure: function() {},
-            params: { id: record.data.id, viewmode: 4, refresh: 0}
-        });
-    },
-
     onOrderItemDetailRefreshButtonClick: function(button, e, eOpts) {
         var that = this;
         var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];
@@ -287,13 +270,18 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
 
         if (record === undefined) return;
 
+        that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey +'.pdf');
+        that.getOrderItemPanel().down('#UploadPDFTextField').setText('Upload Preview Front per Drag\'n\'Drop');
+
         Ext.Ajax.request({
             url: '/order/item/refresh',
             success: function() {
-                that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey +'.pdf');
                 that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
             },
-            failure: function() {},
+            failure: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
+
             params: { id: record.data.id, viewmode: 1, refresh: 0}
         });
     },
@@ -304,13 +292,18 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
 
         if (record === undefined) return;
 
+        that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey + '_preview_back.pdf');
+        that.getOrderItemPanel().down('#UploadPDFTextField').setText('Upload Preview Back per Drag\'n\'Drop');
+
         Ext.Ajax.request({
             url: '/order/item/refresh',
             success: function() {
-                that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey + '_preview_back.pdf');
                 that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_preview_back.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
             },
-            failure: function() {},
+            failure: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
+
             params: { id: record.data.id, viewmode: 2, refresh: 0}
         });
     },
@@ -321,14 +314,41 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
 
         if (record === undefined) return;
 
+        that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey + '_print_front.pdf');
+        that.getOrderItemPanel().down('#UploadPDFTextField').setText('Upload Print Front per Drag\'n\'Drop');
+
         Ext.Ajax.request({
             url: '/order/item/refresh',
             success: function() {
-                that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey + '_print_front.pdf');
                 that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_print_front.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
             },
-            failure: function() {},
+            failure: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
+
             params: { id: record.data.id, viewmode: 3, refresh: 0}
+        });
+    },
+
+    onOrderItemViewmodePrintBackMenuItemClick: function(item, e, eOpts) {
+        var that = this;
+        var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];
+
+        if (record === undefined) return;
+
+        that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey +'_print_back.pdf');
+        that.getOrderItemPanel().down('#UploadPDFTextField').setText('Upload Print Back per Drag\'n\'Drop');
+
+        Ext.Ajax.request({
+            url: '/order/item/refresh',
+            success: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_print_back.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
+            failure: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
+
+            params: { id: record.data.id, viewmode: 4, refresh: 0}
         });
     },
 
@@ -338,13 +358,17 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
 
         if (record === undefined) return;
 
+        that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey +'_test_front.pdf');
+        that.getOrderItemPanel().down('#UploadPDFTextField').setText('Upload Test Front per Drag\'n\'Drop');
+
         Ext.Ajax.request({
             url: '/order/item/refresh',
             success: function() {
-                that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey +'_test_front.pdf');
                 that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_test_front.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
             },
-            failure: function() {},
+            failure: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
             params: { id: record.data.id, viewmode: 5, refresh: 0}
         });
     },
@@ -355,13 +379,18 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
 
         if (record === undefined) return;
 
+        that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey +'_test_back.pdf');
+        that.getOrderItemPanel().down('#UploadPDFTextField').setText('Upload Test Back per Drag\'n\'Drop');
+
         Ext.Ajax.request({
             url: '/order/item/refresh',
             success: function() {
-                that.getOrderItemDetailPanel().down('#OrderItemFilename').setValue(record.data.authkey +'_test_back.pdf');
                 that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="/deploy/' + record.data.authkey + '_test_back.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
             },
-            failure: function() {},
+            failure: function() {
+                that.getOrderItemDetailPanel().getComponent('PreviewContainer').update('<embed src="" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+            },
+
             params: { id: record.data.id, viewmode: 6, refresh: 0}
         });
     },
@@ -379,9 +408,6 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
             },
             "#OrderItemDetailDeleteButton": {
                 click: this.onOrderItemDetailDeleteButtonClick
-            },
-            "#OrderItemViewmodePrintBackMenuItem": {
-                click: this.onOrderItemViewmodePrintBackMenuItemClick
             },
             "#OrderItemDetailRefreshButton": {
                 click: this.onOrderItemDetailRefreshButtonClick
@@ -403,6 +429,9 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
             },
             "#OrderItemViewmodePrintFrontMenuItem": {
                 click: this.onOrderItemViewmodePrintFrontMenuItemClick
+            },
+            "#OrderItemViewmodePrintBackMenuItem": {
+                click: this.onOrderItemViewmodePrintBackMenuItemClick
             },
             "#OrderItemViewmodeTestFrontMenuItem": {
                 click: this.onOrderItemViewmodeTestFrontMenuItemClick
