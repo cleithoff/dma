@@ -31,9 +31,14 @@ class Intern_DeliveryController extends Zend_Controller_Action
         
         if ($cmd == "Speichern") {
         	try {
-	        	$packagePackageordera = $this->getOrderCombine($authkey)->depPackagePackageorder();
-	        	$packagePackageorder->outgoing = date('Y-m-d H:i:s', time());
-	        	$packagePackageorder->save();
+	        	$packagePackageorders = $this->getOrderCombine($authkey)->depPackagePackageorder();
+	        	if (count($packagePackageorders) == 0) {
+	        		throw new Exception("Keine Pakete gefunden.");
+	        	}
+	        	foreach ($packagePackageorders as $packagePackageorder) {
+		        	$packagePackageorder->outgoing = date('Y-m-d H:i:s', time());
+		        	$packagePackageorder->save();
+	        	}
 	        	$this->view->assign('success', "Liefertermin wurde gespeichert.");
         	} catch (Exception $ex) {
         		$this->view->assign('message', $ex->getMessage());
