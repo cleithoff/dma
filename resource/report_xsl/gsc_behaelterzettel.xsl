@@ -71,7 +71,7 @@
 <!-- START Area Detail -->
 <xsl:if test="data/ReportDetail/ListOfReportDetail/ItemOfReportDetail" >
 <!-- 5c4937a970024a0694ebfb7b95a0fd19 -->
-<fo:table  width="17.0cm"   border-color="#000000" border-style="dotted" border-width="medium" >
+<fo:table  width="17.0cm"   border-color="#000000" border-style="solid" border-width="thin" >
   <fo:table-column column-width="1.0cm"/>
   <fo:table-column column-width="1.25cm"/>
   <fo:table-column column-width="2.75cm"/>
