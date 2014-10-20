@@ -891,7 +891,7 @@ FLNAME  =default
 FLCOND  =
 BASE64  =
 -- ENDBASE64
-IMGTYPE =
+IMGTYPE =png
 VALUE   =
 HTMLI   =
 SCALE   =1

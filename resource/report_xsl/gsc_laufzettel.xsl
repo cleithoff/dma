@@ -147,6 +147,31 @@
       <fo:block     margin-left="0.0cm" margin-right="3.0cm"  margin-top="0.01cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/import_stack_title"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
+    <fo:table-row    background-color="#ffffff"  height="0.5cm"   >
+        <fo:table-cell    number-columns-spanned="4">
+      <!-- aff285bafaeb49a49181729796ac522d -->
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Bestellungcode</fo:block>
+        </fo:table-cell>
+        <fo:table-cell    number-rows-spanned="2"  number-columns-spanned="1">
+      <fo:block   margin-left="0.0cm"  margin-top="0.0cm" ><fo:instream-foreign-object  content-width="8.0cm" content-height="1.5cm"  >
+<!-- a5796a55b286467bad0831c453894fdd -->
+<j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/order_combine_authkey"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>20</BARHEIGHT><LEFTMARGIN>10</LEFTMARGIN><SET>A</SET><TYPE>BAR39</TYPE><N>2</N><TOPMARGIN>25</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode></fo:instream-foreign-object></fo:block>
+        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+    </fo:table-row>
+    <fo:table-row    background-color="#ffffff"  height="1.0cm"   >
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+    </fo:table-row>
 <fo:table-row>
 <fo:table-cell number-columns-spanned="6">
 <fo:block>

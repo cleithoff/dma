@@ -1,0 +1,41 @@
+<div class="container">
+
+<?php if(!empty($this->message)): ?>
+	<div class="alert alert-danger"><?php echo $this->message; ?></div>
+<?php endif ?>
+
+<?php if(!empty($this->success)): ?>
+	<div class="alert alert-success"><?php echo $this->success; ?></div>
+<?php endif ?>
+
+<form class="navbar-form" name="authkeySaveForm" method="POST">
+	<h1>Bestellcode</h1>
+	<input type="text" name="authkey" value="<?php echo $this->authkey; ?>" class="span4" id="authkeyInput" />
+	<input type="submit" name="cmd" value="Speichern" class="btn" id="authkeySaveFormButton" style="display:none" /><br/>
+</form>
+<br/><br/>
+
+</div>
+
+<script>
+	$( document ).ready(function() {
+	
+		document.getElementById('authkeyInput').focus();
+		document.getElementById('authkeyInput').select();
+			
+		document.getElementById('authkeyInput').onkeydown = function(e) {
+			if (e.ctrlKey == true) return false;
+			if (document.getElementById('authkeyInput').value.length >= 32 && e.keyCode >= 32) {
+				//console.log(e);
+				return false;
+			}
+			if (e.keyCode == 13) {
+				document.getElementById('authkeySaveFormButton').click();
+			}
+	
+		};
+			
+	});
+	
+
+</script>
