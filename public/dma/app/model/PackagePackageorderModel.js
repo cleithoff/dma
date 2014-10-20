@@ -30,14 +30,16 @@ Ext.define('MyApp.model.PackagePackageorderModel', {
             name: 'order_combine_id'
         },
         {
-            name: 'readytosend'
+            name: 'readytosend',
+            type: 'boolean'
         },
         {
             name: 'outgoing',
             type: 'date'
         },
         {
-            name: 'sendingnumber'
+            name: 'sendingnumber',
+            type: 'string'
         },
         {
             name: 'amount'
@@ -68,5 +70,14 @@ Ext.define('MyApp.model.PackagePackageorderModel', {
             type: 'float',
             useNull: true
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: '/package/packageorder/index',
+        reader: {
+            type: 'json',
+            root: 'data'
+        }
+    }
 });

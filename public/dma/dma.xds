@@ -1207,6 +1207,14 @@
                 "app/model/OrderStateModel.js"
             ],
             "className": "OrderStateModel"
+        },
+        "014ceade-61dd-478d-b66a-363331e36a66": {
+            "paths": [
+                "metadata/controller/OrderPackagePackageorderController",
+                "app/controller/override/OrderPackagePackageorderController.js",
+                "app/controller/OrderPackagePackageorderController.js"
+            ],
+            "className": "OrderPackagePackageorderController"
         }
     },
     "viewOrderMap": {
@@ -1315,6 +1323,7 @@
             "ea51f8fb-6ba3-4bb9-b81b-d3b5dfb76b7b",
             "1ded70dd-2c31-4bb1-978f-4ac685830c99",
             "b9a0b6d2-8959-4036-8c22-a9a5fa0df6cb",
+            "014ceade-61dd-478d-b66a-363331e36a66",
             "e2dabfde-fd91-4792-861f-4df5e3f31002",
             "ea9d1853-1267-4fd4-96dd-cae0e3a95d9c",
             "3f55390b-156a-4a28-a69b-5a89ba3d5d2a",

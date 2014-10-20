@@ -66,7 +66,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "readytosend"
+                "name": "readytosend",
+                "type": "boolean"
             },
             "designerId": "cd467644-afc2-4893-8d4a-f57f3f9043a0"
         },
@@ -91,7 +92,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "sendingnumber"
+                "name": "sendingnumber",
+                "type": "string"
             },
             "designerId": "23ef1871-91ac-4ab4-b9ee-2cff3825661d"
         },

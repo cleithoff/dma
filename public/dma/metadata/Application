@@ -160,7 +160,8 @@
             "RuleController",
             "CrudController",
             "OrderItemOrderMetaController",
-            "UtilController"
+            "UtilController",
+            "OrderPackagePackageorderController"
         ],
         "name": "MyApp"
     },

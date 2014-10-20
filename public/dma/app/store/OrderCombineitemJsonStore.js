@@ -27,6 +27,7 @@ Ext.define('MyApp.store.OrderCombineitemJsonStore', {
             autoSync: true,
             model: 'MyApp.model.OrderCombineitemModel',
             remoteFilter: true,
+            storeId: 'OrderCombineitemJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/order/combineitem/index',

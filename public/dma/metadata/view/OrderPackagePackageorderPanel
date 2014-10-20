@@ -239,7 +239,8 @@
                 "height": 150,
                 "itemId": "OrderPackagePackageorderFormPanel",
                 "bodyPadding": 10,
-                "title": null
+                "title": null,
+                "trackResetOnLoad": true
             },
             "designerId": "531a04d7-dc6d-4ede-a1c7-db0c42d1ccca",
             "cn": [

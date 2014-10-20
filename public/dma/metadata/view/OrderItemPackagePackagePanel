@@ -177,7 +177,8 @@
                 "disabled": true,
                 "itemId": "OrderItemPackagePackageFormPanel",
                 "bodyPadding": 10,
-                "title": null
+                "title": null,
+                "trackResetOnLoad": true
             },
             "designerId": "ccdc5eda-cc9d-4643-b8de-a577b5c81324",
             "cn": [

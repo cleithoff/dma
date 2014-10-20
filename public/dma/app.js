@@ -173,7 +173,8 @@ Ext.application({
         'RuleController',
         'CrudController',
         'OrderItemOrderMetaController',
-        'UtilController'
+        'UtilController',
+        'OrderPackagePackageorderController'
     ],
     name: 'MyApp',
 

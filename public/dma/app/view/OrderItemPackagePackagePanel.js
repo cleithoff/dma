@@ -89,6 +89,7 @@ Ext.define('MyApp.view.OrderItemPackagePackagePanel', {
                     disabled: true,
                     itemId: 'OrderItemPackagePackageFormPanel',
                     bodyPadding: 10,
+                    trackResetOnLoad: true,
                     items: [
                         {
                             xtype: 'displayfield',

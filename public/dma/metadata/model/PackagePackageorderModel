@@ -66,7 +66,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "readytosend"
+                "name": "readytosend",
+                "type": "boolean"
             },
             "designerId": "5f7de75f-f9e5-4785-9744-2616a3bb4163"
         },
@@ -91,7 +92,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "sendingnumber"
+                "name": "sendingnumber",
+                "type": "string"
             },
             "designerId": "c18ca3d5-5e9e-4b15-b66a-3985f78e5f45"
         },
@@ -222,6 +224,32 @@
                 "useNull": true
             },
             "designerId": "410e0d3d-3d67-46bd-9534-1136cdfc59e7"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/package/packageorder/index"
+            },
+            "designerId": "9075eea0-a324-4308-99df-b177737b404a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "96554b7e-b648-4ae7-8f11-02e4f900cb42"
+                }
+            ]
         }
     ]
 }

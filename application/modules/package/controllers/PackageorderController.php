@@ -20,7 +20,9 @@ class Package_PackageorderController extends Rest_Controller_Action_DbTable
 		
 		$service->createPackages($order_combine_id);
 		
-		$this->getAction();
+		return $this->forward('get');
+		
+		// return $this->getAction();
 	}
 	
 	public function repairAction() {

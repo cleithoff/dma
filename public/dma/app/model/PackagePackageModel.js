@@ -30,14 +30,16 @@ Ext.define('MyApp.model.PackagePackageModel', {
             name: 'order_item_id'
         },
         {
-            name: 'readytosend'
+            name: 'readytosend',
+            type: 'boolean'
         },
         {
             name: 'outgoing',
             type: 'date'
         },
         {
-            name: 'sendingnumber'
+            name: 'sendingnumber',
+            type: 'string'
         },
         {
             name: 'amount'

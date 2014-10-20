@@ -795,10 +795,10 @@
                 ],
                 "implHandler": [
                     "var \r",
-                    "\tme = this\r",
-                    "\t,record = me.down('#OrderOrderGridPanel').getSelectionModel().getSelection()[0]\r",
-                    "    ,orderStateRecord = Ext.getStore('OrderStateJsonStore').findRecord('key',order_state_key)\r",
-                    "    ,orderItemstateRecord = Ext.getStore('OrderItemstateJsonStore').findRecord('key',order_itemstate_key)\r",
+                    "me = this\r",
+                    ",record = me.down('#OrderOrderGridPanel').getSelectionModel().getSelection()[0]\r",
+                    ",orderStateRecord = Ext.getStore('OrderStateJsonStore').findRecord('key',order_state_key)\r",
+                    ",orderItemstateRecord = Ext.getStore('OrderItemstateJsonStore').findRecord('key',order_itemstate_key)\r",
                     ";\r",
                     "\r",
                     "record.data.order_state_id = orderStateRecord.data.id;\r",
@@ -808,7 +808,7 @@
                     "me.down('#OrderItemGridPanel').getStore().each(function(record,idx){\r",
                     "    //do whatever you want with the record \r",
                     "    if (record.data.order_itemstate_id == 10 || record.data.order_itemstate_id == 11) return;\r",
-                    "    \r",
+                    "\r",
                     "    record.data.order_itemstate_id = orderItemstateRecord.data.id;\r",
                     "    record.save();\r",
                     "});"

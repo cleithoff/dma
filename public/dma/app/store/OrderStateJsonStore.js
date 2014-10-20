@@ -26,6 +26,7 @@ Ext.define('MyApp.store.OrderStateJsonStore', {
         me.callParent([Ext.apply({
             autoLoad: true,
             model: 'MyApp.model.OrderStateModel',
+            storeId: 'OrderStateJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/order/state/index',

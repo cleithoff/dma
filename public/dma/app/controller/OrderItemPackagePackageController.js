@@ -32,10 +32,10 @@ Ext.define('MyApp.controller.OrderItemPackagePackageController', {
     ],
 
     onOrderItemPackagePackageEditButtonClick: function(button, e, eOpts) {
-        panel = this.getOrderItemPackagePackagePanel();
+        var panel = this.getOrderItemPackagePackagePanel();
 
-        formPanel = panel.getComponent('OrderItemPackagePackageFormPanel');
-        toolbar = panel.getComponent('OrderItemPackagePackageToolbar');
+        var formPanel = panel.getComponent('OrderItemPackagePackageFormPanel');
+        var toolbar = panel.getComponent('OrderItemPackagePackageToolbar');
         formPanel.enable();
 
         toolbar.getComponent('OrderItemPackagePackageEditButton').disable();
@@ -104,10 +104,6 @@ Ext.define('MyApp.controller.OrderItemPackagePackageController', {
             }    
         }
 
-        if(grid !== undefined && grid.getSelectionModel().getSelection().length > 0) {
-            record = grid.getSelectionModel().getSelection()[0];
-            formPanel.getForm().loadRecord(record);
-        }
     },
 
     onOrderItemPackagePackageDeleteButtonClick: function(button, e, eOpts) {
@@ -147,10 +143,10 @@ Ext.define('MyApp.controller.OrderItemPackagePackageController', {
         //Ext.getStore('PackagePackageJsonStore').clearFilter(true);
         //Ext.getStore('PackagePackageJsonStore').filter([{property:'order_item_id',value:record.data.id}]);
 
-        panel = this.getOrderItemPackagePackagePanel();
+        var panel = this.getOrderItemPackagePackagePanel();
 
-        formPanel = panel.getComponent('OrderItemPackagePackageFormPanel');
-        toolbar = panel.getComponent('OrderItemPackagePackageToolbar');
+        var formPanel = panel.down('#OrderItemPackagePackageFormPanel');
+        var toolbar = panel.getComponent('OrderItemPackagePackageToolbar');
 
         formPanel.getForm().loadRecord(record);
         toolbar.getComponent('OrderItemPackagePackageEditButton').enable();
