@@ -27,6 +27,10 @@ class Rest_Model_DbRow extends Zend_Db_Table_Row_Abstract {
 		$func = $matches[0][0];
 		
 		if ($func === "dep") {
+			
+			
+
+			
 			$prefix = $matches[0][1];
 				
 			$suffix = $matches[0][2];
@@ -35,20 +39,25 @@ class Rest_Model_DbRow extends Zend_Db_Table_Row_Abstract {
 				$suffix .= strtolower($matches[0][$i]);
 			}
 				
-			$idvar = strtolower($prefix) . '_' . strtolower($suffix) . '_id';
+			$idvar1 = strtolower($prefix) . '_' . strtolower($suffix) . '_id';
+
+			$classname = explode('_', get_class($this));
+			
+			$idvar2 = strtolower(reset($classname)) . '_' . strtolower(end($classname)) . '_id';
+			
+			if (array_key_exists($idvar1, $this->_rows)) return $this->_rows[$idvar1];
 				
-			if (array_key_exists($idvar, $this->_rows)) return $this->_rows[$idvar];
-				
+			
 			$dbTable = $prefix . '_Model_DbTable_' . $suffix;
 				
 			$dbTable = new $dbTable();
 				
 			$idval = $this->id; //$idvar;
 				
-			$rows = $dbTable->fetchAll($idvar . " = " . $idval);
+			$rows = $dbTable->fetchAll($idvar2 . " = " . $idval);
 				
 			if (!empty($rows)) {
-				$this->_rows[$idvar] = $rows;
+				$this->_rows[$idvar1] = $rows;
 				return $rows;
 			}
 			return null;
