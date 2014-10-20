@@ -39,7 +39,7 @@ class Intern_DeliveryController extends Zend_Controller_Action
 		        	$packagePackageorder->outgoing = date('Y-m-d H:i:s', time());
 		        	$packagePackageorder->save();
 	        	}
-	        	$this->view->assign('success', "Liefertermin wurde gespeichert.");
+	        	$this->view->assign('success', "Versandtermin wurde gespeichert.");
         	} catch (Exception $ex) {
         		$this->view->assign('message', $ex->getMessage());
         	}
