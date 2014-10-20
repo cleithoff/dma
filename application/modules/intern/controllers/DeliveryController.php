@@ -8,6 +8,18 @@ class Intern_DeliveryController extends Zend_Controller_Action
         /* Initialize action controller here */
     }
 
+    protected function getOrderCombine($authkey) {
+    	$orderCombines = new Order_Model_DbTable_Combine();
+    	 
+    	$orderCombine = $orderCombines->fetchRow("authkey = " . Zend_Db_Table::getDefaultAdapter()->quote($authkey));
+    	 
+    	if (empty($orderCombine)) {
+    		throw new Exception("Bestellcode nicht gefunden.");
+    	}
+    	 
+    	return $orderCombine;
+    }
+    
     public function indexAction()
     {
 		// action body
