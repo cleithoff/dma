@@ -31,7 +31,7 @@ class Intern_DeliveryController extends Zend_Controller_Action
         
         if ($cmd == "Speichern") {
         	try {
-	        	$packagePackageorder = $this->getOrderCombine($authkey)->getPackagePackageorder();
+	        	$packagePackageordera = $this->getOrderCombine($authkey)->depPackagePackageorder();
 	        	$packagePackageorder->outgoing = date('Y-m-d H:i:s', time());
 	        	$packagePackageorder->save();
 	        	$this->view->assign('success', "Liefertermin wurde gespeichert.");

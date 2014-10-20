@@ -26,6 +26,34 @@ class Rest_Model_DbRow extends Zend_Db_Table_Row_Abstract {
 		
 		$func = $matches[0][0];
 		
+		if ($func === "dep") {
+			$prefix = $matches[0][1];
+				
+			$suffix = $matches[0][2];
+				
+			for ($i = 3; $i < count($matches[0]); $i++) {
+				$suffix .= strtolower($matches[0][$i]);
+			}
+				
+			$idvar = strtolower($prefix) . '_' . strtolower($suffix) . '_id';
+				
+			if (array_key_exists($idvar, $this->_rows)) return $this->_rows[$idvar];
+				
+			$dbTable = $prefix . '_Model_DbTable_' . $suffix;
+				
+			$dbTable = new $dbTable();
+				
+			$idval = $this->id; //$idvar;
+				
+			$rows = $dbTable->fetchAll($idvar . " = " . $idval);
+				
+			if (!empty($rows)) {
+				$this->_rows[$idvar] = $rows;
+				return $rows;
+			}
+			return null;
+		}
+		
 		if ($func === "get") { 
 			$prefix = $matches[0][1];
 			
