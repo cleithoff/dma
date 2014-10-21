@@ -4,7 +4,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 
 	protected $width = 50;
 	protected $height = 50;
-	protected $border = 0;
+	protected $border = 3;
 	protected $dpi = 150;
 	
 	const mm2inch = 0.03937007874;
@@ -36,7 +36,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:black -fill white -stroke black -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx) . "\" -define png:compression-level=0 " . $filename;
 		exec($exec);
 		
-		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:white -fill black -stroke white -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx + 3) . "\" -define png:compression-level=0 " . $filenameNegate;
+		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:white -fill black -stroke white -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx + 1) . "\" -define png:compression-level=0 " . $filenameNegate;
 		exec($exec);
 		
 		$exec = "convert " . $filenameNegate . " " . $filename . " -compose darken -composite -define png:compression-level=0 " . $filenameBlack;
@@ -112,7 +112,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		
 		$width = 50;
 		$height = 50;
-		$border = 0;
+		$border = 3;
 		$dpi = 150;
 		
 		$backgroundFilename = $this->initBackground($width,$height,$dpi,$border);
