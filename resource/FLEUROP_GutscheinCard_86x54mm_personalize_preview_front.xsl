@@ -11,18 +11,44 @@
 </fo:layout-master-set>
 
 <fo:page-sequence master-reference="main">
+
 <fo:flow flow-name="xsl-region-body">
-<fo:shape shape-name="circle" 
-        border-width="2pt" border-color="black"
-        padding-width="10pt"> 
-  <!-- <svg:svg xmlns:svg="http://www.w3.org/2000/svg">
-    <circle cx="0" cy="0" r="20mm"/>
-  </svg:svg> -->
-</fo:shape>
+
+
+
+<fo:block-container block-progression-dimension="0cm"
+inline-progression-dimension="0cm"
+background-color="blue"
+absolute-position="absolute"
+left="0mm"
+top="0mm">
             <fo:block>
             	<xsl:apply-templates select="data/Product_Service_Plugingutscheincard" />
             </fo:block>
+            
+            <fo:block-container
+block-progression-dimension="1cm"
+inline-progression-dimension="5cm"
+background-color="white"
+absolute-position="absolute"
+left="0mm"
+top="44.5mm">
+            <fo:block>
+            </fo:block>
+</fo:block-container>
 
+            <fo:block-container
+block-progression-dimension="5cm"
+inline-progression-dimension="1cm"
+background-color="white"
+absolute-position="absolute"
+left="46.8mm"
+top="0mm">
+            <fo:block>
+            </fo:block>
+</fo:block-container>
+
+</fo:block-container>
 </fo:flow>
 
 </fo:page-sequence>
