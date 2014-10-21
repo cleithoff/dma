@@ -33,10 +33,10 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 			unlink($filename);
 		}
 		
-		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:black -fill white -stroke black -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx) . "\" -define png:compression-level=0 " . $filename;
+		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:black -fill white -stroke black -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx) . "\" -define png:compression-level=1 " . $filename;
 		exec($exec);
 		
-		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:white -fill black -stroke white -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx + 1) . "\" -define png:compression-level=0 " . $filenameNegate;
+		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:white -fill black -stroke white -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx + 1) . "\" -define png:compression-level=1 " . $filenameNegate;
 		exec($exec);
 		
 		$exec = "convert " . $filenameNegate . " " . $filename . " -compose darken -composite -define png:compression-level=0 " . $filenameBlack;
@@ -73,7 +73,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		$exec = "convert " . $backgroundFilename . " " . $overlayFilename . " -compose plus -composite -define png:compression-level=0 " . $assembledFilenameProof;
 		exec($exec);
 		
-		$exec = "convert " . $backgroundFilenameNegate . " " . $assembledFilename . " -compose darken -composite -define png:compression-level=0 " . $assembledFilename;
+		$exec = "convert " . $backgroundFilenameNegate . " " . $assembledFilename . " -compose darken -composite -define png:compression-level=1 " . $assembledFilename;
 		exec($exec);
 		
 		return $assembledFilename;
