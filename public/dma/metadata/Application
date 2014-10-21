@@ -177,6 +177,8 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
+                    "Ext.override(Ext.grid.View, { enableTextSelection: true });\r",
+                    "\r",
                     "Ext.override(Ext.data.Record, {\r",
                     "    forceDirty: function(name, value) {\r",
                     "        var me = this;\r",

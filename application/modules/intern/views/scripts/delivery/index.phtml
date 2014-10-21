@@ -1,3 +1,31 @@
+<script>
+
+	function tabFieldNext(e) {
+		if (e.ctrlKey == true) return false;
+		//if (this.value.length == 32 && e.keyCode >= 32) return false;
+		if (e.keyCode == 13) {
+			
+			 	var $input = $('form.authkeySaveForm input[type=text]');
+		        if( $(this).is( $input.last() ) )
+		        {
+		            //Time to submit the form!!!!
+		            //alert( 'Hooray .....' );
+		            return true;
+		        }
+		        else
+		        {
+		        	e.preventDefault();
+		            $input.eq( $input.index( this ) + 1 ).focus();
+		            $input.eq( $input.index( this ) + 1 ).select();
+		        }
+			return false;
+		}
+		if (e.keyCode <= 32) {
+			return false;
+		}
+	}
+
+</script>
 <div class="container">
 
 <?php if(!empty($this->message)): ?>
@@ -8,9 +36,11 @@
 	<div class="alert alert-success"><?php echo $this->success; ?></div>
 <?php endif ?>
 
-<form class="navbar-form" name="authkeySaveForm" method="POST">
-	<h1>Bestellcode</h1>
+<form class="navbar-form authkeySaveForm" name="authkeySaveForm" method="POST">
+	<h1>Paketcode</h1>
 	<input type="text" name="authkey" value="<?php echo $this->authkey; ?>" class="span4" id="authkeyInput" />
+	<h1>Sendungsnummer</h1>
+	<input type="text" name="sendingnumber" value="<?php echo $this->sendingnumber; ?>" class="span4" id="sendingnumberInput" />
 	<input type="submit" name="cmd" value="Speichern" class="btn" id="authkeySaveFormButton" style="display:none" /><br/>
 </form>
 <br/><br/>
@@ -19,10 +49,13 @@
 
 <script>
 	$( document ).ready(function() {
-	
+
+		$('form.authkeySaveForm input[type=text]').bind("keydown", tabFieldNext);
+		
 		document.getElementById('authkeyInput').focus();
 		document.getElementById('authkeyInput').select();
-			
+
+		/*	
 		document.getElementById('authkeyInput').onkeydown = function(e) {
 			if (e.ctrlKey == true) return false;
 			if (document.getElementById('authkeyInput').value.length >= 32 && e.keyCode >= 32) {
@@ -34,6 +67,7 @@
 			}
 	
 		};
+		*/
 			
 	});
 	

@@ -12,12 +12,24 @@ class Intern_DeliveryController extends Zend_Controller_Action
     	$orderCombines = new Order_Model_DbTable_Combine();
     	 
     	$orderCombine = $orderCombines->fetchRow("authkey = " . Zend_Db_Table::getDefaultAdapter()->quote($authkey));
-    	 
+    	
     	if (empty($orderCombine)) {
     		throw new Exception("Bestellcode nicht gefunden.");
     	}
     	 
     	return $orderCombine;
+    }
+    
+    protected function getPackagePackageorder($authkey) {
+    	$packagePackageorders = new Package_Model_DbTable_Packageorder();
+    
+    	$packagePackageorder = $packagePackageorders->fetchRow("authkey = " . Zend_Db_Table::getDefaultAdapter()->quote($authkey));
+    	 
+    	if (empty($packagePackageorder)) {
+    		throw new Exception("Paketcode nicht gefunden.");
+    	}
+    
+    	return $packagePackageorder;
     }
     
     public function indexAction()
@@ -28,18 +40,15 @@ class Intern_DeliveryController extends Zend_Controller_Action
         $cmd = $this->getRequest()->getParam('cmd', null);
         
         $authkey = $this->getRequest()->getParam('authkey', null);
+        $sendingnumber = $this->getRequest()->getParam('sendingnumber', null);
         
-        if ($cmd == "Speichern") {
+        if ($cmd == "Speichern" && !empty($authkey) && !empty($sendingnumber)) {
         	try {
-	        	$packagePackageorders = $this->getOrderCombine($authkey)->depPackagePackageorder();
-	        	if (count($packagePackageorders) == 0) {
-	        		throw new Exception("Keine Pakete gefunden.");
-	        	}
-	        	foreach ($packagePackageorders as $packagePackageorder) {
-		        	$packagePackageorder->outgoing = date('Y-m-d H:i:s', time());
-		        	$packagePackageorder->save();
-	        	}
-	        	$this->view->assign('success', "Versandtermin wurde gespeichert.");
+	        	$packagePackageorder = $this->getPackagePackageorder($authkey);
+	        	$packagePackageorder->outgoing = date('Y-m-d H:i:s', time());
+	        	$packagePackageorder->sendingnumber = $sendingnumber;
+	        	$packagePackageorder->save();
+	        	$this->view->assign('success', "Sendungsnummer und Versandtermin wurden gespeichert.");
         	} catch (Exception $ex) {
         		$this->view->assign('message', $ex->getMessage());
         	}
@@ -47,6 +56,7 @@ class Intern_DeliveryController extends Zend_Controller_Action
         
         $this->view->assign('cmd', $cmd);
         $this->view->assign('authkey', $authkey);
+        $this->view->assign('sendingnumber', $sendingnumber);
     }
 
 

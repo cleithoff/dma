@@ -98,3 +98,25 @@ opacity: 0.75;
 	background-color: #dfe8f6 !important;
 }
 
+.x-selectable,
+.x-selectable * {
+                -moz-user-select: text !important;
+                -khtml-user-select: text !important;
+    -webkit-user-select: text !important;
+}
+
+.x-grid-row td,
+.x-grid-summary-row td,
+.x-grid-cell-text,
+.x-grid-hd-text,
+.x-grid-hd,
+.x-grid-row,
+
+.x-grid-row,
+.x-grid-cell,
+.x-unselectable
+{
+    -moz-user-select: text !important;
+    -khtml-user-select: text !important;
+    -webkit-user-select: text !important;
+}

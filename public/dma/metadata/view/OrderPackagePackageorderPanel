@@ -484,6 +484,20 @@
                     "designerId": "c6ae0951-63cc-45b2-9604-939896cc1f11"
                 },
                 {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "dataIndex": "authkey",
+                        "text": "Authkey"
+                    },
+                    "designerId": "b894afeb-c24f-45be-9205-65e7fa0e6bba"
+                },
+                {
                     "type": "Ext.grid.View",
                     "reference": {
                         "name": "viewConfig",

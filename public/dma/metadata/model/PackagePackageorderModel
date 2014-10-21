@@ -250,6 +250,18 @@
                     "designerId": "96554b7e-b648-4ae7-8f11-02e4f900cb42"
                 }
             ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "authkey"
+            },
+            "designerId": "347e09de-8086-419c-a303-6f5b600b65c1"
         }
     ]
 }

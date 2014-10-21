@@ -69,6 +69,9 @@ Ext.define('MyApp.model.PackagePackageorderModel', {
             name: 'weight',
             type: 'float',
             useNull: true
+        },
+        {
+            name: 'authkey'
         }
     ],
 

@@ -179,6 +179,8 @@ Ext.application({
     name: 'MyApp',
 
     launch: function() {
+        Ext.override(Ext.grid.View, { enableTextSelection: true });
+
         Ext.override(Ext.data.Record, {
             forceDirty: function(name, value) {
                 var me = this;

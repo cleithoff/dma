@@ -191,6 +191,12 @@ Ext.define('MyApp.view.OrderPackagePackageorderPanel', {
                             xtype: 'gridcolumn',
                             dataIndex: 'sendingnumber',
                             text: 'Sendungsnummer'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            hidden: true,
+                            dataIndex: 'authkey',
+                            text: 'Authkey'
                         }
                     ],
                     listeners: {
