@@ -177,7 +177,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		$border = $this->border;
 		$dpi = $this->dpi;
 		
-		$x = intval($width * $x / 10);
+		//$x = intval($width * $x / 10);
 		
 		$logoFilename = $this->setLogo($width,$height,$dpi,$x,$x,$filename_graphics);
 		//$logoFilename = $this->setLogo($width,$height,$dpi,$x-$border,$x-$border,$filename_graphics);
