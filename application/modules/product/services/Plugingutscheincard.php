@@ -62,7 +62,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		$overlayFilename = APPLICATION_PATH . '/../resource/logo_assembly/overlay_' . intval($widthpx) . 'x' . intval($heightpx) . '.png';
 		
 		$assembledFilename = APPLICATION_PATH . '/../resource/logo_assembly/assembled_' . intval($widthpx) . 'x' . intval($heightpx) . '.png';
-		$assembledFilenameProof = APPLICATION_PATH . '/../resource/logo_assembly/assembled_' . intval($widthpx) . 'x' . intval($heightpx) . '_' . intval($x) . '.png';
+		$assembledFilenameProof = APPLICATION_PATH . '/../resource/logo_assembly/assembled_' . intval($widthpx) . 'x' . intval($heightpx) . '_' . intval($x) . '.gif';
 		
 		$exec = "convert " . $filename . " -monochrome -resize " . intval($useWidthpx) . "x" . intval($useHeightpx) . " -size " . intval($widthpx) . "x" . intval($heightpx) . " xc:white +swap -gravity center -composite -negate " . $overlayFilename;
 		exec($exec);
