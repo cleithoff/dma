@@ -33,5 +33,15 @@
     </fo:external-graphic>
 </fo:block>
 
+<fo:block-container
+block-progression-dimension="1in"
+inline-progression-dimension="1in"
+background-color="blue"
+absolute-position="absolute"
+left="2in"
+top="2in">
+<fo:block> </fo:block>
+</fo:block>
+
 </xsl:template>
 </xsl:stylesheet>
