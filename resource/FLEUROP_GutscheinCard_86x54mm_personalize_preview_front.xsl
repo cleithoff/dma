@@ -12,12 +12,13 @@
 
 <fo:page-sequence master-reference="main">
 <fo:flow flow-name="xsl-region-body">
+<fo:block block-progression-dimension="1cm" inline-progression-dimension="1cm" background-color="blue" absolute-position="absolute" left="0mm" top="0mm">
+<fo:block> </fo:block>
+</fo:block>
             <fo:block>
             	<xsl:apply-templates select="data/Product_Service_Plugingutscheincard" />
             </fo:block>
-<fo:block block-progression-dimension="1in" inline-progression-dimension="1in" background-color="blue" absolute-position="absolute" left="1in" top="1in">
-<fo:block> </fo:block>
-</fo:block>
+
 </fo:flow>
 
 </fo:page-sequence>
