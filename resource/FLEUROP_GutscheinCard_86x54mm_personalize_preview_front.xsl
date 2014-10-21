@@ -6,7 +6,7 @@
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 <fo:layout-master-set>
 <fo:simple-page-master master-name="main" page-height="5.4cm" page-width="8.5cm" font-family="sans-serif" margin="3.5mm">
-<fo:region-body margin-left="3.1cm" margin-top="3mm" />
+<fo:region-body margin-left="3.2cm" margin-top="3mm" />
 </fo:simple-page-master>
 </fo:layout-master-set>
 
@@ -26,7 +26,7 @@
 <xsl:template match="data/Product_Service_Plugingutscheincard">
 
 <fo:block font-size="7pt">
-    <fo:external-graphic content-width="50mm" content-height="50mm">
+    <fo:external-graphic content-width="49mm" content-height="49mm">
     	<xsl:attribute name="src">
              <xsl:value-of select="./logo"/>
         </xsl:attribute>
