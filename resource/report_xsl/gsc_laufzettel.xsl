@@ -77,36 +77,36 @@
 <fo:table  width="17.0cm"   >
   <fo:table-column column-width="1.25cm"/>
   <fo:table-column column-width="1.75cm"/>
-  <fo:table-column column-width="7.0cm"/>
-  <fo:table-column column-width="7.0cm"/>
+  <fo:table-column column-width="9.0cm"/>
+  <fo:table-column column-width="5.0cm"/>
   <fo:table-body>
     <fo:table-row    background-color="#ffffff"  height="0.51cm"   >
         <fo:table-cell    number-columns-spanned="3">
       <!-- 33cdf657bf554537b48b03d9c321fffc -->
-      <fo:block     margin-left="0.0cm" margin-right="4.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_anrede"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="6.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_anrede"></xsl:value-of></fo:block>
         </fo:table-cell>
         <fo:table-cell    number-rows-spanned="7"  number-columns-spanned="1">
       <!-- 4e24104d5b0a4a798a679f04c01745df -->
-      <fo:block   text-align="right"    margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm" ><fo:external-graphic content-width="scale-to-fit" content-height="scale-to-fit" width="7.0cm"  height="4.0cm"  position="absolute"  ><xsl:attribute name="src"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/partner_logo"></xsl:value-of></xsl:attribute></fo:external-graphic>
+      <fo:block   text-align="right"    margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm" ><fo:external-graphic content-width="scale-to-fit" content-height="scale-to-fit" width="5.0cm"  height="4.0cm"  position="absolute"  ><xsl:attribute name="src"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/partner_logo"></xsl:value-of></xsl:attribute></fo:external-graphic>
 </fo:block>
         </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="0.46cm"   >
         <fo:table-cell    number-columns-spanned="3">
       <!-- 993f725debf949868875f6e2bbfb46ed -->
-      <fo:block     margin-left="0.0cm" margin-right="4.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_name1"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="6.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_name1"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="0.49cm"   >
         <fo:table-cell    number-columns-spanned="3">
       <!-- e0abd0875eb94b25931e2fe78662f9dd -->
-      <fo:block     margin-left="0.0cm" margin-right="4.0cm"  margin-top="0.03cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_name2"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="6.0cm"  margin-top="0.03cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_name2"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="0.49cm"   >
         <fo:table-cell    number-columns-spanned="3">
       <!-- 262c53aa502c4a929f0f57ecafddb8a3 -->
-      <fo:block     margin-left="0.0cm" margin-right="4.0cm"  margin-top="0.04cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_strasse"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="6.0cm"  margin-top="0.04cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_strasse"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="0.51cm"   >
@@ -116,7 +116,7 @@
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="2">
       <!-- b254affb6c494394900e16ed294db299 -->
-      <fo:block     margin-left="0.0cm" margin-right="4.25cm"  margin-top="0.05cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_ort"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="6.25cm"  margin-top="0.05cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/post_ort"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="0.57cm"   >
@@ -136,9 +136,9 @@
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 9aad98c770594b528b7a2db56dc4fbdc -->
-      <fo:block     margin-left="0.0cm" margin-right="5.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/partner_nr"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="7.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/partner_nr"></xsl:value-of></fo:block>
       <!-- 92a049ace3f04d10a754782c525e445b -->
-      <fo:block     margin-left="0.0cm" margin-right="2.0cm"  margin-top="0.01cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/import_stack_title"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="4.0cm"  margin-top="0.01cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/import_stack_title"></xsl:value-of></fo:block>
         </fo:table-cell>
     </fo:table-row>
     <fo:table-row    background-color="#ffffff"  height="0.5cm"   >
@@ -147,14 +147,14 @@
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-rows-spanned="2"  number-columns-spanned="1">
-      <fo:block   margin-left="0.0cm"  margin-top="0.0cm" ><fo:instream-foreign-object  content-width="7.0cm" content-height="1.5cm"  >
+      <fo:block   margin-left="0.0cm"  margin-top="0.0cm" ><fo:instream-foreign-object  content-width="8.0cm" content-height="2.0cm"  >
 <!-- a5796a55b286467bad0831c453894fdd -->
 <j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/url_versand"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>20</BARHEIGHT><LEFTMARGIN>10</LEFTMARGIN><SET>A</SET><TYPE>BAR39</TYPE><N>2</N><TOPMARGIN>25</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode></fo:instream-foreign-object></fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
-    <fo:table-row    background-color="#ffffff"  height="1.0cm"   >
+    <fo:table-row    background-color="#ffffff"  height="1.5cm"   >
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
