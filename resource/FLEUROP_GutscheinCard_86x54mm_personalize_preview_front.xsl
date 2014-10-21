@@ -15,9 +15,9 @@
 <fo:shape shape-name="circle" 
         border-width="2pt" border-color="black"
         padding-width="10pt"> 
-  <svg:svg xmlns:svg="http://www.w3.org/2000/svg">
+  <!-- <svg:svg xmlns:svg="http://www.w3.org/2000/svg">
     <circle cx="0" cy="0" r="20mm"/>
-  </svg:svg>
+  </svg:svg> -->
 </fo:shape>
             <fo:block>
             	<xsl:apply-templates select="data/Product_Service_Plugingutscheincard" />
