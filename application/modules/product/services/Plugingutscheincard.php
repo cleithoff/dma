@@ -2,8 +2,8 @@
 
 class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 
-	protected $width = 50;
-	protected $height = 50;
+	protected $width = 49;
+	protected $height = 49;
 	protected $border = 0;
 	protected $dpi = 150;
 	
@@ -110,8 +110,8 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		 
 		$pathinfo = pathinfo(APPLICATION_PATH . '/../resource/logo_original/' . $productPersonalize['filename_graphics']);
 		
-		$width = 50;
-		$height = 50;
+		$width = 49;
+		$height = 49;
 		$border = 0;
 		$dpi = 150;
 		
