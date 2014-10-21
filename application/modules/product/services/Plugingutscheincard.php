@@ -173,8 +173,10 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		*/
 		$border = $this->border;
 		
-		$width = $this->width - $border;
-		$height = $this->height - $border;
+		$width = $this->width; // - $border;
+		$height = $this->height; // - $border;
+		
+		$x = $x - $border;
 		
 		$dpi = $this->dpi;
 		
