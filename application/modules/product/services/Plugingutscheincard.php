@@ -4,7 +4,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 
 	protected $width = 49;
 	protected $height = 49;
-	protected $border = 3;
+	protected $border = 1;
 	protected $dpi = 150;
 	
 	const mm2inch = 0.03937007874;
@@ -171,12 +171,11 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 			}
 		}
 		*/
-		$border = $this->border;
 		
 		$width = $this->width; // - $border;
 		$height = $this->height; // - $border;
 		
-		$x = $x - $border;
+		$x = $x - $this->border;
 		
 		$dpi = $this->dpi;
 		
