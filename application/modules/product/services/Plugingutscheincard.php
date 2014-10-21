@@ -39,7 +39,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		$exec = "convert -size " . $widthpx . "x" . $heightpx . " xc:white -fill black -stroke white -draw \"circle " . intval($widthpx/2) . "," . intval($heightpx/2) . " " . intval($widthpx/2) . "," . intval($heightpx - $borderpx + 1) . "\" -define png:compression-level=1 " . $filenameNegate;
 		exec($exec);
 		
-		$exec = "convert " . $filenameNegate . " " . $filename . " -compose darken -composite -define png:compression-level=0 " . $filenameBlack;
+		$exec = "convert " . $filenameNegate . " " . $filename . " -compose darken -composite -define png:compression-level=1 " . $filenameBlack;
 		exec($exec);
 
 		return $filename;
