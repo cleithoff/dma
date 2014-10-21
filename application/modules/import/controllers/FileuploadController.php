@@ -62,6 +62,9 @@ class Import_FileuploadController extends Zend_Controller_Action
     		if (strpos(strtolower($result->filename), ".pdf") > 0) {
     			$pdfoptions = " -density 300 -depth 8 -quality 85 ";
     		}
+    		if (strpos(strtolower($result->filename), ".svg") > 0) {
+    			copy ($result->file . DIRECTORY_SEPARATOR . $result->filename, APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".svg");
+    		}
     		$exec = "convert " . $pdfoptions . $result->file . DIRECTORY_SEPARATOR . $result->filename . " " . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".png";
     		// $exec = "convert " . $pdfoptions . $result->file . DIRECTORY_SEPARATOR . $result->filename . " " . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".gif";
     		exec($exec);

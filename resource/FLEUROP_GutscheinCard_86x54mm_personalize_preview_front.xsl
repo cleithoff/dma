@@ -60,7 +60,19 @@ top="0mm">
 <xsl:template match="data/Product_Service_Plugingutscheincard">
 
 <fo:block font-size="7pt">
-    <fo:external-graphic content-width="50mm" content-height="50mm">
+    <fo:external-graphic content-width="scale-to-fit" scaling="uniform">
+    	<xsl:attribute name="padding-left">
+             <xsl:value-of select="./paddingleft"/>
+        </xsl:attribute>
+        <xsl:attribute name="padding-top">
+             <xsl:value-of select="./paddingtop"/>
+        </xsl:attribute>
+        <xsl:attribute name="width">
+             <xsl:value-of select="./width"/>
+        </xsl:attribute>
+        <xsl:attribute name="height">
+             <xsl:value-of select="./height"/>
+        </xsl:attribute>
     	<xsl:attribute name="src">
              <xsl:value-of select="./logo"/>
         </xsl:attribute>
