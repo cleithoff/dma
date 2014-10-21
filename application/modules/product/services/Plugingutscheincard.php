@@ -4,7 +4,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 
 	protected $width = 49;
 	protected $height = 49;
-	protected $border = 3;
+	protected $border = 0;
 	protected $dpi = 150;
 	
 	const mm2inch = 0.03937007874;
@@ -112,7 +112,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		
 		$width = 49;
 		$height = 49;
-		$border = 3;
+		$border = 0;
 		$dpi = 150;
 		
 		$backgroundFilename = $this->initBackground($width,$height,$dpi,$border);
