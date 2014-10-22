@@ -20,7 +20,7 @@ class Rest_Pdf {
 	public static function toImage($pdf, $type = 'png') {
 		if (empty($pdf)) return;
 		
-		$info = pathinfo($pdf);
+		$info = pathinfo(realpath($pdf));
 		
 		$exec = "convert " . $pdf . $info[PATHINFO_DIRNAME] . DIRECTORY_SEPARATOR . $info[PATHINFO_FILENAME] . '.' . $type;
 		
