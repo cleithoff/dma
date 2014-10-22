@@ -10,10 +10,38 @@ class Rest_Pdf {
 		exec($exec);
 	}
 	
+	function getPDFPages($document)
+	{
+		$cmd = "pdfinfo";           // Linux
+		//$cmd = "C:\\path\\to\\pdfinfo.exe";  // Windows
+	
+		// Parse entire output
+		exec("$cmd $document", $output);
+	
+		// Iterate through lines
+		$pagecount = 0;
+		foreach($output as $op)
+		{
+			// Extract the number
+			if(preg_match("/Pages:\s*(\d+)/i", $op, $matches) === 1)
+			{
+				$pagecount = intval($matches[1]);
+				break;
+			}
+		}
+	
+		return $pagecount;
+	}
+	
 	public static function overlay($overlay, $document, $pdf) {
 		if (empty($overlay) || empty($document)) return;
 		$pdfbox = 'java -jar ' . APPLICATION_PATH . '/../vendor/pdfbox-app-1.8.7.jar';
-		$exec = $pdfbox . ' OverlayPDF ' . $overlay . ' -odd ' . $document . ' -even  ' . $document . ' -nonSeq ' . $pdf;
+		if ($this->getPDFPages($overlay) == 1) {
+			$exec = $pdfbox . ' Overlay ' . $overlay . ' ' . $document . ' ' . $pdf;
+		} else {
+			$exec = $pdfbox . ' OverlayPDF ' . $overlay . ' -odd ' . $document . ' -even  ' . $document . ' -nonSeq ' . $pdf;
+		}
+
 		exec($exec);
 	}
 	
