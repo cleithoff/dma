@@ -410,6 +410,8 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
             view.suffix = '';
         }
 
+        var _dc = new Date().getTime();
+
         document.location = "/report/report/exportcsv?_dc=" + _dc + "&id=" + record.data.id + "&viewmode=" + view.value + "&imageformat=tiff";
 
         /*
