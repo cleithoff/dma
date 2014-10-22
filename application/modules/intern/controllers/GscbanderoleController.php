@@ -11,7 +11,7 @@ class Intern_GscbanderoleController extends Zend_Controller_Action
     protected function getOrderItem($authkey) {
     	$orderItems = new Order_Model_DbTable_Item();
     	
-    	$orderItem = $orderItems->fetchRow("authkey = " . Zend_Db_Table::getDefaultAdapter()->quote($authkey));
+    	$orderItem = $orderItems->fetchRow("authkey = " . Zend_Db_Table::getDefaultAdapter()->quote($authkey) . " OR authkey_small = " . Zend_Db_Table::getDefaultAdapter()->quote($authkey));
     	
     	if (empty($orderItem)) {
     		throw new Exception("Produktcode nicht gefunden.");
