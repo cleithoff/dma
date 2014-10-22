@@ -10,7 +10,7 @@ class Rest_Pdf {
 		exec($exec);
 	}
 	
-	function getPDFPages($document)
+	public static function getPDFPages($document)
 	{
 		$cmd = "pdfinfo";           // Linux
 		//$cmd = "C:\\path\\to\\pdfinfo.exe";  // Windows
@@ -36,7 +36,7 @@ class Rest_Pdf {
 	public static function overlay($overlay, $document, $pdf) {
 		if (empty($overlay) || empty($document)) return;
 		$pdfbox = 'java -jar ' . APPLICATION_PATH . '/../vendor/pdfbox-app-1.8.7.jar';
-		if ($this->getPDFPages($overlay) == 1) {
+		if (self::getPDFPages($overlay) == 1) {
 			$exec = $pdfbox . ' Overlay ' . $overlay . ' ' . $document . ' ' . $pdf;
 		} else {
 			$exec = $pdfbox . ' OverlayPDF ' . $overlay . ' -odd ' . $document . ' -even  ' . $document . ' -nonSeq ' . $pdf;
