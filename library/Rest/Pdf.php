@@ -36,11 +36,12 @@ class Rest_Pdf {
 	public static function overlay($overlay, $document, $pdf) {
 		if (empty($overlay) || empty($document)) return;
 		$pdfbox = 'java -jar ' . APPLICATION_PATH . '/../vendor/pdfbox-app-1.8.7.jar';
-		if (self::getPDFPages($overlay) == 1) {
+		$exec = $pdfbox . ' Overlay ' . $overlay . ' ' . $document . ' ' . $pdf;
+		/*if (self::getPDFPages($overlay) == 1) {
 			$exec = $pdfbox . ' Overlay ' . $overlay . ' ' . $document . ' ' . $pdf;
 		} else {
 			$exec = $pdfbox . ' OverlayPDF ' . $overlay . ' -odd ' . $document . ' -even  ' . $document . ' -nonSeq ' . $pdf;
-		}
+		}*/
 
 		exec($exec);
 	}
