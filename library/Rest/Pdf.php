@@ -13,7 +13,7 @@ class Rest_Pdf {
 	public static function overlay($overlay, $document, $pdf) {
 		if (empty($overlay) || empty($document)) return;
 		$pdfbox = 'java -jar ' . APPLICATION_PATH . '/../vendor/pdfbox-app-1.8.7.jar';
-		$exec = $pdfbox . ' OverlayPDF ' . $overlay . ' ' . $document . ' ' . $pdf;
+		$exec = $pdfbox . ' OverlayPDF ' . $overlay . ' -odd ' . $document . ' -even  ' . $document . ' -nonSeq ' . $pdf;
 		exec($exec);
 	}
 	
