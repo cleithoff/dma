@@ -24,9 +24,6 @@ class Rest_Pdf {
 
 		$exec = "convert -density 600x600 " . $pdf . " " . $info['dirname'] . DIRECTORY_SEPARATOR . $info['filename'] . '.' . $type;
 		
-		//$pdfbox = 'java -jar ' . APPLICATION_PATH . '/../vendor/pdfbox-app-1.8.7.jar';
-		//$exec = $pdfbox . ' PDFToImage -imageType ' . $type . ' ' . $pdf;
-		//echo $exec; die();
 		exec($exec);
 	}
 	
