@@ -64,6 +64,10 @@ class Import_FileuploadController extends Zend_Controller_Action
     		}
     		if (strpos(strtolower($result->filename), ".svg") > 0) {
     			copy ($result->file . DIRECTORY_SEPARATOR . $result->filename, APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".svg");
+    		} else {
+    			if (file_exists(APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".svg")) {
+    				unlink(APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".svg");
+    			}
     		}
     		$exec = "convert " . $pdfoptions . $result->file . DIRECTORY_SEPARATOR . $result->filename . " " . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".png";
     		// $exec = "convert " . $pdfoptions . $result->file . DIRECTORY_SEPARATOR . $result->filename . " " . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".gif";
