@@ -21,14 +21,12 @@ class Rest_Pdf {
 		if (empty($pdf)) return;
 		
 		$info = pathinfo(realpath($pdf));
-		
-		var_dump($info);
-		
+
 		$exec = "convert " . $pdf . " " . $info['dirname'] . DIRECTORY_SEPARATOR . $info['filename'] . '.' . $type;
 		
 		//$pdfbox = 'java -jar ' . APPLICATION_PATH . '/../vendor/pdfbox-app-1.8.7.jar';
 		//$exec = $pdfbox . ' PDFToImage -imageType ' . $type . ' ' . $pdf;
-		echo $exec; die();
+		//echo $exec; die();
 		exec($exec);
 	}
 	
