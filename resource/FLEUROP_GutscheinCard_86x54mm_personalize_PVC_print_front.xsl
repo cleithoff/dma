@@ -4,9 +4,9 @@
 <xsl:template match="/">
 
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
-       <fo:declarations> 
+       <!-- <fo:declarations> 
                <fo:color-profile color-profile-name="sRGB profile" rendering-intent="relative-colorimetric" src="/var/www/html/dma/dma/resource/icc/SRGB.icc"/> 
-       </fo:declarations>
+       </fo:declarations> -->
 <fo:layout-master-set>
 <fo:simple-page-master master-name="main" page-height="5.4cm" page-width="8.5cm" font-family="sans-serif" margin="3.5mm">
 <fo:region-body margin-left="31.25mm" margin-top="2.85mm" />
