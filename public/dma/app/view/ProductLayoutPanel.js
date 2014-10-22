@@ -243,6 +243,44 @@ Ext.define('MyApp.view.ProductLayoutPanel', {
                                     fieldLabel: 'Plugin Classes',
                                     name: 'plugin_classes',
                                     grow: true
+                                },
+                                {
+                                    xtype: 'radiogroup',
+                                    width: 400,
+                                    fieldLabel: 'Print Front',
+                                    items: [
+                                        {
+                                            xtype: 'radiofield',
+                                            name: 'render_print_front',
+                                            boxLabel: 'PDF',
+                                            inputValue: 'pdf'
+                                        },
+                                        {
+                                            xtype: 'radiofield',
+                                            name: 'render_print_front',
+                                            boxLabel: 'TIFF',
+                                            inputValue: 'tiff'
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'radiogroup',
+                                    width: 400,
+                                    fieldLabel: 'Print Back',
+                                    items: [
+                                        {
+                                            xtype: 'radiofield',
+                                            name: 'render_print_back',
+                                            boxLabel: 'PDF',
+                                            inputValue: 'pdf'
+                                        },
+                                        {
+                                            xtype: 'radiofield',
+                                            name: 'render_print_back',
+                                            boxLabel: 'TIFF',
+                                            inputValue: 'tiff'
+                                        }
+                                    ]
                                 }
                             ]
                         },

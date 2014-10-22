@@ -85,6 +85,16 @@ Ext.define('MyApp.model.ProductLayoutModel', {
             name: 'plugin_classes',
             type: 'string',
             useNull: true
+        },
+        {
+            name: 'render_print_front',
+            type: 'string',
+            useNull: true
+        },
+        {
+            name: 'render_print_back',
+            type: 'string',
+            useNull: true
         }
     ]
 });

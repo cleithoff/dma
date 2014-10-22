@@ -231,6 +231,34 @@
                 "useNull": true
             },
             "designerId": "ac18236c-1b5e-4667-9588-9ba798ec4d9d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "render_print_front",
+                "type": "string",
+                "useNull": true
+            },
+            "designerId": "aecb9322-375d-4c42-8f7d-cde4bce3810b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "render_print_back",
+                "type": "string",
+                "useNull": true
+            },
+            "designerId": "671cd9af-b86e-4df8-8b12-a280a9a4a481"
         }
     ]
 }

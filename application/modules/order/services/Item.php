@@ -92,6 +92,43 @@ class Order_Service_Item
 		
 	}
 
+	public function toImage(Order_Model_Item $order_item, array $product_personalize_override = array(), $view = Product_Model_Layout::VIEW_PREVIEW_FRONT, $imageformat = 'tiff') {
+		
+		if (!$order_item instanceof Order_Model_Item) return false;
+		
+		$authkey = $order_item->getAuthkey();
+		
+		switch($view) {
+			case Product_Model_Layout::VIEW_PREVIEW_BACK:
+				$suffix = Product_Model_Layout::VIEW_PREVIEW_BACK_SUFFIX;
+				break;
+			case Product_Model_Layout::VIEW_PREVIEW_FRONT:
+				$suffix = Product_Model_Layout::VIEW_PREVIEW_FRONT_SUFFIX;
+				break;
+			case Product_Model_Layout::VIEW_PRINT_BACK:
+				$suffix = Product_Model_Layout::VIEW_PRINT_BACK_SUFFIX;
+				break;
+			case Product_Model_Layout::VIEW_PRINT_FRONT:
+				$suffix = Product_Model_Layout::VIEW_PRINT_FRONT_SUFFIX;
+				break;
+			case Product_Model_Layout::VIEW_TEST_FRONT:
+				$suffix = Product_Model_Layout::VIEW_TEST_FRONT_SUFFIX;
+				break;
+			case Product_Model_Layout::VIEW_TEST_BACK:
+				$suffix = Product_Model_Layout::VIEW_TEST_BACK_SUFFIX;
+				break;
+		}
+		
+		Rest_Pdf::toImage(
+			APPLICATION_PATH . '/../resource/pdf/' . $authkey . $suffix . '.pdf',
+			$imageformat
+		);
+		
+		$filename = APPLICATION_PATH . '/../resource/pdf/' . $authkey . $suffix . '.' . $imageformat;
+		
+		return $filename;
+	}
+	
 	/**
 	 * 
 	 * @param Order_Model_Item $order_item
@@ -154,18 +191,22 @@ class Order_Service_Item
 			APPLICATION_PATH . '/../resource/' . $xsl,
 			APPLICATION_PATH . '/../resource/pdf/' . $authkey . $suffix . '.pdf'
 		);
-
-		Rest_Pdf::overlay(
-			APPLICATION_PATH . '/../resource/pdf/' . $authkey . $suffix . '.pdf',
-			APPLICATION_PATH . '/../resource/' . $pdf,
-			APPLICATION_PATH . '/../public/deploy/' . $authkey . $suffix . '.pdf'
-		);
-
+		
+		if (!empty($pdf)) {
+			Rest_Pdf::overlay(
+				APPLICATION_PATH . '/../resource/pdf/' . $authkey . $suffix . '.pdf',
+				APPLICATION_PATH . '/../resource/' . $pdf,
+				APPLICATION_PATH . '/../public/deploy/' . $authkey . $suffix . '.pdf'
+			);
+		} else {
+			copy (APPLICATION_PATH . '/../resource/pdf/' . $authkey . $suffix . '.pdf', APPLICATION_PATH . '/../public/deploy/' . $authkey . $suffix . '.pdf');
+		}
+		/*
 		Rest_Pdf::toImage(
 			APPLICATION_PATH . '/../public/deploy/' . $authkey . $suffix . '.pdf', 
 			'png'
 		);
-		
+		*/
 		return true;
 	}
 	

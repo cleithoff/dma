@@ -613,6 +613,59 @@
                 "designer|controlQuery": "#OrderItemViewmodeTestBackMenuItem"
             },
             "designerId": "b1df2af8-fd09-422d-9913-34800947be68"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onOrderItemDetailExportTiffClick",
+                "implHandler": [
+                    "var that = this;\r",
+                    "var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];\r",
+                    "\r",
+                    "if (record === undefined) return;\r",
+                    "\r",
+                    "var view = null;\r",
+                    "\r",
+                    "menu = this.getOrderItemDetailPanel().getComponent('OrderItemDetailToolbar').getComponent('OrderItemViewmodeButton').menu;\r",
+                    "menu.items.each(function(menuitem){ if(menuitem.checked){view=menuitem;} });\r",
+                    "\r",
+                    "if (view.suffix === undefined || view.suffix === null) {\r",
+                    "    view.suffix = '';\r",
+                    "}\r",
+                    "\r",
+                    "var myMask = new Ext.LoadMask(Ext.getBody(), {msg:\"Bitte warten Sie. Die Ausgabe wird erzeugt!\"});\r",
+                    "myMask.show();\r",
+                    "\r",
+                    "Ext.Ajax.request({\r",
+                    "    url: '/order/item/toimage',\r",
+                    "    timeout: 1000 * 60 * 5,\r",
+                    "    success: function(response, operation, success) {\r",
+                    "        // console.log(response, operation, success);\r",
+                    "        myMask.destroy();\r",
+                    "    },\r",
+                    "    failure: function() {\r",
+                    "        myMask.destroy();\r",
+                    "        Ext.MessageBox.alert('Fehler', 'Bei der Erzeugung ist ein Fehler aufgetreten.');\r",
+                    "\r",
+                    "    },\r",
+                    "    params: { \r",
+                    "        id: record.data.id,    \r",
+                    "        viewmode: view.value,\r",
+                    "            imageformat: 'tiff'\r",
+                    "    }\r",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#OrderItemDetailExportTiff"
+            },
+            "designerId": "07d5a6ce-0d21-4278-9349-b3d208fc3664"
         }
     ]
 }

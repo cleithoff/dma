@@ -173,6 +173,11 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                                     scope: me
                                 }
                             }
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'OrderItemDetailExportTiff',
+                            text: 'Export TIFF'
                         }
                     ]
                 }
@@ -183,7 +188,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                     region: 'north',
                     border: false,
                     disabled: true,
-                    height: 74,
+                    height: 70,
                     itemId: 'OrderItemDetailFormPanel',
                     bodyPadding: 10,
                     trackResetOnLoad: true,
@@ -200,7 +205,6 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                         },
                         {
                             xtype: 'fieldcontainer',
-                            height: 120,
                             layout: {
                                 align: 'stretch',
                                 type: 'hbox'

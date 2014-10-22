@@ -395,6 +395,44 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
         });
     },
 
+    onOrderItemDetailExportTiffClick: function(button, e, eOpts) {
+        var that = this;
+        var record = this.getOrderItemPanel().getComponent('OrderItemGridPanel').getSelectionModel().getSelection()[0];
+
+        if (record === undefined) return;
+
+        var view = null;
+
+        menu = this.getOrderItemDetailPanel().getComponent('OrderItemDetailToolbar').getComponent('OrderItemViewmodeButton').menu;
+        menu.items.each(function(menuitem){ if(menuitem.checked){view=menuitem;} });
+
+        if (view.suffix === undefined || view.suffix === null) {
+            view.suffix = '';
+        }
+
+        var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Bitte warten Sie. Die Ausgabe wird erzeugt!"});
+        myMask.show();
+
+        Ext.Ajax.request({
+            url: '/order/item/toimage',
+            timeout: 1000 * 60 * 5,
+            success: function(response, operation, success) {
+                // console.log(response, operation, success);
+                myMask.destroy();
+            },
+            failure: function() {
+                myMask.destroy();
+                Ext.MessageBox.alert('Fehler', 'Bei der Erzeugung ist ein Fehler aufgetreten.');
+
+            },
+            params: { 
+                id: record.data.id,    
+                viewmode: view.value,
+                imageformat: 'tiff'
+            }
+        });
+    },
+
     init: function(application) {
         this.control({
             "#OrderItemDetailEditButton": {
@@ -438,6 +476,9 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
             },
             "#OrderItemViewmodeTestBackMenuItem": {
                 click: this.onOrderItemViewmodeTestBackMenuItemClick
+            },
+            "#OrderItemDetailExportTiff": {
+                click: this.onOrderItemDetailExportTiffClick
             }
         });
     }

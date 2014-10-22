@@ -63,7 +63,28 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		$this->getService()->checkState($order_item, $order_item_recent, $comment);
 	}
 	
+	public function toimageAction() {
+		$order_items = new Order_Model_DbTable_Item();
+		$order_item = $order_items->find($this->getRequest()->getParam('id'))->current();
+		$viewmode = $this->getRequest()->getParam('viewmode', Product_Model_Layout::VIEW_PREVIEW_FRONT);
+		$format = $this->getRequest()->getParam('imageformat', 'tiff');
+		
+		$filename = $this->getService()->toImage(
+				$order_item,
+				array(),
+				$viewmode,
+				$format
+		);
 
+		$info = pathinfo($filename);
+		
+		header('Content-type: image/' . $format);
+		header('Content-Disposition: attachment; filename="' . $info[PATHINFO_BASENAME]);
+
+		readfile($filename);
+		
+		die();
+	}
 	
 	public function refreshAction() {
 		$order_items = new Order_Model_DbTable_Item();

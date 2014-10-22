@@ -461,6 +461,20 @@
                             "designerId": "16c94e1f-c42d-4dc2-8472-0681ef905ec3"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "OrderItemDetailExportTiff",
+                        "text": "Export TIFF"
+                    },
+                    "designerId": "38fe5274-8d8c-4a9e-8408-dee61f1aafb0"
                 }
             ]
         },
@@ -475,7 +489,7 @@
                 "layout|region": "north",
                 "border": false,
                 "disabled": true,
-                "height": 74,
+                "height": 70,
                 "itemId": "OrderItemDetailFormPanel",
                 "bodyPadding": 10,
                 "title": null,
@@ -510,7 +524,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "stretch",
-                        "height": 120,
+                        "height": null,
                         "layout": "hbox",
                         "fieldLabel": "PDF erzeugen abschalten"
                     },
