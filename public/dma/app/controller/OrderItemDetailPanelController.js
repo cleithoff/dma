@@ -410,27 +410,31 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
             view.suffix = '';
         }
 
+        document.location = "/report/report/exportcsv?_dc=" + _dc + "&id=" + record.data.id + "&viewmode=" + view.value + "&imageformat=tiff";
+
+        /*
         var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Bitte warten Sie. Die Ausgabe wird erzeugt!"});
         myMask.show();
 
         Ext.Ajax.request({
-            url: '/order/item/toimage',
-            timeout: 1000 * 60 * 5,
-            success: function(response, operation, success) {
-                // console.log(response, operation, success);
-                myMask.destroy();
-            },
-            failure: function() {
-                myMask.destroy();
-                Ext.MessageBox.alert('Fehler', 'Bei der Erzeugung ist ein Fehler aufgetreten.');
+        url: '/order/item/toimage',
+        timeout: 1000 * 60 * 5,
+        success: function(response, operation, success) {
+        // console.log(response, operation, success);
+        myMask.destroy();
+    },
+    failure: function() {
+        myMask.destroy();
+        Ext.MessageBox.alert('Fehler', 'Bei der Erzeugung ist ein Fehler aufgetreten.');
 
-            },
-            params: { 
-                id: record.data.id,    
-                viewmode: view.value,
-                imageformat: 'tiff'
-            }
-        });
+    },
+    params: { 
+        id: record.data.id,    
+        viewmode: view.value,
+        imageformat: 'tiff'
+    }
+            });
+            */
     },
 
     init: function(application) {

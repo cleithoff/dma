@@ -638,6 +638,9 @@
                     "    view.suffix = '';\r",
                     "}\r",
                     "\r",
+                    "document.location = \"/report/report/exportcsv?_dc=\" + _dc + \"&id=\" + record.data.id + \"&viewmode=\" + view.value + \"&imageformat=tiff\";\r",
+                    "\r",
+                    "/*\r",
                     "var myMask = new Ext.LoadMask(Ext.getBody(), {msg:\"Bitte warten Sie. Die Ausgabe wird erzeugt!\"});\r",
                     "myMask.show();\r",
                     "\r",
@@ -658,7 +661,8 @@
                     "        viewmode: view.value,\r",
                     "            imageformat: 'tiff'\r",
                     "    }\r",
-                    "});"
+                    "});\r",
+                    "*/"
                 ],
                 "name": "click",
                 "scope": "me",
