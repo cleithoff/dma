@@ -12,7 +12,8 @@ class Rest_Pdf {
 	
 	public static function getPDFPages($document)
 	{
-		$cmd = "pdfinfo";           // Linux
+		$cmd = Zend_Registry::getInstance()->config->cli->pdfinfo;
+		//$cmd = "pdfinfo";           // Linux
 		//$cmd = "C:\\path\\to\\pdfinfo.exe";  // Windows
 	
 		// Parse entire output
