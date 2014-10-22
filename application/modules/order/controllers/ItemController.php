@@ -81,7 +81,7 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		$info = pathinfo($filename);
 		
 		header('Content-type: image/' . $format);
-		header('Content-Disposition: attachment; filename="' . $info[PATHINFO_BASENAME]);
+		header('Content-Disposition: attachment; filename="' . $info['basename']);
 
 		readfile($filename);
 		
