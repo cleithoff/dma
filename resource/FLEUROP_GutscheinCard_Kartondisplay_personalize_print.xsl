@@ -76,11 +76,23 @@ background-color="none"
 absolute-position="absolute"
 left="12mm"
 top="12mm">
-<fo:block>
-    <fo:external-graphic content-width="68mm" content-height="68mm" padding="5mm">
+<fo:block margin="5.5mm">
+    <fo:external-graphic content-width="scale-to-fit" scaling="uniform">
+    	<xsl:attribute name="padding-left">
+             <xsl:value-of select="./paddingleft"/>
+        </xsl:attribute>
+        <xsl:attribute name="padding-top">
+             <xsl:value-of select="./paddingtop"/>
+        </xsl:attribute>
+        <xsl:attribute name="width">
+             <xsl:value-of select="./width"/>
+        </xsl:attribute>
+        <xsl:attribute name="height">
+             <xsl:value-of select="./height"/>
+        </xsl:attribute>
     	<xsl:attribute name="src">
              <xsl:value-of select="./logo"/>
-        </xsl:attribute> 
+        </xsl:attribute>
     </fo:external-graphic>
             </fo:block>
 </fo:block-container>    
