@@ -19,8 +19,13 @@ class Rest_Pdf {
 	
 	public static function toImage($pdf, $type = 'png') {
 		if (empty($pdf)) return;
-		$pdfbox = 'java -jar ' . APPLICATION_PATH . '/../vendor/pdfbox-app-1.8.7.jar';
-		$exec = $pdfbox . ' PDFToImage -imageType ' . $type . ' ' . $pdf;
+		
+		$info = pathinfo($pdf);
+		
+		$exec = "convert " . $pdf . $info[PATHINFO_DIRNAME] . DIRECTORY_SEPARATOR . $info[PATHINFO_FILENAME] . '.' . $type;
+		
+		//$pdfbox = 'java -jar ' . APPLICATION_PATH . '/../vendor/pdfbox-app-1.8.7.jar';
+		//$exec = $pdfbox . ' PDFToImage -imageType ' . $type . ' ' . $pdf;
 		// echo $exec; die();
 		exec($exec);
 	}

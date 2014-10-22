@@ -124,7 +124,7 @@ class Order_Service_Item
 			$imageformat
 		);
 		
-		$filename = APPLICATION_PATH . '/../resource/pdf/' . $authkey . $suffix . '1.' . $imageformat;
+		$filename = APPLICATION_PATH . '/../resource/pdf/' . $authkey . $suffix . '.' . $imageformat;
 		
 		return $filename;
 	}
