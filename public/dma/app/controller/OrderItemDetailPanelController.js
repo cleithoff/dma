@@ -412,7 +412,7 @@ Ext.define('MyApp.controller.OrderItemDetailPanelController', {
 
         var _dc = new Date().getTime();
 
-        document.location = "/report/report/exportcsv?_dc=" + _dc + "&id=" + record.data.id + "&viewmode=" + view.value + "&imageformat=tiff";
+        document.location = "/order/item/toimage?_dc=" + _dc + "&id=" + record.data.id + "&viewmode=" + view.value + "&imageformat=tiff";
 
         /*
         var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Bitte warten Sie. Die Ausgabe wird erzeugt!"});

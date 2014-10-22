@@ -640,7 +640,7 @@
                     "\r",
                     "var _dc = new Date().getTime();\r",
                     "\r",
-                    "document.location = \"/report/report/exportcsv?_dc=\" + _dc + \"&id=\" + record.data.id + \"&viewmode=\" + view.value + \"&imageformat=tiff\";\r",
+                    "document.location = \"/order/item/toimage?_dc=\" + _dc + \"&id=\" + record.data.id + \"&viewmode=\" + view.value + \"&imageformat=tiff\";\r",
                     "\r",
                     "/*\r",
                     "var myMask = new Ext.LoadMask(Ext.getBody(), {msg:\"Bitte warten Sie. Die Ausgabe wird erzeugt!\"});\r",
