@@ -5,9 +5,9 @@
 <!-- Page layout information -->
 <xsl:template match="/">
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
-       <!-- <fo:declarations>
-               <fo:color-profile color-profile-name="sRGBColorProfile" rendering-intent="relative-colorimetric" src="/var/www/html/dma/dma/resource/icc/SRGB.icc"/> 
-       </fo:declarations> -->
+       <fo:declarations>
+               <fo:color-profile color-profile-name="sRGB profile" rendering-intent="relative-colorimetric" src="/var/www/html/dma/dma/resource/icc/SRGB.icc"/> 
+       </fo:declarations>
 <fo:layout-master-set>
 <fo:simple-page-master master-name="main" page-height="54mm" page-width="85mm" font-family="Frutiger" font-weight="300" margin="3.5mm" margin-bottom="1.4cm">
 <fo:region-body />
