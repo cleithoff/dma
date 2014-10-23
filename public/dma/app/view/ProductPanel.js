@@ -178,6 +178,15 @@ Ext.define('MyApp.view.ProductPanel', {
                                     valueField: 'id'
                                 },
                                 {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: 'Kategorie',
+                                    name: 'product_category_id',
+                                    displayField: 'title',
+                                    store: 'ProductCategoryJsonStore',
+                                    valueField: 'id'
+                                },
+                                {
                                     xtype: 'datefield',
                                     anchor: '100%',
                                     fieldLabel: 'Datum Freigabe',

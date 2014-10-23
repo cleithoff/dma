@@ -147,6 +147,10 @@
                     "    filter.push({property:\"import_stack_id\",value:values.import_stack_id,operator:\"=\"});\r",
                     "}\r",
                     "\r",
+                    "if (values.product_category_id !== \"\") {\r",
+                    "    filter.push({property:\"product_category_id\",value:values.product_category_id,operator:\"=\"});\r",
+                    "}\r",
+                    "\r",
                     "grid.store.filter(filter);"
                 ],
                 "name": "click",

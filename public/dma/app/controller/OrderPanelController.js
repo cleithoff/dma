@@ -95,7 +95,7 @@ Ext.define('MyApp.controller.OrderPanelController', {
 
         var values = grid.getComponent('OrderOrderGridFilterFormPanel').getForm().getValues();
 
-        console.log(values);
+        // console.log(values);
 
         if (values.partner_nr !== "") {
             filter.push({property:"partner_partner.partner_nr",value:values.partner_nr});
@@ -115,6 +115,10 @@ Ext.define('MyApp.controller.OrderPanelController', {
 
         if (values.import_stack_id !== "") {
             filter.push({property:"import_stack_id",value:values.import_stack_id,operator:"="});
+        }
+
+        if (values.product_category_id !== "") {
+            filter.push({property:"product_category_id",value:values.product_category_id,operator:"="});
         }
 
         grid.store.filter(filter);

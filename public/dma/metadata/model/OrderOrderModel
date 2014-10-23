@@ -209,6 +209,20 @@
                 "persist": false
             },
             "designerId": "d43a988f-154e-499c-805e-60615d801591"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "product_category_id",
+                "type": "int",
+                "useNull": true
+            },
+            "designerId": "4851a076-e8fa-4126-9f1a-ac9247718885"
         }
     ]
 }

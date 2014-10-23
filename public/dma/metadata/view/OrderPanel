@@ -523,6 +523,65 @@
                             ]
                         },
                         {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Kategorie",
+                                "name": "product_category_id",
+                                "autoSelect": false,
+                                "displayField": "title",
+                                "store": "ProductCategoryJsonStore",
+                                "valueField": "id"
+                            },
+                            "designerId": "77419f98-9476-401b-8dcb-d9af099fa9ce",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldSpecialkey111",
+                                        "implHandler": [
+                                            "// e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,\r",
+                                            "// e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN\r",
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));\r",
+                                            "}"
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "6445f418-2673-4314-bf73-f904f6d04441"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect11",
+                                        "implHandler": [
+                                            "combo.up('form').down('#OrderOrderFilterButton').fireEvent('click', combo.up('form').down('#OrderOrderFilterButton'));\r",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "a1290771-aeb8-4385-8c73-fdfc746b8ec5"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",

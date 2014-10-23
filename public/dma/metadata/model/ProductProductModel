@@ -87,6 +87,20 @@
                 "type": "date"
             },
             "designerId": "ff308b77-1d1b-44ea-b202-9a48b9062472"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "product_category_id",
+                "type": "int",
+                "useNull": true
+            },
+            "designerId": "f579ed03-b99a-424b-b7a4-57650712a973"
         }
     ]
 }

@@ -64,6 +64,11 @@ Ext.define('MyApp.model.OrderOrderModel', {
         {
             name: 'order_state',
             persist: false
+        },
+        {
+            name: 'product_category_id',
+            type: 'int',
+            useNull: true
         }
     ],
 

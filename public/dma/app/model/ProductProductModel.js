@@ -40,6 +40,11 @@ Ext.define('MyApp.model.ProductProductModel', {
         {
             name: 'date_close',
             type: 'date'
+        },
+        {
+            name: 'product_category_id',
+            type: 'int',
+            useNull: true
         }
     ]
 });

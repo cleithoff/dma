@@ -210,6 +210,26 @@ Ext.define('MyApp.view.OrderPanel', {
                                     }
                                 },
                                 {
+                                    xtype: 'combobox',
+                                    anchor: '100%',
+                                    fieldLabel: 'Kategorie',
+                                    name: 'product_category_id',
+                                    autoSelect: false,
+                                    displayField: 'title',
+                                    store: 'ProductCategoryJsonStore',
+                                    valueField: 'id',
+                                    listeners: {
+                                        specialkey: {
+                                            fn: me.onTextfieldSpecialkey111,
+                                            scope: me
+                                        },
+                                        select: {
+                                            fn: me.onComboboxSelect11,
+                                            scope: me
+                                        }
+                                    }
+                                },
+                                {
                                     xtype: 'button',
                                     itemId: 'OrderOrderFilterButton',
                                     text: 'Filtern'
@@ -374,6 +394,19 @@ Ext.define('MyApp.view.OrderPanel', {
     },
 
     onComboboxSelect1: function(combo, records, eOpts) {
+        combo.up('form').down('#OrderOrderFilterButton').fireEvent('click', combo.up('form').down('#OrderOrderFilterButton'));
+
+    },
+
+    onTextfieldSpecialkey111: function(field, e, eOpts) {
+        // e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,
+        // e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN
+        if (e.getKey() == e.ENTER) {
+            field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));
+        }
+    },
+
+    onComboboxSelect11: function(combo, records, eOpts) {
         combo.up('form').down('#OrderOrderFilterButton').fireEvent('click', combo.up('form').down('#OrderOrderFilterButton'));
 
     },

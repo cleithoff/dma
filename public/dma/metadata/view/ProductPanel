@@ -455,6 +455,23 @@
                             "designerId": "95524a2b-f915-4e03-b2fd-1fc6f46b0643"
                         },
                         {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Kategorie",
+                                "name": "product_category_id",
+                                "displayField": "title",
+                                "store": "ProductCategoryJsonStore",
+                                "valueField": "id"
+                            },
+                            "designerId": "4cc562e1-a79b-4f2a-a372-de1517f9d770"
+                        },
+                        {
                             "type": "Ext.form.field.Date",
                             "reference": {
                                 "name": "items",
