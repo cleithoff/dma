@@ -74,11 +74,11 @@
 <fo:table  width="17.0cm"   border-color="#000000" border-style="solid" border-width="thin" >
   <fo:table-column column-width="1.0cm"/>
   <fo:table-column column-width="1.25cm"/>
-  <fo:table-column column-width="2.75cm"/>
-  <fo:table-column column-width="2.0cm"/>
-  <fo:table-column column-width="4.5cm"/>
-  <fo:table-column column-width="5.0cm"/>
+  <fo:table-column column-width="1.45cm"/>
+  <fo:table-column column-width="4.3cm"/>
   <fo:table-column column-width="0.5cm"/>
+  <fo:table-column column-width="4.5cm"/>
+  <fo:table-column column-width="4.0cm"/>
   <fo:table-body>
   <xsl:for-each select="data/ReportDetail/ListOfReportDetail/ItemOfReportDetail">
     <fo:table-row   keep-with-next="always"  keep-together="always"  background-color="#ffffff"  height="0.5cm"   >
@@ -124,7 +124,7 @@
         <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-rows-spanned="9"  number-columns-spanned="1">
       <!-- 4e24104d5b0a4a798a679f04c01745df -->
-      <fo:block   text-align="right"    margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm" ><fo:external-graphic content-width="scale-to-fit" content-height="scale-to-fit" width="5.0cm"  height="4.5cm"  position="absolute"  ><xsl:attribute name="src"><xsl:value-of select="partner_logo"></xsl:value-of></xsl:attribute></fo:external-graphic>
+      <fo:block   text-align="right"    margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm" ><fo:external-graphic content-width="scale-to-fit" content-height="scale-to-fit" width="4.5cm"  height="4.5cm"  position="absolute"  ><xsl:attribute name="src"><xsl:value-of select="partner_logo"></xsl:value-of></xsl:attribute></fo:external-graphic>
 </fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
@@ -203,10 +203,12 @@
       <!-- 663b93b5077c4dc28c3ae7c0e558008a -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Kundennummer</fo:block>
         </fo:table-cell>
-        <fo:table-cell    number-columns-spanned="2">
+        <fo:table-cell    number-columns-spanned="1">
       <!-- 9aad98c770594b528b7a2db56dc4fbdc -->
-      <fo:block     margin-left="0.0cm" margin-right="0.5cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="partner_nr"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="partner_nr"></xsl:value-of></fo:block>
         </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
@@ -217,10 +219,12 @@
       <!-- aff285bafaeb49a49181729796ac522d -->
       <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Bestellung vom</fo:block>
         </fo:table-cell>
-        <fo:table-cell    number-columns-spanned="2">
+        <fo:table-cell    number-columns-spanned="1">
       <!-- 92a049ace3f04d10a754782c525e445b -->
-      <fo:block     margin-left="0.0cm" margin-right="0.5cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="incoming"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="incoming"></xsl:value-of></fo:block>
         </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
@@ -229,16 +233,18 @@
         <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="2">
       <!-- f0938bf2e5824bbfa31def33e7003a3e -->
-      <fo:block     margin-left="0.03cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Auftrags-Nr.</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Auftrags-Nr.</fo:block>
         </fo:table-cell>
-        <fo:table-cell    number-columns-spanned="2">
+        <fo:table-cell    number-columns-spanned="1">
       <!-- f8369a87f0c541599191d924cabf78e5 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.5cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="order_no_external"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="order_no_external"></xsl:value-of></fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
-    <fo:table-row   keep-with-next="always"  keep-together="always"  background-color="#ffffff"  height="1.2cm"   >
+    <fo:table-row   keep-with-next="always"  keep-together="always"  background-color="#ffffff"  height="0.9cm"   >
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
