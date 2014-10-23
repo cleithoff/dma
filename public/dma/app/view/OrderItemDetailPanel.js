@@ -73,6 +73,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                         {
                             xtype: 'button',
                             disabled: true,
+                            hidden: true,
                             itemId: 'OrderItemDetailDeleteButton',
                             text: 'Löschen',
                             listeners: {

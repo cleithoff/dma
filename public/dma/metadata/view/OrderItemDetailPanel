@@ -142,6 +142,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "disabled": true,
+                        "hidden": true,
                         "itemId": "OrderItemDetailDeleteButton",
                         "text": "Löschen"
                     },
