@@ -221,7 +221,7 @@
         <fo:table-cell    number-columns-spanned="1">
       <fo:block   margin-left="0.0cm"  margin-top="0.0cm" ><fo:instream-foreign-object  content-width="8.0cm" content-height="1.5cm"  >
 <!-- a5796a55b286467bad0831c453894fdd -->
-<j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/url_versand"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>45</BARHEIGHT><LEFTMARGIN>10</LEFTMARGIN><SET>A</SET><PROCESSTILDE>true</PROCESSTILDE><TYPE>CODE128</TYPE><N>2</N><TOPMARGIN>25</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode></fo:instream-foreign-object></fo:block>
+<j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/url_versand"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>45</BARHEIGHT><LEFTMARGIN>10</LEFTMARGIN><SET>A</SET><PROCESSTILDE>true</PROCESSTILDE><TYPE>CODE128</TYPE><N>2</N><TOPMARGIN>0</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode></fo:instream-foreign-object></fo:block>
         </fo:table-cell>
     </fo:table-row>
   </fo:table-body>
