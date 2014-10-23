@@ -2517,7 +2517,7 @@ SUBTCST2=
 --- NEW FLAVOUR ---
 ID      =22f1de3289cf43a58ddff97f7e378e36
 FNAME   =
-XNAME   =
+XNAME   =/data/ReportDetail/ListOfReportDetail/ListOfReportDetailBestelldatum/ItemOfReportDetailBestelldatum/PlakatA3
 XNAMET  =Relative
 CONSTANT=0
 VISIBLE =1
@@ -3595,7 +3595,7 @@ FLCOND  =
 FCOLOR  =0x0
 FONT    =SansSerif|PLAIN|8|SansSerif
 FORMAT  =
-VALUE   =N neu | FE Freigabe erteilt | P Produktion | V Versand | A Abgeschlossen | FAN Freigabe angefordert | FAB Freigabe abgelehnt | K Korrektur | S Storno
+VALUE   =N neu | FE Freigabe erteilt | P Produktion | V Versand | A Abgeschlossen | FAN Freigabe angefordert | FAB Freigabe abgelehnt | K Korrektur | S(mA) Storno (mit Abrechnung)
 ROTATE =0
 ALIGN   =2
 MULTILIN=1

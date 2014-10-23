@@ -112,7 +112,7 @@
  </fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 17f5496c455f4864b3757891cf3236d4 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.2cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="center">N neu | FE Freigabe erteilt | P Produktion | V Versand | A Abgeschlossen | FAN Freigabe angefordert | FAB Freigabe abgelehnt | K Korrektur | S Storno</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.2cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="center">N neu | FE Freigabe erteilt | P Produktion | V Versand | A Abgeschlossen | FAN Freigabe angefordert | FAB Freigabe abgelehnt | K Korrektur | S(mA) Storno (mit Abrechnung)</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 2c85b1d0e6a84cfa9188c8e151e7c233 -->
@@ -303,7 +303,7 @@
 </xsl:when>
 <xsl:when test="ColorPlakatA3=&apos;orange&apos;">
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  font-weight="bold"  color="#ffc800"   text-align="center"></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  font-weight="bold"  color="#ffc800"   text-align="center"><xsl:value-of select="PlakatA3"></xsl:value-of></fo:block>
 </xsl:when>
 <xsl:otherwise>
       <!-- 22f1de3289cf43a58ddff97f7e378e36 -->
