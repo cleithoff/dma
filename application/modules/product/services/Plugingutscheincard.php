@@ -199,7 +199,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 					'height' => $x . "mm",
 					'paddingtop' => round(($height - $newheight) / 2, 2) . "mm",
 					'paddingleft' => round(($width - $x) / 2, 2) . "mm",
-					'logo' => str_replace('\\', '/', realpath($logoFilename))
+					'logo' => str_replace('\\', '/', realpath($logoFilename)) . "#page=1",
 			);
 		}
 		
