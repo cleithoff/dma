@@ -183,19 +183,34 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		//$x = intval($width * $x / 10);
 		
 		$logoFilename = $this->setLogo($width,$height,$dpi,$x,$x,$filename_graphics);
+
+		$logoFilenamePdf = str_replace('.png', '.pdf', $filename_graphics);
+		if (file_exists($logoFilenamePdf)) {
+			list($sizewidth, $sizeheight, $sizetype, $sizeattr) = getimagesize($filename_graphics);
+				
+			$sizewidthmm = $sizewidth / ($dpi * self::mm2inch);
+			$sizeheightmm = $sizeheight / ($dpi * self::mm2inch);
+				
+			$newheight = ($sizeheightmm * $x / $sizewidthmm);
+				
+			$logoFilename = $logoFilenamePdf;
+			return array(
+					'width' => $x . "mm",
+					'height' => $x . "mm",
+					'paddingtop' => round(($height - $newheight) / 2, 2) . "mm",
+					'paddingleft' => round(($width - $x) / 2, 2) . "mm",
+					'logo' => str_replace('\\', '/', realpath($logoFilename))
+			);
+		}
 		
 		$logoFilenameSvg = str_replace('.png', '.svg', $filename_graphics);
-		
 		if (file_exists($logoFilenameSvg)) {
 			list($sizewidth, $sizeheight, $sizetype, $sizeattr) = getimagesize($filename_graphics);
 			
 			$sizewidthmm = $sizewidth / ($dpi * self::mm2inch); 
 			$sizeheightmm = $sizeheight / ($dpi * self::mm2inch);
 			
-			
 			$newheight = ($sizeheightmm * $x / $sizewidthmm);
-			
-			// $newheight = $sizeheight;
 			
 			$logoFilename = $logoFilenameSvg;
 			return array(
