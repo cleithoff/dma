@@ -6,6 +6,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 	protected $height = 49;
 	protected $border = 1.5;
 	protected $dpi = 150;
+	protected $steps = 10;
 	
 	const mm2inch = 0.03937007874;
 	
@@ -146,7 +147,7 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		} while (!$success);
 		*/
 		
-		$steps = 10;
+		$steps = $this->steps;
 		
 		$count = 0;
 		for ($x = intval($width); $x > intval($width/2); $x = intval($x - $width/$steps)) {
