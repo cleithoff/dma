@@ -78,9 +78,7 @@ absolute-position="absolute"
 left="30mm"
 top="24mm">
 <fo:block margin-left="80.1mm" margin-top="35.1mm">
-    <fo:external-graphic content-width="26mm" content-height="26mm" width="26mm" height="26mm">
-    	
-    	<!-- content-width="scale-to-fit" scaling="uniform" -->
+    <fo:external-graphic content-width="scale-to-fit" scaling="uniform">
     	<xsl:attribute name="padding-left">
              <xsl:value-of select="./paddingleft"/>
         </xsl:attribute>
