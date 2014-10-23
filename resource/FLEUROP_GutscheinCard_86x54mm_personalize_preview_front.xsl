@@ -42,7 +42,7 @@ block-progression-dimension="5cm"
 inline-progression-dimension="1cm"
 background-color="white"
 absolute-position="absolute"
-left="46.275mm"
+left="46.28mm"
 top="0mm">
             <fo:block>
             </fo:block>
