@@ -17,6 +17,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.orderitemdetailpanel',
 
+    border: false,
     itemId: 'OrderItemDetailPanel',
     layout: {
         type: 'border'
@@ -365,6 +366,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                             xtype: 'form',
                             region: 'north',
                             split: true,
+                            border: false,
                             height: 150,
                             itemId: 'LogoFormPanel',
                             bodyPadding: 10,
@@ -452,6 +454,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                             collapseMode: 'header',
                             region: 'center',
                             split: true,
+                            border: false,
                             itemId: 'OrderItemstatelogGridPanel',
                             collapsible: false,
                             title: 'Log Status',
@@ -486,6 +489,7 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                                 {
                                     xtype: 'form',
                                     dock: 'bottom',
+                                    border: false,
                                     itemId: 'OrderItemstatelogFormPanel',
                                     width: 100,
                                     bodyPadding: 10,

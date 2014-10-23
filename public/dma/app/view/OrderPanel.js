@@ -36,6 +36,7 @@ Ext.define('MyApp.view.OrderPanel', {
                     xtype: 'gridpanel',
                     region: 'west',
                     split: true,
+                    border: false,
                     itemId: 'OrderOrderGridPanel',
                     width: 320,
                     store: 'OrderOrderJsonStore',
@@ -125,6 +126,7 @@ Ext.define('MyApp.view.OrderPanel', {
                         {
                             xtype: 'form',
                             dock: 'top',
+                            border: false,
                             itemId: 'OrderOrderGridFilterFormPanel',
                             width: 100,
                             bodyPadding: 10,
@@ -290,7 +292,34 @@ Ext.define('MyApp.view.OrderPanel', {
                     xtype: 'tabpanel',
                     region: 'center',
                     split: true,
+                    border: false,
                     itemId: 'OrderOrderTabPanel'
+                },
+                {
+                    xtype: 'form',
+                    collapseMode: 'header',
+                    region: 'south',
+                    border: false,
+                    cls: 'red',
+                    height: 150,
+                    hidden: true,
+                    itemId: 'CommentFormPanel',
+                    bodyBorder: false,
+                    bodyPadding: 10,
+                    animCollapse: false,
+                    collapsed: true,
+                    collapsible: true,
+                    title: 'My Form',
+                    titleCollapse: true,
+                    items: [
+                        {
+                            xtype: 'textareafield',
+                            anchor: '100%',
+                            height: 105,
+                            fieldLabel: 'Kommentar',
+                            name: 'comment'
+                        }
+                    ]
                 }
             ]
         });

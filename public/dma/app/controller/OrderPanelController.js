@@ -54,10 +54,6 @@ Ext.define('MyApp.controller.OrderPanelController', {
         grid.store.clearFilter(true);
         grid.store.filter([{property:'order_pool_id',value:record.data.order_pool_id}]);
 
-        if (!Ext.isEmpty(record.data.comment)) {
-            Ext.MessageBox.alert('Hinweis', record.data.comment);
-        }
-
         this.getOrderPackagePackageorderPanel().record = record;
 
         var grid = this.getOrderPackagePackageorderPanel().getComponent('OrderPackagePackageorderGridPanel');
@@ -75,7 +71,12 @@ Ext.define('MyApp.controller.OrderPanelController', {
 
 
         if (!Ext.isEmpty(record.data.comment)) {
-            Ext.MessageBox.alert('Hinweis', record.data.comment);
+            this.getOrderPanel().down('#CommentFormPanel').getForm().loadRecord(record);
+            this.getOrderPanel().down('#CommentFormPanel').setTitle(record.data.comment);
+            this.getOrderPanel().down('#CommentFormPanel').collapse();
+            this.getOrderPanel().down('#CommentFormPanel').show();
+        } else {
+            this.getOrderPanel().down('#CommentFormPanel').hide();
         }
 
         //grid.store.load(); // filter loads automatically - dont use .load because records lose store (record.store == null)

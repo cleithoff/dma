@@ -478,8 +478,8 @@ class Import_Service_Import
 			}
 			Zend_Db_Table::getDefaultAdapter()->commit();
 		} catch(Exception $ex) {
-			Zend_Db_Table::getDefaultAdapter()->rollBack();
-			throw ($ex);
+			Zend_Db_Table::getDefaultAdapter()->rollBack();			
+			throw (new Exception($sql . " " . $ex->getMessage()));
 			die();
 		}
 		return true;

@@ -120,3 +120,28 @@ opacity: 0.75;
     -khtml-user-select: text !important;
     -webkit-user-select: text !important;
 }
+    
+    
+.red > .x-panel-header-default,
+.red > .x-panel-header {
+	font-weight:normal !important;
+    color:#000 !important; 
+    background-image: none;
+    background-color: red;
+background: #f4ebeb; /* Old browsers */
+background: -moz-linear-gradient(top,  #f4ebeb 0%, #edaaaa 50%, #ea8a8a 51%, #f49797 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4ebeb), color-stop(50%,#edaaaa), color-stop(51%,#ea8a8a), color-stop(100%,#f49797)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f4ebeb 0%,#edaaaa 50%,#ea8a8a 51%,#f49797 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f4ebeb 0%,#edaaaa 50%,#ea8a8a 51%,#f49797 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f4ebeb 0%,#edaaaa 50%,#ea8a8a 51%,#f49797 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #f4ebeb 0%,#edaaaa 50%,#ea8a8a 51%,#f49797 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4ebeb', endColorstr='#f49797',GradientType=0 ); /* IE6-9 */
+
+
+
+}
+
+.red .x-panel-header-text-container-default {
+    color:#000 !important; 
+    font-weight:normal !important;
+}

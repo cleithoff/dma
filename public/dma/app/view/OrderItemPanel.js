@@ -17,6 +17,7 @@ Ext.define('MyApp.view.OrderItemPanel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.orderitempanel',
 
+    border: false,
     height: 250,
     id: 'OrderItemPanel',
     width: 400,
@@ -34,6 +35,7 @@ Ext.define('MyApp.view.OrderItemPanel', {
                     xtype: 'gridpanel',
                     region: 'west',
                     split: true,
+                    border: false,
                     itemId: 'OrderItemGridPanel',
                     width: 300,
                     store: 'OrderItemJsonStore',
@@ -91,6 +93,7 @@ Ext.define('MyApp.view.OrderItemPanel', {
                     xtype: 'tabpanel',
                     region: 'center',
                     split: true,
+                    border: false,
                     itemId: 'OrderItemTabPanel'
                 }
             ]

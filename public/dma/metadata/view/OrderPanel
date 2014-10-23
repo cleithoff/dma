@@ -28,6 +28,7 @@
             "userConfig": {
                 "layout|region": "west",
                 "layout|split": true,
+                "border": false,
                 "itemId": "OrderOrderGridPanel",
                 "width": 320,
                 "title": null,
@@ -281,6 +282,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": "top",
+                        "border": false,
                         "itemId": "OrderOrderGridFilterFormPanel",
                         "width": 100,
                         "bodyPadding": 10,
@@ -775,6 +777,7 @@
             "userConfig": {
                 "layout|region": "center",
                 "layout|split": true,
+                "border": false,
                 "itemId": "OrderOrderTabPanel"
             },
             "designerId": "648ed746-6f76-4394-92c0-d2aca6cce81c"
@@ -815,6 +818,51 @@
                 ]
             },
             "designerId": "a7820611-5721-4012-81b5-1dfa990390c1"
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|collapseMode": "header",
+                "layout|region": "south",
+                "baseCls": null,
+                "border": false,
+                "cls": "red",
+                "componentCls": null,
+                "height": 150,
+                "hidden": true,
+                "itemId": "CommentFormPanel",
+                "bodyBorder": false,
+                "bodyPadding": 10,
+                "animCollapse": false,
+                "collapsed": true,
+                "collapsible": true,
+                "headerOverCls": null,
+                "title": "My Form",
+                "titleCollapse": true
+            },
+            "designerId": "b09753c5-dd56-4db7-83c0-842a88284472",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "height": 105,
+                        "fieldLabel": "Kommentar",
+                        "name": "comment"
+                    },
+                    "designerId": "9b667465-2584-4858-be79-35640223cea3"
+                }
+            ]
         }
     ]
 }
