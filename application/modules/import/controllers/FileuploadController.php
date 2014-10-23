@@ -57,11 +57,13 @@ class Import_FileuploadController extends Zend_Controller_Action
     public function logoAction() {
     	$result = $this->getService()->upload('logo');
     	
+    	$infile = $result->file . DIRECTORY_SEPARATOR . $result->filename;
+    	
     	if ($result->success == "true") {
     		$pdfoptions = "";
     		if (strpos(strtolower($result->filename), ".pdf") > 0) {
     			$pdfoptions = " -density 300 -depth 8 -quality 85 ";
-    			copy ($result->file . DIRECTORY_SEPARATOR . $result->filename, APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".pdf");
+    			copy ($infile, APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".pdf");
     		} else {
     			if (file_exists(APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".pdf")) {
     				unlink(APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".pdf");
@@ -76,7 +78,7 @@ class Import_FileuploadController extends Zend_Controller_Action
     			}
     		}
     		
-    		$exec = "convert " . $pdfoptions . $result->file . DIRECTORY_SEPARATOR . $result->filename . " " . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".png";
+    		$exec = "convert " . $pdfoptions . '"' . $infile . '" ' . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".png";
     		// $exec = "convert " . $pdfoptions . $result->file . DIRECTORY_SEPARATOR . $result->filename . " " . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".gif";
     		exec($exec);
     	}
