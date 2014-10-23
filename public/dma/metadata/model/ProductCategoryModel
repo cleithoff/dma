@@ -32,7 +32,8 @@
             "codeClass": null,
             "userConfig": {
                 "name": "product_category_id",
-                "type": "int"
+                "type": "int",
+                "useNull": true
             },
             "designerId": "7c7bd33d-4040-4dcf-b710-c19f9a123a61"
         },
@@ -45,7 +46,8 @@
             "codeClass": null,
             "userConfig": {
                 "name": "title",
-                "type": "string"
+                "type": "string",
+                "useNull": true
             },
             "designerId": "d1229cff-0ffe-4dab-9d2f-98d8006aeca6"
         }

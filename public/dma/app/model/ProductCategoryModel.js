@@ -23,11 +23,13 @@ Ext.define('MyApp.model.ProductCategoryModel', {
         },
         {
             name: 'product_category_id',
-            type: 'int'
+            type: 'int',
+            useNull: true
         },
         {
             name: 'title',
-            type: 'string'
+            type: 'string',
+            useNull: true
         }
     ]
 });
