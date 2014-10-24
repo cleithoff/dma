@@ -1,0 +1,94 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MailImapModel"
+    },
+    "designerId": "75805e93-6ffa-4260-885a-a005979cb997",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "designerId": "0a5861eb-a8f6-4d56-801c-dc167aecff8a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mailTo",
+                "type": "string"
+            },
+            "designerId": "a877bb9f-b8c0-4aa5-a560-fc9f691f8b33"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mailFrom",
+                "type": "string"
+            },
+            "designerId": "7ed8ec18-5e1a-4e68-b8c3-3a963a62d24d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": null,
+                "dateReadFormat": null,
+                "name": "mailDate",
+                "type": "string"
+            },
+            "designerId": "addeabc2-4516-4c2d-9020-6fd034f8164b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mailSubject",
+                "type": "string"
+            },
+            "designerId": "ec555c7e-22aa-44c6-a90e-17cd8195792b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mailMessage",
+                "type": "string"
+            },
+            "designerId": "1bc773f5-5544-4e7e-b073-be8f1be29aac"
+        }
+    ]
+}

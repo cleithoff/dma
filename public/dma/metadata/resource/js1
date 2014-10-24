@@ -1,0 +1,14 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js1",
+        "url": "html5Upload.js",
+        "id": "html5Upload.js"
+    },
+    "designerId": "f4fcbb1b-0940-4bda-943e-51eae112b25d"
+}

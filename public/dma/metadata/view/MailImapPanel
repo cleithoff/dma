@@ -1,0 +1,234 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "border": false,
+        "height": null,
+        "id": null,
+        "itemId": "MailImapPanel",
+        "width": null,
+        "designer|userClassName": "MailImapPanel",
+        "designer|userAlias": "mailimappanel",
+        "layout": "border",
+        "title": "Korrespondenz"
+    },
+    "designerId": "8fd04d29-aa5f-474a-8c1f-47b2e7b31a15",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|region": "west",
+                "layout|split": true,
+                "border": false,
+                "itemId": "MailImapGridPanel",
+                "width": null,
+                "title": null,
+                "store": "MailImapJsonStore"
+            },
+            "designerId": "0ddf5d2a-8a88-4646-ae6d-14f1da4153cd",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "mailTo",
+                        "text": "Empfänger",
+                        "flex": 2
+                    },
+                    "designerId": "d32302ad-20cc-4e2d-ac7a-387472ace86b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "mailFrom",
+                        "text": "Absender",
+                        "flex": 2
+                    },
+                    "designerId": "39efca00-f348-483b-9f14-05363d964ad1"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 70,
+                        "align": null,
+                        "dataIndex": "mailSubject",
+                        "text": "Betreff",
+                        "flex": 5
+                    },
+                    "designerId": "426bec57-6171-4355-97ba-a55cf6750315"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 120,
+                        "dataIndex": "mailDate",
+                        "text": "Datum",
+                        "flex": null
+                    },
+                    "designerId": "82f3c3a0-7dc2-4cb4-8598-95ff9896f57d"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "5a35b4d1-7471-4b92-b5e1-6dc6673424e8"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "MailImapJsonStore"
+                    },
+                    "designerId": "4864fc6f-d99b-45b1-8635-df3defdd77a4",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processMyPagingToolbar28",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "\r",
+                                    "if (Ext.isEmpty(me.store)) {\r",
+                                    "    me.store = Ext.create('MyApp.store.' + config.store);\r",
+                                    "}\r",
+                                    "\r",
+                                    "config.store = me.store;\r",
+                                    "\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "da0ba268-444e-4df1-b76e-4dcf69bd4784"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMailImapGridPanelSelect",
+                        "implHandler": [
+                            "var me = this;\r",
+                            "\r",
+                            "me.down('#MailImapFormPanel').getForm().loadRecord(record);"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "designerId": "eb31452c-cdef-47f8-aca9-c7370b3a9e98"
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processMailImapGridPanel",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "var me = this;\r",
+                            "\r",
+                            "if (Ext.isEmpty(me.store)) {\r",
+                            "    me.store = Ext.create('MyApp.store.' + config.store);\r",
+                            "}\r",
+                            "\r",
+                            "config.store = me.store;\r",
+                            "\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "c336676b-89a9-482a-b10e-545e3338fce1"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|region": "center",
+                "layout|split": true,
+                "border": false,
+                "itemId": "MailImapFormPanel",
+                "layout": "border"
+            },
+            "designerId": "74c7ff51-d3d4-4a11-9ed6-827713ff8d13",
+            "cn": [
+                {
+                    "type": "Ext.form.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "layout|region": "center",
+                        "fieldLabel": null,
+                        "name": "mailMessage",
+                        "grow": true
+                    },
+                    "designerId": "6d351162-7ab7-4754-b964-92081cd2dfdd"
+                }
+            ]
+        }
+    ]
+}

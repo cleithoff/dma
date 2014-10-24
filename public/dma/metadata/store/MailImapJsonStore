@@ -1,0 +1,56 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "model": "MailImapModel",
+        "remoteFilter": true,
+        "designer|userClassName": "MailImapJsonStore"
+    },
+    "designerId": "2d419077-962a-4ae5-9a26-c3830dcda92f",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/mail/imap/index"
+            },
+            "designerId": "762b091d-eafb-46ba-9b5a-011d5f86e14d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "eb1ef590-08c9-4344-a675-16598380ae17"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "mailDate"
+            },
+            "designerId": "7fbc9a93-6fd9-4401-8775-e861615a509a"
+        }
+    ]
+}
