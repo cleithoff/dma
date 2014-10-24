@@ -374,7 +374,7 @@ class Order_Service_Item
 		//$mail->addTo('carsten.leithoff@cu-medien.com');
 		$mail->addTo($order_item->getOrderOrder()->getPartnerPartner()->email);
 		$mail->addBcc(array('carsten.leithoff@cu-medien.com','fleurop@dm-mundschenk.de','cradlbeck@dm-mundschenk.de'));
-		$mail->setSubject(iconv("UTF-8", "ISO-8859-1", 'Druckvorschau ' . $order_item->getProductProduct()->title . ', ' . $order_item->getProductItem()->title . ' | PartnerNr:' . $order_item->getOrderOrder()->getPartnerPartner()->partner_nr . ' '));
+		$mail->setSubject(iconv("UTF-8", "ISO-8859-1", 'Druckvorschau ' . $order_item->getProductProduct()->title . ', ' . $order_item->getProductItem()->title . ' | PartnerNr ' . $order_item->getOrderOrder()->getPartnerPartner()->partner_nr . ' '));
 		
 		$at =& $mail->createAttachment(file_get_contents(APPLICATION_PATH . '/../public/deploy/' . $order_item->getAuthkey() . '.pdf'), 'application/pdf');
 		$at->disposition = Zend_Mime::DISPOSITION_INLINE;
