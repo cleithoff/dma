@@ -11,7 +11,7 @@ class Product_Service_Plugingutscheincardplakata3 extends Product_Service_Plugin
 		switch($viewmode) {
 			case Product_Model_Layout::VIEW_PREVIEW_FRONT:
 				$exec = 'convert -density 96 "' . $resourcePdfFile . '"  -quality 80 -resize 50% "' . $publicDeployFile . '"';
-				echo $exec;die();
+				// echo $exec;die();
 				exec($exec);
 				break;
 		}
