@@ -59,7 +59,8 @@ Ext.application({
         'PackagePackageorderModel',
         'ReportAdditionalModel',
         'OrderCombineitemModel',
-        'OrderStateModel'
+        'OrderStateModel',
+        'MailImapModel'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -104,7 +105,8 @@ Ext.application({
         'PackagePackageorderJsonStore',
         'ReportAdditionalJsonStore',
         'OrderCombineitemJsonStore',
-        'OrderStateJsonStore'
+        'OrderStateJsonStore',
+        'MailImapJsonStore'
     ],
     views: [
         'MainViewport',
@@ -146,7 +148,8 @@ Ext.application({
         'OrderItemOrderMetaPanel',
         'OrderPackagePackageorderPanel',
         'ReportAdditionalPanel',
-        'OrderCombineitemPanel'
+        'OrderCombineitemPanel',
+        'MailImapPanel'
     ],
     autoCreateViewport: true,
     controllers: [

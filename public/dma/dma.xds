@@ -1215,6 +1215,30 @@
                 "app/controller/OrderPackagePackageorderController.js"
             ],
             "className": "OrderPackagePackageorderController"
+        },
+        "2d419077-962a-4ae5-9a26-c3830dcda92f": {
+            "paths": [
+                "metadata/store/MailImapJsonStore",
+                "app/store/override/MailImapJsonStore.js",
+                "app/store/MailImapJsonStore.js"
+            ],
+            "className": "MailImapJsonStore"
+        },
+        "75805e93-6ffa-4260-885a-a005979cb997": {
+            "paths": [
+                "metadata/model/MailImapModel",
+                "app/model/override/MailImapModel.js",
+                "app/model/MailImapModel.js"
+            ],
+            "className": "MailImapModel"
+        },
+        "8fd04d29-aa5f-474a-8c1f-47b2e7b31a15": {
+            "paths": [
+                "metadata/view/MailImapPanel",
+                "app/view/override/MailImapPanel.js",
+                "app/view/MailImapPanel.js"
+            ],
+            "className": "MailImapPanel"
         }
     },
     "viewOrderMap": {
@@ -1237,6 +1261,7 @@
             "44b8a41b-f3a8-4caf-b2af-2d094a3c0cb7",
             "b38bc7f1-3f5a-4ed0-a129-8e57daa3c743",
             "9ed30b9a-af66-4460-87c3-2387381d8c3d",
+            "8fd04d29-aa5f-474a-8c1f-47b2e7b31a15",
             "93e2b9d5-dfd2-4242-a2ca-da5e99a5c45f",
             "377dbe86-e24e-4164-a17f-92871eeab996",
             "4a5818bf-bdb3-46bd-98f1-ebda93749a64",
@@ -1303,7 +1328,8 @@
             "c3d3cad3-dbf7-4cce-8cfb-9293b471fdae",
             "f3c38dd3-292c-44f6-a053-1de19f029efc",
             "59a6b800-3dd5-4662-af46-d4bc8ab04f66",
-            "48e33910-db52-4342-8a95-6e0a38d31077"
+            "48e33910-db52-4342-8a95-6e0a38d31077",
+            "2d419077-962a-4ae5-9a26-c3830dcda92f"
         ],
         "controller": [
             "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
@@ -1372,7 +1398,8 @@
             "9514308e-4976-4065-9993-49f6365099cb",
             "62c7cb05-55d6-4c99-ba7f-9f90b49bf364",
             "36ca6268-c3e2-4cf6-94a7-6c3ed043a7e1",
-            "0b44b633-af7e-4a6a-92ea-9a26c443161f"
+            "0b44b633-af7e-4a6a-92ea-9a26c443161f",
+            "75805e93-6ffa-4260-885a-a005979cb997"
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",

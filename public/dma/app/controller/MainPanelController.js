@@ -142,6 +142,12 @@ Ext.define('MyApp.controller.MainPanelController', {
             ref: 'OrderCombineitemPanel',
             selector: '#OrderCombineitemPanel',
             xtype: 'ordercombineitempanel'
+        },
+        {
+            autoCreate: true,
+            ref: 'MailImapPanel',
+            selector: '#MailImapPanel',
+            xtype: 'mailimappanel'
         }
     ],
 
@@ -178,6 +184,14 @@ Ext.define('MyApp.controller.MainPanelController', {
             panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getOrderItemPanel().ref);
             if (panel === undefined) {
                 this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getOrderItemPanel());
+            }
+        }
+
+        if (MyApp.app.getRuleControllerController().allow('MailImapPanel', MyApp.app.getRuleControllerController().rights.READ)) {
+            // Mail Imap
+            panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getMailImapPanel().ref);
+            if (panel === undefined) {
+                this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getMailImapPanel());
             }
         }
 

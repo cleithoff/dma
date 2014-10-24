@@ -76,8 +76,25 @@
                     "    this.getOrderPanel().down('#CommentFormPanel').collapse();\r",
                     "    this.getOrderPanel().down('#CommentFormPanel').show();\r",
                     "} else {\r",
-                    "\tthis.getOrderPanel().down('#CommentFormPanel').hide();\r",
+                    "    this.getOrderPanel().down('#CommentFormPanel').hide();\r",
                     "}\r",
+                    "\r",
+                    "// console.log(record);\r",
+                    "\r",
+                    "grid = this.getMailImapPanel().down('#MailImapGridPanel');\r",
+                    "var mailimappanel = this.getMailImapPanel();\r",
+                    "\r",
+                    "grid.getStore().clearFilter(true);\r",
+                    "grid.getStore().filter([{property:'partner_nr',value:record.data.partner_partner.partner_nr}]);\r",
+                    "grid.getStore().load({\r",
+                    "    callback: function(records, operation, success) {\r",
+                    "        if (records.length > 0) {\r",
+                    "        \tgrid.getSelectionModel().select(0);\r",
+                    "        } else {\r",
+                    "        \tmailimappanel.down('#MailImapFormPanel').getForm().reset();\r",
+                    "        }\r",
+                    "    }\r",
+                    "});\r",
                     "\r",
                     "//grid.store.load(); // filter loads automatically - dont use .load because records lose store (record.store == null)\r",
                     "/*\r",
@@ -125,7 +142,7 @@
                     "\r",
                     "var values = grid.getComponent('OrderOrderGridFilterFormPanel').getForm().getValues();\r",
                     "\r",
-                    "console.log(values);\r",
+                    "// console.log(values);\r",
                     "\r",
                     "if (values.partner_nr !== \"\") {\r",
                     "    filter.push({property:\"partner_partner.partner_nr\",value:values.partner_nr});\r",
@@ -212,6 +229,21 @@
                 "xtype": "ordercombineitempanel"
             },
             "designerId": "251956a5-daf2-486a-89f1-1383f47cdf2b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "MailImapPanel",
+                "selector": "#MailImapPanel",
+                "xtype": "mailimappanel"
+            },
+            "designerId": "340d6562-649c-49ea-95d2-234e308189d5"
         }
     ]
 }

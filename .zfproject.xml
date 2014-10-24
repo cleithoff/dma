@@ -418,6 +418,31 @@
             <viewFiltersDirectory/>
           </viewsDirectory>
         </moduleDirectory>
+        <moduleDirectory moduleName="mail">
+          <apisDirectory enabled="false"/>
+          <configsDirectory enabled="false"/>
+          <controllersDirectory>
+            <controllerFile controllerName="Imap">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+          </controllersDirectory>
+          <formsDirectory enabled="false"/>
+          <layoutsDirectory enabled="false">
+            <layoutScriptsDirectory enabled="false"/>
+          </layoutsDirectory>
+          <modelsDirectory>
+            <dbTableDirectory enabled="false"/>
+          </modelsDirectory>
+          <viewsDirectory>
+            <viewScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Imap">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+            </viewScriptsDirectory>
+            <viewHelpersDirectory/>
+            <viewFiltersDirectory/>
+          </viewsDirectory>
+        </moduleDirectory>
       </modulesDirectory>
       <viewsDirectory>
         <viewScriptsDirectory>

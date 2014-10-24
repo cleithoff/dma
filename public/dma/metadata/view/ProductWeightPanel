@@ -102,7 +102,7 @@
                                     "var me = this;\r",
                                     "\r",
                                     "if (Ext.isEmpty(me.store)) {\r",
-                                    "\tme.store = Ext.create('MyApp.store.' + config.store);\r",
+                                    "    me.store = Ext.create('MyApp.store.' + config.store);\r",
                                     "}\r",
                                     "\r",
                                     "config.store = me.store;\r",

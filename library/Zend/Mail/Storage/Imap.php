@@ -137,6 +137,21 @@ class Zend_Mail_Storage_Imap extends Zend_Mail_Storage_Abstract
     }
 
     /**
+     * Count messages all messages in current box
+     *
+     * @return int number of messages
+     * @throws Zend_Mail_Storage_Exception
+     * @throws Zend_Mail_Protocol_Exception
+     */
+    public function search($keyword)
+    {
+    	$params = array();
+    	$params[] = 'SUBJECT';
+    	$params[] = $keyword;
+    	return $this->_protocol->search($params);
+    }    
+    
+    /**
      * get a list of messages with number and size
      *
      * @param int $id number of message

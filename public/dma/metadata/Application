@@ -46,7 +46,8 @@
             "PackagePackageorderModel",
             "ReportAdditionalModel",
             "OrderCombineitemModel",
-            "OrderStateModel"
+            "OrderStateModel",
+            "MailImapModel"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -91,7 +92,8 @@
             "PackagePackageorderJsonStore",
             "ReportAdditionalJsonStore",
             "OrderCombineitemJsonStore",
-            "OrderStateJsonStore"
+            "OrderStateJsonStore",
+            "MailImapJsonStore"
         ],
         "views": [
             "MainViewport",
@@ -133,7 +135,8 @@
             "OrderItemOrderMetaPanel",
             "OrderPackagePackageorderPanel",
             "ReportAdditionalPanel",
-            "OrderCombineitemPanel"
+            "OrderCombineitemPanel",
+            "MailImapPanel"
         ],
         "autoCreateViewport": true,
         "controllers": [

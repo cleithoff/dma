@@ -85,6 +85,14 @@
                     "    }\r",
                     "}\r",
                     "\r",
+                    "if (MyApp.app.getRuleControllerController().allow('MailImapPanel', MyApp.app.getRuleControllerController().rights.READ)) {\r",
+                    "    // Mail Imap\r",
+                    "    panel = this.getOrderPanel().getComponent('OrderOrderTabPanel').getComponent(this.getMailImapPanel().ref);\r",
+                    "    if (panel === undefined) {\r",
+                    "        this.getOrderPanel().getComponent('OrderOrderTabPanel').add(this.getMailImapPanel());\r",
+                    "    }\r",
+                    "}\r",
+                    "\r",
                     "if (MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.READ)) {\r",
                     "    // Order Item Detail\r",
                     "    panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemDetailPanel().ref);\r",
@@ -692,6 +700,21 @@
                 "xtype": "ordercombineitempanel"
             },
             "designerId": "028e88bf-bc1c-4e4a-972b-3b2cad44f91d"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "MailImapPanel",
+                "selector": "#MailImapPanel",
+                "xtype": "mailimappanel"
+            },
+            "designerId": "888039fd-88bb-46f9-abe7-9c9280a453eb"
         }
     ]
 }
