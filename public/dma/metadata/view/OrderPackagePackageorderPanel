@@ -12,7 +12,7 @@
         "designer|userClassName": "OrderPackagePackageorderPanel",
         "designer|userAlias": "orderpackagepackageorderpanel",
         "layout": "border",
-        "title": "Pakete der gesamten Bestellung"
+        "title": "Pakete"
     },
     "designerId": "4a5818bf-bdb3-46bd-98f1-ebda93749a64",
     "cn": [

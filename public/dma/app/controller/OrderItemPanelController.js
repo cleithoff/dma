@@ -50,10 +50,12 @@ Ext.define('MyApp.controller.OrderItemPanelController', {
     ],
 
     onOrderItemGridPanelSelect: function(rowmodel, record, index, eOpts) {
+        /*
+        // Package Package
         Ext.getStore('PackagePackageJsonStore').clearFilter(true);
         Ext.getStore('PackagePackageJsonStore').filter([{property:'order_item_id',value:record.data.id}]);
         Ext.getStore('PackagePackageJsonStore').load();
-
+        */
         this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.clearFilter(true);
         this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.filter([{property:'order_item_id',value:record.data.id}]);
         this.getOrderItemProductPersonalizePanel().getComponent('OrderItemProductPersonalizeGridPanel').store.load();

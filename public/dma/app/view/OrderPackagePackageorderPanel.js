@@ -23,7 +23,7 @@ Ext.define('MyApp.view.OrderPackagePackageorderPanel', {
     layout: {
         type: 'border'
     },
-    title: 'Pakete der gesamten Bestellung',
+    title: 'Pakete',
 
     initComponent: function() {
         var me = this;

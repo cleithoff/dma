@@ -188,7 +188,8 @@ Ext.define('MyApp.controller.MainPanelController', {
                 this.getOrderItemPanel().getComponent('OrderItemTabPanel').add(this.getOrderItemDetailPanel());
             }
         }
-
+        /*
+        // Package Package
         if (MyApp.app.getRuleControllerController().allow('OrderItemPackagePackagePanel', MyApp.app.getRuleControllerController().rights.READ)) {
             // Order Item Package Package
             panel = this.getOrderItemPanel().getComponent('OrderItemTabPanel').getComponent(this.getOrderItemPackagePackagePanel().ref);
@@ -218,6 +219,7 @@ Ext.define('MyApp.controller.MainPanelController', {
 
             }
         }
+        */
 
         if (MyApp.app.getRuleControllerController().allow('OrderItemProductPersonalizePanel', MyApp.app.getRuleControllerController().rights.READ)) {
             // Order Item Product Personalize
