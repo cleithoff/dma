@@ -10,7 +10,7 @@ class Product_Service_Plugingutscheincardplakata3 extends Product_Service_Plugin
 	public function postProcess(Order_Model_Item $order_item, $viewmode, $resourcePdfFile, $publicDeployFile) {
 		switch($viewmode) {
 			case Product_Model_Layout::VIEW_PREVIEW_FRONT:
-				$exec = 'convert -density 96 "' . $resourcePdfFile . '" "' . $publicDeployFile . '"';
+				$exec = 'convert -density 96 "' . $publicDeployFile . '" -quality 80 "' . $publicDeployFile . '"';
 				// echo $exec;die();
 				exec($exec);
 				break;
