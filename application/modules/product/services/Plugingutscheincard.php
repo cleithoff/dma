@@ -99,6 +99,10 @@ class Product_Service_Plugingutscheincard extends Product_Service_Plugin {
 		return $logoFilename;
 	}
 	
+	public function postProcess(Order_Model_Item $order_item, $viewmode, $resourcePdfFile, $publicDeployFile) {
+		
+	}
+	
 	public function execute(Order_Model_Item $order_item, $xml) {
 		
 		$productPersonalize = $order_item->getProductPersonalize();

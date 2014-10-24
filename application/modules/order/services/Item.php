@@ -31,6 +31,21 @@ class Order_Service_Item
 		return true;
 	}
 	
+
+	protected function postProcess(Order_Model_Item $order_item, $viewmode, $resourcePdfFile, $publicDeployFile) {
+		$plugin_classes = $order_item->getProductItem()->getProductLayout()->plugin_classes;
+		
+		$plugin_classes = explode(',', $plugin_classes);
+		foreach ($plugin_classes as $plugin_class) {
+			$plugin_class = trim($plugin_class);
+			if (empty($plugin_class)) continue;
+			$plugin_obj = new $plugin_class(); 
+			if ($plugin_obj instanceof Product_Service_Plugin) {
+				$plugin_obj->postProcess($order_item, $viewmode, $resourcePdfFile, $publicDeployFile);
+			}
+		}
+	}
+	
 	/**
 	 * 
 	 * @param Order_Model_Item $order_item
@@ -201,6 +216,13 @@ class Order_Service_Item
 		} else {
 			copy (APPLICATION_PATH . '/../resource/pdf/' . $authkey . $suffix . '.pdf', APPLICATION_PATH . '/../public/deploy/' . $authkey . $suffix . '.pdf');
 		}
+		
+		$this->postProcess(
+				$order_item,
+				$view,
+				APPLICATION_PATH . '/../resource/pdf/' . $authkey . $suffix . '.pdf',
+				APPLICATION_PATH . '/../public/deploy/' . $authkey . $suffix . '.pdf'
+				);
 		/*
 		Rest_Pdf::toImage(
 			APPLICATION_PATH . '/../public/deploy/' . $authkey . $suffix . '.pdf', 
