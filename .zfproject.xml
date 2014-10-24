@@ -209,6 +209,9 @@
             <controllerFile controllerName="Packagecontroller">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Itemorder">
+              <actionMethod actionName="index"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false"/>
           <layoutsDirectory enabled="false"/>
@@ -225,8 +228,10 @@
               <dbTableFile dbTableName="Type"/>
               <dbTableFile dbTableName="Weight"/>
               <dbTableFile dbTableName="Packageorder"/>
+              <dbTableFile dbTableName="Itemorder"/>
             </dbTableDirectory>
             <modelFile modelName="Packageorder"/>
+            <modelFile modelName="Itemorder"/>
           </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory>
@@ -246,6 +251,9 @@
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Packagecontroller">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Itemorder">
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>

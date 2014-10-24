@@ -127,7 +127,7 @@ class Import_Service_Order
 				switch($action['action']) {
 					case 'UPSERT':
 						$insert_id = null;
-						$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['condition'] . ',  ' . $action['setter'] . ' ON DUPLICATE KEY UPDATE ' . $action['setter'];
+						$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . (empty($action['condition']) ? '' : $action['condition'] . ',  ') . $action['setter'] . ' ON DUPLICATE KEY UPDATE ' . $action['setter'];
 						$sql = $this->_getQuery($sql, $csv, $result, $param);
 						try {
 							Zend_Db_Table::getDefaultAdapter()->query($sql);
@@ -140,7 +140,11 @@ class Import_Service_Order
 							$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE id = ' . $insert_id;
 							$sql = $this->_getQuery($sql, $csv, $result, $param);
 						} else {
-							$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . str_replace(',', ' AND ', $action['condition']);
+							if (empty($action['condition'])) {
+								$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . str_replace(',', ' AND ', $action['setter']);
+							} else {
+								$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . str_replace(',', ' AND ', $action['condition']);
+							}
 							$sql = $this->_getQuery($sql, $csv, $result, $param);
 							$resultset = Zend_Db_Table::getDefaultAdapter()->query($sql)->fetchAll();
 							$result[$action['source']] = reset($resultset);

@@ -318,7 +318,7 @@ class Import_Service_Import
 					switch($action['action']) {
 						case 'UPSERT':
 							$insert_id = null;
-							if (empty($action['condition'])) {
+							if (empty(trim($action['condition']))) {
 								$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['setter'] . ' ON DUPLICATE KEY UPDATE ' . $action['setter'];
 							} else {
 								$sql = 'INSERT INTO ' . $action['source'] . ' SET ' . $action['condition'] . ',  ' . $action['setter'] . ' ON DUPLICATE KEY UPDATE ' . $action['setter'];
@@ -337,7 +337,7 @@ class Import_Service_Import
 								$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE id = ' . $insert_id;
 								$sql = $this->_getQuery($sql, $csv, $result, $param);
 							} else {
-								if (empty($action['condition'])) {
+								if (empty(trim($action['condition']))) {
 									$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . str_replace(',', ' AND ', $action['setter']);
 								} else {
 									$sql = 'SELECT * FROM ' . $action['source'] . ' WHERE ' . str_replace(',', ' AND ', $action['condition']);
