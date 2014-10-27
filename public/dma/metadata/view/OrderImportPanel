@@ -281,7 +281,6 @@
                                     "var product_item_id = me.down('#OrderImportItemComboBox').getSubmitValue();\r",
                                     "\r",
                                     "if (record.data.leaf !== true) {\r",
-                                    "    var product_item_id = me.down('#OrderImportItemComboBox').getSubmitValue();\r",
                                     "    for (var idx in record.childNodes) {\r",
                                     "        if (Ext.isEmpty(record.childNodes[idx].data.druck_anrede_fuer_hg_ng)) record.childNodes[idx].data.druck_anrede_fuer_hg_ng = \"\";\r",
                                     "        if (Ext.isEmpty(record.childNodes[idx].data.druck_hg_name1)) record.childNodes[idx].data.druck_hg_name1 = \"\";\r",

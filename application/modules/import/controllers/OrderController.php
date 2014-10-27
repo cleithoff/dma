@@ -36,7 +36,7 @@ class Import_OrderController extends Rest_Controller_Action_DbTable
 		
 		$root = new stdClass();
 		$root->text = "Root";
-		// $root->expanded = true;
+		$root->expanded = true;
 		$root->children = array();
 		
 		$sql = "

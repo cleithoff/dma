@@ -142,7 +142,6 @@ Ext.define('MyApp.view.OrderImportPanel', {
                             var product_item_id = me.down('#OrderImportItemComboBox').getSubmitValue();
 
                             if (record.data.leaf !== true) {
-                                var product_item_id = me.down('#OrderImportItemComboBox').getSubmitValue();
                                 for (var idx in record.childNodes) {
                                     if (Ext.isEmpty(record.childNodes[idx].data.druck_anrede_fuer_hg_ng)) record.childNodes[idx].data.druck_anrede_fuer_hg_ng = "";
                                     if (Ext.isEmpty(record.childNodes[idx].data.druck_hg_name1)) record.childNodes[idx].data.druck_hg_name1 = "";
