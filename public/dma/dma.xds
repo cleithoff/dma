@@ -204,14 +204,6 @@
             ],
             "className": "OrderImportPanel"
         },
-        "3a10744c-2c5c-4d9a-a08e-27002b177ce0": {
-            "paths": [
-                "metadata/controller/OrderImportPanelController",
-                "app/controller/override/OrderImportPanelController.js",
-                "app/controller/OrderImportPanelController.js"
-            ],
-            "className": "OrderImportPanelController"
-        },
         "ae0b904b-e5ea-4a81-b258-aa99007ebfd8": {
             "paths": [
                 "metadata/model/ImportOrderTreeModel",
@@ -1344,7 +1336,6 @@
             "71f90c79-a2c3-4a8a-8248-839a312225c6",
             "219d603f-9d56-4f8b-b4bb-cfc7548604c7",
             "5aed326c-bb37-42dc-89d7-df1e0629b563",
-            "3a10744c-2c5c-4d9a-a08e-27002b177ce0",
             "a57a2efc-5944-4a8c-ae83-e97ba5eec2d2",
             "ea51f8fb-6ba3-4bb9-b81b-d3b5dfb76b7b",
             "1ded70dd-2c31-4bb1-978f-4ac685830c99",

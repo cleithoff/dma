@@ -161,7 +161,6 @@ Ext.application({
         'PartnerAddressPanelController',
         'PartnerAbsencePanelController',
         'PartnerImportPanelController',
-        'OrderImportPanelController',
         'OrderPanelController',
         'ImportPanelController',
         'ImportImportPanelController',

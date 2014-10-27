@@ -105,22 +105,46 @@ Ext.define('MyApp.view.OrderImportPanel', {
                         {
                             xtype: 'button',
                             itemId: 'OrderImportResetButton',
-                            text: 'Reset'
+                            text: 'Reset',
+                            listeners: {
+                                click: {
+                                    fn: me.onOrderImportResetButtonClick,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             itemId: 'OrderImportUploadButton',
-                            text: 'Upload'
+                            text: 'Upload',
+                            listeners: {
+                                click: {
+                                    fn: me.onOrderImportUploadButtonClick,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             itemId: 'OrderImportRefreshButton',
-                            text: 'Aktualisieren'
+                            text: 'Aktualisieren',
+                            listeners: {
+                                click: {
+                                    fn: me.onOrderImportRefreshButtonClick,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'button',
                             itemId: 'OrderImportImportButton',
-                            text: 'Import'
+                            text: 'Import',
+                            listeners: {
+                                click: {
+                                    fn: me.onOrderImportImportButtonClick,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 },
@@ -137,9 +161,15 @@ Ext.define('MyApp.view.OrderImportPanel', {
                     useArrows: true,
                     viewConfig: {
                         getRowClass: function(record) {
-                            var me = this;
+                            if (record.isRoot()) return '';
 
-                            var product_item_id = me.down('#OrderImportItemComboBox').getSubmitValue();
+                            //var me = this;
+
+                            var product_item_id = me.down('#OrderImportItemComboBox').getValue();
+
+                            //console.log(record.getRootNode().product_item_id);
+
+                            //var product_item_id = 3;
 
                             if (record.data.leaf !== true) {
                                 for (var idx in record.childNodes) {
@@ -205,6 +235,7 @@ Ext.define('MyApp.view.OrderImportPanel', {
                                     if (record.childNodes[idx].data.druck_ng_ort.trim() != record.data.druck_ng_ort.trim()) {record.forceDirty('druck_ng_ort');record.childNodes[idx].forceDirty('druck_ng_ort');}
                                     if (record.childNodes[idx].data.druck_ng_tel.trim() != record.data.druck_ng_tel.trim()) {record.forceDirty('druck_ng_tel');record.childNodes[idx].forceDirty('druck_ng_tel');}
                                     */
+
                                     if (product_item_id == 2) {
                                         if (
                                         record.childNodes[idx].data.druck_anrede_fuer_hg_ng.trim() != record.data.druck_anrede_fuer_hg_ng.trim()
@@ -245,8 +276,11 @@ Ext.define('MyApp.view.OrderImportPanel', {
                                         }
                                     }
 
+
                                 }
-                            } 
+                            }
+
+                            return '';
 
                         },
                         stripeRows: true,
@@ -504,6 +538,119 @@ Ext.define('MyApp.view.OrderImportPanel', {
         cb.setDisabled(false);
 
         cb.store.reload({params: {product_product_id: records[0].data.id}});
+    },
+
+    onOrderImportResetButtonClick: function(button, e, eOpts) {
+        var me = this,fp = me.down('#OrderImportUploadFormPanel');
+
+        fp.getForm().reset();
+    },
+
+    onOrderImportUploadButtonClick: function(button, e, eOpts) {
+        var me = this, fp = me.down('#OrderImportUploadFormPanel');
+
+        //if(fp.getForm().isValid()){
+        fp.getForm().submit({
+            url: '/import/fileupload/order',
+            waitMsg: 'Datei wird hochgeladen...',
+            success: function(x, o){
+                Ext.Msg.show({
+                    title: 'Datei-Upload',
+                    msg: o.result.msg,
+                    minWidth: 200,
+                    modal: true,
+                    icon: Ext.Msg.INFO,
+                    buttons: Ext.Msg.OK
+                });
+                if (o.result.success === true) {
+                    var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Bitte warten Sie. Dieser Vorgang kann mehrere Minuten dauern!"});
+                    myMask.show();
+                    Ext.Ajax.request({
+                        url: '/import/import/order',
+                        timeout: 60 * 30 * 1000, // 30 min
+                        params: {
+                            filename: o.result.filename,
+                            product_item_id: fp.down('#OrderImportItemComboBox').getValue(),
+                        },
+                        success: function(response, opts) {
+                            var obj = Ext.decode(response.responseText);
+                            //console.dir(obj);
+                            if (obj.success == 0) {
+                                Ext.Msg.show({
+                                    title: 'Fehler',
+                                    msg: obj.message,
+                                    minWidth: 200,
+                                    modal: true,
+                                    icon: Ext.Msg.INFO,
+                                    buttons: Ext.Msg.OK
+                                });
+                            } else {	
+                                store = me.down('#OrderImportGridPanel').getStore(); //Ext.getStore('ImportOrderTreeStore');					
+                                store.getProxy().setExtraParam('product_item_id', me.down('#OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
+                                store.getRootNode().removeAll();
+                                store.load();
+                            }
+                            myMask.destroy();
+
+                        },
+                        failure: function(response, opts) {
+                            myMask.destroy();
+                            //console.log('server-side failure with status code ' + response.status);
+                        }
+                    });
+                } else {
+                    alert('Upload fehlgeschlagen. Bitte die Datei schließen, falls diese noch geöffnet ist.');
+                }
+            },
+            failure: function(x,o) {
+                alert('Upload fehlgeschlagen. Bitte die Datei schließen, falls diese noch geöffnet ist.');
+            }
+        });
+        //}
+    },
+
+    onOrderImportRefreshButtonClick: function(button, e, eOpts) {
+        var me = this;
+        //store = Ext.getStore('ImportOrderTreeStore');
+        store = me.down('#OrderImportGridPanel').getStore();
+        store.getProxy().setExtraParam('product_item_id', me.down('#OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
+        store.getRootNode().removeAll();
+        store.load();
+    },
+
+    onOrderImportImportButtonClick: function(button, e, eOpts) {
+        var me = this;
+
+        var myMask = new Ext.LoadMask(Ext.getBody(), {msg:"Bitte warten Sie. Dieser Vorgang kann mehrere Minuten dauern!"});
+        myMask.show();
+
+        Ext.Ajax.request({
+            url: '/import/order/import',
+            method: 'GET',
+            timeout: 60 * 10 * 1000, // 10 min
+            params: {
+                import_import_id: me.down('#OrderImportUploadFormPanel').getComponent('ImportImportComboBox').getValue(),
+                product_product_id: me.down('#OrderImportUploadFormPanel').getComponent('OrderImportProductComboBox').getValue(),
+                product_item_id: me.down('#OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue(),
+                haspos: me.down('#OrderImportUploadFormPanel').getComponent('OrderImportHasposCheckbox').getValue(),
+                weightpos: me.down('#OrderImportUploadFormPanel').getComponent('OrderImportWeightposNumberfield').getValue(),
+            },
+            success: function(response, opts) {
+                //var obj = Ext.decode(response.responseText);
+                //console.dir(obj);
+                //Ext.getStore('ImportOrderTreeStore').removeAll();
+                //Ext.getStore('ImportOrderTreeStore').sync();
+                store = me.down('#OrderImportGridPanel').getStore(); //store = Ext.getStore('ImportOrderTreeStore');
+                store.getProxy().setExtraParam('product_item_id', me.down('#OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
+                store.getRootNode().removeAll();
+                store.load();
+                myMask.destroy();
+            },
+            failure: function(response, opts) {
+                myMask.destroy();
+                //console.log('server-side failure with status code ' + response.status);
+            }
+        });
     },
 
     onCellEditingBeforeEdit: function(editor, e, eOpts) {

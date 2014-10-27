@@ -38,6 +38,7 @@ class Import_OrderController extends Rest_Controller_Action_DbTable
 		$root->text = "Root";
 		$root->expanded = true;
 		$root->children = array();
+		// $root->product_item_id = $product_item_id;
 		
 		$sql = "
 		SELECT id as idx,partner_nr,`key`,`value`,'import_order' AS origin FROM import_order

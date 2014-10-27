@@ -183,7 +183,28 @@
                         "itemId": "OrderImportResetButton",
                         "text": "Reset"
                     },
-                    "designerId": "67c6c53a-d246-4332-ba03-b8077bdbd491"
+                    "designerId": "67c6c53a-d246-4332-ba03-b8077bdbd491",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderImportResetButtonClick",
+                                "implHandler": [
+                                    "var me = this,fp = me.down('#OrderImportUploadFormPanel');\r",
+                                    "\r",
+                                    "fp.getForm().reset();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "34953c75-7775-46e2-9462-444ff9225cd9"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -196,7 +217,85 @@
                         "itemId": "OrderImportUploadButton",
                         "text": "Upload"
                     },
-                    "designerId": "9f4c0424-b0c4-4fe9-b95c-b47539e56310"
+                    "designerId": "9f4c0424-b0c4-4fe9-b95c-b47539e56310",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderImportUploadButtonClick",
+                                "implHandler": [
+                                    "var me = this, fp = me.down('#OrderImportUploadFormPanel');\r",
+                                    "\r",
+                                    "//if(fp.getForm().isValid()){\r",
+                                    "fp.getForm().submit({\r",
+                                    "    url: '/import/fileupload/order',\r",
+                                    "    waitMsg: 'Datei wird hochgeladen...',\r",
+                                    "    success: function(x, o){\r",
+                                    "        Ext.Msg.show({\r",
+                                    "            title: 'Datei-Upload',\r",
+                                    "            msg: o.result.msg,\r",
+                                    "            minWidth: 200,\r",
+                                    "            modal: true,\r",
+                                    "            icon: Ext.Msg.INFO,\r",
+                                    "            buttons: Ext.Msg.OK\r",
+                                    "        });\r",
+                                    "        if (o.result.success === true) {\r",
+                                    "            var myMask = new Ext.LoadMask(Ext.getBody(), {msg:\"Bitte warten Sie. Dieser Vorgang kann mehrere Minuten dauern!\"});\r",
+                                    "            myMask.show();\r",
+                                    "            Ext.Ajax.request({\r",
+                                    "                url: '/import/import/order',\r",
+                                    "                timeout: 60 * 30 * 1000, // 30 min\r",
+                                    "                params: {\r",
+                                    "                    filename: o.result.filename,\r",
+                                    "                    product_item_id: fp.down('#OrderImportItemComboBox').getValue(),\r",
+                                    "                },\r",
+                                    "                success: function(response, opts) {\r",
+                                    "                    var obj = Ext.decode(response.responseText);\r",
+                                    "                    //console.dir(obj);\r",
+                                    "                    if (obj.success == 0) {\r",
+                                    "                        Ext.Msg.show({\r",
+                                    "                            title: 'Fehler',\r",
+                                    "                            msg: obj.message,\r",
+                                    "                            minWidth: 200,\r",
+                                    "                            modal: true,\r",
+                                    "                            icon: Ext.Msg.INFO,\r",
+                                    "                            buttons: Ext.Msg.OK\r",
+                                    "                        });\r",
+                                    "                    } else {\t\r",
+                                    "                        store = me.down('#OrderImportGridPanel').getStore(); //Ext.getStore('ImportOrderTreeStore');\t\t\t\t\t\r",
+                                    "                        store.getProxy().setExtraParam('product_item_id', me.down('#OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
+                                    "                        store.getRootNode().removeAll();\r",
+                                    "\t\t\t\t\t\tstore.load();\r",
+                                    "                    }\r",
+                                    "                    myMask.destroy();\r",
+                                    "\r",
+                                    "                },\r",
+                                    "                failure: function(response, opts) {\r",
+                                    "                    myMask.destroy();\r",
+                                    "                    //console.log('server-side failure with status code ' + response.status);\r",
+                                    "                }\r",
+                                    "            });\r",
+                                    "        } else {\r",
+                                    "            alert('Upload fehlgeschlagen. Bitte die Datei schließen, falls diese noch geöffnet ist.');\r",
+                                    "        }\r",
+                                    "    },\r",
+                                    "    failure: function(x,o) {\r",
+                                    "        alert('Upload fehlgeschlagen. Bitte die Datei schließen, falls diese noch geöffnet ist.');\r",
+                                    "    }\r",
+                                    "});\r",
+                                    "//}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "4d9472c6-e85a-4b7a-8598-f79452dff1fc"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -209,7 +308,31 @@
                         "itemId": "OrderImportRefreshButton",
                         "text": "Aktualisieren"
                     },
-                    "designerId": "99766eed-b606-4b5f-ab8e-8a9dc14bdad1"
+                    "designerId": "99766eed-b606-4b5f-ab8e-8a9dc14bdad1",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderImportRefreshButtonClick",
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "//store = Ext.getStore('ImportOrderTreeStore');\r",
+                                    "store = me.down('#OrderImportGridPanel').getStore();\r",
+                                    "store.getProxy().setExtraParam('product_item_id', me.down('#OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
+                                    "store.getRootNode().removeAll();\r",
+                                    "store.load();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "9701923a-168a-4a57-8eb9-6726de881797"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.button.Button",
@@ -222,7 +345,57 @@
                         "itemId": "OrderImportImportButton",
                         "text": "Import"
                     },
-                    "designerId": "bccebcf9-dc44-415e-84f8-ca8668ecd861"
+                    "designerId": "bccebcf9-dc44-415e-84f8-ca8668ecd861",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderImportImportButtonClick",
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "\r",
+                                    "var myMask = new Ext.LoadMask(Ext.getBody(), {msg:\"Bitte warten Sie. Dieser Vorgang kann mehrere Minuten dauern!\"});\r",
+                                    "myMask.show();\r",
+                                    "\r",
+                                    "Ext.Ajax.request({\r",
+                                    "    url: '/import/order/import',\r",
+                                    "    method: 'GET',\r",
+                                    "    timeout: 60 * 10 * 1000, // 10 min\r",
+                                    "    params: {\r",
+                                    "        import_import_id: me.down('#OrderImportUploadFormPanel').getComponent('ImportImportComboBox').getValue(),\r",
+                                    "        product_product_id: me.down('#OrderImportUploadFormPanel').getComponent('OrderImportProductComboBox').getValue(),\r",
+                                    "        product_item_id: me.down('#OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue(),\r",
+                                    "        haspos: me.down('#OrderImportUploadFormPanel').getComponent('OrderImportHasposCheckbox').getValue(),\r",
+                                    "        weightpos: me.down('#OrderImportUploadFormPanel').getComponent('OrderImportWeightposNumberfield').getValue(),\r",
+                                    "    },\r",
+                                    "    success: function(response, opts) {\r",
+                                    "        //var obj = Ext.decode(response.responseText);\r",
+                                    "        //console.dir(obj);\r",
+                                    "        //Ext.getStore('ImportOrderTreeStore').removeAll();\r",
+                                    "        //Ext.getStore('ImportOrderTreeStore').sync();\r",
+                                    "        store = me.down('#OrderImportGridPanel').getStore(); //store = Ext.getStore('ImportOrderTreeStore');\r",
+                                    "        store.getProxy().setExtraParam('product_item_id', me.down('#OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
+                                    "        store.getRootNode().removeAll();\r",
+                                    "\t\tstore.load();\r",
+                                    "        myMask.destroy();\r",
+                                    "    },\r",
+                                    "    failure: function(response, opts) {\r",
+                                    "        myMask.destroy();\r",
+                                    "        //console.log('server-side failure with status code ' + response.status);\r",
+                                    "    }\r",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "e0de4f9e-1388-4c94-8c8a-906acb67a401"
+                        }
+                    ]
                 }
             ]
         },
@@ -276,9 +449,15 @@
                                     "record"
                                 ],
                                 "implHandler": [
-                                    "var me = this;\r",
+                                    "if (record.isRoot()) return '';\r",
                                     "\r",
-                                    "var product_item_id = me.down('#OrderImportItemComboBox').getSubmitValue();\r",
+                                    "//var me = this;\r",
+                                    "\r",
+                                    "var product_item_id = me.down('#OrderImportItemComboBox').getValue();\r",
+                                    "\r",
+                                    "//console.log(record.getRootNode().product_item_id);\r",
+                                    "\r",
+                                    "//var product_item_id = 3;\r",
                                     "\r",
                                     "if (record.data.leaf !== true) {\r",
                                     "    for (var idx in record.childNodes) {\r",
@@ -344,6 +523,7 @@
                                     "        if (record.childNodes[idx].data.druck_ng_ort.trim() != record.data.druck_ng_ort.trim()) {record.forceDirty('druck_ng_ort');record.childNodes[idx].forceDirty('druck_ng_ort');}\r",
                                     "        if (record.childNodes[idx].data.druck_ng_tel.trim() != record.data.druck_ng_tel.trim()) {record.forceDirty('druck_ng_tel');record.childNodes[idx].forceDirty('druck_ng_tel');}\r",
                                     "        */\r",
+                                    "        \r",
                                     "        if (product_item_id == 2) {\r",
                                     "            if (\r",
                                     "               record.childNodes[idx].data.druck_anrede_fuer_hg_ng.trim() != record.data.druck_anrede_fuer_hg_ng.trim()\r",
@@ -384,8 +564,11 @@
                                     "            }\r",
                                     "        }\r",
                                     "        \r",
+                                    "        \r",
                                     "    }\r",
-                                    "} \r",
+                                    "}\r",
+                                    "\r",
+                                    "return '';\r",
                                     ""
                                 ]
                             },
