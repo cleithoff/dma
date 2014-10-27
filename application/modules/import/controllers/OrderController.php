@@ -28,9 +28,15 @@ class Import_OrderController extends Rest_Controller_Action_DbTable
 		
 		$product_item_id = $this->getRequest()->getParam('product_item_id', 'NULL');
 		
+		if ($product_item_id == 2 || $product_item_id == 3) {
+			$search_product_item_id = "2,3";
+		} else {
+			$search_product_item_id = $product_item_id;
+		}
+		
 		$root = new stdClass();
 		$root->text = "Root";
-		$root->expanded = true;
+		// $root->expanded = true;
 		$root->children = array();
 		
 		$sql = "
@@ -44,7 +50,7 @@ class Import_OrderController extends Rest_Controller_Action_DbTable
 				ORDER BY `oo`.`order_pool_id` /*`oo`.`incoming`*/ DESC
 			) `oo2` GROUP BY `partner_partner_id`
 		) `oo3`
-		INNER JOIN `order_item` `oi` ON `oo3`.`order_pool_id` = `oi`.`order_pool_id` AND `oi`.`product_item_id` = " . $product_item_id . "
+		INNER JOIN `order_item` `oi` ON `oo3`.`order_pool_id` = `oi`.`order_pool_id` AND `oi`.`product_item_id` IN (" . $search_product_item_id . ")
 		INNER JOIN `order_item_has_product_personalize` `oihpp` ON `oihpp`.`order_item_id` = `oi`.`id`
 		INNER JOIN `product_personalize` `ppersonalize` ON `ppersonalize`.`id` = `oihpp`.`product_personalize_id`
 		INNER JOIN `partner_partner` `ppartner` ON `ppartner`.`id` = `oo3`.`partner_partner_id`	

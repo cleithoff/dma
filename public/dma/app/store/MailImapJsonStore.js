@@ -27,6 +27,7 @@ Ext.define('MyApp.store.MailImapJsonStore', {
             autoLoad: false,
             model: 'MyApp.model.MailImapModel',
             remoteFilter: true,
+            storeId: 'MailImapJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/mail/imap/index',

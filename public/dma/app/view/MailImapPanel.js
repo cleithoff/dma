@@ -93,7 +93,6 @@ Ext.define('MyApp.view.MailImapPanel', {
                     items: [
                         {
                             xtype: 'textareafield',
-                            anchor: '100%',
                             region: 'center',
                             name: 'mailMessage',
                             grow: true

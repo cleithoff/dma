@@ -74,7 +74,8 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
                             } else {	
                                 store = that.getOrderImportPanel().down('#OrderImportGridPanel').getStore(); //Ext.getStore('ImportOrderTreeStore');					
                                 store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
-                                store.reload();
+                                store.getRootNode().removeAll();
+                                store.load();
                             }
                             myMask.destroy();
 
@@ -134,7 +135,8 @@ Ext.define('MyApp.controller.OrderImportPanelController', {
         //store = Ext.getStore('ImportOrderTreeStore');
         store = me.getOrderImportPanel().down('#OrderImportGridPanel').getStore();
         store.getProxy().setExtraParam('product_item_id', me.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
-        store.reload();
+        store.getRootNode().removeAll();
+        store.load();
     },
 
     init: function(application) {

@@ -93,7 +93,7 @@ class Import_Service_Import
 			}
 			$row = array(
 				'partner_nr' => $data[$partner_nr],
-				'key' => $value,
+				'key' => str_replace('zeile', 'line', $value),
 				'value' => $data[$key],
 			);
 			$this->getImportTable()->insert($row);				

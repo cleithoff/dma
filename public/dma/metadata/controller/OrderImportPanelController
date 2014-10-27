@@ -83,7 +83,8 @@
                     "                    } else {\t\r",
                     "                        store = that.getOrderImportPanel().down('#OrderImportGridPanel').getStore(); //Ext.getStore('ImportOrderTreeStore');\t\t\t\t\t\r",
                     "                        store.getProxy().setExtraParam('product_item_id', that.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
-                    "                        store.reload();\r",
+                    "                        store.getRootNode().removeAll();\r",
+                    "\t\t\t\t\t\tstore.load();\r",
                     "                    }\r",
                     "                    myMask.destroy();\r",
                     "\r",
@@ -188,7 +189,8 @@
                     "//store = Ext.getStore('ImportOrderTreeStore');\r",
                     "store = me.getOrderImportPanel().down('#OrderImportGridPanel').getStore();\r",
                     "store.getProxy().setExtraParam('product_item_id', me.getOrderImportPanel().getComponent('OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
-                    "store.reload();"
+                    "store.getRootNode().removeAll();\r",
+                    "store.load();"
                 ],
                 "name": "click",
                 "scope": "me",

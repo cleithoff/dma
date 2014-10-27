@@ -220,7 +220,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "layout|region": "center",
                         "fieldLabel": null,
                         "name": "mailMessage",

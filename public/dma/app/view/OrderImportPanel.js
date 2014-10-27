@@ -134,11 +134,15 @@ Ext.define('MyApp.view.OrderImportPanel', {
                     enableColumnMove: false,
                     rowLines: true,
                     store: 'ImportOrderTreeStore',
-                    rootVisible: false,
                     useArrows: true,
                     viewConfig: {
                         getRowClass: function(record) {
+                            var me = this;
+
+                            var product_item_id = me.down('#OrderImportItemComboBox').getSubmitValue();
+
                             if (record.data.leaf !== true) {
+                                var product_item_id = me.down('#OrderImportItemComboBox').getSubmitValue();
                                 for (var idx in record.childNodes) {
                                     if (Ext.isEmpty(record.childNodes[idx].data.druck_anrede_fuer_hg_ng)) record.childNodes[idx].data.druck_anrede_fuer_hg_ng = "";
                                     if (Ext.isEmpty(record.childNodes[idx].data.druck_hg_name1)) record.childNodes[idx].data.druck_hg_name1 = "";
@@ -154,6 +158,14 @@ Ext.define('MyApp.view.OrderImportPanel', {
                                     if (Ext.isEmpty(record.childNodes[idx].data.druck_ng_ort)) record.childNodes[idx].data.druck_ng_ort = "";
                                     if (Ext.isEmpty(record.childNodes[idx].data.druck_ng_tel)) record.childNodes[idx].data.druck_ng_tel = "";
 
+                                    if (Ext.isEmpty(record.childNodes[idx].data.line1)) record.childNodes[idx].data.line1 = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.line2)) record.childNodes[idx].data.line2 = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.line3)) record.childNodes[idx].data.line3 = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.line4)) record.childNodes[idx].data.line4 = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.line5)) record.childNodes[idx].data.line5 = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.line6)) record.childNodes[idx].data.line6 = "";
+                                    if (Ext.isEmpty(record.childNodes[idx].data.line7)) record.childNodes[idx].data.line7 = "";
+
                                     if (Ext.isEmpty(record.data.druck_anrede_fuer_hg_ng)) record.data.druck_anrede_fuer_hg_ng = "";
                                     if (Ext.isEmpty(record.data.druck_hg_name1)) record.data.druck_hg_name1 = "";
                                     if (Ext.isEmpty(record.data.druck_hg_name2)) record.data.druck_hg_name2 = "";
@@ -167,6 +179,14 @@ Ext.define('MyApp.view.OrderImportPanel', {
                                     if (Ext.isEmpty(record.data.druck_ng_plz)) record.data.druck_ng_plz = "";
                                     if (Ext.isEmpty(record.data.druck_ng_ort)) record.data.druck_ng_ort = "";
                                     if (Ext.isEmpty(record.data.druck_ng_tel)) record.data.druck_ng_tel = "";
+
+                                    if (Ext.isEmpty(record.data.line1)) record.data.line1 = "";
+                                    if (Ext.isEmpty(record.data.line2)) record.data.line2 = "";
+                                    if (Ext.isEmpty(record.data.line3)) record.data.line3 = "";
+                                    if (Ext.isEmpty(record.data.line4)) record.data.line4 = "";
+                                    if (Ext.isEmpty(record.data.line5)) record.data.line5 = "";
+                                    if (Ext.isEmpty(record.data.line6)) record.data.line6 = "";
+                                    if (Ext.isEmpty(record.data.line7)) record.data.line7 = "";
 
                                     /*
                                     if (record.childNodes[idx].data.druck_anrede_fuer_hg_ng.trim() != record.data.druck_anrede_fuer_hg_ng.trim()) {
@@ -186,26 +206,46 @@ Ext.define('MyApp.view.OrderImportPanel', {
                                     if (record.childNodes[idx].data.druck_ng_ort.trim() != record.data.druck_ng_ort.trim()) {record.forceDirty('druck_ng_ort');record.childNodes[idx].forceDirty('druck_ng_ort');}
                                     if (record.childNodes[idx].data.druck_ng_tel.trim() != record.data.druck_ng_tel.trim()) {record.forceDirty('druck_ng_tel');record.childNodes[idx].forceDirty('druck_ng_tel');}
                                     */
-                                    if (
-                                    record.childNodes[idx].data.druck_anrede_fuer_hg_ng.trim() != record.data.druck_anrede_fuer_hg_ng.trim()
-                                    || record.childNodes[idx].data.druck_hg_name1.trim() != record.data.druck_hg_name1.trim()
-                                    || record.childNodes[idx].data.druck_hg_name2.trim() != record.data.druck_hg_name2.trim()
-                                    || record.childNodes[idx].data.druck_hg_strasse.trim() != record.data.druck_hg_strasse.trim()
-                                    || record.childNodes[idx].data.druck_hg_plz.trim() != record.data.druck_hg_plz.trim()
-                                    || record.childNodes[idx].data.druck_hg_ort.trim() != record.data.druck_hg_ort.trim()
-                                    || record.childNodes[idx].data.druck_hg_tel.trim() != record.data.druck_hg_tel.trim()
+                                    if (product_item_id == 2) {
+                                        if (
+                                        record.childNodes[idx].data.druck_anrede_fuer_hg_ng.trim() != record.data.druck_anrede_fuer_hg_ng.trim()
+                                        || record.childNodes[idx].data.druck_hg_name1.trim() != record.data.druck_hg_name1.trim()
+                                        || record.childNodes[idx].data.druck_hg_name2.trim() != record.data.druck_hg_name2.trim()
+                                        || record.childNodes[idx].data.druck_hg_strasse.trim() != record.data.druck_hg_strasse.trim()
+                                        || record.childNodes[idx].data.druck_hg_plz.trim() != record.data.druck_hg_plz.trim()
+                                        || record.childNodes[idx].data.druck_hg_ort.trim() != record.data.druck_hg_ort.trim()
+                                        || record.childNodes[idx].data.druck_hg_tel.trim() != record.data.druck_hg_tel.trim()
 
-                                    || record.childNodes[idx].data.druck_ng_name1.trim() != record.data.druck_ng_name1.trim()
-                                    || record.childNodes[idx].data.druck_ng_name2.trim() != record.data.druck_ng_name2.trim()
-                                    || record.childNodes[idx].data.druck_ng_strasse.trim() != record.data.druck_ng_strasse.trim()
-                                    || record.childNodes[idx].data.druck_ng_plz.trim() != record.data.druck_ng_plz.trim()
-                                    || record.childNodes[idx].data.druck_ng_ort.trim() != record.data.druck_ng_ort.trim()
-                                    || record.childNodes[idx].data.druck_ng_tel.trim() != record.data.druck_ng_tel.trim()
-                                    ) {
-                                        //console.log(record.childNodes[idx].data);
-                                        //console.log(record.data);
-                                        return 'conflict';
+                                        || record.childNodes[idx].data.druck_ng_name1.trim() != record.data.druck_ng_name1.trim()
+                                        || record.childNodes[idx].data.druck_ng_name2.trim() != record.data.druck_ng_name2.trim()
+                                        || record.childNodes[idx].data.druck_ng_strasse.trim() != record.data.druck_ng_strasse.trim()
+                                        || record.childNodes[idx].data.druck_ng_plz.trim() != record.data.druck_ng_plz.trim()
+                                        || record.childNodes[idx].data.druck_ng_ort.trim() != record.data.druck_ng_ort.trim()
+                                        || record.childNodes[idx].data.druck_ng_tel.trim() != record.data.druck_ng_tel.trim()
+                                        ) {
+                                            //console.log(record.childNodes[idx].data);
+                                            //console.log(record.data);
+                                            return 'conflict';
+                                        }
                                     }
+
+                                    if (product_item_id == 3) {
+                                        if (
+                                        record.childNodes[idx].data.line1.trim() != record.data.line1.trim()
+                                        || record.childNodes[idx].data.line2.trim() != record.data.line2.trim()
+                                        || record.childNodes[idx].data.line3.trim() != record.data.line3.trim()
+                                        || record.childNodes[idx].data.line4.trim() != record.data.line4.trim()
+                                        || record.childNodes[idx].data.line5.trim() != record.data.line5.trim()
+                                        || record.childNodes[idx].data.line6.trim() != record.data.line6.trim()
+                                        || record.childNodes[idx].data.line7.trim() != record.data.line7.trim()
+
+                                        ) {
+                                            //console.log(record.childNodes[idx].data);
+                                            //console.log(record.data);
+                                            return 'conflict';
+                                        }
+                                    }
+
                                 }
                             } 
 
