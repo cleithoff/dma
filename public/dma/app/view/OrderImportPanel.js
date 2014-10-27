@@ -640,11 +640,12 @@ Ext.define('MyApp.view.OrderImportPanel', {
                 //console.dir(obj);
                 //Ext.getStore('ImportOrderTreeStore').removeAll();
                 //Ext.getStore('ImportOrderTreeStore').sync();
+                myMask.destroy();
                 store = me.down('#OrderImportGridPanel').getStore(); //store = Ext.getStore('ImportOrderTreeStore');
-                store.getProxy().setExtraParam('product_item_id', me.down('#OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());
+                store.getProxy().setExtraParam('product_item_id', me.down('#OrderImportItemComboBox').getValue());
                 store.getRootNode().removeAll();
                 store.load();
-                myMask.destroy();
+
             },
             failure: function(response, opts) {
                 myMask.destroy();
