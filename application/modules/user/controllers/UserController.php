@@ -23,9 +23,9 @@ class User_UserController extends Rest_Controller_Action_DbTable
 		$body = $this->getRequest()->getRawBody();
 		$data = Zend_Json::decode($body);
 		
-		if (!empty($data->password)) {
-			$data->salt = uniqid() . "secret";
-			$data->password = sha1($data->password, $data->salt);
+		if (!empty($data['password'])) {
+			$data['salt'] = uniqid() . "secret";
+			$data['password'] = sha1($data['password'] . $data['salt']);
 		}
 		
 		

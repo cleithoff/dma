@@ -27,6 +27,7 @@ Ext.define('MyApp.store.UserUserJsonStore', {
             autoSync: true,
             model: 'MyApp.model.UserUserModel',
             remoteFilter: true,
+            storeId: 'UserUserJsonStore',
             pageSize: 100000,
             proxy: {
                 type: 'rest',

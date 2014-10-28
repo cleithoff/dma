@@ -28,6 +28,7 @@ Ext.define('MyApp.store.UserRoleJsonStore', {
             autoSync: true,
             model: 'MyApp.model.UserRoleModel',
             remoteFilter: true,
+            storeId: 'UserRoleJsonStore',
             pageSize: 100000,
             proxy: {
                 type: 'rest',
