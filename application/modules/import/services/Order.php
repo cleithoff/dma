@@ -276,9 +276,11 @@ class Import_Service_Order
 		$product_item = new Product_Model_DbTable_Item();
 		$rpi = $product_item->find($this->_product_item_id)->current();
 		
+		$title = $rpi['slug'] . '_' . date('Ymd_His');
+		
 		$import_stack = new Import_Model_DbTable_Stack();
 		$ris = $import_stack->createRow(array(
-				'title' => $rii['title'] . ', ' .$rpi['title'] . ', ' . date('Y-m-d H:i:s'),
+				'title' => $title, //$rii['title'] . ', ' .$rpi['title'] . ', ' . date('Y-m-d H:i:s'),
 				'import_import_id' => $this->_import_import_id,
 				'product_item_id' => $this->_product_item_id,
 				'creation_date' => date('Y-m-d H:i:s'),

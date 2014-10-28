@@ -235,6 +235,18 @@
                     "designerId": "8fefcc5d-6142-4cf5-8a12-8f5ae472b293"
                 }
             ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "slug"
+            },
+            "designerId": "ee207a07-5c02-4851-8ed3-02a4bd1f64bf"
         }
     ]
 }

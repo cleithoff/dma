@@ -80,6 +80,9 @@ Ext.define('MyApp.model.ProductItemModel', {
             persist: false,
             type: 'string',
             useNull: true
+        },
+        {
+            name: 'slug'
         }
     ]
 });

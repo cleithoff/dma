@@ -410,6 +410,20 @@
                             "designerId": "baecce1d-06ac-4b24-b044-1f824606957a"
                         },
                         {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Bezeichnung",
+                                "name": "slug"
+                            },
+                            "designerId": "d02837ee-3ab5-4b4d-b6d7-e89659de872b"
+                        },
+                        {
                             "type": "Ext.form.field.ComboBox",
                             "reference": {
                                 "name": "items",

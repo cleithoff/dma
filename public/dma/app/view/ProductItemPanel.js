@@ -154,6 +154,12 @@ Ext.define('MyApp.view.ProductItemPanel', {
                                     name: 'title'
                                 },
                                 {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
+                                    fieldLabel: 'Bezeichnung',
+                                    name: 'slug'
+                                },
+                                {
                                     xtype: 'combobox',
                                     anchor: '100%',
                                     fieldLabel: 'Produkt Layout',
