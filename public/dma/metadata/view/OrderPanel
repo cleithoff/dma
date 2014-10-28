@@ -850,6 +850,46 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.panel.Tool",
+                            "reference": {
+                                "name": "tools",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "type": "print"
+                            },
+                            "designerId": "252684ee-39af-46a8-89df-17a4c3c2ab18",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onToolAfterRender",
+                                        "implHandler": [
+                                            "var me = this;\r",
+                                            "\r",
+                                            "MyApp.app.getUtilControllerController().assignReportsToPrintButton(component, me);\r",
+                                            "\r",
+                                            "\r",
+                                            "component.handler = function (e, el, owner, tool) {\r",
+                                            "    var menu = tool.menu; //down('menu'); \r",
+                                            "    if (!menu) return;\r",
+                                            "    menu.showBy(owner, 'tr-br?');\r",
+                                            "}"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "cd9cea47-08e1-4ae8-84d7-00bd4e10ea1f"
+                                }
+                            ]
                         }
                     ]
                 },

@@ -1319,6 +1319,30 @@
                 "app/model/UserRoleHasUserResourceModel.js"
             ],
             "className": "UserRoleHasUserResourceModel"
+        },
+        "88723ac3-c28f-4b4d-999c-a3af39f673f4": {
+            "paths": [
+                "metadata/model/UserResourceHasReportReport",
+                "app/model/override/UserResourceHasReportReport.js",
+                "app/model/UserResourceHasReportReport.js"
+            ],
+            "className": "UserResourceHasReportReport"
+        },
+        "e619c51e-efad-439a-bfe6-db609faa9cec": {
+            "paths": [
+                "metadata/store/UserResourceHasReportReportJsonStore",
+                "app/store/override/UserResourceHasReportReportJsonStore.js",
+                "app/store/UserResourceHasReportReportJsonStore.js"
+            ],
+            "className": "UserResourceHasReportReportJsonStore"
+        },
+        "828b8855-be94-47db-bda2-f43c035ebc11": {
+            "paths": [
+                "metadata/view/DlgReportReportPanel",
+                "app/view/override/DlgReportReportPanel.js",
+                "app/view/DlgReportReportPanel.js"
+            ],
+            "className": "DlgReportReportPanel"
         }
     },
     "viewOrderMap": {
@@ -1366,7 +1390,8 @@
             "b30e5af6-181b-4e8c-baa7-9cb71fa359c4",
             "cfc8bf2e-799f-42f3-8e06-bd8918a3c34d",
             "29219c73-d451-49cf-ad5c-b1a5f947e09d",
-            "2ceb3258-cc7a-467f-a712-4674f3e8db86"
+            "2ceb3258-cc7a-467f-a712-4674f3e8db86",
+            "828b8855-be94-47db-bda2-f43c035ebc11"
         ],
         "store": [
             "311f6e01-255b-4244-a8ca-5618f6926b96",
@@ -1416,7 +1441,8 @@
             "9a44563b-0321-4b03-ab18-59774c953318",
             "ce4cf3b2-da08-4e75-aca5-25297cdd59e4",
             "2a06eb8e-33d6-4e00-985c-d56dd070069a",
-            "47c37540-d101-4be6-ae8f-c878283067db"
+            "47c37540-d101-4be6-ae8f-c878283067db",
+            "e619c51e-efad-439a-bfe6-db609faa9cec"
         ],
         "controller": [
             "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
@@ -1489,7 +1515,8 @@
             "601b7dfb-8f1a-4078-adca-fd5e994afa49",
             "13ae90e2-0b06-4a37-b113-db09ae65f50e",
             "2e9762c5-cd0c-4fef-af66-e4be8c25f61f",
-            "55a17f48-cd20-48da-8ce5-30fcb5830e3b"
+            "55a17f48-cd20-48da-8ce5-30fcb5830e3b",
+            "88723ac3-c28f-4b4d-999c-a3af39f673f4"
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",

@@ -322,6 +322,18 @@ Ext.define('MyApp.view.OrderPanel', {
                                         }
                                     ]
                                 }
+                            ],
+                            tools: [
+                                {
+                                    xtype: 'tool',
+                                    type: 'print',
+                                    listeners: {
+                                        afterrender: {
+                                            fn: me.onToolAfterRender,
+                                            scope: me
+                                        }
+                                    }
+                                }
                             ]
                         }
                     ],
@@ -474,6 +486,18 @@ Ext.define('MyApp.view.OrderPanel', {
         me = this;
 
         me.setOrderState(button, 'finished_order', 'finished');
+    },
+
+    onToolAfterRender: function(component, eOpts) {
+        var me = this;
+
+        MyApp.app.getUtilControllerController().assignReportsToPrintButton(component, me);
+
+        component.handler = function (e, el, owner, tool) {
+            var menu = tool.menu; //down('menu'); 
+            if (!menu) return;
+            menu.showBy(owner, 'tr-br?');
+        }
     },
 
     setOrderState: function(component, order_state_key, order_itemstate_key) {

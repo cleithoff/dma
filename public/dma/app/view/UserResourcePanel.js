@@ -165,9 +165,101 @@ Ext.define('MyApp.view.UserResourcePanel', {
                         {
                             xtype: 'panel',
                             region: 'center',
-                            itemId: 'DummyPanel',
+                            itemId: 'LinkPanel',
+                            layout: {
+                                type: 'border'
+                            },
                             header: false,
-                            title: 'My Panel'
+                            title: 'My Panel',
+                            items: [
+                                me.processBagGridPanel({
+                                    xtype: 'gridpanel',
+                                    flex: 1,
+                                    region: 'west',
+                                    itemId: 'BagGridPanel',
+                                    width: 150,
+                                    title: 'verwendete Reporte',
+                                    store: 'UserResourceHasReportReportJsonStore',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                return record.data.report_report.title;
+                                            },
+                                            dataIndex: 'label',
+                                            text: 'Bezeichnung',
+                                            flex: 1
+                                        }
+                                    ],
+                                    dockedItems: [
+                                        {
+                                            xtype: 'toolbar',
+                                            dock: 'right',
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    itemId: 'LinkButton',
+                                                    text: '<',
+                                                    listeners: {
+                                                        click: {
+                                                            fn: me.onLinkButtonClick1,
+                                                            scope: me
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    itemId: 'UnlinkButton',
+                                                    text: '>',
+                                                    listeners: {
+                                                        click: {
+                                                            fn: me.onUnlinkButtonClick1,
+                                                            scope: me
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        me.processMyPagingToolbar11({
+                                            xtype: 'pagingtoolbar',
+                                            dock: 'bottom',
+                                            width: 360,
+                                            displayInfo: true,
+                                            store: 'UserResourceHasReportReportJsonStore'
+                                        })
+                                    ],
+                                    plugins: [
+                                        Ext.create('Ext.grid.plugin.CellEditing', {
+
+                                        })
+                                    ]
+                                }),
+                                me.processLibGridPanel({
+                                    xtype: 'gridpanel',
+                                    flex: 1,
+                                    region: 'center',
+                                    itemId: 'LibGridPanel',
+                                    title: 'verfügbare Reporte',
+                                    store: 'ReportReportJsonStore',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'title',
+                                            text: 'Bezeichnung',
+                                            flex: 1
+                                        }
+                                    ],
+                                    dockedItems: [
+                                        me.processMyPagingToolbar12({
+                                            xtype: 'pagingtoolbar',
+                                            dock: 'bottom',
+                                            width: 360,
+                                            displayInfo: true,
+                                            store: 'ReportReportJsonStore'
+                                        })
+                                    ]
+                                })
+                            ]
                         }
                     ]
                 }
@@ -201,8 +293,65 @@ Ext.define('MyApp.view.UserResourcePanel', {
         return config;
     },
 
+    processMyPagingToolbar11: function(config) {
+        var me = this;
+
+        if (Ext.isEmpty(me.linkbagstore)) {
+            me.linkbagstore = Ext.create('MyApp.store.' + config.store);
+        }
+
+        config.store = me.linkbagstore;
+
+        return config;
+    },
+
+    processBagGridPanel: function(config) {
+        var me = this;
+
+        if (Ext.isEmpty(me.linkbagstore)) {
+            me.linkbagstore = Ext.create('MyApp.store.' + config.store);
+        }
+
+        config.store = me.linkbagstore;
+
+        return config;
+    },
+
+    processMyPagingToolbar12: function(config) {
+        var me = this;
+
+        if (Ext.isEmpty(me.linklibstore)) {
+            me.linklibstore = Ext.create('MyApp.store.' + config.store);
+        }
+
+        config.store = me.linklibstore;
+
+        return config;
+    },
+
+    processLibGridPanel: function(config) {
+        var me = this;
+
+        if (Ext.isEmpty(me.linklibstore)) {
+            me.linklibstore = Ext.create('MyApp.store.' + config.store);
+        }
+
+        config.store = me.linklibstore;
+
+        return config;
+    },
+
     onGridPanelSelect: function(rowmodel, record, index, eOpts) {
         MyApp.app.getCrudControllerController().onGridPanelSelect(rowmodel, record, index, eOpts);
+
+        var bagstore = eOpts.scope.down('#LinkPanel').down('#BagGridPanel').getStore();
+
+        bagstore.clearFilter(true);
+        bagstore.filter([{property: 'user_resource_id', value: record.data.id}]);
+        bagstore.load();
+
+        eOpts.scope.down('#LinkPanel').linkrecord = record;
+        eOpts.scope.linkrecord = record;
     },
 
     onNewButtonClick: function(button, e, eOpts) {
@@ -223,6 +372,21 @@ Ext.define('MyApp.view.UserResourcePanel', {
 
     onDeleteButtonClick: function(button, e, eOpts) {
         MyApp.app.getCrudControllerController().onDeleteButtonClick(button, e, eOpts);
+    },
+
+    onLinkButtonClick1: function(button, e, eOpts) {
+        MyApp.app.getCrudControllerController().onLinkButtonClick(button, e, eOpts, function(linkrecord, librecord) {
+
+            return {
+                user_role_id: linkrecord.data.id,
+                user_resource_id: librecord.data.id
+            };
+
+        });
+    },
+
+    onUnlinkButtonClick1: function(button, e, eOpts) {
+        MyApp.app.getCrudControllerController().onUnlinkButtonClick(button, e, eOpts);
     }
 
 });

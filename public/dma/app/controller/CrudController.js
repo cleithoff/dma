@@ -40,7 +40,7 @@ Ext.define('MyApp.controller.CrudController', {
 
         if (Ext.isArray(librecord)) librecord = librecord[0];
 
-        console.log(linkrecord, librecord);
+        // console.log(linkrecord, librecord);
 
         if (!Ext.isEmpty(linkrecord) && !Ext.isEmpty(librecord)) {
             var record = new bagstore.model(linkCallback(linkrecord, librecord));

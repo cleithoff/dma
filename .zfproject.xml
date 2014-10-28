@@ -311,18 +311,26 @@
             <controllerFile controllerName="User">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Resourcehasreportreport">
+              <actionMethod actionName="index"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false"/>
           <layoutsDirectory enabled="false"/>
           <modelsDirectory>
             <dbTableDirectory>
               <dbTableFile dbTableName="User"/>
+              <dbTableFile dbTableName="Resourcehasreportreport"/>
             </dbTableDirectory>
             <modelFile modelName="User"/>
+            <modelFile modelName="Resourcehasreportreport"/>
           </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="User">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Resourcehasreportreport">
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>

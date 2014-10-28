@@ -64,7 +64,8 @@ Ext.application({
         'UserUserModel',
         'UserRoleModel',
         'UserResourceModel',
-        'UserRoleHasUserResourceModel'
+        'UserRoleHasUserResourceModel',
+        'UserResourceHasReportReport'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -114,7 +115,8 @@ Ext.application({
         'UserUserJsonStore',
         'UserRoleJsonStore',
         'UserResourceJsonStore',
-        'UserRoleHasUserResourceJsonStore'
+        'UserRoleHasUserResourceJsonStore',
+        'UserResourceHasReportReportJsonStore'
     ],
     views: [
         'MainViewport',
@@ -160,7 +162,8 @@ Ext.application({
         'MailImapPanel',
         'UserRolePanel',
         'UserResourcePanel',
-        'UserUserPanel'
+        'UserUserPanel',
+        'DlgReportReportPanel'
     ],
     autoCreateViewport: true,
     controllers: [

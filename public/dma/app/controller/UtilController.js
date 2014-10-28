@@ -18,7 +18,209 @@ Ext.define('MyApp.controller.UtilController', {
 
     assignReportsToPrintButton: function(button, component) {
 
-        var user_resource_id = component.itemId;
+        var storeUserResource = Ext.getStore('UserResourceJsonStore');
+
+        storeUserResource.clearFilter(true);
+        storeUserResource.filter([{property:'slug',value:component.itemId}]);
+        storeUserResource.load({
+            callback: function(records, operation, success) {
+                if (records.length > 0) {
+
+                    var storeUserResourceHasReportReport = Ext.getStore('UserResourceHasReportReportJsonStore');
+
+                    storeUserResourceHasReportReport.clearFilter(true);
+                    storeUserResourceHasReportReport.filter([{property:'user_resource_id',value:records[0].data.id}]);
+                    storeUserResourceHasReportReport.load({
+                        callback: function(records, operation, success) {
+                            if (records.length > 0) {
+
+                                var items = [];
+
+                                for (var idx in records) {
+                                    items.push({
+                                        xtype: 'menuitem',
+                                        text: records[idx].data.report_report.title,
+                                        record: records[idx],
+                                        printButton: button,
+                                        handler: function(item, e, eOpts) {
+                                            console.log(item.record);
+                                            MyApp.app.getUtilControllerController().showFilterDialog(item);
+                                        }
+                                    });
+                                }
+
+                                button.menu = Ext.create('Ext.menu.Menu', {
+                                    items: items
+                                });
+
+                            }
+                        }
+                    });
+                }
+            }
+        });
+
+
+        /*
+        button.menu = Ext.create('Ext.menu.Menu', {
+        items: [
+        {
+        xtype: 'menuitem',
+        itemId: 'PartnerMenuItem',
+        text: 'Partner'
+        },
+        {
+        xtype: 'menuitem',
+        itemId: 'OrderMenuItem',
+        text: 'Bestellungen'
+        },
+        {
+        xtype: 'menuitem',
+        itemId: 'ReportMenuItem',
+        text: 'Reporte'
+        },
+        {
+        xtype: 'menuitem',
+        itemId: 'ImportMenuItem',
+        text: 'Import'
+        }
+        ]
+        });
+
+        */
+    },
+
+    showFilterDialog: function(item) {
+        var 
+        report_report = item.record.data.report_report,
+        user_resource = item.printButton.up('#' + item.record.data.user_resource.slug),
+        record = user_resource.down('gridpanel').getSelectionModel().getSelection()[0];
+
+
+
+        var store = Ext.getStore('ReportFilterJsonStore');
+        store.clearFilter(true);
+        store.filter([{property:"report_report_id",value:report_report.id}]);
+        store.load({
+            callback: function(records,operation,success) {
+                fields = MyApp.app.getUtilControllerController().getReportFilter(records,record);
+
+                if (fields.length === 0) {
+                    var _dc = new Date().getTime();
+                    document.location = "/report/report/exportpdf?_dc=" + _dc + "&report_report_id=" + report_report.id;
+                    return;
+                }
+
+                var window = Ext.create('Ext.window.Window', {
+                    title: 'Drucken - ' + report_report.title,
+                    layout: 'fit',
+                    items: [
+                    {
+                        xtype: 'form',
+                        itemId: 'FormPanel',
+                        bodyPadding: 10,
+                        header: false,
+                        title: 'My Form',
+                        items:fields,
+                        dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'bottom',
+                            items: [
+                            {
+                                xtype: 'button',
+                                handler: function(button, event) {
+                                    var me = button.up('window');
+
+                                    me.close();
+                                },
+                                itemId: 'CancelButton',
+                                text: 'Abbrechen'
+                            },
+                            {
+                                xtype: 'tbspacer',
+                                flex: 1
+                            },
+                            {
+                                xtype: 'button',
+                                handler: function(button, event) {
+                                    var me = button.up('window');
+
+
+                                    var _dc = new Date().getTime();
+
+                                    filterFormPanel = me.down('form');
+
+                                    params = filterFormPanel.getValues();
+
+                                    strParams = '';
+
+                                    for (var idx in params) {
+                                        strParams = strParams + '&' + idx + '=' + params[idx];
+                                    }
+
+
+
+                                    document.location = "/report/report/exportpdf?_dc=" + _dc + "&report_report_id=" + report_report.id + strParams;
+
+
+                                    me.close();
+                                },
+                                itemId: 'OkButton',
+                                text: 'Drucken'
+                            }
+                            ]
+                        }
+                        ]
+                    }
+                    ]
+                }).show();
+
+            }
+        });
+
+
+    },
+
+    getReportFilter: function(records, recordFilterValues) {
+        var fields = [];
+
+        for(var idx in records) {
+            r = records[idx];
+            config = JSON.parse(r.data.jsonparam);
+            switch(r.data.report_filtertype.key) {
+                case 'combobox':
+                config.xtype = 'combobox';
+                config.triggerAction = 'all';
+                config.listeners = {
+                    render: function() {
+                        this.store.load({params:{query:this.allQuery}});
+                    }
+                };
+                break;
+                case 'datetime':
+                config.xtype = 'datefield';
+                break;
+                case 'string':
+                config.xtype = 'textfield';
+                break;
+                case 'integer':
+                config.xtype = 'numberfield';
+                break;
+            }
+
+            switch(config.name) {
+                case 'partner_nr':
+                config.value = recordFilterValues.data.partner_partner.partner_nr
+                break;
+                case 'import_stack_id':
+                config.value = recordFilterValues.data.import_stack_id
+                break;
+            }
+            fields.push(config);
+        }
+
+        return fields;
     }
 
 });

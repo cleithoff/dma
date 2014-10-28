@@ -1,0 +1,135 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "width": null,
+        "designer|userClassName": "DlgReportReportPanel",
+        "layout": "fit",
+        "title": "My Panel"
+    },
+    "designerId": "828b8855-be94-47db-bda2-f43c035ebc11",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "FormPanel",
+                "bodyPadding": 10,
+                "header": false,
+                "title": "My Form"
+            },
+            "designerId": "e59fbe15-73f4-4a92-8b97-e9f00624e92e",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "designerId": "5bc9fccf-e084-4fd5-976b-645455f40fa1",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "itemId": "CancelButton",
+                                "text": "Abbrechen"
+                            },
+                            "designerId": "3f0fc27c-985f-491d-bf56-c98aa28f99ee",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "var me;\r",
+                                            "\r",
+                                            "me.close();"
+                                        ]
+                                    },
+                                    "designerId": "f9fcb2ee-cf94-4c9a-ac70-c50d6e3a9d9d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "designerId": "9925a7e2-21ff-4d53-8151-2f32aa303350"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "itemId": "OkButton",
+                                "text": "Drucken"
+                            },
+                            "designerId": "afcebd9d-4954-4381-bb87-9ac7a9822948",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "implHandler": [
+                                            "var me;\r",
+                                            "\r",
+                                            "me.close();"
+                                        ]
+                                    },
+                                    "designerId": "c9a4232b-c363-4363-8c5f-e18290962417"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

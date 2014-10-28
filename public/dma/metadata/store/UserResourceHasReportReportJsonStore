@@ -1,0 +1,43 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoSync": true,
+        "model": "UserResourceHasReportReport",
+        "remoteFilter": true,
+        "designer|userClassName": "UserResourceHasReportReportJsonStore"
+    },
+    "designerId": "e619c51e-efad-439a-bfe6-db609faa9cec",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/user/resourcehasreportreport/index"
+            },
+            "designerId": "e921f7ee-81fe-4bff-8d84-4dba42101f58",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "bc2eb4af-862d-4953-a09f-38b06fcaaf39"
+                }
+            ]
+        }
+    ]
+}

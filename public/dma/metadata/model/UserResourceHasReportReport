@@ -1,0 +1,100 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserResourceHasReportReport"
+    },
+    "designerId": "88723ac3-c28f-4b4d-999c-a3af39f673f4",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "8fd79481-5bce-41a1-a7ea-4f0472f10b9d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_resource_id"
+            },
+            "designerId": "99da5608-11ef-481a-a12a-1f4acd6d3f25"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "report_report_id"
+            },
+            "designerId": "38d97752-672e-4487-bd01-5e46cc486f30"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_resource"
+            },
+            "designerId": "d3a1f209-0fc8-4d43-b988-646f95736b2c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "report_report"
+            },
+            "designerId": "ca6694ee-dc1a-4ee6-bb5c-894c1040d0c8"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/user/resourcehasreportreport/index"
+            },
+            "designerId": "693c82ac-6588-47d4-8915-1b88c927ea48",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "df15c68d-0cf8-472b-8bb8-377ab07e6d4e"
+                }
+            ]
+        }
+    ]
+}

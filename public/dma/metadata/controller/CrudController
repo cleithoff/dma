@@ -40,7 +40,7 @@
                     "\r",
                     "if (Ext.isArray(librecord)) librecord = librecord[0];\r",
                     "\r",
-                    "console.log(linkrecord, librecord);\r",
+                    "// console.log(linkrecord, librecord);\r",
                     "\r",
                     "if (!Ext.isEmpty(linkrecord) && !Ext.isEmpty(librecord)) {\r",
                     "    var record = new bagstore.model(linkCallback(linkrecord, librecord));\r",

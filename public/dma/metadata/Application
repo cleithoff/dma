@@ -51,7 +51,8 @@
             "UserUserModel",
             "UserRoleModel",
             "UserResourceModel",
-            "UserRoleHasUserResourceModel"
+            "UserRoleHasUserResourceModel",
+            "UserResourceHasReportReport"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -101,7 +102,8 @@
             "UserUserJsonStore",
             "UserRoleJsonStore",
             "UserResourceJsonStore",
-            "UserRoleHasUserResourceJsonStore"
+            "UserRoleHasUserResourceJsonStore",
+            "UserResourceHasReportReportJsonStore"
         ],
         "views": [
             "MainViewport",
@@ -147,7 +149,8 @@
             "MailImapPanel",
             "UserRolePanel",
             "UserResourcePanel",
-            "UserUserPanel"
+            "UserUserPanel",
+            "DlgReportReportPanel"
         ],
         "autoCreateViewport": true,
         "controllers": [
