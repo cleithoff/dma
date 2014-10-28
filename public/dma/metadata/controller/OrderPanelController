@@ -171,6 +171,10 @@
                     "    filter.push({property:\"product_category_id\",value:values.product_category_id,operator:\"=\"});\r",
                     "}\r",
                     "\r",
+                    "if (values.order_state_id !== \"\") {\r",
+                    "    filter.push({property:\"order_state_id\",value:values.order_state_id,operator:\"=\"});\r",
+                    "}\r",
+                    "\r",
                     "grid.store.filter(filter);"
                 ],
                 "name": "click",

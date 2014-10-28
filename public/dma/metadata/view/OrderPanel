@@ -582,6 +582,65 @@
                             ]
                         },
                         {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Status",
+                                "name": "order_state_id",
+                                "autoSelect": false,
+                                "displayField": "title",
+                                "store": "OrderStateJsonStore",
+                                "valueField": "id"
+                            },
+                            "designerId": "52f03951-be30-4d64-a24c-c063bf9cf5e3",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldSpecialkey1111",
+                                        "implHandler": [
+                                            "// e.HOME, e.END, e.PAGE_UP, e.PAGE_DOWN,\r",
+                                            "// e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN\r",
+                                            "if (e.getKey() == e.ENTER) {\r",
+                                            "    field.up('form').down('#OrderOrderFilterButton').fireEvent('click', field.up('form').down('#OrderOrderFilterButton'));\r",
+                                            "}"
+                                        ],
+                                        "name": "specialkey",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "85d4f7db-d82d-4d27-8fe1-1ba19508a5b1"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect111",
+                                        "implHandler": [
+                                            "combo.up('form').down('#OrderOrderFilterButton').fireEvent('click', combo.up('form').down('#OrderOrderFilterButton'));\r",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "2c8af0f6-cc68-44f6-9dca-336b2ced9a9c"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",

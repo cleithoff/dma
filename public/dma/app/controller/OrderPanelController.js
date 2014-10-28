@@ -147,6 +147,10 @@ Ext.define('MyApp.controller.OrderPanelController', {
             filter.push({property:"product_category_id",value:values.product_category_id,operator:"="});
         }
 
+        if (values.order_state_id !== "") {
+            filter.push({property:"order_state_id",value:values.order_state_id,operator:"="});
+        }
+
         grid.store.filter(filter);
     },
 
