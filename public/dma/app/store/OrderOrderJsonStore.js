@@ -31,6 +31,7 @@ Ext.define('MyApp.store.OrderOrderJsonStore', {
             remoteFilter: true,
             remoteSort: true,
             storeId: 'OrderOrderJsonStore',
+            pageSize: 38,
             proxy: {
                 type: 'rest',
                 url: '/order/order/index',

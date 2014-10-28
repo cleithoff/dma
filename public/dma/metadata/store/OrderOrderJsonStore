@@ -13,7 +13,8 @@
         "remoteFilter": true,
         "remoteSort": true,
         "storeId": "OrderOrderJsonStore",
-        "designer|userClassName": "OrderOrderJsonStore"
+        "designer|userClassName": "OrderOrderJsonStore",
+        "pageSize": 38
     },
     "designerId": "25f14b91-54f4-4e81-aa7e-f14ee12376c9",
     "cn": [

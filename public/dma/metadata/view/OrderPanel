@@ -286,7 +286,10 @@
                         "itemId": "OrderOrderGridFilterFormPanel",
                         "width": 100,
                         "bodyPadding": 10,
-                        "title": null
+                        "collapsed": false,
+                        "collapsible": true,
+                        "title": "Filter und Funktionen",
+                        "titleCollapse": true
                     },
                     "designerId": "1c58cdde-e476-4230-a180-3fa62d111c9e",
                     "cn": [

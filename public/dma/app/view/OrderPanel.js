@@ -130,6 +130,10 @@ Ext.define('MyApp.view.OrderPanel', {
                             itemId: 'OrderOrderGridFilterFormPanel',
                             width: 100,
                             bodyPadding: 10,
+                            collapsed: false,
+                            collapsible: true,
+                            title: 'Filter und Funktionen',
+                            titleCollapse: true,
                             items: [
                                 {
                                     xtype: 'numberfield',
