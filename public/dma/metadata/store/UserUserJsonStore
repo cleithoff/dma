@@ -1,0 +1,56 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoSync": true,
+        "model": "UserUserModel",
+        "remoteFilter": true,
+        "designer|userClassName": "UserUserJsonStore",
+        "pageSize": 100000
+    },
+    "designerId": "9a44563b-0321-4b03-ab18-59774c953318",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/user/user/index"
+            },
+            "designerId": "0f100352-b3d5-45b9-ad51-6c802dad8b31",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "dbf96ef9-f4d8-4547-99b2-3c0ab04e62aa"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "username"
+            },
+            "designerId": "29a9f795-7d82-403c-9f9c-cad56352db4f"
+        }
+    ]
+}

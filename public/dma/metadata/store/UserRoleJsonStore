@@ -1,0 +1,57 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "model": "UserRoleModel",
+        "remoteFilter": true,
+        "designer|userClassName": "UserRoleJsonStore",
+        "pageSize": 100000
+    },
+    "designerId": "ce4cf3b2-da08-4e75-aca5-25297cdd59e4",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/user/role/index"
+            },
+            "designerId": "25b1f13a-1a94-4c98-ad0e-29111e956a81",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "cb989f6d-986d-4332-aa61-238cc5482270"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "title"
+            },
+            "designerId": "02edb7f0-51b9-4892-8b2a-c5a4edbcd848"
+        }
+    ]
+}

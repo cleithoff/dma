@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoSync": true,
+        "model": "UserRoleHasUserResourceModel",
+        "remoteFilter": true,
+        "designer|userClassName": "UserRoleHasUserResourceJsonStore",
+        "pageSize": 100000
+    },
+    "designerId": "47c37540-d101-4be6-ae8f-c878283067db",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/user/rolehasuserresource/index"
+            },
+            "designerId": "32a02358-21f1-41d6-9cbe-a522c2098f35",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "ede24643-2340-4553-8100-b6b700b685d0"
+                }
+            ]
+        }
+    ]
+}

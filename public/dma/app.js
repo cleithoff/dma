@@ -60,7 +60,11 @@ Ext.application({
         'ReportAdditionalModel',
         'OrderCombineitemModel',
         'OrderStateModel',
-        'MailImapModel'
+        'MailImapModel',
+        'UserUserModel',
+        'UserRoleModel',
+        'UserResourceModel',
+        'UserRoleHasUserResourceModel'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -106,7 +110,11 @@ Ext.application({
         'ReportAdditionalJsonStore',
         'OrderCombineitemJsonStore',
         'OrderStateJsonStore',
-        'MailImapJsonStore'
+        'MailImapJsonStore',
+        'UserUserJsonStore',
+        'UserRoleJsonStore',
+        'UserResourceJsonStore',
+        'UserRoleHasUserResourceJsonStore'
     ],
     views: [
         'MainViewport',
@@ -149,7 +157,10 @@ Ext.application({
         'OrderPackagePackageorderPanel',
         'ReportAdditionalPanel',
         'OrderCombineitemPanel',
-        'MailImapPanel'
+        'MailImapPanel',
+        'UserRolePanel',
+        'UserResourcePanel',
+        'UserUserPanel'
     ],
     autoCreateViewport: true,
     controllers: [

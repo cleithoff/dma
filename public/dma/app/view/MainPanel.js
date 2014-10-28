@@ -76,11 +76,6 @@ Ext.define('MyApp.view.MainPanel', {
                                     },
                                     {
                                         xtype: 'menuitem',
-                                        itemId: 'UserMenuItem',
-                                        text: 'Benutzer'
-                                    },
-                                    {
-                                        xtype: 'menuitem',
                                         itemId: 'ImportMenuItem',
                                         text: 'Import'
                                     }
@@ -216,6 +211,52 @@ Ext.define('MyApp.view.MainPanel', {
                                     }
                                 ]
                             }
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'UserButton',
+                            text: 'Benutzerverwaltung',
+                            menu: {
+                                xtype: 'menu',
+                                items: [
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'useruserpanel',
+                                        itemId: 'UserUserMenuItem',
+                                        text: 'Benutzer',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onUserUserMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'userrolepanel',
+                                        itemId: 'UserRoleMenuItem',
+                                        text: 'Rollen',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onUserRoleMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'userresourcepanel',
+                                        itemId: 'UserResourceMenuItem',
+                                        text: 'Resourcen',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onUserResourceMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     ]
                 }
@@ -276,6 +317,18 @@ Ext.define('MyApp.view.MainPanel', {
 
     onOrderMetaMenuItemClick: function(item, e, eOpts) {
         MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onUserUserMenuItemClick: function(item, e, eOpts) {
+        var panel = MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onUserRoleMenuItemClick: function(item, e, eOpts) {
+        var panel = MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onUserResourceMenuItemClick: function(item, e, eOpts) {
+        var panel = MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
     }
 
 });

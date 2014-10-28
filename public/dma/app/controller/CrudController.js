@@ -227,6 +227,19 @@ Ext.define('MyApp.controller.CrudController', {
         }
         me.getMainPanel().getComponent('AppTabPanel').setActiveTab(panel);
 
+        var grid = panel.down('#GridPanel');
+
+        if (!Ext.isEmpty(grid)) {
+            grid.getStore().load();
+        }
+
+        grid = panel.down('#LibGridPanel');
+
+        if (!Ext.isEmpty(grid)) {
+            grid.getStore().load();
+        }
+
+
         return panel;
     }
 

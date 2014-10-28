@@ -1,0 +1,807 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "itemId": null,
+        "width": null,
+        "designer|userClassName": "UserRolePanel",
+        "designer|userAlias": "userrolepanel",
+        "layout": "border",
+        "closable": true,
+        "title": "Rollen"
+    },
+    "designerId": "2ceb3258-cc7a-467f-a712-4674f3e8db86",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "layout|split": true,
+                "itemId": "GridPanel",
+                "width": 150,
+                "header": false,
+                "title": "My Grid Panel",
+                "store": "UserRoleJsonStore"
+            },
+            "designerId": "e4d4ec7b-ade4-4f4d-a74b-92f5ff787273",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "title",
+                        "text": "Bezeichnung",
+                        "flex": 3
+                    },
+                    "designerId": "e4096840-1640-4ec5-815b-179dd80e0052"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "08d3d7ed-cde2-4c9d-8d35-d99dcc4c20a1"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "UserRoleJsonStore"
+                    },
+                    "designerId": "e7fc4f6b-3663-43eb-bcd6-3fd3dc0380f2",
+                    "cn": [
+                        {
+                            "type": "processcfgfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "processMyPagingToolbar3",
+                                "designer|params": [
+                                    "config"
+                                ],
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "\r",
+                                    "if (Ext.isEmpty(me.store)) {\r",
+                                    "    me.store = Ext.create('MyApp.store.' + config.store);\r",
+                                    "}\r",
+                                    "\r",
+                                    "config.store = me.store;\r",
+                                    "\r",
+                                    "return config;"
+                                ]
+                            },
+                            "designerId": "9bad8c7d-b7b4-4260-ae34-88ed04a3771f"
+                        }
+                    ]
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processGridPanel",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "var me = this;\r",
+                            "\r",
+                            "if (Ext.isEmpty(me.store)) {\r",
+                            "\tme.store = Ext.create('MyApp.store.' + config.store);\r",
+                            "}\r",
+                            "\r",
+                            "config.store = me.store;\r",
+                            "\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "449f446e-701c-4592-8bf8-8c9394fcf292"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridPanelSelect",
+                        "implHandler": [
+                            "MyApp.app.getCrudControllerController().onGridPanelSelect(rowmodel, record, index, eOpts);\r",
+                            "\r",
+                            "var bagstore = eOpts.scope.down('#LinkPanel').down('#BagGridPanel').getStore();\r",
+                            "\r",
+                            "bagstore.clearFilter(true);\r",
+                            "bagstore.filter([{property: 'user_role_id', value: record.data.id}]);\r",
+                            "bagstore.load();\r",
+                            "\r",
+                            "eOpts.scope.down('#LinkPanel').linkrecord = record;\r",
+                            "eOpts.scope.linkrecord = record;"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "designerId": "aeee4a5d-6422-47a8-bd57-6f32f983c911"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "itemId": "Container",
+                "layout": "border"
+            },
+            "designerId": "37185922-1474-4f67-9e53-b9b5f8cd0254",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "north",
+                        "height": null,
+                        "itemId": "ActionToolbar"
+                    },
+                    "designerId": "4dcf3eb3-fe26-4c5c-a9b5-6de0438327b1",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "itemId": "NewButton",
+                                "text": "Neu"
+                            },
+                            "designerId": "7d0400ed-8640-41ca-bc6e-d0695d2ff689",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onNewButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onNewButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "9b6729ca-5e7a-414c-9c9c-d8ae5fb7c36c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "EditButton",
+                                "text": "Bearbeiten"
+                            },
+                            "designerId": "b20765f9-5996-4b1f-8949-4c5bd51dca22",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onEditButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onEditButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "6294c721-ee81-4a7a-a52e-f460e7046192"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "SaveButton",
+                                "text": "Speichern"
+                            },
+                            "designerId": "546ce558-6f9b-4eda-8144-90acc108b04d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onSaveButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "6427daa7-1901-4174-bcfe-f1769d051f99"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "CancelButton",
+                                "text": "Abbrechen"
+                            },
+                            "designerId": "a8baa213-4e86-40ee-90e6-f9b31fba988a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCancelButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onCancelButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "879b7d0d-0703-411b-a05a-06cab28bb4fa"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "disabled": true,
+                                "itemId": "DeleteButton",
+                                "text": "Löschen"
+                            },
+                            "designerId": "f3322cf8-9cd2-4718-9a72-abcb26e0840a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDeleteButtonClick",
+                                        "implHandler": [
+                                            "MyApp.app.getCrudControllerController().onDeleteButtonClick(button, e, eOpts);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "7dfe225b-079b-44a2-8535-8998cc7b08e0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "west",
+                        "layout|split": true,
+                        "disabled": true,
+                        "itemId": "FormPanel",
+                        "width": 320,
+                        "bodyPadding": 10,
+                        "header": false,
+                        "title": "My Form",
+                        "trackResetOnLoad": true
+                    },
+                    "designerId": "049df5e1-b729-4cf1-86c8-c28cab796a19",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Bezeichnung",
+                                "name": "title"
+                            },
+                            "designerId": "2fcc68be-ff8c-4fdb-9bcb-91f5bf7fead6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "center",
+                        "itemId": "LinkPanel",
+                        "layout": "border",
+                        "header": false,
+                        "title": "My Panel"
+                    },
+                    "designerId": "2adef9c4-a22c-4e73-8952-02ee040776e1",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "layout|region": "west",
+                                "itemId": "BagGridPanel",
+                                "width": 150,
+                                "title": "verwendete Resourcen",
+                                "store": "UserRoleHasUserResourceJsonStore"
+                            },
+                            "designerId": "558f5dd1-8cca-448e-bfd9-b9a4c0ed1399",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "label",
+                                        "text": "Bezeichnung",
+                                        "flex": 1
+                                    },
+                                    "designerId": "0ff9c112-57ae-4aa0-9c0b-ba79427d41c1",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "renderer",
+                                                "designer|params": [
+                                                    "value",
+                                                    "metaData",
+                                                    "record",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "store",
+                                                    "view"
+                                                ],
+                                                "implHandler": [
+                                                    "return record.data.user_resource.name;"
+                                                ]
+                                            },
+                                            "designerId": "bd7dec68-bd1b-4035-935e-fe9337b148ed"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "allow",
+                                        "text": "Erlauben",
+                                        "flex": 1
+                                    },
+                                    "designerId": "53bb4ad0-2b55-4646-b91d-f47dd58c5fec",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "designerId": "f7fef9a3-a669-458a-b693-c804f2166875"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "deny",
+                                        "text": "Verbieten",
+                                        "flex": 1
+                                    },
+                                    "designerId": "8069447d-b523-4e8d-819f-079e4463b8ae",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "designerId": "78e52c66-44ac-4310-81f0-a35d78977e22"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "45959b7d-946e-45e7-85f8-35f28976f235"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "right"
+                                    },
+                                    "designerId": "b038fc6c-0b24-48c0-ad5b-e73240cd4867",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "itemId": "LinkButton",
+                                                "text": "<"
+                                            },
+                                            "designerId": "7af07748-7a38-4741-9239-e2eecadb36a1",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onLinkButtonClick",
+                                                        "implHandler": [
+                                                            "MyApp.app.getCrudControllerController().onLinkButtonClick(button, e, eOpts, function(linkrecord, librecord) {\r",
+                                                            "\r",
+                                                            "    return {\r",
+                                                            "        user_role_id: linkrecord.data.id,\r",
+                                                            "        user_resource_id: librecord.data.id\r",
+                                                            "    };\r",
+                                                            "\r",
+                                                            "});"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "0a4b3abd-980a-4ca6-ae05-1afa3906f417"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "itemId": "UnlinkButton",
+                                                "text": ">"
+                                            },
+                                            "designerId": "8d999cc1-ca0b-4a1e-b98d-3c6a6b6f4d2b",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onUnlinkButtonClick",
+                                                        "implHandler": [
+                                                            "MyApp.app.getCrudControllerController().onUnlinkButtonClick(button, e, eOpts);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "a1956ef9-5846-415b-88cf-448c7f1e6b59"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Paging",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "bottom",
+                                        "width": 360,
+                                        "displayInfo": true,
+                                        "store": "UserRoleHasUserResourceJsonStore"
+                                    },
+                                    "designerId": "2423642a-0c3b-4e3a-be5f-c37b7facc4f2",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processMyPagingToolbar11",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "var me = this;\r",
+                                                    "\r",
+                                                    "if (Ext.isEmpty(me.linkbagstore)) {\r",
+                                                    "    me.linkbagstore = Ext.create('MyApp.store.' + config.store);\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "config.store = me.linkbagstore;\r",
+                                                    "\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "a933b1bd-bef8-46d3-8d2a-ff26710a86bb"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processBagGridPanel",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "var me = this;\r",
+                                            "\r",
+                                            "if (Ext.isEmpty(me.linkbagstore)) {\r",
+                                            "    me.linkbagstore = Ext.create('MyApp.store.' + config.store);\r",
+                                            "}\r",
+                                            "\r",
+                                            "config.store = me.linkbagstore;\r",
+                                            "\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "cc3e5bf1-847c-4306-b216-22a5f6515229"
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.CellEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.CellEditing",
+                                    "designerId": "f7fb7c6a-755b-401a-8a70-0ad15627731a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "layout|region": "center",
+                                "itemId": "LibGridPanel",
+                                "title": "verfügbare Resourcen",
+                                "store": "UserResourceJsonStore"
+                            },
+                            "designerId": "c3affeba-de27-488b-b486-201bcde9430b",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "name",
+                                        "text": "Bezeichnung",
+                                        "flex": 1
+                                    },
+                                    "designerId": "72f63142-03b7-4a0b-898a-df6be9b0e054"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "33875b2a-9550-48c1-9b6e-5c1c92d94c28"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Paging",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "bottom",
+                                        "width": 360,
+                                        "displayInfo": true,
+                                        "store": "UserResourceJsonStore"
+                                    },
+                                    "designerId": "8e2df5c7-5f2e-4195-b5cd-c87b7a50229a",
+                                    "cn": [
+                                        {
+                                            "type": "processcfgfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "processMyPagingToolbar12",
+                                                "designer|params": [
+                                                    "config"
+                                                ],
+                                                "implHandler": [
+                                                    "var me = this;\r",
+                                                    "\r",
+                                                    "if (Ext.isEmpty(me.linklibstore)) {\r",
+                                                    "    me.linklibstore = Ext.create('MyApp.store.' + config.store);\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "config.store = me.linklibstore;\r",
+                                                    "\r",
+                                                    "return config;"
+                                                ]
+                                            },
+                                            "designerId": "6aff37a8-cb57-42df-ac21-803ca7d6e29d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "processcfgfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "processLibGridPanel",
+                                        "designer|params": [
+                                            "config"
+                                        ],
+                                        "implHandler": [
+                                            "var me = this;\r",
+                                            "\r",
+                                            "if (Ext.isEmpty(me.linklibstore)) {\r",
+                                            "    me.linklibstore = Ext.create('MyApp.store.' + config.store);\r",
+                                            "}\r",
+                                            "\r",
+                                            "config.store = me.linklibstore;\r",
+                                            "\r",
+                                            "return config;"
+                                        ]
+                                    },
+                                    "designerId": "641333cc-031a-4e25-b199-1c8cc82f0d52"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

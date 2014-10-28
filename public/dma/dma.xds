@@ -1231,6 +1231,94 @@
                 "app/view/MailImapPanel.js"
             ],
             "className": "MailImapPanel"
+        },
+        "cfc8bf2e-799f-42f3-8e06-bd8918a3c34d": {
+            "paths": [
+                "metadata/view/UserUserPanel",
+                "app/view/override/UserUserPanel.js",
+                "app/view/UserUserPanel.js"
+            ],
+            "className": "UserUserPanel"
+        },
+        "29219c73-d451-49cf-ad5c-b1a5f947e09d": {
+            "paths": [
+                "metadata/view/UserResourcePanel",
+                "app/view/override/UserResourcePanel.js",
+                "app/view/UserResourcePanel.js"
+            ],
+            "className": "UserResourcePanel"
+        },
+        "2ceb3258-cc7a-467f-a712-4674f3e8db86": {
+            "paths": [
+                "metadata/view/UserRolePanel",
+                "app/view/override/UserRolePanel.js",
+                "app/view/UserRolePanel.js"
+            ],
+            "className": "UserRolePanel"
+        },
+        "9a44563b-0321-4b03-ab18-59774c953318": {
+            "paths": [
+                "metadata/store/UserUserJsonStore",
+                "app/store/override/UserUserJsonStore.js",
+                "app/store/UserUserJsonStore.js"
+            ],
+            "className": "UserUserJsonStore"
+        },
+        "ce4cf3b2-da08-4e75-aca5-25297cdd59e4": {
+            "paths": [
+                "metadata/store/UserRoleJsonStore",
+                "app/store/override/UserRoleJsonStore.js",
+                "app/store/UserRoleJsonStore.js"
+            ],
+            "className": "UserRoleJsonStore"
+        },
+        "2a06eb8e-33d6-4e00-985c-d56dd070069a": {
+            "paths": [
+                "metadata/store/UserResourceJsonStore",
+                "app/store/override/UserResourceJsonStore.js",
+                "app/store/UserResourceJsonStore.js"
+            ],
+            "className": "UserResourceJsonStore"
+        },
+        "47c37540-d101-4be6-ae8f-c878283067db": {
+            "paths": [
+                "metadata/store/UserRoleHasUserResourceJsonStore",
+                "app/store/override/UserRoleHasUserResourceJsonStore.js",
+                "app/store/UserRoleHasUserResourceJsonStore.js"
+            ],
+            "className": "UserRoleHasUserResourceJsonStore"
+        },
+        "601b7dfb-8f1a-4078-adca-fd5e994afa49": {
+            "paths": [
+                "metadata/model/UserUserModel",
+                "app/model/override/UserUserModel.js",
+                "app/model/UserUserModel.js"
+            ],
+            "className": "UserUserModel"
+        },
+        "13ae90e2-0b06-4a37-b113-db09ae65f50e": {
+            "paths": [
+                "metadata/model/UserRoleModel",
+                "app/model/override/UserRoleModel.js",
+                "app/model/UserRoleModel.js"
+            ],
+            "className": "UserRoleModel"
+        },
+        "2e9762c5-cd0c-4fef-af66-e4be8c25f61f": {
+            "paths": [
+                "metadata/model/UserResourceModel",
+                "app/model/override/UserResourceModel.js",
+                "app/model/UserResourceModel.js"
+            ],
+            "className": "UserResourceModel"
+        },
+        "55a17f48-cd20-48da-8ce5-30fcb5830e3b": {
+            "paths": [
+                "metadata/model/UserRoleHasUserResourceModel",
+                "app/model/override/UserRoleHasUserResourceModel.js",
+                "app/model/UserRoleHasUserResourceModel.js"
+            ],
+            "className": "UserRoleHasUserResourceModel"
         }
     },
     "viewOrderMap": {
@@ -1275,7 +1363,10 @@
             "d73cf8bc-b737-47dd-abf9-cb94e000ff89",
             "929aef3d-310b-49d6-85c3-cf2fa8f334f8",
             "c188d4c9-134b-44b3-9748-571c67f00e80",
-            "b30e5af6-181b-4e8c-baa7-9cb71fa359c4"
+            "b30e5af6-181b-4e8c-baa7-9cb71fa359c4",
+            "cfc8bf2e-799f-42f3-8e06-bd8918a3c34d",
+            "29219c73-d451-49cf-ad5c-b1a5f947e09d",
+            "2ceb3258-cc7a-467f-a712-4674f3e8db86"
         ],
         "store": [
             "311f6e01-255b-4244-a8ca-5618f6926b96",
@@ -1321,7 +1412,11 @@
             "f3c38dd3-292c-44f6-a053-1de19f029efc",
             "59a6b800-3dd5-4662-af46-d4bc8ab04f66",
             "48e33910-db52-4342-8a95-6e0a38d31077",
-            "2d419077-962a-4ae5-9a26-c3830dcda92f"
+            "2d419077-962a-4ae5-9a26-c3830dcda92f",
+            "9a44563b-0321-4b03-ab18-59774c953318",
+            "ce4cf3b2-da08-4e75-aca5-25297cdd59e4",
+            "2a06eb8e-33d6-4e00-985c-d56dd070069a",
+            "47c37540-d101-4be6-ae8f-c878283067db"
         ],
         "controller": [
             "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
@@ -1390,7 +1485,11 @@
             "62c7cb05-55d6-4c99-ba7f-9f90b49bf364",
             "36ca6268-c3e2-4cf6-94a7-6c3ed043a7e1",
             "0b44b633-af7e-4a6a-92ea-9a26c443161f",
-            "75805e93-6ffa-4260-885a-a005979cb997"
+            "75805e93-6ffa-4260-885a-a005979cb997",
+            "601b7dfb-8f1a-4078-adca-fd5e994afa49",
+            "13ae90e2-0b06-4a37-b113-db09ae65f50e",
+            "2e9762c5-cd0c-4fef-af66-e4be8c25f61f",
+            "55a17f48-cd20-48da-8ce5-30fcb5830e3b"
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",

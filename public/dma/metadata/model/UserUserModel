@@ -1,0 +1,78 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserUserModel"
+    },
+    "designerId": "601b7dfb-8f1a-4078-adca-fd5e994afa49",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "designerId": "421b389c-6b93-4f03-ba5b-a4780a9f2e78"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "username"
+            },
+            "designerId": "a87bbbd5-1eae-4c55-b234-8a1d354585b0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "password",
+                "useNull": true
+            },
+            "designerId": "567085aa-a70e-4975-9dda-4f82c3abb29e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_role_id",
+                "type": "int"
+            },
+            "designerId": "fbc17561-9131-4922-9bdc-c0fa22609b8a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_role",
+                "persist": false
+            },
+            "designerId": "19447b70-1daa-47f0-9eff-5966bb2851b5"
+        }
+    ]
+}
