@@ -107,7 +107,7 @@ Ext.define('MyApp.controller.UtilController', {
 
                 if (fields.length === 0) {
                     var _dc = new Date().getTime();
-                    document.location = "/report/report/exportpdf?_dc=" + _dc + "&report_report_id=" + report_report.id;
+                    document.location = "/report/report/export" + report_report.default_export + "?_dc=" + _dc + "&report_report_id=" + report_report.id;
                     return;
                 }
 

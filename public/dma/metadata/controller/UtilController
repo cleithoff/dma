@@ -128,7 +128,7 @@
                     "\r",
                     "        if (fields.length === 0) {\r",
                     "            var _dc = new Date().getTime();\r",
-                    "            document.location = \"/report/report/exportpdf?_dc=\" + _dc + \"&report_report_id=\" + report_report.id;\r",
+                    "            document.location = \"/report/report/export\" + report_report.default_export + \"?_dc=\" + _dc + \"&report_report_id=\" + report_report.id;\r",
                     "            return;\r",
                     "        }\r",
                     "\r",
