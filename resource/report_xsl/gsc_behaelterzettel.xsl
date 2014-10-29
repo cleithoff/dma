@@ -217,11 +217,11 @@
         <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="2">
       <!-- aff285bafaeb49a49181729796ac522d -->
-      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Bestellung vom</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Stapel</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 92a049ace3f04d10a754782c525e445b -->
-      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="incoming"></xsl:value-of></fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="import_stack_title"></xsl:value-of></fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
@@ -244,7 +244,25 @@
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
     </fo:table-row>
-    <fo:table-row   keep-with-next="always"  keep-together="always"  background-color="#ffffff"  height="0.9cm"   >
+    <fo:table-row   keep-with-next="always"  keep-together="always"  background-color="#ffffff"  height="0.5cm"   >
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="2">
+      <!-- aff285bafaeb49a49181729796ac522d -->
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left">Bestellung vom</fo:block>
+        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+      <!-- 92a049ace3f04d10a754782c525e445b -->
+      <fo:block     margin-left="0.0cm" margin-right="0.0cm"  margin-top="0.0cm"  font-size="10pt"  font-family="HelveticaNeueLTStd-Md"  color="#000000"   text-align="left"><xsl:value-of select="incoming"></xsl:value-of></fo:block>
+        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+    </fo:table-row>
+    <fo:table-row   keep-with-next="always"  keep-together="always"  background-color="#ffffff"  height="0.4cm"   >
         <fo:table-cell    number-columns-spanned="1">
         <fo:block></fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
