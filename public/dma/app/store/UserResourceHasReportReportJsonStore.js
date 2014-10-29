@@ -27,6 +27,7 @@ Ext.define('MyApp.store.UserResourceHasReportReportJsonStore', {
             autoSync: true,
             model: 'MyApp.model.UserResourceHasReportReport',
             remoteFilter: true,
+            storeId: 'UserResourceHasReportReportJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/user/resourcehasreportreport/index',

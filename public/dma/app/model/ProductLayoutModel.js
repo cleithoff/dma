@@ -30,6 +30,10 @@ Ext.define('MyApp.model.ProductLayoutModel', {
             type: 'string'
         },
         {
+            name: 'filename',
+            type: 'string'
+        },
+        {
             name: 'xsl_front_preview',
             type: 'string'
         },

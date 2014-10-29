@@ -162,6 +162,12 @@ Ext.define('MyApp.view.ProductLayoutPanel', {
                                 {
                                     xtype: 'textfield',
                                     anchor: '100%',
+                                    fieldLabel: 'Dateiname',
+                                    name: 'filename'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    anchor: '100%',
                                     fieldLabel: 'XSL Front Preview',
                                     name: 'xsl_front_preview'
                                 },

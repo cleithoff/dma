@@ -493,6 +493,7 @@ Ext.define('MyApp.view.OrderPanel', {
 
         MyApp.app.getUtilControllerController().assignReportsToPrintButton(component, me);
 
+
         component.handler = function (e, el, owner, tool) {
             var menu = tool.menu; //down('menu'); 
             if (!menu) return;

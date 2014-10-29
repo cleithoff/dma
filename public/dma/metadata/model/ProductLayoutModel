@@ -57,6 +57,19 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "filename",
+                "type": "string"
+            },
+            "designerId": "8ae49cb1-b280-4366-aaf6-f4b64401f1d1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "xsl_front_preview",
                 "type": "string"
             },

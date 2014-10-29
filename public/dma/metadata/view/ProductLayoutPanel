@@ -411,6 +411,20 @@
                             "codeClass": null,
                             "userConfig": {
                                 "layout|anchor": "100%",
+                                "fieldLabel": "Dateiname",
+                                "name": "filename"
+                            },
+                            "designerId": "0eace5fe-7615-40dd-9b40-1e7a286751c5"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
                                 "fieldLabel": "XSL Front Preview",
                                 "name": "xsl_front_preview"
                             },
