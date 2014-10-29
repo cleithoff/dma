@@ -269,6 +269,7 @@ Ext.define('MyApp.view.OrderPackagePackageorderPanel', {
                 method: 'GET',
                 success: function(response) {
                     partner_address = JSON.parse(response.responseText);
+                    console.log('http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&zip=' + partner_address.data[0].post_plz + '&idc=' + record.data.sendingnumber);
                     win = window.open('http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&zip=' + partner_address.data[0].post_plz + '&idc=' + record.data.sendingnumber,'_blank'); 
                     win.focus();
                 },

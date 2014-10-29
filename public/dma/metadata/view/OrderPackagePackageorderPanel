@@ -526,6 +526,7 @@
                             "        method: 'GET',\r",
                             "        success: function(response) {\r",
                             "            partner_address = JSON.parse(response.responseText);\r",
+                            "            console.log('http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&zip=' + partner_address.data[0].post_plz + '&idc=' + record.data.sendingnumber);\r",
                             "            win = window.open('http://nolp.dhl.de/nextt-online-public/set_identcodes.do?lang=de&zip=' + partner_address.data[0].post_plz + '&idc=' + record.data.sendingnumber,'_blank'); \r",
                             "            win.focus();\r",
                             "        },\r",

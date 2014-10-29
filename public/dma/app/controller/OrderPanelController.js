@@ -94,6 +94,8 @@ Ext.define('MyApp.controller.OrderPanelController', {
         // console.log(record);
 
 
+        // FIXME: setTimeout
+
         grid = this.getMailImapPanel().down('#MailImapGridPanel');
         var mailimappanel = this.getMailImapPanel();
 
@@ -101,7 +103,7 @@ Ext.define('MyApp.controller.OrderPanelController', {
         grid.getStore().filter([{property:'partner_nr',value:record.data.partner_partner.partner_nr}]);
         grid.getStore().load({
             callback: function(records, operation, success) {
-                if (records.length > 0) {
+                if (!Ext.isEmpty(records) || records.length > 0) {
                     grid.getSelectionModel().select(0);
                 } else {
                     mailimappanel.down('#MailImapFormPanel').getForm().reset();
