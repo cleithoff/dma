@@ -313,7 +313,6 @@
         },
         "f7ad03d6-bc4b-403b-9019-7619555680dc": {
             "id": "f7ad03d6-bc4b-403b-9019-7619555680dc",
-            "expanded": false,
             "cn": [
                 {
                     "id": "198ac065-1a5a-44ad-ad5c-427325804703",
@@ -6801,6 +6800,7 @@
         },
         "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a": {
             "id": "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
+            "expanded": false,
             "cn": [
                 {
                     "id": "118209d7-499f-4f94-9e33-af865b870bac"
@@ -6818,6 +6818,7 @@
         },
         "5d3f39a7-52f1-42ae-b4ea-18ce3a74aed0": {
             "id": "5d3f39a7-52f1-42ae-b4ea-18ce3a74aed0",
+            "expanded": false,
             "cn": [
                 {
                     "id": "ff07103a-b630-4841-8169-ff73e9b2115b"
@@ -6972,6 +6973,7 @@
         },
         "c638342d-9c12-4bcb-8962-f54575b78b43": {
             "id": "c638342d-9c12-4bcb-8962-f54575b78b43",
+            "expanded": false,
             "cn": [
                 {
                     "id": "50b9fe1c-0d02-40e1-82d8-355e7319ca6f"
@@ -7403,6 +7405,7 @@
         },
         "d95eb8c5-8297-47dd-aeae-e66c3d487e78": {
             "id": "d95eb8c5-8297-47dd-aeae-e66c3d487e78",
+            "expanded": false,
             "cn": [
                 {
                     "id": "66edc41f-bc24-4c80-a0d0-0054c13ffeca"
@@ -7653,14 +7656,14 @@
         ]
     },
     "canvasState": {
-        "topInstance": "30c0f26b-edbe-43a6-8318-38b5d75cda57"
+        "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "30c0f26b-edbe-43a6-8318-38b5d75cda57",
-        "selectedInstance": "0eace5fe-7615-40dd-9b40-1e7a286751c5"
+        "topInstance": "0a142e9a-d7f7-4dc1-afe6-fcee941d63a3",
+        "selectedInstance": "da44c623-ae5b-480f-93cb-65ec053a401e"
     },
     "codeState": {
-        "topInstance": "30c0f26b-edbe-43a6-8318-38b5d75cda57"
+        "topInstance": "0a142e9a-d7f7-4dc1-afe6-fcee941d63a3"
     },
-    "editMode": "design"
+    "editMode": "code"
 }

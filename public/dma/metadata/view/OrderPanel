@@ -733,7 +733,7 @@
                                                 "fn": "onButtonClick",
                                                 "implHandler": [
                                                     "var \r",
-                                                    "\tme = this;\r",
+                                                    "me = this;\r",
                                                     "\r",
                                                     "me.setOrderState(button, 'production', 'production');"
                                                 ],

@@ -60,12 +60,18 @@ Ext.define('MyApp.controller.OrderPanelController', {
         grid.store.clearFilter(true);
         grid.store.filter([{property:'order_pool_id',value:record.data.order_pool_id}]);
 
+        // Package Packageorder
         this.getOrderPackagePackageorderPanel().record = record;
-
-        var grid = this.getOrderPackagePackageorderPanel().getComponent('OrderPackagePackageorderGridPanel');
-        grid.store.clearFilter(true);
-        grid.store.filter([{property:'order_combine_id',value:record.data.order_combine_id}]);
-        grid.store.load();
+        var gridOrderPackagePackageorder = this.getOrderPackagePackageorderPanel().getComponent('OrderPackagePackageorderGridPanel');
+        gridOrderPackagePackageorder.store.clearFilter(true);
+        gridOrderPackagePackageorder.store.filter([{property:'order_combine_id',value:record.data.order_combine_id}]);
+        gridOrderPackagePackageorder.store.load({
+            callback: function(records, operation, success) {
+                if (records.length > 0) {
+                    gridOrderPackagePackageorder.getSelectionModel().select(0);
+                }
+            }
+        });
 
         this.getOrderCombineitemPanel().record = record;
         this.getOrderCombineitemPanel().linkrecord = record;
