@@ -581,8 +581,6 @@ class Order_Service_Item
 		$partnerPartner = $orderItem->getOrderPool()->getOrderCombine()->getPartnerPartner();
 					
 		$productLayout = $orderItem->getProductItem()->getProductLayout();
-				
-		
 		
 		if (!empty($productLayout->hotfolder) && !empty($productLayout->filename)) {
 
