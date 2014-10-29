@@ -491,5 +491,130 @@ class Order_Service_Item
 		$form = new $correction_form_class(array('order_item' => $order_item));
 		return $form;
 	}
+	
+	private function _getReplaces($matches, $doQuote, $csv, $result, $param, $exists = array()) {
+	
+		$replacements = array();
+		foreach ($matches as $match) {
+			$doForceQuote = $doQuote;
+			$str = str_replace(array('{','}','"'), array('','','"'), $match);
+			$str = explode('.', $str);
+			$source = $str[0];
+				
+			$str1 = explode('|', $str[1]);
+			$str[1] = $str1[0];
+			switch(@$str1[1]) {
+				case '#':
+					$doForceQuote = false;
+					break;
+			}
+				
+			switch($source) {
+				case 'csv':
+					$col = str_replace('"', '', $str[1]);
+					$col = str_replace('\'', '', $str[1]);
+					$replacement = @$csv[$col];
+					break;
+				case 'result':
+					$table = $str[1];
+					$col = $str[2];
+					$replacement = $result[$table][$col];
+					break;
+				case 'exists':
+					$table = $str[1];
+					$replacement = intval($exists[$table]);
+					break;
+				case 'param':
+					$key = $str[1];
+					$replacement = $param[$key];
+					break;
+				case 'static':
+					$static = $str[1];
+					switch($static) {
+						case 'PHPSESSID':
+							$replacement = Zend_Session::getId();
+							break;
+					}
+					break;
+				default:
+					$replacement = '';
+					break;
+			}
+			if ($doForceQuote) {
+				$replacement = Zend_Db_Table::getDefaultAdapter()->quote($replacement); // '"' . $replacement . '"';
+			}
+			array_push($replacements, $replacement); // $replacements
+		}
+		return $replacements;
+	}
+	
+	private function _getReplaced($str, $csv = array(), $result = array(), $param = array(), $exists = array(), $doQuote = true) {
+		$matches = array();
+		preg_match_all('/\{[^\{\}]*\}/', $str, $matches);
+		if (count($matches) > 0) {
+			$replacements = $this->_getReplaces($matches[0], $doQuote, $csv, $result, $param, $exists);
+			foreach($matches[0] as $key => $match) {
+				$matches[0][$key] = '/' . str_replace(array('{','.','}','|','#'), array('\\{','\\.','\\}','\\|','\\#'), $match) . '/';
+			}
+			$str = preg_replace($matches[0], $replacements, $str);
+		}
+	
+		$matches = array();
+		preg_match_all('/\{.*?\}/', $str, $matches);
+		if (count($matches) > 0) {
+			$replacements = $this->_getReplaces($matches[0], $doQuote, $csv, $result, $param, $exists);
+			foreach($matches[0] as $key => $match) {
+				$matches[0][$key] = '/' . str_replace(array('{','.','}'), array('\\{','\\.','\\}'), $match) . '/';
+			}
+			$str = preg_replace($matches[0], $replacements, $str);
+		}
+	
+		return $str;
+	}
+	
+	public function moveToHotfolder(Order_Model_Item $orderItem) {
+
+		if ($orderItem->getOrderItemstate()->key != "production") return;
+	
+		$orderOrder = $orderItem->getOrderPool()->depOrderOrder()->current();
+		
+		$partnerPartner = $orderItem->getOrderPool()->getOrderCombine()->getPartnerPartner();
+					
+		$productLayout = $orderItem->getProductItem()->getProductLayout();
+				
+		
+		
+		if (!empty($productLayout->hotfolder) && !empty($productLayout->filename)) {
+
+			$viewmode = 'print_front';
+			$params = array(
+					'partner_nr' => $partnerPartner->partner_nr,
+					'order_no_external' => $orderOrder->order_no_external,
+					'viewmode' => $viewmode,
+			);
+			$filenameSrc = APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "public/deploy" . DIRECTORY_SEPARATOR . $orderItem->authkey . '_' . $viewmode . '.pdf';
+			if (file_exists($filenameSrc)) {
+				$filenameDst = $this->_getReplaced($productLayout->filename, array(), array(), $params, array(), false);
+				if (file_exists($productLayout->hotfolder)) {
+					copy($filenameSrc, $productLayout->hotfolder . '/' . $filenameDst);
+				}
+			}
+
+			$viewmode = 'print_back';
+			$params = array(
+					'partner_nr' => $partnerPartner->partner_nr,
+					'order_no_external' => $orderOrder->order_no_external,
+					'viewmode' => $viewmode,
+			);
+			$filenameSrc = APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "public/deploy" . DIRECTORY_SEPARATOR . $orderItem->authkey . '_' . $viewmode . '.pdf';
+			if (file_exists($filenameSrc)) {
+				$filenameDst = $this->_getReplaced($productLayout->filename, array(), array(), $params, array(), false);
+				if (file_exists($productLayout->hotfolder)) {
+					copy($filenameSrc, $productLayout->hotfolder . '/' . $filenameDst);
+				}
+			}
+
+		}
+	}
 
 }

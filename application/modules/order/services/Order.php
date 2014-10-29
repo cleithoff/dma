@@ -2,7 +2,6 @@
 
 class Order_Service_Order
 {
-
-
+	
 }
 

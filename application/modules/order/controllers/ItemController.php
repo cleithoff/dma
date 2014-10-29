@@ -53,6 +53,9 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		
 		$order_item = $order_items->find($row['id'])->current();
 		
+		
+		
+		
 		/* $this->getService()->createPreview(
 				$order_item, 
 				array(), 
@@ -61,6 +64,8 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 				);
 		*/
 		$this->getService()->checkState($order_item, $order_item_recent, $comment);
+		
+		$this->getService()->moveToHotFolder($order_item);
 	}
 	
 	public function toimageAction() {
