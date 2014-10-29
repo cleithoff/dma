@@ -39,7 +39,7 @@ class Rest_Pdf {
 		$pdfbox = 'java -jar ' . APPLICATION_PATH . '/../vendor/pdfbox-app-1.8.7.jar';
 		// $exec = $pdfbox . ' Overlay ' . $overlay . ' ' . $document . ' ' . $pdf;
 		if (self::getPDFPages($overlay) == 1) {
-			$exec = $pdfbox . ' Overlay ' . $document . ' ' . $overlay . ' ' . $pdf;
+			$exec = $pdfbox . ' Overlay ' . $overlay . ' ' . $document . ' ' . $pdf;
 		} else {
 			$exec = $pdfbox . ' OverlayPDF ' . $overlay . ' -odd ' . $document . ' -even  ' . $document . ' -nonSeq ' . $pdf;
 		}
