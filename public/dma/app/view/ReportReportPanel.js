@@ -109,7 +109,7 @@ Ext.define('MyApp.view.ReportReportPanel', {
                     region: 'north',
                     split: true,
                     disabled: true,
-                    height: 341,
+                    height: 370,
                     itemId: 'ReportReportFormPanel',
                     bodyPadding: 10,
                     items: [
@@ -155,6 +155,33 @@ Ext.define('MyApp.view.ReportReportPanel', {
                             anchor: '100%',
                             fieldLabel: 'Dateiprefix',
                             name: 'fileprefix'
+                        },
+                        {
+                            xtype: 'radiogroup',
+                            fieldLabel: 'Default Export',
+                            items: [
+                                {
+                                    xtype: 'radiofield',
+                                    name: 'default_export',
+                                    value: 'csv',
+                                    boxLabel: 'CSV',
+                                    inputValue: 'csv'
+                                },
+                                {
+                                    xtype: 'radiofield',
+                                    name: 'default_export',
+                                    value: 'pdf',
+                                    boxLabel: 'PDF',
+                                    inputValue: 'pdf'
+                                },
+                                {
+                                    xtype: 'radiofield',
+                                    name: 'default_export',
+                                    value: 'xml',
+                                    boxLabel: 'XML',
+                                    inputValue: 'xml'
+                                }
+                            ]
                         }
                     ]
                 },

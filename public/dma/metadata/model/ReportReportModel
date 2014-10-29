@@ -107,6 +107,19 @@
                 "name": "xslfile"
             },
             "designerId": "aa4fdcb4-00c4-4e64-83ed-e331fb01d333"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "default_export",
+                "type": "string"
+            },
+            "designerId": "18fcb00a-be30-4d3f-a11d-29e7ce1d576d"
         }
     ]
 }

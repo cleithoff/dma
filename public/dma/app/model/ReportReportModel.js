@@ -42,6 +42,10 @@ Ext.define('MyApp.model.ReportReportModel', {
         },
         {
             name: 'xslfile'
+        },
+        {
+            name: 'default_export',
+            type: 'string'
         }
     ]
 });

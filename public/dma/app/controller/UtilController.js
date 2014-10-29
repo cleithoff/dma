@@ -159,9 +159,7 @@ Ext.define('MyApp.controller.UtilController', {
                                         strParams = strParams + '&' + idx + '=' + params[idx];
                                     }
 
-
-
-                                    document.location = "/report/report/exportpdf?_dc=" + _dc + "&report_report_id=" + report_report.id + strParams;
+                                    document.location = "/report/report/export" + report_report.default_export + "?_dc=" + _dc + "&report_report_id=" + report_report.id + strParams;
 
 
                                     me.close();

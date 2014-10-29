@@ -206,7 +206,7 @@
                 "layout|region": "north",
                 "layout|split": true,
                 "disabled": true,
-                "height": 341,
+                "height": 370,
                 "itemId": "ReportReportFormPanel",
                 "bodyPadding": 10,
                 "title": null
@@ -311,6 +311,75 @@
                         "name": "fileprefix"
                     },
                     "designerId": "72c338ef-672f-4a5d-9bf2-6e2d907f2f55"
+                },
+                {
+                    "type": "Ext.form.RadioGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "fieldLabel": "Default Export"
+                    },
+                    "designerId": "528b1c18-21fd-4852-bd87-b18ce1d481d2",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "name": "default_export",
+                                "value": [
+                                    "csv"
+                                ],
+                                "boxLabel": "CSV",
+                                "inputValue": "csv"
+                            },
+                            "designerId": "4e5ddb9e-a543-46cf-8d00-271c4a5ac7f4"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "name": "default_export",
+                                "value": [
+                                    "pdf"
+                                ],
+                                "boxLabel": "PDF",
+                                "inputValue": "pdf"
+                            },
+                            "designerId": "dd90d0df-244b-4205-82cf-d62ae9bb4419"
+                        },
+                        {
+                            "type": "Ext.form.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "name": "default_export",
+                                "value": [
+                                    "xml"
+                                ],
+                                "boxLabel": "XML",
+                                "inputValue": "xml"
+                            },
+                            "designerId": "b9c6d558-0069-413e-a2f6-1e54e8fe8c1e"
+                        }
+                    ]
                 }
             ]
         },
