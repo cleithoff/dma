@@ -1,0 +1,609 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "itemId": "DlgDataTakeoverPanel",
+        "width": null,
+        "designer|userClassName": "DlgDataTakeoverPanel",
+        "designer|userAlias": "dlgdatatakeoverpanel",
+        "layout": "border",
+        "title": "Datenübernahme aus vergangenen Bestellungen",
+        "modal": true
+    },
+    "designerId": "28e57d96-81ea-44ad-8472-f156e0b07601",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|region": "center",
+                "layout|split": true,
+                "itemId": "OrderItemTakeoverGridPanel",
+                "title": "Bestellungen",
+                "store": "OrderItemJsonStore"
+            },
+            "designerId": "4f61a001-1d91-4904-9abb-66e363707c85",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 120,
+                        "dataIndex": "date",
+                        "text": "Date"
+                    },
+                    "designerId": "1af74bcd-7266-45bc-872d-51b874b11ee2",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.order_order.incoming;"
+                                ]
+                            },
+                            "designerId": "db3a9976-77ac-41a9-a0a4-5079d20c256e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "dataIndex": "string",
+                        "text": "BestellID",
+                        "flex": null
+                    },
+                    "designerId": "b7b7be32-5446-498d-aa98-a048ee16259c",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.order_pool_id;"
+                                ]
+                            },
+                            "designerId": "b41cdaf9-9e2d-44dd-b2bc-5f12676834f2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "number",
+                        "text": "Stapel",
+                        "flex": 1
+                    },
+                    "designerId": "94db79cf-c4d0-4fb3-857a-21928fc032b3",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.import_stack.title;"
+                                ]
+                            },
+                            "designerId": "6ce93b7a-9fa6-433a-8c9b-92b0519445d8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "c8c88be5-1545-4d9a-819f-424ea2fec182",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "getRowClass",
+                                "designer|params": [
+                                    "record",
+                                    "rowIndex",
+                                    "rowParams",
+                                    "store"
+                                ],
+                                "implHandler": [
+                                    "var me = this.ownerCt.up('window');\r",
+                                    "console.log(me.record, record);\r",
+                                    "if (me.record.data.id == record.data.id) return 'display-none';"
+                                ]
+                            },
+                            "designerId": "d3547c18-ec17-499c-9b2e-101aaf0f7a08"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.CheckboxModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CheckboxModel",
+                    "userConfig": {
+                        "mode": "SINGLE"
+                    },
+                    "designerId": "e2ad945a-9f6b-4d43-87d3-ce05936eaa60"
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processOrderItemTakeoverGridPanel",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "var me = this;\r",
+                            "\r",
+                            "config.store = Ext.create('MyApp.store.' + config.store);\r",
+                            "\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "85a8a8b2-1ba5-4ce8-aaf6-f9dc9dbbb63b"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onOrderItemGridPanelSelect",
+                        "implHandler": [
+                            "var me = this,\r",
+                            "store = me.down('#OrderItemHasProductPersonalizeGridPanel').getStore()\r",
+                            ";\r",
+                            "\r",
+                            "store.clearFilter(true);\r",
+                            "store.filter([\r",
+                            "     {property:\"order_item_id\", value: record.data.id}\r",
+                            "]);\r",
+                            "store.load();\r",
+                            "\r",
+                            "me.down('#PreviewContainerTakeover').update('<embed src=\"/deploy/' + record.data.authkey + '.pdf?_dc=' + (new Date().getTime()) + '\" alt=\"pdf\" style=\"width:100%;height:100%\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "designerId": "7aa420a7-797c-484c-b123-6e0353a2e06b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|region": "east",
+                "layout|split": true,
+                "itemId": "PreviewTakeoverPanel",
+                "width": null,
+                "layout": "border",
+                "animCollapse": false,
+                "collapsible": true,
+                "title": "Ansicht"
+            },
+            "designerId": "7a8e4888-f245-4588-b9ab-f26d21734424",
+            "cn": [
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "center",
+                        "layout|split": false,
+                        "itemId": "PreviewContainerTakeover",
+                        "style": [
+                            "{\r",
+                            "    background: \"#CCC\"\r",
+                            "}"
+                        ]
+                    },
+                    "designerId": "259e7297-d520-4d54-a0f8-0adf67e9a204"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|region": "east",
+                "layout|split": true,
+                "itemId": "OrderItemHasProductPersonalizeGridPanel",
+                "width": 150,
+                "animCollapse": false,
+                "collapsed": true,
+                "collapsible": true,
+                "title": "Personalisierungen",
+                "store": "OrderItemHasProductPersonalizeJsonStore"
+            },
+            "designerId": "e4b884ef-14ed-417e-ae13-a73ee76d0b06",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 120,
+                        "dataIndex": "key",
+                        "text": "Schlüssel",
+                        "flex": 1
+                    },
+                    "designerId": "9ba3add8-4529-4ec7-b3a7-19e410019869"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "value",
+                        "text": "Wert",
+                        "flex": 2
+                    },
+                    "designerId": "bff74685-3115-4783-baaa-1ba6fd2a2cdf"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "acba720f-f359-42a6-a2bc-4b9d09eda78f"
+                },
+                {
+                    "type": "processcfgfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "processOrderItemHasProductPersonalizeGridPanel",
+                        "designer|params": [
+                            "config"
+                        ],
+                        "implHandler": [
+                            "var me = this;\r",
+                            "\r",
+                            "config.store = Ext.create('MyApp.store.' + config.store);\r",
+                            "\r",
+                            "return config;"
+                        ]
+                    },
+                    "designerId": "ce013b92-678c-4545-85ce-392041bb9a84"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "south",
+                "height": 99,
+                "itemId": "FormPanel",
+                "bodyPadding": 10,
+                "header": false,
+                "title": "My Form"
+            },
+            "designerId": "992f28af-0cb0-4fe0-918f-b6e7e0c5e362",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "126f2a09-79a7-414a-a3f2-50ed5c12d016",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "itemId": "CancelButton",
+                                "text": "Abbrechen"
+                            },
+                            "designerId": "a22d5c94-a06c-4347-916d-5bf7e7c523cd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCancelButtonClick",
+                                        "implHandler": [
+                                            "var me = this;\r",
+                                            "\r",
+                                            "me.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "6982e95d-a340-4478-a7fe-9b3847f6a9da"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "designerId": "9024eec1-ecfa-4844-ae99-1ecd4eba9eee"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "itemId": "OkButton",
+                                "text": "Übernahme"
+                            },
+                            "designerId": "8ee573e1-7ad7-434d-ab3d-3bc8e73c8ad1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onOkButtonClick",
+                                        "implHandler": [
+                                            "var me = this,\r",
+                                            "record = me.down('#OrderItemTakeoverGridPanel').getSelectionModel().getSelection()[0];\r",
+                                            "\r",
+                                            "if (Ext.isEmpty(record)) {\r",
+                                            "    me.close();\r",
+                                            "    return;\r",
+                                            "}\r",
+                                            "\r",
+                                            "var myMask = new Ext.LoadMask(Ext.getBody(), {msg:\"Bitte warten Sie. Die Daten werden übernommen!\"});\r",
+                                            "myMask.show();\r",
+                                            "\r",
+                                            "var creatorComponent = me.creatorComponent;\r",
+                                            "var recordDst = me.record;\r",
+                                            "\r",
+                                            "var view = null;\r",
+                                            "\r",
+                                            "menu = creatorComponent.down('#OrderItemDetailToolbar').getComponent('OrderItemViewmodeButton').menu;\r",
+                                            "menu.items.each(function(menuitem){ if(menuitem.checked){view=menuitem;} });\r",
+                                            "\r",
+                                            "if (view.suffix === undefined || view.suffix === null) {\r",
+                                            "    view.suffix = '';\r",
+                                            "}\r",
+                                            "\r",
+                                            "Ext.Ajax.request({\r",
+                                            "    url: '/order/item/takeover',\r",
+                                            "    timeout: 1000 * 60 * 5,\r",
+                                            "    success: function(response, operation, success) {\r",
+                                            "        // console.log(response, operation, success);\r",
+                                            "        myMask.destroy();\r",
+                                            "    \tcreatorComponent.down('#PreviewContainer').update('<embed src=\"/deploy/' + recordDst.data.authkey + view.suffix + '.pdf?_dc=' + (new Date().getTime()) + '\" alt=\"pdf\" style=\"width:100%;height:100%\" pluginspage=\"http://www.adobe.com/products/acrobat/readstep2.html\">');\r",
+                                            "    },\r",
+                                            "    failure: function() {\r",
+                                            "        myMask.destroy();\r",
+                                            "        Ext.MessageBox.alert('Fehler', 'Bei der Datenübernahme ist ein Fehler aufgetreten.');\r",
+                                            "\r",
+                                            "    },\r",
+                                            "    params: { \r",
+                                            "        iddst: recordDst.data.id,\r",
+                                            "        idsrc: record.data.id,\r",
+                                            "        pdf: me.down('#PdfCheckbox').getValue(),\r",
+                                            "        personalize: me.down('#PersonalizeCheckbox').getValue(),\r",
+                                            "    }\r",
+                                            "});\r",
+                                            "\r",
+                                            "me.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "e3acef4c-4062-4ba6-87ea-d7cf8394ed8d"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "PdfCheckbox",
+                        "fieldLabel": null,
+                        "value": [
+                            "pdf"
+                        ],
+                        "boxLabel": "PDFs",
+                        "checked": true,
+                        "inputValue": "pdf"
+                    },
+                    "designerId": "e7aa1172-bed4-4fcd-980f-804dec3a7db6"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "itemId": "PersonalizeCheckbox",
+                        "fieldLabel": null,
+                        "value": [
+                            "personalize"
+                        ],
+                        "boxLabel": "Personalisierungen",
+                        "checked": true,
+                        "inputValue": "personalize"
+                    },
+                    "designerId": "4f593730-0b90-4688-a324-4d043424796e"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDlgDataTakeoverPanelAfterRender",
+                "implHandler": [
+                    "var me = this,\r",
+                    "record = me.record,\r",
+                    "gridpanel = me.down('#OrderItemTakeoverGridPanel'),\r",
+                    "store = me.down('#OrderItemTakeoverGridPanel').getStore()\r",
+                    ";\r",
+                    "\r",
+                    "store.clearFilter(true);\r",
+                    "store.filter([\r",
+                    "     {property:\"partner_partner_id\", value: record.data.partner_partner_id},\r",
+                    "     {property:\"product_item_id\", value: record.data.product_item_id}\r",
+                    "]);\r",
+                    "store.load();\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "designerId": "0b893e94-4c23-4c90-bb47-fe81da99edf9"
+        }
+    ]
+}
