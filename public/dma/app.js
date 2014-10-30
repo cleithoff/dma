@@ -163,7 +163,8 @@ Ext.application({
         'UserRolePanel',
         'UserResourcePanel',
         'UserUserPanel',
-        'DlgReportReportPanel'
+        'DlgReportReportPanel',
+        'DlgDataTakeoverPanel'
     ],
     autoCreateViewport: true,
     controllers: [

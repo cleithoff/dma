@@ -63,7 +63,7 @@ class Rest_Model_DbRow extends Zend_Db_Table_Row_Abstract {
 			return null;
 		}
 		
-		if ($func === "get") { 
+		if ($func === "get" || $func === "all") { 
 			$prefix = $matches[0][1];
 			
 			$suffix = $matches[0][2];
@@ -85,8 +85,14 @@ class Rest_Model_DbRow extends Zend_Db_Table_Row_Abstract {
 			$row = $dbTable->find($idval);
 			
 			if (!empty($row)) {
-				$this->_rows[$idvar] = $row->current();
-				return $row->current();
+				if ($func === "get") {
+					$this->_rows[$idvar] = $row->current();
+					return $row->current();
+				}
+				if ($func === "all") {
+					// $this->_rows[$idvar] = $row->current();
+					return $row;
+				}
 			}
 			return null;
 		}

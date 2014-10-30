@@ -73,6 +73,30 @@ Ext.define('MyApp.model.OrderItemModel', {
         },
         {
             name: 'comment'
+        },
+        {
+            name: 'partner_partner_id',
+            type: 'int'
+        },
+        {
+            name: 'order_order_id',
+            type: 'int'
+        },
+        {
+            name: 'import_stack_id',
+            type: 'int'
+        },
+        {
+            name: 'partner_partner',
+            persist: false
+        },
+        {
+            name: 'order_order',
+            persist: false
+        },
+        {
+            name: 'import_stack',
+            persist: false
         }
     ],
 

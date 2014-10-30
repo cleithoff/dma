@@ -1,3 +1,7 @@
+.display-none {
+	display:none !important;
+}
+
 .conflict, .conflict td {
 	background-color: #ffe2e2 !important; 
     color: #900;

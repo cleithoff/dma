@@ -9,6 +9,7 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		$this->_helper->contextSwitch()
 		->addActionContext('refresh', 'json')
 		->addActionContext('send', 'json')
+		->addActionContext('takeover', 'json')
 		->setDefaultContext('json')
 		->initContext('json')
 		;
@@ -214,4 +215,74 @@ class Order_ItemController extends Rest_Controller_Action_DbTable
 		$this->view->form = $form;
 	}
 	
+	protected function copyPdf($fileSrc, $fileDst) {
+		$dirResource = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'resource' . DIRECTORY_SEPARATOR . 'pdf' . DIRECTORY_SEPARATOR;
+		$dirDeploy = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'deploy' . DIRECTORY_SEPARATOR;
+		
+		if (file_exists($dirResource . $fileSrc)) {
+			copy($dirResource . $fileSrc, $dirResource . $fileDst);
+			copy($dirResource . $fileSrc, $dirDeploy . $fileDst);
+		}
+		
+		if (file_exists($dirDeploy . $fileSrc)) {
+			copy($dirDeploy . $fileSrc, $dirDeploy . $fileDst);
+		}
+		
+	}
+	
+	protected function takeoverPdf(Order_Model_Item $orderItemSrc, Order_Model_Item $orderItemDst) {
+		$dir = APPLICATION_PATH . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'resource' . DIRECTORY_SEPARATOR . 'pdf' . DIRECTORY_SEPARATOR;
+
+		$this->copyPdf($orderItemSrc->authkey . '.pdf', $orderItemDst->authkey . '.pdf');
+		$this->copyPdf($orderItemSrc->authkey . '_preview_back.pdf', $orderItemDst->authkey . '_preview_back.pdf');
+		$this->copyPdf($orderItemSrc->authkey . '_print_front.pdf', $orderItemDst->authkey . '_print_front.pdf');
+		$this->copyPdf($orderItemSrc->authkey . '_print_back.pdf', $orderItemDst->authkey . '_print_back.pdf');
+		$this->copyPdf($orderItemSrc->authkey . '_test_front.pdf', $orderItemDst->authkey . '_test_front.pdf');
+		$this->copyPdf($orderItemSrc->authkey . '_test_back.pdf', $orderItemDst->authkey . '_test_back.pdf');
+	}
+	
+	protected function takeoverPersonalize(Order_Model_Item $orderItemSrc, Order_Model_Item $orderItemDst) {
+		$productpersonalizes = $orderItemSrc->depOrderItemhasproductpersonalize();
+		$orderItemHasProductPersonalizes = new Order_Model_DbTable_Itemhasproductpersonalize();
+		foreach ($productpersonalizes as $productpersonalizeSrc) {
+			
+			$productpersonalizeDst = $orderItemHasProductPersonalizes->fetchRow("order_item_id = " . intval($orderItemDst->id) . " AND product_personalize_id = " . intval($productpersonalizeSrc->product_personalize_id));
+			
+			if (!empty($productpersonalizeDst)) {
+				$productpersonalizeDst->value = $productpersonalizeSrc->value;
+				$productpersonalizeDst->save();
+			}
+		}
+	}
+	
+	public function takeoverAction() {
+		
+		$iddst = $this->getRequest()->getParam('iddst', null);
+		$idsrc = $this->getRequest()->getParam('idsrc', null);
+		
+		if (!empty($iddst) && !empty($idsrc)) {
+			
+			$orderItems = new Order_Model_DbTable_Item();
+			
+			$orderItemSrc = $orderItems->find($idsrc)->current();
+			$orderItemDst = $orderItems->find($iddst)->current();
+			
+			if ($orderItemSrc instanceof Order_Model_Item && $orderItemDst instanceof Order_Model_Item) {
+				
+				$pdf = $this->getRequest()->getParam('pdf', null);
+				$personalize = $this->getRequest()->getParam('personalize', null);
+				
+				if (!empty($pdf) && $pdf !== "false") {
+					$this->takeoverPdf($orderItemSrc, $orderItemDst);
+				}
+				
+				if (!empty($personalize) && $personalize !== "false") {
+					$this->takeoverPersonalize($orderItemSrc, $orderItemDst);
+				}
+			}
+		}
+		
+		$this->view->data = array();
+		$this->view->success = true;
+	}
 }

@@ -1343,6 +1343,14 @@
                 "app/view/DlgReportReportPanel.js"
             ],
             "className": "DlgReportReportPanel"
+        },
+        "28e57d96-81ea-44ad-8472-f156e0b07601": {
+            "paths": [
+                "metadata/view/DlgDataTakeoverPanel",
+                "app/view/override/DlgDataTakeoverPanel.js",
+                "app/view/DlgDataTakeoverPanel.js"
+            ],
+            "className": "DlgDataTakeoverPanel"
         }
     },
     "viewOrderMap": {
@@ -1391,7 +1399,8 @@
             "cfc8bf2e-799f-42f3-8e06-bd8918a3c34d",
             "29219c73-d451-49cf-ad5c-b1a5f947e09d",
             "2ceb3258-cc7a-467f-a712-4674f3e8db86",
-            "828b8855-be94-47db-bda2-f43c035ebc11"
+            "828b8855-be94-47db-bda2-f43c035ebc11",
+            "28e57d96-81ea-44ad-8472-f156e0b07601"
         ],
         "store": [
             "311f6e01-255b-4244-a8ca-5618f6926b96",

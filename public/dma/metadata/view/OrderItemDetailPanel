@@ -477,6 +477,50 @@
                         "text": "Export TIFF"
                     },
                     "designerId": "38fe5274-8d8c-4a9e-8408-dee61f1aafb0"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "itemId": "OrderItemDetailDataTakeoverButton",
+                        "text": "Datenübernahme"
+                    },
+                    "designerId": "1c0c07eb-f0a5-44a0-9982-8d8ad9196910",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOrderItemDetailDataTakeoverButtonClick",
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "\r",
+                                    "record = me.ownerCt.ownerCt.down('#OrderItemGridPanel').getSelectionModel().getSelection()[0];\r",
+                                    "\r",
+                                    "var window = Ext.create('MyApp.view.DlgDataTakeoverPanel', {\r",
+                                    "    width:1024,\r",
+                                    "    height:640,\r",
+                                    "    record: record,\r",
+                                    "    creatorComponent: me\r",
+                                    "});\r",
+                                    "\r",
+                                    "window.show();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "9f6cb542-da93-4347-8bda-e5646087481d"
+                        }
+                    ]
                 }
             ]
         },

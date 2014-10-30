@@ -27,6 +27,21 @@ class Order_Model_DbTable_Item extends Rest_Db_Table
 				'refTableClass'	=> 'Product_Model_DbTable_Product',
 				'refColumns'	=> array('id')
 		),
+		'partner_partner' => array(
+				'columns'		=> array('partner_partner_id'),
+				'refTableClass'	=> 'Partner_Model_DbTable_Partner',
+				'refColumns'	=> array('id')
+		),			
+		'order_order' => array(
+				'columns'		=> array('order_order_id'),
+				'refTableClass'	=> 'Order_Model_DbTable_Order',
+				'refColumns'	=> array('id')
+		),		
+		'import_stack' => array(
+				'columns'		=> array('import_stack_id'),
+				'refTableClass'	=> 'Import_Model_DbTable_Stack',
+				'refColumns'	=> array('id')
+		),
 	);
 
 }

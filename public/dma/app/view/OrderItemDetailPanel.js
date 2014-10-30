@@ -180,6 +180,17 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
                             xtype: 'button',
                             itemId: 'OrderItemDetailExportTiff',
                             text: 'Export TIFF'
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'OrderItemDetailDataTakeoverButton',
+                            text: 'Datenübernahme',
+                            listeners: {
+                                click: {
+                                    fn: me.onOrderItemDetailDataTakeoverButtonClick,
+                                    scope: me
+                                }
+                            }
                         }
                     ]
                 }
@@ -557,6 +568,21 @@ Ext.define('MyApp.view.OrderItemDetailPanel', {
 
     onOrderItemDetailSendButtonAfterRender: function(component, eOpts) {
         component.setVisible(MyApp.app.getRuleControllerController().allow('OrderItemDetailPanel', MyApp.app.getRuleControllerController().rights.RELEASE));
+    },
+
+    onOrderItemDetailDataTakeoverButtonClick: function(button, e, eOpts) {
+        var me = this;
+
+        record = me.ownerCt.ownerCt.down('#OrderItemGridPanel').getSelectionModel().getSelection()[0];
+
+        var window = Ext.create('MyApp.view.DlgDataTakeoverPanel', {
+            width:1024,
+            height:640,
+            record: record,
+            creatorComponent: me
+        });
+
+        window.show();
     },
 
     onDropboxAfterRender1: function(component, eOpts) {

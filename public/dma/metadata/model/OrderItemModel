@@ -236,6 +236,84 @@
                     "designerId": "1d9719dd-65b8-4f2d-8e3a-5d047026aa95"
                 }
             ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "partner_partner_id",
+                "type": "int"
+            },
+            "designerId": "d614e7b9-6218-445a-9919-d80f8a2e11a9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "order_order_id",
+                "type": "int"
+            },
+            "designerId": "eab813a0-d5b9-4092-a164-617d6a51e2dc"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "import_stack_id",
+                "type": "int"
+            },
+            "designerId": "87567b87-68e2-4bc9-b3b8-cfc843dd8bec"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "partner_partner",
+                "persist": false
+            },
+            "designerId": "734e57a5-2b75-4ddd-ab6e-e0dc417a14c9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "order_order",
+                "persist": false
+            },
+            "designerId": "866d856f-53cb-4dd4-97e2-e0c3ed731e29"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "import_stack",
+                "persist": false
+            },
+            "designerId": "0ccd2367-2e05-4bb8-998e-85c94cf21e2a"
         }
     ]
 }
