@@ -27,6 +27,7 @@ class Intern_ReportController extends Zend_Controller_Action
         
         $this->getRequest()->setParam('partner_nr', $orderCombine->getPartnerPartner()->partner_nr);
         $this->getRequest()->setParam('import_stack_id', $orderCombine->import_stack_id);
+        $this->getRequest()->setParam('delivery_date', date('d.m.Y'));
         
         $service->exportpdf($this->getRequest());
                 
