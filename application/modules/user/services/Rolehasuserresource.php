@@ -28,7 +28,7 @@ class User_Service_Rolehasuserresource
 	public function getResources($userRole) {
 		if (empty($userRole)) throw new Exception('Benutzerrolle nicht gefunden.');
 		
-		$userRoleHasUserResourceMapper = new User_Model_DbTable_RoleHasUserResource();
+		$userRoleHasUserResourceMapper = new User_Model_DbTable_Rolehasuserresource();
 		
 		$userResources = array();
 		

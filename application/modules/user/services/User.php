@@ -9,7 +9,7 @@ class User_Service_User
 		$userRoleMapper = new User_Model_DbTable_Role();
 		$userRole = $userRoleMapper->find($userUser->user_role_id)->current();
 		
-		$userServiceRoleHasUserResource = new User_Service_RoleHasUserResource();
+		$userServiceRoleHasUserResource = new User_Service_Rolehasuserresource();
 		
 		return $userServiceRoleHasUserResource->getResources($userRole);
 		
