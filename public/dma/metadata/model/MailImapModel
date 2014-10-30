@@ -89,6 +89,32 @@
                 "type": "string"
             },
             "designerId": "1bc773f5-5544-4e7e-b073-be8f1be29aac"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/mail/imap/index"
+            },
+            "designerId": "7c9a303e-f386-4f9e-a8ac-5723d6f5c7fb",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "d0bccb18-4898-4fc8-8db7-e2eb8db8d6b8"
+                }
+            ]
         }
     ]
 }

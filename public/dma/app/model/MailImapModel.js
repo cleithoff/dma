@@ -41,5 +41,14 @@ Ext.define('MyApp.model.MailImapModel', {
             name: 'mailMessage',
             type: 'string'
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: '/mail/imap/index',
+        reader: {
+            type: 'json',
+            root: 'data'
+        }
+    }
 });

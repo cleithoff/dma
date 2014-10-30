@@ -112,7 +112,7 @@ class Mail_ImapController extends Zend_Controller_Action
     
     protected function getMail(Zend_Mail_Storage_Imap $storage, $messageid) {
     	// if (empty($partner_nr)) $partner_nr = "99999999";
-    	$messageid = $messageid->value;
+
     	if (empty($messageid)) return; // $this->getRequest()->getParam('partner_nr', "00000000");
     	
     	$data = array();
@@ -166,26 +166,30 @@ class Mail_ImapController extends Zend_Controller_Action
 	    'user'     => 'fleurop',
 	    'password' => 'fleurop1234'));
 
-        $filter = json_decode($this->getRequest()->getParam('filter', null));
+        $filter = $this->getRequest()->getParam('filter', null);
         
-        // if (empty($filter)) return;
+        $data = array();
         
-        $property = reset($filter);
-        
-        switch($property->property) {
-        	case 'partner_nr':
-        		$data = $this->getMails($storage, $filter);
-        		break;
-        	case 'id':
-        		$data = $this->getMail($storage, $property->value);
-        		break;
-        	default:
-        		$messageid = $this->getRequest()->getParam('id', null);
-        		if (!empty($messageid)) {
-        			$data = $this->getMail($storage, $messageid);
-        		}
-        		break;
-        	
+        if (!empty($filter)) {
+	        $filter = json_decode($filter);
+	        
+	        if (empty($filter)) return;
+	        
+	        $property = reset($filter);
+	        
+	        switch($property->property) {
+	        	case 'partner_nr':
+	        		$data = $this->getMails($storage, $filter);
+	        		break;
+	        	case 'id':
+	        		$data = $this->getMail($storage, $property->value);
+	        		break;
+	        }
+        } else {
+        	$messageid = $this->getRequest()->getParam('id', null);
+        	if (!empty($messageid)) {
+        		$data = $this->getMail($storage, $messageid);
+        	}
         }
         
         $this->view->data = $data;

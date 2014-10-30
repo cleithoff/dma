@@ -132,7 +132,11 @@ Ext.define('MyApp.view.MailImapPanel', {
     onMailImapGridPanelSelect: function(rowmodel, record, index, eOpts) {
         var me = this;
 
-        me.down('#MailImapFormPanel').getForm().loadRecord(record);
+        MyApp.model.MailImapModel.load(record.data.id, {
+            callback: function(record, operation, success) {
+                me.down('#MailImapFormPanel').getForm().loadRecord(record);
+            }
+        });
     }
 
 });
