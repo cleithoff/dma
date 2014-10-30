@@ -78,7 +78,7 @@ class Import_FileuploadController extends Zend_Controller_Action
     			}
     		}
     		
-    		$exec = "convert " . $pdfoptions . '"' . $infile . '" ' . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".png";
+    		$exec = "convert " . $pdfoptions . '"' . $infile . '" -type truecolor ' . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".png";
     		// $exec = "convert " . $pdfoptions . $result->file . DIRECTORY_SEPARATOR . $result->filename . " " . APPLICATION_PATH . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "resource/logo_original" . DIRECTORY_SEPARATOR . $this->getRequest()->getParam('partner_nr') . ".gif";
     		exec($exec);
     	}
