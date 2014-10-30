@@ -43,7 +43,7 @@ class Rest_Pdf {
 		} else {
 			$exec = $pdfbox . ' OverlayPDF ' . $overlay . ' -odd ' . $document . ' -even  ' . $document . ' -nonSeq ' . $pdf;
 		}
-
+		echo $exec;die();
 		exec($exec);
 	}
 	
