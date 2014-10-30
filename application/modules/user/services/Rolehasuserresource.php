@@ -1,6 +1,6 @@
 <?php
 
-class User_Service_RoleHasUserResource
+class User_Service_Rolehasuserresource
 {
 
 	protected function ruleToInt($rules) {
