@@ -803,7 +803,7 @@
                                                 "fn": "onButtonClick2",
                                                 "implHandler": [
                                                     "var \r",
-                                                    "\tme = this;\r",
+                                                    "me = this;\r",
                                                     "\r",
                                                     "me.setOrderState(button, 'invoice', 'invoice');"
                                                 ],

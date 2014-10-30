@@ -235,6 +235,38 @@
 <fo:table-cell number-columns-spanned="6">
 <fo:block>
 
+<!-- START Area Detail 10 -->
+<!-- 71175e49cbaf4bf98e47e27738436790 -->
+<fo:table  width="17.0cm"   >
+  <fo:table-column column-width="8.0cm"/>
+  <fo:table-column column-width="1.0cm"/>
+  <fo:table-column column-width="8.0cm"/>
+  <fo:table-body>
+    <fo:table-row    background-color="#ffffff"  height="1.5cm"   >
+        <fo:table-cell    number-columns-spanned="1">
+      <fo:block   margin-left="0.0cm"  margin-top="0.0cm" ><fo:instream-foreign-object  content-width="8.0cm" content-height="1.5cm"  >
+<!-- a5796a55b286467bad0831c453894fdd -->
+<j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/partner_nr"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>45</BARHEIGHT><LEFTMARGIN>10</LEFTMARGIN><SET>A</SET><PROCESSTILDE>true</PROCESSTILDE><TYPE>CODE128</TYPE><N>2</N><TOPMARGIN>0</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode></fo:instream-foreign-object></fo:block>
+        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+        <fo:block></fo:block>        </fo:table-cell>
+        <fo:table-cell    number-columns-spanned="1">
+      <fo:block   margin-left="0.0cm"  margin-top="0.0cm" ><fo:instream-foreign-object  content-width="8.0cm" content-height="1.5cm"  >
+<!-- a5796a55b286467bad0831c453894fdd -->
+<j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external/ListItemOfReportDetailorder_no_external/url_lieferschein"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>45</BARHEIGHT><LEFTMARGIN>10</LEFTMARGIN><SET>A</SET><PROCESSTILDE>false</PROCESSTILDE><TYPE>CODE128</TYPE><N>2</N><TOPMARGIN>0</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode></fo:instream-foreign-object></fo:block>
+        </fo:table-cell>
+    </fo:table-row>
+  </fo:table-body>
+</fo:table>
+
+<!-- END Area Detail 10 -->
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell number-columns-spanned="6">
+<fo:block>
+
 <!-- START Area Detail -->
 <xsl:if test="data/ReportDetail/ListOfReportDetail/ListOfReportDetailorder_no_external" >
 <!-- 5c4937a970024a0694ebfb7b95a0fd19 -->
