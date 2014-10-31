@@ -76,16 +76,23 @@ Dieser Geschenkgutschein kann eingelöst werden bei:
 		</fo:instream-foreign-object>
 		</fo:block>
 	  </fo:block-container>
-	  <fo:block-container position="absolute" left="37mm" top="35mm">
+	  <fo:block-container position="absolute" left="36mm" top="35mm">
 	  	<fo:block>
 		<fo:instream-foreign-object>
               <svg xmlns="http://www.w3.org/2000/svg" width="30mm" height="5mm">
-       			<rect width="30mm" height="3mm" style="fill:#ff0000;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       			<rect width="31mm" height="3mm" style="fill:#ffffff;stroke:#ffffff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
 			  </svg>
             </fo:instream-foreign-object>
             </fo:block>
 	  </fo:block-container>
+	  
+	  <fo:block-container position="absolute" left="38mm" top="35mm">
+	  	<fo:block font-size="5.5pt" font-family="HelveticaNeueLTStd-Cn" color="black" text-align="center" width="103mm" line-height="9pt">
+             <xsl:value-of select="./barcode_text"/>
+	  	</fo:block>
+	  </fo:block-container>
 	</fo:block-container>
+	
 </xsl:template>
 
 
