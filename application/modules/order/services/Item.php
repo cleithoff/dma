@@ -41,7 +41,9 @@ class Order_Service_Item
 			if (empty($plugin_class)) continue;
 			$plugin_obj = new $plugin_class(); 
 			if ($plugin_obj instanceof Product_Service_Plugin) {
-				$plugin_obj->postProcess($order_item, $viewmode, $resourcePdfFile, $publicDeployFile);
+				if (method_exists($plugin_obj, "postProcess")) {
+					$plugin_obj->postProcess($order_item, $viewmode, $resourcePdfFile, $publicDeployFile);
+				}
 			}
 		}
 	}
@@ -85,11 +87,26 @@ class Order_Service_Item
 			if (empty($plugin_class)) continue;
 			$plugin_obj = new $plugin_class(); 
 			if ($plugin_obj instanceof Product_Service_Plugin) {
-				$xml[$plugin_class] = $plugin_obj->execute($order_item, $xml);
+				if (method_exists($plugin_obj, "execute")) {
+					$xml[$plugin_class] = $plugin_obj->execute($order_item, $xml);
+				}
 			}
 		}
 		
-		return Rest_Xml::encode('data', $xml);
+		$xml = Rest_Xml::encode('data', $xml);
+		
+		foreach ($plugin_classes as $plugin_class) {
+			$plugin_class = trim($plugin_class);
+			if (empty($plugin_class)) continue;
+			$plugin_obj = new $plugin_class();
+			if ($plugin_obj instanceof Product_Service_Plugin) {
+				if (method_exists($plugin_obj, "merge")) {
+					$xml = $plugin_obj->merge($order_item, $xml);
+				}
+			}
+		}
+		
+		return $xml;
 	}
 	
 	public function setRecentOrderItem($order_item) {

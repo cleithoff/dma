@@ -47,6 +47,28 @@
             </fo:instream-foreign-object>
             </fo:block>
 	  </fo:block-container>
+	  <fo:block-container position="absolute" left="6mm" top="6mm">
+	  	<fo:block margin="3mm">
+	  	<fo:external-graphic content-width="scale-to-fit" scaling="uniform">
+    	<xsl:attribute name="src">
+             <xsl:value-of select="./background"/>
+        </xsl:attribute>
+    	</fo:external-graphic>
+	  	</fo:block>
+	  </fo:block-container>
+	  <fo:block-container position="absolute" left="6mm" top="41.5mm" width="103mm">
+<fo:block font-size="5.5pt" font-family="HelveticaNeueLTStd-Cn" color="white" text-align="center" width="103mm" line-height="9pt">
+Dieser Geschenkgutschein kann eingelöst werden bei:
+</fo:block>
+<fo:block font-size="5.5pt" font-family="HelveticaNeueLTStd-HvCn" color="white" text-align="center" width="103mm" line-height="7pt">
+   <xsl:if test="/data/product_personalize/gutscheincard_line_1">
+    <xsl:value-of select="/data/product_personalize/gutscheincard_line_1"/><xsl:text>&#x2028;</xsl:text> 
+   </xsl:if>
+   <xsl:if test="/data/product_personalize/gutscheincard_line_2">
+    <xsl:value-of select="/data/product_personalize/gutscheincard_line_2"/><xsl:text>&#x2028;</xsl:text> 
+   </xsl:if>
+</fo:block>
+      </fo:block-container>
       <fo:block-container position="absolute" left="30mm" top="21mm">
       	<fo:block>
       	<fo:instream-foreign-object  >
@@ -56,5 +78,6 @@
 	  </fo:block-container>
 	</fo:block-container>
 </xsl:template>
+
 
 </xsl:stylesheet>

@@ -196,7 +196,7 @@ class Report_Service_Report
 		$this->writeXml($filename, $fields, $rowset, $types, $row->xmlgrouping, $name);
 	}
 	
-	protected function generateXml($row, Zend_Controller_Request_Http $request) {
+	public function generateXml($row, Zend_Controller_Request_Http $request) {
 		
 		/*
 		header('Content-type: text/xml');
@@ -218,7 +218,7 @@ class Report_Service_Report
 		return $filename;
 	}
 	
-	protected function getReport(Zend_Controller_Request_Http $request) {
+	public function getReport(Zend_Controller_Request_Http $request) {
 		$report_report_id = $request->getParam('report_report_id', null);
 		
 		if ($report_report_id === null) return;
