@@ -28,7 +28,8 @@
 <xsl:template match="data/ReportDetail/ListOfReportDetail/ItemOfReportDetail">
 
     <fo:block-container margin="6mm" width="103mm" height="72mm">
-	  <fo:block absolute-position="absolute" left="0mm" top="0mm">
+	  <fo:block-container position="absolute" left="0mm" top="0mm">
+	  	<fo:block>
 		<fo:instream-foreign-object>
               <svg xmlns="http://www.w3.org/2000/svg" width="102mm" height="72mm">
        			<line x1="0mm" x2="6mm" y1="9mm" y2="9mm" style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
@@ -44,12 +45,15 @@
        			<line x1="94mm" x2="94mm" y1="66mm" y2="72mm" style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
               </svg>
             </fo:instream-foreign-object>
-	  </fo:block>
-      <fo:block absolute-position="absolute" left="30mm" top="21mm">
+            </fo:block>
+	  </fo:block-container>
+      <fo:block-container position="absolute" left="30mm" top="21mm">
+      	<fo:block>
       	<fo:instream-foreign-object  >
 			<j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="barcode"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>20</BARHEIGHT><LEFTMARGIN>10</LEFTMARGIN><SET>A</SET><TYPE>INTERLEAVED25</TYPE><N>2</N><TOPMARGIN>25</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode>
 		</fo:instream-foreign-object>
-	  </fo:block>
+		</fo:block>
+	  </fo:block-container>
 	</fo:block-container>
 </xsl:template>
 
