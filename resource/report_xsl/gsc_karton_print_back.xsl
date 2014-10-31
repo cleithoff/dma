@@ -71,8 +71,8 @@ Dieser Geschenkgutschein kann eingelöst werden bei:
       </fo:block-container>
       <fo:block-container position="absolute" left="37mm" top="25.5mm">
       	<fo:block>
-      	<fo:instream-foreign-object content-width="29mm" content-height="35mm" font-size="5pt">
-			<j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="barcode"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>35</BARHEIGHT><LEFTMARGIN>0</LEFTMARGIN><SET>A</SET><TYPE>INTERLEAVED25</TYPE><N>1</N><TOPMARGIN>0</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode>
+      	<fo:instream-foreign-object content-width="29mm" content-height="40mm" font-size="5pt">
+			<j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="barcode"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>40</BARHEIGHT><LEFTMARGIN>0</LEFTMARGIN><SET>A</SET><TYPE>INTERLEAVED25</TYPE><N>1</N><TOPMARGIN>0</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode>
 		</fo:instream-foreign-object>
 		</fo:block>
 	  </fo:block-container>
