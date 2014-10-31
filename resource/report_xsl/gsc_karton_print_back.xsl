@@ -76,6 +76,15 @@ Dieser Geschenkgutschein kann eingelöst werden bei:
 		</fo:instream-foreign-object>
 		</fo:block>
 	  </fo:block-container>
+	  <fo:block-container position="absolute" left="0mm" top="0mm">
+	  	<fo:block>
+		<fo:instream-foreign-object>
+              <svg xmlns="http://www.w3.org/2000/svg" width="102mm" height="72mm">
+       			<rect x1="37mm" x2="67mm" y1="35mm" y2="40mm" style="fill:#ff0000;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+			  </svg>
+            </fo:instream-foreign-object>
+            </fo:block>
+	  </fo:block-container>
 	</fo:block-container>
 </xsl:template>
 
