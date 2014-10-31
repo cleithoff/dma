@@ -6,7 +6,7 @@ class Rest_Pdf {
 		$fop = APPLICATION_PATH . Zend_Registry::getInstance()->config->cli->fop;
 		$fopconfig = APPLICATION_PATH . Zend_Registry::getInstance()->config->cli->fopconfig;
 		$exec = $fop . ' -c ' . $fopconfig . ' -xml ' . $xml . ' -xsl ' . $xsl . ' -pdf ' . $pdf;
-		// echo $exec;die();
+		//echo $exec;die();
 		exec($exec);
 	}
 	
