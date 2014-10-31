@@ -27,25 +27,8 @@
 </xsl:template>
 
 <xsl:template match="data/ReportDetail/ListOfReportDetail/ItemOfReportDetail">
-<fo:table  width="17.0cm"   >
-  <fo:table-column column-width="17.0cm"/>
-  <fo:table-body>
-
-    <fo:table-row   background-color="#ffffff"  height="1.62cm">
-      <fo:table-cell><fo:table>
-      <fo:table-column column-width="17.0cm"/>
-      <fo:table-body>
-      <fo:table-row   background-color="#ffffff"  height="1.62cm">
-        <fo:table-cell    number-columns-spanned="1">
       <fo:block   margin-left="0.0cm"  margin-top="0.0cm" ><fo:instream-foreign-object  >
 <j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="barcode"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>20</BARHEIGHT><LEFTMARGIN>10</LEFTMARGIN><SET>A</SET><TYPE>INTERLEAVED25</TYPE><N>2</N><TOPMARGIN>25</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode></fo:instream-foreign-object></fo:block>
-        </fo:table-cell>
-    </fo:table-row>
-    </fo:table-body>
-    </fo:table></fo:table-cell>
-    </fo:table-row>
-  </fo:table-body>
-</fo:table>
 
 </xsl:template>
 
