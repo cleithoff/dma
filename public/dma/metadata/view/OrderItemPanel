@@ -36,6 +36,21 @@
             "designerId": "4cc15671-1a38-41df-9b23-f916423d68a1",
             "cn": [
                 {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "dataIndex": "id",
+                        "text": "OrderItemID",
+                        "format": "0"
+                    },
+                    "designerId": "22ee292f-95d8-48b0-8901-2de558cd85de"
+                },
+                {
                     "type": "Ext.grid.column.Column",
                     "reference": {
                         "name": "columns",

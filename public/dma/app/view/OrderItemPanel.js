@@ -41,6 +41,13 @@ Ext.define('MyApp.view.OrderItemPanel', {
                     store: 'OrderItemJsonStore',
                     columns: [
                         {
+                            xtype: 'numbercolumn',
+                            hidden: true,
+                            dataIndex: 'id',
+                            text: 'OrderItemID',
+                            format: '0'
+                        },
+                        {
                             xtype: 'gridcolumn',
                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                 if (Ext.isEmpty(record.data.product_product)) return '';
