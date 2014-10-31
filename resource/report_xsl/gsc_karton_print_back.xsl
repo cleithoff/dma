@@ -45,7 +45,7 @@
               </svg>
             </fo:instream-foreign-object>
 	  </fo:block>
-      <fo:block absolute-position="absolute" left="30mm" top="21mm" width="42mm" height="18mm">
+      <fo:block absolute-position="absolute" left="30mm" top="21mm">
       	<fo:instream-foreign-object  >
 			<j4lbarcode xmlns="http://java4less.com/j4lbarcode/fop" mode="inline"><Barcode1D><VALUE><xsl:value-of select="barcode"></xsl:value-of></VALUE><X>1</X><BARHEIGHT>20</BARHEIGHT><LEFTMARGIN>10</LEFTMARGIN><SET>A</SET><TYPE>INTERLEAVED25</TYPE><N>2</N><TOPMARGIN>25</TOPMARGIN><CHECKSUM>true</CHECKSUM></Barcode1D></j4lbarcode>
 		</fo:instream-foreign-object>
