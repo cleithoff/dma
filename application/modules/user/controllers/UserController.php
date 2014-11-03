@@ -7,13 +7,22 @@ class User_UserController extends Rest_Controller_Action_DbTable
 		$body = $this->getRequest()->getRawBody();
 		$data = Zend_Json::decode($body);
 		
+		$userUsers = new User_Model_DbTable_User();
+		
+		$userUser = $userUsers->find($data['id'])->current();
+		
 		if (!empty($data['password'])) {
 			$data['salt'] = uniqid() . "secret";
-			$data['password'] = sha1($data['password'] . $data['salt']);
+			$userUser->password = sha1($data['password'] . $data['salt']);
+			$userUser->salt = $data['salt'];
 		}
 		
-		$row = $this->getMapper()->update($data);
-		$this->view->data = is_array($row) ? $row : $row->toArray();
+		$userUser->username = $data['username'];
+		$userUser->user_role_id = $data['user_role_id'];
+		
+		$userUser->save();
+		
+		$this->view->data = is_array($userUser) ? $userUser : $userUser->toArray();
 	
 		$this->getRequest()->setParam('filter', '[{"property":"id", "value":' . $this->view->data['id'] . '}]');
 		return $this->getAction();
@@ -28,9 +37,7 @@ class User_UserController extends Rest_Controller_Action_DbTable
 			$data['password'] = sha1($data['password'] . $data['salt']);
 		}
 		
-		
-		$this->view->data = $this->getMapper()->insert($data)->toArray();
-		 
+		$this->view->data = $this->getMapper()->insert($data)->toArray(); 
 		 
 		$this->getRequest()->setParam('filter', '[{"property":"id", "value":' . $this->view->data['id'] . '}]');
 		return $this->getAction();
