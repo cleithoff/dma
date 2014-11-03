@@ -509,17 +509,60 @@ Ext.define('MyApp.view.OrderPanel', {
         ,orderItemstateRecord = Ext.getStore('OrderItemstateJsonStore').findRecord('key',order_itemstate_key)
         ;
 
-        record.data.order_state_id = orderStateRecord.data.id;
+        //record.data.order_state_id = orderStateRecord.data.id;
 
-        record.save();
+        //record.save();
+
+        var functions = [];
 
         me.down('#OrderItemGridPanel').getStore().each(function(record,idx){
             //do whatever you want with the record 
-            if (record.data.order_itemstate_id == 10 || record.data.order_itemstate_id == 11) return;
 
-            record.data.order_itemstate_id = orderItemstateRecord.data.id;
-            record.save();
+            (function (record, idx) {
+
+                if (record.data.order_itemstate_id == 10 || record.data.order_itemstate_id == 11) return;
+
+                functions.push(
+                function(callback) {
+
+
+                    record.data.order_itemstate_id = orderItemstateRecord.data.id;
+                    record.save({
+                        callback: function() {
+                            callback();
+                        }
+                    });
+                }
+                );
+            })(record,idx);
+
+
         });
+
+        if (functions.length == 0) {
+
+            record.data.order_state_id = orderStateRecord.data.id;
+            record.save();
+
+        } else {
+
+            async.parallel(functions,
+            // optional callback
+            function(err, results){
+                if (results.length == functions.length) {
+                    MyApp.model.OrderOrderModel.load(record.data.id, {
+                        callback: function(_record) {
+                            record.data.order_state_id = _record.data.order_state_id;
+                            record.data.order_state = _record.data.order_state;
+                            record.commit();
+                        }
+                    });
+
+                }
+
+            });
+
+        }
     }
 
 });

@@ -95,22 +95,22 @@ Ext.define('MyApp.controller.OrderPanelController', {
 
 
         // FIXME: setTimeout
-
+        /*
         grid = this.getMailImapPanel().down('#MailImapGridPanel');
         var mailimappanel = this.getMailImapPanel();
 
         grid.getStore().clearFilter(true);
         grid.getStore().filter([{property:'partner_nr',value:record.data.partner_partner.partner_nr}]);
         grid.getStore().load({
-            callback: function(records, operation, success) {
-                if (!Ext.isEmpty(records) || records.length > 0) {
-                    grid.getSelectionModel().select(0);
-                } else {
-                    mailimappanel.down('#MailImapFormPanel').getForm().reset();
-                }
-            }
+        callback: function(records, operation, success) {
+        if (!Ext.isEmpty(records) || records.length > 0) {
+        grid.getSelectionModel().select(0);
+        } else {
+        mailimappanel.down('#MailImapFormPanel').getForm().reset();
+        }
+        }
         });
-
+        */
 
         //grid.store.load(); // filter loads automatically - dont use .load because records lose store (record.store == null)
         /*

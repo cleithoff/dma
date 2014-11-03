@@ -1351,6 +1351,12 @@
                 "app/view/DlgDataTakeoverPanel.js"
             ],
             "className": "DlgDataTakeoverPanel"
+        },
+        "5a6fe830-61c1-490c-a778-34340ce2c689": {
+            "paths": [
+                "metadata/resource/js2"
+            ],
+            "className": "js2"
         }
     },
     "viewOrderMap": {
@@ -1531,7 +1537,8 @@
             "e718d5f0-9733-44c1-a396-ebed6e019623",
             "19aac798-033b-4d49-91d0-9839bb23dfe7",
             "27ebc538-d6af-48bc-92d7-44bd0921686a",
-            "f4fcbb1b-0940-4bda-943e-51eae112b25d"
+            "f4fcbb1b-0940-4bda-943e-51eae112b25d",
+            "5a6fe830-61c1-490c-a778-34340ce2c689"
         ],
         "app": [
             "application"
