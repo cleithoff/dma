@@ -35,6 +35,16 @@ class Package_Service_Package
 		
 		$this->$method($order_item_id, $haspos, $weightpos);
 		
+		$order = new Order_Model_DbTable_Item();
+		$orderRow = $order->find($order_item_id)->current();
+		
+		$orderOrder = new Order_Model_DbTable_Order();
+		$orderOrderRow = $orderOrder->fetchRow("order_pool_id = " . $orderRow->order_pool_id);
+		
+		$order_combine_id = $orderOrderRow->order_combine_id;
+		
+		Zend_Db_Table::getDefaultAdapter()->query("update package_packageorder set package_packageorder.authkey = HEX(CAST(ENCODE(LPAD(package_packageorder.id,6,'0'),'secret') AS CHAR)) where order_combine_id = " . intval($order_combine_id) . ";");
+		
 	}
 	
 	public function createPackagesFleurop2011($order_item_id, $haspos, $weightpos) {
