@@ -73,6 +73,7 @@ Ext.define('MyApp.controller.OrderPanelController', {
             }
         });
 
+        this.getOrderItemPanel().record = record;
         this.getOrderCombineitemPanel().record = record;
         this.getOrderCombineitemPanel().linkrecord = record;
 

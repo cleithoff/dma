@@ -8,17 +8,16 @@ class Package_PackageorderController extends Rest_Controller_Action_DbTable
 		
 		$filters = json_decode($filter);
 		
-		$order_combine_id = 0;
+		$order_combine_id = $this->getRequest()->getParam('order_combine_id', 0);
+		$order_item_id = $this->getRequest()->getParam('order_item_id', 0);;
 		
-		foreach ($filters as $filter) {
-			if ($filter->property == "order_combine_id") {
-				$order_combine_id = $filter->value;
-			}
+		if (!empty($order_item_id)) {
+			$service = new Package_Service_Package();
+			$service->createPackages($order_item_id, 0, 0);
+		} else {
+			$service = $this->getService();
+			$service->createPackages($order_combine_id);
 		}
-		
-		$service = $this->getService();
-		
-		$service->createPackages($order_combine_id);
 		
 		return $this->forward('get');
 		

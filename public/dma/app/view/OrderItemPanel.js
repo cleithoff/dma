@@ -18,9 +18,7 @@ Ext.define('MyApp.view.OrderItemPanel', {
     alias: 'widget.orderitempanel',
 
     border: false,
-    height: 250,
     id: 'OrderItemPanel',
-    width: 400,
     layout: {
         type: 'border'
     },
@@ -73,7 +71,13 @@ Ext.define('MyApp.view.OrderItemPanel', {
                             align: 'right',
                             dataIndex: 'amount',
                             text: 'Menge',
-                            format: '0'
+                            format: '0',
+                            editor: {
+                                xtype: 'numberfield',
+                                allowDecimals: false,
+                                allowExponential: false,
+                                decimalPrecision: 0
+                            }
                         },
                         {
                             xtype: 'gridcolumn',
@@ -94,6 +98,16 @@ Ext.define('MyApp.view.OrderItemPanel', {
                             displayInfo: true,
                             store: 'OrderItemJsonStore'
                         }
+                    ],
+                    plugins: [
+                        Ext.create('Ext.grid.plugin.CellEditing', {
+                            listeners: {
+                                edit: {
+                                    fn: me.onCellEditingEdit,
+                                    scope: me
+                                }
+                            }
+                        })
                     ]
                 },
                 {
@@ -107,6 +121,56 @@ Ext.define('MyApp.view.OrderItemPanel', {
         });
 
         me.callParent(arguments);
+    },
+
+    onCellEditingEdit: function(editor, e, eOpts) {
+        var me = this;
+
+        if (editor.context.record.data.product_item_id == 2 || editor.context.record.data.product_item_id == 3) {
+            Ext.Ajax.request({
+                url: '/package/packageorder/refresh',
+                method: 'GET',
+                params: {"order_item_id":editor.context.record.data.id, "filter": JSON.stringify([{"property":"order_combine_id","value":me.record.data.order_combine_id}])},
+                success: function(response, opts) {
+                    var obj = Ext.decode(response.responseText);
+
+
+                    var grid = me.ownerCt.down('#OrderPackagePackageorderGridPanel');
+                    grid.store.clearFilter(true);
+                    grid.store.filter([{property:'order_combine_id',value:me.record.data.order_combine_id}]);
+                    grid.store.load();
+
+                },
+                failure: function(response, opts) {
+                    console.log('server-side failure with status code ' + response.status);
+                }
+            });
+        } else {
+            Ext.Ajax.request({
+                url: '/package/packageorder/refresh',
+                method: 'GET',
+                params: {"order_combine_id":me.record.data.order_combine_id,"filter": JSON.stringify([{"property":"order_combine_id","value":me.record.data.order_combine_id}])},
+                success: function(response, opts) {
+                    var obj = Ext.decode(response.responseText);
+
+
+                    var grid = me.ownerCt.down('#OrderPackagePackageorderGridPanel');
+                    grid.store.clearFilter(true);
+                    grid.store.filter([{property:'order_combine_id',value:me.record.data.order_combine_id}]);
+                    grid.store.load();
+
+                },
+                failure: function(response, opts) {
+                    console.log('server-side failure with status code ' + response.status);
+                }
+            });
+        }
+
+
+
+
+
+        return editor;
     }
 
 });

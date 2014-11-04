@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "border": false,
-        "height": 250,
+        "height": null,
         "id": "OrderItemPanel",
-        "width": 400,
+        "width": null,
         "designer|userClassName": "OrderItemPanel",
         "designer|userAlias": "orderitempanel",
         "layout": "border",
@@ -146,7 +146,23 @@
                         "text": "Menge",
                         "format": "0"
                     },
-                    "designerId": "2d14d938-bc9b-4b13-97e1-0c0ce6e0b6af"
+                    "designerId": "2d14d938-bc9b-4b13-97e1-0c0ce6e0b6af",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowDecimals": false,
+                                "allowExponential": false,
+                                "decimalPrecision": 0
+                            },
+                            "designerId": "81b5bcad-6a75-406f-b35e-a11db0aefd38"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -212,6 +228,80 @@
                         "store": "OrderItemJsonStore"
                     },
                     "designerId": "769cdbd3-0b65-4573-9907-66678b1dc697"
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "designerId": "27714afb-9e43-4112-b54f-da557890e3d0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCellEditingEdit",
+                                "implHandler": [
+                                    "var me = this;\r",
+                                    "\r",
+                                    "if (editor.context.record.data.product_item_id == 2 || editor.context.record.data.product_item_id == 3) {\r",
+                                    "    Ext.Ajax.request({\r",
+                                    "        url: '/package/packageorder/refresh',\r",
+                                    "        method: 'GET',\r",
+                                    "        params: {\"order_item_id\":editor.context.record.data.id, \"filter\": JSON.stringify([{\"property\":\"order_combine_id\",\"value\":me.record.data.order_combine_id}])},\r",
+                                    "        success: function(response, opts) {\r",
+                                    "            var obj = Ext.decode(response.responseText);\r",
+                                    "            \r",
+                                    "            \r",
+                                    "            var grid = me.ownerCt.down('#OrderPackagePackageorderGridPanel');\r",
+                                    "            grid.store.clearFilter(true);\r",
+                                    "            grid.store.filter([{property:'order_combine_id',value:me.record.data.order_combine_id}]);\r",
+                                    "            grid.store.load();\r",
+                                    "            \r",
+                                    "        },\r",
+                                    "        failure: function(response, opts) {\r",
+                                    "            console.log('server-side failure with status code ' + response.status);\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "} else {\r",
+                                    "    Ext.Ajax.request({\r",
+                                    "        url: '/package/packageorder/refresh',\r",
+                                    "        method: 'GET',\r",
+                                    "        params: {\"order_combine_id\":me.record.data.order_combine_id,\"filter\": JSON.stringify([{\"property\":\"order_combine_id\",\"value\":me.record.data.order_combine_id}])},\r",
+                                    "        success: function(response, opts) {\r",
+                                    "            var obj = Ext.decode(response.responseText);\r",
+                                    "            \r",
+                                    "            \r",
+                                    "            var grid = me.ownerCt.down('#OrderPackagePackageorderGridPanel');\r",
+                                    "            grid.store.clearFilter(true);\r",
+                                    "            grid.store.filter([{property:'order_combine_id',value:me.record.data.order_combine_id}]);\r",
+                                    "            grid.store.load();\r",
+                                    "            \r",
+                                    "        },\r",
+                                    "        failure: function(response, opts) {\r",
+                                    "            console.log('server-side failure with status code ' + response.status);\r",
+                                    "        }\r",
+                                    "    });\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "return editor;"
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "designerId": "9d139775-5d28-4d0a-bcba-837052305d41"
+                        }
+                    ]
                 }
             ]
         },
