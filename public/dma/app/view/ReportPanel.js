@@ -144,6 +144,12 @@ Ext.define('MyApp.view.ReportPanel', {
                     Ext.create('Ext.form.field.Number', config)
                     );
                     break;
+                    case 'checkbox':
+                    config = JSON.parse(r.data.jsonparam);
+                    filterFormPanel.add(
+                    Ext.create('Ext.form.field.Checkbox', config)
+                    );
+                    break;
                 }
             }
 

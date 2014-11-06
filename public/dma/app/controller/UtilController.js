@@ -205,6 +205,9 @@ Ext.define('MyApp.controller.UtilController', {
                 case 'integer':
                 config.xtype = 'numberfield';
                 break;
+                case 'checkbox':
+                config.xtype = 'checkboxfield';
+                break;
             }
 
             switch(config.name) {
