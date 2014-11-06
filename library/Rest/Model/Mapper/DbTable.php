@@ -156,8 +156,10 @@ class Rest_Model_Mapper_DbTable {
 
 	private function _getReplaces($matches, $doQuote, $csv, $result, $param) {
 	
+		
 		$replacements = array();
 		foreach ($matches as $match) {
+			$doQuoteOverride = true;
 			$str = str_replace(array('{','}','"'), array('','','"'), $match);
 			$str = explode('.', $str);
 			$source = $str[0];
@@ -173,7 +175,12 @@ class Rest_Model_Mapper_DbTable {
 					break;
 				case 'param':
 					$key = $str[1];
-					$replacement = $param[$key];
+					if (!isset($param[$key])) {
+						$replacement = 'null';
+						$doQuoteOverride = false;
+					} else {
+						$replacement = $param[$key];
+					}
 					break;
 				case 'static':
 					$static = $str[1];
@@ -190,7 +197,7 @@ class Rest_Model_Mapper_DbTable {
 					$replacement = '';
 					break;
 			}
-			if ($doQuote) {
+			if ($doQuote && $doQuoteOverride) {
 				$replacement = '"' . $replacement . '"';
 			}
 			array_push($replacements, $replacement); // $replacements
