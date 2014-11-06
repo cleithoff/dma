@@ -54,7 +54,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "user_resource"
+                "name": "user_resource",
+                "persist": false
             },
             "designerId": "d3a1f209-0fc8-4d43-b988-646f95736b2c"
         },
@@ -66,7 +67,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "report_report"
+                "name": "report_report",
+                "persist": false
             },
             "designerId": "ca6694ee-dc1a-4ee6-bb5c-894c1040d0c8"
         },

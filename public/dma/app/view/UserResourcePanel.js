@@ -378,8 +378,8 @@ Ext.define('MyApp.view.UserResourcePanel', {
         MyApp.app.getCrudControllerController().onLinkButtonClick(button, e, eOpts, function(linkrecord, librecord) {
 
             return {
-                user_role_id: linkrecord.data.id,
-                user_resource_id: librecord.data.id
+                user_resource_id: linkrecord.data.id,
+                report_report_id: librecord.data.id
             };
 
         });

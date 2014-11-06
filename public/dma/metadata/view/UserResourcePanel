@@ -525,8 +525,8 @@
                                                             "MyApp.app.getCrudControllerController().onLinkButtonClick(button, e, eOpts, function(linkrecord, librecord) {\r",
                                                             "\r",
                                                             "    return {\r",
-                                                            "        user_role_id: linkrecord.data.id,\r",
-                                                            "        user_resource_id: librecord.data.id\r",
+                                                            "        user_resource_id: linkrecord.data.id,\r",
+                                                            "        report_report_id: librecord.data.id\r",
                                                             "    };\r",
                                                             "\r",
                                                             "});"

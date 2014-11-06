@@ -27,10 +27,12 @@ Ext.define('MyApp.model.UserResourceHasReportReport', {
             name: 'report_report_id'
         },
         {
-            name: 'user_resource'
+            name: 'user_resource',
+            persist: false
         },
         {
-            name: 'report_report'
+            name: 'report_report',
+            persist: false
         }
     ],
 
