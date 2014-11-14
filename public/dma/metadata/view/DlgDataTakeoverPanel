@@ -234,12 +234,12 @@
                         "fn": "onOrderItemGridPanelSelect",
                         "implHandler": [
                             "var me = this,\r",
-                            "store = me.down('#OrderItemHasProductPersonalizeGridPanel').getStore()\r",
-                            ";\r",
+                            "    store = me.down('#OrderItemHasProductPersonalizeGridPanel').getStore()\r",
+                            "    ;\r",
                             "\r",
                             "store.clearFilter(true);\r",
                             "store.filter([\r",
-                            "     {property:\"order_item_id\", value: record.data.id}\r",
+                            "{property:\"order_item_id\", value: record.data.id}\r",
                             "]);\r",
                             "store.load();\r",
                             "\r",
@@ -249,6 +249,75 @@
                         "scope": "me"
                     },
                     "designerId": "7aa420a7-797c-484c-b123-6e0353a2e06b"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "designerId": "f03d7f59-4c27-4e60-9a2f-d07fc3703196",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "fieldLabel": null,
+                                "boxLabel": "alle anzeigen"
+                            },
+                            "designerId": "9bf33ca5-5bf7-429f-a4e0-08ce7a1966d4",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCheckboxfieldChange",
+                                        "implHandler": [
+                                            "var me = this,\r",
+                                            "    record = me.record,\r",
+                                            "    gridpanel = me.down('#OrderItemTakeoverGridPanel'),\r",
+                                            "    store = me.down('#OrderItemTakeoverGridPanel').getStore()\r",
+                                            "    ;\r",
+                                            "\r",
+                                            "store.clearFilter(true);\r",
+                                            "\r",
+                                            "console.log(newValue);\r",
+                                            "\r",
+                                            "if (newValue === true) {\r",
+                                            "    store.filter([\r",
+                                            "        {property:\"partner_partner_id\", value: record.data.partner_partner_id}\r",
+                                            "    ]);\r",
+                                            "} else {\r",
+                                            "    store.filter([\r",
+                                            "        {property:\"partner_partner_id\", value: record.data.partner_partner_id},\r",
+                                            "        {property:\"product_item_id\", value: record.data.product_item_id}\r",
+                                            "    ]);\r",
+                                            "}\r",
+                                            "\r",
+                                            "// store.load();\r",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "af00edfd-1860-46b2-a6af-3cb48bf5dce5"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },

@@ -81,7 +81,25 @@ Ext.define('MyApp.view.DlgDataTakeoverPanel', {
                             fn: me.onOrderItemGridPanelSelect,
                             scope: me
                         }
-                    }
+                    },
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'top',
+                            items: [
+                                {
+                                    xtype: 'checkboxfield',
+                                    boxLabel: 'alle anzeigen',
+                                    listeners: {
+                                        change: {
+                                            fn: me.onCheckboxfieldChange,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }),
                 {
                     xtype: 'panel',
@@ -238,6 +256,32 @@ Ext.define('MyApp.view.DlgDataTakeoverPanel', {
         store.load();
 
         me.down('#PreviewContainerTakeover').update('<embed src="/deploy/' + record.data.authkey + '.pdf?_dc=' + (new Date().getTime()) + '" alt="pdf" style="width:100%;height:100%" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">');
+    },
+
+    onCheckboxfieldChange: function(field, newValue, oldValue, eOpts) {
+        var me = this,
+            record = me.record,
+            gridpanel = me.down('#OrderItemTakeoverGridPanel'),
+            store = me.down('#OrderItemTakeoverGridPanel').getStore()
+            ;
+
+        store.clearFilter(true);
+
+        // console.log(newValue);
+
+        if (newValue === true) {
+            store.filter([
+            {property:"partner_partner_id", value: record.data.partner_partner_id}
+            ]);
+        } else {
+            store.filter([
+            {property:"partner_partner_id", value: record.data.partner_partner_id},
+            {property:"product_item_id", value: record.data.product_item_id}
+            ]);
+        }
+
+        // store.load();
+
     },
 
     onCancelButtonClick: function(button, e, eOpts) {
