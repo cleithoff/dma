@@ -270,7 +270,7 @@
                                     "                        store = me.down('#OrderImportGridPanel').getStore(); //Ext.getStore('ImportOrderTreeStore');\t\t\t\t\t\r",
                                     "                        store.getProxy().setExtraParam('product_item_id', me.down('#OrderImportUploadFormPanel').getComponent('OrderImportItemComboBox').getValue());\r",
                                     "                        store.getRootNode().removeAll();\r",
-                                    "\t\t\t\t\t\tstore.load();\r",
+                                    "                        store.load();\r",
                                     "                    }\r",
                                     "                    myMask.destroy();\r",
                                     "\r",

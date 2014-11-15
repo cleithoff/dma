@@ -75,12 +75,62 @@ class Import_Service_Import
 		//$r->save();
 	}
 	
+	
+	
 	protected function writeDataListToDb($fields, $data) {
 		// get index for partner_nr
 		foreach ($fields as $key => $value) {
 			if ($value == 'partner_nr') {
 				$partner_nr = $key;
 				break;
+			}
+		}
+		
+		// var_dump($fields, $data);die();
+		
+		$foundAnrede = false;
+		$foundHG = false;
+		$pattern = "/.*Tel. .* \\/ ([0-9 ]*)/i";
+		$foundTel = false;
+		
+		foreach ($fields as $idx => $key) {
+			switch($key) {
+				case 'zeile1' :
+					$line1idx = $idx;
+				case 'zeile2' :
+				case 'zeile3' :
+				case 'zeile4' :
+				case 'zeile5' :
+				case 'zeile6' :
+				case 'zeile7' :
+					
+					if (!empty($foundHG) && !empty($foundAnrede) && !empty($data[$idx]) && $foundTel === true) {
+						$data[$idx] = trim($data[$idx], ',');
+					}
+					
+					$matches = array();
+					preg_match($pattern, $data[$idx], $matches);
+					if (is_array($matches) && count($matches) > 0) {
+						$data[$idx] = str_replace($matches[1], str_replace(' ', '',$matches[1]), $data[$idx]);
+						$foundTel = true;
+					}
+					
+					if (!empty($foundHG) && $foundHG === $data[$idx]) {
+						// entferne $data[$idx] und shift nach rechts
+						for ($j = $idx; $j > $line1idx; $j--) {
+							$data[$j] = $data[$j-1];
+						}
+						$data[$line1idx] = null;
+					}
+					
+					if (empty($foundHG) && $foundAnrede === true && !empty($data[$idx])) {
+						$foundHG = $data[$idx];
+						$data[$idx] = trim($data[$idx], ',');
+					}
+					
+					if (empty($foundAnrede) && !empty($data[$idx])) $foundAnrede = true;
+
+					break;
 			}
 		}
 		
@@ -216,7 +266,7 @@ class Import_Service_Import
 		Zend_Db_Table::getDefaultAdapter()->query('UPDATE import_ordercompare SET value = REPLACE(value,".","") WHERE `key` = "anzahl";');
 		Zend_Db_Table::getDefaultAdapter()->query('UPDATE import_order        SET value = REPLACE(value,".","") WHERE `key` = "anzahl";');
 		
-		// Zend_Db_Table::getDefaultAdapter()->query('CALL generateLines();');
+		Zend_Db_Table::getDefaultAdapter()->query('CALL generateLines();');
 	}
 
 	private function _getImportAction() {

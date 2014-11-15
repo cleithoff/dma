@@ -267,7 +267,7 @@ Ext.define('MyApp.view.DlgDataTakeoverPanel', {
 
         store.clearFilter(true);
 
-        // console.log(newValue);
+        console.log(newValue);
 
         if (newValue === true) {
             store.filter([
