@@ -661,6 +661,8 @@ Ext.define('MyApp.view.OrderImportPanel', {
 
             e.record.parentNode.set(e.field, e.record.data[e.field]);
 
+            console.log(e.record);
+
             var params = new Object();
             params.id = e.record.parentNode.data.idx;
             params.partner_nr = e.record.parentNode.data.partner_nr;
@@ -687,6 +689,9 @@ Ext.define('MyApp.view.OrderImportPanel', {
         var _event = e;
 
         if (e.record.data.leaf === false) {
+
+            console.log(e.record);
+
             var params = new Object();
             params.id = e.record.data.idx == "" ? 0 : e.record.data.idx;
             params.partner_nr = e.record.data.partner_nr;

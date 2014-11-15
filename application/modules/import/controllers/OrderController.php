@@ -104,7 +104,9 @@ class Import_OrderController extends Rest_Controller_Action_DbTable
 					$data->text = $row['origin'];
 					$data->origin = $row['origin'];
 					$data->leaf = true;
+
 				} elseif ($row['origin'] == 'import_compare') {
+					// $entry->idx = $row['idx'];
 					$entry->text = $row['partner_nr'];
 				}
 			}
