@@ -124,8 +124,8 @@ class Import_Service_Import
 					}
 					
 					if (empty($foundHG) && $foundAnrede === true && !empty($data[$idx])) {
-						$foundHG = $data[$idx];
 						$data[$idx] = trim($data[$idx], ',');
+						$foundHG = $data[$idx];
 					}
 					
 					if (empty($foundAnrede) && !empty($data[$idx])) $foundAnrede = true;
