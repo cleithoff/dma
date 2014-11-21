@@ -259,11 +259,11 @@ class Import_Service_Import
 		";
 		
 		// ORDER BY `order_pool_id` DESC, `key` ASC
-		/* FIXME: einkommentieren, wenn die alten personalisierungen verwendet werden sollen.
+		// FIXME: einkommentieren, wenn die alten personalisierungen verwendet werden sollen.
 		Zend_Db_Table::getDefaultAdapter()->query('SET GLOBAL LOG_WARNINGS = 0');
 		$rowset = Zend_Db_Table::getDefaultAdapter()->query($sql);
 		Zend_Db_Table::getDefaultAdapter()->query('SET GLOBAL LOG_WARNINGS = 1');
-		*/
+		
 		Zend_Db_Table::getDefaultAdapter()->query('UPDATE import_ordercompare SET value = REPLACE(value,".","") WHERE `key` = "anzahl";');
 		Zend_Db_Table::getDefaultAdapter()->query('UPDATE import_order        SET value = REPLACE(value,".","") WHERE `key` = "anzahl";');
 		
