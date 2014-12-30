@@ -1357,6 +1357,22 @@
                 "metadata/resource/js2"
             ],
             "className": "js2"
+        },
+        "1aa7b8d6-3bd1-4f8d-b5e4-79790155c55f": {
+            "paths": [
+                "metadata/model/PartnerAbsenceModel",
+                "app/model/override/PartnerAbsenceModel.js",
+                "app/model/PartnerAbsenceModel.js"
+            ],
+            "className": "PartnerAbsenceModel"
+        },
+        "47dffd9a-1fab-4295-83c4-b2ecb69640fd": {
+            "paths": [
+                "metadata/store/PartnerAbsenceJsonStore",
+                "app/store/override/PartnerAbsenceJsonStore.js",
+                "app/store/PartnerAbsenceJsonStore.js"
+            ],
+            "className": "PartnerAbsenceJsonStore"
         }
     },
     "viewOrderMap": {
@@ -1457,7 +1473,8 @@
             "ce4cf3b2-da08-4e75-aca5-25297cdd59e4",
             "2a06eb8e-33d6-4e00-985c-d56dd070069a",
             "47c37540-d101-4be6-ae8f-c878283067db",
-            "e619c51e-efad-439a-bfe6-db609faa9cec"
+            "e619c51e-efad-439a-bfe6-db609faa9cec",
+            "47dffd9a-1fab-4295-83c4-b2ecb69640fd"
         ],
         "controller": [
             "53e13cd2-09ec-4e2b-ab5d-9afa2c20548a",
@@ -1531,7 +1548,8 @@
             "13ae90e2-0b06-4a37-b113-db09ae65f50e",
             "2e9762c5-cd0c-4fef-af66-e4be8c25f61f",
             "55a17f48-cd20-48da-8ce5-30fcb5830e3b",
-            "88723ac3-c28f-4b4d-999c-a3af39f673f4"
+            "88723ac3-c28f-4b4d-999c-a3af39f673f4",
+            "1aa7b8d6-3bd1-4f8d-b5e4-79790155c55f"
         ],
         "resource": [
             "e718d5f0-9733-44c1-a396-ebed6e019623",

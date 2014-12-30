@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "model": "PartnerAbsenceModel",
+        "remoteFilter": true,
+        "designer|userClassName": "PartnerAbsenceJsonStore"
+    },
+    "designerId": "47dffd9a-1fab-4295-83c4-b2ecb69640fd",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/partner/absence/index"
+            },
+            "designerId": "ebda3e59-83a0-4ab0-9df6-40f41c89ac90",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "data"
+                    },
+                    "designerId": "cc68993a-f235-4d03-bc7c-bd6d8424092f"
+                }
+            ]
+        }
+    ]
+}

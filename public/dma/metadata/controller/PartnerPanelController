@@ -218,6 +218,13 @@
                     "storedelivery.filter([{property:'id',value:record.data.partner_address_id_delivery}]);\r",
                     "\r",
                     "\r",
+                    "storeabsence = Ext.getStore('PartnerAbsenceJsonStore');\r",
+                    "storeabsence.clearFilter(true);\r",
+                    "storeabsence.filter([{property:'partner_partner_id',value:record.data.id}]);\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
                     "/*grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');\r",
                     "grid.store.clearFilter(true);\r",
                     "grid.store.filter([{property:'order_pool_id',value:record.data.order_pool_id}]);*/"

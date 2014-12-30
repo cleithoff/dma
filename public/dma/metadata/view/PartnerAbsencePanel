@@ -12,7 +12,156 @@
         "designer|userClassName": "PartnerAbsencePanel",
         "designer|userAlias": "partnerabsencepanel",
         "autoDestroy": false,
+        "layout": "border",
         "title": "Abwesenheiten"
     },
-    "designerId": "dd4c7da7-b67a-45c3-8903-5bdd85129c27"
+    "designerId": "dd4c7da7-b67a-45c3-8903-5bdd85129c27",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "itemId": "PartnerAbsenceGridPanel",
+                "header": false,
+                "title": "My Grid Panel",
+                "store": "PartnerAbsenceJsonStore"
+            },
+            "designerId": "926388e5-de8f-4ef6-af1f-2583f4e913e8",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "number",
+                        "text": "PartnerNr"
+                    },
+                    "designerId": "f727b4cc-b2ca-4e38-bd99-9cbeeb93f0c1",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.partner_partner.partner_nr;"
+                                ]
+                            },
+                            "designerId": "187d03ba-26de-4dfc-9e87-4af22f201b9f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "string",
+                        "text": "Partner"
+                    },
+                    "designerId": "9f0e6929-4bd8-4b18-8a11-6a812fe81621",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return record.data.partner_partner.title"
+                                ]
+                            },
+                            "designerId": "efbcd8c5-b199-4850-940a-536f459a0e50"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "from",
+                        "text": "von"
+                    },
+                    "designerId": "87b53e6d-e82a-4c9f-8ab8-2e66eae6a1be"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "until",
+                        "text": "bis"
+                    },
+                    "designerId": "f7e587b9-d4e1-4b87-b1d3-5e41c192f260"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "5ac7d4f4-2fdc-4cbf-a064-733d42bc4623"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "PartnerAbsenceJsonStore"
+                    },
+                    "designerId": "4c4a5798-74b8-478c-945c-17dce78aaf5e"
+                }
+            ]
+        }
+    ]
 }

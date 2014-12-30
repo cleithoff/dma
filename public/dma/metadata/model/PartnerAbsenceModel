@@ -1,0 +1,84 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PartnerAbsenceModel"
+    },
+    "designerId": "1aa7b8d6-3bd1-4f8d-b5e4-79790155c55f",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "designerId": "172ef739-cc6f-42f7-a799-ce8aad5e03d3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "d.m.Y",
+                "dateReadFormat": "Y-m-d",
+                "dateWriteFormat": "Y-m-d",
+                "name": "from",
+                "type": "date"
+            },
+            "designerId": "026761e3-fd21-4e39-aba8-53d811d2092e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "d.m.Y",
+                "dateReadFormat": "Y-m-d",
+                "dateWriteFormat": "Y-m-d",
+                "name": "until",
+                "type": "date"
+            },
+            "designerId": "ddb817a5-19ee-4567-bd90-a454207de318"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "partner_partner_id",
+                "type": "int"
+            },
+            "designerId": "a7a69c2d-bd61-45c1-856a-c632c76738ed"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "partner_partner"
+            },
+            "designerId": "9cf68d9e-2cc6-4f50-b021-ade22823bea7"
+        }
+    ]
+}

@@ -52,7 +52,8 @@
             "UserRoleModel",
             "UserResourceModel",
             "UserRoleHasUserResourceModel",
-            "UserResourceHasReportReport"
+            "UserResourceHasReportReport",
+            "PartnerAbsenceModel"
         ],
         "stores": [
             "PartnerPartnerJsonStore",
@@ -103,7 +104,8 @@
             "UserRoleJsonStore",
             "UserResourceJsonStore",
             "UserRoleHasUserResourceJsonStore",
-            "UserResourceHasReportReportJsonStore"
+            "UserResourceHasReportReportJsonStore",
+            "PartnerAbsenceJsonStore"
         ],
         "views": [
             "MainViewport",

@@ -116,6 +116,13 @@ Ext.define('MyApp.controller.PartnerPanelController', {
         storedelivery.filter([{property:'id',value:record.data.partner_address_id_delivery}]);
 
 
+        storeabsence = Ext.getStore('PartnerAbsenceJsonStore');
+        storeabsence.clearFilter(true);
+        storeabsence.filter([{property:'partner_partner_id',value:record.data.id}]);
+
+
+
+
         /*grid = this.getOrderItemPanel().getComponent('OrderItemGridPanel');
         grid.store.clearFilter(true);
         grid.store.filter([{property:'order_pool_id',value:record.data.order_pool_id}]);*/

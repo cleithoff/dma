@@ -65,7 +65,8 @@ Ext.application({
         'UserRoleModel',
         'UserResourceModel',
         'UserRoleHasUserResourceModel',
-        'UserResourceHasReportReport'
+        'UserResourceHasReportReport',
+        'PartnerAbsenceModel'
     ],
     stores: [
         'PartnerPartnerJsonStore',
@@ -116,7 +117,8 @@ Ext.application({
         'UserRoleJsonStore',
         'UserResourceJsonStore',
         'UserRoleHasUserResourceJsonStore',
-        'UserResourceHasReportReportJsonStore'
+        'UserResourceHasReportReportJsonStore',
+        'PartnerAbsenceJsonStore'
     ],
     views: [
         'MainViewport',
