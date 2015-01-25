@@ -166,7 +166,8 @@ Ext.application({
         'UserResourcePanel',
         'UserUserPanel',
         'DlgReportReportPanel',
-        'DlgDataTakeoverPanel'
+        'DlgDataTakeoverPanel',
+        'ImportStackPanel'
     ],
     autoCreateViewport: true,
     controllers: [

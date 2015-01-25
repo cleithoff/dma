@@ -208,6 +208,18 @@ Ext.define('MyApp.view.MainPanel', {
                                                 scope: me
                                             }
                                         }
+                                    },
+                                    {
+                                        xtype: 'menuitem',
+                                        widget: 'importstackpanel',
+                                        itemId: 'ImportStackMenuItem',
+                                        text: 'Importstapel',
+                                        listeners: {
+                                            click: {
+                                                fn: me.onImportStackMenuItemClick,
+                                                scope: me
+                                            }
+                                        }
                                     }
                                 ]
                             }
@@ -316,6 +328,10 @@ Ext.define('MyApp.view.MainPanel', {
     },
 
     onOrderMetaMenuItemClick: function(item, e, eOpts) {
+        MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
+    },
+
+    onImportStackMenuItemClick: function(item, e, eOpts) {
         MyApp.app.getCrudControllerController().onMenuItemClick(item, e, eOpts);
     },
 

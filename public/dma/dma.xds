@@ -1373,6 +1373,14 @@
                 "app/store/PartnerAbsenceJsonStore.js"
             ],
             "className": "PartnerAbsenceJsonStore"
+        },
+        "724252ae-cdbc-4a49-8b91-b43d7d94a19b": {
+            "paths": [
+                "metadata/view/ImportStackPanel",
+                "app/view/override/ImportStackPanel.js",
+                "app/view/ImportStackPanel.js"
+            ],
+            "className": "ImportStackPanel"
         }
     },
     "viewOrderMap": {
@@ -1417,6 +1425,7 @@
             "d73cf8bc-b737-47dd-abf9-cb94e000ff89",
             "929aef3d-310b-49d6-85c3-cf2fa8f334f8",
             "c188d4c9-134b-44b3-9748-571c67f00e80",
+            "724252ae-cdbc-4a49-8b91-b43d7d94a19b",
             "b30e5af6-181b-4e8c-baa7-9cb71fa359c4",
             "cfc8bf2e-799f-42f3-8e06-bd8918a3c34d",
             "29219c73-d451-49cf-ad5c-b1a5f947e09d",

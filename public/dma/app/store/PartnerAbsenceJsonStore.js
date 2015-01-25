@@ -28,6 +28,7 @@ Ext.define('MyApp.store.PartnerAbsenceJsonStore', {
             autoSync: true,
             model: 'MyApp.model.PartnerAbsenceModel',
             remoteFilter: true,
+            storeId: 'PartnerAbsenceJsonStore',
             proxy: {
                 type: 'rest',
                 url: '/partner/absence/index',

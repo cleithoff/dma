@@ -153,7 +153,8 @@
             "UserResourcePanel",
             "UserUserPanel",
             "DlgReportReportPanel",
-            "DlgDataTakeoverPanel"
+            "DlgDataTakeoverPanel",
+            "ImportStackPanel"
         ],
         "autoCreateViewport": true,
         "controllers": [
