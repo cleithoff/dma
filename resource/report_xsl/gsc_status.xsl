@@ -112,7 +112,7 @@
  </fo:block>        </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 17f5496c455f4864b3757891cf3236d4 -->
-      <fo:block     margin-left="0.0cm" margin-right="0.2cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="center">N neu | FE Freigabe erteilt | P Produktion | V Versand | A Abgeschlossen | FAN Freigabe angefordert | FAB Freigabe abgelehnt | K Korrektur | S(mA) Storno (mit Abrechnung)</fo:block>
+      <fo:block     margin-left="0.0cm" margin-right="0.2cm"  margin-top="0.0cm"  font-size="8pt"  font-family="SansSerif"  color="#000000"   text-align="center">N neu | FE Freigabe erteilt | P Produktion | V Versand | A Abgeschlossen | FAN Freigabe angefordert | FAB Freigabe abgelehnt | K Korrektur | S(mA) Storno (mit Abrechnung) | T Retour</fo:block>
         </fo:table-cell>
         <fo:table-cell    number-columns-spanned="1">
       <!-- 2c85b1d0e6a84cfa9188c8e151e7c233 -->
